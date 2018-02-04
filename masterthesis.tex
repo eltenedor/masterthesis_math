@@ -1,0 +1,57 @@
+% Vorlage fuer Abschlussarbeiten am Fachbereich Mathematik der TU Darmstadt.
+% Geeignet fuer Bachelorarbeiten und Masterarbeiten.
+
+\documentclass[12pt,a4paper,twoside]{report}
+% Benutzt man die Option draft, so kann man die Umbrueche ueberpruefen.
+
+% Hier werden alle benoetigten Pakete und Einstellungen geladen. Auch
+% hier sind Sie frei diese direkt in der Praeambel zu laden.
+
+\input{pakete}
+
+% Hier werden Makros und Umgebungen eingebunden. Diese werden separat
+% in der Datei befehle.tex definiert. Sie sind frei diese Befehle auch
+% direkt in der Praeambel zu definieren.
+\input{befehle}
+
+\begin{document}
+% Auf der Titelseite und im Inhaltsverzeichnis sollen keine
+% Seitenzahlen dargestellt werden.
+\pagestyle{empty}
+
+% Hier wird die Titelseite eingebunden.
+\include{titel}
+
+% Inhaltsverzeichnis erstellen.
+\tableofcontents
+
+% Ab sofort werden Seitenzahlen in der Kopfzeile angezeigt.
+\pagestyle{headings}
+
+% Einbinden der Einleitung.
+\include{einleitung}
+
+% Einbinden der einzelnen Kapitel (zur Übersicht eine Datei je Kapitel)
+
+\include{chap1}
+\include{chap2}
+\include{chap3}
+\include{chap4}
+\include{chap5}
+
+% Literaturverzeichnis (beginnt auf einer ungeraden Seite)
+\cleardoublepage
+\include{literaturverzeichnis}
+      
+% ggf. hier Tabelle mit Symbolen 
+% (kann auch auf das Inhaltsverzeichnis folgen)
+  
+% Stichwortverzeichnis (beginnt auf einer ungeraden Seite)
+\cleardoublepage
+\printindex
+\addcontentsline{toc}{chapter}{Stichwortverzeichnis}
+  
+% Eidesstattliche Erklaerung.
+\cleardoublepage 
+\include{erklaerung}
+\end{document}

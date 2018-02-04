@@ -1,0 +1,68 @@
+% Makros
+
+\newcommand{\N}{\mathbb{N}} % natuerliche Zahlen
+\newcommand{\Z}{\mathbb{Z}} % ganze Zahlen
+\newcommand{\Q}{\mathbb{Q}} % rationale Zahlen
+\newcommand{\R}{\mathbb{R}} % reelle Zahlen
+\newcommand{\C}{\mathbb{C}}
+\DeclareMathOperator{\Ret}{Re} % Guter Realteil
+
+%%Mengen
+\newcommand{\BB}{\mathrm{B}} 
+\newcommand{\EE}{\mathrm{E}} 
+\newcommand{\verCone}{\Gamma_\mathrm{V}} 
+\newcommand{\ShenCone}{\Gamma} 
+
+%%Funktionenräume
+\newcommand{\CC}{\mathrm{C}} 
+\newcommand{\Ell}{\mathrm{L}} 
+\newcommand{\Li}{\mathfrak{L}}
+\newcommand{\WW}{\mathrm{W}}
+\newcommand{\HH}{\mathrm{H}}
+
+%%Mathematische Operatoren
+
+\newcommand{\diam}{\operatorname{diam}}
+\newcommand{\K}{\mathcal{K}}
+\newcommand{\slp}{\mathcal{S}}
+\newcommand{\MM}{\mathcal{M}}
+\newcommand{\dlp}{\mathcal{D}}
+\DeclareMathOperator{\pv}{p. v.}
+\renewcommand{\Im}{\operatorname{Im}}
+\renewcommand{\Re}{\operatorname{Re}}
+
+%Differentialoperatoren
+\let\divsymb=\div % rename builtin command \div to \divsymb
+\renewcommand{\div}[1]{\mathrm{div\,} #1} % for divergence
+\renewcommand{\d}[1]{\ensuremath\, {\operatorname{d}\!{#1}}}
+\newcommand{\DD}{\ensuremath\,{\operatorname{D}}}
+
+\newcommand{\ii}{\mathrm{i}}
+\newcommand{\e}{\mathrm{e}}
+
+% Umgebungen für Definitionen, Sätze, usw.
+
+\theoremstyle{definition}
+\newtheorem{Definition}{Definition}[chapter]
+\newtheorem{Beispiel}{Beispiel}[chapter]
+\newtheorem*{RBsp}{Regelbeispiel}
+
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[chapter]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{prop}[thm]{Proposition}
+
+\theoremstyle{remark}
+\newtheorem*{Bemerkung}{Bemerkung}
+
+\def\Xint#1{\mathchoice
+  {\XXint\displaystyle\textstyle{#1}}%
+  {\XXint\textstyle\scriptstyle{#1}}%
+  {\XXint\scriptstyle\scriptscriptstyle{#1}}%
+  {\XXint\scriptscriptstyle\scriptscriptstyle{#1}}%
+\!\int}
+\def\XXint#1#2#3{{\setbox0=\hbox{$#1{#2#3}{\int}$ }
+\vcenter{\hbox{$#2#3$ }}\kern-.6\wd0}}
+\def\ddashint{\Xint=}
+\def\dashint{\Xint-}

@@ -1,0 +1,63 @@
+\chapter{Solving the $\Ell^2$-Dirichlet Problem}
+
+This section is all about the application of the method of layer potentials to solve the $\Ell^2$ Dirichlet problem for the Stokes resolvent system.
+Furthermore we will establish a uniform $\Ell^p$ estimate for the nontangential-maximal-function which will be important for the proof of our central theorem.
+
+For the remainder of this chapter let $\Omega$ always denote a bounded Lipschitz domain in $\R^d$, $d \geq 3$ with connected boundary.
+We will use $\Ell^2_n(\partial\Omega)$ to denote the function space
+\begin{align*}
+  \Ell^2_n(\partial\Omega) \coloneqq \Big\{ f \in \Ell^2(\partial\Omega; \C^d) \colon \int_{\partial\Omega} f \cdot n \d \sigma = 0 \Big\},
+\end{align*}
+and $\Ell_0^2(\partial\Omega; \C^d)$  to denote the function space of $\Ell^2$ functions with mean value zero.
+As before $\| \cdot \|_\partial$ stands for the norm of $\Ell^2(\partial\Omega)$.
+
+We will first derive bounds on the inverse operator of $(1/2) I + \K_\lambda$ from Chapter 3.
+
+\begin{lem}
+  Let $\lambda \in \Sigma_\theta$ and $|\lambda| \geq \tau$, where $\tau \in (0,1)$.
+  Suppose that $|\partial\Omega| = 1$.
+  Then $(1/2)I + \K_\lambda$ is an isomorphism on $\Ell^2(\partial\Omega; \C^d)$ and
+  \begin{align}
+    \label{eq:inverseEstimate}
+    \| f\|_\partial \leq C \|\big( (1/2) I + \K_\lambda \big) f \|_\partial \quad\text{for any } f \in \Ell^2(\partial\Omega; \C^d),
+  \end{align}
+  where $C$ depends only on $d$, $\theta$, $\tau$ and the Lipschitz character of $\Omega$.
+\end{lem}
+
+\begin{proof}
+  We start with $f \in \Ell^2(\partial\Omega; \C^d)$ and the corresponding single layer potentials $u = \slp_\lambda(f)$ and $\phi = \slp_\Phi(f)$ given by \eqref{eq:defSingleLayer} and \eqref{eq:defSingleLayerPressure}.
+  We saw in Chapter 3 that $(u,\phi)$ solves the Stokes resolvent problem in $\R^d \setminus \partial\Omega$ and got from Lemma \ref{lem:nontantentialMaximalFunctions} with $p = 2$ for the nontangential maximal functions that $(\nabla u)^*$, $(\phi)^* \in \Ell^2(\partial\Omega)$.
+  We furthermore saw in Lemma \ref{lem:traceFormulas} that $\nabla u$ and $\phi$ have nontangential limits almost everywhere on $\partial\Omega$. 
+  Finally in Theorem \ref{thm:jumpConditions} we saw that $\nabla_{\mathrm{tan}} u_+ = \nabla_{\mathrm{tan}} u_-$ and derived the jump condition $(\frac{\partial u}{\partial \nu}_\pm = (\pm (1/2) I + \K_\lambda) f$.
+
+  Our next step will be to show the estimate
+  \begin{align}
+    \label{eq:negNablaPhi}
+    \| \nabla u_- \|_\partial + \| \phi_- \|_\partial \leq C \| \big( \frac{\partial u}{\partial \nu} \big) \|_\partial .
+  \end{align}
+  Assuming that \eqref{eq:negNablaPhi} holds we can prove \eqref{eq:inverseEstimate}:
+  Set $f = \big(\frac{\partial u}{\partial \nu} \big)_+ -  \big( \frac{\partial u}{\partial \nu} \big)_-$.
+  Then this gives with the definition of the conormal derivative and estimate \eqref{eq:negNablaPhi} that
+  \begin{align*}
+    \| f\|_\partial 
+    &\leq  \| \big( \frac{\partial u}{\partial \nu} \big)_+ \|_\partial + \| \big( \frac{\partial u}{\partial \nu} \big)_- \|_\partial  \\
+    &\leq \| \big( \frac{\partial u}{\partial \nu} \big)_+  \|_\partial + \| \big( \frac{\partial u}{\partial n} \big)_- \|_\partial + \| \phi_- n \|_\partial  \\
+    &\leq C \| \big( \frac{\partial u}{\partial \nu} \big)_+ \|_\partial
+    = C \| (1/2)I + K_\lambda) f\|_\partial.
+  \end{align*}
+
+  In order to prove \eqref{eq:negNablaPhi}, note that since $|u(x)| + |\nabla u(x)| = O(|x|^{-N})$ for all $N > 0$ and $\phi(x) = O(|x|^{1 - d})$ as $|x| \to \infty$ we can use Theorem \ref{thm:rellichExterior} to derive
+  \begin{align}
+    \|\nabla u_-\|_\partial + \|\phi_-\|_\partial
+    &\leq C \Big\{ \|\nabla_{\mathrm{tan}} u_- \|_\partial + |\lambda|^{1/2} \| u_-\|_\partial + |\lambda| \| n \cdot u_-\|_{\HH^{-1}(\partial\Omega)} \Big\} \nonumber\\
+    \label{eq:nablauminus}
+    &= C \Big\{ \|\nabla_{\mathrm{tan}} u_+ \|_\partial + |\lambda|^{1/2} \| u_+ \|_\partial + |\lambda| \|n \cdot u_+ \|_{\HH^{-1}(\partial\Omega)} \Big\},
+  \end{align}
+  where we used the fact that $u_+ = u_-$ and $\nabla_{\mathrm{tan}} u_+ = \nabla_{\mathrm{tan}} u_-$ on $\partial\Omega$.
+  Inequality \eqref{eq:rellich2} of Theorem \ref{thm:rellich} now allows us to estimate the right hand side of \eqref{nablauminus} by $C \|(\frac{\partial u}{\partial \nu} )_+ \|_\partial$ and thus the desired estimate \eqref{eq:neqNablaPhi} follows.
+
+  Let's now work on the invertibility of $(1/2) I + \K_\lambda$. In the case $\lambda = 0$, Fabes, Kenig and Verchota showed in \cite{fabesKenigVerchota} that $(1/2) I + \K_0$ as an operator on $\Ell^2(\partial\Omega; \R^d)$ has a one dimensional null space and as range the space $\Ell_0^2(\partial\Omega; \R^d)$.
+  Thus $(1/2) I + \K_0$ has Fredholm index $0$.
+  This remains true if we replace $\Ell^2(\partial\Omega; \R^d)$ by $\Ell^2(\partial\Omega; \C^d)$.
+
+\end{proof}
