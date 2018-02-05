@@ -341,10 +341,11 @@ We will also be working with tangential derivatives which are defined via
     &\quad= \frac{1}{2} f_j(x) + (\K_\lambda f)_j(x),
   \end{align*}
   where $n$ denotes the normal vector at $x$ and
-  \begin{align*}
+  \begin{align}
+    \label{eq:defnKlambda}
     (\K_\lambda f) (x)
     &= \pv \int_{\partial\Omega} \nabla_x \Gamma(x - y; \lambda)  f(y) \d\sigma(y) n - \pv \int_{\partial\Omega} \Phi_k(x - y) f_k(y) \d\sigma(y) n.
-  \end{align*}
+  \end{align}
   We note that $\K_\lambda$ essentially consists of two boundary layer potentials. 
   The $\Ell^p$-boundedness of the first one was proven in Lemma \ref{lem:lpBoundednessT}.
   The $\Ell^p$-boundedness of the second boundary layer potential follows in an analogous way using the fact that the operators
@@ -352,6 +353,50 @@ We will also be working with tangential derivatives which are defined via
     A^*(f)(P) = \sup_{t > 0} \Big| \int_{\substack{y \in \partial\Omega \\ |y - P| > t}} \frac{P - y}{|P - y|^n} f(y) \d\sigma(y)\Big| , \quad P \in \partial\Omega
   \end{align*}
   are bounded by Lemma 1.2 of Verchota \cite{verchotaDiss}.
+\end{proof}
+
+Similar to $\K_\lambda$ for $\lambda = 0$ we have
+\begin{align}
+  \label{eq:defnK0}
+    &= \pv \int_{\partial\Omega} \nabla_x \Gamma(x - y; 0)  f(y) \d\sigma(y) n - \pv \int_{\partial\Omega} \Phi_k(x - y) f_k(y) \d\sigma(y) n,
+\end{align}
+as was show by Fabes, Kenig and Verchota \cite[(0.12)]{fabesKenigVerchota}.
+We note a fact that will be crucial for solving the $\Ell^2$ Dirichlet problem in Chapter 5 and will fortify the hopes of translating results for $\lambda = 0$ to $\lambda \in \Sigma_\theta$.
+\begin{lem}
+  \label{lem:compactness}
+  Let $\lambda \in \Sigma_\theta$ and $d \geq 3$.
+  Then the operator $\K_\lambda - \K_0$ on $\Ell^2(\partial\Omega; \C^d)$ is compact.
+\end{lem}
+
+\begin{proof}
+  The idea of this proof is similar to the one in Tolksdorf \cite[Lemma 4.3.5]{tolksdorfDiss}.
+  Let $f \in \Ell^2(\partial\Omega; \C^d)$.
+  Let's denote $\K \coloneqq \K_\lambda - \K_0$. 
+  We will now try to approximate $\K$ by compact operators in the operator norm.
+  To this end we define for all $\varepsilon > 0$
+  \begin{align*}
+    (\K^{(\varepsilon)}f)(x) \coloneqq \int_{\partial\Omega \setminus \BB(x,\varepsilon)} \nabla \{ \Gamma(x - y; \lambda) - \Gamma(x - y; 0) \} f(y) \d \sigma(y), \quad x \in \partial\Omega.
+  \end{align*}
+  We can now estimate by Young's inequality \ref{lim:young} 
+  \begin{align*}
+    \| (\K^{(\varepsilon)} f)(x) \|_{\Ell^2(\partial\Omega)}
+    \leq \sup_{p \in \partial\Omega} \| \nabla \{ \Gamma(p - \cdot; \lambda) - \Gamma(p - \cdot; 0) \} 1_{\BB(p,\varepsilon)} \|_{\Ell^1(\partial\Omega)} \|f\|_{\Ell^2(\partial\Omega)}.
+  \end{align*}
+  Our goal is to show that
+  \begin{align*}
+    \sup_{p \in \partial\Omega} \| \nabla \{ \Gamma(p - \cdot; \lambda) - \Gamma(p - \cdot; 0) \} 1_{\BB(p,\varepsilon)} \|_{\Ell^1(\partial\Omega)} \to 0 \quad \text{as} \quad \varepsilon \to 0.
+  \end{align*}
+  To this end, let $\varepsilon$ be small enough such that we can apply the estimates from Corollary \ref{cor:differenceFundamentalSolutionStokes} to calculate for some $p \in \partial\Omega$
+  \begin{align*}
+     &\| \nabla \{ \Gamma(p - \cdot; \lambda) - \Gamma(p - \cdot; 0) \} 1_{\BB(p,\varepsilon)} \|_{\Ell^1(\partial\Omega)}  \\
+     &\qquad\qquad\leq C \int_{\partial\Omega \cap \BB(p, \varepsilon)} \sqrt{|\lambda|} |p - y|^{2 - d} \d\sigma(y) 
+     \leq C \sqrt{|\lambda|} \varepsilon
+  \end{align*}
+  where for the last step we applied Lemma \ref{lem:comparability}.
+  For $\varepsilon \to 0$ this gives us $\K^{(\varepsilon)} \to \K$ in the operator norm.
+  The last step is to verify the compactness of $\K^(\varepsilon)$.
+  We note that the integral kernel of $\K^{(\varepsilon)}$ is bounded which gives us that in particular the kernel is an element of $\Ell^2(\partial\Omega \times \partial\Omega; \C^{d \times d}$.
+  The compactness of $\K^{(\varepsilon)}$ now follows from Weidmann \cite[Thm. 6.11]{weidmann}.
 \end{proof}
 
 Our next step is to introduce the \emph{double layer potential} $u(x) = \dlp_\lambda(f)(x)$ for the Stokes resolvent problem, where
@@ -474,6 +519,5 @@ where $K_{\bar\lambda}^*$ is the adjoint of the operator $K_{\bar\lambda}$ in \e
   \begin{align*}
     (u_j)_\pm(x) = \mp\frac{1}{2} f_j(x) + (K_{\bar\lambda}^* f)_j(x)
   \end{align*}
-
   which proves the claim.
 \end{proof}

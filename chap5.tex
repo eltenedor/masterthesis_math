@@ -58,6 +58,37 @@ We will first derive bounds on the inverse operator of $(1/2) I + \K_\lambda$ fr
 
   Let's now work on the invertibility of $(1/2) I + \K_\lambda$. In the case $\lambda = 0$, Fabes, Kenig and Verchota showed in \cite{fabesKenigVerchota} that $(1/2) I + \K_0$ as an operator on $\Ell^2(\partial\Omega; \R^d)$ has a one dimensional null space and as range the space $\Ell_0^2(\partial\Omega; \R^d)$.
   Thus $(1/2) I + \K_0$ has Fredholm index $0$.
-  This remains true if we replace $\Ell^2(\partial\Omega; \R^d)$ by $\Ell^2(\partial\Omega; \C^d)$.
+  This remains true if we replace $\Ell^2(\partial\Omega; \R^d)$ by $\Ell^2(\partial\Omega; \C^d)$ as this just corresponds to a complexification of the vector space and the operator. 
+  Since the operator $\K_\lambda - \K_0$ is compact on $\Ell^2(\partial\Omega; \C^d)$ (see Toksdorf \cite{tolksdorfDiss}) we deduce that the operator
+  \begin{align*}
+    (1/2)I + \K_\lambda = (1/2)I + \K_0 + (\K_\lambda - \K_0)
+  \end{align*}
+  has the Fredholm index zero as well for all $\lambda \in \Sigma_\theta$.
+  Now inequality \eqref{eq:inverseEstimate} gives that $(1/2)I + \K_\lambda$ is injective and thus the Fredholm index of zero implies that it is also surjective and hence an isomorphism.
+\end{proof}
+
+The next lemma works with the counterpart of $(1/2)I + \K_\lambda$.
+
+\begin{lem}
+  Let $\lambda \in \Sigma_\theta$.
+  Then $-(1/2)I + \K_\lambda$ is a Fredholm operator on $\Ell^2(\partial\Omega; \C^d)$ with index zero and
+  \begin{align}
+    \label{eq:inverseEstimate2}
+    \| f\|_\partial \leq C \| \big( - (1/2) I + \K_\lambda \big) f \|_\partial \quad\text{for all } f \in \Ell^2_n(\partial\Omega).
+  \end{align}
+\end{lem}
+
+\begin{proof}
+  In the case $\lambda = 0$, Fabes Kenig and Verchota proved in \cite{fabesKenigVerchota} that the Fredholm index of the operator $-(1/2)I + \K_0$ on $\Ell^2(\partial\Omega; \R^d)$ is zero and estimate \eqref{eq:inverseEstimate2} holds.
+  As in the previous proof, this still remains true if we complexify the operator making it a Fredholm operator with index zero on  $\Ell^2(\partial\Omega; \C^d)$.
+  Since $\K_\lambda - \K_0$ is compact on $\Ell^2(\partial\Omega; \C^d)$ and the Fredholm index remains unchanges under compact perturbations, we know that the Fredholm index of $-(1/2)I + \K_\lambda$ on $\Ell^2(\partial\Omega; \C^d)$ is zero for all $\lambda \in \Sigma_\theta$.
+  This proves the first claim of the lemma.
+
+  Now let $\tau = \frac{1}{2 \diam(\Omega)^2 + 1}$ and $|\lambda| < \tau$.
+  Then
+  \begin{align*}
+    \| (\K_\lambda - \K_0 f\|_\partial \leq C |\lambda|^{1/2} \|f\|_\partial
+  \end{align*}
+
 
 \end{proof}
