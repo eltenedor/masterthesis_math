@@ -176,12 +176,12 @@ In the following lemma we will show the uniqueness of solutions to the $\Ell^2$ 
     \label{eq:OmegaBoundaryEstimate}
     \int_\Omega |u|^2 \d x \leq C \int_{\partial\Omega} |u|^2 \d\sigma,
   \end{align}
-  where $C$ depends only on $d$, $\theta$ and $\Omega$.
+  where $C$ depends only on $d$, $\theta$ and the Lipschitz character of $\Omega$.
 \end{lem}
 
 \begin{proof}
   We use Verchota's approximation theorem \cite{verchotaDiss} and approximate $\Omega$ by a sequence of smooth domains with uniform Lipschitz characters from inside.
-  As a consequence we may assume that $\Omega$ is smooth and $u$, $\phi$ are smoth in $\overline\Omega$..
+  As a consequence we may assume that $\Omega$ is smooth and $u$, $\phi$ are smooth in $\overline\Omega$.
   %The fact that $(u)^* \in \Ell^2(\partial\Omega)$ is necessary if we want to take the limit of the approximating sequence of domains, as it enables us to apply the dominated convergence theorem.
   Let $(w,\psi) \in \HH_0^1(\Omega; \C^d) \times \HH^1(\Omega)$ be a solution to the inhomogenous system
   \begin{align}
@@ -191,6 +191,7 @@ In the following lemma we will show the uniqueness of solutions to the $\Ell^2$ 
       \div(w) = 0 &\text{ in } \Omega.
     \end{cases}
   \end{align}
+  In fact the regularity theory for the Stokes equation gives us that $w$ and $\psi$ are smooth.
   It follows from testing \eqref{eq:inhomogenousStokes} against $u$ that
   \begin{align}
     \label{eq:testingInhomogenousStokes}
@@ -211,10 +212,107 @@ In the following lemma we will show the uniqueness of solutions to the $\Ell^2$ 
   \end{align*}
   For the third summand in \eqref{eq:testingInhomogenousStokes} we do the same with the only difference that the second integral does not vanish.
   Putting everything together gives
-  \begin{align*}
+  \begin{align}
     \int_\Omega |u|^2 \d x 
-    &= - \int_{\partial\Omega} u \cdot \big\{ \frac{\partial w}{\partial n} - \psi n \big\} \d\sigma \\
-    &\leq \| u\|_\partial \{ \|\nabla w\|_\partial + \|\psi\|_\partial \}
-  \end{align*}
+    &= - \int_{\partial\Omega} u \cdot \big\{ \frac{\partial w}{\partial n} - \psi n \big\} \d\sigma \nonumber\\
+    &\leq \| u\|_\partial \{ \|\nabla w\|_\partial + \|\psi\|_\partial \} \label{eq:u2estimate}
+  \end{align}
   by the Cauchy-Schwartz inequality.
+  As the pressure $\psi$ is only specified modulo additive constants, we may as well assume that $\int_{\partial\Omega} \psi \d\sigma = 0$.
+  Furthermore by the Schwartz theorem we see from \eqref{eq:inhomogenousStokes} that $\Delta \psi = \div(\bar u) = 0$ in $\Omega$. 
+  As stated in Remark \ref{rem:harmonicEstimate}, this allows us to use the results from the proof of \eqref{eq:nablaPhin} by setting $\phi = \psi$ to conclude that
+  \begin{align}
+    \|\psi\|_\partial 
+    &\leq C \| \nabla \psi \cdot n\|_{\HH^{-1}(\partial\Omega)} \nonumber
+    \intertext{and since $w$ has vanishing trace on $\partial\Omega$ we can use that fact that $(w,\psi)$ solves \eqref{eq:inhomogenousStokes} to further estimate}
+    &\leq C \{ \| \Delta w \cdot n \|_{\HH^{-1}(\partial\Omega)} + \| u \cdot n \|_{\HH^{-1}(\partial\Omega)} \} \nonumber\\
+    &\leq C \{ \|  \nabla w\|_\partial + \|u\|_\partial  \}, \label{eq:psiEstimate}
+  \end{align}
+  where for the last estimate we used \eqref{eq:deltaun} which is applicable since $\div w = 0$ on $\Omega$.
+  If we combine inequalities \eqref{eq:u2estimate} and \eqref{eq:psiEstimate}, we get
+  \begin{align}
+    \int_\Omega |u|^2 \d x \leq C \|u\|_\partial \|\nabla w \|_\partial + C \|u\|_\partial^2. \label{eq:u2estimate2}
+  \end{align}
+  We are left with estimating the first term in \eqref{eq:u2estimate2}.
+  In fact it will suffice to show the following inequality
+  \begin{align}
+    \label{eq:w2estimate}
+    \int_{\partial\Omega} |\nabla w|^2 \d\sigma \leq C \int_\Omega |u|^2 \d x + C \int_{\partial\Omega} |u|^2 \d \sigma
+  \end{align}
+  since by the weighted Young inequality this would make the estimate
+  \begin{align*}
+    C \| u\|_\partial \|\nabla w\|_\partial \leq \frac{1}{2} \int_\Omega |u|^2 \d x + C \int_{\partial\Omega} |u|^2 \d \sigma
+  \end{align*}
+  available which after rearranging terms yields \eqref{eq:OmegaBoundaryEstimate}.
+
+  To this end, we will first prove the Rellich type identity
+  \begin{align}
+    \int_{\partial\Omega} h_k n_k |\nabla w|^2 \d \sigma
+    &= \int_\Omega \div(h) |\nabla w|^2 \d x + 2 \Re \int_{\Omega} h_j \frac{\partial \psi}{\partial x_j} \frac{\bar w_j}{\partial x_k}\d x  \nonumber \\
+    &\quad + 2 \Re \int_\Omega h_k \lambda w_j \frac{\partial\bar w_j}{\partial x_k} + 2 \Re \int_\Omega h_k \bar u_j \frac{\partial \bar w_j}{\partial x_k} \d x. \label{eq:rellichIdentity3}
+  \end{align} 
+  Note that since all involved quantities are smooth up to the boundary, integration by parts is allowed and the proof the stated  Rellich identity boils down to a formal calculation.
+  Let $h \in C_0^1(\R^d, \R^d)$ with $h_k n_k \geq c > 0$ on $\partial \Omega$, see Verchota \cite{verchotaDiss}.
+  Then the divergence theorem gives
+  \begin{align*}
+    \int_{\partial\Omega} h_k n_k |\nabla w|^2 \d\sigma
+    = \int_{\Omega} \div(h |\nabla w|^2) \d x = \int_\Omega \div(h) |\nabla w|^2 \d x + \int_\Omega h_k \frac{\partial}{\partial x_k} \big( |\nabla w|^2 \big) \d x
+  \end{align*}
+  and we can rewrite the second summand as
+  \begin{align*}
+    \int_{\Omega} h_k \frac{\partial}{\partial x_k} (|\nabla w|^2) \d x
+    &= \int_{\Omega} h_k \frac{\partial}{\partial x_k} \big( \frac{\partial w_j}{\partial x_i} \frac{\partial \bar w_j}{\partial x_i}\big) \d x \\
+    &= 2 \Re \int_\Omega h_k \frac{\partial^2 w_j}{\partial x_k \partial x_i} \frac{\partial \bar w_j}{\partial x_i} \d x \\
+    &= - 2 \Re \int_\Omega h_k \frac{\partial}{\partial x_k} \big( \frac{\partial^2}{\partial x_i^2} w_j \big) \bar w_j \d x + \int_{\partial\Omega} h_k \big( \frac{\partial^2}{\partial x_k \partial x_i} w_j \big) \bar w_j \d x\\
+    &= 2 \Re \int_\Omega h_k ( \Delta w_j ) \frac{\partial \bar w_j}{\partial x_k} \d x + 0 \\
+    &= 2 \Re \int_\Omega h_k \big( \frac{\partial \psi}{\partial x_j} + \lambda w_j - \bar u_j \big) \frac{\partial \bar w_j}{\partial x_k} \d x,
+  \end{align*}
+  where in addition to partial integration we used \eqref{eq:inhomogenousStokes} and the fact that $w = 0$ on $\partial\Omega$.
+  Now we can apply the triangle inequality to the Rellich type identity \eqref{eq:rellichIdentity3} to obtain
+  \begin{align}
+    \int_{\partial\Omega} |\nabla w|^2 \d \sigma 
+    &\leq C \Big\{ \int_\Omega |\nabla w|^2 \d x + \int_\Omega |\nabla w | |\psi| \d x \nonumber\\
+    &\qquad + |\lambda| \int_\Omega |\nabla w| |w| \d x + \int_\Omega |\nabla w| |u| \d x \Big\}. \label{eq:rellichInequality3}
+  \end{align}
+
+  The next step consists in deriving estimates which are compatible with the right hand side of \label{eq:rellichInequality3}.
+  Testing \eqref{eq:inhomogenousStokes} with $\bar w$, itegration by parts gives us as in the proof of Lemma \ref{lem:laxMilgramIneq}
+  \begin{align*}
+    \int_\Omega |\nabla w|^2 \d x + |\lambda| \int_\Omega |w|^2 \d x \leq C \int_\Omega |w| |u| \d x
+  \end{align*}
+  The next step consists in using the previous inequality and the Poincar\'{e} inequality to estimate
+  \begin{align*}
+    \int_\Omega |\nabla w|^2 \d x + (1 + |\lambda| ) \int_\Omega |w|^2 \d x 
+    &\leq  (1 + C) \int_\Omega |\nabla w|^2 \d x + |\lambda| \int_\Omega |w|^2 \d x \\
+    &\leq C \int_\Omega |w| |u| \d x \\
+    &\leq C \| w\|_\partial \|u\|_\partial,
+    \intertext{where for the last step we used the Cauchy-Schwartz inequality. The weighted Young inequality allows us to further estimate}
+    &\leq \frac{C}{4\varepsilon} \int_\Omega |u|^2 \d x + C \varepsilon \int_\Omega |w|^2 \d x \\
+    &= \frac{\tilde C}{1 + |\lambda|} \int_\Omega |u|^2 \d x + \frac{1}{2} ( 1 + |\lambda| ) \int_\Omega |w|^2 \d x
+  \end{align*}
+  if we set $\varepsilon = \frac{(1 + |\lambda|)}{2 C}$.
+  Rearranging terms, we can produce our next estimate
+  \begin{align}
+    \int_\Omega |\nabla w|^2 \d x + ( 1 + |\lambda| ) \int_\Omega |w|^2 \d x
+    &\leq \frac{C}{1 + |\lambda|} \int_\Omega |u|^2 \d x.\label{eq:w2lambdaEstimate}
+  \end{align}
+  Now it's time to harvest: 
+  Using estimate \eqref{eq:rellichInequality3} together with \eqref{eq:w2lambdaEstimate} gives
+  \begin{align*}
+    &\int_{\partial\Omega} |\nabla w|^2 \d\sigma \\
+    &\quad\leq C \Big\{ \int_\Omega |\nabla w|^2 \d x + \int_\Omega |\nabla w| |\psi| \d x + |\lambda| \int_\Omega |\nabla w| |w| \d x + \int_\Omega |\nabla w| |u| \d x \Big\}.
+  \end{align*}
+  Using the weighted Young inequality, we see that we can simplify the right hand to
+  \begin{align*}
+    &C_\varepsilon (1 + |\lambda|) \int_{\Omega} |\nabla w|^2 \d x + C |\lambda| \int_\Omega |w|^2 \d x + C \int_\Omega |u|^2 \d x + \varepsilon \int_\Omega |\psi|^2 \d x, \\
+    \intertext{which with \eqref{eq:w2lambdaEstimate} can be bounded in this way}
+    &\quad \leq  C_\varepsilon \int_\Omega |u|^2 \d x + \varepsilon \int_\Omega |\psi|^2 \d x.
+  \end{align*}
+  Using the estimate $\|\psi\|_{\Ell^2(\partial\Omega)} \leq C \|\psi\|_\partial$ and inequality \eqref{eq:psiEstimate} gives
+  \begin{align*}
+    \varepsilon \int_\Omega |\psi|^2 \d x \leq \varepsilon C \int_{\partial\Omega} |\nabla w|^2 \d \sigma + C_\varepsilon \int_{\partial\Omega} |u|^2 \d\sigma.
+  \end{align*}
+  Choosing $\varepsilon = \frac{1}{2 C}$ and rearranging gives the desired estimate 
+  \eqref{eq:w2estimate}.
+  This concludes our proof.
 \end{proof}

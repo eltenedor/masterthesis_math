@@ -177,6 +177,7 @@ We make a quick detour that gives us the following lemma.
 The next lemma enables us to handle the solid integrals in \eqref{eq:rellichIdentity} and \eqref{eq:rellichIdentity2}.
 
 \begin{lem}
+  \label{lem:laxMilgramIneq}
   Under the same assumptions on $(u,\phi)$ and $\lambda$ as in Theorem \ref{thm:rellich}, we have
   \begin{align}
     \label{eq:laxMilgramIneq}
@@ -366,14 +367,23 @@ We prove one last lemma befor we tackle the central theorem of this chapter.
     &= \big| \int_{\partial\Omega} \frac{\partial\phi} \psi \d\sigma \big|
     = \big| \int_{\partial\Omega} \phi \frac{\partial \psi}{\partial n} \d \sigma \big| \\
     &\leq \|\phi\|_{\partial} \|\nabla \psi \|_\partial 
-    &\leq C \|\phi\|_\partial \|f\|_{\HH^1(\partial\Omega)},
+    \leq C \|\phi\|_\partial \|f\|_{\HH^1(\partial\Omega)},
   \end{align*}
   where in the last step we used the estimate $\|\nabla \psi\|_\partial \leq C \|f\|_{\HH^1(\partial\Omega)}$ for the $\Ell^2$ regularity problem.
   By duality this gives that
   \begin{align*}
-    \|\frac{\partial\phi}{\partial n} \|_{\HH^{-1}(\partial\Omega)} \leq C \|\phi\|_\partial.
+    \|\frac{\partial\phi}{\partial n} \|_{\HH^{-1}(\partial\Omega)} \leq C \|\phi\|_\partial. 
   \end{align*}
 \end{proof}
+
+\begin{rem}
+  \label{rem:harmonicEstimate}
+  A careful look at the proof of inequality \eqref{eq:nablaPhin} reveals that the estimate
+  \begin{align*}
+    c \| \phi\phi \|_\partial \leq \| \nabla \phi \cdot n \|_{\HH^{-1}(\partial\Omega)},
+  \end{align*}
+  holds for all harmonic functions $\phi$ with vanishing mean on $\partial\Omega$.
+\end{rem}
 
 After all this preparation we are now able to prove Theorem \ref{thm:rellich}.
 
