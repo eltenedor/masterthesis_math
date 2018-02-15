@@ -139,7 +139,7 @@ for $P \in \partial\Omega$ which will be used to prove boundedness of maximal op
    As furthermore $T_\lambda^*(f)(P)$ is bounded on $\Ell^p(\partial\Omega)$  we may now apply Theorem 2.1.14 from Grafakos \cite{grafakos} to conclude that $T_\lambda(f)(P)$ exists now for all $f \in \Ell^p(\partial\Omega; \C^d)$ and almost everywhere $P \in \partial\Omega$.
    The desired $\Ell^p$ estimate on $T_\lambda(f)$ now follows from the observation that 
    \begin{align*}
-     | T_\lambda(f)(P) | \leq T_\lambda^(f)(P)
+     | T_\lambda(f)(P) | \leq T_\lambda^*(f)(P)
    \end{align*}
    for almost everywhere $P \in \partial\Omega$.
 \end{proof}
@@ -152,6 +152,7 @@ For a function $u$ in $\Omega$, we define the nontangential maximal function $(u
 for $P \in \partial\Omega$, where $C > 2$ is a fixed and sufficiently large constant depending on $d$ and the Lipschitz character of $\Omega$.
 Note that in Shen cones we have that for $P, y \in \partial\Omega$ and $x \in \ShenCone(P)$
 \begin{align}
+  \label{eq:shenConeEstimate}
   |P - y| 
   &\leq |P - x| + |x - y| 
   \leq C \operatorname{dist}(x \partial\Omega) + |x - y|  \nonumber\\
@@ -223,6 +224,34 @@ We can now prove the boundedness of certain nontangential maximal operators.
     &\quad\leq
   \end{align*}
   Taking the supremum over all $x \in \Omega$ the claim follows.
+
+  We will now work on the proof of the estimate for $(u)^*$.
+  In order to derive $\Ell^p$ estimates on this maximal operator we will work directly with the Definition of the single layer potential \eqref{eq:defSingleLayer}.
+  For $P \in \partial\Omega$, estimate \eqref{eq:fundamentalMatrixEstimate} together with the estimate for Shen cones \eqref{eq:shenConeEstimate} gives that for all $x \in \ShenCone(P)$
+  \begin{align*}
+    |u^*(x)| 
+    &\leq  C \int_{\partial\Omega} \frac{1}{|x - y|^{d - 2}} |f(y)| \d\sigma(y) 
+    \leq  C \int_{\partial\Omega} \frac{1}{|P - y|^{d - 2}} |f(y)| \d\sigma(y),
+  \end{align*}
+  where $C$ only depends on $d$, $\theta$ and the Lipschitz character of $\Omega$.
+  Passing to the maximal operator yields the inequality
+  \begin{align*}
+    u^*(P) \leq  C \int_{\partial\Omega} \frac{1}{|P - y|^{d - 2}} |f(y)| \d\sigma(y),
+  \end{align*}
+  We are now left with the task to estimate the integral 
+  \begin{align*}
+    \int_{\partial\Omega} \frac{1}{|P - y|^{d - 2}} \d\sigma(y)
+  \end{align*}
+  uniformly for all $P \in \partial\Omega$.
+  Then the work that is left can then be given over to the Young inequality.
+  Let $r_0$ be the Radius from the definition of Lipschitz cylinders.
+  Then
+  \begin{align*}
+    \int_{\partial\Omega} \frac{1}{|P - y|^{d - 2}} \d\sigma(y)
+    &\leq \int_{\partial\Omega \cap \BB(P; r_0/4)} \frac{1}{|P - y|^{d - 2}} \d\sigma(y) + \int_{\partial\Omega \setminus \BB(P; r_0/4)} \frac{1}{|P - y|^{d - 2}} \d\sigma(y). \\
+    & \leq C r_0/4 +  \sigma(\partial\Omega) r_0^{2 - d} 4^{d - 2}.
+  \end{align*}
+  where $C$ only depends on $d$ and the Lipschitz character of $\Omega$.
 \end{proof}
 
 The next Lemma deals with \emph{trace formulas} for $\nabla u$ and $\phi$. We can now finally talk about boundary values as the existence of nontangential limits guarantees that there exists something on $\partial\Omega$ that is related to the function inside $\Omega$.
@@ -280,7 +309,7 @@ The next Lemma deals with \emph{trace formulas} for $\nabla u$ and $\phi$. We ca
     \frac{1}{|x -y|^{d - 2}} |f(y)|
   \end{align*}
   gives a suitable function for dominated convergence.
-  Set $\varepsilon = (4 |\lambda|^2)^{-1}$ and without loss of generality assume that $f \subseteq \BB(x,\varepsilon)$.
+  Set $\varepsilon = (4 |\lambda|^2)^{-1}$ and without loss of generality assume that $\supp f \subseteq \BB(x,\varepsilon)$.
   Furthermore assume that $|x_l - x| < \varepsilon$ for all $l \in \N$.
   Then $|x_l - y| \leq (2|\lambda|^2)^{-1}$ and Corollary \ref{cor:differenceFundamentalSolutionStokes} give
   \begin{align*}
