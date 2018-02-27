@@ -2,6 +2,23 @@
 
 \section{Lipschitz-Domains}
 
+In this section we establish the fundamental notions regarding Lipschitz domains.
+
+\begin{defn}
+  Let $\Omega \subset \R^d$ be a bounded open connected set.
+  We call $\Omega$ a \emph{bounded Lipschitz domain} if there exist $r_0, M > 0$ such that for all $x \in \partial\Omega$ there exists a function $\eta_x \colon \R^{d - 1} \to \R$ which is Lipschitz continuous and fulfills $\eta_x(0) = 0$ and $\|\nabla \eta_x \|_{\Ell^\infty(\R^{d - 1})} \leq M$, and a Rotation $R_x \colon \R^d \to \R^d$ such that for all $0 < r \leq r_0$ 
+  \begin{align*}
+    R_x[ \Omega - \{x\} ] \cap D(r) &= D_{\eta_x}(r) \\
+    R_x[\partial\Omega - \{x\}] \cap D(r) &= I_{\eta_x}(r),
+  \end{align*}
+  where
+  \begin{align*}
+    D(r) &\coloneqq \{ (x', x_d) \colon |x'| < r, |x_d| < 10 d (M + 1) r\} \\
+    D_{\eta_x}(r) &\coloneqq \{ (x', x_d) \colon |x'| < r, \eta_x(x') < x_d < 10 d(M+ 1)r\} \\
+    I_{\eta_x}(r) &\coloneqq \{ (x', x_d) \colon |x'| < r, \eta_x(x') = x_d \} .
+  \end{align*}
+\end{defn}
+
 \subsection{Basic Definitions and Properties}
 
 \subsection{Tangential and Nontangential Operators}
