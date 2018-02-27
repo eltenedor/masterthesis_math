@@ -162,7 +162,7 @@ where $C$ is the constant from \eqref{eq:defnNontangMaxFunction}
 
 We can now prove the boundedness of certain nontangential maximal operators.
 \begin{lem}
-  \label{lem:nontantentialMaximalFunctions}
+  \label{lem:nontangentialMaximalFunctions}
   Let $1 < p < \infty$ and $(u,\phi)$ be given by \eqref{eq:defSingleLayer} and \eqref{eq:defSingleLayerPressure}.
   Let furthermore $d \geq 3$.
   Then 
@@ -242,8 +242,7 @@ We can now prove the boundedness of certain nontangential maximal operators.
   \begin{align*}
     \int_{\partial\Omega} \frac{1}{|P - y|^{d - 2}} \d\sigma(y)
   \end{align*}
-  uniformly for all $P \in \partial\Omega$.
-  Then the work that is left can then be given over to the Young inequality.
+  uniformly for all $P \in \partial\Omega$, as the rest can be handled using the Young inequality.
   Let $r_0$ be the Radius from the definition of Lipschitz cylinders.
   Then
   \begin{align*}
@@ -433,7 +432,7 @@ Our next step is to introduce the \emph{double layer potential} $u(x) = \dlp_\la
   \label{eq:defDoubleLayer}
   u_j(x) = \int_{\partial\Omega} \Big\{ \frac{\partial}{\partial y_i} \{ \Gamma_{jk}(y - x; \lambda) \} n_i(y) - \Phi_j(y - x) n_k(y) \Big\} f_k(y) \d\sigma(y).
 \end{align}
-The corresponding pressure is defined via
+The corresponding pressure $\phi(x) = \dlp_{\phi}(f)(x)$ is defined via
 \begin{align}
   \label{eq:defDoubleLayerPressure}
   \phi(x)
@@ -444,13 +443,15 @@ Using \ref{eq:fundamentalVectorPressure} and \ref{eq:solutionStokesSystem} one c
 The next theorem will give us a suitable operator which maps a given function $f \in \Ell^p(\partial\Omega; \C^d)$ to boundary values of $u = \dlp_\lambda(f)$.
 
 \begin{thm}
+  \label{thm:nontangentialLimitDoubleLayer}
 Let $\lambda \in \Sigma_\theta$ and $\Omega$ be a bounded Lipschitz domain in $\R^d$, $d \geq 3$.
 Let $u$ be given by \eqref{eq:defDoubleLayer} for $f \in \Ell^p(\partial\Omega; \C^d)$, $1 < p < \infty$.
 Then
-\begin{align*}
+\begin{align}
+  \label{eq:lpBoundednessUNontangentialMax}
   \|(u)^*\|_{\Ell^p(\partial\Omega)} \leq C_p \|f\|_{\Ell^p(\partial\Omega)}
-\end{align*}
-where $C_p$ depents only on $d$, $p$, $\theta$ and the Lipschitz character of $\Omega$.
+\end{align}
+where $C_p$ depends only on $d$, $p$, $\theta$ and the Lipschitz character of $\Omega$.
 Furthermore 
 \begin{align}
   \label{eq:nontangentialLimitDoubleLayer}
@@ -460,7 +461,7 @@ where $K_{\bar\lambda}^*$ is the adjoint of the operator $K_{\bar\lambda}$ in \e
 \end{thm}
 
 \begin{proof}
-  The estimate for $(u)^*$ is a direct consequence of Lemma \ref{lem:nontantentialMaximalFunctions}, in particular of the estimates on $(\nabla u)^*$ and $(\phi)^*$.
+  The estimate for $(u)^*$ is a direct consequence of Lemma \ref{lem:nontangentialMaximalFunctions}, in particular of the estimates on $(\nabla u)^*$ and $(\phi)^*$.
 
   For the proof of \eqref{eq:nontangentialLimitDoubleLayer}, we begin by determining the adjoint of the operator $\K_{\bar\lambda}$.
   To this end we fill first work with truncated operators $\K_{\lambda}^{(\varepsilon)}$ which are defined as

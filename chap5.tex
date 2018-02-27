@@ -26,7 +26,7 @@ We will first derive bounds on the inverse operator of $(1/2) I + \K_\lambda$ fr
 
 \begin{proof}
   We start with $f \in \Ell^2(\partial\Omega; \C^d)$ and the corresponding single layer potentials $u = \slp_\lambda(f)$ and $\phi = \slp_\Phi(f)$ given by \eqref{eq:defSingleLayer} and \eqref{eq:defSingleLayerPressure}.
-  We saw in Chapter 3 that $(u,\phi)$ solves the Stokes resolvent problem in $\R^d \setminus \partial\Omega$ and got from Lemma \ref{lem:nontantentialMaximalFunctions} with $p = 2$ for the nontangential maximal functions that $(\nabla u)^*$, $(\phi)^* \in \Ell^2(\partial\Omega)$.
+  We saw in Chapter 3 that $(u,\phi)$ solves the Stokes resolvent problem in $\R^d \setminus \partial\Omega$ and got from Lemma \ref{lem:nontangentialMaximalFunctions} with $p = 2$ for the nontangential maximal functions that $(\nabla u)^*$, $(\phi)^* \in \Ell^2(\partial\Omega)$.
   We furthermore saw in Lemma \ref{lem:traceFormulas} that $\nabla u$ and $\phi$ have nontangential limits almost everywhere on $\partial\Omega$. 
   Finally in Theorem \ref{thm:jumpConditions} we saw that $\nabla_{\mathrm{tan}} u_+ = \nabla_{\mathrm{tan}} u_-$ and derived the jump condition $\big(\frac{\partial u}{\partial \nu}\big)_\pm = (\pm (1/2) I + \K_\lambda) f$.
 
@@ -70,6 +70,7 @@ We will first derive bounds on the inverse operator of $(1/2) I + \K_\lambda$ fr
 The next lemma works with the counterpart of $(1/2)I + \K_\lambda$.
 
 \begin{lem}
+  \label{lem:inverseEstimate}
   Let $\lambda \in \Sigma_\theta$.
   Then $-(1/2)I + \K_\lambda$ is a Fredholm operator on $\Ell^2(\partial\Omega; \C^d)$ with index zero and
   \begin{align}
@@ -169,8 +170,9 @@ The next lemma works with the counterpart of $(1/2)I + \K_\lambda$.
 In the following lemma we will show the uniqueness of solutions to the $\Ell^2$ Dirichlet problem to the Stokes resolvent system.
 
 \begin{lem}
+  \label{lem:l2unique}
   Let $\lambda \in \Sigma_\theta$ and $(u,\phi)$ be a solution to the Stokes resolvent problem in $\Omega$.
-  Furthermore suppose that the nontantential limit of $u$ exists almost everywhere on $\partial\Omega$ and that $(u)^* \in \Ell^2(\partial\Omega)$.
+  Furthermore suppose that the nontangential limit of $u$ exists almost everywhere on $\partial\Omega$ and that $(u)^* \in \Ell^2(\partial\Omega)$.
   Then 
   \begin{align}
     \label{eq:OmegaBoundaryEstimate}
@@ -275,10 +277,10 @@ In the following lemma we will show the uniqueness of solutions to the $\Ell^2$ 
     &\qquad + |\lambda| \int_\Omega |\nabla w| |w| \d x + \int_\Omega |\nabla w| |u| \d x \Big\}. \label{eq:rellichInequality3}
   \end{align}
 
-  The next step consists in deriving estimates which are compatible with the right hand side of \label{eq:rellichInequality3}.
+  The next step consists in deriving estimates which are compatible with the right hand side of \eqref{eq:rellichInequality3}.
   Testing \eqref{eq:inhomogenousStokes} with $\bar w$, itegration by parts gives us as in the proof of Lemma \ref{lem:laxMilgramIneq}
   \begin{align*}
-    \int_\Omega |\nabla w|^2 \d x + |\lambda| \int_\Omega |w|^2 \d x \leq C \int_\Omega |w| |u| \d x
+    \int_\Omega |\nabla w|^2 \d x + |\lambda| \int_\Omega |w|^2 \d x \leq C \int_\Omega |w| |u| \d x.
   \end{align*}
   The next step consists in using the previous inequality and the Poincar\'{e} inequality to estimate
   \begin{align*}
@@ -316,3 +318,97 @@ In the following lemma we will show the uniqueness of solutions to the $\Ell^2$ 
   \eqref{eq:w2estimate}.
   This concludes our proof.
 \end{proof}
+
+The next Theorem states the important fact that in $\Ell^2$ the Dirichlet Stokes resolvent problem has a unique solution.
+
+\begin{thm}
+  \label{thm:exAndUniqueSolution}
+  Let $\Omega$ be a bounded Lipschitz domain in $\R^d$, $d \geq 3$ with connected boundary and let $\lambda \in \Sigma_\theta$.
+  For all $g \in \Ell^2_n(\partial\Omega)$ there exists a unique $u$ and harmonic function $\phi$ which is unique up to constants such that $(u,\phi)$ satisfies \eqref{eq:stokesResolvent}, $(u)^* \in \Ell^2(\partial\Omega)$ and $u = g$ on $\partial\Omega$ in the sense of nontangential convergence.
+  Moreover the estimate $ \| (u)^* \|_\partial \leq C \| g\|_\partial$ holds and $u$ may be represented by the double layer potential $\dlp_\lambda(f)$ with $\|f\|_\partial \leq C \|g\|_\partial$, where $C$ depends only on $d$, $\theta$ and the Lipschitz character of $\Omega$.
+\end{thm}
+
+\begin{proof}
+  By Lemma \ref{lem:l2unique} we already now that the problem under consideration admits at most one solution.
+  Therefore we only have to worry about the existence of a solution.
+  To this end we want to apply Lemma \ref{lem:inverseEstimate}.
+  We first note that since $T \coloneqq -(1/2) I + \K_{\bar \lambda}$ is a Fredholm operator on $\Ell^2(\partial\Omega; \C^d)$ with index $0$ the same is true for its adjoint $T^* \coloneqq (-1/2)I + \K_{\bar\lambda}^*$.
+  We know that for all $f \in \Ell^2(\partial\Omega; \C^d)$ we have $\div(\dlp_\lambda f) = 0$ and therefore
+  \begin{align*}
+    \int_{\partial\Omega} T^* f \cdot n \d\sigma =\int_{\partial\Omega} u_+ \cdot n \d\sigma =  0, 
+  \end{align*}
+  where for the first inequality we applied Theorem \ref{thm:nontangentialLimitDoubleLayer}. The second equality uses Verchota's approximation scheme in order to apply the divergence theorem and the fact that $(u)^*$ is integrable together with dominated convergence.
+  This gives $\Im(T^*) \subseteq \Ell_n^2(\partial\Omega)$.
+  This gives us that we have 
+  \begin{align*}
+    \operatorname{span}(n)
+    = \Ell_n^2(\partial\Omega)^\perp
+    \subseteq \Im(T^*)^\perp
+    = \ker(T)
+  \end{align*}
+  on the one hand and on the other hand, as $T$ is injective on $\Ell^2_n(\partial\Omega)$ by \eqref{eq:inverseEstimate2}, we have that $ \operatorname{span}(n) \supseteq \ker(T)$.
+  This yields $\operatorname{span}(n) = \ker(T)$.
+  We can use this equality and show that
+  \begin{align*}
+    \Ell^2_n(\partial\Omega) = \ker(T)^\perp = \overline{\Im(T^*)} = \Im(T^*),
+  \end{align*}
+  where for the last equality we used the fact that the range of $T^*$ is closed, as usual for Fredholm operators.
+  With the same argument we can show for $T$ that
+  \begin{align*}
+    \ker(T^*)^\perp = \overline{\Im(T)} = \Im(T).
+  \end{align*}
+  Consequently the operator
+  \begin{align*}
+    T^* \colon \Im(T) \to \Ell^2_n(\partial\Omega)
+  \end{align*}
+  is invertible by the continuous inverse theorem.
+  Considering once again estimate \eqref{eq:inverseEstimate2} and a duality argument we get that
+  \begin{align}
+    \label{eq:dualityArgument}
+    \|f\|_\partial \leq C \| T^* f\|_\partial
+  \end{align}
+  for all $f \in \Im(-(1/2)I + \K_\lambda)$.
+
+  We are now in position to derive the missing estimates which were stated in the theorem.
+  For $g \in \Ell^2_n(\partial\Omega)$ let $f \in \Im(T)$ with $T^* f = g$.
+  Furthermore let $(u,\phi)$ be the double layer potential defined in equations \eqref{eq:defDoubleLayer} and \eqref{eq:defDoubleLayerPressure}.
+  Then $u_+ = T^* f =  g$ on $\partial\Omega$ by Theorem \ref{thm:nontangentialLimitDoubleLayer}.
+  Additionally we have that
+  \begin{align*}
+    \|(u)^* \|_\partial \leq C \|f\|_\partial \leq C \| g\|_\partial
+  \end{align*}
+  where we used inequality \eqref{eq:lpBoundednessUNontangentialMax} and \eqref{eq:dualityArgument}.
+\end{proof}
+
+The next theorem can in some sense be regarded as a reverse trace theorem and will play an important role for the proof of the needed reverse H\"{o}lder inequality.
+
+\begin{thm}
+  Let $\Omega$ be a bounded Lipschitz domain in $\R^d$, $d \geq 3$ with connected boundary.
+  Let $u \in \HH^1(\Omega; \C^d)$ and $\pi \in \Ell^2(\Omega)$ satisfy the Stokes resolvent problem in $\Omega$ for some $\lambda \in \Sigma_\theta$.
+  Then
+  \begin{align}
+    \label{eq:reverseTrace}
+    \Big( \int_\Omega |u|^p \d x \Big)^{1/p} \leq C \Big( \int_{\partial\Omega} |u|^2 \d\sigma \Big)^{1/2},
+  \end{align}
+  where $p = \frac{2d}{d - 1}$ and $C$ depends only on $d$, $\theta$ and the Lipschitz character of $\Omega$.
+\end{thm}
+
+\begin{proof}
+  Let us denote the trace of $u$ on $\partial\Omega$ by $f$ and let furthermore $u = \dlp(f)$ be the solution of the $\Ell^2$ Dirichlet problem given by Theorem \ref{thm:exAndUniqueSolution}.
+  For the sequence $(\Omega_j)_{j \in \N}$ of smooth domains that approximates $\Omega$ from inside as described by Verchota \cite{verchotaDiss} an application of Lemma \ref{lem:l2unique} shows
+  \begin{align}
+    \int_{\Omega_j} |u - w|^2 \d x \leq C \int_{\partial\Omega_j} |u - w|^2 \d \sigma,
+  \end{align}
+  where $C$ does not depend on $j$ but on the Lipschitz character of $\Omega$.
+  Now let $\varepsilon > 0$ be given. 
+  Then there exists $\varphi_\varepsilon \in \CC^\infty(\overline\Omega)$ such that $\|\varphi_\varepsilon - u\|_{\HH^1(\Omega)}^2 \leq \frac{\varepsilon}{2}$.
+  This gives that
+  \begin{align*}
+    \int_{\partial\Omega_j} |u - w|^2 \d\sigma 
+    &\leq \int_{\partial\Omega_j} |u - \varphi_\varepsilon |^2 \d\sigma + \int_{\partial\Omega_j} |\varphi_\varepsilon - w|^2 \d\sigma \\
+    &\leq C \| u - \varphi_\varepsilon \|_{\HH^1(\Omega)}^2 + \int_{\partial\Omega_j} |\varphi_\varepsilon - w|^2 \d \sigma,
+  \end{align*}
+  where once again $C$ only depends on the Lipschitz character of $\Omega$ and is thus independent of $j$.
+\end{proof}
+
+
