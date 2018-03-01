@@ -367,7 +367,10 @@ The next Theorem states the important fact that in $\Ell^2$ the Dirichlet Stokes
     \label{eq:dualityArgument}
     \|f\|_\partial \leq C \| T^* f\|_\partial
   \end{align}
-  for all $f \in \Im(-(1/2)I + \K_\lambda)$.
+  for all $f \in \Im(-(1/2)I + \K_\lambda)$, as
+  \begin{align*}
+    \| (T^*)^{-1} \|_{ \Ell^2_n(\partial\Omega), R(-(1/2)I + \K_{\bar\lambda}),} = \| T^{-1} \|_{R(-(1/2) I + \K_{\bar\lambda}), \Ell^2_n(\partial\Omega)}.
+  \end{align*}
 
   We are now in position to derive the missing estimates which were stated in the theorem.
   For $g \in \Ell^2_n(\partial\Omega)$ let $f \in \Im(T)$ with $T^* f = g$.
@@ -394,7 +397,7 @@ The next theorem can in some sense be regarded as a reverse trace theorem and wi
 \end{thm}
 
 \begin{proof}
-  Let us denote the trace of $u$ on $\partial\Omega$ by $f$ and let furthermore $u = \dlp(f)$ be the solution of the $\Ell^2$ Dirichlet problem given by Theorem \ref{thm:exAndUniqueSolution}.
+  Let us denote the trace of $u$ on $\partial\Omega$ by $f$ and let furthermore $w = \dlp(g)$, $g \in \Ell^2(\partial\Omega; \C^d)$, be the solution of the $\Ell^2$ Dirichlet problem with boundary data $f$ as given by Theorem \ref{thm:exAndUniqueSolution}.
   For the sequence $(\Omega_j)_{j \in \N}$ of smooth domains that approximates $\Omega$ from inside as described by Verchota \cite{verchotaDiss} an application of Lemma \ref{lem:l2unique} shows
   \begin{align}
     \int_{\Omega_j} |u - w|^2 \d x \leq C \int_{\partial\Omega_j} |u - w|^2 \d \sigma,
@@ -402,13 +405,41 @@ The next theorem can in some sense be regarded as a reverse trace theorem and wi
   where $C$ does not depend on $j$ but on the Lipschitz character of $\Omega$.
   Now let $\varepsilon > 0$ be given. 
   Then there exists $\varphi_\varepsilon \in \CC^\infty(\overline\Omega)$ such that $\|\varphi_\varepsilon - u\|_{\HH^1(\Omega)}^2 \leq \frac{\varepsilon}{2}$.
-  This gives that
+  This gives together with the trace theorem that
   \begin{align*}
     \int_{\partial\Omega_j} |u - w|^2 \d\sigma 
     &\leq \int_{\partial\Omega_j} |u - \varphi_\varepsilon |^2 \d\sigma + \int_{\partial\Omega_j} |\varphi_\varepsilon - w|^2 \d\sigma \\
     &\leq C \| u - \varphi_\varepsilon \|_{\HH^1(\Omega)}^2 + \int_{\partial\Omega_j} |\varphi_\varepsilon - w|^2 \d \sigma,
   \end{align*}
   where once again $C$ only depends on the Lipschitz character of $\Omega$ and is thus independent of $j$.
+  Due to Verchota \cite{verchota} we may take $j$ large enough such that also the second summand of the previous inequality is smaller than $\varepsilon/2$.
+  As a consequence we get that $w = u$ in $\Omega$.
+  Now Theorem \ref{thm:exAndUniqueSolution} gives
+  \begin{align*}
+    \| (u)^* \|_\partial = \| (w)^* \|_\partial \leq C \| f\|_\partial = C \|u\|_\partial,
+  \end{align*}
+  where $C$ depends on $d$, $\theta$, and the Lipschitz character of $\Omega$.
+  The claimed inequality now follows from estimate
+  \begin{align}
+    \label{weizhangestimate}
+    \Big( \int_\Omega |u|^p \d x \Big)^{1/p} \leq C \Big( \int_{\partial\Omega} |(u)^*|^2 \d \sigma \Big)^{1/2},
+  \end{align}
+  where $C$ only depends on $d$ and the Lipschitz constant of $\Omega$.
+  The proof of \eqref{weizhangestimate} was carried out by Wei and Zhang in \cite{weiZhang}.
 \end{proof}
 
+\begin{rem}
+  Let $(u,\phi)$ be a solution of the Stokes resolvent system in the domain $\BB(x_0, r)$.
+  \begin{align}
+    \label{eq:interiorEstimateDoubleLayer}
+    |\nabla^l u(x_0) | \leq \frac{C_l}{r^l} \Big( \dashint_{\BB(x_0, r)} |u(x)|^2 \d x \Big)^{1/2}
+  \end{align}
+  for all $l \geq 0$, where $C_l$ only depends on $d$, $l$ and $\theta$.
+  Without loss of generality we may rescale and translate and assume that $x_0 = 0$ and $r = 2$.
+  For $t \in (1,2)$ we now apply Theorem \ref{thm:exAndUniqueSolution} in the domain $\BB(0, t)$ to derive the estimate
+  \begin{align*}
+    |\nabla^l u(x_0)|^2 \leq C_l \int_{\partial \BB(0, t)} |u|^2(y) \d\sigma(y).
+  \end{align*}
+  Integrating this inequality in $t$ over the interval $(1,2)$ gives \eqref{eq:interiorEstimateDoubleLayer}.
+\end{rem}
 
