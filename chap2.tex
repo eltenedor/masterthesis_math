@@ -182,7 +182,7 @@ This allows us to write for $d \geq 3$
   G(x;\lambda) - G(x; 0) = \frac{i}{4(2\pi)^{\frac{d}{2} - 1}} \cdot \frac{1}{|x|^{d - 2}} \Big\{ (k|x|)^{\frac{d}{2} - 1} H_{\frac{d}{2} - 1}^{(1)}(k|x|) - a_d \Big\}.
 \end{align}
 
-The following lemma is concerned with estimating derivatives of \eqref{eq:HelmholtzLaplaceDifference}
+The following lemma is helps us to estimate derivatives of \eqref{eq:HelmholtzLaplaceDifference} and the $2$-dimensional counterpart.
 
 \begin{lem}
   \label{lem:HelmholtzLaplaceDifference}
@@ -193,30 +193,20 @@ The following lemma is concerned with estimating derivatives of \eqref{eq:Helmho
     |\nabla_x^l \{ G(x; \lambda) - G(x; 0) \}| \leq C |\lambda| |x|^{4 - d - l}
   \end{align}
   if $d \geq 5$ and $l \geq 0$, where $C$ depends only on $d$, $l$ and $\theta$.
-  If $d = 3$ or $4$, estimate \eqref{eq:HelmholtzLaplaceDifferenceEstimate} holds for $l \geq 1$.
-  If $d = 2$, then
-  \begin{align}
-    \label{eq:HelmholtzLaplaceDifferenceEstimate2d}
-    |\nabla_x^l \{ G(x; \lambda) - G(x; 0) \}| \leq 
-    \begin{cases} 
-      C |\lambda| |x|^{2 - l}, &\text{ if } |\lambda||x|^2 \geq \frac{1}{2} \\  
-      C |\lambda||x|^{2 - l} \{ |\log( |\lambda| |x|^2)| + 1  \}, &\text{ if } |\lambda| |x|^2 < \frac{1}{2},
-    \end{cases}
-  \end{align}
-  where $C$ depends only on $l$ and $\theta$.
+  If $d = 3$ or $4$, estimate \eqref{eq:HelmholtzLaplaceDifferenceEstimate} holds for $l \geq 1$ and if $d = 2$ the estimate holds for $l \geq 3$.
 \end{lem}
 
 \begin{proof}
   \begin{enumerate}[(a)]
-    \item In this part we will show that the desired estimates \eqref{eq:HelmholtzLaplaceDifferenceEstimate} and \eqref{eq:HelmholtzLaplaceDifferenceEstimate} hold if we assume that $|\lambda| |x|^2 \geq \frac{1}{2}$.
+    \item In this part we will show that the desired estimates \eqref{eq:HelmholtzLaplaceDifferenceEstimate} and \eqref{eq:HelmholtzLaplaceDifferenceEstimate} hold if we assume that $|\lambda| |x|^2 > \frac{1}{2}$.
     In this case, Lemma \ref{lem:estimateHelmholtzDerivatives} gives
     \begin{align*}
       |\nabla_x^l \{ G(x; \lambda) - G(x; 0) \} |
       \leq C \Big\{ \frac{\e^{-c \sqrt{|\lambda|} |x|}}{|x|^{d - 2 + l}} + \frac{1}{|x|^{d - 2 + l}} \Big\} \leq C \frac{|\lambda|}{|x|^{d - 4 + l}},
     \end{align*}
     where $C$ depends only on $d$, $l$ and $\theta$.
-    Therefore, for the remaining proof we will suppose $|\lambda||x|^2 < \frac{1}{2}$.
-  \item In this step, we show that we can restrict ourselves to proving \eqref{eq:HelmholtzLaplaceDifferenceEstimate} and, respectively, \eqref{eq:HelmholtzLaplaceDifferenceEstimate2d} in three cases: (1) $d \geq 5$ and $l = 0$; (2) $d = 3$ or $4$ and $l = 1$; (3) $d = 2$ and $l = 1$.
+    Therefore, for the remaining proof we will suppose $|\lambda||x|^2 \leq \frac{1}{2}$.
+  \item In this step, we show that we can restrict ourselves to proving \eqref{eq:HelmholtzLaplaceDifferenceEstimate} in three cases: (1) $d \geq 5$ and $l = 0$; (2) $d = 3$ or $4$ and $l = 1$; (3) $d = 2$ and $l = 3$.
     
     Suppose \eqref{eq:HelmholtzLaplaceDifferenceEstimate} holds in case (1) and let $l > 1$.
     If we set $ w(x) = G(x;\lambda) - G(x;0) $, we have $\Delta_x w = \lambda G(x; \lambda)$ in $\R^d \setminus \{0\}$.
@@ -321,7 +311,7 @@ The following lemma is concerned with estimating derivatives of \eqref{eq:Helmho
     \end{align*}
     since $|\lambda||x| < \frac{1}{2}$.
 
-  \item For the last case $d = 2$ and $l = 1$, we will directly calculate the estimate using the asymptotic expansion of $H_0^{(1)}(z)$ with $z = k|x|$:
+  \item For the last case $d = 2$ and $l = 3$, we will directly calculate the estimate using the asymptotic expansion of $H_0^{(1)}(z)$ with $z = k|x|$:
     \begin{align*}
       H_0^{(1)}(z) 
       &= J_0(z) + \ii Y_0(z) \\
@@ -336,6 +326,21 @@ The following lemma is concerned with estimating derivatives of \eqref{eq:Helmho
 
   \end{enumerate}
 \end{proof}
+
+\begin{rem}
+  In the situation of Lemma \ref{lem:HelmholtzLaplaceDifference} one can show by considering the asymptotic expansions and if $|\lambda| |x|^2 \leq (1/2)$ that 
+  \begin{align*}
+    |G(x; \lambda) - G(x; 0) | \leq \begin{cases}
+      C \sqrt{|\lambda|} \quad&\text{if } d = 3, \\
+      C |\lambda| \{ |\log(|\lambda| |x|^2) | + 1 \} \quad&\text{if } d = 4.
+    \end{cases}
+  \end{align*}
+  Also using the asymptotic expansions it can be shown that if $d = 2$
+  \begin{align*}
+    |\nabla_x^l \{ G(x; \lambda) - G(x; 0) \} | \leq C |\lambda| |x|^{2 - l} \{ |\log(|\lambda| |x|^2 ) | + 1 \}
+  \end{align*}
+  for $l \in \{1, 2\}$.
+\end{rem}
 
   The fundamental solution to the (scalar) Helmholtz equation and the Laplace equation form the main ingredient for the following matrix of fundamental solutions $(\Gamma(x;\lambda) = (\Gamma_{\alpha\beta}(x;\lambda))_{d \times d}$ with pole at the origin to the Stokes resolvent problem with $\lambda \in \Sigma_\theta$:
   \begin{align}
@@ -375,15 +380,8 @@ The following lemma is concerned with estimating derivatives of \eqref{eq:Helmho
     \begin{align}
       \label{eq:fundamentalMatrixEstimate}
       | \nabla_x^l \Gamma(x; \lambda) | &\leq \frac{C}{(1 + |\lambda||x|^2) |x|^{d - 2 + l}} 
-      \intertext{where $C$ depends only on $d$, $l$ and $\theta$. For $d = 2$ and $l \geq 1$ the estimate reads}
-      | \nabla_x^l \Gamma(x; \lambda)| &\leq 
-      \begin{cases}
-        \label{eq:fundamentalMatrixEstimate2d}
-        \frac{C}{(1 + |\lambda||x|^2)|x|^l} &\quad\text{if } |\lambda||x|^2 > \frac{1}{2},\\
-        \frac{C}{(1 + |\lambda||x|^2)|x|^l}\{ |\log(|\lambda||x|^2) | + 1 \} &\quad\text{if } |\lambda||x|^2 \leq \frac{1}{2},\\
-      \end{cases}
     \end{align}
-    where $C$ depends only on $l$ and $\theta$.
+      where $C$ depends only on $d$, $l$ and $\theta$. For $d = 2$ and $l \geq 1$ the same estimate holds.
   \end{thm}
 
   \begin{proof}
@@ -413,12 +411,12 @@ The following lemma is concerned with estimating derivatives of \eqref{eq:Helmho
       &\leq \frac{C}{|x|^{d - 2 + l}} \frac{(1 + |\lambda| |x|^2)}{(1 + |\lambda| |x|^2)} \\
       &\leq \frac{C}{(1 + |\lambda| |x|^2) |x|^{d - 2 + l}}
     \end{align*}
-    which gives the claim for $d \geq 3$.
-    If $d = 2$ the steps are analogous considering the different structure of the estimate \eqref{eq:HelmholtzLaplaceDifferenceEstimate2d}.
+    which gives the claim.
+    %If $d = 2$ the steps are analogous considering the different structure of the estimate \eqref{eq:HelmholtzLaplaceDifferenceEstimate2d}.
   \end{proof}
 
-  Regarding the structure of the above proof, the derived estimate for the case $d = 2$ seems natural at first sight. 
-  One important difference compared to $d \geq 3$ is that it is not possible to derive an estimate of the form $|\nabla_x^l \Gamma(x; \lambda)| \leq C |x|^{-l}$.
+ %Regarding the structure of the above proof, the derived estimate for the case $d = 2$ seems natural at first sight. 
+ %One important difference compared to $d \geq 3$ is that it is not possible to derive an estimate of the form $|\nabla_x^l \Gamma(x; \lambda)| \leq C |x|^{-l}$.
 
   If $\lambda = 0$, the matrix of fundamental solutions to the Stokes problem in $\R^d$ with pole at the origin is given by $\Gamma(x; 0) = (\Gamma_{\alpha\beta}(x; 0))_{d \times d}$, where
   \begin{align}

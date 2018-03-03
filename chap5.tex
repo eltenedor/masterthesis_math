@@ -404,7 +404,16 @@ The next theorem can in some sense be regarded as a reverse trace theorem and wi
   \end{align}
   where $C$ does not depend on $j$ but on the Lipschitz character of $\Omega$.
   Now let $\varepsilon > 0$ be given. 
-  Then there exists $\varphi_\varepsilon \in \CC^\infty(\overline\Omega)$ such that $\|\varphi_\varepsilon - u\|_{\HH^1(\Omega)}^2 \leq \frac{\varepsilon}{2}$.
+  Then there exists $\varphi_\varepsilon \in \CC^\infty(\overline\Omega)$ such that $\|\varphi_\varepsilon - u\|_{\HH^1(\Omega)}^2 \leq \frac{\varepsilon}{3}$.
+  Due to Verchota we know that 
+  \begin{align*}
+    \int_{\partial\Omega_j} |\varphi_\varepsilon - w|^2 \d\sigma \to \int_{\partial\Omega} |\varphi_\varepsilon - u|^2 \d\sigma, \text{ as } j \to \infty
+  \end{align*}
+  since $w = f$ on $\partial\Omega$ in the sense of nontangential convergence.
+  Therefore we choose $J$ large enough such that for all $j \geq J$ we have
+  \begin{align*}
+    \int_{\partial\Omega_j} |\varphi_\varepsilon - w|^2 \d\sigma \leq \frac{2}{3} \varepsilon.
+  \end{align*}
   This gives together with the trace theorem that
   \begin{align*}
     \int_{\partial\Omega_j} |u - w|^2 \d\sigma 
@@ -429,16 +438,20 @@ The next theorem can in some sense be regarded as a reverse trace theorem and wi
 \end{proof}
 
 \begin{rem}
-  Let $(u,\phi)$ be a solution of the Stokes resolvent system in the domain $\BB(x_0, r)$.
+  Let $(u,\phi)$ be a solution of the Stokes resolvent system in the domain $\BB(x_0, r) \subset \R^d$, $d \geq 3$.
   \begin{align}
     \label{eq:interiorEstimateDoubleLayer}
     |\nabla^l u(x_0) | \leq \frac{C_l}{r^l} \Big( \dashint_{\BB(x_0, r)} |u(x)|^2 \d x \Big)^{1/2}
   \end{align}
   for all $l \geq 0$, where $C_l$ only depends on $d$, $l$ and $\theta$.
   Without loss of generality we may rescale and translate and assume that $x_0 = 0$ and $r = 2$.
-  For $t \in (1,2)$ we now apply Theorem \ref{thm:exAndUniqueSolution} in the domain $\BB(0, t)$ to derive the estimate
+  Let $t \in (1,2)$. By Theorem \ref{thm:exAndUniqueSolution} we know that a solution to the Stokes resolvent sytsem on $\BB(0, t) \subsetneq \BB(0,2)$ with boundary values $g_t \coloneqq \operatorname{Tr}_{\partial\BB(0,t)} u \in \Ell^2(\partial\BB(0,t))$ is given by a boundary layer potential $\dlp_\lambda(f)$.
+  We can use this fact to derive the desired estimate via
   \begin{align*}
-    |\nabla^l u(x_0)|^2 \leq C_l \int_{\partial \BB(0, t)} |u|^2(y) \d\sigma(y).
+    |\nabla^l u(0)|^2 
+    &\leq C \Big( \int_{\partial \BB(0, t)} \big\{ |\nabla_x^l \Gamma(y; \lambda)|  + |\nabla_x^l \Phi(y) | \big\} |f(y)| \d\sigma(y)\Big)^2 \\
+    \leq  C \Big( \int_{\partial \BB(0,t)} \frac{1}{t^{d - 1 + l}} \Big)^2
+    .
   \end{align*}
   Integrating this inequality in $t$ over the interval $(1,2)$ gives \eqref{eq:interiorEstimateDoubleLayer}.
 \end{rem}
