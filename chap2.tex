@@ -339,7 +339,7 @@ The following lemma is helps us to estimate derivatives of \eqref{eq:HelmholtzLa
   \begin{align*}
     |\nabla_x^l \{ G(x; \lambda) - G(x; 0) \} | \leq C |\lambda| |x|^{2 - l} \{ |\log(|\lambda| |x|^2 ) | + 1 \}
   \end{align*}
-  for $l \in \{1, 2\}$.
+  for $l \in \{1, 2\}$.  
 \end{rem}
 
   The fundamental solution to the (scalar) Helmholtz equation and the Laplace equation form the main ingredient for the following matrix of fundamental solutions $(\Gamma(x;\lambda) = (\Gamma_{\alpha\beta}(x;\lambda))_{d \times d}$ with pole at the origin to the Stokes resolvent problem with $\lambda \in \Sigma_\theta$:
@@ -399,14 +399,13 @@ The following lemma is helps us to estimate derivatives of \eqref{eq:HelmholtzLa
       &\leq |\nabla_x^l G(x; \lambda)| + \frac{1}{|\lambda|} |\nabla_x^{l + 2} G(x; \lambda) | + \frac{1}{|\lambda|} |\nabla_x^{l + 2} G(x; 0)| \\
     &\leq\frac{C_l \e^{-c \sqrt{|\lambda|} |x|}}{|x|^{d - 2 + l}} + \frac{1}{|\lambda|} \frac{C_{l + 2} \e^{-\sqrt{|\lambda|} |x|}}{|x|^2 |x|^{d - 2 + l}} + \frac{1}{|\lambda|} \frac{C}{|x|^2 |x|^{d - 2 + l}} \\
     %&\leq \frac{C}{(1 + |\lambda||x|^2)} \frac{1}{|x|^{d - 2 + l}} + \frac{C_{l + 2} |\lambda||x|^2}{(1 + |\lambda||x|^2)} \frac{1}{|\lambda| |x|^2} \frac{1}{|x|^{d - 2 + l}} + \frac{C}{1 + |\lambda||x|^2} \frac{1}{|x|^{d - 2 + l}}
-    &\leq \frac{C}{(1 + |\lambda| |x|^2} \frac{1}{|x|^{d - 2 + l}}
+    &\leq \frac{C}{1 + |\lambda| |x|^2}\; \frac{1}{|x|^{d - 2 + l}}
     \end{align*}
     Now let $|\lambda| |x|^2 \leq \frac{1}{2}$.
     Then by \ref{lem:estimateHelmholtzDerivatives} and \ref{lem:HelmholtzLaplaceDifference} we get
     \begin{align*}
       |\nabla_x^l \Gamma(x; \lambda) |
       &\leq |\nabla_x^l G(x; \lambda) | + \frac{1}{|\lambda|} |\nabla_x^{l + 2} ( G(x; \lambda) - G(x; 0))| \\
-      &\leq \frac{C}{|x|^{d - 2 + l}} + \frac{1}{|\lambda|} \cdot C |\lambda| |x|^{4 - d - (l + 2)} \\
       &\leq \frac{C}{|x|^{d - 2 + l}} + \frac{1}{|\lambda|} \cdot C |\lambda| |x|^{4 - d - (l + 2)} \\
       &\leq \frac{C}{|x|^{d - 2 + l}} \frac{(1 + |\lambda| |x|^2)}{(1 + |\lambda| |x|^2)} \\
       &\leq \frac{C}{(1 + |\lambda| |x|^2) |x|^{d - 2 + l}}
