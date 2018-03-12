@@ -197,19 +197,26 @@ We can now prove the boundedness of certain nontangential maximal operators.
     &\leq \frac{C}{t^{n - 1}} \int_{|y - P| \leq t} |f(y)| \d \sigma(y)
     \leq C M_{\partial\Omega} (f)(P).
   \end{align*}
-  For $I_1$, we calculate
-  \begin{align*}
-    &\Big| \int_{| y - P | > t} \nabla \Gamma_{j k} (x - y; \lambda) f_k(y) - \nabla \Gamma_{jk}(P - y; \lambda) f_k(y) + \nabla \Gamma_{jk}(P - y; \lambda) f_k(y) \d \sigma(y) \Big| \\
-    &\quad\leq \Big| \int_{|y - P| > t} \nabla\Gamma_{jk} (x - y; \lambda) f_k(y) - \nabla\Gamma_{jk}(P - y; \lambda) f_k(y) \d \sigma(y) \Big| \\
-    &\qquad+ \Big| \int_{|y - P| > t} \nabla\Gamma_{jk}(P - y; \lambda) f_k(y) \d\sigma(y) \Big|.
-  \end{align*}
+%  For $I_1$, we calculate
+%  \begin{align*}
+%    &\Big| \int_{| y - P | > t} \nabla \Gamma_{j k} (x - y; \lambda) f_k(y) - \nabla \Gamma_{jk}(P - y; \lambda) f_k(y) + \nabla \Gamma_{jk}(P - y; \lambda) f_k(y) \d \sigma(y) \Big| \\
+%    &\quad\leq \Big| \int_{|y - P| > t} \nabla\Gamma_{jk} (x - y; \lambda) f_k(y) - \nabla\Gamma_{jk}(P - y; \lambda) f_k(y) \d \sigma(y) \Big| \\
+%    &\qquad+ \Big| \int_{|y - P| > t} \nabla\Gamma_{jk}(P - y; \lambda) f_k(y) \d\sigma(y) \Big|.
+%  \end{align*}
+   For $I_1$, we calculate
+   \begin{align*}
+     &\Big| \int_{| y - P | > t} \nabla \Gamma_{j k} (x - y; \lambda) f_k(y) - \nabla \Gamma_{jk}(x - y; 0) f_k(y) + \nabla \Gamma_{jk}(x - y; 0) f_k(y) \d \sigma(y) \Big| \\
+     &\quad\leq \Big| \int_{|y - P| > t} \nabla\Gamma_{jk}(x - y; \lambda) f_k(y) - \nabla\Gamma_{jk}(P - y; \lambda) f_k(y) \d \sigma(y) \Big| \\
+     &\qquad+ \Big| \int_{|y - P| > t} \nabla\Gamma_{jk}(P - y; \lambda) f_k(y) \d\sigma(y) \Big|.
+   \end{align*}
   The second summand can directly be estimated by $T_\lambda^*(f)(P)$.
   For the second one we apply the mean value theorem and derive using once again Theorem \ref{thm:fundamentalMatrixEstimate}
   \begin{align*}
     &\int_{|y - P| > t} \big| \nabla\Gamma_{jk}(x - y; \lambda) - \nabla\Gamma_{jk}(P - y; \lambda) \big| |f(y)| \d\sigma(y) \\ 
     &\qquad\leq \int_{|y - P| > t} |\nabla^2 \Gamma_{jk}(s - y; \lambda)| |x - P| |f(y) | \d\sigma(y) \\
     &\qquad\leq C t \int_{|y - P| > t} \frac{1}{|s - y|^{d}} |f(y)| \d\sigma(y) \\
-    &\qquad\leq C t \int_{|y - P| > t} \frac{1}{|y - P|^{d}} |f(y)| \d\sigma(y) ,
+    &\qquad\leq C t \int_{|y - P| > t} \frac{1}{|y - P|^{d}} |f(y)| \d\sigma(y) \\
+    &\qquad\leq C \int_{\partial\Omega} \frac{t}{(t + |y - P|)^d} |f(y)| \d\sigma(y).
   \end{align*}
   where $s$ is an element on the line connecting $x$ and $P$ and we used the property of Verchota-cones that $|s - y| \geq C |y - P|$.
   Note that Verchota cones are convex.
