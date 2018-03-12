@@ -356,7 +356,7 @@ We will also be working with tangential derivatives which are defined via
     &\quad+ \pv \int_{\partial\Omega} \frac{\partial}{\partial x_j} \{ \Gamma_{ik} (x - y; \lambda) \} f_k(y) \d\sigma(y) \\
     &\quad+ \pv \int_{\partial\Omega} \frac{\partial}{\partial x_k} \{ \Gamma_{il} (x - y; \lambda) \} f_l(y) \d\sigma(y) n_k n_j.
   \end{align*}
-  As the first two summands add up to zero the entire expression does not depend on the direction of the nontangential limit. 
+  As the first two summands add up to zero, the entire expression does not depend on the direction of the nontangential limit. 
   This gives
   \begin{align*}
     (\nabla_{\mathrm{tan}} u)_+ = (\nabla_{\mathrm{tan}} u)_-
@@ -389,7 +389,8 @@ Similar to $\K_\lambda$ for $\lambda = 0$ we have
     (\K_0 f)(x)= \pv \int_{\partial\Omega} \nabla_x \Gamma(x - y; 0)  f(y) \d\sigma(y) n - \pv \int_{\partial\Omega} \Phi_k(x - y) f_k(y) \d\sigma(y) n,
 \end{align}
 as was shown by Fabes, Kenig and Verchota \cite[(0.12)]{fabesKenigVerchota}.
-We note a fact that will be crucial for solving the $\Ell^2$ Dirichlet problem in Chapter 5 and will fortify the hopes of translating results for $\lambda = 0$ to $\lambda \in \Sigma_\theta$.
+
+We now note a fact that will be crucial for solving the $\Ell^2$ Dirichlet problem in Chapter 5 and will fortify the hopes of translating results for $\lambda = 0$ to $\lambda \in \Sigma_\theta$.
 \begin{lem}
   \label{lem:compactness}
   Let $\lambda \in \Sigma_\theta$ and $d \geq 3$.
@@ -497,7 +498,7 @@ where $K_{\bar\lambda}^*$ is the adjoint of the operator $K_{\bar\lambda}$ in \e
     |(\K_{\bar\lambda}^{(\varepsilon)}f)_j (x)|
     &= \Big| \int_{|x - y| > \varepsilon} \frac{\partial}{\partial x_i} \{ \Gamma_{jk}(x - y; \lambda) \} f_k(y) \d\sigma(y) n_i(x)  \\
     &\qquad - \int_{|x - y| > \varepsilon} \Phi_k(x - y) f_k(y) n_j(x) \d\sigma(y) \Big| \\
-    &\leq T_\lambda^*(f)(x) + A^*(f)(x)
+    &\leq T_\lambda^*(f)(x) + A^*(f)(x).
   \end{align*}
   Now dominated convergence gives
   \begin{align*}

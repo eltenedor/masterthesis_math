@@ -26,4 +26,37 @@ In this section we establish the fundamental notions regarding Lipschitz domains
 
 \section{The Stokes Operator}
 
+In this section we will introduce the Stokes operator on $\Ell^2$ and $\Ell^p$ for general $p$ and establish a relation to the Stokes equation. 
+We beginn by defining the relevant function spaces.
+
+Let $\Omega \subseteq \R^d$, $d \geq 2$ and $1 < p < \infty$. 
+We define
+\begin{align*}
+  \CC_{c, \sigma}^\infty(\Omega) \coloneqq \{ \varphi \in \CC_c^\infty(\Omega; \C^d) \colon \div(\varphi) = 0 \}
+\end{align*}
+which will serve as a suitable space of test functions.
+We can now close this space in $\Ell^p$ and the Sobolev Space $\WW_{1,p}$ which gives
+\begin{align*}
+  \Ell_\sigma^p \coloneqq \overline{\CC_{c,\sigma}^\infty(\Omega)}_{\Ell^p}
+\end{align*}
+and
+\begin{align*}
+  \WW_{0,\sigma}^{1,p}(\Omega) \coloneqq \overline{\CC_{c,\sigma}^\infty(\Omega)}_{\WW^{1,p}}.
+\end{align*}
+If $p = 0$ we will use the symbol $\HH_{0,\sigma}^1(\Omega)$ to denote $\WW_{0,\sigma}^{1,2}(\Omega)$ to emphasize that this space is a Hilbert space.
+
+In order to define the Stokes operator we introduce the following sesquilinear form
+\begin{align*}
+  a \colon \HH_{0,\sigma}^1(\Omega) \times \HH_{0,\sigma}^1(\Omega) \to \C, \quad (u,v) \mapsto \int_\Omega \nabla u \cdot \overline{\nabla v} \d x.
+\end{align*}
+Note that for $u \in \HH_{0,\sigma}^1(\Omega)$ the Gradient $\nabla u$ is a Matrix and an element of $\Ell^2(\Omega; \C^{d \times d})$.
+
+\begin{defn}
+  The \emph{Stokes operator} $A_2$ on $\Ell_\sigma^2$ is given via
+  \begin{align*}
+    \Dom(A_2) &\coloneqq \Big\{ u \in \HH_{0,\sigma}^1(\Omega) \colon \exists ! f \in \Ell^2_\sigma(\Omega) \text{ s.t. } \forall v \in \HH_{0,\sigma}^1(\Omega) \colon a(u,v) = \int_\Omega f \cdot \overline v \d x \Big\} \\
+    A_2 u &\coloneqq f, \quad  u \in \Dom(A).
+  \end{align*}
+\end{defn}
+
 

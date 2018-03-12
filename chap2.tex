@@ -120,7 +120,7 @@ Our first estimate is concerned with derivatives of the fundamental solution for
   The extension of this proof to orders of differentiation $l \geq 2$ is straightforward using the Leibniz product rule for higher derivatives.
 \end{proof}
 
-In the derivation of the next estimates we will use the following useful interior estimate which we write down for further use.
+In the derivation of the next estimates we will use the following useful interior estimate for solutions of Poisson's equation which we write down for further use.
 
 \begin{lem}
   \label{lem:interiorEstimatePoisson}
@@ -132,7 +132,28 @@ In the derivation of the next estimates we will use the following useful interio
 \end{lem}
 
 \begin{proof}
-  Todo
+  If $l = 1$, estimate \eqref{eq:interiorEstimatePoisson} is a consequence of the comparison principle and a proof of this fact can be found in Gilbarg and Trudinger \cite[3.4]{gilbarg}.
+  We can now use this estimate to inductively deduce the estimates for higher derivatives.
+  Note that by a translation and rescaling like
+  \begin{align*}
+    u_r(x) \coloneqq u(rx) \quad\text{and}\quad f_r(x) \coloneqq r^2 f(rx)
+  \end{align*}
+  we may assume that $\Delta w = f$ in $\BB(0,1)$ and that it suffices to prove
+  \begin{align}
+    \label{eq:interiorEstimatePoissonSimple}
+    |\nabla^l w(0) | \leq C \sup_{\BB(0,1)} |w| + C \max_{0 \leq j \leq l - 1} \sup_{\BB(0,1)} |\nabla^j f|.
+  \end{align}
+  for $l > 1$.
+  By the Schwartz Theorem we have that if $w$ solves Poisson's equation with right hand side $f$, then $\nabla^l w$ solves Poisson's equation with right hand side $\nabla^l f$.
+  We can thus estimate
+  \begin{align*}
+    |\nabla^l w(0)|
+    &\leq C_l \sup_{\BB(0,1/(2^{(l - 1)}))} |\nabla^{l - 1} w| + C_l \sup_{\BB(0,1/(2^{(l-1)}))} |\nabla^{l - 1} f| \\
+    &\leq C_l \sup_{\BB(0,1/(2^{(l-2)})} |\nabla^{l - 2} w| + C_l \big\{ \sup_{\BB(0,1)} |\nabla^{l - 2} f| + \sup_{\BB(0,1)} |\nabla^{l - 1} f| \big\} \\
+    &\leq \dots \\
+    &\leq C_l \; \sup_{\BB(0,1)} |w| + C_l \sum_{j = 0}^{l - 1} \sup_{B(0,1)} |\nabla^j f|
+  \end{align*}
+  which readily yields the desired estimate.
 \end{proof}
 
 We will need the following asymptotic expansions for the function $z^\nu H_\nu^{(1)}(z)$ in $\C \setminus (-\infty, 0]$.
