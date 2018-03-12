@@ -108,7 +108,7 @@ Our first estimate is concerned with derivatives of the fundamental solution for
   \begin{align*}
     \frac{\d{}}{\d z} \{ z^{-\nu} H_\nu^{(1)}(z) \} = -z^{-\nu} H_{\nu + 1}^{(1)} (z),
   \end{align*}
-  we can inductively establish the estimate \eqref{eq:estimateHelholtzDerivatives} for $l \geq 1$ and $d \geq 2$:
+  we can inductively establish the estimate \eqref{eq:estimateHelmholtzDerivatives} for $l \geq 1$ and $d \geq 2$:
   For $1 \leq j \leq d$, we calculate
   \begin{align*}
     |\nabla_x^{} G(x; \lambda)|
@@ -174,7 +174,7 @@ The coefficients $a_d$ and $c_d$ are related in the following way
   c_d 
   %= \frac{\Gamma(\frac{d}{2} - 1) 2^\nu}{\ii \pi} 
   %=\frac{4 (2 \pi)^{\frac{d}{2} - 1}}{\ii} \frac{\Gamma(\frac{d}{2} - 1)}{4 \pi^{\frac{d}{2}}} 
-  =\frac{\ii} {4 (2 \pi)^{\frac{d}{2} - 1}}\; a_d 
+  =\frac{\ii} {4 (2 \pi)^{\frac{d}{2} - 1}}\; a_d .
 \end{align*}
 This allows us to write for $d \geq 3$
 \begin{align}
@@ -182,7 +182,7 @@ This allows us to write for $d \geq 3$
   G(x;\lambda) - G(x; 0) = \frac{i}{4(2\pi)^{\frac{d}{2} - 1}} \cdot \frac{1}{|x|^{d - 2}} \Big\{ (k|x|)^{\frac{d}{2} - 1} H_{\frac{d}{2} - 1}^{(1)}(k|x|) - a_d \Big\}.
 \end{align}
 
-The following lemma is helps us to estimate derivatives of \eqref{eq:HelmholtzLaplaceDifference} and the $2$-dimensional counterpart.
+The following lemma helps us to estimate derivatives of \eqref{eq:HelmholtzLaplaceDifference} and the $2$-dimensional counterpart.
 
 \begin{lem}
   \label{lem:HelmholtzLaplaceDifference}
@@ -193,7 +193,7 @@ The following lemma is helps us to estimate derivatives of \eqref{eq:HelmholtzLa
     |\nabla_x^l \{ G(x; \lambda) - G(x; 0) \}| \leq C |\lambda| |x|^{4 - d - l}
   \end{align}
   if $d \geq 5$ and $l \geq 0$, where $C$ depends only on $d$, $l$ and $\theta$.
-  If $d = 3$ or $4$, estimate \eqref{eq:HelmholtzLaplaceDifferenceEstimate} holds for $l \geq 1$ and if $d = 2$ the estimate holds for $l \geq 3$.
+  If $d = 3$ or $4$, estimate \eqref{eq:HelmholtzLaplaceDifferenceEstimate} holds for $l \geq 1$ and if $d = 2$, the estimate holds for $l \geq 3$.
 \end{lem}
 
 \begin{proof}
@@ -399,7 +399,7 @@ The following lemma is helps us to estimate derivatives of \eqref{eq:HelmholtzLa
       &\leq |\nabla_x^l G(x; \lambda)| + \frac{1}{|\lambda|} |\nabla_x^{l + 2} G(x; \lambda) | + \frac{1}{|\lambda|} |\nabla_x^{l + 2} G(x; 0)| \\
     &\leq\frac{C_l \e^{-c \sqrt{|\lambda|} |x|}}{|x|^{d - 2 + l}} + \frac{1}{|\lambda|} \frac{C_{l + 2} \e^{-\sqrt{|\lambda|} |x|}}{|x|^2 |x|^{d - 2 + l}} + \frac{1}{|\lambda|} \frac{C}{|x|^2 |x|^{d - 2 + l}} \\
     %&\leq \frac{C}{(1 + |\lambda||x|^2)} \frac{1}{|x|^{d - 2 + l}} + \frac{C_{l + 2} |\lambda||x|^2}{(1 + |\lambda||x|^2)} \frac{1}{|\lambda| |x|^2} \frac{1}{|x|^{d - 2 + l}} + \frac{C}{1 + |\lambda||x|^2} \frac{1}{|x|^{d - 2 + l}}
-    &\leq \frac{C}{1 + |\lambda| |x|^2}\; \frac{1}{|x|^{d - 2 + l}}
+    &\leq \frac{C}{1 + |\lambda| |x|^2}\; \frac{1}{|x|^{d - 2 + l}}.
     \end{align*}
     Now let $|\lambda| |x|^2 \leq \frac{1}{2}$.
     Then by \ref{lem:estimateHelmholtzDerivatives} and \ref{lem:HelmholtzLaplaceDifference} we get
