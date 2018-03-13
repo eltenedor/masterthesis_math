@@ -26,16 +26,22 @@ In this section we establish the fundamental notions regarding Lipschitz domains
 
 \section{The Stokes Operator}
 
-In this section we will introduce the Stokes operator on $\Ell^2$ and $\Ell^p$ for general $p$ and establish a relation to the Stokes equation. 
-We beginn by defining the relevant function spaces.
+In this section we will introduce the Stokes operator on $\Ell^2(\Omega)$ and $\Ell^p(\Omega)$ for general $p$ and establish a relation to the \emph{Dirichlet problem for the Stokes resolvent system}
+\begin{align}
+  -\Delta u + \nabla \phi + \lambda u &= f  \quad\text{in } \Omega, \nonumber\\
+  \div u &= 0 \quad\text{in } \Omega, \label{eq:stokesResolventSystem} \\
+  u &= 0 \quad\text{on } \partial\Omega, \nonumber
+\end{align}
+where $\lambda \in \Sigma_\theta \coloneqq \{ z \in \C \colon \lambda \neq 0 \text{ and } |\arg(z) | < \pi - \theta \}$ and $\theta \in (0, \pi/2)$.
 
-Let $\Omega \subseteq \R^d$, $d \geq 2$ and $1 < p < \infty$. 
+We beginn by defining the relevant function spaces.
+Let $\Omega \subseteq \R^d$, $d \geq 2$ be a bounded Lipschitz domain and $1 < p < \infty$. 
 We define
 \begin{align*}
   \CC_{c, \sigma}^\infty(\Omega) \coloneqq \{ \varphi \in \CC_c^\infty(\Omega; \C^d) \colon \div(\varphi) = 0 \}
 \end{align*}
-which will serve as a suitable space of test functions.
-We can now close this space in $\Ell^p$ and the Sobolev Space $\WW_{1,p}$ which gives
+can serve as a suitable space of test functions.
+We can now close this space in $\Ell^p(\Omega)$ and the Sobolev Space $\WW_{1,p}(\Omega)$ which gives
 \begin{align*}
   \Ell_\sigma^p \coloneqq \overline{\CC_{c,\sigma}^\infty(\Omega)}_{\Ell^p}
 \end{align*}
@@ -43,20 +49,74 @@ and
 \begin{align*}
   \WW_{0,\sigma}^{1,p}(\Omega) \coloneqq \overline{\CC_{c,\sigma}^\infty(\Omega)}_{\WW^{1,p}}.
 \end{align*}
-If $p = 0$ we will use the symbol $\HH_{0,\sigma}^1(\Omega)$ to denote $\WW_{0,\sigma}^{1,2}(\Omega)$ to emphasize that this space is a Hilbert space.
+If $p = 0$, we will use the symbol $\HH_{0,\sigma}^1(\Omega)$ to denote $\WW_{0,\sigma}^{1,2}(\Omega)$ to emphasize that this space is a Hilbert space.
 
 In order to define the Stokes operator we introduce the following sesquilinear form
 \begin{align*}
   a \colon \HH_{0,\sigma}^1(\Omega) \times \HH_{0,\sigma}^1(\Omega) \to \C, \quad (u,v) \mapsto \int_\Omega \nabla u \cdot \overline{\nabla v} \d x.
 \end{align*}
-Note that for $u \in \HH_{0,\sigma}^1(\Omega)$ the Gradient $\nabla u$ is a Matrix and an element of $\Ell^2(\Omega; \C^{d \times d})$.
+Note that for $u \in \HH_{0,\sigma}^1(\Omega)$ the gradient $\nabla u$ is a matrix and an element of the space $\Ell^2(\Omega; \C^{d \times d})$.
 
 \begin{defn}
-  The \emph{Stokes operator} $A_2$ on $\Ell_\sigma^2$ is given via
+  \label{defn:stokes}
+  The \emph{Stokes operator} $A_2$ on $\Ell_\sigma^2(\Omega)$ is given via
   \begin{align*}
     \Dom(A_2) &\coloneqq \Big\{ u \in \HH_{0,\sigma}^1(\Omega) \colon \exists ! f \in \Ell^2_\sigma(\Omega) \text{ s.t. } \forall v \in \HH_{0,\sigma}^1(\Omega) \colon a(u,v) = \int_\Omega f \cdot \overline v \d x \Big\} \\
-    A_2 u &\coloneqq f, \quad  u \in \Dom(A).
+    A_2 u &\coloneqq f,
   \end{align*}
+  where $u \in \Dom(A_2)$ and $f$ comes from the definition of the domain.
 \end{defn}
 
+The following theorem from Mitrea and Monniaux \cite[Thm 4.7]{mitreaMonniaux} shows that our definition of the Stokes operator and the one used in Shen's paper coincide. 
+Another advantage of this characterization is the immediate link of the Stokes operator to the Stokes system.
 
+\begin{thm}
+  If $\Omega \subseteq \R^d$, $d \geq 2$ is a bounded Lipschitz domain and $A_2$ is the Stokes operator on $\Ell^2_\sigma(\Omega)$ then
+  \begin{align*}
+    \Dom(A_2) = \big\{ u \in H^1_{0,\sigma}(\Omega) \colon \exists \pi \in \Ell^2(\Omega) \text{ s.t. } -\Delta u + \nabla \pi \in \Ell^2_\sigma(\Omega) \big\},
+  \end{align*}
+  where the expression $\Delta u + \nabla \pi \in\Ell^2_\sigma(\Omega)$ needs to be understood in the distributional sense.
+  For $u \in \Dom(A_2)$ and the corresponding pressure $\pi$ we have
+  \begin{align*}
+    A_2 u = -\Delta u + \nabla \pi.
+  \end{align*}
+\end{thm}
+
+The following proposition summarizes some facts about the Stokes operator on $\Ell^2_\sigma(\Omega)$.
+
+\begin{prop}
+  Let $\Omega \subset \R^d$ be a bounded Lipschitz domain and $A_2$ the Stokes operator as in Definition \ref{defn:stokes}. Then we have
+  \begin{enumerate}[a)]
+    \item $A_2$ is closed with dense domain. Furthermore $0 \in \rho(A_2)$.
+    \item $\sigma(A) \subset [0,\infty)$ and for all $\theta \in (0,\pi]$ there exists $C > 0$ such that
+      \begin{align}
+        \label{eq:resolventEstimateL2}
+        \| \lambda(\lambda + A)^{-1} \|_{\Li(\Ell^2_\sigma)} \leq C, \quad\text{for all } \lambda \in \C \setminus \overline \Sigma_\theta.
+      \end{align}
+      In particular $-A_2$ generates a bounded analytic semigroup on $\Ell^2_\sigma(\Omega)$.
+  \end{enumerate}
+\end{prop}
+
+With these results at hand we can now give a quick recap of the solution theory to \eqref{eq:stokesResolventSystem}.
+Let $f \in \Ell^2_\sigma$ and $\lambda \in \Sigma_\theta$, $\theta \in (0, \pi/2)$.
+By the previous Theorems we know that there exists a unique $u \in \Dom(A_2) \subseteq \HH^1_{0,\sigma}(\Omega)$ and $\pi \in \Ell^2(\Omega)$ such that
+\begin{align*}
+  -\Delta u + \nabla \pi + \lambda u = A_2 u = f.
+\end{align*}
+For general $f = \Ell^2(\Omega)$ we use the \emph{Helmholtz projection} $\PP_2$ to get
+\begin{align*}
+  \Delta u + \nabla \pi + \lambda u + (I - \PP_2) f = \PP_2 f + (I - \PP_2) f = f,
+\end{align*}
+where $u$ and $\pi$ now correspond to $\PP_2 f \in \Ell^2_\sigma(\Omega)$. On bounded Lipschitz domains the orthogonal complement to $\PP_2$ is characterized via
+\begin{align*}
+  \Ell^2_\sigma(\Omega)^\perp = \big\{ f \in \Ell^2(\Omega; \C^d) \colon f = \nabla \phi, \text{ for some } \phi \in \Ell^2(\Omega) \big\}.
+\end{align*}
+A proof of this fact can be found in the book of Sohr \cite[Lemma 2.5.3]{sohr}.
+Using this result we find $g \in \Ell^2(\Omega)$ such that $\nabla g = (I - \PP_2)f$ in the sense of distributions and we see that
+\begin{align*}
+  -\Delta u + \nabla( \pi + g ) + \lambda u = f.
+\end{align*}
+Furthermore we may deduce from the resolvent estimate \eqref{eq:resolventEstimateL2} that the solution $u$ which apparently is not affected by the additional part $(I-\PP_2)f$ fulfills the inequality
+\begin{align*}
+  |\lambda|^{-1} \| u\|_{\Ell^2(\Omega; \C^d)} = |\lambda|^{-1} \|(A_2 + \lambda)^{-1} \PP_2 f \|_{\Ell^2(\Omega; \C^d)} \leq C \| f \|_{\Ell^2(\Omega; \C^d)}.
+\end{align*}
