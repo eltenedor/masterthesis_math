@@ -1,0 +1,46 @@
+\chapter*{Appendix A}
+
+For $d = 2$ we have that $G(x; \lambda) = \frac{\ii}{4} H_0^{(1)}(k|x|)$.
+Furthermore we set $z =  k|x|$.  
+Then
+\begin{align*}
+  \partial_\gamma G(x; \lambda) &= \frac{\ii}{4} k\;  \frac{x_\gamma}{|x|} \frac{\d{}}{\d z} H_0^{(1)}(z) \\
+  \partial_\alpha \partial_\gamma G(x; \lambda) 
+  &= \frac{\ii}{4} k^2 \;  \frac{x_\alpha x_\gamma}{|x|^2} \frac{\d{}^2}{\d z^2} H_0^{(1)}(z) + \frac{\ii}{4} k \Big(\frac{\delta_{\alpha\gamma}}{|x|} - \frac{x_\alpha x_\gamma}{|x|^3} \Big) \frac{\d{}}{\d z} H_0^{(1)}(z) \\
+  \partial_\beta \partial_\alpha \partial_\gamma G(x; \lambda)
+  &= \frac{\ii}{4} k^3 \; \frac{x_\alpha x_\beta x_\gamma}{|x|^3} \frac{\d{}^3}{\d z^3} H_0^{(1)}(z) \\
+  &\quad + \frac{\ii}{4} k^2 \Big(\frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha \gamma} x_\beta + \delta_{\alpha \beta} x_\gamma}{|x|^2} - 3 \frac{x_\alpha x_\beta x_\gamma}{|x|^4} \Big) \frac{\d{}^2}{\d z^2} H_0^{(1)}(z) \\
+  &\quad + \frac{\ii}{4} k \Big( 3 \frac{x_\alpha x_\beta x_\gamma}{|x|^5} - \frac{\delta_{\beta\gamma} x_\alpha x_\beta x_\gamma}{|x|^5} - \frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha\gamma} x_\beta + \delta_{\alpha\beta} x_\gamma}{|x|^3} \Big) \frac{\d{}}{\d z} H_0^{(1)}(z).
+\end{align*}
+
+The series expansions for the Hankel function $H_0^{(1)}(z)$ read according to Lebedev  \cite{lebedev}
+\begin{align*}
+  %
+  H_0^{(1)}(z)
+  %
+  &= J_0(z) + \ii Y_0(z) \\
+  &= \frac{2 \ii}{\pi} \; \mathlarger{\sum}_{l = 0}^\infty \; \frac{(-1)^l}{(l!)^2 \; 4^l} \;  z^{2l} \Big( -\frac{\ii \pi}{2} - \log(2) - \psi(l + 1) \Big) + \frac{2 \ii}{\pi} \; \mathlarger{\sum}_{l = 0}^\infty \; \frac{(-1)^l}{(l!)^2 \; 4^l} \;  z^{2l} \log(z) \\
+  &= \frac{2 \ii}{\pi} \; \mathlarger{\sum}_{l = 0}^\infty \; a_l \;  z^{2l} \; C_l + \frac{2 \ii}{\pi} \; \mathlarger{\sum}_{l = 0}^\infty \; a_l z^{2l} \log(z) \\
+  %
+  \frac{\d{}}{\d z} H_0^{(1)}(z)
+  %
+  &= \frac{2 \ii}{\pi} \; \mathlarger{\sum}_{l = 1}^\infty \; a_l \,  (2l) \, z^{2l - 1} \, C_l + \frac{2 \ii}{\pi}  \; \mathlarger{\sum}_{l = 1}^\infty \; a_l \, (2l)  \, z^{2l - 1} \log(z) \; + \frac{2 \ii}{\pi}\; \mathlarger{\sum}_{l = 0}^\infty \; a_l z^{2l - 1} \\
+  &= \frac{2 \ii}{\pi} \; \mathlarger{\sum}_{l = 1}^\infty \; b_l \, z^{2l - 1} \, C_l + \frac{2 \ii}{\pi}  \; \mathlarger{\sum}_{l = 1}^\infty \; b_l \, z^{2l - 1} \log(z) \; + \frac{2 \ii}{\pi}\; \mathlarger{\sum}_{l = 0}^\infty \; a_l \, z^{2l - 1} \\
+  %
+  \frac{\d{}^2}{\d z^2} H_0^{(1)}(z)
+  %
+  &= \frac{2 \ii}{\pi} \; \mathlarger{\sum}_{l = 1}^\infty \; b_l \, (2l - 1) \, z^{2l - 2} \, C_l + \frac{2 \ii}{\pi}  \; \mathlarger{\sum}_{l = 1}^\infty \; b_l \, (2l - 1)\, z^{2l - 2} \log(z) + \frac{2 \ii}{\pi} \; \mathlarger{\sum}_{l = 1}^\infty \; b_l \, z^{2l - 2} \\
+  &\quad + \frac{2 \ii}{\pi}\; \mathlarger{\sum}_{l = 0}^\infty \; a_l \, (2l - 1) \, z^{2l - 2} \\
+  &= \frac{2 \ii}{\pi} \; \mathlarger{\sum}_{l = 1}^\infty \; c_l \, z^{2l - 2} \, C_l + \frac{2 \ii}{\pi}  \; \mathlarger{\sum}_{l = 1}^\infty \; c_l \, z^{2l - 2} \log(z) + \frac{2 \ii}{\pi} \; \mathlarger{\sum}_{l = 1}^\infty \; b_l \, z^{2l - 2} \\
+  &\quad + \frac{2 \ii}{\pi}\; \mathlarger{\sum}_{l = 0}^\infty \; a_l (2l - 1) \, z^{2l - 2} \\
+  %
+  \frac{\d{}^3}{\d z^3} H_0^{(1)}(z)
+  %
+  &= \frac{2 \ii}{\pi} \; \mathlarger{\sum}_{l = 2}^\infty \; c_l \, (2l - 2) \, z^{2l - 3} \, C_l + \frac{2 \ii}{\pi} \; \mathlarger{\sum}_{l = 2}^\infty \; c_l \, (2l - 2) \, z^{2l - 3} \log(z) + \frac{2 \ii}{\pi} \; \mathlarger{\sum}_{l = 1}^\infty \; c_l \, z^{2l - 3} \log(z) \\
+ &\quad  + \frac{2 \ii}{\pi} \; \mathlarger{\sum}_{l = 2}^\infty \; b_l (2l - 2) \, z^{2l - 2}
+  + \frac{2 \ii}{\pi}\; \mathlarger{\sum}_{l = 0}^\infty \; a_l (2l - 1) (2l - 2) \, z^{2l - 3} \\
+  &= \frac{2 \ii}{\pi} \; \mathlarger{\sum}_{l = 2}^\infty \; d_l \, z^{2l - 3} \, C_l + \frac{2 \ii}{\pi} \; \mathlarger{\sum}_{l = 2}^\infty \; d_l \, z^{2l - 3} \log(z) + \frac{2 \ii}{\pi} \; \mathlarger{\sum}_{l = 1}^\infty \; c_l \, z^{2l - 3} \log(z) \\
+ &\quad  + \frac{2 \ii}{\pi} \; \mathlarger{\sum}_{l = 2}^\infty \; b_l (2l - 2) \, z^{2l - 2}
+  + \frac{2 \ii}{\pi}\; \mathlarger{\sum}_{l = 0}^\infty \; a_l (2l - 1) (2l - 2) \, z^{2l - 3} 
+\end{align*}
+
