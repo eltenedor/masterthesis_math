@@ -6,6 +6,7 @@ The first step will be to establich a weak reverse H\"older estimate for local s
 We start with a similar result on Lipschitz cylinders.
 
 \begin{lem}
+  \label{lem:reverseHoelderCylinder}
   Let $\eta \colon \R^{d - 1} \to \R$ be a Lipschitz function.
   Furthermore, let $u \in \HH^1(D_\eta(r); \C^d)$ and $\phi \in \Ell^2(D_\eta(2r))$ solve the Stokes resolvent problem in $D_\eta(2r)$ with $u = 0$ on $I_\eta(2r)$ for some $0 < r < \infty$ and $\lambda \in \Sigma_\theta$.
   Let $p_d = \frac{2d}{d - 1}$.
@@ -38,27 +39,127 @@ We start with a similar result on Lipschitz cylinders.
 \end{proof}
 
 The next step is to extend the result to arbitrary Lipschitz domains.
+%\begin{lem}
+%  Let $x_0 \in \overline\Omega$ and $0 < r < c \diam(\Omega)$.
+%  Let $u \in \HH^1(\BB(x_0, 2r) \cap \Omega; \C^d)$ and $\phi \in \Ell^2(\BB(x_0, 2r) \cap \Omega)$ satisfy the Stokes resolvent system in $\BB(x_0, 2r) \cap \Omega$. 
+%  If $\BB(x_0, 2r) \cap \partial \Omega \neq \emptyset $, we additionally assume $u = 0$ on $\BB(x_0, 2r) \cap \partial\Omega$.
+%  Then there exists $\varepsilon > 0$ such that
+%  \begin{align}
+%    \label{eq:reverseHoelder}
+%    \Big( \dashint_{\BB(x_0, r) \cap \Omega} |u|^p \Big)^{1/p} \leq C \Big( \dashint_{\BB(x_0, 2r) \cap \Omega} |u|^2 \Big)^{1/2},
+%  \end{align}
+%  where $p = p_d + \varepsilon$ and $C > 0$ and $\varepsilon$ only depend on $d$, $\theta$ and the Lipschitz character of $\Omega$.
+%\end{lem}
 \begin{lem}
-  Let $x_0 \in \overline\Omega$ and $0 < r < c \diam(\Omega)$.
-  Let $u \in \HH^1(\BB(x_0, 2r) \cap \Omega; \C^d)$ and $\phi \in \Ell^2(\BB(x_0, 2r) \cap \Omega)$ satisfy the Stokes resolvent system in $\BB(x_0, 2r) \cap \Omega$. 
-  If $\BB(x_0, 2r) \cap \partial \Omega \neq \emptyset $, we additionally assume $u = 0$ on $\BB(x_0, 2r) \cap \partial\Omega$.
-  Then there exists $\varepsilon > 0$ such that
+  \label{lem:reverseHoelder}
+  Let $x_0 \in \overline\Omega$ and $0 < 2r < r_0$ and set $\alpha_1 = \sqrt{d^2 10^2 (1 + M)^2 + 4}$ and $\alpha_2 = \alpha_1 + 1$.
+  Let $u \in \HH^1(\BB(x_0,  \alpha_2 r) \cap \Omega; \C^d)$ and $\phi \in \Ell^2(\BB(x_0, \alpha_2 r) \cap \Omega)$ satisfy the Stokes resolvent system in $\BB(x_0, \alpha_2 r) \cap \Omega$. 
+  If $\BB(x_0, \alpha_2 r) \cap \partial \Omega \neq \emptyset $, we additionally assume $u = 0$ on $\BB(x_0, \alpha_2 r) \cap \partial\Omega$.
+  Then for all balls $\BB(x_0, r)$ that are either centered on $\partial\Omega$ or satisfy $\alpha_2 \BB(x_0, r) \subseteq \Omega$ the estimate
   \begin{align}
     \label{eq:reverseHoelder}
-    \Big( \dashint_{\BB(x_0, r) \cap \Omega} |u|^p \Big)^{1/p} \leq C \Big( \dashint_{\BB(x_0, 2r) \cap \Omega} |u|^2 \Big)^{1/2},
+    \Big( \dashint_{\BB(x_0, r) \cap \Omega} |u|^p \Big)^{1/p} \leq C \Big( \dashint_{\BB(x_0, \alpha_1 r) \cap \Omega} |u|^2 \Big)^{1/2}
   \end{align}
-  where $p = p_d + \varepsilon$ and $C > 0$ and $\varepsilon$ only depend on $d$, $\theta$ and the Lipschitz character of $\Omega$.
+  holds, where $p = p_d$.
+  Here, $C > 0$ only depends on $d$, $\theta$ and the Lipschitz character of $\Omega$.
 \end{lem}
 
 \begin{proof}
-  We first note that since estimate \eqref{eq:reverseHoelder} is a weak reverse Hoelder inequality and thus possesses a self-improving property, see Giaquinta and Martinazzi \cite{giaquintaMartinazzi} or Giaquinta and Modica \cite{giaquintaModica}.
-  Consequently it suffices to prove \eqref{eq:reverseHoelder} for $p = p_d = \frac{2d}{d - 1}$.
-  Furthermore the proof can be reduced via Lemma \cite{tolksdorfRsectorial} 
+  %We first note that since estimate \eqref{eq:reverseHoelder} is a weak reverse H\"older inequality and thus possesses a self-improving property, see Giaquinta and Martinazzi \cite{giaquintaMartinazzi} or Giaquinta and Modica \cite{giaquintaModica}.
+  %Consequently it suffices to prove \eqref{eq:reverseHoelder} for $p = p_d = \frac{2d}{d - 1}$.
+
+  %We want to apply Lemma 4.2 from \cite{tolksdorRsec}.
+  %Let $0 < s < r$ and $\tilde \BB{} = \BB(y,s)$ with $\alpha_2 \tilde \BB \subseteq \BB(x_0, \alpha_2 r)$.
+  Let $x_0 \in \Omega$ with $\alpha_2 \BB(x_0,r) \subset \Omega$. We may deploy the interior estimate \eqref{eq:interiorEstimateDoubleLayer} to derive that for all $x \in \BB(x_0,r)$
+  \begin{align*}
+    |u(x)|^p \leq C \Big( \dashint_{\BB(x,r)} |u(y)|^2 \d y \Big)^{p/2}
+  \end{align*}
+  which after integrating $x$ over $\BB(x_0, r)$ yields
+  \begin{align*}
+    \dashint_{\BB(x_0, r)} |u(x)|^p \d x \leq C \Big(\alpha_1^d  \dashint_{\BB(x_0, \alpha_1 r)} |u(z)|^2 \d z \Big)^{p/2}.
+  \end{align*}
+  If $x_0 \in \partial\Omega$, then by Lemma \ref{lem:reverseHoelderCylinder}
+  \begin{align*}
+    \Big( \frac{1}{r^d} \int_{\BB(x_0, r) \cap \Omega} |u|^p \Big)^{1/p}
+    &\leq \Big( \frac{1}{r^d} \int_{D_{\eta_{x_0}}(r)} |u|^p \Big)^{1/p} \\
+    &\leq C \Big( \frac{1}{r^d} \int_{D_{\eta_{x_0}}(2 r)} |u|^p \Big)^{1/p} \\
+    &\leq C \Big( \frac{1}{r^d} \int_{\BB(x_0, \alpha_1 r) \cap \Omega} |u|^2 \Big)^{1/2}.
+  \end{align*}
 \end{proof}
 
-The final theorem 
+The following extrapolation theorem will be necessary in order to derive $\Ell^p$-bounds on the solution of the Stokes resolvent system, \cite[Thm. 3.3]{shenExtrapolation}.
+
+\begin{thm}
+  \label{thm:extrapolation}
+  Let $T$ be a bounded sublinear operator on $\Ell^2(\Omega; \C^d)$, where $\Omega$ is a bounded Lipschitz domain in $\R^n$ and $\|T\|_{\Li(\Ell^2(\Omega; \C^d))} \leq C_0$.
+  Let $p > 2$.
+  Suppose that there exist constants $R_0 > 0$, $N > 1$ and $\alpha_2 > \alpha_1 > 1$ such that for any bounded measurable function $f$ with $\supp(f) \subseteq \Omega \setminus \alpha_2 B$,
+  \begin{align*}
+    \Big\{ \frac{1}{r^d} \int_{\Omega \cap B} |Tf|^p \d x \Big\}^{1/p}
+    \leq N \Big\{ \Big( \frac{1}{r^d} \int_{\Omega \cap \alpha_1 B} |T f|^2 \d x \Big)^{1/2} + \sup_{B' \supset B} \Big( \frac{1}{|B'|} \int_{B'} |f|^p \d x \Big)^{1/p} \Big\},
+  \end{align*}
+  where $B = B(x_0, r)$ is a ball with $0 < r < R_0$ and either $x_0 \in \partial\Omega$ or $B(x_0, \alpha_2 r) \subset \Omega$.
+  Then $T$ is bounded on $\Ell^q(\Omega; \C^d)$ for any $2 < q < p$.
+  Moreover $\|T\|_{\Li(\Ell^q(\Omega; \C^d))}$ is bounded by a constant depending at most on $d$, $N$, $C_0$, $p$, $q$ and the Lipschitz character of $\Omega$.
+\end{thm}
+
+We are now in the position to prove the main theorem of this thesis. For this the weak reverse H\"older inequality derived in Lemma \ref{lem:reverseHoelder} will be the crucial ingredient as it enables us to apply the extrapolation theorem \ref{thm:extrapolation}.
 
 \begin{thm}[Shen]
   Let $\Omega$ be a bounded Lipschitz domain in $\R^d$, $d \geq 3$.
   There exists $\varepsilon > 0$, depending only on $d$, $\theta$ and the Lipschitz character of $\Omega$, such that if $f \in \Ell^2(\Omega; \C^d) \cap \Ell^p(\Omega; \C^d)$ and 
+  \begin{align*}
+    \Big| \frac{1}{p} - \frac{1}{2} \Big| < \frac{1}{2d} + \varepsilon,
+  \end{align*}
+  then the unique solution $u$ to \eqref{eq:stokesResolventSystem} in $\HH_0^1(\Omega; \C^d)$ satisfies the estimate
+  \begin{align*}
+    \|u\|_{\Ell^p(\Omega; \C^d)} \leq \frac{C_p}{|\lambda| + r_0^{-2}} \|f\|_{\Ell^p(\Omega; \C^d)},
+  \end{align*}
+  where $r_0 = \diam(\Omega)$ and $C_p$ depends only on $d$, $p$, $\theta$ and the Lipschitz character of $\Omega$.
 \end{thm}
+
+\begin{proof}
+  Consider a family of scaled solution operators to the Stokes resolvent system \eqref{eq:stokesResolventSystem}, more precisely consider the family
+  \begin{align*}
+    T_\lambda \colon \Ell^2(\Omega; \C^d) \to \Ell^2(\Omega; \C^d), \quad f \mapsto (|\lambda| + 1) (A_2 + \lambda)^{-1} \PP_2 f,
+  \end{align*}
+  where $\lambda \in \Sigma_\theta$, $\theta \in (0, \pi/2)$.
+  Let us first verify that $u \coloneqq (|\lambda| + 1)^{-1} T_\lambda(f)$ does indeed solve \eqref{eq:stokesResolventSystem}.
+  First note that since $\PP_2 f \in \Ell^2_\sigma(\Omega)$ we know that by the mapping properties of the Stokes resolvent we have $u \in \HH^1_{0,\sigma}(\Omega)$ and
+  \begin{align*}
+    A_2 u + \lambda u = \PP_2 f.
+  \end{align*}
+  Therefore $u$ is a weak solution to 
+  \begin{align*}
+    -\Delta u + \lambda u = \PP_2 f.
+  \end{align*}
+  By the usual arguments (c.f. Chapter 1), there exists a pressure $\pi \in \Ell^2(\Omega)$ such that 
+  \begin{align*}
+    -\Delta u + \nabla \pi + \lambda u = f.
+  \end{align*}
+  Furthermore by testing \eqref{stokesREsolventSystem} with $u$ we derive the estimate
+  \begin{align*}
+    \| T_\lambda(f) \|_{\Ell^2(\Omega; \C^d} = (|\lambda| + 1) \|u\|_{\Ell^2(\Omega; \C^d)}
+    \leq C_0 \|f\|_{\Ell^2(\Omega; \C^d)},
+  \end{align*}
+  where $C_0$ only depends on $d$, $\theta$ and the Lipschitz character of $\Omega$.
+  Accordingly the family $T_\lambda$ is bounded on $\Ell^2(\Omega; C^d)$ and $C_0$ is a uniform bound on the operator norms $\|T_\lambda\|_{\Li(\Ell^2(\Omega; \C^d))}$.
+
+  We will now show that the operators $T_\lambda$ fulfill estimate \eqref{eq:shenExtrapolation} in Shen's extrapolation theorem, in order to deduce their $\Ell^p$-boundedness.
+  To this end let $x_0 \in \overline \Omega$ and $0 < 2r < r_0$ such that $\alpha_2 \BB(x_0, r) \subseteq \Omega$ or $\BB(x_0, r)$ is centered on $\partial\Omega$.
+  Furthermore let $f \in \Ell^\infty(\Omega; \C^d)$ with support in $\Omega \setminus \alpha_2 \BB(x_0, r)$.
+  By construction $(u,\pi)$ does not only solve \eqref{eq:stokesResolventProblem} in $\Omega$, the pair also solves the dirichlet problem
+  \begin{align*}
+    -\Delta u + \nabla \phi + \lambda u &= 0 \\
+    \div(u) = 0
+  \end{align*}
+  in $\Omega \cap \alpha_2 \BB(x_0, r)$ where $u = 0$ on $\partial\Omega \cap \alpha_2 \BB(x_0, r)$.
+  Therefore Lemma \ref{lem:reverseHoelder} gives that
+  \begin{align*}
+    \Big( \dashint_{\Omega \cap \BB(x_0, r)} |u|^p \Big)^{1/p} \leq C \Big( \dashint_{\Omega \cap \alpha_1 \BB(x_0, r)} |u|^2 \Big)^{1/2},
+  \end{align*}
+  where $p = p_d$ 
+
+
+
+\end{proof}

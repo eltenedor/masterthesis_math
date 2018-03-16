@@ -10,7 +10,7 @@ Then
   \partial_\beta \partial_\alpha \partial_\gamma G(x; \lambda)
   &= \frac{\ii}{4} k^3 \; \frac{x_\alpha x_\beta x_\gamma}{|x|^3} \frac{\d{}^3}{\d z^3} H_0^{(1)}(z) \\
   &\quad + \frac{\ii}{4} k^2 \Big(\frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha \gamma} x_\beta + \delta_{\alpha \beta} x_\gamma}{|x|^2} - 3 \frac{x_\alpha x_\beta x_\gamma}{|x|^4} \Big) \frac{\d{}^2}{\d z^2} H_0^{(1)}(z) \\
-  &\quad + \frac{\ii}{4} k \Big( 3 \frac{x_\alpha x_\beta x_\gamma}{|x|^5} - \frac{\delta_{\beta\gamma} x_\alpha x_\beta x_\gamma}{|x|^5} - \frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha\gamma} x_\beta + \delta_{\alpha\beta} x_\gamma}{|x|^3} \Big) \frac{\d{}}{\d z} H_0^{(1)}(z).
+  &\quad + \frac{\ii}{4} k \Big( 3 \frac{x_\alpha x_\beta x_\gamma}{|x|^5} - \frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha\gamma} x_\beta + \delta_{\alpha\beta} x_\gamma}{|x|^3} \Big) \frac{\d{}}{\d z} H_0^{(1)}(z).
 \end{align*}
 
 The series expansions for the Hankel function $H_0^{(1)}(z)$ read according to Lebedev  \cite{lebedev}
@@ -36,11 +36,26 @@ The series expansions for the Hankel function $H_0^{(1)}(z)$ read according to L
   %
   \frac{\d{}^3}{\d z^3} H_0^{(1)}(z)
   %
-  &= \frac{2 \ii}{\pi} \; \mathlarger{\sum}_{l = 2}^\infty \; c_l \, (2l - 2) \, z^{2l - 3} \, C_l + \frac{2 \ii}{\pi} \; \mathlarger{\sum}_{l = 2}^\infty \; c_l \, (2l - 2) \, z^{2l - 3} \log(z) + \frac{2 \ii}{\pi} \; \mathlarger{\sum}_{l = 1}^\infty \; c_l \, z^{2l - 3} \log(z) \\
- &\quad  + \frac{2 \ii}{\pi} \; \mathlarger{\sum}_{l = 2}^\infty \; b_l (2l - 2) \, z^{2l - 2}
-  + \frac{2 \ii}{\pi}\; \mathlarger{\sum}_{l = 0}^\infty \; a_l (2l - 1) (2l - 2) \, z^{2l - 3} \\
-  &= \frac{2 \ii}{\pi} \; \mathlarger{\sum}_{l = 2}^\infty \; d_l \, z^{2l - 3} \, C_l + \frac{2 \ii}{\pi} \; \mathlarger{\sum}_{l = 2}^\infty \; d_l \, z^{2l - 3} \log(z) + \frac{2 \ii}{\pi} \; \mathlarger{\sum}_{l = 1}^\infty \; c_l \, z^{2l - 3} \log(z) \\
- &\quad  + \frac{2 \ii}{\pi} \; \mathlarger{\sum}_{l = 2}^\infty \; b_l (2l - 2) \, z^{2l - 2}
-  + \frac{2 \ii}{\pi}\; \mathlarger{\sum}_{l = 0}^\infty \; a_l (2l - 1) (2l - 2) \, z^{2l - 3} 
+  &= \frac{2 \ii}{\pi} \; \mathlarger{\sum}_{l = 2}^\infty \; c_l \, (2l - 2) \, z^{2l - 3} \, C_l + \frac{2 \ii}{\pi} \; \mathlarger{\sum}_{l = 2}^\infty \; c_l \, (2l - 2) \, z^{2l - 3} \log(z) + \frac{2 \ii}{\pi} \; \mathlarger{\sum}_{l = 1}^\infty \; c_l \, z^{2l - 3} \\
+ &\quad  + \frac{2 \ii}{\pi} \; \mathlarger{\sum}_{l = 2}^\infty \; b_l (2l - 2) \, z^{2l - 3} + \frac{2 \ii}{\pi}\; \mathlarger{\sum}_{l = 0}^\infty \; a_l (2l - 1) (2l - 2) \, z^{2l - 3} \\
+  %%
+  &= \frac{2 \ii}{\pi} \; \mathlarger{\sum}_{l = 2}^\infty \; d_l \, z^{2l - 3} \, C_l + \frac{2 \ii}{\pi} \; \mathlarger{\sum}_{l = 2}^\infty \; d_l \, z^{2l - 3} \log(z) + \frac{2 \ii}{\pi} \; \mathlarger{\sum}_{l = 1}^\infty \; c_l \, z^{2l - 3} \\
+ &\quad  + \frac{2 \ii}{\pi} \; \mathlarger{\sum}_{l = 2}^\infty \; b_l (2l - 2) \, z^{2l - 3} + \frac{2 \ii}{\pi}\; \mathlarger{\sum}_{l = 0}^\infty \; a_l (2l - 1) (2l - 2) \, z^{2l - 3} ,
+\end{align*}
+where
+\begin{align*}
+  C_l &\coloneqq -\frac{\ii \pi}{2} - \log(2) - \psi(l + 1) \\
+  a_l &\coloneqq \frac{(-1)^l}{(l!)^2 \; 4^l}, \quad
+  b_l \coloneqq a_l \cdot  2l, \quad
+  c_l \coloneqq b_l \cdot (2l - 1), \quad
+  d_l \coloneqq c_l \cdot (2l - 2).
+\end{align*}
+
+For $G(x; 0) = -\frac{1}{2\pi} \log(|x|)$, we have
+\begin{align*}
+  \partial_\gamma G(x; 0) &= -\frac{1}{2\pi} \frac{x_\gamma}{|x|^2} \\
+  \partial_\alpha \partial_\gamma G(x; 0) &= -\frac{1}{2\pi} \delta_{\alpha\gamma} \cdot \frac{1}{|x|^2} + \frac{1}{\pi} \cdot \frac{x_\alpha x_\gamma}{|x|^4} \\
+  \partial_\beta \partial_\alpha \partial_\gamma G(x; 0)
+  &= \frac{1}{\pi} \frac{\delta_{\beta \gamma} x_\alpha + \delta_{\alpha \gamma} x_\beta + \delta_{\alpha\beta} x_\gamma}{|x|^4} - \frac{4}{\pi} \frac{x_\alpha x_\beta x_\gamma}{|x|^6}.
 \end{align*}
 
