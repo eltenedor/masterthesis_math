@@ -439,14 +439,14 @@ The next theorem can in some sense be regarded as a reverse trace theorem and wi
 \end{proof}
 
 \begin{rem}
-  Let $(u,\phi)$ be a solution of the Stokes resolvent system in the domain $\BB(x_0, r) \subset \R^d$, $d \geq 2$.
+  Let $(u,\phi)$ be a solution of the Stokes resolvent system in the domain $\BB(x_0, r) \subset \R^d$.
   \begin{align}
     \label{eq:interiorEstimateDoubleLayer}
     |\nabla^l u(x_0) | \leq \frac{C_l}{r^l} \Big( \dashint_{\BB(x_0, r)} |u(x)|^2 \d x \Big)^{1/2}
   \end{align}
   for all $l \geq 0$, where $C_l$ only depends on $d$, $l$ and $\theta$.
   Without loss of generality we may rescale and translate and assume that $x_0 = 0$ and $r = 2$.
-  Let $t \in (1,2)$. By Theorem \ref{thm:exAndUniqueSolution} we know that a solution to the Stokes resolvent sytsem on $\BB(0, t) \subsetneq \BB(0,2)$ with boundary values $g_t \coloneqq \operatorname{Tr}_{\partial\BB(0,t)} u \in \Ell^2(\partial\BB(0,t))$ is given by a boundary layer potential $\dlp_\lambda(f_t)$.
+  Let $t \in (1,2)$. By Theorem \ref{thm:exAndUniqueSolution} we know that a solution to the Stokes resolvent system on $\BB(0, t) \subsetneq \BB(0,2)$ with boundary values $g_t \coloneqq \operatorname{Tr}_{\partial\BB(0,t)} u \in \Ell^2(\partial\BB(0,t))$ is given by a boundary layer potential $\dlp_\lambda(f_t)$.
   We can use this fact to derive the desired estimate via
   \begin{align*}
     |\nabla^l u(0)|^2 

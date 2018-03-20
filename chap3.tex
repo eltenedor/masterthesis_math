@@ -144,31 +144,35 @@ for $P \in \partial\Omega$ which will be used to prove boundedness of maximal op
    for almost everywhere $P \in \partial\Omega$.
 \end{proof}
 
-For a function $u$ in $\Omega$, we define the nontangential maximal function $(u)^*$ by
-\begin{align}
-  \label{eq:defnNontangMaxFunction}
-  (u)^*(P) = \sup\{ |u(x)| \colon x \in \Omega \text{ and } |x - P| < C \operatorname{dist}(x, \partial\Omega)\}
-\end{align}
-for $P \in \partial\Omega$, where $C > 2$ is a fixed and sufficiently large constant depending on $d$ and the Lipschitz character of $\Omega$.
-Note that in Shen cones we have that for $P, y \in \partial\Omega$ and $x \in \ShenCone(P)$
-\begin{align}
-  \label{eq:shenConeEstimate}
-  |P - y| 
-  &\leq |P - x| + |x - y| 
-  \leq C \operatorname{dist}(x \partial\Omega) + |x - y|  \nonumber\\
-  &\leq (C + 1) |x - y|
-\end{align}
-where $C$ is the constant from \eqref{eq:defnNontangMaxFunction}
+%For a function $u$ in $\Omega$, we define the nontangential maximal function $(u)^*$ by
+%\begin{align}
+%  \label{eq:defnNontangMaxFunction}
+%  (u)^*(P) = \sup\{ |u(x)| \colon x \in \Omega \text{ and } |x - P| < C \operatorname{dist}(x, \partial\Omega)\}
+%\end{align}
+%for $P \in \partial\Omega$, where $C > 2$ is a fixed and sufficiently large constant depending on $d$ and the Lipschitz character of $\Omega$.
+%Note that in Shen cones we have that for $P, y \in \partial\Omega$ and $x \in \ShenCone(P)$
+%\begin{align}
+%  \label{eq:shenConeEstimate}
+%  |P - y| 
+%  &\leq |P - x| + |x - y| 
+%  \leq C \operatorname{dist}(x \partial\Omega) + |x - y|  \nonumber\\
+%  &\leq (C + 1) |x - y|
+%\end{align}
+%where $C$ is the constant from \eqref{eq:defnNontangMaxFunction}
 
 We can now prove the boundedness of certain nontangential maximal operators.
 \begin{lem}
   \label{lem:nontangentialMaximalFunctions}
   Let $1 < p < \infty$ and $(u,\phi)$ be given by \eqref{eq:defSingleLayer} and \eqref{eq:defSingleLayerPressure}.
-  Let furthermore $d \geq 3$.
   Then 
   \begin{align}
-    \| (\nabla u)^* \|_{\Ell^p(\partial\Omega)} + \| (\phi)^* \|_{\Ell^p(\partial\Omega)} + |\lambda|^{\frac{1}{2}} \|(u)^*\|_{\Ell^p(\partial\Omega)} \leq C_p \|f\|_{\Ell^p(\partial\Omega)},
+    \| (\nabla u)^* \|_{\Ell^p(\partial\Omega)}  +  \| (\phi)^* \|_{\Ell^p(\partial\Omega)} \leq C_p \|f\|_{\Ell^p(\partial\Omega)},
   \end{align}
+  where $C_p$ depends only on $d$, $\theta$, $p$ and the Lipschitz character of $\Omega$.
+  Let furthermore $d \geq 3$. Then
+  \begin{align*}
+     \|(u)^*\|_{\Ell^p(\partial\Omega)} \leq C_p \|f\|_{\Ell^p(\partial\Omega)},
+  \end{align*}
   where $C_p$ depends only on $d$, $\theta$, $p$ and the Lipschitz character of $\Omega$.
 \end{lem}
 
@@ -220,19 +224,26 @@ We can now prove the boundedness of certain nontangential maximal operators.
   \end{align*}
   where $s$ is an element on the line connecting $x$ and $P$ and we used the property of Verchota-cones that $|s - y| \geq C |y - P|$.
   Note that Verchota cones are convex.
-  By exhausting the domain of integration using annuli, we can estimate this integral by $M_{\partial\Omega}f(P)$:
-  Choose $N$ such that $2^N t \leq \diam(\Omega) < 2^{N + 1}t$.
-  Then
+  As in Verchota \cite{verchotaDiss} the integral may now be bounded by the Hardy-Littlewood maximal operator due to an application of a suitable Lemma from Dahlberg \cite{dahlberg} as the kernel $\frac{t}{(t + |y - P|)^d}$ is uniformly integrable on $\partial\Omega$.
+  Summing up we have shown that
   \begin{align*}
-    &\int_{|y - P| > t} \frac{1}{|y - P|^{d - 1}} |f(y)| \d\sigma(y) \\
-    &\quad= \sum_{k = 0}^N \int_{2^{k + 1}t > |y - P| \geq 2^k t} \frac{1}{|y - P|^{d - 1}} |f(y)| \d\sigma(y) \\
-    &\quad\leq \sum_{k = 0}^N \frac{1}{2^{k(d - 1)} t^{d - 1}} \int_{|y - P| < 2^{k + 1} t} |f(y)| \d\sigma(y) \\
-    &\quad \leq  C \sum_{k = 0}^N 2^{k - d + 1)} M_{\partial\Omega}(f)(P)
-    &\quad\leq
+    |(\nabla u)(x)| \leq C \big\{ M_{\partial\Omega} f(P) + T_\lambda^*(f)(P) \}
   \end{align*}
-  Taking the supremum over all $x \in \Omega$ the claim follows.
+  where $C$ only depends on $d$, $\theta$ and the Lipschitz character of $\Omega$.
+  We thus may take the supremum over all $x \in \verCone$ and conclude the desired estimate by the well known mapping properties of the Hardy-Littlewood maximal operator and the respective results from Lemma \ref{lem:lqBoundednessT}.
+%  By exhausting the domain of integration using annuli, we can estimate this integral by $M_{\partial\Omega}f(P)$:
+%  Choose $N$ such that $2^N t \leq \diam(\Omega) < 2^{N + 1}t$.
+%  Then
+%  \begin{align*}
+%    &\int_{|y - P| > t} \frac{1}{|y - P|^{d - 1}} |f(y)| \d\sigma(y) \\
+%    &\quad= \sum_{k = 0}^N \int_{2^{k + 1}t > |y - P| \geq 2^k t} \frac{1}{|y - P|^{d - 1}} |f(y)| \d\sigma(y) \\
+%    &\quad\leq \sum_{k = 0}^N \frac{1}{2^{k(d - 1)} t^{d - 1}} \int_{|y - P| < 2^{k + 1} t} |f(y)| \d\sigma(y) \\
+%    &\quad \leq  C \sum_{k = 0}^N 2^{k - d + 1)} M_{\partial\Omega}(f)(P)
+%    &\quad\leq
+%  \end{align*}
+%  Taking the supremum over all $x \in \Omega$ the claim follows.
 
-  We will now work on the proof of the estimate for $(u)^*$.
+  We will now work on the proof of the estimate for $(u)^*$ for $d \geq 3$.
   In order to derive $\Ell^p$ estimates on this maximal operator we will work directly with the Definition of the single layer potential \eqref{eq:defSingleLayer}.
   For $P \in \partial\Omega$, estimate \eqref{eq:fundamentalMatrixEstimate} together with the estimate for Shen cones \eqref{eq:shenConeEstimate} gives that for all $x \in \ShenCone(P)$
   \begin{align*}

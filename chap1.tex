@@ -1,10 +1,13 @@
 \chapter{Fundamentals}
 
+The purpose of this chapter is to collect basic definitions that will be used throughout the subsequent chapters. Furthermore we want to formulate the main problem regarding the resolvent estimates of the Stokes operator.
+
 \section{Lipschitz-Domains}
 
-In this section we establish the fundamental notions regarding Lipschitz domains.
+In this first section we will establish the fundamental notions regarding bounded Lipschitz domains.
 
 \begin{defn}
+  \label{defn:lipschitzDomain}
   Let $\Omega \subset \R^d$ be a bounded open connected set.
   We call $\Omega$ a \emph{bounded Lipschitz domain} if there exist $r_0, M > 0$ such that for all $x \in \partial\Omega$ there exists a function $\eta_x \colon \R^{d - 1} \to \R$ which is Lipschitz continuous and fulfills $\eta_x(0) = 0$ and $\|\nabla \eta_x \|_{\Ell^\infty(\R^{d - 1})} \leq M$, and a rotation $R_x \colon \R^d \to \R^d$ such that for all $0 < r \leq r_0$ 
   \begin{align*}
@@ -18,11 +21,63 @@ In this section we establish the fundamental notions regarding Lipschitz domains
     I_{\eta_x}(r) &\coloneqq \{ (x', x_d) \colon |x'| < r, \eta_x(x') = x_d \} .
   \end{align*}
 \end{defn}
+  It is common to refer to sets of the form $D_{\eta_x}$ as \emph{Lipschitz cylinders}.
 
-\subsection{Basic Definitions and Properties}
+  If $\Omega$ is a bounded Lipschitz domain, $x \in \partial\Omega$ and $0 < r \leq r_0$, then we may define $U_{x,r} \coloneqq \{ x\} + R_x^{-1} D(r)$, where $R_x$ is the rotation corresponding to $x$ from Definition \ref{defn:lipschitzDomain}.
+  This is all we need to define the Lipschitz character of a bounded Lipschitz domain $\Omega$ as suggested by Pipher and Verchota in \cite{pipherVerchota}.
 
-\subsection{Tangential and Nontangential Operators}
+  \begin{defn}
+    Let $\Omega \subset \R^d$, $d \geq 2$, be a bounded Lipschitz domain and $x_1, \dots,x_n \in \partial\Omega$ be such that $\{U_{x_i,r_0} \}_{i = 1}^n$ covers $\partial\Omega$.  
+    Furthermore let $M$ be the constant from Definition \ref{defn:lipschitzDomain}.
+    Then a constant $C > 0$ is said to depend on the \emph{Lipschitz character of} $\Omega$ if it depends on $M$ and $n$.
+  \end{defn}
 
+  That the property of the last definition is indeed a fruitful concept will become more clear later the following theorem.
+  This result is a crucial ingredient in the proof of the Rellich estimates in Chapter 4 as it provides a useful approximating property of Lipschitz domains.
+  The original proof of this Theorem goes back to Verchota \cite{verchota} and Necas \cite{necas}. 
+  The presented version of this theorem appeared in Brown \cite{brown}.
+
+\begin{thm}[Verchota, Necas]
+  Let $\Omega$ be a Lipschitz domain.
+  Then there exists a sequence of $\CC^\infty$-domains $\Omega_k$ with uniform Lipschitz characters, homeomorphisms $\Lambda_k \colon \partial\Omega \to \partial\Omega_k$, functions $\vartheta_k \colon \partial\Omega \to \R^+$ and a smooth compactly supported vector field $h \colon \R^d \to \R^d$ which satisfy the following properties:
+  \begin{enumerate}[i)]
+    \item There exists a covering of $\partial\Omega$ by coordinate cylinders which also serve as coordinate cylinders for $\partial\Omega_k$.
+    \item The homeomorhpisms $\Lambda_k \colon \partial \Omega \to \partial\Omega_k$ satisfy
+      \begin{align*}
+        \sup_{Q \in \partial\Omega} |Q - \Lambda_k(Q)| \to 0\quad\text{as } k \to \infty
+      \end{align*}
+      and $\Lambda_k(P)$ approaches $P$ nontangentially meaning that for all $k \in \N$
+      \begin{align*}
+        | P - \Lambda_k(P) | < (1 + \beta) \operatorname{dist}(\Lambda_k(P), \partial\Omega)
+      \end{align*}
+      for some constant $\beta$ depending only on $d$ and the Lipschitz character of $\Omega$.
+    \item The normals $\nu_k$ of $\partial\Omega_k$ satisfy $\lim_{k \to \infty} \nu_k(\Lambda_k(P)) = \nu(P)$ a. e. for all $P \in \partial\Omega$
+    \item The functions $\vartheta_k$ satisfy $\delta \leq \vartheta_k \leq \delta^{-1}$ for some $\delta > 0$, $\vartheta^k \to 1$ pointwise a. e. and
+      \begin{align*}
+        \int_E \vartheta_k(Q) \d \sigma(Q) = \int_{\Lambda_k(E)} \d \sigma_k(Q),
+      \end{align*}
+      where $E \subset \partial \Omega$ is measurable and $\sigma_k$ denotes the surface measure on $\Omega_k$.
+    \item The vector field $\alpha$ satisfies $\langle \alpha, \nu_k \rangle \geq c > 0$ a.e. on each $\partial\Omega_k$ where $\nu_k$ denotes the unit inner normal to $\partial\Omega_k$.
+  \end{enumerate}
+\end{thm}
+
+When dealing with boundary value problems on bounded Lipschitz domains the behavior of functions on $\Omega$ near the boundary will become important.
+
+For a function $u$ in $\Omega$, we define the nontangential maximal function $(u)^*$ by
+\begin{align}
+  \label{eq:defnNontangMaxFunction}
+  (u)^*(P) = \sup\{ |u(x)| \colon x \in \Omega \text{ and } |x - P| < C \operatorname{dist}(x, \partial\Omega)\}
+\end{align}
+for $P \in \partial\Omega$, where $C > 2$ is a fixed and sufficiently large constant depending on $d$ and the Lipschitz character of $\Omega$.
+Note that in Shen cones we have that for $P, y \in \partial\Omega$ and $x \in \ShenCone(P)$
+\begin{align}
+  \label{eq:shenConeEstimate}
+  |P - y| 
+  &\leq |P - x| + |x - y| 
+  \leq C \operatorname{dist}(x \partial\Omega) + |x - y|  \nonumber\\
+  &\leq (C + 1) |x - y|
+\end{align}
+where $C$ is the constant from \eqref{eq:defnNontangMaxFunction}
 
 \section{The Stokes Operator}
 
