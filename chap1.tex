@@ -32,12 +32,13 @@ In this first section we will establish the fundamental notions regarding bounde
     Then a constant $C > 0$ is said to depend on the \emph{Lipschitz character of} $\Omega$ if it depends on $M$ and $n$.
   \end{defn}
 
-  That the property of the last definition is indeed a fruitful concept will become more clear later the following theorem.
+  That the Lipschitz character indeed a fruitful concept will be emphasized by the following theorem.
   This result is a crucial ingredient in the proof of the Rellich estimates in Chapter 4 as it provides a useful approximating property of Lipschitz domains. In short it enables us to approximate a bounded Lipschitz domain $\Omega$ by a sequence $(\Omega_j)$ of $\CC^\infty$ domains in such a way that estimates on $\Omega_j$ with bounding constants that only depend on the Lipschitz characters may be extended to $\Omega$ when taking the limit.
   The original proof of this Theorem goes back to Verchota \cite{verchota} and Necas \cite{necas}. 
   The presented version of this theorem appeared in Brown \cite{brown}.
 
 \begin{thm}[Verchota, Necas]
+  \label{thm:smoothApproximation}
   Let $\Omega$ be a Lipschitz domain.
   Then there exists a sequence of $\CC^\infty$-domains $\Omega_k$ with uniform Lipschitz characters, homeomorphisms $\Lambda_k \colon \partial\Omega \to \partial\Omega_k$, functions $\vartheta_k \colon \partial\Omega \to \R^+$ and a smooth compactly supported vector field $h \colon \R^d \to \R^d$ which satisfy the following properties:
   \begin{enumerate}[i)]
@@ -64,11 +65,13 @@ In this first section we will establish the fundamental notions regarding bounde
 The next concept we introduce, will allow us to talk about boundary values of functions which are defined on $\Omega$, by considering their nontangential behavior.
 The first step will be to introduce nontangential approach regions.
 Unaffortunately in the literature there exist at least two different concepts.
+  In the following, by a cone we mean an open, circular, truncated cone with only one convex component.
 
 \begin{defn}[Regular family of cones, Verchota]
-  By a cone we mean an open, circular, truncated cone with only one convex component.
+  \label{defn:regularFamilyOfCones}
+  Let $\Omega \subset \R^d$ be a bounded Lipschitz domain.
   If $q \in \partial\Omega$, then $\Gamma(q)$ will denote a cone with vertex $q$ and one component in $\Omega$.
-  Assigning to each $q \in \partial\Omega$ one cone $\Gamma(q)$ the family $\{ \Gamma(q) \colon q \in \partial\Omega \}$ will be called \emph{regular} if there exist $x_1, \dots,x_{n_0} \in \partial\Omega$, $\tilde r > 0$ and Rotations $\tilde R_{x_1}, \dots, \tilde R_{x_{n_0}}$ such that
+  Assigning to each $q \in \partial\Omega$ one cone $\Gamma(q)$ the family $\{ \Gamma(q) \colon q \in \partial\Omega \}$ will be called \emph{regular} if there exist $x_1, \dots,x_{n_0} \in \partial\Omega$, $\tilde r > 0$ and rotations $\tilde R_{x_1}, \dots, \tilde R_{x_{n_0}}$ such that
   \begin{align*}
     \partial\Omega \subset \bigcup_{i = 1}^{n_0} \{ x_i \} + \tilde R_{x_i}^{-1} D(4 \tilde r / 5),
   \end{align*}
@@ -88,34 +91,67 @@ Unaffortunately in the literature there exist at least two different concepts.
   and such that for all $q \in [ \{ x_i\} + \tilde R_{x_i}^{-1} D(4 \tilde r / 5)] \cap \partial\Omega$, we have
   \begin{align*}
     \tilde R_{x_i}^{-1} \alpha_i + \{ q\} \subset \Gamma(q) \subset \overline{\Gamma(q)} \setminus \{q\} \subset \tilde R_{x_i}^{-1} \beta_i + \{ q\}, \\
-    \tilde R_{x_i}^{-1} \gamma_i + \{q\} \subset [\{ x_i\} + \tilde R_{x_i}^{-1} D(\tilde r)] \cap \Omega
+    \tilde R_{x_i}^{-1} \gamma_i + \{q\} \subset [\{ x_i\} + \tilde R_{x_i}^{-1} D(\tilde r)] \cap \Omega.
   \end{align*}
-  We will denote a regular cone by $\verCone$.
+  We will sometimes denote a regular cone as above by $\verCone(q)$.
 \end{defn}
+
+For the existence of such families of cones see the Appendix of Verchota \cite{verchota}.
+
+In Verchota cones $\verCone(q)$ we have the properties that for all $\Omega$ there exists a constant $C > 0$ depending only on the Lipschitz character such that for all $q$, $p \in \partial\Omega$ and any $x \in \Gamma_V(p)$ we have that
+\begin{align}
+  |x - q| &\geq C |x - p| \label{eq:verCone1}\\ 
+  |x - q| &\geq C |p - q|.\label{eq:verCone2}
+\end{align}
+For a proof see Verchota \cite[p. 9f.]{verchota}
 
 \begin{defn}[Nontangential approach region, Shen]
-  
+  \label{defn:nontangentialApproachRegion}
+   For $\alpha > 1$ and $q \in \partial\Omega$ we define 
+   \begin{align*}
+     \ShenCone(q) \coloneqq \big\{ x \in \Omega \setminus \partial\Omega \colon |x - q| < \alpha \operatorname{dist}(x, \partial\Omega) \big\}
+   \end{align*}
+   If $\alpha$ si chosen sufficiently large (see Shen \cite{shen2017}) we call $\{ \ShenCone(q) \colon q \in \partial\Omega\}$ a \emph{family of nontangential approach regions}.
 \end{defn}
 
-\begin{defn}
-For a function $u$ in $\Omega$, we define the nontangential maximal function $(u)^*$ by
-\begin{align}
-  \label{eq:defnNontangMaxFunction}
-  (u)^*(P) = \sup\{ |u(x)| \colon x \in \Omega \text{ and } |x - P| < C \operatorname{dist}(x, \partial\Omega)\}
-\end{align}
-for $P \in \partial\Omega$, where $C > 2$ is a fixed and sufficiently large constant depending on $d$ and the Lipschitz character of $\Omega$.
-\end{defn}
-
-Note that in Shen cones we have that for $P, y \in \partial\Omega$ and $x \in \ShenCone(P)$
+  Note that in Shen cones $\ShenCone(p)$, we have that for $q, y \in \partial\Omega$ and $x \in \ShenCone(q)$
 \begin{align}
   \label{eq:shenConeEstimate}
-  |P - y| 
-  &\leq |P - x| + |x - y| 
-  \leq C \operatorname{dist}(x \partial\Omega) + |x - y|  \nonumber\\
-  &\leq (C + 1) |x - y|
+  |q - y| 
+  &\leq |q - x| + |x - y| 
+  \leq \alpha \operatorname{dist}(x, \partial\Omega) + |x - y|  \nonumber\\
+  &\leq (\alpha + 1) |x - y|
 \end{align}
-where $C$ is the constant from \eqref{eq:defnNontangMaxFunction}
+where $\alpha$ is the constant from \ref{defn:nontangentialApproachRegion}. It is reasonable to choose $\alpha$ in a way that also condition (ii) from Theorem \ref{thm:smoothApproximation} holds.
 
+Depending on the type of cones used one may introduce similar concepts of nontangential convergence and nontangential maximal functions.
+
+\begin{defn}
+For a function $u$ in $\Omega$ and a fixed family of nontangential approach regions, we define the nontangential maximal function $(u)^*$ by
+\begin{align}
+  \label{eq:defnNontangMaxFunction}
+  (u)^*(q) = \sup\big\{ |u(x)| \colon x \in \ShenCone(q)\big\}
+\end{align}
+for $q \in \partial\Omega$.
+\end{defn}
+
+Note that Tolksdorf \cite{tolksdorf} and Shen \cite{shen2017} show that the choice of $\alpha$ for the nontangential maximal function does not affect their $p$-norms in an unpredictable way. In fact their $p$-norms for different $\alpha_1$ and $\alpha_2$ stay comparable with a constant only depending on $d$, $\alpha_1$, $\alpha_2$ and the Lipschitz character.
+
+The above mentioned constructions of cones are not limited to cones that lay in the interior of the domain $\Omega$.
+In fact the same construction can be carried out for the exterior domain $\R^d \setminus \overline{\Omega}$ yielding cones that lay outside of $\Omega$.
+
+\begin{defn}[Nontangential convergence]
+  Let $\Omega$ be a bounded Lipschitz domain and $\{\ShenCone(q) \colon q \in \partial\Omega\}$ be a family of nontangential approach regions which lies either inside or outside $\Omega$.
+  Let furthermore $u$ be a function on $\Omega$ and $f$ a function on $\partial\Omega$.
+  We say that $u = f$ \emph{in the sense of nontangential convergence} if 
+  \begin{align*}
+    \lim_{\substack{ x \to q \\ x \in \ShenCone{q}}} u(x) = f(q), \quad\text{for a. e. } q \in \partial\Omega.
+  \end{align*}
+  %We will sometimes denote a cone coming from a nontangential approach region as above by $\ShenCone(q)$.
+\end{defn}
+
+Usually the nontangential limits taken from inside and outside the domain will differ.
+For functions $u$ on $\Omega$ we will therefore often use the notation $u_+$ to denote the \emph{inner} nontangential limit for a (implicitly) fixed family of nontangential approach regions and $u_-$ for the respective \emph{outer} nontangential limit.
 
 \section{The Stokes Operator}
 
