@@ -13,7 +13,7 @@ We start with a similar result on Lipschitz cylinders.
   Then 
   \begin{align}
     \label{eq:reverseHoelderCylinder}
-    \Big( \dashint_{D_\eta(r)} |u|^{p_d} \d x \Big)^{1/p_d} \leq C \Big( \dashint_{D(2r)} |u|^2 \d x \Big)^{1/2},
+    \Big( \dashint_{D_\eta(r)} |u|^{p_d} \d x \Big)^{1/p_d} \leq C \Big( \dashint_{D_\eta(2r)} |u|^2 \d x \Big)^{1/2},
   \end{align}
   where $C$ only depends on $d$, $M$ and $\theta$.
 \end{lem}
@@ -38,27 +38,36 @@ We start with a similar result on Lipschitz cylinders.
   Estimate \eqref{eq:reverseHoelderCylinder} now follows after dividing by $|D_\eta(1)|$.
 \end{proof}
 
-The next step is to extend the result to arbitrary Lipschitz domains.
-%\begin{lem}
-%  Let $x_0 \in \overline\Omega$ and $0 < r < c \diam(\Omega)$.
-%  Let $u \in \HH^1(\BB(x_0, 2r) \cap \Omega; \C^d)$ and $\phi \in \Ell^2(\BB(x_0, 2r) \cap \Omega)$ satisfy the Stokes resolvent system in $\BB(x_0, 2r) \cap \Omega$. 
-%  If $\BB(x_0, 2r) \cap \partial \Omega \neq \emptyset $, we additionally assume $u = 0$ on $\BB(x_0, 2r) \cap \partial\Omega$.
-%  Then there exists $\varepsilon > 0$ such that
-%  \begin{align}
-%    \label{eq:reverseHoelder}
-%    \Big( \dashint_{\BB(x_0, r) \cap \Omega} |u|^p \Big)^{1/p} \leq C \Big( \dashint_{\BB(x_0, 2r) \cap \Omega} |u|^2 \Big)^{1/2},
-%  \end{align}
-%  where $p = p_d + \varepsilon$ and $C > 0$ and $\varepsilon$ only depend on $d$, $\theta$ and the Lipschitz character of $\Omega$.
-%\end{lem}
+The next step is to extend the result to arbitrary Lipschitz domains. The following Lemma reduces the amount of work to a few special cases.
+
+\begin{lem}[Tolksdorf]
+  \label{lem:ballsforballs}
+  Let $\Omega \subset \R^d$ be Lebesgue-measurable, $f, g \in \Ell^2(\Omega)$, $\alpha_2 > \alpha_1 > 1$, $p > 2$, $r > 0$ and $x_0 \in \R^d$ be such that $\BB(x_0, r) \cap \Omega \neq \emptyset$.
+  If there exists $C > 0$ such that
+  \begin{align*}
+    &\Big( \frac{1}{s^d} \int_{\Omega \cap \BB(y, s)} |f|^p \d x \Big)^{1/p} \\
+    &\qquad\leq C \Big\{ \Big( \frac{1}{s^d} \int_{\Omega \cap \alpha_1 \BB(y, s)} |f|^2 \d x \Big)^{1/2} + \sup_{B' \cap \BB(y,s)} \Big( \frac{1}{|B'|} \int_{\Omega \cap B'} |g|^2 \d x \Big)^{1/2} \Big\}
+  \end{align*}
+  holds for all balls $\BB(y,s)$ with $\BB(y,\alpha_2 s) \subset \BB(x_0, \alpha_2 r)$ and which are either centered on $\partial\Omega$ or satisfy $\alpha_2 \BB(y,s) \subset \Omega$, then for each $\alpha \in (1,\alpha_2)$ there exists a constant $C'$ such that
+  \begin{align*}
+    &\Big( \frac{1}{r^d} \int_{\Omega \cap \BB(x_0, r)} |f|^p \d x \Big)^{1/p} 
+    \\
+    &\qquad\leq C' \Big\{ \Big( \frac{1}{s^d} \int_{\Omega \cap \alpha_1 \BB(y, s)} |f|^2 \d x \Big)^{1/2} + \sup_{B' \cap \BB(y,s)} \Big( \frac{1}{|B'|} \int_{\Omega \cap B'} |g|^2 \d x \Big)^{1/2} \Big\}.
+  \end{align*}
+\end{lem}
+
+As of now, our toolbox comprises enough tools to prove that solutions to the Stokes resolvent system satisfy a weak reverse H\"older inequality.
+
 \begin{lem}
   \label{lem:reverseHoelder}
   Let $x_0 \in \overline\Omega$ and $0 < 2r < r_0$ and set $\alpha_1 = \sqrt{d^2 10^2 (1 + M)^2 + 4}$ and $\alpha_2 = \alpha_1 + 1$.
   Let $u \in \HH^1(\BB(x_0,  \alpha_2 r) \cap \Omega; \C^d)$ and $\phi \in \Ell^2(\BB(x_0, \alpha_2 r) \cap \Omega)$ satisfy the Stokes resolvent system in $\BB(x_0, \alpha_2 r) \cap \Omega$. 
   If $\BB(x_0, \alpha_2 r) \cap \partial \Omega \neq \emptyset $, we additionally assume $u = 0$ on $\BB(x_0, \alpha_2 r) \cap \partial\Omega$.
-  Then for all balls $\BB(x_0, r)$ that are either centered on $\partial\Omega$ or satisfy $\alpha_2 \BB(x_0, r) \subseteq \Omega$ the estimate
+  Then
+ % Then for all balls $\BB(x_0, r)$ that are either centered on $\partial\Omega$ or satisfy $\alpha_2 \BB(x_0, r) \subseteq \Omega$ the estimate
   \begin{align}
     \label{eq:reverseHoelder}
-    \Big( \dashint_{\BB(x_0, r) \cap \Omega} |u|^p \Big)^{1/p} \leq C \Big( \dashint_{\BB(x_0, \alpha_1 r) \cap \Omega} |u|^2 \Big)^{1/2}
+    \Big( \dashint_{\BB(x_0, r) \cap \Omega} |u|^p \Big)^{1/p} \leq C \Big( \dashint_{\BB(x_0, 2 r) \cap \Omega} |u|^2 \Big)^{1/2}
   \end{align}
   holds, where $p = p_d$.
   Here, $C > 0$ only depends on $d$, $\theta$ and the Lipschitz character of $\Omega$.
@@ -70,14 +79,18 @@ The next step is to extend the result to arbitrary Lipschitz domains.
 
   %We want to apply Lemma 4.2 from \cite{tolksdorRsec}.
   %Let $0 < s < r$ and $\tilde \BB{} = \BB(y,s)$ with $\alpha_2 \tilde \BB \subseteq \BB(x_0, \alpha_2 r)$.
+  Due to Lemma \ref{lem:ballsforballs} it suffices to consider only two cases: (1) $x_0 \in \Omega$ with $\alpha_2 \BB(x_0,r) \subset \Omega$ and (2) $x_0 \in \partial\Omega$.
+
   Let $x_0 \in \Omega$ with $\alpha_2 \BB(x_0,r) \subset \Omega$. We may deploy the interior estimate \eqref{eq:interiorEstimateDoubleLayer} to derive that for all $x \in \BB(x_0,r)$
   \begin{align*}
     |u(x)|^p \leq C \Big( \dashint_{\BB(x,r)} |u(y)|^2 \d y \Big)^{p/2}
   \end{align*}
   which after integrating $x$ over $\BB(x_0, r)$ yields
   \begin{align*}
-    \dashint_{\BB(x_0, r)} |u(x)|^p \d x \leq C \Big(\alpha_1^d  \dashint_{\BB(x_0, \alpha_1 r)} |u(z)|^2 \d z \Big)^{p/2}.
+    \dashint_{\BB(x_0, r)} |u(x)|^p \d x \leq C \Big(\alpha_1^d  \dashint_{\BB(x_0, \alpha_1 r)} |u(z)|^2 \d z \Big)^{p/2},
   \end{align*}
+  where we also used the fact that $\alpha_1 > 2$.
+
   If $x_0 \in \partial\Omega$, then by Lemma \ref{lem:reverseHoelderCylinder}
   \begin{align*}
     \Big( \frac{1}{r^d} \int_{\BB(x_0, r) \cap \Omega} |u|^p \Big)^{1/p}
@@ -85,9 +98,45 @@ The next step is to extend the result to arbitrary Lipschitz domains.
     &\leq C \Big( \frac{1}{r^d} \int_{D_{\eta_{x_0}}(2 r)} |u|^p \Big)^{1/p} \\
     &\leq C \Big( \frac{1}{r^d} \int_{\BB(x_0, \alpha_1 r) \cap \Omega} |u|^2 \Big)^{1/2}.
   \end{align*}
+  Now the claim follows readily from an application of Lemma \ref{lem:ballsforballs} with $\alpha = 2 \in (1, \alpha_2)$.
 \end{proof}
 
+  We note that estimate \eqref{eq:reverseHoelder} is a weak reverse H\"older inequality and thus possesses a self-improving property, see Giaquinta and Martinazzi \cite{giaquintaMartinazzi} or Giaquinta and Modica \cite{giaquintaModica}.
+
+  \begin{prop}[Giaquinta, Modica]
+    \label{prop:giaquinta}
+    Let $\Omega \subset \R^d$ be open, $f \in \Ell^1_{\mathrm{loc}}$, $q > 1$, be a non-negative function.
+    If there exist constants $b > 0, R_0 > 0$ such that
+    \begin{align*}
+      \Big( \frac{1}{r^d} \int_{\BB(x_0, r)} f^q \d x \Big)^{1/q} \leq \frac{b}{r^d} \int_{\BB(x_0, 2r)} f \d x
+    \end{align*}
+    for all $x_0 \in \Omega$ and $0 < r < \min\{ R_0, \operatorname{dist}(x_0, \partial\Omega)/2\}$.
+    Then $f \in \Ell^{q + \varepsilon}_{\mathrm{loc}}(\Omega)$ for some $\varepsilon > 0$, depending only on $d$, $q$, and $b$ and there is contant $\tilde C$ depending only on $d$, $q$, $\varepsilon$ and $b$ such that
+    \begin{align*}
+      \Big( \frac{1}{r^d} \int_{\BB(x_0, r)} f^{q + \varepsilon} \d x \Big)^{1/(q + \varepsilon)} \leq \frac{b}{r^d} \int_{\BB(x_0, 2r)} f^q \d x
+    \end{align*}
+    for all $x_0 \in \Omega$ and $0 < r < \min\{R_0, \operatorname{dist}(x_0, \partial\Omega)/2\}$.
+  \end{prop}
+
+  \begin{rem}
+    The self-improving property of reverse Hölder estimates can now be used to make the result of Lemma \ref{lem:reverseHoelder} a little bit better. 
+    We are aiming to apply Proposition \ref{prop:giaquinta} for $x_0 \in \overline\Omega$ on the open set $\Omega \cap \BB(x_0, r)$. 
+    Let $u$ be as in Lemma \ref{lem:reverseHoelder}. Then for $f = |u|^{2} \chi_{\BB(x_0,\alpha_2 r) \cap \Omega}$ which can be considered as a partial extension by $0$ of $u$ to $\R^d$ and $q = p/2$, inequality \eqref{eq:reverseHoelder} reads
+    \begin{align*}
+      \Big( \frac{1}{r^d} \int_{\BB(x_0, r)} f^q \d x \Big)^{1/q}
+      &= \Big( \frac{1}{r^d} \int_{\BB(x_0, r) \cap \Omega} |u|^p \d x \Big)^{2/p} \\
+      &\leq C^2 \frac{1}{r^d} \int_{\BB(x_0, 2r) \cap \Omega} |u|^2 \d x 
+    \end{align*}
+  \end{rem}
+
+
+  %Consequently it suffices to prove \eqref{eq:reverseHoelder} for $p = p_d = \frac{2d}{d - 1}$.
+
+  %We want to apply Lemma 4.2 from \cite{tolksdorRsec}.
+  %Let $0 < s < r$ and $\tilde \BB{} = \BB(y,s)$ with $\alpha_2 \tilde \BB \subseteq \BB(x_0, \alpha_2 r)$.
+
 The following extrapolation theorem will be necessary in order to derive $\Ell^p$-bounds on the solution of the Stokes resolvent system, \cite[Thm. 3.3]{shenExtrapolation}.
+Note that a more recent result from Tolksdorf \cite{tolksdorfExtra} generalizes this result to operators which are defined on spaces of Banach space valued functions.
 
 \begin{thm}
   \label{thm:extrapolation}
