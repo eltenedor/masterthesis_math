@@ -1,6 +1,7 @@
 \chapter{Fundamentals}
 
 The purpose of this chapter is to collect basic definitions that will be used throughout the subsequent chapters. Furthermore we want to formulate the main problem regarding the resolvent estimates of the Stokes operator.
+Throughout this chapter we let $d$ always denote a natural number greater or equal to 2.
 
 \section{Lipschitz-Domains}
 
@@ -21,7 +22,7 @@ In this first section we will establish the fundamental notions regarding bounde
     I_{\eta_x}(r) &\coloneqq \{ (x', x_d) \colon |x'| < r, \eta_x(x') = x_d \} .
   \end{align*}
 \end{defn}
-  It is common to refer to sets of the form $D_{\eta_x}$ as \emph{Lipschitz cylinders}. If the point $x$ in the definition of Lipschitz cylinders is not of particular importance we will denote the Lipschitz cylinder by $D_{\eta}$.
+  It is common to refer to sets of the form $D_{\eta_x}$ as \emph{Lipschitz cylinders}. If the point $x$ in the definition of Lipschitz cylinders is not of particular importance we will denote the Lipschitz cylinder by $D_{\eta}(r)$.
 
   If $\Omega$ is a bounded Lipschitz domain, $x \in \partial\Omega$ and $0 < r \leq r_0$, then we may define $U_{x,r} \coloneqq \{ x\} + R_x^{-1} D(r)$, where $R_x$ is the rotation corresponding to $x$ from Definition \ref{defn:lipschitzDomain}.
   This is all we need to define the Lipschitz character of a bounded Lipschitz domain $\Omega$ as suggested by Pipher and Verchota in \cite{pipherVerchota}.
@@ -64,7 +65,7 @@ In this first section we will establish the fundamental notions regarding bounde
 
 The next concept we introduce will allow us to talk about boundary values of functions which are defined on $\Omega$ by considering their nontangential behavior.
 The first step will be to define nontangential approach regions.
-Unfortunately in the literature there exist at least two different concepts which will be introduced in the next definitions.
+Unfortunately, in the literature there exist at least two different concepts which will be introduced in the next definitions.
   In the following, by a cone we mean an open, circular, truncated cone with only one convex component.
 
 \begin{defn}[Regular family of cones, Verchota]
@@ -174,7 +175,7 @@ For functions $u$ on $\R^d \setminus \partial\Omega$ we will therefore often use
 
 \section{The Stokes Operator}
 
-In this section we will introduce the Stokes operator on $\Ell^2(\Omega)$ and $\Ell^p(\Omega)$ for general $p$ and establish a relation to the \emph{Dirichlet problem for the Stokes resolvent system}
+In this section, we will introduce the Stokes operator on $\Ell^2(\Omega; \C^d)$ and $\Ell^p(\Omega; \C^d)$ for general $p$ and establish a relation to the \emph{Dirichlet problem for the Stokes resolvent system}
 \begin{align}
   -\Delta u + \nabla \phi + \lambda u &= f  \quad\text{in } \Omega, \nonumber\\
   \div u &= 0 \quad\text{in } \Omega, \label{eq:stokesResolventSystem} \\
@@ -183,21 +184,22 @@ In this section we will introduce the Stokes operator on $\Ell^2(\Omega)$ and $\
 where $\lambda \in \Sigma_\theta \coloneqq \{ z \in \C \colon \lambda \neq 0 \text{ and } |\arg(z) | < \pi - \theta \}$ and $\theta \in (0, \pi/2)$.
 
 We beginn by defining the relevant function spaces.
-Let $\Omega \subseteq \R^d$, $d \geq 2$ be a bounded Lipschitz domain and $1 < p < \infty$. 
+Let $\Omega \subseteq \R^d$ be a bounded Lipschitz domain and $1 < p < \infty$. 
 We define
 \begin{align*}
   \CC_{c, \sigma}^\infty(\Omega) \coloneqq \{ \varphi \in \CC_c^\infty(\Omega; \C^d) \colon \div(\varphi) = 0 \},
 \end{align*}
 which can serve as a suitable space of test functions.
-We can now close this space in $\Ell^p(\Omega)$ and the Sobolev Space $\WW_{1,p}(\Omega)$ which gives
+We can now close this space in $\Ell^p(\Omega)$ and the Sobolev space $\WW_{1,p}(\Omega)$ which gives
 \begin{align*}
   \Ell_\sigma^p \coloneqq \overline{\CC_{c,\sigma}^\infty(\Omega)}_{\Ell^p}
 \end{align*}
 and
 \begin{align*}
-  \WW_{0,\sigma}^{1,p}(\Omega) \coloneqq \overline{\CC_{c,\sigma}^\infty(\Omega)}_{\WW^{1,p}}.
+  \WW_{0,\sigma}^{1,p}(\Omega) \coloneqq \overline{\CC_{c,\sigma}^\infty(\Omega)}_{\WW^{1,p}},
 \end{align*}
-If $p = 0$, we will use the symbol $\HH_{0,\sigma}^1(\Omega)$ to denote $\WW_{0,\sigma}^{1,2}(\Omega)$ to emphasize that this space is a Hilbert space.
+respectively.
+If $p = 2$, we will use the symbol $\HH_{0,\sigma}^1(\Omega)$ to denote $\WW_{0,\sigma}^{1,2}(\Omega)$ in order to emphasize that this space is a Hilbert space.
 
 In order to define the Stokes operator, we introduce the following sesquilinear form
 \begin{align*}
@@ -215,11 +217,11 @@ Note that for $u \in \HH_{0,\sigma}^1(\Omega)$ the gradient $\nabla u$ is a matr
   where $u \in \Dom(A_2)$ and $f$ comes from the definition of the domain.
 \end{defn}
 
-The following theorem from Mitrea and Monniaux \cite[Thm 4.7]{mitreaMonniaux} shows that our definition of the Stokes operator and the one used in Shen's paper coincide. 
+The following theorem from Mitrea and Monniaux \cite[Thm 4.7]{mitreaMonniaux} shows that our definition of the Stokes operator and the one used in Shen's paper \cite{Shen2012} coincide. 
 Another advantage of this characterization is the immediate link of the Stokes operator to the Stokes system.
 
 \begin{thm}
-  If $\Omega \subseteq \R^d$, $d \geq 2$ is a bounded Lipschitz domain and $A_2$ is the Stokes operator on $\Ell^2_\sigma(\Omega)$ then
+  If $\Omega \subseteq \R^d$, $d \geq 2$, is a bounded Lipschitz domain and $A_2$ is the Stokes operator on $\Ell^2_\sigma(\Omega)$ then
   \begin{align*}
     \Dom(A_2) = \big\{ u \in H^1_{0,\sigma}(\Omega) \colon \exists \pi \in \Ell^2(\Omega) \text{ s.t. } -\Delta u + \nabla \pi \in \Ell^2_\sigma(\Omega) \big\},
   \end{align*}
@@ -230,7 +232,7 @@ Another advantage of this characterization is the immediate link of the Stokes o
   \end{align*}
 \end{thm}
 
-The following proposition summarizes some facts about the Stokes operator on $\Ell^2_\sigma(\Omega)$.
+The following proposition summarizes some facts about the Stokes operator on $\Ell^2_\sigma(\Omega)$. A proof can be found in Tolksdorf \cite{tolksdorf}.
 
 \begin{prop}
   Let $\Omega \subset \R^d$ be a bounded Lipschitz domain and $A_2$ the Stokes operator as in Definition \ref{defn:stokes}. Then we have
@@ -255,7 +257,7 @@ For general $f = \Ell^2(\Omega)$ we use the \emph{Helmholtz projection} $\PP_2$ 
 \begin{align*}
   \Delta u + \nabla \pi + \lambda u + (I - \PP_2) f = \PP_2 f + (I - \PP_2) f = f,
 \end{align*}
-where $u$ and $\pi$ now correspond to $\PP_2 f \in \Ell^2_\sigma(\Omega)$. On bounded Lipschitz domains the orthogonal complement to $\PP_2[\Ell^2(\Omega; \C^d)] = \Ell2_\sigma(\Omega)$ is characterized via
+where $u$ and $\pi$ now correspond to $\PP_2 f \in \Ell^2_\sigma(\Omega)$. On bounded Lipschitz domains the orthogonal complement to $\PP_2[\Ell^2(\Omega; \C^d)] = \Ell^2_\sigma(\Omega)$ is characterized via
 \begin{align*}
   \Ell^2_\sigma(\Omega)^\perp = \big\{ f \in \Ell^2(\Omega; \C^d) \colon f = \nabla \phi, \text{ for some } \phi \in \Ell^2(\Omega) \big\}.
 \end{align*}
