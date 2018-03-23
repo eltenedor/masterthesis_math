@@ -21,7 +21,7 @@ In this first section we will establish the fundamental notions regarding bounde
     I_{\eta_x}(r) &\coloneqq \{ (x', x_d) \colon |x'| < r, \eta_x(x') = x_d \} .
   \end{align*}
 \end{defn}
-  It is common to refer to sets of the form $D_{\eta_x}$ as \emph{Lipschitz cylinders}.
+  It is common to refer to sets of the form $D_{\eta_x}$ as \emph{Lipschitz cylinders}. If the point $x$ in the definition of Lipschitz cylinders is not of particular importance we will denote the Lipschitz cylinder by $D_{\eta}$.
 
   If $\Omega$ is a bounded Lipschitz domain, $x \in \partial\Omega$ and $0 < r \leq r_0$, then we may define $U_{x,r} \coloneqq \{ x\} + R_x^{-1} D(r)$, where $R_x$ is the rotation corresponding to $x$ from Definition \ref{defn:lipschitzDomain}.
   This is all we need to define the Lipschitz character of a bounded Lipschitz domain $\Omega$ as suggested by Pipher and Verchota in \cite{pipherVerchota}.
@@ -32,15 +32,15 @@ In this first section we will establish the fundamental notions regarding bounde
     Then a constant $C > 0$ is said to depend on the \emph{Lipschitz character of} $\Omega$ if it depends on $M$ and $n$.
   \end{defn}
 
-  That the Lipschitz character indeed a fruitful concept will be emphasized by the following theorem.
-  This result is a crucial ingredient in the proof of the Rellich estimates in Chapter 4 as it provides a useful approximating property of Lipschitz domains. In short it enables us to approximate a bounded Lipschitz domain $\Omega$ by a sequence $(\Omega_j)$ of $\CC^\infty$ domains in such a way that estimates on $\Omega_j$ with bounding constants that only depend on the Lipschitz characters may be extended to $\Omega$ when taking the limit.
-  The original proof of this Theorem goes back to Verchota \cite{verchota} and Necas \cite{necas}. 
+  That the Lipschitz character is indeed a fruitful concept will be emphasized by the following theorem.
+  This result is a crucial ingredient in the proof of the Rellich estimates in Chapter \ref{chap:4} as it provides a useful approximating property of Lipschitz domains. In short it enables us to approximate a bounded Lipschitz domain $\Omega$ by a sequence $(\Omega_j)$ of $\CC^\infty$ domains in such a way that estimates on $\Omega_j$ with bounding constants that only depend on the Lipschitz characters may be extended to $\Omega$ when taking the limit.
+  The original proof of this Theorem goes back to Ne\v{c}as \cite{necas} and Verchota \cite{verchota} . 
   The presented version of this theorem appeared in Brown \cite{brown}.
 
-\begin{thm}[Verchota, Necas]
+\begin{thm}[Ne\v{c}as, Verchota]
   \label{thm:smoothApproximation}
   Let $\Omega$ be a Lipschitz domain.
-  Then there exists a sequence of $\CC^\infty$-domains $\Omega_k$ with uniform Lipschitz characters, homeomorphisms $\Lambda_k \colon \partial\Omega \to \partial\Omega_k$, functions $\vartheta_k \colon \partial\Omega \to \R^+$ and a smooth compactly supported vector field $h \colon \R^d \to \R^d$ which satisfy the following properties:
+  Then there exists a sequence of $\CC^\infty$-domains $(\Omega_k)$ with uniform Lipschitz characters, corresponding homeomorphisms $\Lambda_k \colon \partial\Omega \to \partial\Omega_k$, functions $\vartheta_k \colon \partial\Omega \to \R^+$ and a smooth compactly supported vector field $h \colon \R^d \to \R^d$ which satisfy the following properties:
   \begin{enumerate}[i)]
     \item There exists a covering of $\partial\Omega$ by coordinate cylinders which also serve as coordinate cylinders for $\partial\Omega_k$.
     \item The homeomorhpisms $\Lambda_k \colon \partial \Omega \to \partial\Omega_k$ satisfy
@@ -62,9 +62,9 @@ In this first section we will establish the fundamental notions regarding bounde
   \end{enumerate}
 \end{thm}
 
-The next concept we introduce, will allow us to talk about boundary values of functions which are defined on $\Omega$, by considering their nontangential behavior.
-The first step will be to introduce nontangential approach regions.
-Unaffortunately in the literature there exist at least two different concepts.
+The next concept we introduce will allow us to talk about boundary values of functions which are defined on $\Omega$ by considering their nontangential behavior.
+The first step will be to define nontangential approach regions.
+Unfortunately in the literature there exist at least two different concepts which will be introduced in the next definitions.
   In the following, by a cone we mean an open, circular, truncated cone with only one convex component.
 
 \begin{defn}[Regular family of cones, Verchota]
@@ -90,8 +90,8 @@ Unaffortunately in the literature there exist at least two different concepts.
   \end{align*}
   and such that for all $q \in [ \{ x_i\} + \tilde R_{x_i}^{-1} D(4 \tilde r / 5)] \cap \partial\Omega$, we have
   \begin{align*}
-    \tilde R_{x_i}^{-1} \alpha_i + \{ q\} \subset \Gamma(q) \subset \overline{\Gamma(q)} \setminus \{q\} \subset \tilde R_{x_i}^{-1} \beta_i + \{ q\}, \\
-    \tilde R_{x_i}^{-1} \gamma_i + \{q\} \subset [\{ x_i\} + \tilde R_{x_i}^{-1} D(\tilde r)] \cap \Omega.
+    \tilde R_{x_i}^{-1} \alpha_i + \{ q\} \subset \Gamma(q) &\subset \overline{\Gamma(q)} \setminus \{q\} \subset \tilde R_{x_i}^{-1} \beta_i + \{ q\}, \\
+    \tilde R_{x_i}^{-1} \gamma_i + \{q\} &\subset [\{ x_i\} + \tilde R_{x_i}^{-1} D(\tilde r)] \cap \Omega.
   \end{align*}
   We will sometimes denote a regular cone as above by $\verCone(q)$.
 \end{defn}
@@ -109,12 +109,12 @@ For a proof see Verchota \cite[p. 9f.]{verchota}
   \label{defn:nontangentialApproachRegion}
    For $\alpha > 1$ and $q \in \partial\Omega$ we define 
    \begin{align*}
-     \ShenCone(q) \coloneqq \big\{ x \in \Omega \setminus \partial\Omega \colon |x - q| < \alpha \operatorname{dist}(x, \partial\Omega) \big\}
+     \ShenCone_\alpha(q) \coloneqq \big\{ x \in \Omega \setminus \partial\Omega \colon |x - q| < \alpha \operatorname{dist}(x, \partial\Omega) \big\}
    \end{align*}
-   If $\alpha$ si chosen sufficiently large (see Shen \cite{shen2017}) we call $\{ \ShenCone(q) \colon q \in \partial\Omega\}$ a \emph{family of nontangential approach regions}.
+   If $\alpha$ is chosen sufficiently large (see Shen \cite{shen2017}) we call $\{ \ShenCone_\alpha(q) \colon q \in \partial\Omega\}$ a \emph{family of nontangential approach regions}.
 \end{defn}
 
-  Note that in Shen cones $\ShenCone(p)$, we have that for $q, y \in \partial\Omega$ and $x \in \ShenCone(q)$
+  Note that in Shen cones $\ShenCone_\alpha(q)$, we have that for $q, y \in \partial\Omega$ and $x \in \ShenCone_\alpha(q)$
 \begin{align}
   \label{eq:shenConeEstimate}
   |q - y| 
@@ -122,36 +122,55 @@ For a proof see Verchota \cite[p. 9f.]{verchota}
   \leq \alpha \operatorname{dist}(x, \partial\Omega) + |x - y|  \nonumber\\
   &\leq (\alpha + 1) |x - y|
 \end{align}
-where $\alpha$ is the constant from \ref{defn:nontangentialApproachRegion}. It is reasonable to choose $\alpha$ in a way that also condition (ii) from Theorem \ref{thm:smoothApproximation} holds.
+where $\alpha$ is the constant from Definition \ref{defn:nontangentialApproachRegion}. 
+%It is reasonable to choose $\alpha$ in a way that also condition (ii) from Theorem \ref{thm:smoothApproximation} holds.
 
 Depending on the type of cones used one may introduce similar concepts of nontangential convergence and nontangential maximal functions.
 
 \begin{defn}
-For a function $u$ in $\Omega$ and a fixed family of nontangential approach regions, we define the nontangential maximal function $(u)^*$ by
+  For a function $u$ in $\Omega$ and a fixed family of nontangential approach regions $\{\Gamma_\alpha\}$, we define the nontangential maximal function $(u)_\alpha^*$ by
 \begin{align}
   \label{eq:defnNontangMaxFunction}
-  (u)^*(q) = \sup\big\{ |u(x)| \colon x \in \ShenCone(q)\big\}
+  (u)_\alpha^*(q) = \sup\big\{ |u(x)| \colon x \in \ShenCone_\alpha(q)\big\}
 \end{align}
 for $q \in \partial\Omega$.
+  For a fixed regular family of cones $\{\verCone(q)\}$ we define the nontangential maximal function $N(u)(q)$ via
+  \begin{align*}
+    N(u)(q) = \sup\big\{ |u(x)| \colon x \in \verCone(q)\big\}.
+  \end{align*}
 \end{defn}
 
-Note that Tolksdorf \cite{tolksdorf} and Shen \cite{shen2017} show that the choice of $\alpha$ for the nontangential maximal function does not affect their $p$-norms in an unpredictable way. In fact their $p$-norms for different $\alpha_1$ and $\alpha_2$ stay comparable with a constant only depending on $d$, $\alpha_1$, $\alpha_2$ and the Lipschitz character.
+Note that Tolksdorf \cite{tolksdorf} and Shen \cite{shen2017} show that the choice of $\alpha$ for the nontangential maximal function as in \ref{eq:defnNontangMaxFunction} does not affect their $p$-norms in an unpredictable way. In fact their $p$-norms for different $\alpha_1$ and $\alpha_2$ stay comparable with a constant only depending on $d$, $\alpha_1$, $\alpha_2$ and the Lipschitz character.
+We will therefore for a given bounded Lipschitz domain always assume that $\alpha > 1$ has been choosen big enough such that on the one hand condition (ii) from Theorem \ref{thm:smoothApproximation} is fulfilled and that on the other hand $\alpha$ is large enough such that $\{ \Gamma_\alpha(q) \colon q \in \partial\Omega \}$ is a family of nontangential aproach regions.
+In the following we will thus ignore the parameter $\alpha$ in cones and nontangential maximal functions and tacitly assume that it was chosen appropriately.
+We further note that the functions $(u)^*$ and $N(u)$ will not be comparable in general, see the discussion in Tolksdorf.
 
 The above mentioned constructions of cones are not limited to cones that lay in the interior of the domain $\Omega$.
-In fact the same construction can be carried out for the exterior domain $\R^d \setminus \overline{\Omega}$ yielding cones that lay outside of $\Omega$.
+In fact the same construction can be carried out for the exterior domain $\R^d \setminus \overline{\Omega}$ yielding cones that lay outside of $\Omega$. While Verchota's cones from Definition \ref{defn:regularFamilyOfCones} can be mirrored along the $x_d = 0$ plane in a suitable local coordinate system, Shen's cones from Definition \ref{defn:nontangentialApproachRegion} have to be modified in a natural way to give cones lying inside of $\R^d \setminus \overline \Omega$, namely
+\begin{align*}
+  \Gamma_\alpha^{\,\mathrm{ext}}(q) \coloneqq \big\{ x \in \R^d \setminus \overline \Omega \colon |x - q| < \alpha \operatorname{dist}(x, \partial\Omega)\big\}.
+\end{align*}
+
+As the name \emph{nontangential approach region} suggests, for functions $u$ living on $\Omega$ or $\R^d \setminus \overline\Omega$ there will be a notion of convergence of function values $u(x)$ as $x$ goes to a point on $p \in \partial\Omega$.
+The idea is to restrict the set of directions from which one can approach $p$ by only allowing sequences of points lying in cones $\Gamma(q)$.
 
 \begin{defn}[Nontangential convergence]
-  Let $\Omega$ be a bounded Lipschitz domain and $\{\ShenCone(q) \colon q \in \partial\Omega\}$ be a family of nontangential approach regions which lies either inside or outside $\Omega$.
-  Let furthermore $u$ be a function on $\Omega$ and $f$ a function on $\partial\Omega$.
-  We say that $u = f$ \emph{in the sense of nontangential convergence} if 
+  Let $\Omega$ be a bounded Lipschitz domain and $\{\ShenCone(q) \colon q \in \partial\Omega\}$ be a family of nontangential approach regions with its exterior counterpart $\{\ShenCone^{\,\mathrm{ext}}(q) \colon q \in \partial\Omega\}$.
+  Let furthermore $u$ be a function on $\R^d \setminus \partial\Omega$ and $f$ a function on $\partial\Omega$.
+  We say that $u = f$ \emph{in the sense of nontangential convergence from the inside} if 
   \begin{align*}
-    \lim_{\substack{ x \to q \\ x \in \ShenCone{q}}} u(x) = f(q), \quad\text{for a. e. } q \in \partial\Omega.
+    \lim_{\substack{ x \to q \\ x \in \ShenCone(q)}} u(x) = f(q), \quad\text{for a. e. } q \in \partial\Omega
   \end{align*}
+  and we say that $u = f$ \emph{in the sense of nontangential convergence from the outside} if 
+  \begin{align*}
+    \lim_{\substack{ x \to q \\ x \in \ShenCone^{\,\mathrm{ext}}(q)}} u(x) = f(q), \quad\text{for a. e. } q \in \partial\Omega.
+  \end{align*}
+  If both of the above limits exist and coincide we say that $u = f$ \emph{in the sense of nontangential convergence}.
   %We will sometimes denote a cone coming from a nontangential approach region as above by $\ShenCone(q)$.
 \end{defn}
 
 Usually the nontangential limits taken from inside and outside the domain will differ.
-For functions $u$ on $\Omega$ we will therefore often use the notation $u_+$ to denote the \emph{inner} nontangential limit for a (implicitly) fixed family of nontangential approach regions and $u_-$ for the respective \emph{outer} nontangential limit.
+For functions $u$ on $\R^d \setminus \partial\Omega$ we will therefore often use the notation $u_+$ to denote the \emph{inner} nontangential limit and $u_-$ for the respective \emph{outer} nontangential limit.
 
 \section{The Stokes Operator}
 
@@ -254,6 +273,7 @@ where $C$ depends only on $\theta$.
 In order to develop an $\Ell^p$-theory for system \eqref{eq:stokesResolventSystem}, one way is to study the Stokes operator on subspaces of $\Ell^p(\Omega; \C^d)$. 
 
 \begin{defn}
+  \label{defn:stokeslp}
   Let $\Omega \subseteq \R^d$, $d \geq 2$ be a bounded Lipschitz domain and $1 < p < \infty$.
   If $p > 2$ we define the Stokes operator $A_p$ via its \emph{part of } $A_2$ \emph{in } $\Ell^p_\sigma(\Omega)$.
   \begin{align*}
