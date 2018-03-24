@@ -190,13 +190,13 @@ We define
   \CC_{c, \sigma}^\infty(\Omega) \coloneqq \{ \varphi \in \CC_c^\infty(\Omega; \C^d) \colon \div(\varphi) = 0 \},
 \end{align*}
 which can serve as a suitable space of test functions.
-We can now close this space in $\Ell^p(\Omega)$ and the Sobolev space $\WW_{1,p}(\Omega)$ which gives
+We can now close this space in $\Ell^p(\Omega; \C^d)$ and the Sobolev space $\WW^{1,p}(\Omega; \C^d)$ which gives
 \begin{align*}
-  \Ell_\sigma^p \coloneqq \overline{\CC_{c,\sigma}^\infty(\Omega)}_{\Ell^p}
+  \Ell_\sigma^p(\Omega) \coloneqq \overline{\CC_{c,\sigma}^\infty(\Omega)}^{\Ell^p}
 \end{align*}
 and
 \begin{align*}
-  \WW_{0,\sigma}^{1,p}(\Omega) \coloneqq \overline{\CC_{c,\sigma}^\infty(\Omega)}_{\WW^{1,p}},
+  \WW_{0,\sigma}^{1,p}(\Omega) \coloneqq \overline{\CC_{c,\sigma}^\infty(\Omega)}^{\WW^{1,p}},
 \end{align*}
 respectively.
 If $p = 2$, we will use the symbol $\HH_{0,\sigma}^1(\Omega)$ to denote $\WW_{0,\sigma}^{1,2}(\Omega)$ in order to emphasize that this space is a Hilbert space.
@@ -221,6 +221,7 @@ The following theorem from Mitrea and Monniaux \cite[Thm 4.7]{mitreaMonniaux} sh
 Another advantage of this characterization is the immediate link of the Stokes operator to the Stokes system.
 
 \begin{thm}
+  \label{thm:stokesOperatorL2}
   If $\Omega \subseteq \R^d$, $d \geq 2$, is a bounded Lipschitz domain and $A_2$ is the Stokes operator on $\Ell^2_\sigma(\Omega)$ then
   \begin{align*}
     \Dom(A_2) = \big\{ u \in H^1_{0,\sigma}(\Omega) \colon \exists \pi \in \Ell^2(\Omega) \text{ s.t. } -\Delta u + \nabla \pi \in \Ell^2_\sigma(\Omega) \big\},
@@ -235,25 +236,26 @@ Another advantage of this characterization is the immediate link of the Stokes o
 The following proposition summarizes some facts about the Stokes operator on $\Ell^2_\sigma(\Omega)$. A proof can be found in Tolksdorf \cite{tolksdorf}.
 
 \begin{prop}
+  \label{prop:stokesOperatorL2}
   Let $\Omega \subset \R^d$ be a bounded Lipschitz domain and $A_2$ the Stokes operator as in Definition \ref{defn:stokes}. Then we have
   \begin{enumerate}[a)]
     \item $A_2$ is closed with dense domain. Furthermore $0 \in \rho(A_2)$.
     \item $\sigma(A) \subset [0,\infty)$ and for all $\theta \in (0,\pi]$ there exists $C > 0$ such that
       \begin{align}
         \label{eq:resolventEstimateL2}
-        \| \lambda(\lambda + A)^{-1} \|_{\Li(\Ell^2_\sigma)} \leq C, \quad\text{for all } \lambda \in \C \setminus \overline \Sigma_\theta.
+        \| \lambda(\lambda + A)^{-1} \|_{\Li(\Ell^2_\sigma(\Omega))} \leq C, \quad\text{for all } \lambda \in \C \setminus \overline \Sigma_\theta.
       \end{align}
       In particular $-A_2$ generates a bounded analytic semigroup on $\Ell^2_\sigma(\Omega)$.
   \end{enumerate}
 \end{prop}
 
 With these results at hand we can now give a quick recap of the solution theory to \eqref{eq:stokesResolventSystem}.
-Let $f \in \Ell^2_\sigma$ and $\lambda \in \Sigma_\theta$, $\theta \in (0, \pi/2)$.
-By the previous proposition we know that there exists a unique $u \in \Dom(A_2) \subseteq \HH^1_{0,\sigma}(\Omega)$ and some $\pi \in \Ell^2(\Omega)$ such that
+Let $f \in \Ell^2_\sigma(\Omega)$ and $\lambda \in \Sigma_\theta$, $\theta \in (0, \pi/2)$.
+By the previous theorem and proposition we know that there exists a unique $u \in \Dom(A_2) \subseteq \HH^1_{0,\sigma}(\Omega)$ and some $\pi \in \Ell^2(\Omega)$ such that
 \begin{align*}
-  -\Delta u + \nabla \pi + \lambda u = A_2 u = f.
+  -\Delta u + \nabla \pi + \lambda u = A_2 u + \lambda u = f.
 \end{align*}
-For general $f = \Ell^2(\Omega)$ we use the \emph{Helmholtz projection} $\PP_2$ to get
+For general $f = \Ell^2(\Omega; \C^d)$ we use the \emph{Helmholtz projection} $\PP_2$ to get
 \begin{align*}
   \Delta u + \nabla \pi + \lambda u + (I - \PP_2) f = \PP_2 f + (I - \PP_2) f = f,
 \end{align*}
@@ -266,21 +268,61 @@ Using this result we find $g \in \Ell^2(\Omega)$ such that $\nabla g = (I - \PP_
 \begin{align*}
   -\Delta u + \nabla( \pi + g ) + \lambda u = f.
 \end{align*}
-Furthermore we may deduce from the resolvent estimate \eqref{eq:resolventEstimateL2} that the solution $u$ which apparently is not affected by the additional part $(I-\PP_2)f$ fulfills the inequality
+Consequently, we see that solving the resolvent equation for the Stokes operator and solving the Stokes resolvent system \eqref{eq:StokesResolventSystem} are two sides of the saime coin.
+Furthermore, we may deduce from the resolvent estimate \eqref{eq:resolventEstimateL2} that the solution $u$ which apparently is not affected by the additional part $(I-\PP_2)f$ fulfills the inequality
 \begin{align*}
   |\lambda|^{-1} \| u\|_{\Ell^2(\Omega; \C^d)} = |\lambda|^{-1} \|(A_2 + \lambda)^{-1} \PP_2 f \|_{\Ell^2(\Omega; \C^d)} \leq C \| f \|_{\Ell^2(\Omega; \C^d)},
 \end{align*}
 where $C$ depends only on $\theta$.
+By the calculations above it is understandable why this estimate on $u$ instead of \eqref{eq:resolventEstimateL2} is sometimes called resolvent estimate.
 
-In order to develop an $\Ell^p$-theory for system \eqref{eq:stokesResolventSystem}, one way is to study the Stokes operator on subspaces of $\Ell^p(\Omega; \C^d)$. 
+In order to develop an $\Ell^p$-theory for system \eqref{eq:stokesResolventSystem}, one way is to study the Stokes operator on subspaces of $\Ell^p(\Omega; \C^d)$.
+More precisely, we are interested in estimating solutions $u \in \HH^1_0(\Omega; \C^d)$, in $\Ell^p(\Omega; \C^d)$ provided that the right hand side of the Stokes resolvent system \eqref{eq:stokesResolventSystem} is an element of the space $\Ell^2(\Omega; \C^d) \cap \Ell^p(\Omega; \C^d)$.
+This is once again just one side of the aforementioned coin. 
+The other side just asks for a resolvent estimate on the Stokes operator, hoping that in analogy to Proposition \ref{prop:stokesOperatorL2} this leads to an analytic semigroup.
 
 \begin{defn}
-  \label{defn:stokeslp}
-  Let $\Omega \subseteq \R^d$, $d \geq 2$ be a bounded Lipschitz domain and $1 < p < \infty$.
-  If $p > 2$ we define the Stokes operator $A_p$ via its \emph{part of } $A_2$ \emph{in } $\Ell^p_\sigma(\Omega)$.
+  \label{defn:s,tokeslp}
+  %Let $\Omega \subseteq \R^d$, $d \geq 2$ be a bounded Lipschitz domain and $1 < p < \infty$.
+  Let $\Omega\subseteq \R^d$, $d \geq 2$ be a bounded Lipschit domain.
+  If $p > 2$ we define the Stokes operator $A_p$ via its \emph{part of} $A_2$ \emph{in } $\Ell^p_\sigma(\Omega)$.
   \begin{align*}
     \Dom(A_p) &\coloneqq \Big\{ u \in \Dom(A_2) \cap \Ell^p_\sigma(\Omega) \colon A_2 u \in \Ell^p_\sigma(\Omega) \Big\} \\
     A_p u &\coloneqq A_2 u, \quad u \in \Dom(A_p).
   \end{align*}
-  If $p < 2$ and $A_2$ is closable in $\Ell^p_\sigma(\Omega)$, then $A_p \coloneqq \overline{A_2}$.
+  %If $p < 2$ and $A_2$ is closable in $\Ell^p_\sigma(\Omega)$, then $A_p \coloneqq \overline{A_2}$.
 \end{defn}
+
+For $p > 2$ there exists an analog to Theorem \ref{thm:stokesOperatorL2}.
+
+\begin{thm}[Tolksdorf]
+  \label{thm:stokesOperatorLp}
+  Let $\Omega \subseteq \R^d$, $d \geq 2$, is a bounded Lipschitz domain.
+  Then there exists $\varepsilon > 0$ such that for all
+  \begin{align*}
+    2 < p < \frac{2d}{d - 1} + \varepsilon
+  \end{align*}
+  the domain of the Stokes operator $A_p$ is characterized as
+  \begin{align*}
+    \Dom(A_2) = \big\{ u \in \WW^{1,p}_{0,\sigma}(\Omega) \colon \exists \pi \in \Ell^p(\Omega) \text{ s.t. } -\Delta u + \nabla \pi \in \Ell^p_\sigma(\Omega) \big\},
+  \end{align*}
+  where the expression $\Delta u + \nabla \pi \in\Ell^p_\sigma(\Omega)$ needs to be understood in the distributional sense.
+  For $u \in \Dom(A_p)$ and the corresponding pressure $\pi$ we have
+  \begin{align*}
+    A_p u = -\Delta u + \nabla \pi.
+  \end{align*}
+\end{thm}
+
+For $p < 2$ there exist various ways to define the Stokes operator.
+One adequate way is to dualize the operator $A_{p'}$.
+In order to carry out this construction we need the spaces $\Ell^p_\sigma(\Omega)$ to exhibit the same behaviour regarding dualization as the spaces $\Ell^p(\Omega; C^d)$.
+\begin{lem}
+  Let $\Omega \subset \R^d$, $d \geq 2$, be a bounded Lipschitz domain.
+  Then there exists $\varepsilon > 0$ such that for all 
+  \begin{align*}
+    \frac{2d}{d + 1} - \varepsilon < p < \frac{2d}{d - 1} + \varepsilon
+  \end{align*}
+  the spaces $\Ell^p_\sigma(\Omega)$ and $(\Ell^{p'}_\sigma(\Omega))^*$ are isomorphic.
+\end{lem}
+
+Now we define the Stokes operator for $p < 2$ as announced.

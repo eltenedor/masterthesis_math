@@ -1,15 +1,15 @@
 % Makros
 
-\newcommand{\N}{\mathbb{N}} % natuerliche Zahlen
-\newcommand{\Z}{\mathbb{Z}} % ganze Zahlen
-\newcommand{\Q}{\mathbb{Q}} % rationale Zahlen
-\newcommand{\R}{\mathbb{R}} % reelle Zahlen
-\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathds{N}} % natuerliche Zahlen
+\newcommand{\Z}{\mathds{Z}} % ganze Zahlen
+\newcommand{\Q}{\mathds{Q}} % rationale Zahlen
+\newcommand{\R}{\mathds{R}} % reelle Zahlen
+\newcommand{\C}{\mathds{C}}
 \DeclareMathOperator{\Ret}{Re} % Guter Realteil
 
 %%Mengen
 \newcommand{\BB}{\mathrm{B}} 
-\newcommand{\Dom}{\mathrm{D}} 
+\newcommand{\Dom}{\mathcal{D}} 
 \newcommand{\EE}{\mathrm{E}} 
 \newcommand{\verCone}{\Gamma_\mathrm{V}} 
 \newcommand{\ShenCone}{\Gamma} 
@@ -57,9 +57,9 @@
 \newtheorem{defn}[thm]{Definition}
 \newtheorem{Beispiel}{Beispiel}[chapter]
 \newtheorem*{RBsp}{Regelbeispiel}
+\newtheorem{rem}[thm]{Remark}
 
 \theoremstyle{remark}
-\newtheorem{rem}[thm]{Remark}
 
 \def\Xint#1{\mathchoice
   {\XXint\displaystyle\textstyle{#1}}%
