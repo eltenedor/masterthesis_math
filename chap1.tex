@@ -293,9 +293,10 @@ The other side just asks for a resolvent estimate on the Stokes operator, hoping
   %If $p < 2$ and $A_2$ is closable in $\Ell^p_\sigma(\Omega)$, then $A_p \coloneqq \overline{A_2}$.
 \end{defn}
 
-For $p > 2$ there exists an analog to Theorem \ref{thm:stokesOperatorL2}.
+For $p > 2$ there exists an analog to Theorem \ref{thm:stokesOperatorL2}. The peculiar range of $p$ for which this theorem holds is due to the fact that the boundedness of the Helmholtz projection on $\Ell^p(\Omega; \C^d)$ is a crucial ingredient to the proof and a fundamental pillar of the $\Ell^p$-theory of the Stokes equations.
+More details about the mechanics of the Helmholtz projection can be found in Tolksdorf \cite[Sec. 5.1]{tolksdorf}.
 
-\begin{thm}[Tolksdorf]
+\begin{thm}[Thm. 5.2.11, \cite{tolksdorf}]
   \label{thm:stokesOperatorLp}
   Let $\Omega \subseteq \R^d$, $d \geq 2$, is a bounded Lipschitz domain.
   Then there exists $\varepsilon > 0$ such that for all
@@ -304,7 +305,7 @@ For $p > 2$ there exists an analog to Theorem \ref{thm:stokesOperatorL2}.
   \end{align*}
   the domain of the Stokes operator $A_p$ is characterized as
   \begin{align*}
-    \Dom(A_2) = \big\{ u \in \WW^{1,p}_{0,\sigma}(\Omega) \colon \exists \pi \in \Ell^p(\Omega) \text{ s.t. } -\Delta u + \nabla \pi \in \Ell^p_\sigma(\Omega) \big\},
+    \Dom(A_p) = \big\{ u \in \WW^{2,p}_{0,\sigma}(\Omega) \colon \exists \pi \in \Ell^p(\Omega) \text{ s.t. } -\Delta u + \nabla \pi \in \Ell^p_\sigma(\Omega) \big\},
   \end{align*}
   where the expression $\Delta u + \nabla \pi \in\Ell^p_\sigma(\Omega)$ needs to be understood in the distributional sense.
   For $u \in \Dom(A_p)$ and the corresponding pressure $\pi$ we have
@@ -314,15 +315,36 @@ For $p > 2$ there exists an analog to Theorem \ref{thm:stokesOperatorL2}.
 \end{thm}
 
 For $p < 2$ there exist various ways to define the Stokes operator.
-One adequate way is to dualize the operator $A_{p'}$.
+One adequate way is to dualize the operator $A_{p'}$, where $p' = p / (1 + p)$ is the Hölder conjugate exponent.
 In order to carry out this construction we need the spaces $\Ell^p_\sigma(\Omega)$ to exhibit the same behaviour regarding dualization as the spaces $\Ell^p(\Omega; C^d)$.
-\begin{lem}
+
+\begin{lem}[Lem 5.2.13, \cite{tolksdorf}]
+  \label{lem:duality}
   Let $\Omega \subset \R^d$, $d \geq 2$, be a bounded Lipschitz domain.
   Then there exists $\varepsilon > 0$ such that for all 
   \begin{align*}
     \frac{2d}{d + 1} - \varepsilon < p < \frac{2d}{d - 1} + \varepsilon
   \end{align*}
-  the spaces $\Ell^p_\sigma(\Omega)$ and $(\Ell^{p'}_\sigma(\Omega))^*$ are isomorphic.
+  the spaces $\Ell^p_\sigma(\Omega)$ and $(\Ell^{p'}_\sigma(\Omega))^*$ are isomorphic, where $(\Ell^{p'}_\sigma(\Omega))^*$ denotes the antidual space and $p' = p/ (p - 1)$  is the Hölger conjugate exponent of $p$. 
+  The isomorphism $\Psi$ is given by
+  \begin{align*}
+    [\Psi f](g) = \int_\Omega f \cdot \overline g  \d x, \quad g \in \Ell^{p'}_\sigma(\Omega).
+  \end{align*}
 \end{lem}
 
 Now we define the Stokes operator for $p < 2$ as announced.
+
+\begin{defn}
+  Let $\Omega \subset \R^d$, $d \geq 2$, be a bounded Lipschitz domain and let $\varepsilon > 0$ be as in Theorem \ref{thm:stokesOperatorLp}.
+  Let 
+  \begin{align*}
+    \frac{2d}{d + 1} - \varepsilon < p < 2
+  \end{align*}
+  and $\Psi$ be the isomorphism from Lemma \ref{lem:duality}.
+  Then the \emph{Stokes operator on} $\Ell^p_\sigma(\Omega)$ is defined via
+  \begin{align*}
+    \Dom(A_p) & \coloneqq \big\{ u \in \Ell^p_\sigma(\Omega) \colon \Psi u \in \Dom(A^*_{p'}) \big\} \\
+    A_p = &\coloneqq \Psi^{-1} A^*_{p'} \Psi u,
+  \end{align*}
+  where $p' = p/(1 - p)$ denotes the Hölder conjugate exponent of $p$ and $A^*_{p'}$ the adjoint operator to $A_{p'}$.
+\end{defn}
