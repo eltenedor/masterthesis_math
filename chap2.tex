@@ -1,4 +1,5 @@
 \chapter{Estimating Fundamental Solutions}
+\label{chap:2}
 
 The purpose of this section is to study fundamental solutions of the Stokes resolvent problem and to deduce related estimates which will be crucial for  the next chapters.
 
@@ -157,6 +158,7 @@ In the derivation of the next estimates we will use the following useful interio
 \end{proof}
 
 We will need the following asymptotic expansions for the function $z^\nu H_\nu^{(1)}(z)$ in $\C \setminus (-\infty, 0]$.
+The derivation of these asymptotic expansions is based on asymptotic expansions of the Bessel functions of the first and the second kind and can be found in Tolksdorf \cite[Sec. 4.2]{tolksdorf}.
 \begin{align}
   z^{\nu}H_\nu^{(1)}(z) &= \frac{2^\nu \Gamma(\nu)}{\ii \pi} + \frac{\ii}{\pi} z^2 \log(z) + \omega z^2 + O(|z|^4 |\log(z)) \text{ if } d = 4, \label{eq:asymptoticd4}\\
   z^{\nu} H_{\nu}^{(1)}(z) &= \frac{2^\nu \Gamma(\nu)}{\ii\pi} + \frac{2^\nu \Gamma(\nu - 1)}{4 \pi \ii} z^2 + \omega z^3 + O(|z|^4) \text{ if } d = 5, \label{eq:asymptoticd5}\\
@@ -164,9 +166,8 @@ We will need the following asymptotic expansions for the function $z^\nu H_\nu^{
   z^\nu H_\nu^{(1)}(z) &= \frac{2^\nu \Gamma(\nu)}{\ii \pi} + \frac{2^\nu \Gamma(\nu - 1)}{4 \pi \ii} z^2 + O(|z|^4) \text{ if } d \geq 7.\label{eq:asymptoticd7}
 \end{align}
 
-The derivation of these asymptotic expansions is based on asymptotic expansions of the Bessel functions of the first and the second kind and can be found in Tolksdorf \cite{tolksdorfDiss}.
 
-We will denote the fundamental solution for $-\Delta$ in $\R^d$ with pole at the origin by
+We will denote the fundamental solution for $-\Delta = 0$ in $\R^d$ with pole at the origin by
 \begin{align*}
   G(x;0) \coloneqq \begin{cases} -\frac{1}{2\pi} \log(|x|), &\quad\text{for } d = 2, \\c_d \frac{1}{|x|^{d - 2}}, &\quad\text{for } d > 2,  \end{cases}
 \end{align*}
@@ -363,7 +364,16 @@ The following lemma helps us to estimate derivatives of \eqref{eq:HelmholtzLapla
   for $l \in \{1, 2\}$.  
 \end{rem}
 
-  The fundamental solution to the (scalar) Helmholtz equation and the Laplace equation form the main ingredient for the following matrix of fundamental solutions $(\Gamma(x;\lambda) = (\Gamma_{\alpha\beta}(x;\lambda))_{d \times d}$ with pole at the origin to the Stokes resolvent problem with $\lambda \in \Sigma_\theta$:
+We will now analyze fundamental solutions to the \emph{Stokes resolvent problem}
+\begin{align}
+  \label{eq:stokesResolventProblem}
+  \begin{alignedat}{1}
+  -\Delta u + \nabla \phi + \lambda u &= 0 \\
+  \div u &= 0
+  \end{alignedat}
+\end{align}
+in $\R^d$ with $\lambda \in \Sigma_\theta$.
+  The fundamental solutions to the (scalar) Helmholtz equation and the Laplace equation will form the main ingredients for the following matrix of fundamental solutions $(\Gamma(x;\lambda) = (\Gamma_{\alpha\beta}(x;\lambda))_{d \times d}$ with pole at the origin to the Stokes resolvent problem:
   \begin{align}
     \label{eq:fundamentalMatrixStokes}
     \Gamma_{\alpha\beta}(x;\lambda) = G(x; \lambda) \delta_{\alpha\beta} - \frac{1}{\lambda} \frac{\partial^2}{\partial x_\alpha \partial x_\beta} \{ G(x; \lambda) - G(x; 0) \}, \quad \alpha,\beta = 1,\dots,d.
@@ -392,25 +402,25 @@ The following lemma helps us to estimate derivatives of \eqref{eq:HelmholtzLapla
   \end{align}
   Note that in the last equation the summation convention was used.
 
-  We now keep up to the spirit of this exhausting section by proving further estimates, this time for the fundamental solutions to the Stokes resolvent problem.
+  We now keep up to the spirit of this exhausting section by proving further estimates, this time for the fundamental solutions to the Stokes resolvent problem \eqref{eq:stokesResolventProblem}
 
-  \begin{thm}
-    \label{thm:fundamentalMatrixEstimate}
-    Let $\lambda \in \Sigma_\theta$.
-    Then for any $d \geq 3$ and $l \geq 0$
-    \begin{align}
-      \label{eq:fundamentalMatrixEstimate}
-      | \nabla_x^l \Gamma(x; \lambda) | &\leq \frac{C}{(1 + |\lambda||x|^2) |x|^{d - 2 + l}} 
-    \end{align}
-      where $C$ depends only on $d$, $l$ and $\theta$. For $d = 2$ and $l \geq 1$ the same estimate holds.
-  \end{thm}
+\begin{thm}
+  \label{thm:fundamentalMatrixEstimate}
+  Let $\lambda \in \Sigma_\theta$.
+  Then for any $d \geq 3$ and $l \geq 0$
+  \begin{align}
+    \label{eq:fundamentalMatrixEstimate}
+    | \nabla_x^l \Gamma(x; \lambda) | &\leq \frac{C}{(1 + |\lambda||x|^2) |x|^{d - 2 + l}} 
+  \end{align}
+    where $C$ depends only on $d$, $l$ and $\theta$. For $d = 2$ and $l \geq 1$ the same estimate holds.
+\end{thm}
 
   \begin{proof}
     Let $|\lambda| |x|^2 > \frac{1}{2}$. 
     Then there exist constants $C_a$, $C_b$, $C_c$ such that
     \begin{align*}
-      \e^{-c \sqrt{|\lambda|} |x|} ( 1 + |\lambda| |x|^2) &\leq C_a \\
-      1 &\leq \frac{C_b |\lambda| |x|^2}{1 + |\lambda| |x|^2} \\
+      \e^{-c \sqrt{|\lambda|} |x|} ( 1 + |\lambda| |x|^2) &\leq C_a, \\
+      1 &\leq \frac{C_b |\lambda| |x|^2}{1 + |\lambda| |x|^2}, \\
       \e^{-c \sqrt{|\lambda|} |x|} &\leq \frac{ C_c |\lambda| |x|^2}{1 + |\lambda| |x|^2},
     \end{align*}
     where $c$ is the constant from Lemma \ref{lem:estimateHelmholtzDerivatives}.

@@ -31,7 +31,7 @@ We start with a similar result on Lipschitz cylinders.
   \begin{align*}
     \Big( \int_{D_\eta(1)} |u|^p \d x \Big)^{2/p} \leq C \int_{\partial D_\eta(t) \setminus I(2)} |u|^2 \d \sigma.
   \end{align*}
-  Applying the coarea formula to integrate both sides over the interval $(1,2)$ gives
+  Applying the co-area formula to integrate both sides over the interval $(1,2)$ gives
   \begin{align*}
     \Big( \int_{D_\eta(1)} |u|^p \d x \Big)^{2/p} \leq C \int_{D_\eta(2)} |u|^2 \d x.
   \end{align*}
@@ -173,7 +173,7 @@ Note that a more recent result from Tolksdorf \cite{tolksdorf2017} generalizes t
   Moreover $\|T\|_{\Li(\Ell^q(\Omega; \C^d))}$ is bounded by a constant depending at most on $d$, $N$, $C_0$, $p$, $q$ and the Lipschitz character of $\Omega$.
 \end{thm}
 
-We are now in the position to prove the main theorem of this thesis. For this the improved weak reverse H\"older inequality derived in Remark \ref{rem:reverseHoelder} will be the crucial ingredient as it enables us to apply the extrapolation theorem \ref{thm:extrapolation}.
+We are now in the position to prove Theorem \ref{thm:main}, the main theorem of this thesis. For this, the improved weak reverse H\"older inequality derived in Remark \ref{rem:reverseHoelder} will be the crucial ingredient as it enables us to apply the extrapolation theorem \ref{thm:extrapolation} to a suitable family of operators.
 
 %\begin{thm}[Shen]
 %  Let $\Omega$ be a bounded Lipschitz domain in $\R^d$, $d \geq 3$.
@@ -187,16 +187,16 @@ We are now in the position to prove the main theorem of this thesis. For this th
 %  \end{align*}
 %  where $C_p$ depends only on $d$, $p$, $\theta$ and the Lipschitz character of $\Omega$.
 %\end{thm}
-\begin{thm}
-  Let $\Omega$ be a bounded Lipschitz domain in $\R^d$, $d \geq 3$.
-  Then there exists $\varepsilon > 0$, depending only on $d$ and the Lischitz character of $\Omega$ such that if
-  \begin{align*}
-    \frac{2d}{d + 1} - \varepsilon < p < \frac{2d}{d - 1} + \varepsilon,
-  \end{align*}
-  then $-A_p$ generates a bounded analytic semigroup in $\Ell^p_\sigma(\Omega)$.
-\end{thm}
+%\begin{thm}
+%  Let $\Omega$ be a bounded Lipschitz domain in $\R^d$, $d \geq 3$.
+%  Then there exists $\varepsilon > 0$, depending only on $d$ and the Lischitz character of $\Omega$ such that if
+%  \begin{align*}
+%    \frac{2d}{d + 1} - \varepsilon < p < \frac{2d}{d - 1} + \varepsilon,
+%  \end{align*}
+%  then $-A_p$ generates a bounded analytic semigroup in $\Ell^p_\sigma(\Omega)$.
+%\end{thm}
 
-\begin{proof}
+\begin{proof}[Proof of Theorem \ref{thm:main}]
   Consider a family of scaled solution operators to the Stokes resolvent system \eqref{eq:stokesResolventSystem}, more precisely consider the family
   \begin{align*}
     T_\lambda \colon \Ell^2(\Omega; \C^d) \to \Ell^2(\Omega; \C^d), \quad f \mapsto (|\lambda| + 1) (A_2 + \lambda)^{-1} \PP_2 f,

@@ -3,9 +3,11 @@
 
 In this chapter, we will deal with \emph{single} and \emph{double layer potentials}.
 Both will serve as ``representation formulas'' for solutions to the Stokes resolvent problem.
-We will study their properties as they will serve as the crucial ingredient to solving the Neumann and Dirichlet boundary problems associated to the Stokes resolvent problem.
+We will study their properties as they will serve as the crucial ingredient to solving the $\Ell^2$ Dirichlet boundary problem associated to the Stokes resolvent problem.
 In this chapter we will always assume that $\Omega$ is a bounded Lipschitz domain in $\R^d$ with $d \geq 2$ and $1 < p < \infty$.
 We will also tacitly use the summation convention.
+
+We note that due to the new two dimensional estimates on fundamental solutions in Chapter \ref{chap:2}, all relevant results from Chapter 3 of Shen's seminal paper \ref{shen2012} could be readily extended.
 
 Let $\lambda \in \Sigma_\theta$. 
 For $f \in \Ell^2(\partial\Omega; \C^d)$, the single layer potential $u = \slp_\lambda(f)$ is defined by
@@ -30,13 +32,42 @@ We define two further integral operators
 \end{align}
 for $P \in \partial\Omega$ which will be used to prove boundedness of maximal operators related to $u$.
 
+The following lemma will be a good companion for the forthcoming calculation of estimates.
+\begin{lem}
+  \label{lem:compareBoundaryWithBall}
+  Let $\Omega \subset \R^d$, $d \geq 2$, be a bounded Lipschitz domain with corresponding numbers $r_0$ and $M$.
+  Then there exists a constant $C > 0$ depending only on $d$ and $M$ such that
+  \begin{align*}
+    \sigma(\BB(q,r) \cap \partial\Omega) \leq C r^{d -1}
+  \end{align*}
+  for all $r > 0$ and $q \in \partial\Omega$.
+  Furhtermore, there exists a constant $C > 0$, depending only on $d$ and the Lipschitz character of $\Omega$, such that
+  \begin{align*}
+    \sigma(\partial\Omega) \leq C r_0^{d - 1}.
+\end{align*}
+\end{lem}
+
+Another cornerstone in the theory of the single and double layer potentials is the following lemma, see Tolksdorf \cite[Lem. 4.3.2]{tolksdorf}
+
+\begin{lem}
+  \label{lem:central}
+  Let $\Omega \subset R^d$, $d \geq 2$, be a bounded Lipschitz domain with corresponding numbers $r_0$ and $M$
+  Let $x \in \R^d$, $0 < \varepsilon \leq r_0/4$, and $l \in \N_0$ with $l < d - 1$.
+  Then there exists a constant $C > 0$ depending only on $d$, $l$ and $M$ such that
+  \begin{align*}
+    \int_{\partial\Omega \cap \BB(x, \varepsilon)} \frac{1}{|x - y|^l} \d\sigma(y) \leq C \varepsilon^{d - l - 1}.
+  \end{align*}
+\end{lem}
+
+We are now in the position to prove our first Lemma on the way to establish the Single layer potential as a benevolent operator for tackling boundary value problems on bounded Lipschitz domains.
+
 \begin{lem}
   \label{lem:lpBoundednessT}
   Let $1 < p < \infty$ and $T_\lambda(f), T_\lambda^*(f)$ be defined by \eqref{eq:supTOperator} and \eqref{eq:pvTOperator}.
   Then $T_\lambda(f)(P)$ exists for almost everywhere $P \in \partial\Omega$ and
   \begin{align}
     \label{eq:lpBoundednessT}
-    \|T_\lambda(f) \|_{\Ell^p(\partial\Omega)} 
+    \|T_\lambda(f) \|_{\Ell^p(\partial\Omega)}
     \leq \|T_\lambda^*(f) \|_{\Ell^p(\partial\Omega)}
     \leq C_p \, \|f\|_{\Ell^p(\partial\Omega)},
   \end{align}
@@ -111,7 +142,7 @@ for $P \in \partial\Omega$ which will be used to prove boundedness of maximal op
      \|T_\lambda^*(f) \|_{\Ell^p(\partial\Omega)} \leq C\, \|f\|_{\Ell^p(\partial\Omega)}
    \end{align*}
 
-   To conclude the first inequality in \eqref{eq:lpBoundednessT}, we want to use a standard result from harmonic analysis \cite[2.1.14]{grafakos}.
+   To conclude the first inequality in \eqref{eq:lpBoundednessT}, we want to use a standard result from harmonic analysis which can be found in the book of Grafakos \cite[1.1.14]{grafakos2014classical}.
    First we will show that the integral operator
    \begin{align*}
      T_\lambda(f)(P) = \lim_{t \to 0} \int_{\substack{y \in \partial\Omega \\ |y - P| > t}} \nabla_x \Gamma(P - y; \lambda) f(y) \d\sigma(y)
@@ -131,13 +162,13 @@ for $P \in \partial\Omega$ which will be used to prove boundedness of maximal op
      \int_{|P - y| \leq \varepsilon} | \nabla\{ \Gamma(P - y; \lambda) - \Gamma(P - y; 0) \} | \d\sigma(y), 
    \end{align*}
    for $\varepsilon \leq \min(2|\lambda|^{-1/2}, r_0/4)$ as the integrand is smooth away from $0$ and the domain of integration is bounded.
-   Now Corollary \ref{cor:differenceFundamentalSolutionStokes} and Tolksdorf 4.3.2 give that this can be estimated by
+   Now Corollary \ref{cor:differenceFundamentalSolutionStokes} and Lemma \ref{lem:central} give that this can be estimated by
    \begin{align*}
      \int_{|P - y| \leq \varepsilon} |\lambda|^{1/2} |P - y|^{2 - d} \d\sigma(y) \leq C |\lambda|^{1/2} \varepsilon \leq C.
    \end{align*}
    Based on the preceding calculation we conclude that for all $f \in \CC(\partial\Omega,\C^d)$ the operator $T_\lambda(f)(P)$ exists whenever $T_0(f)(P)$ exists.
    $T_0(f)(P)$ exists for almost everywhere $P \in \partial\Omega$ because of Fabes, Kenig and Verchota \cite{fabesKenigVerchota}.
-   As furthermore $T_\lambda^*(f)(P)$ is bounded on $\Ell^p(\partial\Omega)$  we may now apply Theorem 2.1.14 from Grafakos \cite{grafakos} to conclude that $T_\lambda(f)(P)$ exists now for all $f \in \Ell^p(\partial\Omega; \C^d)$ and almost everywhere $P \in \partial\Omega$.
+   As furthermore $T_\lambda^*(f)(P)$ is bounded on $\Ell^p(\partial\Omega)$  we may now apply Theorem 2.1.14 from Grafakos \cite{grafakos2014classical} to conclude that $T_\lambda(f)(P)$ exists now for all $f \in \Ell^p(\partial\Omega; \C^d)$ and almost everywhere $P \in \partial\Omega$.
    The desired $\Ell^p$ estimate on $T_\lambda(f)$ now follows from the observation that 
    \begin{align*}
      | T_\lambda(f)(P) | \leq T_\lambda^*(f)(P)
@@ -161,6 +192,22 @@ for $P \in \partial\Omega$ which will be used to prove boundedness of maximal op
 %\end{align}
 %where $C$ is the constant from \eqref{eq:defnNontangMaxFunction}
 
+For further use we state a very useful lemma which can be considered a \emph{Young} type inequality for $\Ell^p$ spaces on boundaries of Lipschitz domains.
+A proof can be found in Tolksdorf \cite[Prop 1.1.4]{tolksdorf}.
+
+\begin{lem}
+  \label{lem:young}
+  Let $\Omega \subset \R^d$, $\mu$ a $\sigma$-finite measure on $\Omega$, and $1 \leq p < \infty$.
+  Let $g \colon \R^d \setminus \{ 0\} \to \C$ be a function such that the function $\Omega \times \Omega \ni (x, y) \mapsto g(x-y)$ is measurable with respect to the product measure $\mu \times \mu$ and such that
+  \begin{align*}
+    A + B \coloneqq \sup_{x \in \Omega} \| g(x - \cdot) \|_{\Ell^1(\Omega, \mu)} + \sup_{y \in \Omega} \|g(\cdot - y) \|_{\Ell^1(\Omega, \mu)} < \infty.
+  \end{align*}
+  If $f \in \Ell^p(\Omega, \mu)$, then $x \mapsto \int_\Omega g(x - y) f(y) \d\mu(y) \in \Ell^p(\Omega, \mu)$ and
+  \begin{align*}
+    \Big\| \int_\Omega g(\cdot - y) f(y) \d\mu(y) \Big\|_{\Ell^p(\Omega, \mu)} \leq A^{1 - 1/p} B^{1/p} \|f\|_{\Ell^p(\Omega, \mu)}.
+  \end{align*}
+\end{lem}
+
 We can now prove the boundedness of certain nontangential maximal operators.
 \begin{lem}
   \label{lem:nontangentialMaximalFunctions}
@@ -183,7 +230,7 @@ We can now prove the boundedness of certain nontangential maximal operators.
   We will provide a proof for the sake of completeness.
   To immitate the proof of Verchota, we will work with the corresponding type of cones.
   Therefore the results for $\nabla u$ and $\phi$ will at first only be established for the type of maximal operators defined by Verchota.
-  The transferability to Shen's maximal operators is given by Tolksdorf \cite{tolksdorfDiss} as the solution $(u,\phi)$ has a representation as a single layer potential.
+  The transferability to Shen's maximal operators is given by Tolksdorf \cite[p. 90ff.]{tolksdorf} as the solution $(u,\phi)$ has a representation as a single layer potential.
 
   Let $x \in \verCone(P)$ and set $t = |x - P|$.
   Then,
@@ -231,7 +278,7 @@ We can now prove the boundedness of certain nontangential maximal operators.
     |(\nabla u)(x)| \leq C \big\{ M_{\partial\Omega} f(P) + T_\lambda^*(f)(P) \}
   \end{align*}
   where $C$ only depends on $d$, $\theta$ and the Lipschitz character of $\Omega$.
-  We thus may take the supremum over all $x \in \verCone$ and conclude the desired estimate by the well known mapping properties of the Hardy-Littlewood maximal operator and the respective results from Lemma \ref{lem:lqBoundednessT}.
+  We thus may take the supremum over all $x \in \verCone$ and conclude the desired estimate by the well known mapping properties of the Hardy-Littlewood maximal operator and the respective results from Lemma \ref{lem:lpBoundednessT}.
 %  By exhausting the domain of integration using annuli, we can estimate this integral by $M_{\partial\Omega}f(P)$:
 %  Choose $N$ such that $2^N t \leq \diam(\Omega) < 2^{N + 1}t$.
 %  Then
@@ -261,8 +308,8 @@ We can now prove the boundedness of certain nontangential maximal operators.
   \begin{align*}
     \int_{\partial\Omega} \frac{1}{|P - y|^{d - 2}} \d\sigma(y)
   \end{align*}
-  uniformly for all $P \in \partial\Omega$, as the rest can be handled using the Young inequality.
-  Let $r_0$ be the Radius from the definition of Lipschitz cylinders.
+  uniformly for all $P \in \partial\Omega$, as the rest can be handled using the Young inequality from Lemma \ref{lem:young}.
+  Let $r_0$ be the radius from the definition of Lipschitz cylinders.
   Then
   \begin{align*}
     \int_{\partial\Omega} \frac{1}{|P - y|^{d - 2}} \d\sigma(y)
@@ -272,7 +319,7 @@ We can now prove the boundedness of certain nontangential maximal operators.
   where $C$ only depends on $d$ and the Lipschitz character of $\Omega$.
 \end{proof}
 
-The next Lemma deals with \emph{trace formulas} for $\nabla u$ and $\phi$. We can now finally talk about boundary values as the existence of nontangential limits guarantees that there exists something on $\partial\Omega$ that is related to the function inside $\Omega$.
+The next Lemma deals with \emph{trace formulas} for $\nabla u$ and $\phi$. We can now finally talk about boundary values as the existence of nontangential limits guarantees that there exists something on $\partial\Omega$ that is related to the function inside $\Omega$ or inside $\R^d \setminus \overline\Omega$, respectively.
 
 \begin{lem}
   \label{lem:traceFormulas}
@@ -312,7 +359,7 @@ The next Lemma deals with \emph{trace formulas} for $\nabla u$ and $\phi$. We ca
   \begin{align*}
     \sup_{x \in \partial\Omega} \Big| \int_{\partial\Omega} \frac{1}{|x - y|^{d - 2}} \d\sigma(y) \Big| < \infty
   \end{align*}
-  and an application of Young's inequality which can be found in Tolksdorf \cite{tolksdorfDiss}:
+  and an application of Lemma \ref{lem:young} regarding Young's inequality for convolutions:
   Let $x \in \partial\Omega$.
   Then
   \begin{align*}
@@ -342,23 +389,23 @@ The next Lemma deals with \emph{trace formulas} for $\nabla u$ and $\phi$. We ca
 The previous Lemma enables us to talk about boundary values of partial derivatives. 
 The next theorem will now give a similar result but for conormal derivatives which are defined by
 \begin{align*}
-  \frac{\partial u}{\partial \nu} = \frac{\partial u}{\partial n} - \phi n.
+  \frac{\partial u}{\partial \nu} \coloneqq \frac{\partial u}{\partial n} - \phi n.
 \end{align*}
 We will also be working with tangential derivatives which are defined via
 \begin{align*}
-  DEFINE
+  \nabla_{\mathrm{tan}} u \coloneqq \nabla u - \langle \nabla u, n \rangle n.
 \end{align*}
 
 \begin{thm}
   \label{thm:jumpConditions}
-  Let $\lambda \in \Sigma_\theta$ and $\Omega$ be a bounded Lipschitz domain in $\R^d$, $d \geq 3$. 
+  Let $\lambda \in \Sigma_\theta$ and $\Omega$ be a bounded Lipschitz domain in $\R^d$, $d \geq 2$. 
   Let $(u,\phi)$ be given by \eqref{eq:defSingleLayer} and \eqref{eq:defSingleLayerPressure} with $f \in \Ell^p(\partial\Omega; \C^d)$ and $1 < p < \infty$.
   Then $\nabla_{\mathrm{tan}} u_+ = \nabla_{\mathrm{tan}} u_-$ and
   \begin{align}
     \label{eq:nontangentialConormalDerivative}
     \Big( \frac{\partial u}{\partial \nu} \Big)_\pm = \Big( \pm \frac{1}{2} I + \K_\lambda \Big) f
   \end{align}
-  on $\partial\Omega$, with $\K_\lambda$ a bounded operator on $\Ell^p(\partial\Omega; \C^d)$ with
+  on $\partial\Omega$, with $\K_\lambda$ a bounded operator on $\Ell^p(\partial\Omega; \C^d)$ satisfying
   \begin{align*}
     \| \K_\lambda f \|_{\Ell^p(\partial\Omega)} \leq C_p \|f\|_{\Ell^p(\partial\Omega)},
   \end{align*}
@@ -399,10 +446,10 @@ We will also be working with tangential derivatives which are defined via
   \begin{align*}
     A^*(f)(P) = \sup_{t > 0} \Big| \int_{\substack{y \in \partial\Omega \\ |y - P| > t}} \frac{P - y}{|P - y|^n} f(y) \d\sigma(y)\Big| , \quad P \in \partial\Omega
   \end{align*}
-  are bounded by Lemma 1.2 of Verchota \cite{verchotaDiss}.
+  are bounded by the corresponding result from Verchota \cite[Lem. 1.2]{verchota}.
 \end{proof}
 
-Similar to $\K_\lambda$ for $\lambda = 0$ we have
+Similar to $\K_\lambda$, for $\lambda = 0$ we have
 \begin{align}
   \label{eq:defnK0}
     (\K_0 f)(x)= \pv \int_{\partial\Omega} \nabla_x \Gamma(x - y; 0)  f(y) \d\sigma(y) n - \pv \int_{\partial\Omega} \Phi_k(x - y) f_k(y) \d\sigma(y) n,
@@ -412,12 +459,12 @@ as was shown by Fabes, Kenig and Verchota \cite[(0.12)]{fabesKenigVerchota}.
 We now note a fact that will be crucial for solving the $\Ell^2$ Dirichlet problem in Chapter 5 and will fortify the hopes of translating results for $\lambda = 0$ to $\lambda \in \Sigma_\theta$.
 \begin{lem}
   \label{lem:compactness}
-  Let $\lambda \in \Sigma_\theta$ and $d \geq 3$.
+  Let $\lambda \in \Sigma_\theta$ and $d \geq 2$.
   Then the operator $\K_\lambda - \K_0$ on $\Ell^2(\partial\Omega; \C^d)$ is compact.
 \end{lem}
 
 \begin{proof}
-  The idea of this proof is similar to the one in Tolksdorf \cite[Lemma 4.3.5]{tolksdorfDiss}.
+  The idea of this proof is similar to the one in Tolksdorf \cite[Lemma 4.3.5]{tolksdorf}.
   Let $f \in \Ell^2(\partial\Omega; \C^d)$.
   Let's denote $\K \coloneqq \K_\lambda - \K_0$. 
   We will now try to approximate $\K$ by compact operators in the operator norm.
@@ -425,7 +472,7 @@ We now note a fact that will be crucial for solving the $\Ell^2$ Dirichlet probl
   \begin{align*}
     (\K^{(\varepsilon)}f)(x) \coloneqq \int_{\partial\Omega \setminus \BB(x,\varepsilon)} \nabla \{ \Gamma(x - y; \lambda) - \Gamma(x - y; 0) \} f(y) \d \sigma(y), \quad x \in \partial\Omega.
   \end{align*}
-  We can now estimate by Young's inequality \ref{lim:young} 
+  We can now estimate by Young's inequality \ref{lem:young} 
   \begin{align*}
     \| (\K^{(\varepsilon)} f)(x) \|_{\Ell^2(\partial\Omega)}
     \leq \sup_{p \in \partial\Omega} \| \nabla \{ \Gamma(p - \cdot; \lambda) - \Gamma(p - \cdot; 0) \} 1_{\BB(p,\varepsilon)} \|_{\Ell^1(\partial\Omega)} \|f\|_{\Ell^2(\partial\Omega)}.
@@ -440,7 +487,7 @@ We now note a fact that will be crucial for solving the $\Ell^2$ Dirichlet probl
      &\qquad\qquad\leq C \int_{\partial\Omega \cap \BB(p, \varepsilon)} \sqrt{|\lambda|} |p - y|^{2 - d} \d\sigma(y) 
      \leq C \sqrt{|\lambda|} \varepsilon
   \end{align*}
-  where for the last step we applied Lemma \ref{lem:comparability}.
+  where for the last step we applied Lemma \ref{lem:compareBoundaryWithBall}.
   For $\varepsilon \to 0$ this gives us $\K^{(\varepsilon)} \to \K$ in the operator norm.
   The last step is to verify the compactness of $\K^(\varepsilon)$.
   We note that the integral kernel of $\K^{(\varepsilon)}$ is bounded which gives us that in particular the kernel is an element of $\Ell^2(\partial\Omega \times \partial\Omega; \C^{d \times d}$.
@@ -464,7 +511,7 @@ The next theorem will give us a suitable operator which maps a given function $f
 
 \begin{thm}
   \label{thm:nontangentialLimitDoubleLayer}
-Let $\lambda \in \Sigma_\theta$ and $\Omega$ be a bounded Lipschitz domain in $\R^d$, $d \geq 3$.
+Let $\lambda \in \Sigma_\theta$ and $\Omega$ be a bounded Lipschitz domain in $\R^d$, $d \geq 2$.
 Let $u$ be given by \eqref{eq:defDoubleLayer} for $f \in \Ell^p(\partial\Omega; \C^d)$, $1 < p < \infty$.
 Then
 \begin{align}
