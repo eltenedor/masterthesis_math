@@ -75,8 +75,9 @@ The next lemma works with the counterpart of $(1/2)I + \K_\lambda$.
   Then $-(1/2)I + \K_\lambda$ is a Fredholm operator on $\Ell^2(\partial\Omega; \C^d)$ with index zero and
   \begin{align}
     \label{eq:inverseEstimate2}
-    \| f\|_\partial \leq C \| \big( - (1/2) I + \K_\lambda \big) f \|_\partial \quad\text{for all } f \in \Ell^2_n(\partial\Omega).
+    \| f\|_\partial \leq C \| \big( - (1/2) I + \K_\lambda \big) f \|_\partial \quad\text{for all } f \in \Ell^2_n(\partial\Omega),
   \end{align}
+  where $C$ depends only on $d$, $\theta$ and the Lipschitz character of $\Omega$.
 \end{lem}
 
 \begin{proof}
@@ -332,21 +333,29 @@ The next Theorem states the important fact that in $\Ell^2$ the Dirichlet Stokes
   By Lemma \ref{lem:l2unique} we already now that the problem under consideration admits at most one solution.
   Therefore we only have to worry about the existence of a solution.
   To this end we want to apply Lemma \ref{lem:inverseEstimate}.
-  We first note that since $T \coloneqq -(1/2) I + \K_{\bar \lambda}$ is a Fredholm operator on $\Ell^2(\partial\Omega; \C^d)$ with index $0$ the same is true for its adjoint $T^* \coloneqq (-1/2)I + \K_{\bar\lambda}^*$.
+  
+  We first note that since 
+  \begin{align*}
+    T \colon \Ell^2(\partial\Omega; \C^d) \to \Ell^2(\partial\Omega; C^d), \quad\text x \mapsto -(1/2)x  + \K_{\bar \lambda}x
+  \end{align*}
+  is a Fredholm operator on $\Ell^2(\partial\Omega; \C^d)$ with index $0$ the same is true for its adjoint 
+  \begin{align*}
+    T^* \colon \Ell^2(\partial\Omega; \C^d) \to \Ell^2(\partial\Omega; C^d),\quad x \mapsto  (-1/2)x + \K_{\bar\lambda}^*x.
+  \end{align*}
   We know that for all $f \in \Ell^2(\partial\Omega; \C^d)$ we have $\div(\dlp_\lambda f) = 0$ and therefore
   \begin{align*}
     \int_{\partial\Omega} T^* f \cdot n \d\sigma =\int_{\partial\Omega} u_+ \cdot n \d\sigma =  0, 
   \end{align*}
-  where for the first inequality we applied Theorem \ref{thm:nontangentialLimitDoubleLayer}. The second equality uses Verchota's approximation scheme in order to apply the divergence theorem and the fact that $(u)^*$ is integrable together with dominated convergence.
+  where for the first inequality we applied Theorem \ref{thm:nontangentialLimitDoubleLayer}. The second equality uses Verchota's approximation scheme from Theorem \ref{thm:smoothApproximation} in order to apply the divergence theorem and the fact that $(u)^*$ is integrable together with dominated convergence.
   This gives $\Im(T^*) \subseteq \Ell_n^2(\partial\Omega)$.
-  This gives us that we have 
+  Now on the one hand we have
   \begin{align*}
     \operatorname{span}(n)
     = \Ell_n^2(\partial\Omega)^\perp
     \subseteq \Im(T^*)^\perp
     = \ker(T)
   \end{align*}
-  on the one hand and on the other hand, as $T$ is injective on $\Ell^2_n(\partial\Omega)$ by \eqref{eq:inverseEstimate2}, we have that $ \operatorname{span}(n) \supseteq \ker(T)$.
+  and on the other hand, as $T$ is injective on $\Ell^2_n(\partial\Omega)$ by \eqref{eq:inverseEstimate2}, we have that $ \operatorname{span}(n) \supseteq \ker(T)$.
   This yields $\operatorname{span}(n) = \ker(T)$.
   We can use this equality and show that
   \begin{align*}
@@ -357,20 +366,45 @@ The next Theorem states the important fact that in $\Ell^2$ the Dirichlet Stokes
   \begin{align*}
     \ker(T^*)^\perp = \overline{\Im(T)} = \Im(T).
   \end{align*}
+  Now let 
+  \begin{align*}
+    X = \Ell^2_n(\partial\Omega)\quad\text{ and }\quad Y = \Im(T).
+  \end{align*}
+  Both spaces are closed subspaces of the Hilbert space $\Ell^2(\partial\Omega; \C^d)$ and therefore again Hilbertspaces.
   Consequently the operator
   \begin{align*}
-    T^* \colon \Im(T) \to \Ell^2_n(\partial\Omega)
+    K_{Y,X}' \colon Y \to X, \quad x \mapsto T^* x
   \end{align*}
   is invertible by the continuous inverse theorem.
-  Considering once again estimate \eqref{eq:inverseEstimate2} and a duality argument we get that
-  \begin{align}
-    \label{eq:dualityArgument}
-    \|f\|_\partial \leq C \| T^* f\|_\partial
-  \end{align}
-  for all $f \in \Im(-(1/2)I + \K_\lambda)$, as
+  We now want to bound the operator norm of $K_{X,Y}$ by a constant that does not depend on $\lambda$ but on the sectorial parameter $\theta$.
+  To this end let us introduce the operator
   \begin{align*}
-    \| (T^*)^{-1} \|_{ \Ell^2_n(\partial\Omega), R(-(1/2)I + \K_{\bar\lambda}),} = \| T^{-1} \|_{R(-(1/2) I + \K_{\bar\lambda}), \Ell^2_n(\partial\Omega)}.
+    K_{X,Y} \colon X \to Y, \quad x \mapsto T x
   \end{align*}
+  Now for $f \in X$ and $g \in Y$ we have that
+  \begin{align*}
+    \langle x, K_{X,Y}^* y \rangle_X
+    & = \langle K_{X,Y} x, y \rangle_Y
+    =  \langle x, T^*y \rangle_X
+    = \langle x, K_{Y,X}' y \rangle_X
+  \end{align*}
+  which shows that $K_{Y,X}' = K_{X,Y}*$ on $Y$.
+  With the above definitions at hand, Lemma \ref{lem:inverseEstimate} states that $K_{X,Y}$ is an invertible operator on $Y$ with operator norm of the inverse bounded by $C$, depending at most on $d$, $\theta$ and the Lipschitz character of $\Omega$.
+  Therefore for all $f \in Y = \Im(T) = \Im((1/2)I + \K_{\bar \lambda}$ we have
+  \begin{align*}
+    \| f\|_\partial &= \| (K_{Y,X}')^{-1} K_{Y,X}' f \|_\partial
+    \leq  \| (K_{X,Y}^*)^{-1} \|_{X,Y} \| K_{X,Y}^* f\|_\partial
+    \leq C \|(-(1/2)I + \K_{\bar \lambda}^*)f \|_\partial
+  \end{align*}
+%  Considering once again estimate \eqref{eq:inverseEstimate2} and a duality argument we get that
+%  \begin{align}
+%    \label{eq:dualityArgument}
+%    \|f\|_\partial \leq C \| T^* f\|_\partial
+%  \end{align}
+%  for all $f \in \Im(-(1/2)I + \K_\lambda)$, as
+%  \begin{align*}
+%    \| (T^*)^{-1} \|_{ \Ell^2_n(\partial\Omega), R(-(1/2)I + \K_{\bar\lambda}),} = \| T^{-1} \|_{R(-(1/2) I + \K_{\bar\lambda}), \Ell^2_n(\partial\Omega)}.
+%  \end{align*}
 
   We are now in position to derive the missing estimates which were stated in the theorem.
   For $g \in \Ell^2_n(\partial\Omega)$ let $f \in \Im(T)$ with $T^* f = g$.
@@ -386,7 +420,7 @@ The next Theorem states the important fact that in $\Ell^2$ the Dirichlet Stokes
 The next theorem can in some sense be regarded as a reverse trace theorem and will play an important role for the proof of the needed reverse H\"{o}lder inequality.
 
 \begin{thm}
-  \label{eq:reverseTrace}
+  \label{thm:reverseTrace}
   Let $\Omega$ be a bounded Lipschitz domain in $\R^d$, $d \geq 3$ with connected boundary.
   Let $u \in \HH^1(\Omega; \C^d)$ and $\pi \in \Ell^2(\Omega)$ satisfy the Stokes resolvent problem in $\Omega$ for some $\lambda \in \Sigma_\theta$.
   Then
@@ -438,13 +472,20 @@ The next theorem can in some sense be regarded as a reverse trace theorem and wi
   The proof of \eqref{weizhangestimate} was carried out by Wei and Zhang in \cite[Lem. 3.3]{weiZhang}.
 \end{proof}
 
-In the following remark and the forthcoming chapter we will make use of an integration argument which can be considered as an application of the following Theorem on \emph{integration along slices}. A proof of this result can be found in Federer \ref[Thm. 3.2.12]{federer}.
+\begin{rem}
+  At this point the choice $p = \frac{2d}{d - 1}$ in Theorem \ref{thm:reverseTrace} may seem arbitrary.
+  Taking a closer look at the proof by Wei and Zhang in \cite[Lem. 3.3]{weiZhang} one sees that the choice of $p$ is due to 2 facts: (1) For the dual exponent we have $p' = \frac{2d}{d + 1}$. (2) It holds $\frac{1}{p} - \frac{1}{p'} = \frac{1}{d}$ and thus the \emph{Hardy-Littlewood-Sobolev theorem on fractional integration} may be applied to estimate the $p'$-norm of the Riesz potential of a function $f \in \Ell^p(\R^d)$ by the $p$-norm of $f$, see Grafakos \cite[Thm 6.1.3]{grafakos2009modern}.
+\end{rem}
+
+In the following remark and the forthcoming chapter we will make use of an integration argument which can be considered as an application of the following Theorem on \emph{integration along slices}. A proof of this result can be found in Federer \cite[Thm. 3.2.12]{federer}.
 
 \begin{thm}[Co-area formula]
+  \label{thm:coarea}
   If $f \colon \R^d \to \R$, $d \geq 2$, is Lipschitzian and $\mathfrak{g}$ the representative of a function $g \in \Ell^2(\R^d)$, then
-  \begin{align*}
+  \begin{align}
+    \label{eq:coarea}
     \int_{R^d} \mathfrak{g}(x) \Big[ \sum_{i = 1}^d |\partial_i f(x)|^2 \Big]^{1/2} \d x = \int_\R \int_{f^{-1}(y)} \mathfrak{g}(x) \d m_{d - 1}(x) \d y,
-  \end{align*}
+  \end{align}
   where $m_{d - 1}$ denotes the $(d - 1)$-dimensional Hausdorff measure on $\R^d$.
 \end{thm}
 
@@ -466,7 +507,7 @@ In the following remark and the forthcoming chapter we will make use of an integ
     &\leq C \int_{\partial \BB(0,t)} |u(y)|^2 \d\sigma(y), 
   \end{align*}
   where we also used the Cauchy inequality in the estimate of $f_t$ against the ``data'' from Theorem \ref{thm:exAndUniqueSolution}.
-  Integrating this inequality in $t$ over the interval $(1,2)$ and using the co-area formula \ref{lemma:coarea} gives 
+  Integrating this inequality in $t$ over the interval $(1,2)$ and using the co-area formula \eqref{eq:coarea} gives 
   \begin{align*}
     |\nabla^l u(0)|^2 \leq C \int_{\BB(0,2)} |u(x)|^2 \d x.
   \end{align*}

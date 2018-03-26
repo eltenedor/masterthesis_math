@@ -25,7 +25,7 @@ In this first section we will establish the fundamental notions regarding bounde
   It is common to refer to sets of the form $D_{\eta_x}$ as \emph{Lipschitz cylinders}. If the point $x$ in the definition of Lipschitz cylinders is not of particular importance we will denote the Lipschitz cylinder by $D_{\eta}(r)$.
 
   If $\Omega$ is a bounded Lipschitz domain, $x \in \partial\Omega$ and $0 < r \leq r_0$, then we may define $U_{x,r} \coloneqq \{ x\} + R_x^{-1} D(r)$, where $R_x$ is the rotation corresponding to $x$ from Definition \ref{defn:lipschitzDomain}.
-  This is all we need to define the Lipschitz character of a bounded Lipschitz domain $\Omega$ as suggested by Pipher and Verchota in \cite{pipherVerchota}.
+  This is all we need to define the Lipschitz character of a bounded Lipschitz domain $\Omega$ as suggested by Pipher and Verchota in \cite[Sec. 5]{pipherVerchota}.
 
   \begin{defn}
     Let $\Omega \subset \R^d$, $d \geq 2$, be a bounded Lipschitz domain and $x_1, \dots,x_n \in \partial\Omega$ be such that $\{U_{x_i,r_0} \}_{i = 1}^n$ covers $\partial\Omega$.  
@@ -268,13 +268,13 @@ Using this result we find $g \in \Ell^2(\Omega)$ such that $\nabla g = (I - \PP_
 \begin{align*}
   -\Delta u + \nabla( \pi + g ) + \lambda u = f.
 \end{align*}
-Consequently, we see that solving the resolvent equation for the Stokes operator and solving the Stokes resolvent system \eqref{eq:StokesResolventSystem} are two sides of the saime coin.
+Consequently, we see that solving the resolvent equation for the Stokes operator and solving the Stokes resolvent system \eqref{eq:stokesResolventSystem} are two sides of the saime coin.
 Furthermore, we may deduce from the resolvent estimate \eqref{eq:resolventEstimateL2} that the solution $u$ which apparently is not affected by the additional part $(I-\PP_2)f$ fulfills the inequality
 \begin{align*}
   |\lambda|^{-1} \| u\|_{\Ell^2(\Omega; \C^d)} = |\lambda|^{-1} \|(A_2 + \lambda)^{-1} \PP_2 f \|_{\Ell^2(\Omega; \C^d)} \leq C \| f \|_{\Ell^2(\Omega; \C^d)},
 \end{align*}
 where $C$ depends only on $\theta$.
-By the calculations above it is understandable why this estimate on $u$ instead of \eqref{eq:resolventEstimateL2} is sometimes called resolvent estimate.
+By the calculations above it is understandable why this estimate on $u$ instead of \eqref{eq:resolventEstimateL2} is sometimes called \emph{resolvent estimate}.
 
 In order to develop an $\Ell^p$-theory for system \eqref{eq:stokesResolventSystem}, one way is to study the Stokes operator on subspaces of $\Ell^p(\Omega; \C^d)$.
 More precisely, we are interested in estimating solutions $u \in \HH^1_0(\Omega; \C^d)$, in $\Ell^p(\Omega; \C^d)$ provided that the right hand side of the Stokes resolvent system \eqref{eq:stokesResolventSystem} is an element of the space $\Ell^2(\Omega; \C^d) \cap \Ell^p(\Omega; \C^d)$.
@@ -282,7 +282,7 @@ This is once again just one side of the aforementioned coin.
 The other side just asks for a resolvent estimate on the Stokes operator, hoping that in analogy to Proposition \ref{prop:stokesOperatorL2} this leads to an analytic semigroup.
 
 \begin{defn}
-  \label{defn:s,tokeslp}
+  \label{defn:stokeslp}
   %Let $\Omega \subseteq \R^d$, $d \geq 2$ be a bounded Lipschitz domain and $1 < p < \infty$.
   Let $\Omega\subseteq \R^d$, $d \geq 2$ be a bounded Lipschit domain.
   If $p > 2$ we define the Stokes operator $A_p$ via its \emph{part of} $A_2$ \emph{in } $\Ell^p_\sigma(\Omega)$.
@@ -297,7 +297,7 @@ For $p > 2$ there exists an analog to Theorem \ref{thm:stokesOperatorL2}. The pe
 More details about the mechanics of the Helmholtz projection can be found in Tolksdorf \cite[Sec. 5.1]{tolksdorf}.
 
 \begin{thm}[Thm. 5.2.11, \cite{tolksdorf}]
-  \label{thm:stokesOperatorLp}
+  \label{thm:domainStokesOperatorLp}
   Let $\Omega \subseteq \R^d$, $d \geq 2$, is a bounded Lipschitz domain.
   Then there exists $\varepsilon > 0$ such that for all
   \begin{align*}
@@ -335,8 +335,8 @@ In order to carry out this construction we need the spaces $\Ell^p_\sigma(\Omega
 Now we define the Stokes operator for $p < 2$ as announced.
 
 \begin{defn}
-  Let $\Omega \subset \R^d$, $d \geq 2$, be a bounded Lipschitz domain and let $\varepsilon > 0$ be as in Theorem \ref{thm:stokesOperatorLp}.
-  Let 
+  Let $\Omega \subset \R^d$, $d \geq 2$, be a bounded Lipschitz domain and let $\varepsilon > 0$ be as in Lemma \ref{lem:duality}.
+  Let furthermore
   \begin{align*}
     \frac{2d}{d + 1} - \varepsilon < p < 2
   \end{align*}

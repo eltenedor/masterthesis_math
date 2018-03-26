@@ -22,15 +22,15 @@ Indeed, we have $$\Im( k) = \sqrt{r} \sin( \frac{\pi + \tau}{2} ) = \sqrt{|\lamb
 which gives for $\tau$ with $\frac{\pi + \tau}{2} \leq \frac{\pi}{2}$ that $\sin(\frac{\pi + \tau}{2}) \geq \sin(\frac{\theta}{2} )$ and for $\tau$ with $\frac{\pi + \tau}{2} > \frac{\pi}{2}$ that $\sin(\frac{\pi + \tau}{2}) > \sin(\pi - \frac{\theta}{2} ) = \sin(\frac{\theta}{2} )$.
 
 Before diving into fundamental solutions of the Stokes resolvent problem, we will first consider a fundamental solution for the (scalar) Helmoltz equation in $\R^d$
-$$
+\begin{align*}
 -\Delta u + \lambda u = 0.
-$$
+\end{align*}
 One fundamental solution with pole at the origin is given by
 \begin{align}
   \label{eq:definitionFundamentalHelmholtz}
   G(x; \lambda) = \frac{\ii}{4 ( 2\pi )^{\frac{d}{2} - 1}} \cdot \frac{1}{|x|^{d - 2}} \cdot (k |x|)^{\frac{d}{2} - 1} H_{\frac{d}{2} - 1}^{(1)} (k|x|),
 \end{align}
-where $H_{\nu}^{(1)}(z)$ is the Hankel function of the first kind which can be written as
+see McLean \cite[p. 282]{mclean}, where $H_{\nu}^{(1)}(z)$ is the Hankel function of the first kind which according to Lebedev \cite[Sec. 5.11]{lebedev} can be also be written as
 \begin{align}
   \label{eq:integralRepresentationHankel}
   H_\nu^{(1)}(z) = \frac{2^{\nu + 1} \e^{\ii(z - \nu \pi)} z^\nu}{\ii \sqrt{\pi} \Gamma(\nu + \frac{1}{2})} \int_0^\infty \e^{2 z \ii s} s^{\nu - \frac{1}{2}} (1 + s)^{\nu - \frac{1}{2}} \d s.

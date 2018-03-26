@@ -56,7 +56,7 @@ We will now prepare the proof of this theorem by proving several helpful lemmata
 
 \begin{proof}
   The proof of the stated identities reduces to several integrations by part  once we establish its applicability. 
-  Approximating $\partial \Omega$ by a sequence of $\CC^\infty$ domains with uniform Lipschitz characters as described in Verchota \cite{verchotaDiss} and the facts that on the one hand $(\nabla u)^*, (\phi)^* \in \Ell^2(\partial\Omega)$ and on the other hand $\nabla u$ and $\phi$ have nontantential limits almost everywhere, the integration by parts is justified.
+  Approximating $\partial \Omega$ by a sequence of $\CC^\infty$ domains with uniform Lipschitz characters as described in Theorem \ref{thm:smoothApproximation} and the facts that on the one hand $(\nabla u)^*, (\phi)^* \in \Ell^2(\partial\Omega)$ and on the other hand $\nabla u$ and $\phi$ have nontantential limits almost everywhere, the integration by parts is justified.
   Details on how the approximation argument works can be found in Brown \ref{brown}.
   For the sake of completeness we show the approximation argument once for a solid integral and once for a boundary integral.
 
@@ -302,7 +302,7 @@ We prove one last lemma befor we tackle the central theorem of this chapter.
 \end{lem}
 
 \begin{proof}
-  By Verchota's approximation argument \cite{verchotaDiss} we may assume that $\Delta u = \nabla \phi + \lambda u$ on $\partial\Omega$.
+  By Theorem \ref{thm:smoothApproximation} we may assume that $\Delta u = \nabla \phi + \lambda u$ on $\partial\Omega$.
   Multiplying the Stokes resolvent equation on $\partial\Omega$ with $n$ and using the triangle inequality gives
   \begin{align}
     \|\nabla \phi \cdot n\|_{\HH^{-1}(\partial\Omega)} 
@@ -431,7 +431,7 @@ After all this preparation we are now able to prove Theorem \ref{thm:rellich}.
     &= \int_\Omega \div(h) |u|^2 \d x + 2 \Re \int_\Omega h_k \frac{\partial \bar u_i}{\partial x_k} u_i \d x.
   \end{align}
   We choose $h \in \CC_0^1(\R^d, \R^d)$ with $h_k n_k \geq c > 0$ on $\partial\Omega$. 
-  The existence of such a function $h$ was proven by Verchota \cite{verchotaDiss}.
+  The existence of such a function $h$ follows from Theorem \ref{thm:smoothApproximation}.
   Using this, we can continue the estimate \eqref{eq:hknkgreen} as
   \begin{align}
     \label{eq:estupartial}
@@ -455,7 +455,7 @@ After all this preparation we are now able to prove Theorem \ref{thm:rellich}.
 \end{proof}
 
 Shen proved that under reasonable assumptions a theorem similar to \ref{thm:rellich} also holds for exterior domains.
-It is important to note that in the case $d = 2$ solutions $u$ that are given as a single layer potential do not fulfill the stated requirements on the decay.
+%It is important to note that in the case $d = 2$ solutions $u$ that are given as a single layer potential do not fulfill the stated requirements on the decay.
 
 \begin{thm}
   \label{thm:rellichExterior}
