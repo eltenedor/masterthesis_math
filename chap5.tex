@@ -3,7 +3,7 @@
 This section is all about the application of the method of layer potentials to solve the $\Ell^2$-Dirichlet problem for the Stokes resolvent system.
 Furthermore we will establish a uniform $\Ell^p$-estimate for the nontangential maximal function which will be important for the proof of our central theorem.
 
-For the remainder of this chapter let $\Omega$ always denote a bounded Lipschitz domain in $\R^d$, $d \geq 3$ with connected boundary.
+For the remainder of this chapter let $\Omega$ always denote a bounded Lipschitz domain in $\R^d$, $d \geq 2$, with connected boundary.
 We will use $\Ell^2_n(\partial\Omega)$ to denote the function space
 \begin{align*}
   \Ell^2_n(\partial\Omega) \coloneqq \Big\{ f \in \Ell^2(\partial\Omega; \C^d) \colon \int_{\partial\Omega} f \cdot n \d \sigma = 0 \Big\},
@@ -11,7 +11,31 @@ We will use $\Ell^2_n(\partial\Omega)$ to denote the function space
 and $\Ell_0^2(\partial\Omega; \C^d)$  to denote the function space of $\Ell^2$ functions with mean value zero.
 As before, $\| \cdot \|_\partial$ stands for the norm of $\Ell^2(\partial\Omega)$.
 
-We will first derive bounds on the inverse operator of $(1/2) I + \K_\lambda$ from Chapter \ref{chap:3}.
+The following results will build on the application of Theorem \ref{thm:rellichExterior}.
+Therefore the next Lemma shows that solutions to the Stokes resolvent problem that are given by single layer potentials fulfill the requirements of the theorem.
+
+\begin{lem}
+  \label{lem:requirements}
+  Let $\lambda \in \Sigma_\theta$ and $(u,\phi)$ be given by \eqref{eq:defSingleLayer} and \eqref{eq:defSingleLayerPressure}, respectively.
+  Then the following holds for $|x| \to \infty$:
+  \begin{align*}
+    |\phi(x)| + |\nabla u(x)| = O(|x|^{1 - d}) \quad\text{and}\quad 
+    u(x) = \begin{cases} O(|x|^{2 - d}) &\quad\text{if } d \geq 3 \\ o(1) &\quad\text{if } d = 2. \end{cases}
+  \end{align*}
+\end{lem}
+
+\begin{proof}
+  If $d \geq 2$ then an application of the dominated convergence theorem gives that $|\phi(x)| + |\nabla u(x)| = O(|x|^{1 - d})$ as $|\phi(x)| = O(|\Phi_k(x)|) = O(|x|^{1 - d})$ by \eqref{eq:fundamentalVectorPressure} and $|\nabla u(x)| = O(|x|^{1 - d})$ by estimate \ref{eq:fundamentalMatrixEstimate}.
+
+  If $d \geq 3$ then Lemma \ref{lem:estimateHelmholtzDerivatives} and an application of the dominated convergence Theorem gives $u(x) = O(|x|^{2 - d})$.
+  Finally let $d = 2$.
+  Then for $\nu = (d/2) - 1 = 0$ and $z = k|x|$ as in Chapter \ref{chap:2}, Lebedev \cite[Sec. 5.11]{lebedev} gives that
+  \begin{align*}
+    H_0^{(1)}(z) = \left(\frac{2}{\pi z}\right)^{1/2} \e^{\ii (z - (1/4) \pi)} \big[ 1 + O(|z|^{-1})\big]
+  \end{align*}
+\end{proof}
+
+We will now derive bounds on the inverse operator of $(1/2) I + \K_\lambda$ from Chapter \ref{chap:3}. 
 
 \begin{lem}
   Let $\lambda \in \Sigma_\theta$ and $|\lambda| \geq \tau$, where $\tau \in (0,1)$.

@@ -18,7 +18,10 @@ This gives rise to the following estimate
   \label{eq:imaginaryPartEstimate}
   \Im(k) > \sin(\theta/2) \sqrt{|\lambda|}.
 \end{align}
-Indeed, we have $$\Im( k) = \sqrt{r} \sin( \frac{\pi + \tau}{2} ) = \sqrt{|\lambda|} \sin( \frac{\pi + \tau}{2} )\quad\text{and}\quad \frac{\theta}{2} < \frac{\pi + \tau}{2} < \pi - \frac{\theta}{2}$$
+Indeed, we have 
+\begin{align*}
+  \Im( k) = \sqrt{r} \sin\left( \frac{\pi + \tau}{2} \right) = ({|\lambda|})^{1/2} \sin\left( \frac{\pi + \tau}{2} \right)\quad\text{and}\quad \frac{\theta}{2} < \frac{\pi + \tau}{2} < \pi - \frac{\theta}{2}
+\end{align*}
 which gives for $\tau$ with $\frac{\pi + \tau}{2} \leq \frac{\pi}{2}$ that $\sin(\frac{\pi + \tau}{2}) \geq \sin(\frac{\theta}{2} )$ and for $\tau$ with $\frac{\pi + \tau}{2} > \frac{\pi}{2}$ that $\sin(\frac{\pi + \tau}{2}) > \sin(\pi - \frac{\theta}{2} ) = \sin(\frac{\theta}{2} )$.
 
 Before diving into fundamental solutions of the Stokes resolvent problem, we will first consider a fundamental solution for the (scalar) Helmoltz equation in $\R^d$
@@ -52,7 +55,8 @@ in the case $d = 3$ one has an even easier formula, namely
   G(x; \lambda) = \frac{\e^{\ii k |x|}}{4 \pi |x|}.
 \end{align}
 
-Our first estimate is concerned with derivatives of the fundamental solution for the (scalar) Helmholtz equation.
+Our first estimate is concerned with estimates on the fundamental solution and its derivatives for the (scalar) Helmholtz equation.
+The main concern of this lemma is with asymptotic behavior for large values of $|x|$.
 
 \begin{lem}
   \label{lem:estimateHelmholtzDerivatives}
@@ -64,6 +68,8 @@ Our first estimate is concerned with derivatives of the fundamental solution for
   \end{align}
   for any integer $l \geq 0$ if $d \geq 3$ and for $l \geq 1$ if $d = 2$.
   Here, $c > 0$ depends only on $\theta$ and $C_l$ depends only on $d$, $l$ and $\theta$.
+
+  Let $d = 2$. Then $|G(x; \lambda)| = o(1)$ as $|x| \to \infty$.
 \end{lem}
 
 \begin{proof}
@@ -119,6 +125,14 @@ Our first estimate is concerned with derivatives of the fundamental solution for
   where the first summand does not arise in the case $d = 2$ due to \eqref{eq:2dDefinitionFundamentalHelmholtz}.
   The terms in the bracket can now be estimated individually by \eqref{eq:zHEstimate}.
   The extension of this proof to orders of differentiation $l \geq 2$ is straightforward using the Leibniz product rule for higher derivatives.
+
+  Now for the last part of the proof, let us verify the claim regarding the asymptotic behaviour of $|G(x; \lambda)|$ if $d = 2$.
+  Lebedev \cite[Sec. 5.11, Eq.  (5.11.3)]{lebedev} derived based on the integral representation \eqref{eq:integralRepresentationHankel} an asymptotic expansion for the Hankel function, that reads for $\nu = (d/2) - 1 = 0$ and $z = k|x|$   
+  \begin{align*}
+    H_0^{(1)}(z) = \left(\frac{2}{\pi z}\right)^{1/2} \e^{\ii (z - (1/4) \pi)} \big[ 1 + O(|z|^{-1})\big].
+  \end{align*}
+  As $\Im(z) > 0$ we see that $|H_0^{(1)}(k |x|)| = O(|x|^{-1/2})$.
+  Due to the simple structure of $G(x; \lambda)$ for $d = 2$ from \eqref{eq:2dDefinitionFundamentalHelmholtz} the claim follows easily.
 \end{proof}
 
 In the derivation of the next estimates we will use the following useful interior estimate for solutions of Poisson's equation which we write down for further use.
