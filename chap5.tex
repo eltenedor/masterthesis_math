@@ -100,12 +100,12 @@ The next lemma works with the counterpart of $(1/2)I + \K_\lambda$.
 \end{lem}
 
 \begin{proof}
-  In the case $\lambda = 0$, Fabes Kenig and Verchota proved in \cite{fabesKenigVerchota} that the Fredholm index of the operator $-(1/2)I + \K_0$ on $\Ell^2(\partial\Omega; \R^d)$ is zero and estimate \eqref{eq:inverseEstimate2} holds.
+  In the case $\lambda = 0$, Fabes, Kenig and Verchota proved in \cite{fabesKenigVerchota} that the Fredholm index of the operator $-(1/2)I + \K_0$ on $\Ell^2(\partial\Omega; \R^d)$ is zero and estimate \eqref{eq:inverseEstimate2} holds.
   As in the previous proof, this still remains true if we complexify the operator making it a Fredholm operator with index zero on  $\Ell^2(\partial\Omega; \C^d)$.
   Since $\K_\lambda - \K_0$ is compact on $\Ell^2(\partial\Omega; \C^d)$ and the Fredholm index remains unchanged under compact perturbations, we know that the Fredholm index of $-(1/2)I + \K_\lambda$ on $\Ell^2(\partial\Omega; \C^d)$ is zero for all $\lambda \in \Sigma_\theta$.
   This proves the first claim of the lemma.
 
-  Now let $\tau < \frac{1}{2 \diam(\Omega)^2 + 1}$ and $|\lambda| < \tau$.
+  Now let $\tau < (2 \diam(\Omega)^2 + 1)^{-1}$ and $|\lambda| < \tau$.
   Then
   \begin{align*}
     \| (\K_\lambda - \K_0 f\|_\partial \leq C |\lambda|^{1/2} \|f\|_\partial.
@@ -132,7 +132,7 @@ The next lemma works with the counterpart of $(1/2)I + \K_\lambda$.
     &\leq C \|(-(1/2)I + \K_\lambda)f \|_\partial + \|(\K_\lambda - \K_0)f\|_\partial \\
     &\leq C \|(-(1/2)I + \K_\lambda)f\|_\partial + C |\lambda|^{1/2} \|f\|_\partial,
   \end{align*}
-  with a constant $C$ depending only on $d$, $\theta$ and the Lipschitz character of $\partial\Omega$.
+  with a constant $C$ which depends only on $d$, $\theta$ and the Lipschitz character of $\partial\Omega$.
   Choosing $\tau$ even smaller allows us to rearrange the terms in the above estimate such that estimate \eqref{eq:inverseEstimate2} holds for $\lambda \in \Sigma_\theta$ and $|\lambda| < \tau$, with $\tau$ depending on $d$, $\theta$ and the Lipschitz character of $\Omega$.
 
   Now leave $\tau$ fixed and consider the case $|\lambda| \geq \tau$.
@@ -408,16 +408,16 @@ The next Theorem states the important fact that in $\Ell^2$ the Dirichlet Stokes
     = \langle x, K_{Y,X}' y \rangle_X
   \end{align*}
   which shows that $K_{Y,X}' = K_{X,Y}*$ on $Y$.
-  With the above definitions at hand, Lemma \ref{lem:inverseEstimate} states that $K_{X,Y}$ is an invertible operator on $Y$ with operator norm of the inverse bounded by $C$, depending at most on $d$, $\theta$ and the Lipschitz character of $\Omega$.
-  Therefore for all $f \in Y = \Im(T) = \Im((1/2)I + \K_{\bar \lambda}$ we have
-  \begin{align*}
+  With the above definitions at hand, Lemma \ref{lem:inverseEstimate} states that $K_{X,Y}$ is an invertible operator on $Y$ with operator norm of the inverse bounded by some $C > 0$ and $C$ depends at most on $d$, $\theta$ and the Lipschitz character of $\Omega$.
+  Therefore for all $f \in Y = \Im(T) = \Im((1/2)I + \K_{\bar \lambda})$ we have
+  \begin{align}
+    \label{eq:dualityArgument}
     \| f\|_\partial &= \| (K_{Y,X}')^{-1} K_{Y,X}' f \|_\partial
     \leq  \| (K_{X,Y}^*)^{-1} \|_{X,Y} \| K_{X,Y}^* f\|_\partial
-    \leq C \|(-(1/2)I + \K_{\bar \lambda}^*)f \|_\partial
-  \end{align*}
+    \leq C \|(-(1/2)I + \K_{\bar \lambda}^*)f \|_\partial.
+  \end{align}
 %  Considering once again estimate \eqref{eq:inverseEstimate2} and a duality argument we get that
 %  \begin{align}
-%    \label{eq:dualityArgument}
 %    \|f\|_\partial \leq C \| T^* f\|_\partial
 %  \end{align}
 %  for all $f \in \Im(-(1/2)I + \K_\lambda)$, as

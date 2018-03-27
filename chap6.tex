@@ -215,9 +215,9 @@ We are now in the position to prove Theorem \ref{thm:main}, the main theorem of 
   \begin{align*}
     -\Delta u + \nabla \pi + \lambda u = f.
   \end{align*}
-  Furthermore by testing \eqref{stokesREsolventSystem} with $u$ we derive the estimate
+  Furthermore by testing \eqref{stokesResolventSystem} with $u$ we derive the estimate
   \begin{align*}
-    \| T_\lambda(f) \|_{\Ell^2(\Omega; \C^d} = (|\lambda| + 1) \|u\|_{\Ell^2(\Omega; \C^d)}
+    \| T_\lambda(f) \|_{\Ell^2(\Omega; \C^d)} = (|\lambda| + 1) \|u\|_{\Ell^2(\Omega; \C^d)}
     \leq C_0 \|f\|_{\Ell^2(\Omega; \C^d)},
   \end{align*}
   where $C_0$ only depends on $d$, $\theta$ and the Lipschitz character of $\Omega$.
@@ -229,7 +229,7 @@ We are now in the position to prove Theorem \ref{thm:main}, the main theorem of 
   By construction $(u,\pi)$ does not only solve \eqref{eq:stokesResolventProblem} in $\Omega$, the pair also solves the dirichlet problem
   \begin{align*}
     -\Delta u + \nabla \phi + \lambda u &= 0 \\
-    \div(u) = 0
+    \div(u)&= 0
   \end{align*}
   in $\Omega \cap 3 \BB(x_0, r)$ where $u = 0$ on $\partial\Omega \cap 3 \BB(x_0, r)$.
   Therefore Remark \ref{rem:reverseHoelder} and more precisely inequality \eqref{eq:improvedreverseHoelder} give that
@@ -266,7 +266,7 @@ We are now in the position to prove Theorem \ref{thm:main}, the main theorem of 
   And thus $A_p$ is sectorial on $\Ell^p_\sigma(\Omega)$.
   If necessary we take $\varepsilon$ to be the minimum of the parameter $\varepsilon$ used in the first part of this proof and the one from Theorem \ref{thm:exHelmholtz}.
   In this case it can be shown, that the spaces $\Ell^q_\sigma(\Omega)$ are reflexive and that $\Ell^q_\sigma(\Omega)^* = \Ell^{q'}_\sigma(\Omega)$ where $q'$ denotes the dual exponent $q' = q (q - 1)^{-1}$.
-  By abstract operator theory \cite{Marcus Haase} we get that $A_q$ is indeed densely defined and that $A_q^* =  A_q'$.
+  By abstract operator theory \cite{haase} we get that $A_q$ is indeed densely defined and that $A_q^* =  A_q'$.
   Therefore
   \begin{align*}
     \| (A_q + \lambda)^{-1} \|_{\Li(\Ell^q_\sigma(\Omega))}

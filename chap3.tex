@@ -7,7 +7,7 @@ We will study their properties as they will serve as the crucial ingredient to s
 In this chapter we will always assume that $\Omega$ is a bounded Lipschitz domain in $\R^d$ with $d \geq 2$ and $1 < p < \infty$.
 We will also tacitly use the summation convention.
 
-We note that due to the new two dimensional estimates on fundamental solutions in Chapter \ref{chap:2}, all relevant results from Chapter 3 of Shen's seminal paper \ref{shen2012} could be readily extended.
+We note that due to the new two dimensional estimates on fundamental solutions in Chapter \ref{chap:2}, namely the continuation of Theorem \ref{thm:differenceFundamentalSolutionStokes} and Theorem \ref{thm:fundamentalMatrixEstimate} for the case $d=2$, all results from Chapter 3 that are relevant to the analysis of the $\Ell^2$ Dirichlet problem associated to the Stokes resolvent problem of Shen's seminal paper \cite{Shen2012} could be  extended in a straightforward way.
 
 Let $\lambda \in \Sigma_\theta$. 
 For $f \in \Ell^2(\partial\Omega; \C^d)$, the single layer potential $u = \slp_\lambda(f)$ is defined by
@@ -75,7 +75,7 @@ We are now in the position to prove our first Lemma on the way to establish the 
 \end{lem}
 
 \begin{proof}
-  If $\lambda = 0$, the Lemma is known \cite{fabesKenigVerchota} as a consequence of the seminal result of Coifman et al. \cite{coifmanEtAl}.
+  If $\lambda = 0$, the Lemma is known \cite{fabesKenigVerchota} as a consequence of the seminal result of Coifman et al. \cite{coifman}.
   One idea of the proof in the case $\lambda \in \Sigma_\theta$ will thus be to nourish from this result and to consider the difference $\Gamma(x - y; \lambda) - \Gamma(x - y; 0)$ as a well-disposed integral kernel.
 
   We start with the second inequality of \ref{eq:lpBoundednessT}.
@@ -218,9 +218,10 @@ We can now prove the boundedness of certain nontangential maximal operators.
   \end{align}
   where $C_p$ depends only on $d$, $\theta$, $p$ and the Lipschitz character of $\Omega$.
   Let furthermore $d \geq 3$. Then
-  \begin{align*}
+  \begin{align}
+    \label{eq:estimateUstar}
      \|(u)^*\|_{\Ell^p(\partial\Omega)} \leq C_p \|f\|_{\Ell^p(\partial\Omega)},
-  \end{align*}
+  \end{align}
   where $C_p$ depends only on $d$, $\theta$, $p$ and the Lipschitz character of $\Omega$.
 \end{lem}
 
@@ -275,7 +276,7 @@ We can now prove the boundedness of certain nontangential maximal operators.
   As in Verchota \cite[Lem 1.3]{verchota} the integral may now be bounded by the Hardy-Littlewood maximal operator due to an application of a suitable result from Grafakos \cite[Thm. 2.1.10]{grafakos2014classical} as the kernel $\frac{t}{(t + |y - P|)^d}$ is uniformly integrable and radially decreasing on $\partial\Omega$.
   Summing up we have shown that
   \begin{align*}
-    |(\nabla u)(x)| \leq C \big\{ M_{\partial\Omega} f(P) + T_\lambda^*(f)(P) \}
+    |(\nabla u)(x)| \leq C \big\{ M_{\partial\Omega} f(P) + T_\lambda^*(f)(P) \},
   \end{align*}
   where $C$ only depends on $d$, $\theta$ and the Lipschitz character of $\Omega$.
   We thus may take the supremum over all $x \in \verCone$ and conclude the desired estimate by the well known mapping properties of the Hardy-Littlewood maximal operator and the respective results from Lemma \ref{lem:lpBoundednessT}.
@@ -312,14 +313,20 @@ We can now prove the boundedness of certain nontangential maximal operators.
   Let $r_0$ be the radius from the definition of Lipschitz cylinders.
   Then
   \begin{align*}
-    \int_{\partial\Omega} \frac{1}{|P - y|^{d - 2}} \d\sigma(y)
-    &\leq \int_{\partial\Omega \cap \BB(P; r_0/4)} \frac{1}{|P - y|^{d - 2}} \d\sigma(y) + \int_{\partial\Omega \setminus \BB(P; r_0/4)} \frac{1}{|P - y|^{d - 2}} \d\sigma(y). \\
-    & \leq C r_0/4 +  \sigma(\partial\Omega) r_0^{2 - d} 4^{d - 2}.
+    &\int_{\partial\Omega} \frac{1}{|P - y|^{d - 2}} \d\sigma(y) \\
+    &\qquad\leq \int_{\partial\Omega \cap \BB(P; r_0/4)} \frac{1}{|P - y|^{d - 2}} \d\sigma(y) + \int_{\partial\Omega \setminus \BB(P; r_0/4)} \frac{1}{|P - y|^{d - 2}} \d\sigma(y). \\
+    & \qquad\leq C r_0/4 +  \sigma(\partial\Omega) r_0^{2 - d} 4^{d - 2}.
   \end{align*}
   where $C$ only depends on $d$ and the Lipschitz character of $\Omega$.
 \end{proof}
 
-The next Lemma deals with \emph{trace formulas} for $\nabla u$ and $\phi$. We can now finally talk about boundary values as the existence of nontangential limits guarantees that there exists something on $\partial\Omega$ that is related to the function inside $\Omega$ or inside $\R^d \setminus \overline\Omega$, respectively.
+\begin{rem}
+  We note that in addition to the consideration of $d = 2$, Lemma \ref{lem:nontangentialMaximalFunctions} differs in the form of estimate \eqref{eq:estimateUstar} from the original statement in Shen's work \cite[Lem. 3.2]{Shen2012}.
+  There, the author derives an estimate of the form $|\lambda|^{1/2}\|(u)^*\|_{\Ell^p(\partial\Omega)} \leq C_p \|f\|_{\Ell^p(\partial\Omega; \C^d)}$ which is based on Shen's version of Lemma \ref{lem:estimateHelmholtzDerivatives}, namely \cite[Lem. 2.1]{Shen2012}.
+  As we could not follow the proof in \cite{Shen2012}, we provided a similar estimate and since the estimate won't be needed in the course of this thesis, we will not pursue the verification of Shen's estimate further.
+\end{rem}
+
+The next lemma deals with \emph{trace formulas} for $\nabla u$ and $\phi$. We can now finally talk about boundary values as the existence of nontangential limits guarantees that there exists something on $\partial\Omega$ that is related to the function inside $\Omega$ or inside $\R^d \setminus \overline\Omega$, respectively.
 
 \begin{lem}
   \label{lem:traceFormulas}
@@ -369,6 +376,7 @@ The next Lemma deals with \emph{trace formulas} for $\nabla u$ and $\phi$. We ca
   \end{align*}
   by Lemma \ref{lem:compareBoundaryWithBall}.
   Now Young's inequality gives us the desired result.
+
   In the next step we will show that
   \begin{align*}
     \frac{1}{|x -y|^{d - 2}} |f(y)|
@@ -386,15 +394,17 @@ The next Lemma deals with \emph{trace formulas} for $\nabla u$ and $\phi$. We ca
   Note that it does not affect the proof if the sequence $x_l$ lays inside $\Omega$ or outside $\overline\Omega$.
 \end{proof}
 
-The previous Lemma enables us to talk about boundary values of partial derivatives. 
+The previous lemma enables us to talk about boundary values of partial derivatives. 
 The next theorem will now give a similar result but for conormal derivatives which are defined by
-\begin{align*}
+\begin{align}
+  \label{eq:conormalDerivative}
   \frac{\partial u}{\partial \nu} \coloneqq \frac{\partial u}{\partial n} - \phi n.
-\end{align*}
+\end{align}
 We will also be working with tangential derivatives which are defined via
-\begin{align*}
+\begin{align}
+  \label{eq:tangentialGradient}
   \nabla_{\mathrm{tan}} u \coloneqq \nabla u - \langle \nabla u, n \rangle n.
-\end{align*}
+\end{align}
 
 \begin{thm}
   \label{thm:jumpConditions}
@@ -489,25 +499,27 @@ We now note a fact that will be crucial for solving the $\Ell^2$ Dirichlet probl
   \end{align*}
   where for the last step we applied Lemma \ref{lem:compareBoundaryWithBall}.
   For $\varepsilon \to 0$ this gives us $\K^{(\varepsilon)} \to \K$ in the operator norm.
+
   The last step is to verify the compactness of $\K^(\varepsilon)$.
   We note that the integral kernel of $\K^{(\varepsilon)}$ is bounded which gives us that in particular the kernel is an element of $\Ell^2(\partial\Omega \times \partial\Omega; \C^{d \times d}$.
   The compactness of $\K^{(\varepsilon)}$ now follows from Weidmann \cite[Thm. 6.11]{weidmann}.
+
+  As a consequence, $\K$ is compact since the limit of compact oprators with respect to the operator norm gives again a compact operator.
 \end{proof}
 
 Our next step is to introduce the \emph{double layer potential} $u(x) = \dlp_\lambda(f)(x)$ for the Stokes resolvent problem, where
 \begin{align}
   \label{eq:defDoubleLayer}
-  u_j(x) = \int_{\partial\Omega} \Big\{ \frac{\partial}{\partial y_i} \{ \Gamma_{jk}(y - x; \lambda) \} n_i(y) - \Phi_j(y - x) n_k(y) \Big\} f_k(y) \d\sigma(y).
-\end{align}
-The corresponding pressure $\phi(x) = \dlp_{\phi}(f)(x)$ is defined via
-\begin{align}
-  \label{eq:defDoubleLayerPressure}
+  u_j(x) &= \int_{\partial\Omega} \Big\{ \frac{\partial}{\partial y_i} \{ \Gamma_{jk}(y - x; \lambda) \} n_i(y) - \Phi_j(y - x) n_k(y) \Big\} f_k(y) \d\sigma(y).
+\intertext{The corresponding pressure $\phi(x) = \dlp_{\phi}(f)(x)$ is defined via}
   \phi(x)
-  &= \frac{\partial^2}{\partial x_i \partial x_k} \int_{\partial\Omega} G(y - x; 0) n_i(y) f_k(y) \d\sigma(y) + \lambda \int_{\partial\Omega} G(y - x; 0) n_k(y) f_k(y) \d\sigma(y).
+  &= \frac{\partial^2}{\partial x_i \partial x_k} \int_{\partial\Omega} G(y - x; 0) n_i(y) f_k(y) \d\sigma(y) \nonumber\\
+  \label{eq:defDoubleLayerPressure}
+  &\hspace{3cm}+ \lambda \int_{\partial\Omega} G(y - x; 0) n_k(y) f_k(y) \d\sigma(y).
 \end{align}
-Using \ref{eq:fundamentalVectorPressure} and \ref{eq:solutionStokesSystem} one can show that $(u,\phi)$ defines again a solution to the Stokes resolvent problem in $\R^d \setminus \partial\Omega$.
+Using \eqref{eq:fundamentalVectorPressure} and \eqref{eq:solutionStokesSystem} one can show that $(u,\phi)$ defines again a solution to the Stokes resolvent problem in $\R^d \setminus \partial\Omega$.
 
-The next theorem will give us a suitable operator which maps a given function $f \in \Ell^p(\partial\Omega; \C^d)$ to boundary values of $u = \dlp_\lambda(f)$.
+The next theorem will give us a suitable operator which maps a given function $f \in \Ell^p(\partial\Omega; \C^d)$ to boundary values of $u = \dlp_\lambda(f)$ in the form of nontangential limits.
 
 \begin{thm}
   \label{thm:nontangentialLimitDoubleLayer}
