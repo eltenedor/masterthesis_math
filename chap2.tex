@@ -163,7 +163,7 @@ In the derivation of the next estimates we will use the following useful interio
 \begin{lem}
   \label{lem:interiorEstimatePoisson}
   Let $r > 0$ and $x \in \R^d$, $d \geq 2$. 
-  If $w \in \CC^{k}(\Omega) \cap \CC^0(\overline\Omega)$ is a solution to $\Delta w = f$ in $\BB(x,r)$. Then
+  If $w \in \CC^{k}(\BB(x,r)) \cap \CC^0(\overline{\BB(x,r)})$ is a solution to $\Delta w = f$ in $\BB(x,r)$, then
   \begin{align}
     \label{eq:interiorEstimatePoisson}
     |\nabla^l w(x)| \leq C r^{-l} \sup_{\BB(x,r)} |w| + C \max_{0 \leq j \leq l - 1} \sup_{\BB(x,r)} r^{j - l + 2} |\nabla^j f|, \quad l \leq k,.
@@ -172,9 +172,9 @@ In the derivation of the next estimates we will use the following useful interio
 \end{lem}
 
 \begin{proof}
-  If $l = 1$, estimate \eqref{eq:interiorEstimatePoisson} is a consequence of the \emph{comparison principle} and a proof of this fact can be found in the book of Gilbarg and Trudinger \cite[Sec. 3.4, Eq. (3.16)]{gilbarg}.
+  If $l = 1$, then estimate \eqref{eq:interiorEstimatePoisson} is a consequence of the \emph{comparison principle} and a proof of this fact can be found in the book of Gilbarg and Trudinger \cite[Sec. 3.4, Eq. (3.16)]{gilbarg}.
   We can now use this estimate to inductively deduce the estimates for higher derivatives.
-  Note that by translating and rescaling like
+  Note that by translating from $x$ to $0$ and rescaling like
   \begin{align*}
     u_r(x) \coloneqq u(rx) \quad\text{and}\quad f_r(x) \coloneqq r^2 f(rx)
   \end{align*}
@@ -206,13 +206,15 @@ The derivation of these asymptotic expansions is based on asymptotic expansions 
 \end{alignat}
 
 The next Lemma will be concerned with estimating the difference $G(x;\lambda) - G(x; 0)$ (and derivatives of this difference) of the fundamental solution to the scalar Helmholtz equation and the fundamental solution for $-\Delta = 0$ in $\R^d$ which is given by
-\begin{align*}
+\begin{align}
+  \label{eq:laplace}
   G(x;0) \coloneqq \begin{cases} -\frac{1}{2\pi} \log(|x|), &\quad\text{for } d = 2, \\c_d \frac{1}{|x|^{d - 2}}, &\quad\text{for } d > 2,  \end{cases}
-\end{align*}
+\end{align}
 where the coefficient $c_d$ is given as as a multiple of the surface measure of the $(d-1)$-dimensional sphere $\mathbb{S}^{d - 1}$
-\begin{align*}
+\begin{align}
+  \label{eq:wd}
   c_d = \frac{1}{(d - 2) \omega_d}, \quad\text{with}\quad \omega_d = \frac{2\pi^{\frac{d}{2}}}{\Gamma(\frac{d}{2})} = |\mathbb{S}^{d - 1}|.
-\end{align*}
+\end{align}
 Note that $c_2 = (2 \pi)^{-1}$.
 By rearranging terms and using the functional equation of the Gamma function 
 \begin{align*}
@@ -226,9 +228,10 @@ we get
   = \frac{4 \pi^{\frac{d}{2}}}{\Gamma(\frac{d}{2} - 1)},
 \end{align*}
 and thus we will also sometimes use the equivalent definition
-\begin{align*}
+\begin{align}
+  \label{eq:defncd}
   c_d \coloneqq \frac{\Gamma(\frac{d}{2} - 1)}{4 \pi^{\frac{d}{2}}}.
-\end{align*}
+\end{align}
 Furthermore we will denote The leading coefficient of the asymptotic expansions of the Hankel functions \eqref{eq:asymptoticd4}-\eqref{eq:asymptoticd7} for $d \geq 3$ will be denoted as
 \begin{align}
   \label{eq:Defnad}
@@ -255,7 +258,7 @@ The following lemma will help us to estimate derivatives of \eqref{eq:HelmholtzL
   Then
   \begin{align}
     \label{eq:HelmholtzLaplaceDifferenceEstimate}
-    |\nabla_x^l \{ G(x; \lambda) - G(x; 0) \}| \leq C |\lambda| |x|^{4 - d - l}
+    \Big|\nabla_x^l \Big\{ G(x; \lambda) - G(x; 0) \Big\}\Big| \leq C |\lambda| |x|^{4 - d - l}
   \end{align}
   if $d \geq 5$ and $l \geq 0$, where $C$ depends only on $d$, $l$ and $\theta$.
   If $d = 3$ or $4$, estimate \eqref{eq:HelmholtzLaplaceDifferenceEstimate} holds for $l \geq 1$ and if $d = 2$, the estimate holds for $l \geq 3$.
@@ -266,8 +269,8 @@ The following lemma will help us to estimate derivatives of \eqref{eq:HelmholtzL
     \item In this part we will show that the desired estimate \eqref{eq:HelmholtzLaplaceDifferenceEstimate} holds if we assume that $|\lambda| |x|^2 > \frac{1}{2}$.
     In this case, Lemma \ref{lem:estimateHelmholtzDerivatives} gives
     \begin{align*}
-      |\nabla_x^l \{ G(x; \lambda) - G(x; 0) \} |
-      \leq C \Big\{ \frac{\e^{-c \sqrt{|\lambda|} |x|}}{|x|^{d - 2 + l}} + \frac{1}{|x|^{d - 2 + l}} \Big\} \leq C \frac{|\lambda|}{|x|^{d - 4 + l}},
+      \Big|\nabla_x^l \Big\{ G(x; \lambda) - G(x; 0) \Big\} \Big|
+      \leq C \bigg\{ \frac{\e^{-c \sqrt{|\lambda|} |x|}}{|x|^{d - 2 + l}} + \frac{1}{|x|^{d - 2 + l}} \bigg\} \leq C \frac{|\lambda|}{|x|^{d - 4 + l}},
     \end{align*}
     where $C$ depends only on $d$, $l$ and $\theta$.
     Therefore, for the remaining proof we will suppose $|\lambda||x|^2 \leq \frac{1}{2}$.
@@ -280,17 +283,20 @@ The following lemma will help us to estimate derivatives of \eqref{eq:HelmholtzL
       |\nabla^l w(x) |
       &\leq C r^{-l} \sup_{\BB(x,r)} |w| + C \max_{0 \leq j \leq l - 1} \sup_{\BB(x,r)} r^{j - l + 2} |\nabla^j f| \\
       &\leq C r^{-l} \sup_{y \in \BB(x,r)} |\lambda| |y|^{4 - d} + C \sum_{j = 0}^{l - 1} \sup_{y \in \BB(x,r)} r^{j - l + 2} |\lambda| |y|^{2 - d - j} \\
-      &= C r^{-l} |\lambda| |x - r \frac{x}{|x|} |^{4 - d} + C \sum_{j = 0}^{l - 1} r^{j - l + 2} |\lambda| |x - r \frac{x}{|x|} |^{2 - d - j},
-    \end{align*}
+      &= C r^{-l} |\lambda| \, \bigg|x - r \frac{x}{|x|} \bigg|^{4 - d} \! + C \sum_{j = 0}^{l - 1} r^{j - l + 2} |\lambda|\, \bigg|x - r \frac{x}{|x|} \bigg|^{2 - d - j}\! ,
+      \intertext{
     for all $0 < r < |x|$, where we used \eqref{eq:HelmholtzLaplaceDifferenceEstimate} with $l = 1$ for the first summand and \eqref{eq:estimateHelmholtzDerivatives} to estimate the second summand.
     We choose $r = \frac{|x|}{2}$ and receive
-    \begin{align*}
+  }
       |\nabla^l w(x)| 
       &\leq C |\lambda |x|^{-l} |x|^{4 - d} + C \sum_{j = 0}^{l - 1} |x|^{j - l + 2} |\lambda| |x|^{2 - d - j} \\
       &\leq C |\lambda| |x|^{4 - d - l}.
     \end{align*}
 
-    The proof for case (2) is completely analogous if one sets $w(x) = \nabla_x (G(x; \lambda) - G(x; 0))$ and $f(x) = \lambda \nabla_x G(x; \lambda)$.
+    The proof for case (2) is completely analogous if one sets 
+      \begin{align*}
+        w(x) = \nabla_x (G(x; \lambda) - G(x; 0))\quad\text{and}\quad f(x) = \lambda \nabla_x G(x; \lambda).
+      \end{align*}
     Also case (3) is proven in a similar fashion. 
 %      We will give the proof for the sake of completeness.
 %
@@ -320,64 +326,64 @@ The following lemma will help us to estimate derivatives of \eqref{eq:HelmholtzL
     \end{align*}
     the mean value theorem yields the estimate
     \begin{align*}
-      |g(x) - g(0)| \leq |x| \sup_{\BB(0,|x|)} |\nabla f(y)| \leq |x| |k| \sup_{\BB(0,|x|)} \frac{\d{}}{\d z} |h(k|x|)|.
+      |g(x) - g(0)| \leq |x| \sup_{y \in \BB(0,|x|)} |\nabla g(y)| \leq |x| |k| \sup_{y \in \BB(0,|x|)}  \Big| \Big(\frac{\d{}}{\d z} h \Big) (k|y|)\Big|.
     \end{align*}
-    Due to \eqref{eq:HelmholtzLaplaceDifference} we estimate
+    Using representation \eqref{eq:HelmholtzLaplaceDifference}, we estimate
     \begin{align}
       |G(x; \lambda) - G(x; 0) |
-      &\leq C |x|^{2 - d} \cdot |k| |x| \max_{\substack{|z| \leq |k| |x| \\ \Im(z) > 0}} \big| \frac{\d{}}{\d z} \big\{ z^{\frac{d}{2} - 1} H_{\frac{d}{2} - 1}(z) \big\} \big| \nonumber\\
-      &= C |x|^{2 - d} \cdot |k| |x| \max_{\substack{|z| \leq |k||x| \\ \Im(z) > 0}} |z^{\frac{d}{2} - 1} H_{\frac{d}{2} - 2}^{(1)}(z) |, \label{eq:HelmholtzLaplaceDifferenceGt5}
+      &\leq C |x|^{2 - d} \cdot |k| |x| \max_{\substack{|z| \leq |k| |x| \\ \Im(z) > 0}} \Big| \frac{\d{}}{\d z} \Big\{ z^{\frac{d}{2} - 1} H_{\frac{d}{2} - 1}(z) \Big\} \Big| \nonumber\\
+      &= C |x|^{2 - d} \cdot |k| |x| \max_{\substack{|z| \leq |k||x| \\ \Im(z) > 0}} \Big|z^{\frac{d}{2} - 1} H_{\frac{d}{2} - 2}^{(1)}(z) \Big| \, , \label{eq:HelmholtzLaplaceDifferenceGt5}
     \end{align}
-    where for the last equality we used the relation
+    where for the last equality we used another useful relation that can be found in Lebedev \cite[Eq. (5.6.3)]{lebedev},
     \begin{align}
-      \frac{\d{}}{\d z} \big\{ z^\nu H_\nu^{(1)}(z) \big\} = z^\nu H_{\nu - 1}^{(1)}(z).
+      \frac{\d{}}{\d z} \Big\{ z^\nu H_\nu^{(1)}(z) \Big\} = z^\nu H_{\nu - 1}^{(1)}(z).
     \end{align}
-    Since the asymptotic expansions yield that $|z^{\nu} H_\nu^{(1)}(z)| \leq C_\nu$ for $\nu > 0$ and $|z| \leq 1$ with $\Im(z) > 0$ it follows from \eqref{eq:HelmholtzLaplaceDifferenceGt5} that
+    Since the asymptotic expansions yield that $|z^{\nu} H_\nu^{(1)}(z)| \leq C_\nu$ for $\nu > 0$ and $|z| \leq 1$ with $\Im(z) > 0$, it follows from \eqref{eq:HelmholtzLaplaceDifferenceGt5} that
     \begin{align*}
-      |G(x;\lambda) - G(x; 0)| \leq C |x|^{2 - d} \cdot |k| |x| \cdot |k| |x| \max_{\substack{|z| \leq |k||x| \\ \Im(z) > 0}} |z^{\frac{d}{2} - 2} H_{\frac{d}{2} - 2}^{(1)}(z) |
-      \leq C |\lambda| |x|^{4 - d}
+      |G(x;\lambda) - G(x; 0)| \leq C |x|^{2 - d} \cdot |k| |x| \cdot |k| |x| \max_{\substack{|z| \leq |k||x| \\ \Im(z) > 0}} \Big|z^{\frac{d}{2} - 2} H_{\frac{d}{2} - 2}^{(1)}(z) \Big|
+      \leq C |\lambda| |x|^{4 - d}.
     \end{align*}
     
   \item Now we consider the case $d = 4$ and $l = 1$.
     The asymptotic expansion \eqref{eq:asymptoticd4} gives that
     \begin{align}
       \label{eq:mwt4d}
-      \Big| \frac{\d{}}{\d z} \bigg\{ \frac{z H_1^{(1)}(z) - a_4}{z^2} \bigg\} \Big| \leq C |z|^{-1}
+      \bigg| \frac{\d{}}{\d z} \bigg\{ \frac{z H_1^{(1)}(z) - a_4}{z^2} \bigg\} \bigg| \leq C |z|^{-1}
     \end{align}
     for all $|z| \leq \frac{1}{2}$ with $\Im(z) > 0$.
     Since
     \begin{align*}
       \frac{G(x; \lambda) - G(x; 0)}{\lambda} = - \frac{C (z H_1^{(1)}(z) - a_4)}{z^2},
     \end{align*}
-    where $z = k |x|$, it follows from \eqref{eq:mwt4d} and the mean value theorem that
+    where $z = k |x|$. With \eqref{eq:mwt4d} we conclude that
     \begin{align*}
-      \Big|\frac{\nabla_x \{ G(x; \lambda) - G(x; 0) \}}{\lambda} \Big|
-      \leq C |k| \frac{\d{}}{\d z} \Big( \frac{z H_1^{(1)}(z) - a_4}{z^2} \Big) \Big|_{z = k|x|}
-      \leq C |k| |k|^{-1} |x|^{-1}.
+      \bigg|\frac{\nabla_x \{ G(x; \lambda) - G(x; 0) \}}{\lambda} \bigg|
+      \leq C |k| \; \bigg| \frac{\d{}}{\d z} \bigg\{ \frac{z H_1^{(1)}(z) - a_4}{z^2} \bigg\} \bigg|_{z = k|x|} \bigg|
+      \leq C |k| |k|^{-1} |x|^{-1},
     \end{align*}
-    Which after rearrangement of the involved terms gives the claim.
+    which after rearrangement of the involved terms gives the claim.
 
-  \item For the case $d = 3$ and $l = 1$, equation \eqref{eq:HelmholtzLaplaceDifference} reads
+  \item For the case $d = 3$ and $l = 1$, we get from equation \eqref{eq:defncd} and a well known fact of the Gamma function, $\Gamma(1/2) = \sqrt{\pi}$, the following identity:
     \begin{align*}
       G(x;\lambda) - G(x; 0) = \frac{\e^{\ii k |x|}}{4\pi |x|} - \frac{c_3}{|x|} = \frac{\e^{\ii k|x|} - 1}{4 \pi |x|}.
     \end{align*}
 
     Now we calculate
     \begin{align*}
-      \frac{\partial}{\partial x_j} \Big\{ \frac{\e^{\ii k|x|} - 1}{|x|} \Big\} 
-      &= \frac{\partial}{\partial x_j} \Big\{ \frac{\e^{\ii k |x|} - 1 - \ii k |x|}{|x|} \Big\} 
-      = \frac{\partial}{\partial x_j} \Big\{ \sum_{n = 2}^\infty \frac{(\ii k |x|)^n}{n!} \cdot \frac{1}{|x|} \Big\} \\
+      \frac{\partial}{\partial x_j} \bigg\{ \frac{\e^{\ii k|x|} - 1}{|x|} \bigg\} 
+      &= \frac{\partial}{\partial x_j} \bigg\{ \frac{\e^{\ii k |x|} - 1 - \ii k |x|}{|x|} \bigg\} 
+      = \frac{\partial}{\partial x_j} \bigg\{ \sum_{n = 2}^\infty \frac{(\ii k |x|)^n}{n!} \cdot \frac{1}{|x|} \bigg\} \\
       &= \sum_{n = 2}^\infty \frac{(\ii k)^n}{n!} (n - 1) \cdot \frac{x_j}{|x|} |x|^{n - 2} 
     \end{align*}
     which in turn implies 
     \begin{align*}
-      \Big| \frac{\partial}{\partial x_j} \Big\{ \frac{\e^{\ii k |x|} - 1}{|x|} \Big\} \Big|
+      \bigg| \frac{\partial}{\partial x_j} \bigg\{ \frac{\e^{\ii k |x|} - 1}{|x|} \Big\} \Big|
       &\leq |\lambda| \sum_{n = 2}^\infty \frac{n - 1}{n!} |k|^{n - 2} |x|^{n - 2} 
       \leq C \, |\lambda|
     \end{align*}
-    since $|\lambda||x| < \frac{1}{2}$.
+    since $|\lambda||x| \leq (1/2)$.
 
-  \item For the last case $d = 2$ and $l = 3$, we will directly calculate the estimate using the asymptotic expansion of $H_0^{(1)}(z)$ with $z = k|x|$. The calculations are omitted from this chapter. Instead, they can be found in the appendix chapter of this thesis. \qedhere
+  \item For the last case $d = 2$ and $l = 3$, we will directly calculate the estimate using the asymptotic expansion of $H_0^{(1)}(z)$ with $z = k|x|$. The calculations are omitted from this chapter. Instead, they can be found in the appendix of this thesis. \qedhere
 %    \begin{align*}
 %      H_0^{(1)}(z) 
 %      &= J_0(z) + \ii Y_0(z) \\
@@ -394,7 +400,7 @@ The following lemma will help us to estimate derivatives of \eqref{eq:HelmholtzL
 \end{proof}
 
 \begin{rem}
-  In the situation of Lemma \ref{lem:HelmholtzLaplaceDifference} one can show for $|\lambda| |x|^2 \leq (1/2)$ by considering the asymptotic expansions that 
+  In the situation of Lemma \ref{lem:HelmholtzLaplaceDifference}, one can show for $|\lambda| |x|^2 \leq (1/2)$ by considering the asymptotic expansions that 
   \begin{align*}
     |G(x; \lambda) - G(x; 0) | \leq \begin{cases}
       C \sqrt{|\lambda|} \quad&\text{if } d = 3, \\
@@ -418,11 +424,11 @@ We will now analyze fundamental solutions to the \emph{Stokes resolvent problem}
   \div u &= 0
   \end{alignedat}
 \end{align}
-in $\R^d$ with $\lambda \in \Sigma_\theta$.
+in $\R^d$ with $\lambda \in \Sigma_\theta$ with the goal to deduce helpful estimates for the following chapters.
   The fundamental solutions to the (scalar) Helmholtz equation and the Laplace equation will form the main ingredients for the following matrix of fundamental solutions to the Stokes resolvent problem with pole at the origin:
   \begin{align}
     \label{eq:fundamentalMatrixStokes}
-    \Gamma_{\alpha\beta}(x;\lambda) = G(x; \lambda) \delta_{\alpha\beta} - \frac{1}{\lambda} \frac{\partial^2}{\partial x_\alpha \partial x_\beta} \{ G(x; \lambda) - G(x; 0) \}, \quad \alpha,\beta = 1,\dots,d.
+    \Gamma_{\alpha\beta}(x;\lambda) = G(x; \lambda) \delta_{\alpha\beta} - \frac{1}{\lambda} \frac{\partial^2}{\partial x_\alpha \partial x_\beta} \Big\{ G(x; \lambda) - G(x; 0) \Big\}, \quad \alpha,\beta = 1,\dots,d.
   \end{align}
   As the matrix of fundamental solutions $\Gamma(x; \lambda) = (\Gamma_{\alpha\beta}(x; \lambda))_{d \times d}$ carries two arguments it cannot be confused with the Gamma function.
   Having formula \eqref{eq:fundamentalMatrixStokes} at sight, the following observations are obvious:
@@ -435,17 +441,17 @@ in $\R^d$ with $\lambda \in \Sigma_\theta$.
   For the pressure, we define the vector of fundamental solutions
   \begin{align}
     \label{eq:fundamentalVectorPressure}
-      \Phi_\beta(x) = -\frac{\partial}{\partial x_\beta} \{ G(x; 0) \} = \frac{x_\beta}{\omega_d |x|^d}.
+      \Phi_\beta(x) = -\frac{\partial}{\partial x_\beta} \Big\{ G(x; 0) \Big\} = \frac{x_\beta}{\omega_d |x|^d}, \quad \beta= 1,\dots,d.
   \end{align}
   We note that $\Phi_\beta(x) = \Phi_\beta(-x)$.
 
   Using the fact that $\Delta_x G(x; \lambda) = \lambda G(x; \lambda)$ in $\R^d \setminus \{0\}$, one can see that on $\R^d \setminus \{0\}$ and for all $1 \leq \beta \leq d$
   \begin{align}
     \label{eq:solutionStokesSystem}
-    \begin{cases}
-      (-\Delta_x + \lambda) \Gamma_{\alpha\beta}(x;\lambda) + \frac{\partial}{\partial x_\alpha} \{ \Phi_\beta(x) \} &= 0 \quad\text{for } 1 \leq \alpha \leq d, \\
-      \frac{\partial}{\partial x_\alpha} \{ \Gamma_{\alpha\beta} (x; \lambda) \} &= 0.
-    \end{cases}
+    \begin{alignedat}{1}
+      (-\Delta_x + \lambda) \Gamma_{\alpha\beta}(x;\lambda) + \frac{\partial}{\partial x_\alpha} \Big\{ \Phi_\beta(x) \Big\} &= 0, \\
+      \frac{\partial}{\partial x_\alpha} \Big\{ \Gamma_{\alpha\beta} (x; \lambda) \Big\} &= 0, \quad\text{for } 1 \leq \alpha \leq d.
+    \end{alignedat}
   \end{align}
   Note that in the last equation the summation convention was used.
 
@@ -457,13 +463,13 @@ in $\R^d$ with $\lambda \in \Sigma_\theta$.
   Then for any $d \geq 3$ and $l \geq 0$
   \begin{align}
     \label{eq:fundamentalMatrixEstimate}
-    | \nabla_x^l \Gamma(x; \lambda) | &\leq \frac{C}{(1 + |\lambda||x|^2) |x|^{d - 2 + l}} 
+    \big| \nabla_x^l \Gamma(x; \lambda) \big| &\leq \frac{C}{(1 + |\lambda||x|^2) |x|^{d - 2 + l}} 
   \end{align}
     where $C$ depends only on $d$, $l$ and $\theta$. For $d = 2$ and $l \geq 1$ the same estimate holds.
 \end{thm}
 
   \begin{proof}
-    Let $|\lambda| |x|^2 > \frac{1}{2}$. 
+    Let $|\lambda| |x|^2 > (1/2)$. 
     Then there exist constants $C_a$, $C_b$, $C_c$ such that
     \begin{align*}
       \e^{-c \sqrt{|\lambda|} |x|} ( 1 + |\lambda| |x|^2) &\leq C_a, \\
@@ -473,17 +479,17 @@ in $\R^d$ with $\lambda \in \Sigma_\theta$.
     where $c$ is the constant from Lemma \ref{lem:estimateHelmholtzDerivatives}.
     Using these estimates and Lemma \ref{lem:estimateHelmholtzDerivatives} gives
     \begin{align*}
-      |\nabla_x^l \Gamma(x; \lambda) |
-      &\leq |\nabla_x^l G(x; \lambda)| + \frac{1}{|\lambda|} |\nabla_x^{l + 2} G(x; \lambda) | + \frac{1}{|\lambda|} |\nabla_x^{l + 2} G(x; 0)| \\
-    &\leq\frac{C_l \e^{-c \sqrt{|\lambda|} |x|}}{|x|^{d - 2 + l}} + \frac{1}{|\lambda|} \frac{C_{l + 2} \e^{-\sqrt{|\lambda|} |x|}}{|x|^2 |x|^{d - 2 + l}} + \frac{1}{|\lambda|} \frac{C}{|x|^2 |x|^{d - 2 + l}} \\
+      \big|\nabla_x^l \Gamma(x; \lambda) \big|
+      &\leq \big|\nabla_x^l G(x; \lambda)\big| + \frac{1}{|\lambda|} \big|\nabla_x^{l + 2} G(x; \lambda) \big| + \frac{1}{|\lambda|} \big|\nabla_x^{l + 2} G(x; 0)\big| \\
+    &\leq\frac{C_l\, \e^{-c \sqrt{|\lambda|} |x|}}{|x|^{d - 2 + l}} + \frac{1}{|\lambda|} \frac{C_{l + 2}\, \e^{-c \sqrt{|\lambda|} |x|}}{|x|^2 |x|^{d - 2 + l}} + \frac{1}{|\lambda|} \frac{C}{|x|^2 |x|^{d - 2 + l}} \\
     %&\leq \frac{C}{(1 + |\lambda||x|^2)} \frac{1}{|x|^{d - 2 + l}} + \frac{C_{l + 2} |\lambda||x|^2}{(1 + |\lambda||x|^2)} \frac{1}{|\lambda| |x|^2} \frac{1}{|x|^{d - 2 + l}} + \frac{C}{1 + |\lambda||x|^2} \frac{1}{|x|^{d - 2 + l}}
     &\leq \frac{C}{1 + |\lambda| |x|^2}\; \frac{1}{|x|^{d - 2 + l}}.
     \end{align*}
-    Now let $|\lambda| |x|^2 \leq \frac{1}{2}$.
-    Then by \ref{lem:estimateHelmholtzDerivatives} and \ref{lem:HelmholtzLaplaceDifference} we get
+    Now let $|\lambda| |x|^2 \leq ({1}/{2})$.
+    Then by Lemma \ref{lem:estimateHelmholtzDerivatives} and Lemma \ref{lem:HelmholtzLaplaceDifference} we get
     \begin{align*}
-      |\nabla_x^l \Gamma(x; \lambda) |
-      &\leq |\nabla_x^l G(x; \lambda) | + \frac{1}{|\lambda|} |\nabla_x^{l + 2} ( G(x; \lambda) - G(x; 0))| \\
+      \big|\nabla_x^l \Gamma(x; \lambda) \big|
+      &\leq \big|\nabla_x^l G(x; \lambda) \big| + \frac{1}{|\lambda|} \cdot \big|\nabla_x^{l + 2} ( G(x; \lambda) - G(x; 0))\big| \\
       &\leq \frac{C}{|x|^{d - 2 + l}} + \frac{1}{|\lambda|} \cdot C |\lambda| |x|^{4 - d - (l + 2)} \\
       &\leq \frac{C}{|x|^{d - 2 + l}} \frac{(1 + |\lambda| |x|^2)}{(1 + |\lambda| |x|^2)} \\
       &\leq \frac{C}{(1 + |\lambda| |x|^2) |x|^{d - 2 + l}}
@@ -495,59 +501,67 @@ in $\R^d$ with $\lambda \in \Sigma_\theta$.
  %Regarding the structure of the above proof, the derived estimate for the case $d = 2$ seems natural at first sight. 
  %One important difference compared to $d \geq 3$ is that it is not possible to derive an estimate of the form $|\nabla_x^l \Gamma(x; \lambda)| \leq C |x|^{-l}$.
 
-  If $\lambda = 0$, the matrix of fundamental solutions to the Stokes problem in $\R^d$ with pole at the origin is given by $\Gamma(x; 0) = (\Gamma_{\alpha\beta}(x; 0))_{d \times d}$, where
+  If $\lambda = 0$, the Stokes resolvent problem becomes just the Stokes problem in $\R^d$
+\begin{align}
+  \label{eq:stokesProblem}
+  \begin{alignedat}{1}
+  -\Delta u + \nabla \phi + \lambda u &= 0, \\
+  \div u &= 0.
+  \end{alignedat}
+\end{align}
+  Whereas the fundamental solution for the pressure is maintained, the matrix of fundamental solutions to the Stokes problem in $\R^d$ with pole at the origin is given by $\Gamma(x; 0) = (\Gamma_{\alpha\beta}(x; 0))_{d \times d}$, where
   \begin{align}
     \label{eq:fundamentalSolutionStokes}
-    \Gamma_{\alpha\beta}(x; 0) &= \frac{1}{2 \omega_d} \big\{ \frac{\delta_{\alpha\beta}}{(d - 2) |x|^{d - 2}} + \frac{x_{\alpha} x_\beta}{|x|^d} \big\}
+    \Gamma_{\alpha\beta}(x; 0) &\coloneqq \frac{1}{2 \omega_d} \Big\{ \frac{\delta_{\alpha\beta}}{(d - 2) |x|^{d - 2}} + \frac{x_{\alpha} x_\beta}{|x|^d} \Big\}
     \intertext{if $d \geq 3$ and}
     \label{eq:fundamentalSolutionStokes2d}
-    \Gamma_{\alpha\beta}(x; 0) &= \frac{1}{2 \omega_2} \big\{ - \delta_{\alpha\beta} \log(|x|) + \frac{x_\alpha x_\beta}{|x|^2} \big\}  \end{align}
+    \Gamma_{\alpha\beta}(x; 0) &\coloneqq \frac{1}{2 \omega_2} \Big\{ - \delta_{\alpha\beta} \log(|x|) + \frac{x_\alpha x_\beta}{|x|^2} \Big\}  \end{align}
   for $d = 2$.
-  Note that the given fundamental solution for the case $d = 2$ differs from the one given by Mitrea and Wright \cite{mitreaWright} by having summands with alternating signs.
+  Note that the given fundamental solution for the case $d = 2$ differs from the one given by Mitrea and Wright \cite[Sec. 4.2]{mitreaWright} by having summands with alternating signs.
+  Considering the structure of the fundamental solution for $d \geq 3$, our choice seems more natural with regard to the structure of the fundamental solutions to the Laplace equation \eqref{eq:laplace}.
   The alternatig sign is necessary for $\Gamma_{\alpha\beta}$ to be divergence free.
 
-  One important technique in the following chapter will be to reduce problems formulated for $\Gamma(x; \lambda)$ to problems formulated in $\Gamma(x; 0)$ plus the difference $\Gamma(x; \lambda) - \Gamma(x; 0)$.
+  One important technique in the following chapter will be to reduce problems formulated for $\Gamma(x; \lambda)$ to problems formulated in $\Gamma(x; 0)$ perturbed by the difference $\Gamma(x; \lambda) - \Gamma(x; 0)$.
   Under this aspect it seems reasonable to study estimates of the difference of fundamental solutions.
   To this end it is helpful to rewrite parts of the fundamental solution.
-  Using the fact that for $d \geq 5$ or $d = 3$
-  we have
+  Using the fact that for $d \geq 5$ or $d = 3$, we have
   \begin{align*}
-    \frac{\partial^2}{\partial x_\alpha \partial x_\beta} \big( \frac{1}{|x|^{d - 4}} \big)
+    \frac{\partial^2}{\partial x_\alpha \partial x_\beta} \bigg( \frac{1}{|x|^{d - 4}} \bigg)
     = -(d - 4) \frac{\partial}{\partial x_\alpha} \frac{x_\beta}{|x|^{d - 2}}
-    = -(d - 4) \frac{\delta_{\alpha\beta}}{|x|^{d - 2}} + \frac{(d - 4)(d - 2) x_\alpha x_\beta}{|x|^d}
+    = -(d - 4) \frac{\delta_{\alpha\beta}}{|x|^{d - 2}} + \frac{(d - 4)(d - 2) x_\alpha x_\beta}{|x|^d}.
   \end{align*}
-  This allows us to express
+  This allows us to write
   \begin{align*}
-    \frac{x_\alpha x_\beta}{|x|^d} = \frac{\delta_{\alpha \beta}}{(d - 2)|x|^{d - 2}} + \frac{1}{(d - 4)(d - 2)} \frac{\partial^2}{\partial x_\alpha \partial x_\beta} \big( \frac{1}{|x|^{d - 4}} \big)
+    \frac{x_\alpha x_\beta}{|x|^d} = \frac{\delta_{\alpha \beta}}{(d - 2)|x|^{d - 2}} + \frac{1}{(d - 4)(d - 2)} \frac{\partial^2}{\partial x_\alpha \partial x_\beta} \bigg( \frac{1}{|x|^{d - 4}} \bigg),
   \end{align*}
-  which considering \eqref{eq:fundamentalSolutionStokes} gives 
+  which, considering definition \eqref{eq:fundamentalSolutionStokes}, gives 
   \begin{align}
     \label{eq:fundamentalSolutionStokes35}
-    \Gamma_{\alpha\beta}(x; 0) &= G(x; 0)\delta_{\alpha\beta} + \frac{1}{2\omega_d(d - 4)(d - 2)} \frac{\partial^2}{\partial x_\alpha \partial x_\beta} \big( \frac{1}{|x|^{d - 4}} \big).
-  \intertext{A similar trick works for $d = 4$.
+    \Gamma_{\alpha\beta}(x; 0) &= G(x; 0)\delta_{\alpha\beta} + \frac{1}{2\omega_d(d - 4)(d - 2)} \frac{\partial^2}{\partial x_\alpha \partial x_\beta} \bigg( \frac{1}{|x|^{d - 4}} \bigg).
+  \intertext{A similar trick works for $d = 4$:
   Since $\omega_4 = 2 \pi^2$, we have}
     \Gamma_{\alpha \beta}(x; 0)
-    &= \frac{1}{2 \omega_4} \frac{1}{|x|^2} \delta_{\alpha\beta} - \frac{1}{8\pi^2} \big( \frac{\delta_{\alpha\beta}}{|x|^2} - \frac{2 x_\alpha x_\beta}{|x|^4} \big) \nonumber\\
+    &= \frac{1}{2 \omega_4} \frac{1}{|x|^2} \delta_{\alpha\beta} - \frac{1}{8\pi^2} \bigg( \frac{\delta_{\alpha\beta}}{|x|^2} - \frac{2 x_\alpha x_\beta}{|x|^4} \bigg) \nonumber\\
     \label{eq:fundamentalSolutionStokes4}
     &= G(x; 0) \delta_{\alpha\beta} - \frac{1}{8\pi^2} \frac{\partial^2}{\partial x_\alpha \partial x_\beta}( \log(|x|))
-  \intertext{In the case $d = 2$ this game shows that since
+  \intertext{In the case $d = 2$, we use
     $$
   \frac{1}{8\pi} \frac{\partial^2}{\partial_\alpha \partial_\beta} (|x|^2 \log(|x|))
-  = \frac{\delta_{\alpha\beta}}{4\pi} \log(|x|) + \frac{1}{4\pi} \frac{x_\alpha x_\beta}{|x|^2} + \frac{\delta_{\alpha\beta}}{8\pi},
+  = \frac{\delta_{\alpha\beta}}{4\pi} \log(|x|) + \frac{1}{4\pi} \frac{x_\alpha x_\beta}{|x|^2} + \frac{\delta_{\alpha\beta}}{8\pi}
 $$
-we can write}
+to find the identity}
     \label{eq:fundamentalSolutionStokes2}
-    \Gamma_{\alpha \beta}(x; 0) &= G(x; 0)\delta_{\alpha\beta} - \frac{\delta_{\alpha\beta}}{8\pi} - \frac{\partial^2}{\partial x_\alpha \partial x_\beta} (|x|^2 \log(|x|))
+    \Gamma_{\alpha \beta}(x; 0) &= G(x; 0)\delta_{\alpha\beta} - \frac{\delta_{\alpha\beta}}{8\pi} - \frac{\partial^2}{\partial x_\alpha \partial x_\beta} (|x|^2 \log(|x|)).
   \end{align}
   This ends the preparatory step and brings us to the next theorem.
   
   \begin{thm}
     \label{thm:differenceFundamentalSolutionStokes}
     Let $\lambda \in \Sigma_\theta$.
-    Suppose that $|\lambda| |x|^2 \leq \frac{1}{2}$.
+    Suppose that $|\lambda| |x|^2 \leq ({1}/{2})$.
     Then
     \begin{align}
-      |\nabla_x \{ \Gamma(x; \lambda) - \Gamma(x; 0) \} |
+      \big|\nabla_x \{ \Gamma(x; \lambda) - \Gamma(x; 0) \} \big|
       \leq 
       \begin{cases}
         C |\lambda| |x|^{3 - d} &\quad\text{if } d \geq 7 \text{ or } d = 5, \\
@@ -562,42 +576,43 @@ we can write}
 \begin{proof}
   We will split the proof in several parts.
   We start by considering the cases $d = 3$ and $d \geq 5$.
-      Taking into account \eqref{eq:fundamentalSolutionStokes35} we have
+      Taking into account identity \eqref{eq:fundamentalSolutionStokes35}, we have for all $\alpha, \beta = 1,\dots,d$
       \begin{align*}
         &\Gamma_{\alpha\beta}(x; \lambda) - \Gamma_{\alpha\beta}(x; 0) \\
-        &\qquad= \{ G(x; \lambda) - G(x; 0) \}\delta_{\alpha\beta}  \\
-        &\qquad\qquad- \frac{1}{\lambda} \frac{\partial^2}{\partial x_\alpha \partial x_\beta} \Big\{ G(x; \lambda) - G(x; 0) + \frac{\lambda}{2 \omega_d (d - 4) (d - 2) |x|^{d - 4}} \Big\}
+        &\qquad\qquad= \big\{ G(x; \lambda) - G(x; 0) \big\}\delta_{\alpha\beta}  \\
+        &\qquad\qquad\qquad- \frac{1}{\lambda} \frac{\partial^2}{\partial x_\alpha \partial x_\beta} \bigg\{ G(x; \lambda) - G(x; 0) + \frac{\lambda}{2 \omega_d (d - 4) (d - 2) |x|^{d - 4}} \bigg\}.
       \end{align*}
-  As the first term can already be estimated via Lemma \ref{lem:HelmholtzLaplaceDifference}, we will only be concerned about the second one.
+  As the first term can already be estimated via Lemma \ref{lem:HelmholtzLaplaceDifference} in a satisfactory way, we will only be concerned about the second one.
   If $d = 3$, a direct calculation will yield the desired result:
   We start by noting that $\omega_3 = 4 \pi$ gives
   \begin{align*}
-    \frac{\e^{\ii k |x|}}{4\pi |x|} - \frac{1}{4 \pi |x|} - \frac{(\ii k)^2}{2 \omega_3 |x|^{-1}}
+    G(x; \lambda) - G(x; 0) + \frac{\lambda}{2\omega_3 {|x|}^-1}
+    &= \frac{\e^{\ii k |x|}}{4\pi |x|} - \frac{1}{4 \pi |x|} - \frac{(\ii k)^2}{2 \omega_3 |x|^{-1}} \\
     &= \frac{1}{4 \pi |x|} \Big( \e^{\ii k |x|} - 1 - \frac{ (\ii k)^2 |x|^2}{2} \Big)\\
     &= \frac{1}{4 \pi |x|} \Big( \ii k |x| + \sum_{n = 3}^\infty \frac{(\ii k |x| )^n}{n!} \Big) \\
     &= \frac{1}{4\pi} \Big( \ii k + \sum_{n = 3}^\infty \frac{ (\ii k )^n |x|^{n - 1}}{n!} \Big).
   \end{align*}
   Taking the first derivative of this expression we get
   \begin{align*}
-    \frac{\partial}{\partial x_\beta} \dots = 
-    \frac{x_\beta}{4 \pi} \sum_{n - 3}^\infty \frac{(ik)^n (n - 1) }{n!} |x|^{n - 3}
+    \frac{\partial}{\partial x_\beta} \Big\{ \dots \Big\} = 
+    \frac{x_\beta}{4 \pi} \sum_{n = 3}^\infty \frac{(ik)^n (n - 1) }{n!} |x|^{n - 3}
   \end{align*}
   and differentiating with respect to $x_\alpha$ yields
   \begin{align*}
-    \frac{\partial}{\partial x_\alpha} \dots 
-    = \frac{\delta_{\alpha\beta}}{4 \pi} \sum_{n - 3}^\infty \frac{(ik)^n (n - 1) }{n!} |x|^{n - 3}
+    \frac{\partial}{\partial x_\alpha} \Big\{ \dots  \Big\}
+    = \frac{\delta_{\alpha\beta}}{4 \pi} \sum_{n = 3}^\infty \frac{(ik)^n (n - 1) }{n!} |x|^{n - 3}
     + \frac{x_\beta x_\alpha}{4\pi} \sum_{n = 4}^\infty \frac{(\ii k)^n (n - 1) (n - 3)}{n!} |x|^{n - 5}.
   \end{align*}
-  As we are interested in estimating the gradient of the difference of $\Gamma(x; \lambda)$ and $\Gamma(x; 0)$, we have to consider one additional derivative. This leaves us with
+  As we are interested in estimating the \emph{gradient} of the difference of $\Gamma(x; \lambda)$ and $\Gamma(x; 0)$, we have to consider one additional derivative. This leaves us with
 \begin{align*}
-    \frac{\partial}{\partial x_\gamma} \dots
-    &= \frac{\delta_{\alpha\beta} x_\gamma + \delta_{\beta\gamma} x_\alpha + \delta_{\alpha\gamma} x_\beta}{4\pi} \sum_{k = 4}^\infty \frac{(\ii k)^n (n - 1) (n - 3)}{n!}  |x|^{n - 5} \\
+  \frac{\partial}{\partial x_\gamma} \Big\{ \dots \Big\}
+    &= \frac{\delta_{\alpha\beta} x_\gamma + \delta_{\beta\gamma} x_\alpha + \delta_{\alpha\gamma} x_\beta}{4\pi} \sum_{n = 4}^\infty \frac{(\ii k)^n (n - 1) (n - 3)}{n!}  |x|^{n - 5} \\
     &\qquad + \frac{x_\beta x_\alpha x_\gamma}{4\pi} \sum_{\substack{n = 4}}^\infty \frac{(\ii k)^n (n - 1) (n - 3) (n - 5)}{n!} |x|^{n - 7}.
 \end{align*}
-We can now prove the stated estimate
+We can now prove the desired estimate
 \begin{align*}
-  | \frac{1}{\lambda} \frac{\partial^3}{\partial x_\gamma \partial x_\alpha \partial x_\beta} \dots  |
-  &\leq \frac{1}{|k|^2\pi}  \sum_{k = 4}^\infty \frac{|k|^n (n - 1) (n - 3)(1 + (n - 5))}{n!} |x|^{n - 4} \\
+  \bigg| \frac{1}{\lambda} \frac{\partial^3}{\partial x_\gamma \partial x_\alpha \partial x_\beta} \Big\{ \dots \Big\}  \bigg|
+  &\leq \frac{1}{|k|^2\pi}  \sum_{n = 4}^\infty \frac{|k|^n (n - 1) (n - 3)(1 + (n - 5))}{n!} |x|^{n - 4} \\
   &\leq \frac{1}{|k|^2 |x|\pi} |k|^3 \sum_{k = 4}^\infty \frac{(n - 1)(n - 3)(1 + (n - 5))}{n!} |k|^{n - 3} |x|^{n - 3}\\
   &\leq C \frac{1}{|k| |x|}.
 \end{align*}
@@ -605,22 +620,27 @@ This gives the claim for $d = 3$.
 If $d \geq 5$, equation \eqref{eq:HelmholtzLaplaceDifference} gives
 \begin{align*}
   &G(x; \lambda)- G(x; 0) + \frac{\lambda}{2 \omega_2 (d - 4) (d - 2) |x|^{d - 4}} \\
-  &\qquad= \frac{\ii}{4 (2\pi)^{\frac{d}{2} - 1}} \frac{1}{|x|^{d - 2}} \big\{ z^{\frac{d}{2} - 1} H_{\frac{d}{2} - 1}^{(1)}(z) - a_d - b_d z^2\big\},
+  &\hspace{4cm}= \frac{\ii}{4 (2\pi)^{\frac{d}{2} - 1}} \frac{1}{|x|^{d - 2}} \Big\{ z^{\frac{d}{2} - 1} H_{\frac{d}{2} - 1}^{(1)}(z) - a_d - b_d z^2\Big\},
 \end{align*}
 where $z = k|x|$, $a_d$ was calculated in \eqref{eq:Defnad} and $b_d$ is given by
 \begin{align*}
  b_d 
- &= \frac{2\ii (2\pi)^{\frac{d}{2} - 1}}{\omega_d (d - 4) (d - 2)}  
- = -\frac{2\ii (2\pi)^{\frac{d}{2} - 1} \Gamma(\frac{d}{2})}{2\pi^{\frac{d}{2}} (d - 2)(d - 4)}
- = \frac{2^{\frac{d}{2} - 1} }{\pi \ii (d - 4)} \frac{\Gamma(\frac{d}{2})}{(d - 2)} \\
- &= \frac{2^{\frac{d}{2} - 1} }{2\pi \ii } \frac{\Gamma(\frac{d}{2} - 1)}{(d - 4)} 
- = \frac{2^{\frac{d}{2} - 1}}{4 \pi \ii } \frac{\Gamma(\frac{d}{2} - 1)}{(\frac{d}{2} - 1 - 1)}
- = \frac{2^{\frac{d}{2} - 1} \Gamma(\frac{d}{2} - 2)}{4 \pi \ii }.
+ &= -\frac{2\ii (2\pi)^{\frac{d}{2} - 1}}{\omega_d (d - 4) (d - 2)}.
+  \end{align*}
+    Using Relation and the functional equation of the Gamma function twice, we see that
+    \begin{align*}
+      b_d &= -\frac{2\ii (2\pi)^{\frac{d}{2} - 1} \Gamma(\frac{d}{2})}{2\pi^{\frac{d}{2}} (d - 2)(d - 4)}
+ = \frac{2^{\frac{d}{2} - 1} }{\pi \ii (d - 4)} \frac{\Gamma(\frac{d}{2})}{(d - 2)} 
+ = \frac{2^{\frac{d}{2} - 1} }{2\pi \ii } \frac{\Gamma(\frac{d}{2} - 1)}{(d - 4)} \\
+      &= \frac{2^{\frac{d}{2} - 1}}{4 \pi \ii } \frac{\Gamma(\frac{d}{2} - 1)}{(\frac{d}{2} - 1 - 1)}
+      = \frac{2^{\frac{d}{2} - 1} \Gamma(\frac{d}{2} - 1 - 1)}{4 \pi \ii } = \frac{2^{\nu_d} \Gamma(\nu_d - 1)}{4 \pi \ii}.
 \end{align*}
-If $d \geq 7$ this shows that $b_d$ is the second coefficient of the asymptotic expansion \eqref{eq:asymptoticd7} and thus we can estimate
+This shows that for $d \geq 5$, $b_d$ is the second coefficient of the asymptotic expansions \eqref{eq:asymptoticd5}-\eqref{eq:asymptoticd7}, respectively. 
+
+If $d \geq 7$, we can estimate
 \begin{align}
   \label{eq:estimateDerivativesd7}
-  \big| \frac{\mathrm{d}^l}{\d z^l} \Big\{ z^{\frac{d}{2} - 1} H_{\frac{d}{2} - 1}^{(1)}(z) - a_d - b_d z^2 \Big\} \big| \leq C |z|^{4 - l}
+  \bigg| \frac{\mathrm{d}^l}{\d z^l} \Big\{ z^{\frac{d}{2} - 1} H_{\frac{d}{2} - 1}^{(1)}(z) - a_d - b_d z^2 \Big\} \bigg| \leq C |z|^{4 - l}
 \end{align}
 for $0 \leq l \leq 3$ and $z \in \C \setminus (-\infty, 0]$.
 For better readability we set
@@ -631,15 +651,18 @@ and consider the function $f(x) = g(k |x|)$ on $\R^d \setminus \{0\}$.
 The derivatives of $f$ read
 \begin{align*}
   \frac{\partial}{\partial x_\beta} f(x)
-  &= (\frac{\d{}}{\d z} g)(k|x|) \frac{k x_\beta}{|x|} \\
+  &= \Big(\frac{\d{}}{\d z} g\Big)(k|x|) \cdot \frac{k x_\beta}{|x|}, \\
+  %
   \frac{\partial^2}{\partial x_\alpha \partial x_\beta} f(x)
-  &= (\frac{\mathrm{d}^2}{\d z^2} g)(k|x|) \frac{k^2 x_\alpha x_\beta}{|x|^2} + (\frac{\d{}}{\d z}) g(k |x|) k \Big\{ \frac{\delta_{\alpha\beta}}{|x|} - \frac{x_\beta x_\alpha}{|x|^3} \Big\} \\
+  &= \Big(\frac{\mathrm{d}^2}{\d z^2} g\Big)(k|x|) \cdot \frac{k^2 x_\alpha x_\beta}{|x|^2} 
+  + \Big(\frac{\d{}}{\d z} g\Big)(k |x|) \cdot k \bigg\{ \frac{\delta_{\alpha\beta}}{|x|} - \frac{x_\beta x_\alpha}{|x|^3} \bigg\}, \\
+  %
   \frac{\partial^3}{\partial x_\gamma \partial x_\alpha \partial x_\beta} f(x)
-  &= (\frac{\mathrm{d}^3}{\d z^3}g)(k |x|) \frac{k^3 x_\alpha x_\beta x_\gamma}{|x|^3} \\
-  &\quad + (\frac{\mathrm{d}^2}{\d z^2}g)(k|x|) 
-  k^2 \Big\{ \frac{x_\alpha \delta_{\beta\gamma} + x_\beta \delta_{\alpha\gamma} + x_\gamma \delta_{\alpha\beta}}{|x|^2} 
-  - \frac{3 x_\alpha x_\beta x_\gamma}{|x|^4} \Big\} \\
-  &\quad + (\frac{\d{}}{\d z}g)(k|x|) k \Big\{-\frac{\delta_{\alpha\beta} x_\gamma}{|x|^3} - \frac{x_\alpha \delta_{\beta\gamma} + x_\beta \delta_{\alpha\gamma}}{|x|^3} + \frac{3 x_\alpha x_\beta x_\gamma}{|x|^5} \Big\}.
+  &= \Big(\frac{\mathrm{d}^3}{\d z^3}g\Big)(k |x|) \cdot \frac{k^3 x_\alpha x_\beta x_\gamma}{|x|^3} \\
+  &\quad + \Big(\frac{\mathrm{d}^2}{\d z^2}g\Big)(k|x|) 
+  \cdot k^2 \bigg\{ \frac{x_\alpha \delta_{\beta\gamma} + x_\beta \delta_{\alpha\gamma} + x_\gamma \delta_{\alpha\beta}}{|x|^2} 
+  - \frac{x_\alpha x_\beta x_\gamma}{|x|^4} \bigg\} \\
+  &\quad + \Big(\frac{\d{}}{\d z}g\Big)(k|x|) \cdot k \bigg\{-\frac{ x_\gamma\delta_{\alpha\beta} + x_\alpha \delta_{\beta\gamma} + x_\beta \delta_{\alpha\gamma}}{|x|^3} + \frac{3 x_\alpha x_\beta x_\gamma}{|x|^5} \bigg\}.
 \end{align*}
 If we now look for estimates on the absolute value of the derivatives, we see that by \eqref{eq:estimateDerivativesd7}
 \begin{align*}
@@ -649,34 +672,36 @@ If we now look for estimates on the absolute value of the derivatives, we see th
 % &\leq C \{ |k|^{4 - 2 + 2} |x|^{4 - 2} + |k|^{4 - 1 + 1} |x|^{4 -1 -1} \}  = C |k|^4 |x|^2 \\
 % |\nabla^3_x f(x) | 
 % &\leq C \{ |k|^{4 - 3 + 3} |x|^{4 - 3} + |k|^{4 - 2 + 2} |x|^{4 - 2 -1} + |k|^{4 - 1 + 1} |x|^{4 - 1 - 2}
-  |\nabla_x^l f(x)| \leq C |k|^4 |x|^{4 - l}, \quad 1 \leq l \leq 3,
+  \big|\nabla^l f(x)\big| \leq C |k|^4 |x|^{4 - l}, \quad 1 \leq l \leq 3,
 \end{align*}
 where $C$ only depends on $l$.
 We can now finally uncover the desired estimate via
 \begin{align*}
-  &\Big|\frac{1}{\lambda} \nabla_x^3 \Big\{ \frac{\ii}{4 (2\pi)^{\frac{d}{2} - 1}} \frac{1}{|x|^{d - 2}} \big\{ z^{\frac{d}{2} - 1} H_{\frac{d}{2} - 1}^{(1)}(z) - a_d - b_d z^2\big\} \Big\} \Big| \\
-  &\quad\leq C \frac{1}{|k|^2} \sum_{l = 0}^3 | \nabla_x^{3 - l}(\frac{1}{|x|^{d - 2}})| | \nabla_x^l f(x) | 
+  &\bigg|\frac{1}{\lambda} \nabla_x^3 \bigg\{ \frac{\ii}{4 (2\pi)^{\frac{d}{2} - 1}} \frac{1}{|x|^{d - 2}} \Big\{ z^{\frac{d}{2} - 1} H_{\frac{d}{2} - 1}^{(1)}(z) - a_d - b_d z^2\Big\} \bigg\} \bigg| \\
+  &\quad\leq C \frac{1}{|k|^2} \sum_{l = 0}^3 \Big| \nabla^{3 - l}\Big(\frac{1}{|x|^{d - 2}}\Big)\Big|\; \big| \nabla^l f(x) \big| 
   \leq C \sum_{l = 0}^3 |x|^{-d + 2 - 3 + l} |k|^2 |x|^{4 - l} = C |\lambda| |x|^{3 - d},
 \end{align*}
 where $C$ is a constant only depending on $d$.
-If $d = 6$, this shows that the asymptotic expansion \eqref{eq:asymptoticd6} gives us similar to \eqref{eq:estimateDerivativesd7}
+
+If $d = 6$, the asymptotic expansion \eqref{eq:asymptoticd6} gives us 
+similar to \eqref{eq:estimateDerivativesd7} the estimate
 \begin{align}
   \label{eq:estimateDerivativesd6}
-  \big| \frac{\mathrm{d}^l}{\d z^l} \Big\{ z^{\frac{d}{2} - 1} H_{\frac{d}{2} - 1}^{(1)}(z) - a_d - b_d z^2 \Big\} \big| \leq C |z|^{4 - l} | \log(z) |,
+  \bigg| \frac{\mathrm{d}^l}{\d z^l} \Big\{ z^{\frac{d}{2} - 1} H_{\frac{d}{2} - 1}^{(1)}(z) - a_d - b_d z^2 \Big\} \bigg| \leq C |z|^{4 - l} \, \big| \log(z) \big|\, ,
 \end{align}
 for $0 \leq l \leq 3$ and $z \in \C \setminus (-\infty, 0]$.
-Using as before the expressions for derivatives of $f$, we can estimate
+Using as before the expressions for the derivatives of $f$, we can estimate
 \begin{align*}
-  |\nabla_x^l f(x) | \leq C |k|^4 |x|^{4 - l} |\log(|\lambda| |x|^2) |, 
+  \big|\nabla^l f(x) \big| \leq C |k|^4 |x|^{4 - l}\, \big|\log(|\lambda| |x|^2) \big|\, , 
 \end{align*}
-which by a calculation analogous to the case $d \geq 7$ yields
+which, by a calculation analogous to the case $d \geq 7$, yields
 \begin{align*}
-  | \nabla_x \{ \Gamma(x; \lambda) - \Gamma(x; 0) \}| \leq C |\lambda| |x|^{3 - d} | \log(|\lambda| |x|^2) |.
+  \big| \nabla_x \{ \Gamma(x; \lambda) - \Gamma(x; 0) \}\big| \leq C |\lambda| |x|^{3 - d} \, \big| \log(|\lambda| |x|^2) \big|\,.
 \end{align*}
 For $d = 5$ write
 \begin{align*}
   &\frac{\partial^2}{\partial x_\alpha \partial x_\beta} \Big\{ G(x; \lambda) - G(x; 0) + \frac{\lambda}{2 \omega_d (d - 4) (d - 2) |x|{d - 4}} \Big\} \\
-  &\qquad= \frac{\partial^2}{\partial x_\alpha x_\beta} \Big\{ \frac{\ii}{4(2\pi)^{\frac{3}{2}}} \cdot \frac{1}{|x|^3} \big[ z^{\frac{3}{2}} H_{\frac{3}{2}}^{(1)}(z) - a_5 - b_5 z^2 - w z^3 \big] \Big\},
+  &\hspace{3cm}= \frac{\partial^2}{\partial x_\alpha x_\beta} \Big\{ \frac{\ii}{4(2\pi)^{\frac{3}{2}}} \cdot \frac{1}{|x|^3} \big[ z^{\frac{3}{2}} H_{\frac{3}{2}}^{(1)}(z) - a_5 - b_5 z^2 - w z^3 \big] \Big\},
 \end{align*}
 where $w\in\C$ can be an arbitrary constant if we set $z = k|x|$.
 Now, for the appropriate choice of $w \in \C$ the asymptotic expansion \eqref{eq:asymptoticd5} gives the same estimate as \eqref{eq:estimateDerivativesd7} which proves the claim for $d = 5$.
@@ -689,38 +714,38 @@ In the case $d = 4$ we use \eqref{eq:fundamentalSolutionStokes4} to reformulate
   &\quad= \{ G(x; \lambda) - G(x; 0) \} \delta_{\alpha\beta} \\
   &\qquad \frac{\ii}{\lambda} \frac{\partial^2}{\partial x_\alpha \partial x_\beta} \Big\{ \frac{1}{8 \pi |x|^2} [ z H_1^{(1)}(z) - a_4 - w z^2 - b_4 z^2 \log(z)] \Big\},
 \end{align*}
-where $z = k |x|$, $b_4 = \frac{\ii}{\pi}$ and $w \in \C$ is an arbitrary constant. Using the asymptotic expansion \eqref{eq:asymptoticd4} and the appropriate constant $w \in \C$ we get the estimate
+where $z = k |x|$, $b_4 = ({\ii}/{\pi})$ and $w \in \C$ is an arbitrary constant. Using the asymptotic expansion \eqref{eq:asymptoticd4} and the appropriate constant $w \in \C$ we get the estimate
 \begin{align*}
-  \big| \frac{\mathrm{d}^l}{\d z^l} \Big\{ z H_1^{(1)}(z) - a_4 - w z^2 - b_4 z^2 \log(z) \Big\} \big| \leq C |z|^{4 - l} |\log(z)|.
+  \bigg| \frac{\mathrm{d}^l}{\d z^l} \Big\{ z H_1^{(1)}(z) - a_4 - w z^2 - b_4 z^2 \log(z) \Big\} \bigg| \leq C |z|^{4 - l}\, \big|\log(z)\big|\,.
 \end{align*}
 
 For $d = 2$ the estimate follows from a direct calculation which is carried out in the appendix of this thesis.
 \end{proof}
 
-We can now use the assumption $|\lambda||x|^2 \leq \frac{1}{2}$  to unify the structure of the estimates for $d \geq 2$.
+We can now use the assumption $|\lambda||x|^2 \leq ({1}/{2})$  to unify the structure of the estimates for $d \geq 2$.
 \begin{cor}
   \label{cor:differenceFundamentalSolutionStokes}
-  Let $\lambda \in \Sigma_\theta$. Suppose that $|\lambda||x|^2 \leq \frac{1}{2}$.
+  Let $\lambda \in \Sigma_\theta$. Suppose that $|\lambda||x|^2 \leq ({1}/{2})$.
   Then for all $d \geq 2$
   \begin{align*}
-    |\nabla_x\{ \Gamma(x; \lambda) - \Gamma(x; 0)\} | \leq C \sqrt{|\lambda|} |x|^{2 - d},
+    \big|\nabla_x\{ \Gamma(x; \lambda) - \Gamma(x; 0)\} \big| \leq C \sqrt{|\lambda|} |x|^{2 - d},
   \end{align*}
   where $C$ depends only on $d$ and $\theta$.
 \end{cor}
 
 \begin{proof}
   We just extend the estimates given in Theorem \ref{thm:differenceFundamentalSolutionStokes}.
-  Let $d \geq 7$ or $d = 5$. Since $|\lambda|^{\frac{1}{2}} \leq C{|x|}$ we have
+  Let $d \geq 7$ or $d = 5$. Since $\sqrt{|\lambda|} \leq C{|x|}^{-1}$, we have
   \begin{align*}
-    C |\lambda| |x|^{3 - d} \leq C |\lambda|^{\frac{1}{2}} |x|^{2 - d}.
+    C |\lambda| |x|^{3 - d} \leq C \sqrt{|\lambda|} |x|^{2 - d}.
   \end{align*}
-  For $d = 4,6$ we have
+  For $d = 4,6$, we have
   \begin{align*}
-    C |\lambda| |x|^{3 - d} | \log(|\lambda||x|^2)|
-    = C |\lambda|^{\frac{1}{2}} |x|^{2 - d} \cdot |\lambda|^{\frac{1}{2}} |x| | \log(|\lambda| |x|^2) |
-    \leq C |\lambda|^{\frac{1}{2}} |x|^{2 - d},
+    |\lambda| |x|^{3 - d} \, \big| \log(|\lambda||x|^2)\big|
+    = C \sqrt{|\lambda|} |x|^{2 - d} \cdot \sqrt{|\lambda|} |x|\, \big| \log(|\lambda| |x|^2) \big|
+    \leq C \sqrt{|\lambda|} |x|^{2 - d},
   \end{align*}
-  since $|\lambda|^{\frac{1}{2}} |x| |\log(|\lambda| |x|^2)|$ is bounded for $|\lambda| |x|^2 \leq \frac{1}{2}$.
-  For $d = 2$ the same argument applies to the expression $|\lambda|^{\frac{1}{2}} |x| (|\log(|\lambda| |x|^2)| + 1)$.
+  since $\sqrt{|\lambda|} |x| \,\big|\log(|\lambda| |x|^2)\big|$ is bounded for $|\lambda| |x|^2 \leq ({1}/{2})$.
+  For $d = 2$, the same argument applies to the expression $\sqrt{|\lambda|} |x| (|\log(|\lambda| |x|^2)| + 1)$.
 \end{proof}
 
