@@ -3,14 +3,30 @@
 
 In this chapter, we will deal with \emph{single} and \emph{double layer potentials}.
 Both will serve as ``representation formulas'' for solutions to the Stokes resolvent problem.
-We will study their properties as they will serve as the crucial ingredient to solving the $\Ell^2$ Dirichlet boundary problem associated to the Stokes resolvent problem.
-In this chapter we will always assume that $\Omega$ is a bounded Lipschitz domain in $\R^d$ with $d \geq 2$ and $1 < p < \infty$.
+We will study their properties as they will serve as the crucial ingredient to solving the $\Ell^2$ Dirichlet problem associated to the Stokes resolvent problem on bounded Lipschitz domains $\Omega \subset \R^d$:
+For $\lambda \in \C \setminus (-\infty,0)$ and
+\begin{align*}
+  g \in \Ell^2_\nu(\partial\Omega) \coloneqq \bigg\{g \in \Ell^2(\partial\Omega; \C^d) \colon \int_{\partial\Omega} g \cdot \nu \d \sigma = 0\bigg\}
+\end{align*}
+we are looking for smooth functions $u$ and $\phi$ that satisfy
+\begin{align*}
+  (\mathrm{Dir}_\lambda)
+  \left\{
+  \begin{alignedat}{1}
+    -\Delta u + \nabla \phi + \lambda u =& 0 \quad\in\Omega\,, \\
+    \div u =& 0 \quad\text{in } \Omega\,, \\ 
+    u =& g  \quad\text{nontangentially on } \partial\Omega\,, \\
+    (u)^* &\in \Ell^2(\partial\Omega).
+  \end{alignedat}
+    \right.
+\end{align*}
+In this chapter we will thus always assume that $\Omega$ is a bounded Lipschitz domain in $\R^d$ with $d \geq 2$ and $1 < p < \infty$.
 We will also tacitly use the summation convention.
 
-We note that due to the new two dimensional estimates on fundamental solutions in Chapter \ref{chap:2}, namely the continuation of Theorem \ref{thm:differenceFundamentalSolutionStokes} and Theorem \ref{thm:fundamentalMatrixEstimate} for the case $d=2$, all results from Chapter 3 that are relevant to the analysis of the $\Ell^2$ Dirichlet problem associated to the Stokes resolvent problem of Shen's seminal paper \cite{Shen2012} could be  extended in a straightforward way.
+We note that due to the new two dimensional estimates on fundamental solutions in Chapter \ref{chap:2}, namely the continuation of  Theorem \ref{thm:fundamentalMatrixEstimate}and Theorem \ref{thm:differenceFundamentalSolutionStokes} for the case $d=2$, we could extend all results from Chapter 3 of Shen's seminal paper \cite{Shen2012} that are relevant to the analysis of the $\Ell^2$ Dirichlet problem in a straightforward way.
 
 Let $\lambda \in \Sigma_\theta$. 
-For $f \in \Ell^2(\partial\Omega; \C^d)$, the single layer potential $u = \slp_\lambda(f)$ is defined by
+For $f \in \Ell^p(\partial\Omega; \C^d)$, the single layer potential $u = \slp_\lambda(f)$ is defined by
 \begin{align}
   \label{eq:defSingleLayer}
   u_j(x) 
