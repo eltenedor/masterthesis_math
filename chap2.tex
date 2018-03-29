@@ -573,7 +573,7 @@ to find the identity}
       \leq 
       \begin{cases}
         C |\lambda| |x|^{3 - d} &\quad\text{if } d \geq 7 \text{ or } d = 5, \\
-        C |\lambda| |x|^{3 - d} | \log(|\lambda| |x|^2) | &\quad\text{if } d = 4 \text{ or } 6, \\
+        C |\lambda| |x|^{3 - d} \, \big| \log(|\lambda| |x|^2)\, \big| &\quad\text{if } d = 4 \text{ or } 6, \\
         C \sqrt{|\lambda|} |x|^{-1} &\quad\text{if } d = 3,\\
         C |\lambda| |x| ( |\log(|\lambda| |x|^2)| + 1 ) &\quad\text{if } d = 2,
       \end{cases}
@@ -594,7 +594,7 @@ to find the identity}
   If $d = 3$, a direct calculation will yield the desired result:
   We start by noting that $\omega_3 = 4 \pi$ gives
   \begin{align*}
-    G(x; \lambda) - G(x; 0) + \frac{\lambda}{2\omega_3 {|x|}^-1}
+    G(x; \lambda) - G(x; 0) + \frac{\lambda}{2\omega_3 {|x|}^{-1}}
     &= \frac{\e^{\ii k |x|}}{4\pi |x|} - \frac{1}{4 \pi |x|} - \frac{(\ii k)^2}{2 \omega_3 |x|^{-1}} \\
     &= \frac{1}{4 \pi |x|} \Big( \e^{\ii k |x|} - 1 - \frac{ (\ii k)^2 |x|^2}{2} \Big)\\
     &= \frac{1}{4 \pi |x|} \Big( \ii k |x| + \sum_{n = 3}^\infty \frac{(\ii k |x| )^n}{n!} \Big) \\
@@ -695,36 +695,35 @@ If $d = 6$, the asymptotic expansion \eqref{eq:asymptoticd6} gives us
 similar to \eqref{eq:estimateDerivativesd7} the estimate
 \begin{align}
   \label{eq:estimateDerivativesd6}
-  \bigg| \frac{\mathrm{d}^l}{\d z^l} \Big\{ z^{\frac{d}{2} - 1} H_{\frac{d}{2} - 1}^{(1)}(z) - a_d - b_d z^2 \Big\} \bigg| \leq C |z|^{4 - l} \, \big| \log(z) \big|\, ,
+  \bigg| \frac{\mathrm{d}^l}{\d z^l} \Big\{ z^{\frac{d}{2} - 1} H_{\frac{d}{2} - 1}^{(1)}(z) - a_d - b_d z^2 \Big\} \bigg| \leq C |z|^{4 - l} \, \big| \log(z)\, \big|\, ,
 \end{align}
 for $0 \leq l \leq 3$ and $z \in \C \setminus (-\infty, 0]$.
-Using as before the expressions for the derivatives of $f$, we can estimate
+Using as before the expressions for the derivatives of $f$, we estimate their absolute values as
 \begin{align*}
-  \big|\nabla^l f(x) \big| \leq C |k|^4 |x|^{4 - l}\, \big|\log(|\lambda| |x|^2) \big|\, , 
+  \big|\nabla^l f(x) \big| \leq C |k|^4 |x|^{4 - l}\, \big|\log(|\lambda| |x|^2)\, \big|\, , 
 \end{align*}
 which, by a calculation analogous to the case $d \geq 7$, yields
 \begin{align*}
-  \big| \nabla_x \{ \Gamma(x; \lambda) - \Gamma(x; 0) \}\big| \leq C |\lambda| |x|^{3 - d} \, \big| \log(|\lambda| |x|^2) \big|\,.
+  \big| \nabla_x \{ \Gamma(x; \lambda) - \Gamma(x; 0) \}\big| \leq C |\lambda| |x|^{3 - d} \, \big| \log(|\lambda| |x|^2)\, \big|\,.
 \end{align*}
 For $d = 5$ write
 \begin{align*}
   &\frac{\partial^2}{\partial x_\alpha \partial x_\beta} \Big\{ G(x; \lambda) - G(x; 0) + \frac{\lambda}{2 \omega_d (d - 4) (d - 2) |x|{d - 4}} \Big\} \\
-  &\hspace{3cm}= \frac{\partial^2}{\partial x_\alpha x_\beta} \Big\{ \frac{\ii}{4(2\pi)^{\frac{3}{2}}} \cdot \frac{1}{|x|^3} \big[ z^{\frac{3}{2}} H_{\frac{3}{2}}^{(1)}(z) - a_5 - b_5 z^2 - w z^3 \big] \Big\},
+  &\hspace{3cm}= \frac{\partial^2}{\partial x_\alpha x_\beta} \Big\{ \frac{\ii}{4(2\pi)^{\frac{3}{2}}} \cdot \frac{1}{|x|^3} \Big[ z^{\frac{3}{2}} H_{\frac{3}{2}}^{(1)}(z) - a_5 - b_5 z^2 - w z^3 \Big] \Big\},
 \end{align*}
 where $w\in\C$ can be an arbitrary constant if we set $z = k|x|$.
 Now, for the appropriate choice of $w \in \C$ the asymptotic expansion \eqref{eq:asymptoticd5} gives the same estimate as \eqref{eq:estimateDerivativesd7} which proves the claim for $d = 5$.
 
-In the case $d = 4$ we use \eqref{eq:fundamentalSolutionStokes4} to reformulate
+In the case $d = 4$ we use \eqref{eq:fundamentalSolutionStokes4} to reformulate the difference
 \begin{align*}
   &\Gamma_{\alpha\beta}(x; \lambda) - \Gamma_{\alpha\beta}(x; 0) \\
-  &\quad= \{ G(x; \lambda) - G(x; 0) \}\delta_{\alpha\beta}  
+  &\quad= \big\{ G(x; \lambda) - G(x; 0) \big\}\delta_{\alpha\beta}  
   - \frac{1}{\lambda} \frac{\partial^2}{\partial x_\alpha \partial x_\beta} \Big\{ G(x; \lambda) - G(x; 0) - \frac{\lambda \log(|x|)}{8 \pi^2} \Big\} \\
-  &\quad= \{ G(x; \lambda) - G(x; 0) \} \delta_{\alpha\beta} \\
-  &\qquad \frac{\ii}{\lambda} \frac{\partial^2}{\partial x_\alpha \partial x_\beta} \Big\{ \frac{1}{8 \pi |x|^2} [ z H_1^{(1)}(z) - a_4 - w z^2 - b_4 z^2 \log(z)] \Big\},
+  &\quad= \big\{ G(x; \lambda) - G(x; 0) \big\} \delta_{\alpha\beta} - \frac{\ii}{\lambda} \frac{\partial^2}{\partial x_\alpha \partial x_\beta} \Big\{ \frac{1}{8 \pi |x|^2} \Big[ z H_1^{(1)}(z) - a_4 - w z^2 - b_4 z^2 \log(z)\,\Big] \Big\},
 \end{align*}
 where $z = k |x|$, $b_4 = ({\ii}/{\pi})$ and $w \in \C$ is an arbitrary constant. Using the asymptotic expansion \eqref{eq:asymptoticd4} and the appropriate constant $w \in \C$ we get the estimate
 \begin{align*}
-  \bigg| \frac{\mathrm{d}^l}{\d z^l} \Big\{ z H_1^{(1)}(z) - a_4 - w z^2 - b_4 z^2 \log(z) \Big\} \bigg| \leq C |z|^{4 - l}\, \big|\log(z)\big|\,.
+  \bigg| \frac{\mathrm{d}^l}{\d z^l} \Big\{ z H_1^{(1)}(z) - a_4 - w z^2 - b_4 z^2 \log(z)\, \Big\} \bigg| \leq C |z|^{4 - l}\, \big|\log(z)\,\big|\,.
 \end{align*}
 
 For $d = 2$ the estimate follows from a direct calculation which is carried out in the appendix of this thesis.
@@ -749,11 +748,11 @@ We can now use the assumption $|\lambda||x|^2 \leq ({1}/{2})$  to unify the stru
   \end{align*}
   For $d = 4,6$, we have
   \begin{align*}
-    |\lambda| |x|^{3 - d} \, \big| \log(|\lambda||x|^2)\big|
-    = C \sqrt{|\lambda|} |x|^{2 - d} \cdot \sqrt{|\lambda|} |x|\, \big| \log(|\lambda| |x|^2) \big|
+    |\lambda| |x|^{3 - d} \, \big| \log(|\lambda||x|^2)\,\big|
+    = C \sqrt{|\lambda|} |x|^{2 - d} \cdot \sqrt{|\lambda|} |x|\, \big| \log(|\lambda| |x|^2)\, \big|
     \leq C \sqrt{|\lambda|} |x|^{2 - d},
   \end{align*}
-  since $\sqrt{|\lambda|} |x| \,\big|\log(|\lambda| |x|^2)\big|$ is bounded for $|\lambda| |x|^2 \leq ({1}/{2})$.
+  since $\sqrt{|\lambda|} |x| \,\big|\log(|\lambda| |x|^2)\,\big|$ is bounded for $|\lambda| |x|^2 \leq ({1}/{2})$.
   For $d = 2$, the same argument applies to the expression $\sqrt{|\lambda|} |x| (|\log(|\lambda| |x|^2)| + 1)$.
 \end{proof}
 
