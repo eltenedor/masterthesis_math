@@ -30,14 +30,14 @@ Furthermore, let $f \in \Ell^p(\partial\Omega; \C^d)$.
 The single layer potential $u = \slp_\lambda(f)$ is defined by
 \begin{align}
   \label{eq:defSingleLayer}
-  (\slp_\lambda)_j(x) 
+  (\slp_\lambda(f))_j(x) 
   \coloneqq \int_{\partial\Omega} \Gamma_{jk}(x - y; \lambda) f_k(y) \d \sigma(y),
 \end{align}
 where $\Gamma_{jk}$ is the fundamental solution to the Stokes resolvent problem given by \eqref{eq:fundamentalMatrixStokes}.
 For the pressure, respectively, we define the single layer potential $\phi = \slp_\Phi(f)$ by
 \begin{align}
   \label{eq:defSingleLayerPressure}
-  (\slp_{\Phi})_j = \int_{\partial\Omega} \Phi_k(x - y) f_k(y) \d \sigma(y),
+  \slp_{\Phi}(f)(x) \coloneqq \int_{\partial\Omega} \Phi_k(x - y) f_k(y) \d \sigma(y),
 \end{align}
 where $\Phi_k$ is given by \eqref{eq:fundamentalVectorPressure}.
 As we have already shown, $(u,\phi)$ defines a solution to the Stokes resolvent problem \eqref{eq:stokesResolventProblem} in $\R^d \setminus \partial\Omega$.
@@ -152,8 +152,8 @@ We are now in the position to prove our first lemma on the way to establish the 
   \begin{align}
     \label{eq:lambda0case}
     \begin{alignedat}{1}
-     &\bigg| \int_{t < |q - y| < (2|\lambda|)^{-1/2}} \nabla_x\Gamma(q - y; 0) f(y)  \d\sigma\, \bigg| \\
-      &\qquad\qquad \leq \bigg| \int_{|q - y| > t} \nabla_x\Gamma(q - y; 0) f(y)  \d\sigma \,\bigg| 
+     &\bigg| \int_{t < |q - y| < (2|\lambda|)^{-1/2}} \nabla_x\Gamma(q - y; 0) \, f(y)  \d\sigma\, \bigg| \\
+      &\qquad\qquad \leq \bigg| \int_{|q - y| > t} \nabla_x\Gamma(q - y; 0) \, f(y)  \d\sigma \,\bigg| 
      \leq T_0^*(f)(q).
     \end{alignedat}{1}
    \end{align}
@@ -260,7 +260,7 @@ We are now in the position to prove our first lemma on the way to establish the 
 %\end{align}
 %where $C$ is the constant from \eqref{eq:defnNontangMaxFunction}
 
-For further use we state a very useful lemma which can be considered a \emph{Young} -type inequality for $\Ell^p$ spaces on boundaries of Lipschitz domains.
+For further use we state a very useful lemma which can be considered a \emph{Young}-type inequality for $\Ell^p$ spaces on boundaries of Lipschitz domains.
 A proof can be found in Tolksdorf \cite[Prop 1.1.4]{tolksdorf}.
 
 \begin{lem}
@@ -516,7 +516,7 @@ see Mitrea and Wright \cite[p. 11]{mitreaWright}.
     &= \Big(\frac{\partial u_i}{\partial x_j} \Big)_+ - \Big(\frac{\partial u_i}{\partial x_k} \Big)\,_+ n_k n_j \\
     &= \frac{1}{2} \big\{ n_j f_i - n_i n_j n_k f_k\big\} - \frac{1}{2} \big\{ n_k f_i - n_i n_k n_l f_l \big\} n_k n_j  \\
     &\quad+ \pv \int_{\partial\Omega} \frac{\partial}{\partial x_j} \Big\{ \Gamma_{ik} (\,\cdot - y; \lambda) \Big\} f_k(y) \d\sigma(y) \\
-    &\quad+ \pv \int_{\partial\Omega} \frac{\partial}{\partial x_k} \Big\{ \Gamma_{il} (\,\cdot - y; \lambda) \Big\} f_l(y) \d\sigma(y) n_k n_j,
+    &\quad+ \pv \int_{\partial\Omega} \frac{\partial}{\partial x_k} \Big\{ \Gamma_{il} (\,\cdot - y; \lambda) \Big\} f_l(y) \d\sigma(y) \, n_k n_j,
   \end{align*}
   for almost everywhere $x \in \partial\Omega$.
   As the first two summands add up to zero, the entire expression does not depend on the direction of the nontangential limit. 
@@ -527,65 +527,68 @@ see Mitrea and Wright \cite[p. 11]{mitreaWright}.
   for almost everywhere $x \in \partial\Omega$.
   We calculate for the $j$th component of the nontangential limit of the conormal derivative of $u$ at $x \in \partial\Omega$ using the results from Lemma \ref{lem:traceFormulas}
   \begin{align*}
-    &\big(\frac{\partial u_j}{\partial x_i}\big)_+ n_i - \phi_+ n_j\\
+    &\Big(\frac{\partial u_j}{\partial x_i}\Big)_+ n_i - \phi_+ n_j\\
     &\quad= \frac{1}{2} \big\{ n_i f_j - n_j n_i n_k f_k \big\} n_i + \pv \int_{\partial\Omega} \frac{\partial}{\partial{x_i}} \Big\{ \Gamma_{jk}(\,\cdot - y; \lambda) \Big\} f_k(y) \d\sigma(y) n_i \\
     &\qquad+ \frac{1}{2} n_k f_k n_j - \pv \int_{\partial\Omega} \Phi_k(\,\cdot - y) f_k(y) \d\sigma(y) n_j \\
-    &\quad= \frac{1}{2} f_j + (\K_\lambda f)_j,
+    &\quad= \frac{1}{2} f_j + (\K_\lambda f)_j
   \end{align*}
-  almost everywhere, where $n$ denotes the normal vector at $x$ and
+  almost everywhere and where $\K_\lambda$ is a singular integral operator defined via
   \begin{align}
     \label{eq:defnKlambda}
     \begin{alignedat}{1}
-    (\K_\lambda f) (x)
-      &= \pv \int_{\partial\Omega} \nabla_x \Gamma(x - y; \lambda)  f(y) \d\sigma(y) \, n(x) \\
-      &\quad - \pv \int_{\partial\Omega} \Phi_k(x - y) f_k(y) \d\sigma(y)\, n(x).
+    (\K_\lambda f)_j (x)
+      &\coloneqq \pv \int_{\partial\Omega} \frac{\partial}{\partial x_i} \Big\{\Gamma_{jk}(x - y; \lambda) \Big\}  f_k(y) \d\sigma(y) \, n_i(x) \\
+      &\qquad - \pv \int_{\partial\Omega} \Phi_k(x - y) f_k(y) \d\sigma(y)\, n_j(x).
     \end{alignedat}
   \end{align}
   We note that $\K_\lambda$ essentially consists of two boundary layer potentials. 
   The $\Ell^p$-boundedness of the first one was proven in Lemma \ref{lem:lpBoundednessT}.
   The $\Ell^p$-boundedness of the second boundary layer potential follows in an analogous way using the fact that the operators
   \begin{align*}
-    A^*(f)(q) = \sup_{t > 0} \bigg| \int_{\substack{y \in \partial\Omega \\ |y - q| > t}} \frac{q - y}{|q - y|^n} f(y) \d\sigma(y)\bigg|\, , \quad q \in \partial\Omega,
+    A^*(f)(q) = \sup_{t > 0} \bigg| \int_{\substack{y \in \partial\Omega \\ |y - q| > t}} \frac{q - y}{|q - y|^n} f(y) \d\sigma(y)\, \bigg|\, , \quad q \in \partial\Omega,
   \end{align*}
   are bounded by the corresponding result from Verchota \cite[Lem. 1.2]{verchota}.
 \end{proof}
 
 Similar to $\K_\lambda$, for $\lambda = 0$ we have
 \begin{align}
+  \begin{alignedat}{1}
   \label{eq:defnK0}
-    (\K_0 f)(x)&= \pv \int_{\partial\Omega} \nabla_x \Gamma(x - y; 0)  f(y) \d\sigma(y) n \\
-    &\quad - \pv \int_{\partial\Omega} \Phi_k(x - y) f_k(y) \d\sigma(y) n,
+    (\K_0 f)_j(x)&= \pv \int_{\partial\Omega} \frac{\partial}{\partial x_i} \Big\{ \Gamma_{jk}(x - y; 0) \Big\}  f_k(y) \d\sigma(y) \,n_i(x) \\
+    &\qquad - \pv \int_{\partial\Omega} \Phi_k(x - y) f_k(y) \d\sigma(y)\, n_j(x),
+  \end{alignedat}
 \end{align}
-as was shown by Fabes, Kenig and Verchota \cite[(0.12)]{fabesKenigVerchota}.
+as was shown by Mitrea and Wright \cite[Prop. 4.4]{mitreaWright}.
+If one compares \eqref{eq:defnKlambda} with \eqref{eq:defnK0}, then the only difference lies withing the boundary integral involving the fundamental solutions $\Gamma_{jk}$.
 
-We now note a fact that will be crucial for solving the $\Ell^2$ Dirichlet problem in Chapter~\ref{chap:5} and will fortify the hopes of translating results for $\lambda = 0$ to $\lambda \in \Sigma_\theta$.
+The next result will be crucial for solving the $\Ell^2$ Dirichlet problem in Chapter~\ref{chap:5} and will fortify the hopes of translating results for $\lambda = 0$ to $\lambda \in \Sigma_\theta$.
 \begin{lem}
   \label{lem:compactness}
-  Let $\lambda \in \Sigma_\theta$ and $d \geq 2$.
+  Let $\lambda \in \Sigma_\theta$ and $d \geq 2$ and let $\K_\lambda$ and $\K_0$ be defined by \eqref{eq:defnKlambda} and \eqref{eq:defnK0}, respectively.
   Then the operator $\K_\lambda - \K_0$ on $\Ell^2(\partial\Omega; \C^d)$ is compact.
 \end{lem}
 
 \begin{proof}
   The idea of this proof is similar to the one in Tolksdorf \cite[Lemma 4.3.5]{tolksdorf}.
-  Let $f \in \Ell^2(\partial\Omega; \C^d)$.
-  Let's denote $\K \coloneqq \K_\lambda - \K_0$. 
+  Let $f \in \Ell^2(\partial\Omega; \C^d)$and let's denote $\K \coloneqq \K_\lambda - \K_0$. 
   We will now try to approximate $\K$ by compact operators in the operator norm.
-  To this end we define for all $\varepsilon > 0$
+  To this end, we define for all $\varepsilon > 0$
   \begin{align*}
-    (\K^{(\varepsilon)}f)(x) \coloneqq \int_{\partial\Omega \setminus \BB(x,\varepsilon)} \nabla \{ \Gamma(x - y; \lambda) - \Gamma(x - y; 0) \} f(y) \d \sigma(y), \quad x \in \partial\Omega.
+    &(\K^{(\varepsilon)}f)(x) 
+    \coloneqq \int_{\partial\Omega \setminus \BB(x,\varepsilon)} \nabla_x \Big\{ \Gamma(x - y; \lambda) - \Gamma(x - y; 0) \Big\} f(y) \d \sigma(y) \, n, \quad x \in \partial\Omega.
   \end{align*}
   We can now estimate by Young's inequality \ref{lem:young} 
   \begin{align*}
-    \| (\K^{(\varepsilon)} f)(x) \|_{\Ell^2(\partial\Omega)}
-    \leq \sup_{p \in \partial\Omega} \| \nabla \{ \Gamma(p - \cdot; \lambda) - \Gamma(p - \cdot; 0) \} 1_{\BB(p,\varepsilon)} \|_{\Ell^1(\partial\Omega)} \|f\|_{\Ell^2(\partial\Omega)}.
+    &\Big\| \,\K f - \K^{(\varepsilon)} f\, \Big\|_{\Ell^2(\partial\Omega; \C^d)} \\
+    &\qquad\leq \sup_{p \in \partial\Omega} \Big\| \nabla_x \Big\{ \Gamma(p - \cdot; \lambda) - \Gamma(p - \cdot; 0) \Big\} 1_{\BB(p,\varepsilon)} \Big\|_{\Ell^1(\partial\Omega; \C^{d \times d})} \|f\|_{\Ell^2(\partial\Omega; \C^d)}.
   \end{align*}
   Our goal is to show that
   \begin{align*}
-    \sup_{p \in \partial\Omega} \| \nabla \{ \Gamma(p - \cdot; \lambda) - \Gamma(p - \cdot; 0) \} 1_{\BB(p,\varepsilon)} \|_{\Ell^1(\partial\Omega)} \to 0 \quad \text{as} \quad \varepsilon \to 0.
+    \sup_{p \in \partial\Omega} \Big\| \nabla_x \Big\{ \Gamma(p - \cdot; \lambda) - \Gamma(p - \cdot; 0) \Big\} 1_{\BB(p,\varepsilon)} \Big\|_{\Ell^1(\partial\Omega; \C^{d \times d})} \to 0 \quad \text{as} \quad \varepsilon \to 0.
   \end{align*}
   To this end, let $\varepsilon$ be small enough such that we can apply the estimates from Corollary \ref{cor:differenceFundamentalSolutionStokes} to calculate for some $p \in \partial\Omega$
   \begin{align*}
-     &\| \nabla \{ \Gamma(p - \cdot; \lambda) - \Gamma(p - \cdot; 0) \} 1_{\BB(p,\varepsilon)} \|_{\Ell^1(\partial\Omega)}  \\
+    &\Big\| \nabla_x \Big\{ \Gamma(p - \cdot; \lambda) - \Gamma(p - \cdot; 0) \Big\} 1_{\BB(p,\varepsilon)} \Big\|_{\Ell^1(\partial\Omega; \C^{d \times d})}  \\
      &\qquad\qquad\leq C \int_{\partial\Omega \cap \BB(p, \varepsilon)} \sqrt{|\lambda|} |p - y|^{2 - d} \d\sigma(y) 
      \leq C \sqrt{|\lambda|} \varepsilon
   \end{align*}
@@ -599,19 +602,20 @@ We now note a fact that will be crucial for solving the $\Ell^2$ Dirichlet probl
   As a consequence, $\K$ is compact since the limit of compact operators with respect to the operator norm gives again a compact operator.
 \end{proof}
 
-Our next step is to introduce the \emph{double layer potential} $u(x) = \dlp_\lambda(f)(x)$ for the Stokes resolvent problem, where
+Our next step is to introduce the \emph{double layer potential} $u(x) = \dlp_\lambda(f)(x)$ for the Stokes resolvent problem via
 \begin{align}
   \label{eq:defDoubleLayer}
-  u_j(x) &= \int_{\partial\Omega} \Big\{ \frac{\partial}{\partial y_i} \{ \Gamma_{jk}(y - x; \lambda) \} n_i(y) - \Phi_j(y - x) n_k(y) \Big\} f_k(y) \d\sigma(y).
-\intertext{The corresponding pressure $\phi(x) = \dlp_{\phi}(f)(x)$ is defined via}
-  \phi(x)
-  &= \frac{\partial^2}{\partial x_i \partial x_k} \int_{\partial\Omega} G(y - x; 0) n_i(y) f_k(y) \d\sigma(y) \nonumber\\
+  (\dlp_\lambda(f))_j(x) &\coloneqq \int_{\partial\Omega} \Big\{ \frac{\partial}{\partial y_i} \{ \Gamma_{jk}(y - x; \lambda) \} n_i(y) - \Phi_j(y - x) n_k(y) \Big\} f_k(y) \d\sigma(y).
+\intertext{The corresponding pressure $\phi(x) = \dlp_{\Phi}(f)(x)$ is defined as}
+  \dlp_{\Phi}(f)(x)
+  &\coloneqq \frac{\partial^2}{\partial x_i \partial x_k} \int_{\partial\Omega} G(y - x; 0) \, n_i(y) f_k(y) \d\sigma(y) \nonumber\\
   \label{eq:defDoubleLayerPressure}
-  &\hspace{3cm}+ \lambda \int_{\partial\Omega} G(y - x; 0) n_k(y) f_k(y) \d\sigma(y).
+  &\hspace{3cm}+ \lambda \int_{\partial\Omega} G(y - x; 0) \, n_k(y) f_k(y) \d\sigma(y).
 \end{align}
 Using \eqref{eq:fundamentalVectorPressure} and \eqref{eq:solutionStokesSystem} one can show that $(u,\phi)$ defines again a solution to the Stokes resolvent problem in $\R^d \setminus \partial\Omega$.
 
 The following theorem will give us a suitable operator which maps a given function $f \in \Ell^p(\partial\Omega; \C^d)$ to boundary values of $u = \dlp_\lambda(f)$ in the form of nontangential limits.
+It will then be the task of the following chapters to prove the invertibility of this operator.
 
 \begin{thm}
   \label{thm:nontangentialLimitDoubleLayer}
@@ -620,7 +624,7 @@ Let $u$ be given by \eqref{eq:defDoubleLayer} for $f \in \Ell^p(\partial\Omega; 
 Then
 \begin{align}
   \label{eq:lpBoundednessUNontangentialMax}
-  \|(u)^*\|_{\Ell^p(\partial\Omega)} \leq C_p \|f\|_{\Ell^p(\partial\Omega)}
+  \|(u)^*\|_{\Ell^p(\partial\Omega)} \leq C_p \|f\|_{\Ell^p(\partial\Omega)},
 \end{align}
 where $C_p$ depends only on $d$, $p$, $\theta$ and the Lipschitz character of $\Omega$.
 Furthermore 
@@ -632,93 +636,134 @@ where $K_{\bar\lambda}^*$ is the adjoint of the operator $K_{\bar\lambda}$ in \e
 \end{thm}
 
 \begin{proof}
-  The estimate for $(u)^*$ is a direct consequence of Lemma \ref{lem:nontangentialMaximalFunctions}, in particular of the estimates on $(\nabla u)^*$ and $(\phi)^*$.
+  The estimate for $(u)^*$ is a direct consequence of Lemma \ref{lem:nontangentialMaximalFunctions} and the estimates on $(\nabla \slp_\lambda(f))^*$ and $(\slp_\Phi(f))^*$:
+  We have on the one hand
+  \begin{align}
+    \label{eq:rep1}
+    \begin{alignedat}{1}
+    &\int_{\partial\Omega} \frac{\partial}{\partial y_i} \Big\{ \Gamma_{jk}(y - x; \lambda) \Big\} \, n_i(y) f_k(y) \d\sigma(y) \\
+    &\qquad\qquad= -\int_{\partial\Omega} \frac{\partial}{\partial x_i} \Big\{ \Gamma_{jk}(x - y; \lambda) \Big\}\, n_i(y) f_k(y) \d\sigma(y)
+    = -\frac{\partial}{\partial x_i} \slp_\lambda(n_i f)_j(x)
+    \end{alignedat}
+  \end{align}
+  and on the other hand
+  \begin{align}
+    \label{eq:rep2}
+    \begin{alignedat}{1}
+    &-\int_{\partial\Omega} \Phi_j(y - x) n_k(y) f_k(y) \d\sigma(y) \\
+    &\qquad\qquad= \int_{\partial\Omega} \Phi_l(x - y)\, \delta_{lj} n_k(y) f_k(y) \d\sigma(y)
+    = \slp_\Phi(\tilde f^j)(x), 
+    \end{alignedat}
+  \end{align}
+  where $\tilde f^j_l = \delta_{lj} n_k f_k$.
+  This shows that
+  \begin{align*}
+    u_j(x) = (\dlp_\lambda(f))_j(x) = -\frac{\partial}{\partial x_i} \slp_\lambda(n_i f)_j(x) + \slp_\Phi(\tilde f^j)(x).
+  \end{align*}
+  Therefore we have for $x \in \ShenCone(q)$, $q \in \partial\Omega$,
+  \begin{align*}
+    |u(x)| \leq C \Big\{ |\nabla_x \slp_\lambda(n_i f)(x)| + |\slp_\Phi(\tilde f^j) | \Big\}, 
+  \end{align*}
+  with $C$ depending only on $d$.
+  Hence by Lemma \ref{lem:nontangentialMaximalFunctions} we derive the estimation
+  \begin{align*}
+    \| (u)^* \|_{\Ell^p(\partial\Omega)} 
+    \leq C \Big\{ \sum_{i = 1}^n \| n_i f \|_{\Ell^p(\partial\Omega; \C^d)} + \sum_{i = 1}^n \| \slp_\Phi(\tilde f^j) \|_{\Ell^p(\partial\Omega)}\Big\} 
+    \leq C \|f\|_{\Ell^p(\partial\Omega; \C^d)},
+  \end{align*}
+  where $C$ depends on $d$, $p$, $\theta$ and the Lipschitz character of $\Omega$.
 
   For the proof of \eqref{eq:nontangentialLimitDoubleLayer}, we begin by determining the adjoint of the operator $\K_{\bar\lambda}$.
-  To this end we fill first work with truncated operators $\K_{\lambda}^{(\varepsilon)}$ which are defined as
+  To this end we will first work with truncated operators $\K_{\lambda}^{(\varepsilon)} \colon \Ell^2(\partial\Omega; \C^d) \to \Ell^2(\partial\Omega; \C^d)$ which are defined via
   \begin{align*}
-    (\K_\lambda^{(\varepsilon)} f) (x)
-    &= \int_{\partial\Omega} 1_{\EE(x,\varepsilon)} \nabla_x \Gamma(x - y; \lambda)  f(y) \d\sigma(y) n - \int_{\partial\Omega} 1_{\EE(x,\varepsilon)} \Phi_k(x - y) f_k(y) \d\sigma(y) n,
+    (\K_\lambda^{(\varepsilon)} f)_j (x)
+    &\coloneqq \int_{\partial\Omega} 1_{\EE(x;\varepsilon)}(y) \frac{\partial}{\partial x_i} \Gamma_{jk}(x - y; \lambda)  f_k(y) \d\sigma(y) \, n_i(x) \\
+    &\qquad - \int_{\partial\Omega} 1_{\EE(x;\varepsilon)}(y)\, \Phi_k(x - y) f_k(y) \d\sigma(y) \, n_j(x),
   \end{align*}
-  for $x \in \partial\Omega$ and $\EE(x,\varepsilon) \coloneqq \R^d \setminus \BB(x,\varepsilon)$.
+  for $x \in \partial\Omega$ and $\EE(x,\varepsilon) \coloneqq \R^d \setminus \BB(x; \varepsilon)$.
   Now for $f \in \Ell^p(\partial\Omega; \C^d)$ and $g \in \Ell^q(\partial\Omega; \C^d)$ with $1/p + 1/q = 1$ we calculate
   \begin{align*}
-    \langle \K_{\bar\lambda}^{(\varepsilon)}f, g \rangle
-    &= \int_{\partial\Omega} (\K_{\bar\lambda}^{(\varepsilon)} f_j)(x) \overline{g_j(x)} \d\sigma(x) \\
-    &= \int_{\partial\Omega} \int_{\partial\Omega} \frac{\partial}{\partial x_i} \{ \Gamma_{jk} (x - y; \overline\lambda) \} f_k(y) 1_{\EE(x,\varepsilon}(y) \d\sigma(y) n_i(x) \overline{g_j(x)} \d\sigma(x) \\
-    &\quad+ \int_{\partial\Omega} \int_{\partial\Omega} \Phi_k(x -y)f_k(y) 1_{\EE(x,\varepsilon)}(y) \d\sigma(y) n_j(x) \overline{g_j(x)} \d\sigma(x).
+    \Big\langle \K_{\bar\lambda}^{(\varepsilon)}f, g \Big\rangle
+    &= \int_{\partial\Omega} (\K_{\bar\lambda}^{(\varepsilon)} f)_j(x) \, \overline{g_j(x)} \d\sigma(x) \\
+    &= \int_{\partial\Omega} \int_{\partial\Omega} \frac{\partial}{\partial x_i} \Big\{ \Gamma_{jk} (x - y; \overline\lambda) \Big\} f_k(y) 1_{\EE(x;\varepsilon)}(y) \d\sigma(y) \, n_i(x) \, \overline{g_j(x)} \d\sigma(x) \\
+    &\quad+ \int_{\partial\Omega} \int_{\partial\Omega} \Phi_k(x -y)f_k(y) 1_{\EE(x; \varepsilon)}(y) \d\sigma(y) \, n_j(x) \, \overline{g_j(x)} \d\sigma(x).
   \end{align*}
-  Note that $1_{\EE(x,\varepsilon)}(y) = 1_{\EE(y,\varepsilon)}(x)$.
-  Now an application of Fubini and factoring out $f_k(y)$ gives that the lengthy expression is equal to
+  Note that $1_{\EE(x;\varepsilon)}(y) = 1_{\EE(y;\varepsilon)}(x)$ for all $x, y \in \partial\Omega$.
+  Now an application of Fubini's theorem and factoring out $f_k(y)$ gives that 
   \begin{align*}
-    \int_{\partial\Omega} f_k(y) \int_{\partial\Omega} &\Big\{ \frac{\partial}{\partial x_i} \{ \Gamma_{jk}(x - y; \bar\lambda)\} n_i(x)
-    - \Phi_k(x - y)  n_j(x) \Big\}1_{\EE(y, \varepsilon)}(x) \overline{g_j(x)} \d\sigma(x) \d\sigma(y).
+    \Big\langle \K_{\bar\lambda}^{(\varepsilon)}f, g \Big\rangle 
+    =
+    \int_{\partial\Omega} f_k(y) \int_{\partial\Omega} \Big\{ & \frac{\partial}{\partial x_i} \big\{  \Gamma_{jk}(x - y; \overline\lambda)\big\}\, n_i(x) \\
+    &\quad - \Phi_k(x - y)  n_j(x) \qquad \Big\}\, 1_{\EE(y, \varepsilon)}(x)\, \overline{g_j(x)} \d\sigma(x) \d\sigma(y).
   \end{align*}
   Therefore we see that the adjoint of the truncated operator $\K_{\bar\lambda}^{(\varepsilon)}$ is given by
   \begin{align*}
     \big( ( K_{\bar\lambda}^{(\varepsilon)})^* g\big)_k(y)
-    = \int_{\partial\Omega} \Big\{ \frac{\partial}{\partial x_i} \{ \Gamma_{jk}(x - y; \lambda)\} n_i(x) - \Phi_k(x - y) n_j(x) \Big\} 1_{\EE(y,\varepsilon)}(x) g_j(x) \d\sigma(x), 
+    = \int_{\partial\Omega} \Big\{ &\frac{\partial}{\partial x_i} \{ \Gamma_{jk}(x - y; \lambda)\} n_i(x) \\
+    &\quad - \Phi_k(x - y) n_j(x) \qquad \Big\}\, 1_{\EE(y,\varepsilon)}(x) \, g_j(x) \d\sigma(x), 
   \end{align*}
-  for $y \in \partial\Omega$ since $\overline{\Gamma_{jk}(x - y; \lambda)} = \Gamma_{jk}(x - y; \bar\lambda)$.
+  for $y \in \partial\Omega$ since $\overline{\Gamma_{jk}(x - y; \lambda)} = \Gamma_{jk}(x - y; \overline\lambda)$.
 
-  In the next step we will go from truncated operators to principal value operators. 
+  In the next step we will go from truncated operators to principal value operators through the dominated convergence theorem. 
   For this to work we will look for suitable majorants.
-  If $x \in \partial\Omega$ we estimate
+  For $x \in \partial\Omega$, we estimate
+  \begin{align}
+    \big|(\K_{\bar\lambda}^{(\varepsilon)}f)_j (x)\big|
+    &= \bigg| \int_{|x - y| > \varepsilon} \frac{\partial}{\partial x_i} \Big\{ \Gamma_{jk}(x - y; \lambda) \Big\} f_k(y) \d\sigma(y) \, n_i(x)  \nonumber\\
+    &\qquad - \int_{|x - y| > \varepsilon} \Phi_k(x - y) f_k(y)\, n_j(x) \d\sigma(y)\, \bigg| \nonumber\\
+    \label{eq:pIntegrableMajorant}
+    &\leq T_\lambda^*(f)(x) + A^*(fn_j)(x).
+  \end{align}
+  We know from Lemma \ref{lem:lpBoundednessT} and the respective result for $A^*$ that the right hand side of inequality \eqref{eq:pIntegrableMajorant} is $p$-integrable and hence we get from dominated convergence
   \begin{align*}
-    |(\K_{\bar\lambda}^{(\varepsilon)}f)_j (x)|
-    &= \bigg| \int_{|x - y| > \varepsilon} \frac{\partial}{\partial x_i} \{ \Gamma_{jk}(x - y; \lambda) \} f_k(y) \d\sigma(y) n_i(x)  \\
-    &\qquad - \int_{|x - y| > \varepsilon} \Phi_k(x - y) f_k(y) n_j(x) \d\sigma(y) \bigg| \\
-    &\leq T_\lambda^*(f)(x) + A^*(f)(x).
-  \end{align*}
-  Now dominated convergence gives
-  \begin{align*}
-    \lim_{\varepsilon \to 0} \langle K_{\bar\lambda}^{(\varepsilon)} f, g \rangle = \langle K_{\bar\lambda} f, g\rangle.
+    \lim_{\varepsilon \to 0} \Big\langle \K_{\bar\lambda}^{(\varepsilon)} f, g \Big\rangle = \Big\langle \K_{\bar\lambda} f, g \Big\rangle\,.
   \end{align*}
   A similar argument gives
   \begin{align*}
-    \lim_{\varepsilon \to 0} \langle f, {K_{\bar\lambda}^{(\varepsilon)}}^{(*)} g \rangle = \langle f,K_{\bar\lambda}^{(*)}  g\rangle,
+    \lim_{\varepsilon \to 0} \Big\langle f, {\Big(K_{\bar\lambda}^{(\varepsilon)}}\Big)^* g \Big\rangle = \Big\langle f,\K_{\bar\lambda}^{(*)}  g \Big\rangle\,,
   \end{align*}
   where
   \begin{align*}
-    \big( ( K_{\bar\lambda}^* g\big)_k(y)
-    = \pv\int_{\partial\Omega} \Big\{ \frac{\partial}{\partial x_i} \{ \Gamma_{kj}(x - y; \lambda)\} n_i(x) - \Phi_k(x - y) n_j(x) \Big\} g_j(x) \d\sigma(x). 
+    \big( ( \K_{\bar\lambda}^{(*)} g\big)_k(y)
+    = \pv\int_{\partial\Omega} \Big\{ \frac{\partial}{\partial x_i} \big\{ \Gamma_{kj}(x - y; \lambda)\big\} n_i(x) - \Phi_k(x - y) n_j(x) \Big\} g_j(x) \d\sigma(x). 
   \end{align*}
-  Note that we have used the symmetry of $(\Gamma_{\alpha\beta})$.
+  Of course by the uniqueness of the adjoint operator, the identity $\langle \K_{\bar\lambda} f, g \rangle = \langle f, \K_{\bar\lambda}^{(*)} g \rangle$ shows that $\K_{\bar\lambda}^* = \K_{\bar\lambda}^{(*)}$.
+  Note that we have used the symmetry of $(\Gamma_{jk})$.
 
-  The last part now consists of proving that the equality \eqref{eq:nontangentialLimitDoubleLayer} holds.
-  To simplify the calculations and make Lemma \ref{lem:traceFormulas} more accessible note that on the one hand
-  \begin{align*}
-    \int_{\partial\Omega} \frac{\partial}{\partial y_i} \{ \Gamma_{jk}(y - x; \lambda) \} n_i(y) f_k(y) \d\sigma(y)
-    &= -\int_{\partial\Omega} \frac{\partial}{\partial x_i} \{ \Gamma_{jk}(x - y; \lambda) \} n_i(y) f_k(y) \d\sigma(y)\\
-    &= -\frac{\partial}{\partial x_i} \slp(n_i f)_j(x)
-  \end{align*}
-  and on the other hand
-  \begin{align*}
-    -\int_{\partial\Omega} \Phi_j(y - x) n_k(y) f_k(y) \d\sigma(y)
-    = \int_{\partial\Omega} \Phi_l(x - y) \delta_{lj} n_k(y) f_k(y) \d\sigma(y)
-    = \slp_\Phi(\tilde f^j)(x), 
-  \end{align*}
-  where $\tilde f^j_l = \delta_{lj} n_k f_k$.
+  In the last part of this proof we will show that the equality \eqref{eq:nontangentialLimitDoubleLayer} holds.
+  Note that by \eqref{eq:rep1} and \eqref{eq:rep2} we have made Lemma \ref{lem:traceFormulas} accessible.
+%  \begin{align*}
+%    \int_{\partial\Omega} \frac{\partial}{\partial y_i} \{ \Gamma_{jk}(y - x; \lambda) \} n_i(y) f_k(y) \d\sigma(y)
+%    &= -\int_{\partial\Omega} \frac{\partial}{\partial x_i} \{ \Gamma_{jk}(x - y; \lambda) \} n_i(y) f_k(y) \d\sigma(y)\\
+%    &= -\frac{\partial}{\partial x_i} \slp(n_i f)_j(x)
+%  \end{align*}
+%  and on the other hand
+%  \begin{align*}
+%    -\int_{\partial\Omega} \Phi_j(y - x) n_k(y) f_k(y) \d\sigma(y)
+%    = \int_{\partial\Omega} \Phi_l(x - y) \, \delta_{lj} n_k(y) f_k(y) \d\sigma(y)
+%    = \slp_\Phi(\tilde f^j)(x), 
+%  \end{align*}
+%  where $\tilde f^j_l = \delta_{lj} n_k f_k$.
   For $x \in \partial\Omega$ we can now calculate
   \begin{align*}
-    &\Big( \int_{\partial\Omega} \frac{\partial}{\partial y_i} \{ \Gamma_{jk}(y - \cdot\, ; \lambda) \} n_i(y) f_k(y) \d\sigma(y) \Big)_\pm(x)\\
-    &\qquad= - \big( \frac{\partial}{\partial x_i} \slp_\lambda(n_i f)_j\big)_\pm(x) \\
-    &\qquad= \mp \frac{1}{2} \{ n_i(x) n_i(x) f_j(x) - n_j(x) n_i(x) n_k(x) n_i(x) f_k(x)  \} \\
-    &\qquad\quad - \pv\int_{\partial\Omega} \frac{\partial}{\partial x_i} \{\Gamma_{jk}(x - y; \lambda) \} n_i(y) f_k(y) \d\sigma(y) \\
-    &\qquad= \mp \frac{1}{2} \{ f_j(x) - n_j(x) n_k(x) f_k(x) \} \\
-    &\qquad\quad + \pv\int_{\partial\Omega} \frac{\partial}{\partial y_i} \{\Gamma_{jk}(x - y; \lambda) \} n_i(y) f_k(y) \d\sigma(y),
+    &\Big( \int_{\partial\Omega} \frac{\partial}{\partial y_i} \Big\{ \Gamma_{jk}(y - \cdot\, ; \lambda) \Big\} n_i(y) f_k(y) \d\sigma(y) \Big)_\pm(x)\\
+    &\qquad\qquad= - \big( \frac{\partial}{\partial x_i} \slp_\lambda(n_i f)_j\big)_\pm(x) \\
+    &\qquad\qquad= \mp \frac{1}{2} \big\{ n_i(x) n_i(x) f_j(x) - n_j(x) n_i(x) n_k(x) n_i(x) f_k(x)  \big\} \\
+    &\qquad\qquad\qquad - \pv\int_{\partial\Omega} \frac{\partial}{\partial x_i} \Big\{\Gamma_{jk}(x - y; \lambda) \Big\} \, n_i(y) f_k(y) \d\sigma(y) \\
+    &\qquad\qquad= \mp \frac{1}{2} \big\{ f_j(x) - n_j(x) n_k(x) f_k(x) \big\} \\
+    &\qquad\qquad\qquad + \pv\int_{\partial\Omega} \frac{\partial}{\partial y_i} \Big\{\Gamma_{jk}(y - x; \lambda) \Big\}\,  n_i(y) f_k(y) \d\sigma(y),
   \end{align*}
   where we used trace formula \eqref{eq:traceFormula}.
   A similar procedure for the second integral part of the double layer potential gives
   \begin{align*}
-    &-\Big(\int_{\partial\Omega} \Phi_j(y - \cdot\,) n_k(y) f_k(y) \d\sigma(y)\Big)_\pm(x) \\
-    &\qquad= \big(\slp_\Phi(\tilde f^j)\big)_\pm(x)  \\
-    &\qquad= \mp \frac{1}{2} n_k(x) \tilde f^j_k(x) - \pv \int_{\partial\Omega} \Phi_k(x - y) \tilde f^j_k(x) \d\sigma(y) \\
-    &\qquad= \mp \frac{1}{2} n_j(x) n_k(x) f_k(x) - \pv \int_{\partial\Omega} \Phi_j(x - y) n_k(x) f_k(x) \d\sigma(y)
+    &-\Big(\int_{\partial\Omega} \Phi_j(y - \cdot\,) \, n_k(y) f_k(y) \d\sigma(y)\Big)_\pm(x) \\
+    &\qquad\qquad= \big(\slp_\Phi(\tilde f^j)\big)_\pm(x)  \\
+    &\qquad\qquad= \mp \frac{1}{2} n_k(x) \tilde f^j_k(x) - \pv \int_{\partial\Omega} \Phi_k(x - y) \tilde f^j_k(x) \d\sigma(y) \\
+    &\qquad\qquad= \mp \frac{1}{2} n_j(x) n_k(x) f_k(x) - \pv \int_{\partial\Omega} \Phi_j(x - y)\, n_k(x) f_k(x) \d\sigma(y).
   \end{align*}
   Putting everything together we get
   \begin{align*}
     (u_j)_\pm(x) = \mp\frac{1}{2} f_j(x) + (K_{\bar\lambda}^* f)_j(x)
   \end{align*}
-  which proves the claim.
+  and the proof is finished.
 \end{proof}
