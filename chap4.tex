@@ -14,7 +14,7 @@ This inequality is part of the following theorem.
   \label{thm:rellich}
   Let $\lambda \in \Sigma_\theta$ and $|\lambda| \geq \tau$, where 
   $\tau \in (0,1)$.
-  Let $(u,\phi)$ be a solution to the Stokes resolvent problem in $\Omega$ and suppose that $(\nabla u)^* \in \Ell^2(\partial\Omega)$ and $(\phi)^* \in \Ell^(\partial\Omega)$.
+  Let $(u,\phi)$ be a solution to the Stokes resolvent problem in $\Omega$ and suppose that $(\nabla u)^* \in \Ell^2(\partial\Omega)$ and $(\phi)^* \in \Ell^2(\partial\Omega)$.
   Furthermore, assume that $\nabla u$, $\phi$ have nontangential limits almost everywhere on $\partial\Omega$.
   Then
   \begin{align}
@@ -32,6 +32,7 @@ This inequality is part of the following theorem.
 \end{thm}
 
 We will now prepare the proof of this theorem by proving several helpful lemmata.
+The first lemma deals with so called \emph{Rellich identities} for solutions to the Stokes resolvent system.
 
 \begin{lem}
   \label{lem:rellichIdentity}
@@ -54,41 +55,20 @@ We will now prepare the proof of this theorem by proving several helpful lemmata
 \end{lem}
 
 \begin{proof}
-  The proof of the stated identities reduces to several integrations by part  once we establish its applicability. 
-  Approximating $\partial \Omega$ by a sequence of $\CC^\infty$ domains with uniform Lipschitz characters as described in Theorem \ref{thm:smoothApproximation} and the facts that on the one hand $(\nabla u)^*, (\phi)^* \in \Ell^2(\partial\Omega)$ and on the other hand $\nabla u$ and $\phi$ have nontantential limits almost everywhere, the integration by parts is justified.
-  Details on how the approximation argument works can be found in Brown \cite[Prop. 2.4]{brown}.
-  For the sake of completeness we show the approximation argument once for a solid integral and once for a boundary integral.
-
-  Let $(\Omega_l)_{l \in \N}$ denote the approximating sequence of $\CC^\infty$ domains with outer normal $n^{(l)}$.
-  Then
-  \begin{align*}
-    \int_{\partial\Omega_l} h_k n_k^{(l)} |\nabla u|^2 \d \sigma_l
-    = \int_{\partial \Omega} w_l(x) h_k(\Lambda_l(x)) n_k^{(l)}(\Lambda_l(x)) |\nabla u|^2(\Lambda_l(x)) \d\sigma
-  \end{align*}
-  Now we know that $\lim_{l \to \infty} w_l(x) = 1$ and $\lim_{l \to \infty} \Lambda_l(x) = x$ almost everywhere and $\Lambda_l(x) \in \Gamma(x)$ for all $l \in \N$.
-  Furthermore we know that $\lim_{l \to \infty} n_k^{(l)} = n_k$ almost everywhere and that $\nabla u$ has a nontangential limit almost everywhere.
-  This gives us that the integrand converges almost everywhere to $ h_k(x) n_k(x) |\nabla u|^2(x)$.
-  Now furthermore we have that the integrand is dominated by $\delta \|h\|_\infty ((\nabla u)^*)^2$, where $\delta$ is a uniform bound to $w_l$. Since by assumption $(\nabla u)^* \in \Ell^2(\partial\Omega)$, the dominated convergence theorem gives us
-  \begin{align*}
-    \lim_{l \to \infty} \int_{\partial \Omega} w_l(x) h_k(\Lambda_l(x)) n_k^{(l)}(\Lambda_l(x)) |\nabla u|^2(\Lambda_l(x)) \d\sigma 
-    &= 
-    \int_{\partial\Omega} h_k n_k |\nabla u|^2 \d \sigma.
-  \end{align*}
-  It is easy to check, that the only differences in the approximation argument when applied to the other boundary integrals lie in the choice of the majorant.
-  Now consider for instance the solid integral
-
-  We now start a formal calculation on $\Omega$ and $\partial\Omega$ keeping in mind that the stated equalities sometimes hold only after the application of the former approximation argument.
+  The proof of the stated identities reduces to several applications of the divergence theorem once we establish its applicability.
+  To this end, we want to make Proposition \ref{prop:approximationArgument} available. We note that the assumptions given in Theorem \ref{thm:rellich} are sufficent and we will verify them, once they are used.
 
   Let's expand the first summand in \eqref{eq:rellichIdentity} using the definition of conormal derivatives
   \begin{align*}
     2\Ret \int_{\partial\Omega} h_k \frac{\partial \bar u_i}{\partial x_k} \Big( \frac{\partial u}{\partial \nu} \Big)_i \d\sigma
-    &= 2 \Ret \int_{\partial\Omega} h_k \frac{\partial \bar u_i}{\partial x_k} \big( \frac{\partial u_i}{\partial x_j} \big) n_j \d\sigma  - 2\Ret \int_\Omega h_k \frac{\partial \bar u_i}{\partial x_k} \phi n_i \d x \\
+    &= 2 \Ret \int_{\partial\Omega} h_k \frac{\partial \bar u_i}{\partial x_k} \Big( \frac{\partial u_i}{\partial x_j} \Big) n_j \d\sigma  - 2\Ret \int_{\partial\Omega} h_k \frac{\partial \bar u_i}{\partial x_k} \phi n_i \d x \\
     &\eqqcolon I_1 - I_2.
   \end{align*}
+  The divergence Theorem is applicable for $I_1$ as $h$ is bounded and defined everywhere, and the integrand has nontangential limits that can be dominated by $|(\nabla u)^*|^2 \in \Ell^2(\partial\Omega)$.
   For $I_1$ we find using the divergence theorem
   \begin{align*}
     I_1
-    &= 2\Ret \int_\Omega \frac{\partial}{\partial x_j} \big( h_k \frac{\partial}{\partial x_j} \frac{\partial \bar u_i}{\partial x_k} \frac{\partial u_i}{\partial x_j} \big) \d x \\
+    &= 2\Ret \int_\Omega \frac{\partial}{\partial x_j} \bigg\{ h_k \frac{\partial}{\partial x_j} \frac{\partial \bar u_i}{\partial x_k} \frac{\partial u_i}{\partial x_j} \bigg\} \d x \\
     &= 2\Ret \int_\Omega \frac{\partial h_k}{\partial x_j} \frac{\partial \bar u_i}{\partial x_k} \frac{\partial u_i}{\partial x_j} + h_k \frac{\partial^2 \bar u_i}{\partial x_j \partial x_k} \frac{\partial u_i}{\partial x_j} + h_k \frac{\partial \bar u_i}{\partial x_k} \frac{\partial^2 u_i}{\partial x_j^2} \d x \\
     &\eqqcolon I_3 + I_4 + I_5.
   \end{align*}
@@ -98,35 +78,37 @@ We will now prepare the proof of this theorem by proving several helpful lemmata
      &= 2 \Ret \int_\Omega h_k \frac{\partial \bar u_i}{\partial x_k} \frac{\partial \phi}{\partial x_i} \d x + 2\Ret \int_\Omega h_k \frac{\partial\bar u_i}{\partial x_k} \lambda u_i \d x \\
      &\eqqcolon I_6 + I_7 .
   \end{align*}
-  Another application of the divergence theorem gives
+  Now we want to apply the divergence theorem, i.e. Propositionn \ref{prop:approximationArgument} to integral $I_2$.
+  This is possible since $h$ is defined everywhere and bounded, $\frac{\partial u_i}{\partial x_k} \phi$ has a nontangential limit and can be bounded by $\big( |(\nabla u)^*| |(\phi)^*| \big)$ which is integrable due to Hölder's inequality as $(\nabla u)^*$ and $(\phi)^*$ are square integrable by assumption.
+  Thus another application of the divergence theorem gives
   \begin{align*}
     I_2
-    &= 2 \Ret \int_\Omega \frac{\partial}{\partial x_i} \big( h_k \frac{\partial \bar u_i}{\partial x_k} \phi \big) \d x \\
+    &= 2 \Ret \int_\Omega \frac{\partial}{\partial x_i} \Big\{ h_k \frac{\partial \bar u_i}{\partial x_k} \phi \Big\} \d x \\
     &= 2 \Ret \int_\Omega \frac{\partial h_k}{\partial x_i} \frac{\partial \bar u_i}{\partial x_k} \phi + h_k \frac{\partial^2 \bar u_i}{\partial x_j \partial x_k} \phi + h_k \frac{\partial \bar u_i}{\partial x_k} \frac{\partial \phi}{\partial x_i} \d x\\
     &\eqqcolon I_8 + I_9 + I_6.
   \end{align*}
-  One term that hasn't come up so far, the second summand of the right side in \eqref{eq:rellichIdentity}, will now be expanded
+  One term that hasn't come up so far, the second summand of the right hand side in \eqref{eq:rellichIdentity}, will now be expanded
   \begin{align*}
-    \div(h) |\nabla u|^2 \d x
-    &= \int_\Omega \div( h|\nabla u|^2) \d x - \int_\Omega h_k \frac{\partial}{\partial x_i} |\nabla u|^2 \d x \\
+    \int_\Omega \div(h)\,  |\nabla u|^2 \d x
+    &= \int_\Omega \div( h|\nabla u|^2) \d x - \int_\Omega h_k \frac{\partial}{\partial x_i} \Big\{ |\nabla u|^2 \Big\} \d x \\
     &\eqqcolon I_{10} - I_{11}.
   \end{align*}
   Expanding this further gives us
   \begin{align*}
     I_{11}
-    &= \int_\Omega h_i \frac{\partial}{\partial x_i} \big( \frac{\partial u_k}{\partial x_j} \frac{\partial \bar u_k}{\partial x_j} \big) \d x
+    &= \int_\Omega h_i \frac{\partial}{\partial x_i} \bigg\{ \frac{\partial u_k}{\partial x_j} \frac{\partial \bar u_k}{\partial x_j} \bigg\} \d x
     = \int_\Omega h_i  \frac{\partial^2 u_k}{\partial x_i \partial x_j} \frac{\partial \bar u_k}{\partial x_j} + \frac{\partial u_k}{\partial x_j} \frac{\partial^2 \bar u_k}{\partial x_i \partial x_j} = I_4.
   \end{align*}
-  If we now put everything together, the right side of \eqref{eq:rellichIdentity} reads
+  If we now put everything together, the right hand side of \eqref{eq:rellichIdentity} reads
   \begin{align*}
     &(I_1 - I_2) + (I_{10} - I_{11}) - I_3 + I_8 - I_7 \\
     &\quad= (I_3 + I_4 + I_6 + I_7) - (I_8 + I_9 + I_6) + I_{10} - I_{11} - I_3 + I_8 - I_7 = I_{10}.
   \end{align*}
-  Noting that by the divergence theorem we have
+  Noting that by the divergence theorem, which is applicable with the same justification as for the integral $I_1$, we have
   \begin{align*}
-    I_{10} = \int_{\partial\Omega} h_k n_k |\nabla u|^2 \d \sigma,
+    I_{10} = \int_{\partial\Omega} h_k n_k |\nabla u|^2 \d \sigma.
   \end{align*}
-  the first identity is proven.
+  Thus, the first identity is proven.
 
   In order to prove identity \eqref{eq:rellichIdentity2}, we show that the expression we get from considering (\eqref{eq:rellichIdentity} + \eqref{eq:rellichIdentity2}) holds, i.e. we show the identity
   \begin{align*}
@@ -135,20 +117,26 @@ We will now prepare the proof of this theorem by proving several helpful lemmata
     &\quad + 2 \Ret \int_{\partial\Omega} h_k \frac{\partial\bar u_i}{\partial x_j} \Big\{ n_k \frac{\partial u_i}{\partial x_j} - n_j \frac{\partial u_i}{\partial x_k} \Big\} \d \sigma \\
     &\quad+ 2 \Ret \int_{\partial\Omega} h_k \bar \phi \Big\{ n_i \frac{\partial u_i}{\partial x_i} - n_k \frac{\partial u_i}{\partial x_i} \Big \} \d\sigma.
   \end{align*}
-  To this end, note that the left side of the identity equals $2 I_10$, whereas the right side can be written as 
+  To this end, note that the left side of the identity equals $2 I_{10}$, whereas the right side can be written as 
   \begin{align*}
     I_1 - I_2 + 2 I_{10} - I_1 + I_2 - 0,
   \end{align*}
   where we used the fact that $\div u = 0$.
 \end{proof}
 
-We note that the operators
-\begin{align*}
-  \Big\{ n_k \frac{\partial u_i}{\partial x_j} - n_j \frac{\partial u_i}{\partial x_k} \Big\}
-  \quad\text{and}\quad
-  \Big\{ n_i \frac{\partial u_i}{\partial x_k} - n_k \frac{\partial u_i}{\partial x_i} \Big\}
-\end{align*}
-are the \emph{first-order tangential derivative operators} which can be found in Mitrea and Wrigth \cite{mitreaWright}.
+Consider the operators $\partial_{\tau_{jk}}$ which act on compactly supported continuously differentiable functions $\psi$ in the neighborhood of $\partial\Omega$ by
+\begin{align}
+  \label{eq:defnTangDerivative}
+  \partial_{\tau_{jk}} \psi \coloneqq n_j \frac{\partial \psi}{\partial x_k} \Big|_{\partial\Omega} - n_k \frac{\partial \psi}{\partial x_j} \Big|_{\partial\Omega, \quad j,k = 1,\dots,d.
+\end{align}
+They are introduced in Mitrea and Wrigth \cite[p. 16]{mitreaWright} and come with a helpful  ``integration by parts'' rule that can be used to define Sobolev spaces on the boundary $\partial\Omega$. However for our purposes it will suffice to formulate this rule for the specific case
+
+These operators show up in identity \eqref{eq:rellichIdentity2} as
+%\begin{align*}
+%  \partial_{\tau_{kj}} u_i = \Big\{ n_k \frac{\partial u_i}{\partial x_j} - n_j \frac{\partial u_i}{\partial x_k} \Big\}
+%  \quad\text{and}\quad
+%  \partial_{\tau_{ik}} u_i =  \Big\{ n_i \frac{\partial u_i}{\partial x_k} - n_k \frac{\partial u_i}{\partial x_i} \Big\}
+%\end{align*}
 
 We make a quick detour that gives us the following lemma.
 \begin{lem}

@@ -52,7 +52,7 @@ In this first section we will establish the fundamental notions regarding bounde
       \begin{align*}
         | P - \Lambda_k(P) | < (1 + \beta) \operatorname{dist}(\Lambda_k(P), \partial\Omega)
       \end{align*}
-      for some constant $\beta$ depending only on $d$ and the Lipschitz character of $\Omega$.
+      for some constant $\beta$ depending only on $d$ and the Lipschitz character of $\Omega\,$.
     \item The normals $\nu_k$ of $\partial\Omega_k$ satisfy $\lim_{k \to \infty} \nu_k(\Lambda_k(P)) = \nu(P)$ a. e. for all $P \in \partial\Omega$
     \item The functions $\vartheta_k$ satisfy $\delta \leq \vartheta_k \leq \delta^{-1}$ for some $\delta > 0$, $\vartheta^k \to 1$ pointwise a. e. and
       \begin{align*}
@@ -172,6 +172,57 @@ The idea is to restrict the set of directions from which one can approach $p$ by
 
 Usually the nontangential limits taken from inside and outside the domain will differ.
 For functions $u$ on $\R^d \setminus \partial\Omega$ we will therefore often use the notation $u_+$ to denote the \emph{inner} nontangential limit and $u_-$ for the respective \emph{outer} nontangential limit.
+
+To put our new vocabulary to use, we will formulate an prove the divergence theorem for functions on bounded Lipschitz domains that do not have a trace but nontangential limits and integrable nontangential maximal functions.
+
+\begin{prop}
+  \label{prop:approximationArgument}
+The idea of the proof is based on the approximation argument performed in Brown \cite[Prop. 2.4]{brown}.
+  Let $\Omega \subset \R^d$, $d \geq 2$, a bounded Lipschitz domain and $f \colon \Omega \to \C^d$ smooth and $g \colon \partial\Omega \to \C$ measurable.
+  Suppose that the nontangential limit $f_+$ exists almost everywhere and that the nontangential maximal function $(g)^*$ is integrable on $\partial\Omega$ and $|f_+| \leq (g)^*$ a.e..
+  Then Green's formula
+  \begin{align}
+    \int_{\partial\Omega} f_k(s) n_k(s) \d\sigma(s) = \int_\Omega \div(f)(x) \d x
+  \end{align}
+  holds, where $n$ denotes the outer unit normal vector of $\partial\Omega$.
+\end{prop}
+
+\begin{proof}
+  The proof rests heavily on the powerful Theorem \ref{thm:smoothApproximation} and uses its full capacity to uncover a very useful approximation argument.
+
+  Let's start by approximating $\Omega$ by a sequence $(\Omega)_l$ of $\CC^\infty$ domains with uniform Lipschitz characters as described in Theorem \ref{thm:smoothApproximation}. 
+  Remember that by Theorem \ref{thm:smoothApproximation} iv), the homeomorphisms $\Lambda_l \colon \partial\Omega \to \partial\Omega_l$ give rise to a tranformation rule of the form 
+  \begin{align}
+    \label{eq:transformation}
+    \int_{\partial\Omega_l} f_k(s) n_k^{(l)}(s) \d\sigma_l(s)
+    = \int_{\partial\Omega} \vartheta_l(x) \, f_k(\Lambda_l(x)) \, n_k^{(l)}(\Lambda_l(x)) \d\sigma(x).
+  \end{align}
+  Additionally we have $\lim_{l \to \infty} \vartheta_l(x) = 1$ and $\lim_{l \to \infty} \Lambda_l(x) = x$ almost everywhere, where $\Lambda_l(x) \in \Gamma(x)$ for all $l \in \N$ thanks to Theorem \ref{thm:smoothApproximation} ii).
+  Furthermore, we know that $\lim_{l \to \infty} n_k^{(l)}(\Lambda_l(x)) = n_k(x)$ almost everywhere by Theorem \ref{thm:smoothApproximation} and that $f$ has a nontangential limit almost everywhere.
+  This gives us that 
+  \begin{align*}
+    \lim_{l \to \infty} \vartheta_l(x) \, f_k(\Lambda_l(x)) \, n_k^{(l)}(\Lambda_l(x)) = f_k(x) n_k(x), \quad\text{a. e. } x \in \partial\Omega.
+  \end{align*}
+  As this sequence of integrands is dominated by $\delta (g)^*$ with $(g)^* \in \Ell^1(\partial\Omega)$ by assumption and $\delta$ the uniform bound to $\vartheta_l$ due to Theorem \ref{thm:smoothApproximation} iv), the dominated convergence theorem is applicable and yields
+  \begin{align}
+    \label{eq:leftGreen}
+    \lim_{l \to \infty} \int_{\partial \Omega} \vartheta_l(s) \, f_k(\Lambda_l(s))\,  n_k^{(l)}(\Lambda_l(s))\d\sigma(s)
+    &= 
+    \int_{\partial\Omega} f_k(s) n_k(s) \d \sigma(s).
+  \end{align}
+  Now consider the left hand side of identity \eqref{eq:transformation}.
+  By Green's formula \cite[p. 711f.]{evans} we know that
+  \begin{align*}
+    \int_{\partial\Omega_l} f_k(s) n_k^{(l)}(s) \d\sigma_l(s)
+    = \int_{\Omega_l} \div(f(x)) \d x, \quad\text{for all } l \in \N.
+  \end{align*}
+  As $\Omega_l \subseteq \Omega$ for all $l \in \N$, the monotone convergence Theorem leaves us with
+  \begin{align}
+    \label{eq:rightGreen}
+    \lim_{l \to \infty} \int_{\Omega_l} \div(f(x)) \d x = \int_\Omega \div(f(x) \d x.
+  \end{align}
+  Gluing together equations \eqref{eq:leftGreen} and \eqref{eq:rightGreen} gives the claim.
+\end{proof}
 
 \section{The Stokes Operator}
 \label{sec:stokesOperator}
