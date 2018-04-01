@@ -26,9 +26,11 @@ Therefore the next Lemma shows that solutions to the Stokes resolvent problem th
 \end{lem}
 
 \begin{proof}
-  If $d \geq 2$ then an application of the dominated convergence theorem gives that $|\phi(x)| + |\nabla u(x)| = O(|x|^{1 - d})$ as $|\phi(x)| = O(|\Phi_k(x)|) = O(|x|^{1 - d})$ by \eqref{eq:fundamentalVectorPressure} and $|\nabla u(x)| = O(|x|^{1 - d})$ by estimate \ref{eq:fundamentalMatrixEstimate}.
+  If $d \geq 2$ then an application of the dominated convergence theorem gives that $|\phi(x)| + |\nabla u(x)| = O(|x|^{1 - d})$ as $|\phi(x)| = O(|\Phi_k(x)|) = O(|x|^{1 - d})$ by \eqref{eq:fundamentalVectorPressure}.
+ Furthermore, we have $|\nabla u(x)| = O(|x|^{1 - d})$ by estimate \ref{eq:fundamentalMatrixEstimate}.
 
-  If $d \geq 3$ then Lemma \ref{lem:estimateHelmholtzDerivatives} and an application of the dominated convergence Theorem gives $u(x) = O(|x|^{2 - d})$.
+  If $d \geq 3$ then the first part of Lemma \ref{lem:estimateHelmholtzDerivatives} and an application of the dominated convergence Theorem gives $u(x) = O(|x|^{2 - d})$.
+  If $d = 2$, then the asymptotic behavior of the fundamental solution to the scalar Helmholtz equation is already available. Through dominated convergence the same asymptotic behavior holds for $u(x)$.
 \end{proof}
 
 We will now derive bounds on the inverse operator of $(1/2) I + \K_\lambda$ from Chapter \ref{chap:3}. 

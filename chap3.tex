@@ -632,11 +632,11 @@ Furthermore
   \label{eq:nontangentialLimitDoubleLayer}
   u_\pm = \Big(\mp \frac{1}{2} I + \K_{\bar\lambda}^* \Big) f,
 \end{align}
-where $K_{\bar\lambda}^*$ is the adjoint of the operator $K_{\bar\lambda}$ in \eqref{eq:nontangentialConormalDerivative}
+where $\K_{\bar\lambda}^*$ is the adjoint of the operator $\K_{\bar\lambda}$ in \eqref{eq:nontangentialConormalDerivative}
 \end{thm}
 
 \begin{proof}
-  The estimate for $(u)^*$ is a direct consequence of Lemma \ref{lem:nontangentialMaximalFunctions} and the estimates on $(\nabla \slp_\lambda(f))^*$ and $(\slp_\Phi(f))^*$:
+  The estimate for $(u)^*$ is a direct consequence of Lemma \ref{lem:nontangentialMaximalFunctions} and the estimates on the nontangential maximal functions for the single layer potentials $(\nabla \slp_\lambda(f))^*$ and $(\slp_\Phi(f))^*$:
   We have on the one hand
   \begin{align}
     \label{eq:rep1}
@@ -668,7 +668,7 @@ where $K_{\bar\lambda}^*$ is the adjoint of the operator $K_{\bar\lambda}$ in \e
   Hence by Lemma \ref{lem:nontangentialMaximalFunctions} we derive the estimation
   \begin{align*}
     \| (u)^* \|_{\Ell^p(\partial\Omega)} 
-    \leq C \Big\{ \sum_{i = 1}^n \| n_i f \|_{\Ell^p(\partial\Omega; \C^d)} + \sum_{i = 1}^n \| \slp_\Phi(\tilde f^j) \|_{\Ell^p(\partial\Omega)}\Big\} 
+    \leq C \Big\{ \sum_{i = 1}^d \| n_i f \|_{\Ell^p(\partial\Omega; \C^d)} + \sum_{i = 1}^d \| \slp_\Phi(\tilde f^j) \|_{\Ell^p(\partial\Omega)}\Big\} 
     \leq C \|f\|_{\Ell^p(\partial\Omega; \C^d)},
   \end{align*}
   where $C$ depends on $d$, $p$, $\theta$ and the Lipschitz character of $\Omega$.
@@ -698,13 +698,13 @@ where $K_{\bar\lambda}^*$ is the adjoint of the operator $K_{\bar\lambda}$ in \e
   \end{align*}
   Therefore we see that the adjoint of the truncated operator $\K_{\bar\lambda}^{(\varepsilon)}$ is given by
   \begin{align*}
-    \big( ( K_{\bar\lambda}^{(\varepsilon)})^* g\big)_k(y)
+    \big( ( \K_{\bar\lambda}^{(\varepsilon)})^* g\big)_k(y)
     = \int_{\partial\Omega} \Big\{ &\frac{\partial}{\partial x_i} \{ \Gamma_{jk}(x - y; \lambda)\} n_i(x) \\
     &\quad - \Phi_k(x - y) n_j(x) \qquad \Big\}\, 1_{\EE(y,\varepsilon)}(x) \, g_j(x) \d\sigma(x), 
   \end{align*}
   for $y \in \partial\Omega$ since $\overline{\Gamma_{jk}(x - y; \lambda)} = \Gamma_{jk}(x - y; \overline\lambda)$.
 
-  In the next step we will go from truncated operators to principal value operators through the dominated convergence theorem. 
+  In the next step we, will go from truncated operators to principal value operators through the dominated convergence theorem. 
   For this to work we will look for suitable majorants.
   For $x \in \partial\Omega$, we estimate
   \begin{align}
@@ -718,14 +718,22 @@ where $K_{\bar\lambda}^*$ is the adjoint of the operator $K_{\bar\lambda}$ in \e
   \begin{align*}
     \lim_{\varepsilon \to 0} \Big\langle \K_{\bar\lambda}^{(\varepsilon)} f, g \Big\rangle = \Big\langle \K_{\bar\lambda} f, g \Big\rangle\,.
   \end{align*}
-  A similar argument gives
+  With a similar argument we get
   \begin{align*}
-    \lim_{\varepsilon \to 0} \Big\langle f, {\Big(K_{\bar\lambda}^{(\varepsilon)}}\Big)^* g \Big\rangle = \Big\langle f,\K_{\bar\lambda}^{(*)}  g \Big\rangle\,,
+    \big| \big((\K_{\bar \lambda}^{(\varepsilon)})^* g \big)_k(y) \big|
+    &=
+    \bigg| \int_{|x - y| > \varepsilon} \frac{\partial}{\partial x_i} \Big\{ \Gamma_{jk}(x - y; \overline\lambda) \Big\} \, n_i(x) g_j(x) \d \sigma(x)\\
+    &\qquad - \int_{|x - y| > \varepsilon} \Phi_k(x - y) n_j(x) g_j(x)   \d\sigma(x) \bigg| \\
+    &\leq \sum_{i = 1}^d T_\lambda^*(n_i g)(y)  + \sum_{i = 1}^d A^*(\tilde g^j)(y),
   \end{align*}
-  where
+  where $\tilde g^j_l = \delta_{lj} n_k f_k$ and therefore the dominated convergence theorem yields
+  \begin{align*}
+    \lim_{\varepsilon \to 0} \Big\langle f, {\Big(\K_{\bar\lambda}^{(\varepsilon)}}\Big)^* g \Big\rangle = \Big\langle f,\K_{\bar\lambda}^{(*)}  g \Big\rangle\,,
+  \end{align*}
+  where the limit operator $\K_{\bar\lambda}^{(*)}$ is defined via
   \begin{align*}
     \big( ( \K_{\bar\lambda}^{(*)} g\big)_k(y)
-    = \pv\int_{\partial\Omega} \Big\{ \frac{\partial}{\partial x_i} \big\{ \Gamma_{kj}(x - y; \lambda)\big\} n_i(x) - \Phi_k(x - y) n_j(x) \Big\} g_j(x) \d\sigma(x). 
+    \coloneqq \pv\int_{\partial\Omega} \Big\{ \frac{\partial}{\partial x_i} \big\{ \Gamma_{kj}(x - y; \lambda)\big\} n_i(x) - \Phi_k(x - y) n_j(x) \Big\} g_j(x) \d\sigma(x). 
   \end{align*}
   Of course by the uniqueness of the adjoint operator, the identity $\langle \K_{\bar\lambda} f, g \rangle = \langle f, \K_{\bar\lambda}^{(*)} g \rangle$ shows that $\K_{\bar\lambda}^* = \K_{\bar\lambda}^{(*)}$.
   Note that we have used the symmetry of $(\Gamma_{jk})$.
@@ -763,7 +771,7 @@ where $K_{\bar\lambda}^*$ is the adjoint of the operator $K_{\bar\lambda}$ in \e
   \end{align*}
   Putting everything together we get
   \begin{align*}
-    (u_j)_\pm(x) = \mp\frac{1}{2} f_j(x) + (K_{\bar\lambda}^* f)_j(x)
+    (u_j)_\pm(x) = \mp\frac{1}{2} f_j(x) + (\K_{\bar\lambda}^* f)_j(x)
   \end{align*}
   and the proof is finished.
 \end{proof}
