@@ -112,7 +112,7 @@ For a proof see Verchota \cite[p. 9f.]{verchota}
    \begin{align*}
      \ShenCone_\alpha(q) \coloneqq \big\{ x \in \Omega \setminus \partial\Omega \colon |x - q| < \alpha \operatorname{dist}(x, \partial\Omega) \big\}
    \end{align*}
-   If $\alpha$ is chosen sufficiently large (see Shen \cite{shen2017}) we call $\{ \ShenCone_\alpha(q) \colon q \in \partial\Omega\}$ a \emph{family of nontangential approach regions}.
+   If $\alpha$ is chosen sufficiently large (see Shen \cite{Shen2017}) we call $\{ \ShenCone_\alpha(q) \colon q \in \partial\Omega\}$ a \emph{family of nontangential approach regions}.
 \end{defn}
 
   Note that in Shen cones $\ShenCone_\alpha(q)$, we have that for $q, y \in \partial\Omega$ and $x \in \ShenCone_\alpha(q)$
@@ -141,7 +141,7 @@ for $q \in \partial\Omega$.
   \end{align*}
 \end{defn}
 
-Note that Tolksdorf \cite{tolksdorf} and Shen \cite{shen2017} show that the choice of $\alpha$ for the nontangential maximal function as in \ref{eq:defnNontangMaxFunction} does not affect their $p$-norms in an unpredictable way. In fact their $p$-norms for different $\alpha_1$ and $\alpha_2$ stay comparable with a constant only depending on $d$, $\alpha_1$, $\alpha_2$ and the Lipschitz character.
+Note that Tolksdorf \cite{tolksdorf} and Shen \cite{Shen2017} show that the choice of $\alpha$ for the nontangential maximal function as in \ref{eq:defnNontangMaxFunction} does not affect their $p$-norms in an unpredictable way. In fact their $p$-norms for different $\alpha_1$ and $\alpha_2$ stay comparable with a constant only depending on $d$, $\alpha_1$, $\alpha_2$ and the Lipschitz character.
 We will therefore for a given bounded Lipschitz domain always assume that $\alpha > 1$ has been choosen big enough such that on the one hand condition (ii) from Theorem \ref{thm:smoothApproximation} is fulfilled and that on the other hand $\alpha$ is large enough such that $\{ \Gamma_\alpha(q) \colon q \in \partial\Omega \}$ is a family of nontangential aproach regions.
 In the following we will thus ignore the parameter $\alpha$ in cones and nontangential maximal functions and tacitly assume that it was chosen appropriately.
 We further note that the functions $(u)^*$ and $N(u)$ will not be comparable in general, see the discussion in Tolksdorf.
@@ -173,11 +173,10 @@ The idea is to restrict the set of directions from which one can approach $p$ by
 Usually the nontangential limits taken from inside and outside the domain will differ.
 For functions $u$ on $\R^d \setminus \partial\Omega$ we will therefore often use the notation $u_+$ to denote the \emph{inner} nontangential limit and $u_-$ for the respective \emph{outer} nontangential limit.
 
-To put our new vocabulary to use, we will formulate an prove the divergence theorem for functions on bounded Lipschitz domains that do not have a trace but nontangential limits and integrable nontangential maximal functions.
+To put our new vocabulary to use, we will formulate an prove the divergence theorem for functions on bounded Lipschitz domains that do not have a trace but nontangential limits and integrable nontangential maximal functions. A similar statement was proven by Shen in \cite[Thm. 7.1.6]{Shen2017}.
 
 \begin{prop}
   \label{prop:approximationArgument}
-The idea of the proof is based on the approximation argument performed in Brown \cite[Prop. 2.4]{brown}.
   Let $\Omega \subset \R^d$, $d \geq 2$, a bounded Lipschitz domain and $f \colon \Omega \to \C^d$ smooth and $g \colon \partial\Omega \to \C$ measurable.
   Suppose that the nontangential limit $f_+$ exists almost everywhere and that the nontangential maximal function $(g)^*$ is integrable on $\partial\Omega$ and $|f_+| \leq (g)^*$ a.e..
   Then Green's formula
@@ -197,6 +196,7 @@ The idea of the proof is based on the approximation argument performed in Brown 
     \int_{\partial\Omega_l} f_k(s) n_k^{(l)}(s) \d\sigma_l(s)
     = \int_{\partial\Omega} \vartheta_l(x) \, f_k(\Lambda_l(x)) \, n_k^{(l)}(\Lambda_l(x)) \d\sigma(x).
   \end{align}
+  The idea of the proof is based on the approximation argument performed in Brown \cite[Prop. 2.4]{brown}. 
   Additionally we have $\lim_{l \to \infty} \vartheta_l(x) = 1$ and $\lim_{l \to \infty} \Lambda_l(x) = x$ almost everywhere, where $\Lambda_l(x) \in \Gamma(x)$ for all $l \in \N$ thanks to Theorem \ref{thm:smoothApproximation} ii).
   Furthermore, we know that $\lim_{l \to \infty} n_k^{(l)}(\Lambda_l(x)) = n_k(x)$ almost everywhere by Theorem \ref{thm:smoothApproximation} and that $f$ has a nontangential limit almost everywhere.
   This gives us that 
