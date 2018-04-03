@@ -203,7 +203,7 @@ The next lemma enables us to handle the solid integrals in \eqref{eq:rellichIden
     -\int_{\Omega}  \frac{\partial^2 u_j}{\partial x_i \partial x_i}  \, \overline u_j \d x
     = -\int_{\Omega}  \frac{\partial }{\partial x_i} \bigg\{ \overline u_j \frac{\partial u_j}{\partial x_i} \bigg\} \d x + \int_\Omega \frac{\partial u_j}{\partial x_i} \cdot \frac{\partial \overline u_j}{\partial x_i} \d x.
     \end{align*}
-  Note that since $u$ is solenoidal we have for the third term of equation \eqref{eq:variationalStokes}
+  Note that since $u$ is solenoidal, we have for the third term of equation \eqref{eq:variationalStokes}
   \begin{align*}
     - \int_{\Omega} \frac{\partial \phi}{\partial x_i} \, \overline u_i \d x = - \int_{\Omega} \frac{\partial}{\partial x_i} \Big\{ \phi\,  \overline u_i \Big\} \d x.
   \end{align*}
@@ -221,14 +221,14 @@ The next lemma enables us to handle the solid integrals in \eqref{eq:rellichIden
   \end{align}
   If we now take the real and imaginary part of \eqref{eq:testedStokes} and sum them up with the prefactor $\alpha(\theta) > 0$ from Lemma \ref{lem:lambdaIneq}, we get
   \begin{align*}
-    \int_\Omega |\nabla u|^2 \d x + \Big\{ \Re(\lambda) + \alpha |\Im(\lambda)|\, \Big\} \int_\Omega |u|^2 \d x
+    \int_\Omega |\nabla u|^2 \d x + \Big\{ \Re(\lambda) + \alpha\, \big|\Im(\lambda)\,\big|\, \Big\} \int_\Omega |u|^2 \d x
     \leq (1 + \alpha) \, \bigg| \int_{\partial\Omega} \frac{\partial u}{\partial \nu} \cdot \bar u \d \sigma \bigg|\,.
   \end{align*}
   Lemma \ref{lem:lambdaIneq} now gives
   \begin{align*}
     \int_\Omega |\nabla u|^2 \d x + |\lambda| \int_\Omega |u|^2 \d x \leq C\,  \bigg| \int_{\partial\Omega} \frac{\partial u}{\partial \nu} \cdot \bar u \d \sigma \bigg|\,,
   \end{align*}
-  with $C = (1 + \alpha)$ from which we ge estimate \eqref{eq:laxMilgramIneq} after applying the Cauchy-Schwartz inequality.
+  with $C = (1 + \alpha)$ from which we readily derive estimate \eqref{eq:laxMilgramIneq} after applying the Cauchy-Schwartz inequality.
 \end{proof}
 
 The next lemma combines Rellich identities \eqref{eq:rellichIdentity} and \eqref{eq:rellichIdentity2} with estimate \eqref{eq:laxMilgramIneq}.
@@ -237,62 +237,75 @@ The next lemma combines Rellich identities \eqref{eq:rellichIdentity} and \eqref
   Under the same assumptions on $(u,\phi)$ and $\lambda$ as in Theorem \ref{thm:rellich}, we have
   \begin{align}
     \label{eq:gradEstimateRellich}
-    \| \nabla u\|_\partial \leq C_\varepsilon \| \frac{\partial u}{\partial \nu} \|_\partial + \varepsilon \Big\{ \|\nabla u\|_\partial + \|\phi\|_\partial + \| |\lambda|^{1/2} u\|_\partial \Big\}
+    \| \nabla u\|_\partial \leq C_\varepsilon \,\bigg\| \frac{\partial u}{\partial \nu} \bigg\|_\partial + \varepsilon \Big\{ \|\nabla u\|_\partial + \|\phi\|_\partial + \| \, |\lambda|^{1/2} u\|_\partial \Big\}
   \end{align}
   and
   \begin{align}
     \label{eq:gradEstimateRellich2}
-    \|\nabla u\|_\partial \leq C_\varepsilon \Big\{ \|\nabla_{\mathrm{tan}} u \|_\partial + \||\lambda|^{1/2} u\|_\partial \Big\} + \varepsilon \{ \|\nabla u\|_\partial + \|\phi\|_\partial \}
+    \|\nabla u\|_\partial \leq C_\varepsilon \Big\{ \|\nabla_{\mathrm{tan}} u \|_\partial + \|\, |\lambda|^{1/2} u\|_\partial \Big\} + \varepsilon \{ \|\nabla u\|_\partial + \|\phi\|_\partial \}
   \end{align}
   for all $\varepsilon \in (0,1)$, where $C_\varepsilon$ depends only on $d$, $\theta$, $\tau$, $\varepsilon$ and the Lipschitz character of $\Omega$.
 \end{lem}
 
 \begin{proof}
-  Let $h = (h_1, \dots, h_d) \in \CC_0^1(\R^d, \R^d)$ with $h_k n_k \geq c > 0$ on $\partial \Omega$. 
-  The existence of this vector field follows from Verchota.
-  Now in view of identity \eqref{rellichIdentity}, we have
-  \begin{align}
-    \label{eq:normRellich}
-    \|\nabla u\|_\partial^2
-    \leq C \Big\{ \|\nabla u\|_\partial \| \frac{\partial u}{\partial \nu} \|_\partial + \int_\Omega |\nabla u|^2 \d x + \int_\Omega |\nabla u| |\phi| \d x + |\lambda \int_\Omega |\nabla u| |u| \d x \Big\},
-  \end{align}
-  where the first term follows from the Cauchy-Schwartz inequality.
-  Since $\Delta \phi = 0$ and the nontangential maximal function $(\phi)^* \in \Ell^2(\partial\Omega)$ a result from Dahlberg \cite{dahlberg} gives
+  Let $h = (h_1, \dots, h_d) \in \CC_0^1(\R^d, \R^d)$ with $h_k n_k \geq c > 0$ on $\partial \Omega$ as given by Therorem \ref{thm:smoothApproximation} v). 
+  The idea of the proof of the desired estimates \eqref{eq:gradEstimateRellich} and \eqref{eq:gradEstimateRellich2} is to first use the Rellich identities from Lemma \ref{lem:rellichIdentity} with this particular $h$ to estimate $\|\nabla u\|_\partial$ and then to bound the resulting right hand side by providing individual estimates.
+
+  Before we start, note that we have $\Delta \phi = 0$ on the one hand and for the nontangential maximal function $(\phi)^* \in \Ell^2(\partial\Omega)$ on the other hand. According to Shen \cite[p. 410]{Shen2012}, a result from Dahlberg \cite{dahlberg77} gives the estimation
   \begin{align}
     \label{eq:dahlbergEstimate}
     \int_\Omega |\phi|^2 \d x \leq C \|(\phi)^* \|_\partial^2 \leq C \|\phi\|_\partial^2.
   \end{align}
-  The last summand of \eqref{eq:normRellich} can be estimated as follows
+
+  We will now prove the first estimate \eqref{eq:gradEstimateRellich}.
+  In view of identity \eqref{eq:rellichIdentity}, we have
   \begin{align}
-    |\lambda| \int_\Omega |\nabla u| |u| \d x 
-    &\leq |\lambda| \big\{ \frac{|\lambda|^{1/2}}{2} \int_\Omega |u|^2 \d x + \frac{1}{2 |\lambda|^{1/2}} \int_\Omega |\nabla u|^2 \d x \nonumber\\\label{eq:lambdaNablaU}
-    &\leq C \| \frac{\partial u}{\partial \nu} \|_\partial \| |\lambda|^{1/2} u\|_\partial, 
+    \label{eq:normRellich}
+    \begin{alignedat}{1}
+    \|\nabla u\|_\partial^2
+    &\leq C \, \bigg\{ \|\nabla u\|_\partial \, \bigg\| \frac{\partial u}{\partial \nu} \bigg\|_\partial + \int_\Omega |\nabla u|^2 \d x \\
+    &\hspace{1.5cm}+ \int_\Omega |\nabla u| \, |\phi| \d x + |\lambda| \int_\Omega |\nabla u|\, |u| \d x \bigg\},
+    \end{alignedat}
   \end{align}
-  where in the first step we used the weigthed Young inequality and in the second step we applied estimate \eqref{eq:laxMilgramIneq}.
-  Similarly we calculate
+  where the first term follows from the Cauchy-Schwartz inequality and $C$ only depends on $d$ and the Lipschitz character of $\Omega$.
+
+  For now, we keep the first term of \eqref{eq:normRellich} as it is, the second term can be handled via Lemma \ref{lem:laxMilgramIneq}. 
+  The goal for the remaining two integrals will be to bound each of them by a product of norms $\|\cdot\|_\partial$.
+To this end, for the third integral we calculate
   \begin{align}
     \int_\Omega |\nabla u| |\phi| \d x
     \leq \Big( \int_\Omega |\nabla u|^2 \d x \Big)^{1/2} \Big( \int_\Omega |\phi|^2 \d x \Big)^{1/2}
-    \leq C \, \| \frac{\partial u}{\partial \nu} \|_\partial^{1/2} \|u\|_\partial^{1/2} \|\phi\|_\partial, \label{eq:nablaPhi}
+    \leq C \, \bigg\| \frac{\partial u}{\partial \nu} \bigg\|_\partial^{1/2} \|u\|_\partial^{1/2} \, \|\phi\|_\partial\,, \label{eq:nablaPhi}
   \end{align}
-  where the first step is just the Cauchy-Schwartz inequality and the second step combines estimate \eqref{eq:laxMildgramIneq} with estimate \eqref{eq:dahlbergEstimate}.
+  where the first step is due to the Cauchy-Schwartz inequality and the second step combines estimate \eqref{eq:laxMilgramIneq} with estimate \eqref{eq:dahlbergEstimate}.
+
+  The last integral of \eqref{eq:normRellich} can be estimated as follows:
+  \begin{align}
+    |\lambda| \int_\Omega |\nabla u| \, |u| \d x 
+    &\leq  \frac{|\lambda|^{3/2}}{2} \int_\Omega |u|^2 \d x + \frac{|\lambda|^{1/2}}{2 } \int_\Omega |\nabla u|^2 \d x \nonumber\\\label{eq:lambdaNablaU}
+    &\leq C \, \bigg\| \frac{\partial u}{\partial \nu} \bigg\|_\partial \big\|\, |\lambda|^{1/2} u\,\big\|_\partial, 
+  \end{align}
+  where in the first step we used the weighted Young inequality and in the second step we applied estimate \eqref{eq:laxMilgramIneq}.
   Putting everything together, we calculate
   \begin{align*}
     \| \nabla u\|_\partial^2 
-    &\leq C \| \nabla u\|_\partial \|\frac{\partial u}{\partial \nu} \|_\partial + C \| \frac{\partial u}{\partial \nu} \|_\partial \|u\|_\partial + C \| \frac{\partial u}{\partial \nu} \|_\partial^{1/2} \|u\|_\partial^{1/2} \|\phi\|_\partial \\
-    &\quad+ C \| \frac{\partial u}{\partial \nu} \|_\partial \| |\lambda|^{1/2} u\|_\partial.
+    &\leq C \bigg\{ \| \nabla u\|_\partial \, \bigg\|\frac{\partial u}{\partial \nu} \bigg\|_\partial 
+    + \bigg\| \frac{\partial u}{\partial \nu} \bigg\|_\partial \|u\|_\partial 
+    + \bigg\| \frac{\partial u}{\partial \nu} \bigg\|_\partial^{1/2} \|u\|_\partial^{1/2} \|\phi\|_\partial 
+    + \bigg\| \frac{\partial u}{\partial \nu} \bigg\|_\partial \big\| \, |\lambda|^{1/2} u\, \big\|_\partial\bigg\}
   \end{align*}
-  Note that we used the fact that $|\lambda| \geq \tau$ to bound $\|u\|_\partial$ as
+  If we now use the assumption $|\lambda| \geq \tau$ which allows us to bound $\|u\|_\partial$ via
   \begin{align*}
-    \|u\|_\partial \leq \frac{|\lambda|^{1/2}}{\tau^{1/2}} \|u\|_\partial = C |\lambda|^{1/2} \|u\|_{\partial}.
+    \|u\|_\partial \leq \frac{|\lambda|^{1/2}}{\tau^{1/2}} \|u\|_\partial = C |\lambda|^{1/2} \|u\|_{\partial},
   \end{align*}
-  The desired estimate \eqref{eq:gradEstimateRellich} now follows applying Young's weighted inequality and the norm equivalence on finite dimensional vector spaces.
+  the desired estimate \eqref{eq:gradEstimateRellich} now follows applying Young's weighted inequality with an $\varepsilon$ and the norm equivalence on finite dimensional vector spaces.
 
-  For inequality \eqref{eq:gradEstimateRellich2} we use the identity \eqref{eq:rellichIdentity2} and obtain
+  For inequality \eqref{eq:gradEstimateRellich2}, we use the Rellich identity \eqref{eq:rellichIdentity2} to obtain the estimate
   \begin{align*}
     \| \nabla u\|_\partial^2 
-    &\leq C \|\nabla_{\mathrm{tan}} u\|_\partial \{ \|\nabla u\|_\partial + \|\phi\|_\partial \} + C \int_\Omega |\nabla u|^2 \d x \\
-    &\quad+ C \int_\Omega |\nabla u| |\phi| \d x + C |\lambda| \int_\Omega |\nabla u| |u|\d x.
+    &\leq C \bigg\{ \|\nabla_{\mathrm{tan}} u\|_\partial 
+    \Big\{ \|\nabla u\|_\partial + \|\phi\|_\partial \Big\}   \\
+    &\hspace{2cm} + \int_\Omega |\nabla u|^2 \d x + \int_\Omega |\nabla u| |\phi| \d x + |\lambda| \int_\Omega |\nabla u| |u|\d x \bigg\}.
   \end{align*}
   Using estimates \eqref{eq:laxMilgramIneq}, \eqref{eq:dahlbergEstimate}, \eqref{eq:lambdaNablaU} and \eqref{eq:nablaPhi} together with the weighted Young inequality gives us
   \begin{align*}
