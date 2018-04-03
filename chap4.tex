@@ -2,13 +2,14 @@
 \label{chap:4}
 
 In this section we will establish Rellich type estimates for the Stokes resolvent problem which will be used to prove the invertibility of the operators $\pm(1/2)I + \K_{\lambda}$ and their adjoints from Theorems  \ref{thm:jumpConditions} and \ref{thm:nontangentialLimitDoubleLayer}.
-We will for this entire section always assume that $\Omega$ is a bounded Lipschitz domain in $\R^d$, $d \geq 2$ with connected boundary.
+We will for this entire section always assume that $\Omega$ is a bounded Lipschitz domain in $\R^d$, $d \geq 2$, with connected boundary.
 Furthermore we will use the shorthand notation
 \begin{align*}
-  \| \cdot \|_{\partial} \coloneqq \| \cdot \|_{\Ell^2(\partial\Omega; \C^k)}, \quad k \in \N.
+  \| \cdot \|_{\partial} \coloneqq \| \cdot \|_{\Ell^2(\partial\Omega; \C^k)}, \quad k \in \N,
 \end{align*}
+and we will tacitly use the summation convention whenever it is applicable.
 
-This inequality is part of the following theorem.
+The following Theorem is the central result of this chapter:
 
 \begin{thm}
   \label{thm:rellich}
@@ -21,13 +22,13 @@ This inequality is part of the following theorem.
     \label{eq:rellich1}
     \begin{alignedat}{1}
       &\|\nabla u\|_\partial + \bigg\|\phi - \bigg\{ \frac{1}{{r_0}^{d - 1}}\int_{\partial\Omega} \phi \d\sigma \bigg\} \bigg\|_\partial \\[1em]
-      &\hspace{2cm} \leq C\, \bigg\{ \|\nabla_{\mathrm{tan}} u\|_\partial + |\lambda|^{1/2} \|u\|_\partial + |\lambda| \|u \cdot n\|_{\HH^{-1}(\partial\Omega)} \bigg\}
+      &\hspace{2cm} \leq C\, \bigg\{ \|\nabla_{\mathrm{tan}} u\|_\partial + |\lambda|^{1/2} \|u\|_\partial + |\lambda| \, \|u \cdot n\|_{\HH^{-1}(\partial\Omega)} \bigg\}
     \end{alignedat}
   \end{align}
   and
   \begin{align}
     \label{eq:rellich2}
-    \|\nabla u\|_\partial + |\lambda|^{1/2} \|u\|_\partial + |\lambda| \|u \cdot n\|_{\HH^{-1}(\partial\Omega)} + \|\phi\|_\partial
+    \|\nabla u\|_\partial + |\lambda|^{1/2} \|u\|_\partial + |\lambda| \, \|u \cdot n\|_{\HH^{-1}(\partial\Omega)} + \|\phi\|_\partial
     \leq C \, \bigg\|\frac{\partial u}{\partial \nu} \bigg\|_\partial,
   \end{align}
   where $\frac{\partial}{\partial \nu}$ denotes the conormal derivative, and $C$ depends only on $d$, $\tau$, $\theta$ and the Lipschitz character of $\Omega$.
@@ -36,10 +37,11 @@ This inequality is part of the following theorem.
 \begin{rem}
   \label{rem:shenNontangential}
   The assumptions on $u$ in Theorem \ref{thm:rellich} are sufficient for $u$ to have a nontangential limit and a square integrable maximal function $(u)^*$. 
+  Indeed for $d = 2$ we have $(u)^* \in \Ell^\infty(\partial\Omega)$, for $d = 3$ we have $(u)^* \in \Ell^p(\partial\Omega), p \in (1,\infty)$, and for $d \geq 3$ we have $(u)^* \in \Ell^p(\partial\Omega)$, $p \in \big(1, 2 (d - 1) / (d - 3) \big)$.
   A proof of these facts can be found in Shen's notes \cite[Prop. 7.1.3]{Shen2017}.
 \end{rem}
 
-We will now prepare the proof of this theorem by proving several helpful lemmata.
+We will now prepare the proof of Theorem \ref{thm:rellich} by proving several helpful lemmata.
 The first lemma deals with so called \emph{Rellich identities} for solutions to the Stokes resolvent system.
 
 \begin{lem}
@@ -64,7 +66,7 @@ The first lemma deals with so called \emph{Rellich identities} for solutions to 
 
 \begin{proof}
   The proof of the stated identities reduces to several applications of the divergence theorem once we establish its applicability.
-  To this end, we want to make Proposition \ref{prop:approximationArgument} available. We note that the assumptions given in Theorem \ref{thm:rellich} are sufficent and we will verify them, once they are used.
+  To this end, we want to make Proposition \ref{prop:approximationArgument} available. We note that the assumptions given in Theorem \ref{thm:rellich} are sufficient for this purpose and we will verify them, once they are used.
 
   Let's expand the first summand in \eqref{eq:rellichIdentity} using the definition of conormal derivatives
   \begin{align*}
@@ -149,7 +151,7 @@ These operators show up in identity \eqref{eq:rellichIdentity2} as
   \partial_{\tau_{ik}} u_i =  \Big\{ n_i \frac{\partial u_i}{\partial x_k} - n_k \frac{\partial u_i}{\partial x_i} \Big\}
 \end{align*}
 
-We make a quick detour that gives us the following lemma basic lemmas on elements of the sector $\Sigma_\theta$.
+We make a quick detour that gives us the following basic lemma on elements of the sector $\Sigma_\theta$.
 A powerful generalization of this Lemma can be found in Tolksdorf \cite[Lem. 5.2.4]{tolksdorf}.
 
 \begin{lem}
@@ -157,7 +159,7 @@ A powerful generalization of this Lemma can be found in Tolksdorf \cite[Lem. 5.2
   Let $\theta \in (0,\pi/2)$.
   Then there exists $\alpha$ depending only on $\theta$ such that for all $\lambda \in \Sigma_\theta$ the following inequality holds:
   \begin{align*}
-    \Re(\lambda) + \alpha |\Im(\lambda)| \geq |\lambda|.
+    \Re(\lambda) + \alpha \, \big|\Im(\lambda)\,\big| \geq |\lambda|.
   \end{align*}
 \end{lem}
 
@@ -169,11 +171,11 @@ A powerful generalization of this Lemma can be found in Tolksdorf \cite[Lem. 5.2
   \end{align*}
   If $\varphi = |\varphi|$, this gives the inequality
   \begin{align*}
-    \Re(\lambda) + \alpha |\Im(\lambda)| = \cos(\varphi) + \alpha \sin(\varphi) \geq 1.
+    \Re(\lambda) + \alpha \, |\Im(\lambda)\,| = \cos(\varphi) + \alpha \sin(\varphi) \geq 1.
   \end{align*}
   Conversely, if $\varphi = -|\varphi|$, then we have by the symmetry properties of $\sin$ and $\cos$ that
   \begin{align*}
-    \Re(\lambda) + \alpha |\Im(\lambda)| = \cos(-\varphi) + \alpha \sin(-\varphi) \geq 1.
+    \Re(\lambda) + \alpha\, |\Im(\lambda)\,| = \cos(-\varphi) + \alpha \sin(-\varphi) \geq 1.
   \end{align*}
   For arbitrary $\lambda$ the claim follows by considering the normalized value $(\lambda / |\lambda|)$.
 \end{proof}

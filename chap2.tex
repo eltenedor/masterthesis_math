@@ -12,18 +12,18 @@ Now set
 \begin{align*}
   k = \sqrt{r} \, \e^{\ii(\pi + \tau)/2}.
 \end{align*}
-Then 
+Then we have
 \begin{align*}
   k^2 = -\lambda\quad\text{ and }\quad \frac{\theta}{2} < \arg(k) < \pi - \frac{\theta}{2}
 \end{align*}
-as
+as it holds
 \begin{align*}
   \arg(k) = \frac{\pi + \tau}{2} &> \frac{\pi}{2} + \frac{-\pi + \theta}{2} = \frac{\theta}{2} 
   \intertext{on the one hand and}
   &< \frac{\pi}{2} + \frac{\pi - \theta}{2} = \pi  - \frac{\theta}{2}
 \end{align*}
 on the other hand.
-This gives rise to the following estimate
+The preceding calculation gives rise to the following estimate:
 \begin{align}
   \label{eq:imaginaryPartEstimate}
   \Im(k) > \sqrt{|\lambda|}  \sin(\theta/2) > 0.
@@ -58,12 +58,12 @@ We will usually set
 Note that by \eqref{eq:imaginaryPartEstimate} we will always have $\Im(z) > 0$. 
 Since $\nu_d < \nu_{d + 1}$ for all $d \geq 2$ and $\nu_2 = 0$, formula \eqref{eq:integralRepresentationHankel} will hold for all dimensions $d \geq 2$ and all $x \in \R^d$.
 
-In the case $d = 2$ formula \eqref{eq:definitionFundamentalHelmholtz} simplifies to 
+In the case $d = 2$, formula \eqref{eq:definitionFundamentalHelmholtz} simplifies to 
 \begin{align}
   \label{eq:2dDefinitionFundamentalHelmholtz}
   G(x;\lambda) = \frac{\ii}{4} H_{0}^{(1)}(k|x|).
 \end{align}
-In the case $d = 3$ one has an even easier formula, namely
+In the case $d = 3$, one has an even easier formula, namely
 \begin{align}
   \label{eq:3dDefinitionFundamentalHelmholtz}
   G(x; \lambda) = \frac{\ii}{4(2\pi)^{1/2}} \cdot \frac{1}{|x|} \cdot (k |x|)^{1/2} H_{1/2}^{(1)}(k|x|) =  \frac{\e^{\ii k |x|}}{4 \pi |x|},
@@ -236,12 +236,12 @@ and thus we will also sometimes use the equivalent definition
   \label{eq:defncd}
   c_d \coloneqq \frac{\Gamma(\frac{d}{2} - 1)}{4 \pi^{\frac{d}{2}}}.
 \end{align}
-Furthermore the leading coefficient of the asymptotic expansions of the Hankel functions \eqref{eq:asymptoticd4}-\eqref{eq:asymptoticd7} for $d \geq 3$ will be denoted as
+Furthermore, the leading coefficient of the asymptotic expansions of the Hankel functions \eqref{eq:asymptoticd4}-\eqref{eq:asymptoticd7} for $d \geq 3$ will be denoted as
 \begin{align}
   \label{eq:Defnad}
   a_d \coloneqq \frac{2^{\frac{d}{2} - 1} \Gamma(\frac{d}{2} - 1)}{\ii \pi}.
 \end{align}
-The coefficients $a_d$ and $c_d$ are related in the following way
+The coefficients $a_d$ and $c_d$ are related in the following way:
 \begin{align*}
   c_d 
   %= \frac{\Gamma(\frac{d}{2} - 1) 2^\nu}{\ii \pi} 
@@ -274,11 +274,11 @@ The following lemma will help us to estimate derivatives of \eqref{eq:HelmholtzL
     In this case, Lemma \ref{lem:estimateHelmholtzDerivatives} gives
     \begin{align*}
       \Big|\nabla_x^l \Big\{ G(x; \lambda) - G(x; 0) \Big\} \Big|
-      \leq C \bigg\{ \frac{\e^{-c \sqrt{|\lambda|} |x|}}{|x|^{d - 2 + l}} + \frac{1}{|x|^{d - 2 + l}} \bigg\} \leq C \frac{|\lambda|}{|x|^{d - 4 + l}},
+      \leq C \Bigg\{ \frac{\e^{-c \sqrt{|\lambda|} |x|}}{|x|^{d - 2 + l}} + \frac{1}{|x|^{d - 2 + l}} \Bigg\} \leq C \frac{|\lambda|}{|x|^{d - 4 + l}},
     \end{align*}
     where $C$ depends only on $d$, $l$ and $\theta$.
       Therefore, for the remaining proof we will suppose $|\lambda||x|^2 \leq ({1}/{2})$.
-  \item In this step, we show that we can restrict ourselves to proving \eqref{eq:HelmholtzLaplaceDifferenceEstimate} in three cases: (1) $d \geq 5$ and $l = 0$; (2) $d = 3$ or $4$ and $l = 1$; (3) $d = 2$ and $l = 3$.
+  \item In this step we show that we can restrict ourselves to proving \eqref{eq:HelmholtzLaplaceDifferenceEstimate} in three cases: (1) $d \geq 5$ and $l = 0$; (2) $d = 3$ or $4$ and $l = 1$; (3) $d = 2$ and $l = 3$.
     
     Suppose \eqref{eq:HelmholtzLaplaceDifferenceEstimate} holds in case (1) and let $l > 1$.
     If we set $ w(x) = G(x;\lambda) - G(x;0) $, we have $\Delta_x w = \lambda G(x; \lambda)$ in $\R^d \setminus \{0\}$.
@@ -733,7 +733,7 @@ which, by a calculation analogous to the case $d \geq 7$, yields the claim.
 %  \big| \nabla_x \{ \Gamma(x; \lambda) - \Gamma(x; 0) \}\big| \leq C |\lambda| |x|^{3 - d} \, \big| \log(|\lambda| |x|^2)\, \big|\,.
 %\end{align*}
 
-For $d = 5$ we differentiate \eqref{eq:secondTerm} twice and use relation \eqref{eq:fundamentalSolutionStokes35} for the fundamental solution of the Stokes problem to  write
+For $d = 5$, we differentiate \eqref{eq:secondTerm} twice and use relation \eqref{eq:fundamentalSolutionStokes35} for the fundamental solution of the Stokes problem to  write
 \begin{align*}
   &\frac{\partial^2}{\partial x_\alpha \partial x_\beta} \bigg\{ G(x; \lambda) - G(x; 0) + \frac{\lambda}{6\, \omega_5 |x|^{d - 4}} \bigg\} \\
   &\hspace{3cm}= \frac{\partial^2}{\partial x_\alpha x_\beta} \bigg\{ \frac{\ii}{4(2\pi)^{\frac{3}{2}}} \cdot \frac{1}{|x|^3} \Big[ z^{\frac{3}{2}} H_{\frac{3}{2}}^{(1)}(z) - a_5 - b_5 z^2 - w z^3 \Big] \bigg\},
@@ -754,7 +754,7 @@ where $z = k |x|$, $b_4 = ({\ii}/{\pi})$ and $w \in \C$ is an arbitrary constant
 \end{align*}
 The estimate has the same right hand side as \eqref{eq:estimateDerivativesd6} and the proof can be carried out just as in the previous cases.
 
-For $d = 2$ the claimed estimate follows from a direct calculation which is postponed until the appendix of this thesis.
+For $d = 2$, the claimed estimate follows from a direct calculation which is postponed until the appendix of this thesis.
 \end{proof}
 
 We can now use the assumption $|\lambda||x|^2 \leq ({1}/{2})$  to unify the structure of the estimates from Theorem \ref{thm:differenceFundamentalSolutionStokes}.
