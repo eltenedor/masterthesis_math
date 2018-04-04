@@ -142,16 +142,35 @@ Consider the operators $\partial_{\tau_{jk}}$ which act on compactly supported c
   \label{eq:defnTangDerivative}
   \partial_{\tau_{jk}} \psi \coloneqq n_j \frac{\partial \psi}{\partial x_k} \bigg|_{\partial\Omega} - n_k \frac{\partial \psi}{\partial x_j} \bigg|_{\partial\Omega}, \quad j,k = 1,\dots,d.
 \end{align}
-They have been introduced by Mitrea and Wrigth \cite[p. 16]{mitreaWright} and come with a helpful  ``integration by parts'' rule that can be used to define Sobolev spaces on the boundary $\partial\Omega$. However for our purposes it will suffice to formulate this rule for the specific case
-
 These operators show up in identity \eqref{eq:rellichIdentity2} as
 \begin{align*}
   \partial_{\tau_{kj}} u_i = \Big\{ n_k \frac{\partial u_i}{\partial x_j} - n_j \frac{\partial u_i}{\partial x_k} \Big\}
   \quad\text{and}\quad
   \partial_{\tau_{ik}} u_i =  \Big\{ n_i \frac{\partial u_i}{\partial x_k} - n_k \frac{\partial u_i}{\partial x_i} \Big\}
 \end{align*}
+and have been introduced by Mitrea and Wrigth \cite[p. 16]{mitreaWright}. 
+These operators are called \emph{first-order tangential derivative operators} and relate to the tangential gradient, which has been introduced in 
+\eqref{eq:tangentialGradient}, in the following way:
+\begin{align}
+  \label{eq:relTanGrad}
+  (\nabla_{\mathrm{tan}} \psi)_j = \frac{\partial \psi}{\partial x_j} - n_k n_j \frac{\partial \psi}{\partial x_k} = n_k \partial_{\tau_{kj}} \psi.
+\end{align}
+The tangential derivative operators come with a helpful  ``integration by parts'' rule and can be used to define Sobolev spaces on the boundary $\partial\Omega$:
+For $f \in \Ell^1_\loc(\Omega)$, we start by defining functionals on $\CC_0^\infty(\R^d)$ by setting
+\begin{align*}
+  \partial_{\tau_{kj}} f \colon \CC_0^\infty(\R^d) \ni \psi \mapsto \int_{\partial\Omega} f ( \partial_{\tau_{jk}} \psi) \d\sigma.
+\end{align*}
+Now the weak tangential derivatives of $f$ are given by those functionals which are regular, i.e. elements of $\Ell^1_\loc(\partial\Omega)$.
+In this case, the following integration by parts formula holds:
+\begin{align*}
+  \int_{\partial\Omega} f ( \partial_{\tau_{jk}} \psi) \d\sigma = \int_{\partial\Omega} (\partial_{\tau_{kj}} f) \psi \d\sigma.
+\end{align*}
+For $p \in (1,\infty)$, we define the corresponding Sobolev space via
+\begin{align*}
+  \WW^{1,p}(\partial\Omega) = \Big\{ f \in \Ell^p(\partial\Omega) \colon \partial_{\tau_{jk}} f \in \Ell^p(\partial\Omega), \; j,k = 1,\dots,d \Big\}.
+\end{align*}
 
-We make a quick detour that gives us the following basic lemma on elements of the sector $\Sigma_\theta$.
+We extend our detour by the following basic lemma on elements of the sector $\Sigma_\theta$.
 A powerful generalization of this Lemma can be found in Tolksdorf \cite[Lem. 5.2.4]{tolksdorf}.
 
 \begin{lem}
@@ -309,7 +328,7 @@ To this end, for the third integral we calculate
   \end{align*}
   where for the last inequality we used the fact that $\varepsilon < 1$.
 
-  For inequality \eqref{eq:gradEstimateRellich2}, we use the Rellich identity \eqref{eq:rellichIdentity2} to obtain the estimate
+  For inequality \eqref{eq:gradEstimateRellich2}, we use the Rellich identity \eqref{eq:rellichIdentity2} and the relation \eqref{eq:relTanGrad} to obtain the estimate
   \begin{align}
     \label{eq:onTheWay}
     \begin{alignedat}{1}
@@ -319,7 +338,7 @@ To this end, for the third integral we calculate
     &\hspace{2cm} + \int_\Omega |\nabla u|^2 \d x + \int_\Omega |\nabla u| |\phi| \d x + |\lambda| \int_\Omega |\nabla u| |u|\d x \bigg\}.
   \end{alignedat}
   \end{align}
-  As before we estimate the three terms on the right side of \eqref{eq:onTheWay} using \eqref{eq:laxMilgramIneq}, \eqref{eq:nablaPhi} and \eqref{eq:lambdaNablaU}, respectively and obtain the estimate
+  As before we estimate the three terms on the right side of \eqref{eq:onTheWay} using \eqref{eq:laxMilgramIneq}, \eqref{eq:nablaPhi} and \eqref{eq:lambdaNablaU}, respectively, and obtain the estimate
   \begin{align*}
     \| \nabla u\|_\partial^2 
     &\leq C \bigg\{ \|\nabla_{\mathrm{tan}} u\|_\partial 
@@ -335,7 +354,7 @@ To this end, for the third integral we calculate
   The claim now follows if we use the definition of the conormal derivative and the norm equivalence on finite dimensional vector spaces.
 \end{proof}
 
-We prove one last lemma befor we tackle the central theorem of this chapter.
+We prove one last lemma before we tackle the central theorem of this chapter.
 
 \begin{lem}
   Assume that $(u,\phi)$ satisfies the same conditions as in Theorem \ref{thm:rellich}.
