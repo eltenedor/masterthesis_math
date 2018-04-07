@@ -356,7 +356,29 @@ To this end, for the third integral we calculate
 
 We prove one last lemma before we tackle the central theorem of this chapter.
 It will not depend on the lemmata which were proven in the preceding part of this chapter, as the approach to derive boundary estimates will be different.
-We will not rely upon the rellich identities from Lemma \ref{lem:rellichIdentity} but directly part from a variational formulation of the Stokes resolvent problem on the boundary.
+We will not rely upon the rellich identities from Lemma \ref{lem:rellichIdentity} but directly part from a variational formulation of the Stokes resolvent problem on the boundary. Furthermore, we will rely on the following Theorem about the regularity problem and the Neumann problem for the Laplacian on bounded Lipschitz domains
+\begin{thm}
+  \label{thm:jerisonKenig}
+  Let $\Omega \subset \R^d$, $d \geq 2$, be a bounded Lipschitz domain. Then the following statements hold:
+  \begin{enumerate}[a)]
+    \item Given $f \in \HH^1(\partial\Omega)$, there exists a unique $\psi \in$ with $(\nabla \psi)^* \in \Ell^2(\partial\Omega)$ such that $\Delta u = 0$ in $\Omega$ and $\psi$ converges nontangentially to $f$ a.e.. Furthermore, the estimate 
+      \begin{align*}
+        \|\nabla(\psi)\|_\partial \leq C \|f\|_{\HH^1(\partial\Omega)}
+      \end{align*}
+      holds with a constant only depending on the Lipschitz character of $\Omega$.
+    \item Given $f \in \Ell^2(\partial\Omega)$ with $\int_{\partial\Omega} f \d\sigma = 0$, there exists a harmonic function $\psi$ on $\Omega$ with $\frac{\partial\psi}{\partial n} = f$ a.e.. Furthermore, the estimate
+      \begin{align*}
+        \| \psi\|_{\HH^1(\partial\Omega)} \leq C \|f\|_\partial
+      \end{align*}
+      holds with C only depending on the Lipschitz character of $\Omega$.
+  \end{enumerate}
+\end{thm}
+
+\begin{proof}
+  According to Kenig, for the differential operator $\Delta$ the \emph{regularity problem}, $(R)_2$, and the \emph{Neumann problem}, $(N)_2$,  are solvable for data $f \in \Ell^2(\partial\Omega)$, see \cite[Thm. 2.1.10]{kenigBook}.
+  Checking the definitions of $(R)_2$, see \cite[Defn. 1.7.10]{kenigBook}, and $(N)_2$, see \cite[Defn. 1.7.10]{kenigBook}, the claimed properties of follow from Theorems 1.8.2 and 1.8.3 in \cite[Chap. 1]{kenigBook}.
+  We also refer to the works of Jerison and Kenig on the $\Ell^2$-regularity problem \cite{jerisonKenig2} and the Neumann problem \cite{jerisonKenig}.
+\end{proof}
 
 \begin{lem}
   Assume that $(u,\phi)$ satisfies the same conditions as in Theorem \ref{thm:rellich}.
@@ -433,8 +455,8 @@ We will not rely upon the rellich identities from Lemma \ref{lem:rellichIdentity
   Identifying $\Delta u \cdot n$ with an element of $\HH^{-1}(\partial\Omega)$, the estimate \eqref{eq:deltaun} follows. 
 
   For the proof of estimate \eqref{eq:nablaPhin} we will use $\Ell^2$-estimates for the Neumann and regularity problems for the Laplace equation in Lipschitz domains.
-  Jerison and Kenig showed that for $g \in \Ell^2(\partial\Omega)$ with mean value zero the \emph{Neumann problem} for Laplace's equation on the Lipschitz domain $\Omega$ has a unique solution $\psi$ with  $(\nabla \psi)^* \in \Ell^2(\partial\Omega)$, $\frac{\partial \psi}{\partial n} = g$ on $\partial \Omega$ nontangentially and the solution fulfills the estimate $\|\psi\|_{\HH^1(\partial\Omega)} \leq C \|g\|_\partial$, see \cite[Thm. 2]{jerisonKenig}.
-  If Proposition \ref{prop:approximationArgument} is applicable, we see that
+  Jerison and Kenig showed that for $g \in \Ell^2(\partial\Omega)$ with mean value zero the \emph{Neumann problem} for Laplace's equation on the Lipschitz domain $\Omega$ has a unique solution $\psi$ with  $(\nabla \psi)^* \in \Ell^2(\partial\Omega)$, $\frac{\partial \psi}{\partial n} = g$ on $\partial \Omega$ nontangentially and the solution fulfills the estimate $\|\psi\|_{\HH^1(\partial\Omega)} \leq C \|g\|_\partial$, see Theorem \ref{thm:jerisonKenig}.
+  By Proposition \ref{prop:approximationArgument}, we see that
   \begin{align*}
     \int_{\partial\Omega} \phi \frac{\partial\psi}{\partial x_i} n_i \d\sigma  
     = \int_\Omega \frac{\partial}{\partial x_i} \bigg\{ \phi \frac{\partial\psi}{\partial x_i} \bigg\} d x 
@@ -460,7 +482,7 @@ We will not rely upon the rellich identities from Lemma \ref{lem:rellichIdentity
   This together with Lemma \ref{lem:compareBoundaryWithBall} proves the left side of inequality \eqref{eq:nablaPhin}.
 
   For the right side of inequality \eqref{eq:nablaPhin}, we work in a similar way.
-  We will use results for the \emph{regularity problem} of Laplace's equation by Jerison and Kenig \cite{jerisonKenig2}:
+  We will use results for the \emph{regularity problem} of Laplace's equation by Jerison and Kenig, see Theorem \ref{thm:jerisonKenig}.
   Given $f \in \HH^1(\partial\Omega)$, there exists a harmonic function $\psi$ in $\Omega$ such that $(\nabla\psi)^* \in \Ell^2(\partial\Omega)$ and $\psi = f$ on $\partial\Omega$ nontangentially. Furthermore, the estimate $\|\nabla \psi\|_\partial \leq C \|f\|_{\HH^1(\partial\Omega)}$ holds.
   As for \eqref{eq:dualityPhi}, we calculate
   \begin{align*}
@@ -482,7 +504,7 @@ We will not rely upon the rellich identities from Lemma \ref{lem:rellichIdentity
   \begin{align*}
     c \| \phi \|_\partial \leq \| \nabla \phi \cdot n \|_{\HH^{-1}(\partial\Omega)},
   \end{align*}
-  holds for \emph{all} harmonic functions $\phi$ with vanishing mean on $\partial\Omega$ and not only those that correspond to the pressure of the Stokes resolvent problem.
+  holds for \emph{all} harmonic functions $\phi$ with vanishing mean on $\partial\Omega$ and not only those that correspond to the pressure term of the Stokes resolvent problem.
 \end{rem}
 
 After all this preparation we have accquainted enough tools and are now able to prove Theorem \ref{thm:rellich}.
@@ -491,18 +513,18 @@ After all this preparation we have accquainted enough tools and are now able to 
   For the proof of estimate \eqref{eq:rellich1}, without loss of generality we can assume that $\int_{\partial\Omega} \phi \d \sigma = 0$.
 
   We start by proving estimate \eqref{eq:rellich1}. 
-  Using \eqref{eq:phiDashintPhi} to bound the second summand in \eqref{eq:rellich1} and then \eqref{eq:gradEstimateRellich2} for the terms involving $\nabla u$, we get
+  Using \eqref{eq:phiDashintPhi} to bound the second summand in \eqref{eq:rellich1} and then \eqref{eq:gradEstimateRellich2} for $\nabla u$, we get
   \begin{align*}
     \|\nabla u\|_\partial + \|\phi\|_\partial
     &\leq C \{ \|\nabla u\|_\partial + |\lambda| \|u \cdot n \|_{\HH^1(\partial\Omega)} \} \\
-    &\leq C_\varepsilon \Big\{ \|\nabla_{\mathrm{tan}} u \|_\partial + |\lambda|^{1/2} \|u\|_\partial + |\lambda| \| u\cdot n\|_{\HH^{-1}(\partial\Omega)} \Big\} \\
-    &\quad + C \varepsilon \{ \|\nabla u\|_\partial + \|\phi\|_\partial \}
+    &\leq C_\varepsilon \Big\{ \|\nabla_{\mathrm{tan}} u \|_\partial + |\lambda|^{1/2} \|u\|_\partial + |\lambda| \| u\cdot n\|_{\HH^{-1}(\partial\Omega)} \Big\} 
+     + C \varepsilon \{ \|\nabla u\|_\partial + \|\phi\|_\partial \}
   \end{align*}
   for all $\varepsilon \in (0,1)$.
   Chosing $\varepsilon$ such that $C \varepsilon < (1/2)$ we can rearrange the above inequality and obtain estimate \eqref{eq:rellich1}.
 
   Estimate \eqref{eq:rellich2} will need more effort to be proven.
-  In order to obtain the desired estimate we will divide the left hand side of inequality \eqref{eq:rellich2} into two groups as the following line suggests and bound both groups separately.
+  In order to obtain the desired estimate we will divide the left hand side of inequality \eqref{eq:rellich2} into two groups as the following line suggests and then bound both groups separately.
   \begin{align*}
     \Big\{ \|\nabla u\|_\partial + |\lambda|\, \|u \cdot n\|_{\HH^{-1}(\partial\Omega)} + \|\phi\|_\partial \Big\} + |\lambda|^{1/2} \|u\|_\partial \eqqcolon G_1 + G_2.
   \end{align*}
