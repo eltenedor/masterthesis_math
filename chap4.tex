@@ -219,8 +219,8 @@ The next lemma enables us to handle the solid integrals in \eqref{eq:rellichIden
   \end{align}
   Rewriting the first term of equation \eqref{eq:variationalStokes} leads to 
   \begin{align*}
-    -\int_{\Omega}  \frac{\partial^2 u_j}{\partial x_i \partial x_i}  \, \overline u_j \d x
-    = -\int_{\Omega}  \frac{\partial }{\partial x_i} \bigg\{ \overline u_j \frac{\partial u_j}{\partial x_i} \bigg\} \d x + \int_\Omega \frac{\partial u_j}{\partial x_i} \cdot \frac{\partial \overline u_j}{\partial x_i} \d x.
+    -\int_{\Omega} \frac{\partial^2 u_j}{\partial x_i \partial x_i}  \, \overline u_j \d x
+    = -\int_{\Omega} \frac{\partial }{\partial x_i} \bigg\{ \overline u_j \frac{\partial u_j}{\partial x_i} \bigg\} \d x + \int_\Omega \frac{\partial u_j}{\partial x_i} \cdot \frac{\partial \overline u_j}{\partial x_i} \d x.
     \end{align*}
   Note that since $u$ is solenoidal, we have for the third term of equation \eqref{eq:variationalStokes}
   \begin{align*}
@@ -261,7 +261,7 @@ The next lemma combines Rellich identities \eqref{eq:rellichIdentity} and \eqref
   and
   \begin{align}
     \label{eq:gradEstimateRellich2}
-    \|\nabla u\|_\partial \leq C_\varepsilon \Big\{ \|\nabla_{\mathrm{tan}} u \|_\partial + \|\, |\lambda|^{1/2} u\|_\partial \Big\} + \varepsilon \{ \|\nabla u\|_\partial + \|\phi\|_\partial \}
+    \|\nabla u\|_\partial \leq C_\varepsilon \Big\{ \|\nabla_{\mathrm{tan}} u \|_\partial + \|\, |\lambda|^{1/2} u\|_\partial \Big\} + \varepsilon \big\{ \|\nabla u\|_\partial + \|\phi\|_\partial \big\}
   \end{align}
   for all $\varepsilon \in (0,1)$, where $C_\varepsilon$ depends only on $d$, $\theta$, $\tau$, $\varepsilon$ and the Lipschitz character of $\Omega$.
 \end{lem}
@@ -376,7 +376,7 @@ We will not rely upon the rellich identities from Lemma \ref{lem:rellichIdentity
 
 \begin{proof}
   According to Kenig, for the differential operator $\Delta$ the \emph{regularity problem}, $(R)_2$, and the \emph{Neumann problem}, $(N)_2$,  are solvable for data $f \in \Ell^2(\partial\Omega)$, see \cite[Thm. 2.1.10]{kenigBook}.
-  Checking the definitions of $(R)_2$, see \cite[Defn. 1.7.10]{kenigBook}, and $(N)_2$, see \cite[Defn. 1.7.10]{kenigBook}, the claimed properties of follow from Theorems 1.8.2 and 1.8.3 in \cite[Chap. 1]{kenigBook}.
+  Checking the definitions of $(R)_2$, see \cite[Defn. 1.7.10]{kenigBook}, and $(N)_2$, see \cite[Defn. 1.7.9]{kenigBook}, the claimed properties of follow from Theorems 1.8.2 and 1.8.3 in \cite[Chap. 1]{kenigBook}.
   We also refer to the works of Jerison and Kenig on the $\Ell^2$-regularity problem \cite{jerisonKenig2} and the Neumann problem \cite{jerisonKenig}.
 \end{proof}
 
