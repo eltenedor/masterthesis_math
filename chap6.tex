@@ -1,6 +1,6 @@
 \chapter{Derivation of Resolvent Estimates}
 
-In this final chapter we will prove that the Stokes semigroup is analytic on $\Ell^p_\sigma(\Omega, \C^d)$ for bounded Lipschitz domains $\Omega \subseteq \R^d$, $d \geq 3$.
+In this final chapter we will prove that the Stokes semigroup is analytic on $\Ell^p_\sigma(\Omega, \C^d)$ for bounded Lipschitz domains $\Omega \subseteq \R^d$, $d \geq 2$.
 
 The first step will be to establich a weak reverse H\"older estimate for local solutions of the Stokes resolvent problem. 
 We start with a similar result on Lipschitz cylinders.
@@ -8,7 +8,7 @@ We start with a similar result on Lipschitz cylinders.
 \begin{lem}
   \label{lem:reverseHoelderCylinder}
   Let $\eta \colon \R^{d - 1} \to \R$ be a Lipschitz function.
-  Furthermore, let $u \in \HH^1(D_\eta(r); \C^d)$ and $\phi \in \Ell^2(D_\eta(2r))$ solve the Stokes resolvent problem in $D_\eta(2r)$ with $u = 0$ on $I_\eta(2r)$ for some $0 < r < \infty$ and $\lambda \in \Sigma_\theta$.
+  Furthermore, let the functions $u \in \HH^1(D_\eta(r); \C^d)$ and $\phi \in \Ell^2(D_\eta(2r))$ solve the Stokes resolvent problem in $D_\eta(2r)$ with $u = 0$ on $I_\eta(2r)$ for some $0 < r < \infty$ and $\lambda \in \Sigma_\theta$.
   Let $p_d = \frac{2d}{d - 1}$.
   Then 
   \begin{align}
@@ -21,13 +21,13 @@ We start with a similar result on Lipschitz cylinders.
 \begin{proof}
   Without loss of generality we rescale and assume that $r = 1$.
   Let $t \in (1,2)$. 
-  We note that by \cite[Lemma 1.3.25]{tolksdorf} a Lipschitz cylinder is itself a Lipschitz domain.
+  We note that by a thorough investigation by Tolksdorf, see \cite[Lemma 1.3.25]{tolksdorf}, a Lipschitz cylinder is itself a Lipschitz domain.
   It is therefore admissible to apply Theorem \ref{eq:reverseTrace} to $u$ in $D_\eta(t)$ which yields
   \begin{align*}
     \Big( \int_{D_\eta(t)} |u|^{p_d} \d x \Big)^{2/p_d} \leq C \int_{\partial D_\eta(t)} |u|^2 \d \sigma,
   \end{align*}
-  where $C$ depends only on $d$, $\theta$ and the Lipschitz character of $\Omega$. In particular $C$ does not depend on $t$.
-  Since $u$ vanishes on $I(2)$ we have that
+  where $C$ depends only on $d$, $\theta$ and the Lipschitz character of $\Omega$. In particular, $C$ does not depend on $t$.
+  Since $u$ vanishes on $I(2)$, we have that
   \begin{align*}
     \Big( \int_{D_\eta(1)} |u|^p \d x \Big)^{2/p} \leq C \int_{\partial D_\eta(t) \setminus I(2)} |u|^2 \d \sigma.
   \end{align*}
