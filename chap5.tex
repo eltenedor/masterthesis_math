@@ -477,44 +477,60 @@ The next theorem can in some sense be regarded as a reverse trace theorem and wi
 \end{thm}
 
 \begin{proof}
-  Let us denote the trace of $u$ on $\partial\Omega$ by $f$ and let furthermore $w \coloneqq \dlp_\lambda(g)$, with $g \in \Ell^2(\partial\Omega; \C^d)$, be the solution of the $\Ell^2$ Dirichlet problem with boundary data $f \in \Ell^2_n(\partial\Omega)$ as given by Theorem \ref{thm:exAndUniqueSolution}.
-  For the sequence $(\Omega_j)_{j \in \N}$ of smooth domains that approximates $\Omega$ from inside as described by Theorem \ref{thm:smoothApproximation}, an application of Lemma \ref{lem:l2unique} shows
-  \begin{align}
-    \int_{\Omega_j} |u - w|^2 \d x \leq C \int_{\partial\Omega_j} |u - w|^2 \d \sigma,
-  \end{align}
-  where $C$ does not depend on $j$ but on the Lipschitz character of $\Omega$.
-  Now let $\varepsilon > 0$ be given. 
-  From the theory of Sobolev spaces it is known that there exists $\varphi_\varepsilon \in \CC^\infty(\overline\Omega; \C^d)$ such that $\big\|\varphi_\varepsilon - u\big\|_{\HH^1(\Omega; \C^d)}^2 \leq ({\varepsilon}/{3})$, see Adams and Fournier \cite[Thm. 3.18]{adams}.
-  Due to Theorem \ref{thm:smoothApproximation} we know that 
-  \begin{align*}
-    \int_{\partial\Omega_j} |\varphi_\varepsilon - w|^2 \d\sigma \to \int_{\partial\Omega} |\varphi_\varepsilon - u|^2 \d\sigma, \text{ as } j \to \infty
-  \end{align*}
-  since $w = f$ on $\partial\Omega$ in the sense of nontangential convergence.
-  Therefore we choose $J$ large enough such that for all $j \geq J$ we have
-  \begin{align*}
-    \int_{\partial\Omega_j} |\varphi_\varepsilon - w|^2 \d\sigma \leq \frac{2}{3}\, \varepsilon.
-  \end{align*}
-  This gives together with the trace theorem that
-  \begin{align*}
-    \int_{\partial\Omega_j} |u - w|^2 \d\sigma 
-    &\leq \int_{\partial\Omega_j} |u - \varphi_\varepsilon |^2 \d\sigma + \int_{\partial\Omega_j} |\varphi_\varepsilon - w|^2 \d\sigma \\
-    &\leq C\, \big\| u - \varphi_\varepsilon \big\|_{\HH^1(\Omega)}^2 + \int_{\partial\Omega_j} |\varphi_\varepsilon - w|^2 \d \sigma,
-  \end{align*}
-  where once again $C$ only depends on the Lipschitz character of $\Omega$ and is thus independent of $j$.
-  Due to the approximation theorem \ref{thm:smoothApproximation}, we may take $j$ large enough such that also the second summand of the previous inequality is smaller than $\varepsilon/2$.
-  As a consequence we get that $w = u$ in $\Omega$.
-  Now Theorem \ref{thm:exAndUniqueSolution} gives
-  \begin{align*}
-    \| (u)^* \|_\partial = \| (w)^* \|_\partial \leq C \| f\|_\partial = C \|u\|_\partial,
-  \end{align*}
-  where $C$ depends on $d$, $\theta$, and the Lipschitz character of $\Omega$.
-  The claimed inequality now follows from estimate
+  We start by citing the following central inequality
   \begin{align}
     \label{weizhangestimate}
     \Big( \int_\Omega |u|^p \d x \Big)^{1/p} \leq C \Big( \int_{\partial\Omega} |(u)^*|^2 \d \sigma \Big)^{1/2},
   \end{align}
   where $C$ only depends on $d$ and the Lipschitz constant of $\Omega$.
-  The proof of \eqref{weizhangestimate} was carried out by Wei and Zhang in \cite[Lem. 3.3]{weiZhang}.
+  The proof of \eqref{weizhangestimate} was carried out by Wei and Zhang in \cite[Lem. 3.3]{weiZhang} and can also be found in Shen's paper \cite[p. 418f.]{Shen2012}.
+
+  Up to this point we do not know wether the right hand side of this inequality equals infinity.
+  We only know that $(u,\phi)$ solves the Stokes resolvent problem and it implicitly solves a Dirichlet problem with boundary data given as $f = \operatorname{Tr} u \in \Ell^2(\partial\Omega; C^d)$.
+  The following part of this proof will now show that $u$ coincides with the solution $w \coloneqq \dlp_\lambda(g)$, $g \in \Ell^2(\partial\Omega; \C^d),$  of the $\Ell^2$ Dirichlet problem with boundary data $f$ as given by Theorem \ref{thm:exAndUniqueSolution}. 
+  If this is the case then the knowledge about $(w)^*$ that is contained in Theorem \ref{thm:exAndUniqueSolution} will help us to complete estimate \eqref{eq:weizhangestimate}.
+
+  In order to show that $u = w$ on $\Omega$, consider the sequence $(\Omega_j)_{j \in \N}$ of smooth domains that approximates $\Omega$ from inside as described by Theorem \ref{thm:smoothApproximation}.
+  Then,an application of Lemma \ref{lem:l2unique} shows
+  \begin{align}
+    \label{eq:reverseTraceUnique}
+    \int_{\Omega_j} |u - w|^2 \d x \leq C \int_{\partial\Omega_j} |u - w|^2 \d \sigma_j,
+  \end{align}
+  where $C$ does not depend on $j$ but on the Lipschitz character of $\Omega$.
+  Furthermore the trace theorem on bounded Lipschitz domains gives us for all $h \in \HH^0(\Omega; \C^d)$ that
+  \begin{align}
+    \label{eq:traceLipschitzDomain}
+     \|h\|_\partial^2 \leq C\, \|h\|_{\HH^1(\Omega; \C^d)}^2,
+  \end{align}
+  where $C$ only depends on $d$ and the Lipschitz character of $\Omega$, see Wei and Zhang \cite[Lem. 2.2]{weiZhang}.
+  Now let $\varepsilon > 0$ be given. 
+  From the theory of Sobolev spaces it is known that there exists $\varphi_\varepsilon \in \CC^\infty(\overline\Omega; \C^d)$ such that $\big\|\varphi_\varepsilon - u\big\|_{\HH^1(\Omega; \C^d)}^2 \leq {\varepsilon}/({6 \tilde C})$, see Adams and Fournier \cite[Thm. 3.18]{adams}.
+  Here, $\tilde C$ denotes the fixed constant from \eqref{eq:traceLipschitzDomain} which is uniform for all $\Omega_j$ and $\Omega$.
+  Due to Theorem \ref{thm:smoothApproximation}, we know that 
+  \begin{align*}
+    \int_{\partial\Omega_j} |\varphi_\varepsilon - w|^2 \d\sigma_j \to \int_{\partial\Omega} |\varphi_\varepsilon - u|^2 \d\sigma, \text{ as } j \to \infty
+  \end{align*}
+  since $w = f$ on $\partial\Omega$ in the sense of nontangential convergence.
+  Therefore, we choose $J$ large enough such that for all $j \geq J$ we have
+  \begin{align*}
+    \int_{\partial\Omega_j} |\varphi_\varepsilon - w|^2 \d\sigma_j \leq \int_{\partial\Omega} |\varphi_\varepsilon - u|^2 \d\sigma + \frac{\varepsilon}{6}\,.
+  \end{align*}
+  Plugging everything together, this gives us the estimation
+  \begin{align*}
+    &\int_{\partial\Omega_j} |u - w|^2 \d\sigma_j  \\
+    &\qquad\leq 2 \, \bigg\{ \int_{\partial\Omega_j} |u - \varphi_\varepsilon |^2 \d\sigma_j + \int_{\partial\Omega_j} |\varphi_\varepsilon - w|^2 \d\sigma_j \bigg\}
+    \leq 4 \tilde C \, \big\| u - \varphi_\varepsilon \big\|_{\HH^1(\Omega)}^2 + \frac{\varepsilon}{3} 
+    \leq \varepsilon.
+  \end{align*}
+  Gluing together this inequality and \eqref{eq:reverseTraceUnique}, we see that $w = u$ holds a.e. in $\Omega$ once we take the limit $j \to \infty$ and remember that $\varepsilon$ was chosen arbitrarily.
+  Now Theorem~\ref{thm:exAndUniqueSolution} gives
+  \begin{align*}
+    \| (u)^* \|^{}_\partial 
+    = \| (w)^* \|^{}_\partial \
+    \leq C\, \| f\|^{}_\partial 
+    = C\, \|u\|_\partial,
+  \end{align*}
+  where $C$ depends on $d$, $\theta$, and the Lipschitz character of $\Omega$.
 \end{proof}
 
 \begin{rem}
