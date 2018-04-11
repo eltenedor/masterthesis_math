@@ -570,7 +570,7 @@ When using Theorem~\ref{thm:coarea} in estimations, we will therefore always be 
   Let $(u,\phi)$ be a solution of the Stokes resolvent system in the domain $\BB(x_0, r) \subseteq \R^d$.
   \begin{align}
     \label{eq:interiorEstimateDoubleLayer}
-    |\nabla^l u(x_0) | \leq \frac{C_l}{r^{d - 1 + l}} \Big( \int_{\BB(x_0, r)} |u(x)|^2 \d x \Big)^{1/2}
+    |\nabla^l u(x_0) | \leq \frac{C_l}{r^{d - 1 + l}} \bigg( \int_{\BB(x_0, r)} |u(x)|^2 \d x \bigg)^{1/2}
   \end{align}
   for all $l \geq 0$, where $C_l$ only depends on $d$, $l$ and $\theta$.
   Without loss of generality we may rescale and translate and thus assume that $x_0 = 0$ and $r = 2$.
@@ -578,8 +578,8 @@ When using Theorem~\ref{thm:coarea} in estimations, we will therefore always be 
   We can use this fact to derive the desired estimate via
   \begin{align*}
     |\nabla^l u(0)|^2 
-    &\leq C\, \Big( \int_{\partial \BB(0, t)} \Big\{ \, \big|\nabla_x^{l+1} \Gamma(y; \lambda)\big|  + \big|\nabla_x^l \Phi(y) \big| \, \Big\} \, |f_t(y)| \d\sigma(y)\Big)^2 \\
-    &\leq C\, \Big( \int_{\partial \BB(0,t)} \frac{|f_t(y)|}{t^{d - 1 + l}}  \d\sigma(y)\Big)^2 \\
+    &\leq C\, \bigg( \int_{\partial \BB(0, t)} \Big\{ \, \big|\nabla_x^{l+1} \Gamma(y; \lambda)\big|  + \big|\nabla_x^l \Phi(y) \big| \, \Big\} \, |f_t(y)| \d\sigma(y)\bigg)^2 \\
+    &\leq C\, \bigg( \int_{\partial \BB(0,t)} \frac{|f_t(y)|}{t^{d - 1 + l}}  \d\sigma(y)\bigg)^2 \\
     &\leq C\, \int_{\partial \BB(0,t)} |f_t(y)|^2  \d\sigma(y) \\
     &\leq C\, \int_{\partial \BB(0,t)} |u(y)|^2 \d\sigma(y), 
   \end{align*}
