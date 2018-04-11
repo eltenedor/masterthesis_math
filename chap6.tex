@@ -1,6 +1,6 @@
 \chapter{Derivation of Resolvent Estimates}
 
-In this final chapter we will prove that the Stokes semigroup is analytic on $\Ell^p_\sigma(\Omega, \C^d)$ for bounded Lipschitz domains $\Omega \subseteq \R^d$, $d \geq 2$.
+In this final chapter we will prove that the Stokes semigroup is analytic on $\Ell^p_\sigma(\Omega)$ for bounded Lipschitz domains $\Omega \subseteq \R^d$, $d \geq 2$.
 
 The first step will be to establich a weak reverse H\"older estimate for local solutions of the Stokes resolvent problem. 
 We start with a similar result on Lipschitz cylinders.
@@ -13,7 +13,7 @@ We start with a similar result on Lipschitz cylinders.
   Then 
   \begin{align}
     \label{eq:reverseHoelderCylinder}
-    \Big( \dashint_{D_\eta(r)} |u|^{p_d} \d x \Big)^{1/p_d} \leq C \Big( \dashint_{D_\eta(2r)} |u|^2 \d x \Big)^{1/2},
+    \Big( \frac{1}{r^{d -1 }}\int_{D_\eta(r)} |u|^{p_d} \d x \Big)^{1/p_d} \leq C \, \Big( \frac{1}{r^{d - 1}} \int_{D_\eta(2r)} |u|^2 \d x \Big)^{1/2},
   \end{align}
   where $C$ only depends on $d$, $M$ and $\theta$.
 \end{lem}
@@ -38,28 +38,30 @@ We start with a similar result on Lipschitz cylinders.
   Estimate \eqref{eq:reverseHoelderCylinder} now follows after dividing by $|D_\eta(1)|$.
 \end{proof}
 
-The next step is to extend the result to arbitrary Lipschitz domains. The following Lemma reduces the amount of work to a few special cases.
+The next step is to extend the result to arbitrary Lipschitz domains. 
+The following Lemma, which appeared in Tolskdorf \cite[Lem. 4.2]{tolksdorf2017}, reduces the amount of work that needs to be done to a few special cases.
 
-\begin{lem}[Tolksdorf]
+\begin{lem}
   \label{lem:ballsforballs}
-  Let $\Omega \subset \R^d$ be Lebesgue-measurable, $f, g \in \Ell^2(\Omega)$, $\alpha_2 > \alpha_1 > 1$, $p > 2$, $r > 0$ and $x_0 \in \R^d$ be such that $\BB(x_0, r) \cap \Omega \neq \emptyset$.
+  Let $\Omega \subseteq \R^d$ be Lebesgue-measurable, $f, g \in \Ell^2(\Omega)$, $\alpha_2 > \alpha_1 > 1$, $p > 2$, $r > 0$ and $x_0 \in \R^d$ be such that $\BB(x_0, r) \cap \Omega \neq \emptyset$.
   If there exists $C > 0$ such that
   \begin{align*}
     &\Big( \frac{1}{s^d} \int_{\Omega \cap \BB(y, s)} |f|^p \d x \Big)^{1/p} \\
-    &\qquad\leq C \Big\{ \Big( \frac{1}{s^d} \int_{\Omega \cap \alpha_1 \BB(y, s)} |f|^2 \d x \Big)^{1/2} + \sup_{B' \cap \BB(y,s)} \Big( \frac{1}{|B'|} \int_{\Omega \cap B'} |g|^2 \d x \Big)^{1/2} \Big\}
+    &\qquad\leq C\, \Big\{ \Big( \frac{1}{s^d} \int_{\Omega \cap \alpha_1 \BB(y, s)} |f|^2 \d x \Big)^{1/2} + \sup_{B' \cap \BB(y,s)} \Big( \frac{1}{|B'|} \int_{\Omega \cap B'} |g|^2 \d x \Big)^{1/2} \Big\}
   \end{align*}
-  holds for all balls $\BB(y,s)$ with $\BB(y,\alpha_2 s) \subset \BB(x_0, \alpha_2 r)$ and which are either centered on $\partial\Omega$ or satisfy $\alpha_2 \BB(y,s) \subset \Omega$, then for each $\alpha \in (1,\alpha_2)$ there exists a constant $C'$ such that
+  holds for all balls $\BB(y,s)$ with $\BB(y,\alpha_2 s) \subseteq \BB(x_0, \alpha_2 r)$ and which are either centered on $\partial\Omega$ or satisfy $\alpha_2 \BB(y,s) \subseteq \Omega$, then for each $\alpha \in (1,\alpha_2)$ there exists a constant $C'$ such that
   \begin{align*}
     &\Big( \frac{1}{r^d} \int_{\Omega \cap \BB(x_0, r)} |f|^p \d x \Big)^{1/p} 
     \\
-    &\qquad\leq C' \Big\{ \Big( \frac{1}{r^d} \int_{\Omega \cap \alpha \BB(x_0, r)} |f|^2 \d x \Big)^{1/2} + \sup_{B' \cap \BB(x_0,r)} \Big( \frac{1}{|B'|} \int_{\Omega \cap B'} |g|^2 \d x \Big)^{1/2} \Big\}.
+    &\qquad\leq C'\, \Big\{ \Big( \frac{1}{r^d} \int_{\Omega \cap \alpha \BB(x_0, r)} |f|^2 \d x \Big)^{1/2} + \sup_{B' \cap \BB(x_0,r)} \Big( \frac{1}{|B'|} \int_{\Omega \cap B'} |g|^2 \d x \Big)^{1/2} \Big\}.
   \end{align*}
+  This constant $C'$ only depends on $d$, $\alpha$, $\alpha_1$, $\alpha_2$, $p$ and $C$.
 \end{lem}
 
-\begin{proof}
-  A proof of this lemma was given by Tolksdorf \cite{tolksdorf2017}.
-  We will give the proof for the sake of completeness.
-\end{proof}
+%\begin{proof}
+%  A proof of this lemma was given by Tolksdorf \cite{tolksdorf2017}.
+%  We will give the proof for the sake of completeness.
+%\end{proof}
 
 As of now, our toolbox comprises enough tools to prove that solutions to the Stokes resolvent system satisfy a weak reverse H\"older inequality.
 
@@ -72,7 +74,7 @@ As of now, our toolbox comprises enough tools to prove that solutions to the Sto
  % Then for all balls $\BB(x_0, r)$ that are either centered on $\partial\Omega$ or satisfy $\alpha_2 \BB(x_0, r) \subseteq \Omega$ the estimate
   \begin{align}
     \label{eq:reverseHoelder}
-    \Big( \dashint_{\BB(x_0, r) \cap \Omega} |u|^p \Big)^{1/p} \leq C \Big( \dashint_{\BB(x_0, 2 r) \cap \Omega} |u|^2 \Big)^{1/2}
+    \Big( \frac{1}{r^{d - 1}} \int_{\BB(x_0, r) \cap \Omega} |u|^p \Big)^{1/p} \leq C \, \Big( \frac{1}{r^{d - 1}} \int_{\BB(x_0, 2 r) \cap \Omega} |u|^2 \Big)^{1/2}
   \end{align}
   holds, where $p = p_d$.
   Here, $C > 0$ only depends on $d$, $\theta$ and the Lipschitz character of $\Omega$.
@@ -84,15 +86,15 @@ As of now, our toolbox comprises enough tools to prove that solutions to the Sto
 
   %We want to apply Lemma 4.2 from \cite{tolksdorRsec}.
   %Let $0 < s < r$ and $\tilde \BB{} = \BB(y,s)$ with $\alpha_2 \tilde \BB \subseteq \BB(x_0, \alpha_2 r)$.
-  Due to Lemma \ref{lem:ballsforballs} it suffices to consider only two cases: (1) $x_0 \in \Omega$ with $\alpha_2 \BB(x_0,r) \subset \Omega$ and (2) $x_0 \in \partial\Omega$.
+  Due to Lemma \ref{lem:ballsforballs} it suffices to consider only two cases: (1) $x_0 \in \Omega$ with $\alpha_2 \BB(x_0,r) \subseteq \Omega$ and (2) $x_0 \in \partial\Omega$.
 
-  Let $x_0 \in \Omega$ with $\alpha_2 \BB(x_0,r) \subset \Omega$. We may deploy the interior estimate \eqref{eq:interiorEstimateDoubleLayer} to derive that for all $x \in \BB(x_0,r)$
+  Let $x_0 \in \Omega$ with $\alpha_2 \BB(x_0,r) \subseteq \Omega$. We may deploy the interior estimate \eqref{eq:interiorEstimateDoubleLayer} to derive that for all $x \in \BB(x_0,r)$ the estimate
   \begin{align*}
-    |u(x)|^p \leq C \Big( \dashint_{\BB(x,r)} |u(y)|^2 \d y \Big)^{p/2}
+    |u(x)|^p \leq C \Big( \frac{1}{r^{d - 1}} \int_{\BB(x,r)} |u(y)|^2 \d y \Big)^{p/2}
   \end{align*}
-  which after integrating $x$ over $\BB(x_0, r)$ yields
+  holds which after integrating $x$ over $\BB(x_0, r)$ yields
   \begin{align*}
-    \dashint_{\BB(x_0, r)} |u(x)|^p \d x \leq C \Big(\alpha_1^d  \dashint_{\BB(x_0, \alpha_1 r)} |u(z)|^2 \d z \Big)^{p/2},
+    \frac{1}{r^{d - 1}}\int_{\BB(x_0, r)} |u(x)|^p \d x \leq C \Big(\alpha_1^d  \frac{1}{r^{d-1}}\int_{\BB(x_0, \alpha_1 r)} |u(z)|^2 \d z \Big)^{p/2},
   \end{align*}
   where we also used the fact that $\alpha_1 > 2$.
 
@@ -110,7 +112,7 @@ As of now, our toolbox comprises enough tools to prove that solutions to the Sto
 
   \begin{prop}[Giaquinta, Modica]
     \label{prop:giaquinta}
-    Let $\Omega \subset \R^d$ be open, $f \in \Ell^1_{\mathrm{loc}}(\Omega)$, $q > 1$, be a non-negative function.
+    Let $\Omega \subseteq \R^d$ be open, $f \in \Ell^1_{\mathrm{loc}}(\Omega)$, $q > 1$, be a non-negative function.
     If there exist constants $b > 0, R_0 > 0$ such that
     \begin{align*}
       \Big( \frac{1}{r^d} \int_{\BB(x_0, r)} f^q \d x \Big)^{1/q} \leq \frac{b}{r^d} \int_{\BB(x_0, 2r)} f \d x
@@ -157,7 +159,7 @@ As of now, our toolbox comprises enough tools to prove that solutions to the Sto
   %Let $0 < s < r$ and $\tilde \BB{} = \BB(y,s)$ with $\alpha_2 \tilde \BB \subseteq \BB(x_0, \alpha_2 r)$.
 
 The following extrapolation theorem by Shen will be necessary in order to derive $\Ell^p$-bounds on the solution of the Stokes resolvent system, \cite[Thm. 3.3]{shenExtra}.
-Note that a more recent result from Tolksdorf \cite{tolksdorf2017} generalizes this result to operators which are defined on spaces of Banach space valued functions.
+Note that a more recent result from Tolksdorf \cite[Thm. 4.1]{tolksdorf2017} generalizes this result to operators which are defined on spaces of Banach space valued functions.
 
 \begin{thm}
   \label{thm:extrapolation}
@@ -168,7 +170,7 @@ Note that a more recent result from Tolksdorf \cite{tolksdorf2017} generalizes t
     \Big\{ \frac{1}{r^d} \int_{\Omega \cap B} |Tf|^p \d x \Big\}^{1/p}
     \leq N \Big\{ \Big( \frac{1}{r^d} \int_{\Omega \cap \alpha_1 B} |T f|^2 \d x \Big)^{1/2} + \sup_{B' \supset B} \Big( \frac{1}{|B'|} \int_{B'} |f|^p \d x \Big)^{1/p} \Big\},
   \end{align*}
-  where $B = B(x_0, r)$ is a ball with $0 < r < R_0$ and either $x_0 \in \partial\Omega$ or $B(x_0, \alpha_2 r) \subset \Omega$.
+  where $B = B(x_0, r)$ is a ball with $0 < r < R_0$ and either $x_0 \in \partial\Omega$ or $B(x_0, \alpha_2 r) \subseteq \Omega$.
   Then $T$ is bounded on $\Ell^q(\Omega; \C^d)$ for any $2 < q < p$.
   Moreover $\|T\|_{\Li(\Ell^q(\Omega; \C^d))}$ is bounded by a constant depending at most on $d$, $N$, $C_0$, $p$, $q$ and the Lipschitz character of $\Omega$.
 \end{thm}
@@ -247,7 +249,7 @@ We are now in the position to prove Theorem \ref{thm:main}, the main theorem of 
 
   In the next step of the proof we now study the relationship between the operator $T_\lambda$ and the resolvent of the Stokes operator $A_q$ on $\Ell^q_\sigma(\Omega)$ for $q \in (2, p_d + \varepsilon)$.
   To this end let $f \in \Ell^q_\sigma(\Omega)$.
-  We already know that $u = (1 + |\lambda|)^{-1} T_\lambda(f) = (A_2 + \lambda)^{-1} \PP_2(f) \in \Ell^p_\sigma(\Omega) \cap \Dom(A_2)$  by the mapping properties of $T_\lambda(f)$. As $\Ell^q_\sigma(\Omega) \subset \Ell^2_\sigma(\Omega)$ we have furthermore that
+  We already know that $u = (1 + |\lambda|)^{-1} T_\lambda(f) = (A_2 + \lambda)^{-1} \PP_2(f) \in \Ell^p_\sigma(\Omega) \cap \Dom(A_2)$  by the mapping properties of $T_\lambda(f)$. As $\Ell^q_\sigma(\Omega) \subseteq \Ell^2_\sigma(\Omega)$ we have furthermore that
   \begin{align*}
     \lambda u + A_2 u = f \in \Ell^q_\sigma(\Omega)
   \end{align*}
