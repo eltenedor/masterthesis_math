@@ -3,11 +3,11 @@
 
 This section is all about the application of the method of layer potentials to solve the $\Ell^2$ Dirichlet problem \hyperref[eq:dirProblem]{$(\mathrm{Dir}_\lambda)$} for the Stokes resolvent system.
 The results from Chapter~\ref{chap:3} on the jump relations and the corresponding operators, see Theorem~\ref{thm:jumpConditions} and Theorem~\ref{thm:nontangentialLimitDoubleLayer}, together with the Rellich estimates from Chapter~\ref{chap:4} will be the essential ingredients.
-In the first part of this chapter we will show that the operators $(1/2)I + \K_\lambda$ and their adjoints are isomorphisms on suitable Hilbert spaces.
-Then in the second part of this chapter we will build on this information to construct solutions to $(\mathrm{Dir}_\lambda)$ via double layer potentials.
+In the first part of this chapter, we will show that the operators $(1/2)I + \K_\lambda$ and their adjoints are isomorphisms on suitable Hilbert spaces.
+Then, in the second part of this chapter, we will build on this information to construct solutions to $(\mathrm{Dir}_\lambda)$ via double layer potentials.
 %Furthermore we will establish a uniform $\Ell^p$ estimate for the nontangential maximal function which will be important for the proof of our central theorem.
 
-For the remainder of this chapter let $\Omega$ always denote a bounded Lipschitz domain in $\R^d$, $d \geq 2$, with connected boundary.
+For the remainder of this chapter, let $\Omega$ always denote a bounded Lipschitz domain in $\R^d$, $d \geq 2$, with connected boundary.
 We will use $\Ell^2_n(\partial\Omega)$ to denote the function space
 \begin{align*}
   \Ell^2_n(\partial\Omega) \coloneqq \Big\{ f \in \Ell^2(\partial\Omega; \C^d) \colon \int_{\partial\Omega} f \cdot n \d \sigma = 0 \Big\},
@@ -46,7 +46,7 @@ We will now derive bounds on the inverse of the operator $(1/2) I + \K_\lambda$ 
   Then $(1/2)I + \K_\lambda$ is an isomorphism on $\Ell^2(\partial\Omega; \C^d)$ and
   \begin{align}
     \label{eq:inverseEstimate}
-    \| f\|_\partial \leq C \|\big( (1/2) I + \K_\lambda \big) f \|_\partial \quad\text{for any } f \in \Ell^2(\partial\Omega; \C^d),
+    \| f\|_\partial \leq C \, \big\|\big( (1/2) I + \K_\lambda \big) f\, \big\|_\partial \quad\text{for any } f \in \Ell^2(\partial\Omega; \C^d),
   \end{align}
   where $C$ depends only on $d$, $\theta$, $\tau$ and the Lipschitz character of $\Omega$.
 \end{lem}
@@ -55,37 +55,37 @@ We will now derive bounds on the inverse of the operator $(1/2) I + \K_\lambda$ 
   We start with $f \in \Ell^2(\partial\Omega; \C^d)$ and the corresponding single layer potentials $u = \slp_\lambda(f)$ and $\phi = \slp_\Phi(f)$ given by \eqref{eq:defSingleLayer} and \eqref{eq:defSingleLayerPressure}.
   We saw in Chapter 3 that $(u,\phi)$ solves the Stokes resolvent problem in $\R^d \setminus \partial\Omega$ and got from Lemma \ref{lem:nontangentialMaximalFunctions} with $p = 2$ for the nontangential maximal functions that $(\nabla u)^*$, $(\phi)^* \in \Ell^2(\partial\Omega)$.
   We furthermore saw in Lemma \ref{lem:traceFormulas} that $\nabla u$ and $\phi$ have nontangential limits almost everywhere on $\partial\Omega$. 
-  Finally in Theorem \ref{thm:jumpConditions} we saw that $\nabla_{\mathrm{tan}} u_+ = \nabla_{\mathrm{tan}} u_-$ and derived the jump relation $\big(\frac{\partial u}{\partial \nu}\big)_\pm = (\pm (1/2) I + \K_\lambda) f$.
+  Finally, in Theorem \ref{thm:jumpConditions} we saw that $\nabla_{\mathrm{tan}} u_+ = \nabla_{\mathrm{tan}} u_-$ and derived the jump relation $\big(\frac{\partial u}{\partial \nu}\big)_\pm = (\pm (1/2) I + \K_\lambda) f$.
 
   Let us assume for a moment that the estimate
   \begin{align}
     \label{eq:negNablaPhi}
-    \| \nabla u_- \|^{}_\partial + \| \phi_- \|^{}_\partial \leq C \, \Big\| \Big( \frac{\partial u}{\partial \nu} \Big) \Big\|^{}_\partial .
+    \| \nabla u_- \|^{}_\partial + \| \phi_- \|^{}_\partial \leq C \, \Big\| \bigg( \frac{\partial u}{\partial \nu} \bigg)_+ \Big\|^{}_\partial .
   \end{align}
   holds for a constant $C$ depending only on $d$, $\theta$, $\tau$ and the Lipschitz character of $\Omega$. 
   Using \eqref{eq:negNablaPhi}, we can prove \eqref{eq:inverseEstimate}:
   Note that the jump relation gives us $f = \big(\frac{\partial u}{\partial \nu} \big)_+ -  \big( \frac{\partial u}{\partial \nu} \big)_-$.
-  With the definition of the conormal derivative and estimate \eqref{eq:negNablaPhi} we then calculate that
+  With the definition of the conormal derivative and estimate \eqref{eq:negNablaPhi}, we calculate that
   \begin{align*}
     \| f\|^{}_\partial 
-    &\leq  \Big\| \Big( \frac{\partial u}{\partial \nu} \Big)_+ \Big\|^{}_\partial + \Big\| \Big( \frac{\partial u}{\partial \nu} \Big)_- \Big\|^{}_\partial  \\
-    &\leq \Big\| \Big( \frac{\partial u}{\partial \nu} \Big)_+  \Big\|^{}_\partial + \Big\| \Big( \frac{\partial u}{\partial n} \Big)_- \Big\|^{}_\partial + \| \phi_- \|^{}_\partial  \\
-    &\leq C\, \Big\| \Big( \frac{\partial u}{\partial \nu} \Big)_+ \Big\|^{}_\partial
+    &\leq  \Big\|    \bigg( \frac{\partial u}{\partial \nu} \bigg)_+ \Big\|^{}_\partial + \Big\|  \bigg( \frac{\partial u}{\partial \nu} \bigg)_- \Big\|^{}_\partial  \\[0.5em]
+    &\leq \Big\|     \bigg( \frac{\partial u}{\partial \nu} \bigg)_+  \Big\|^{}_\partial + \Big\| \bigg( \frac{\partial u}{\partial n}   \bigg)_- \Big\|^{}_\partial + \| \phi_- \|^{}_\partial  \\[0.5em]
+    &\leq C\, \Big\| \bigg( \frac{\partial u}{\partial \nu} \bigg)_+ \Big\|^{}_\partial
     = C\, \| (1/2)I + K_\lambda) f\|^{}_\partial.
   \end{align*}
 
   In order to prove \eqref{eq:negNablaPhi}, note that due to Lemma \ref{lem:requirements} we can use Theorem \ref{thm:rellichExterior} to derive
   \begin{align}
     \|\nabla u_-\|^{}_\partial + \|\phi_-\|^{}_\partial
-    &\leq C \Big\{ \big\|\nabla_{\mathrm{tan}} u_- \big\|^{}_\partial + |\lambda|^{1/2} \| u_-\|^{}_\partial + |\lambda|\, \| n \cdot u_-\|_{\HH^{-1}(\partial\Omega)} \Big\} \nonumber\\
+    &\leq C\, \Big\{ \big\|\nabla_{\mathrm{tan}} u_- \big\|^{}_\partial + |\lambda|^{1/2} \| u_-\|^{}_\partial + |\lambda|\, \| n \cdot u_-\|_{\HH^{-1}(\partial\Omega)} \Big\} \nonumber\\[0.5em]
     \label{eq:nablauminus}
-    &= C \Big\{ \big\|\nabla_{\mathrm{tan}} u_+ \big\|^{}_\partial + |\lambda|^{1/2} \| u_+ \|^{}_\partial + |\lambda|\, \|n \cdot u_+ \|_{\HH^{-1}(\partial\Omega)} \Big\},
+    &= C \, \Big\{ \big\|\nabla_{\mathrm{tan}} u_+ \big\|^{}_\partial + |\lambda|^{1/2} \| u_+ \|^{}_\partial + |\lambda|\, \|n \cdot u_+ \|_{\HH^{-1}(\partial\Omega)} \Big\},
   \end{align}
   where we used the fact that $u_+ = u_-$ and $\nabla_{\mathrm{tan}} u_+ = \nabla_{\mathrm{tan}} u_-$ on $\partial\Omega$. The former fact is a consequence of the continuity of the single layer potential across $\partial\Omega$, see Mitrea and Wright \cite[Prop. 4.7]{mitreaWright}.
   Inequality \eqref{eq:rellich2} of Theorem \ref{thm:rellich} now allows us to estimate the right hand side of \eqref{eq:nablauminus} by $C \,\|\big(\frac{\partial u}{\partial \nu} \big)_+ \|^{}_\partial$ and thus the desired estimate \eqref{eq:negNablaPhi} follows.
 
   Let's now work on the invertibility of $(1/2) I + \K_\lambda$. In the case $\lambda = 0$, Mitrea and Wright showed in \cite[Eq. (5.166)]{mitreaWright} that $(1/2) I + \K_0$ as an operator on $\Ell^2(\partial\Omega; \C^d)$ has a one dimensional null space and as range the space $\Ell_0^2(\partial\Omega; \C^d)$.
-  Thus $(1/2) I + \K_0$ has Fredholm index $0$.
+  Thus, $(1/2) I + \K_0$ has Fredholm index $0$.
   %This remains true if we replace $\Ell^2(\partial\Omega; \R^d)$ by $\Ell^2(\partial\Omega; \C^d)$ as this just corresponds to a complexification of the vector space and the operator. 
   Since the operator $\K_\lambda - \K_0$ is compact on $\Ell^2(\partial\Omega; \C^d)$ by Lemma \ref{lem:compactness}, we deduce that the operator
   \begin{align*}
@@ -122,15 +122,15 @@ The next lemma works with the counterpart of $(1/2)I + \K_\lambda$.
   \end{align*}
   In order to prove this inequality, we want to apply Young's inequality from Lemma \ref{lem:young}. To this end, we start by estimating
   \begin{align*}
-    \| (\K_\lambda - \K_0 f\|^{}_\partial 
+      \| (\K_\lambda - \K_0) f\|^{}_\partial 
     \leq \sup_{p \in \partial\Omega} \Big\| \nabla_x \Big\{ \Gamma(p - \cdot\,; \lambda) - \Gamma(p - \cdot\,; 0) \Big\} \Big\|_{\Ell^1(\partial\Omega)} \| f\|_{\Ell^2(\partial\Omega)}.
   \end{align*}
-  In the next step we prove that for $p \in \partial\Omega$ the integral over the gradients of $\Gamma$ can be estimated independent of $p$.
+  In the next step, we prove that for $p \in \partial\Omega$ the integral over the gradients of $\Gamma$ can be estimated independent of $p$.
   This is straightforward using Lemma \ref{lem:central} as Corollary \ref{cor:differenceFundamentalSolutionStokes} gives us
   \begin{align*}
-    &\int_{\partial\Omega} | \nabla_x \{ \Gamma(p - y; \lambda) - \Gamma(p - y; 0) \} | \d\sigma(y)\\
-    &\quad\leq C \sqrt{|\lambda|} \int_{\partial\Omega} \frac{1}{|p - y|^{d - 2}} \d \sigma(y) \\
-    &\quad= C \sqrt{|\lambda|}\, \int_{\partial\Omega \cap \BB(p, r_0/4)} \frac{1}{|p - y|^{d - 2}} \d\sigma(y) + C \sqrt{|\lambda|}\, \int_{\partial\Omega \setminus \BB(p, r_0/4)} \frac{1}{|p - y|^{d - 2}} \d\sigma(y) \\
+      &\int_{\partial\Omega} | \nabla_x \{ \Gamma(p - y; \lambda) - \Gamma(p - y; 0) \} | \d\sigma(y)\\[0.5em]
+      &\quad\leq C \sqrt{|\lambda|} \int_{\partial\Omega} \frac{1}{|p - y|^{d - 2}} \d \sigma(y) \\[0.5em]
+      &\quad= C \sqrt{|\lambda|}\, \int_{\partial\Omega \cap \BB(p, r_0/4)} \frac{1}{|p - y|^{d - 2}} \d\sigma(y) + C \sqrt{|\lambda|}\, \int_{\partial\Omega \setminus \BB(p, r_0/4)} \frac{1}{|p - y|^{d - 2}} \d\sigma(y) \\[0.5em]
     &\quad\leq C \sqrt{|\lambda|} \,\big( r_0/4 + 4^{2 - d} r_0^{d - 2} |\partial\Omega| \big),
   \end{align*}
   where $r_0$ is the radius from the definition of Lipschitz domains.
@@ -141,7 +141,7 @@ The next lemma works with the counterpart of $(1/2)I + \K_\lambda$.
   with a constant $C$ that only depends on $d$, $\theta$ and the Lipschitz character of $\Omega$.
   Note that by the choice of $\tau$ the estimate from Corollary \ref{cor:differenceFundamentalSolutionStokes} applies on the whole domain of integration.
 
-  For $f \in \Ell^2_n(\partial\Omega)$ we can now estimate
+  For $f \in \Ell^2_n(\partial\Omega)$, we can now estimate
   \begin{align*}
     \| f\|^{}_\partial 
     &\leq C\,  \|(-(1/2)I + \K_0) f \|^{}_\partial  \\
@@ -155,16 +155,16 @@ The next lemma works with the counterpart of $(1/2)I + \K_\lambda$.
   This case will be handled using the Rellich estimates from Section 4.
   We use the facts that for $\nabla_{\mathrm{tan}} u$ and $u$ the inner and outer nontangential limits coincide and apply Theorems \ref{thm:rellich} and \ref{thm:rellichExterior} to conclude that
   \begin{align*}
-    &\|\nabla u_+ \|_\partial + \Big\| \phi_+ - \frac{1}{r_0^{d - 1}}\int_{\partial\Omega} \phi_+ \d\sigma \Big\| \\
-    &\quad\leq C\, \Big\{ \|( \nabla_{\mathrm{tan}} u)_+ \|_\partial + |\lambda|^{1/2} \|u_+\|_\partial + |\lambda| \| u_+\cdot n\|_{\HH^{-1}(\partial\Omega)} \Big\} \\
-    &\quad = C\, \Big\{ \|( \nabla_{\mathrm{tan}} u)_- \|_\partial + |\lambda|^{1/2} \|u_-\|_\partial + |\lambda| \| u_-\cdot n\|_{\HH^{-1}(\partial\Omega)} \Big\} \\
-    &\quad\leq C\, \Big\| \Big(\frac{\partial u}{\partial \nu} \Big)_- \Big\|_\partial.
+      &\|\nabla u_+ \|_\partial + \Big\| \phi_+ - \frac{1}{r_0^{d - 1}}\int_{\partial\Omega} \phi_+ \d\sigma \Big\| \\[0.5em]
+      &\qquad\leq C\, \Big\{ \|( \nabla_{\mathrm{tan}} u)_+ \|_\partial + |\lambda|^{1/2} \|u_+\|_\partial + |\lambda| \| u_+\cdot n\|_{\HH^{-1}(\partial\Omega)} \Big\} \\[0.5em]
+      &\qquad = C\, \Big\{ \|( \nabla_{\mathrm{tan}} u)_- \|_\partial + |\lambda|^{1/2} \|u_-\|_\partial + |\lambda| \| u_-\cdot n\|_{\HH^{-1}(\partial\Omega)} \Big\}
+          \leq C\, \Big\| \bigg(\frac{\partial u}{\partial \nu} \bigg)_- \Big\|_\partial.
   \end{align*}
   We can now use this inequality to estimate $\| \big( \frac{\partial u}{\partial \nu} \big)_+ \|_\partial$ via
   \begin{align*}
-    \Big\| \Big( \frac{\partial u}{\partial \nu} \Big)_+ \Big\|_\partial
-    &\leq \Big\|\Big(\frac{\partial u}{\partial n} \Big)_+ \Big\|_\partial + C\, \| \phi_+ \|_\partial \\
-    &\leq C\,  \Big\{  \| (\nabla u)_+ \|_\partial + \Big\|\phi_+ - \frac{1}{r_0^{d - 1}} \int_{\partial\Omega} \phi_+ \d\sigma \Big\|_\partial + \Big| \frac{1}{r_0^{d - 1}} \int_{\partial\Omega} \phi_+ \d \sigma \Big| \; \Big\}\\
+      \Big\| \bigg( \frac{\partial u}{\partial \nu} \bigg)_+ \Big\|^{}_\partial
+      &\leq \Big\|\bigg(\frac{\partial u}{\partial n} \bigg)_+ \Big\|^{}_\partial + C\, \| \phi_+ \|_\partial \\
+      &\leq C\,  \Big\{  \| (\nabla u)_+ \|_\partial + \Big\|\phi_+ - \frac{1}{r_0^{d - 1}} \int_{\partial\Omega} \phi_+ \d\sigma \Big\|_\partial + \Big| \frac{1}{r_0^{d - 1}} \int_{\partial\Omega} \phi_+ \d \sigma \Big| \; \Big\}\\
     &\leq C\,  \| \big(\frac{\partial u}{\partial \nu} \big)_- \|_\partial + C \, \Big| \int_{\partial\Omega} \phi_+ \d\sigma \Big|.
   \end{align*}
   Considering the jump relation \eqref{eq:nontangentialConormalDerivative} and the previous estimate, we get that
@@ -230,7 +230,7 @@ In the following lemma that looks like a reverse trace theorem, we will show the
       \div(w) = 0 &\text{ in } \Omega.
     \end{alignedat}
   \end{align}
-  In fact the regularity theory for the Stokes equation gives us that $w$ and $\psi$ are even smooth in $\Omega$ as $u$ is smooth.
+  In fact, the regularity theory for the Stokes equation gives us that $w$ and $\psi$ are even smooth in $\Omega$ as $u$ is smooth.
   It follows from testing \eqref{eq:inhomogenousStokes} against $u$ that
   \begin{align}
     \label{eq:testingInhomogenousStokes}
@@ -251,7 +251,7 @@ In the following lemma that looks like a reverse trace theorem, we will show the
   \begin{align*}
     \int_\Omega w \cdot \nabla\phi \d x = -\int_\Omega \div(w) \, \phi \d x + \int_{\partial\Omega} \phi \, w \cdot n \d\sigma = 0.
   \end{align*}
-  For the third summand in \eqref{eq:testingInhomogenousStokes} we do the same with the only difference that the second integral does not vanish:
+  For the third summand in \eqref{eq:testingInhomogenousStokes}, we do the same with the only difference that the second integral does not vanish:
   \begin{align*}
     \int_\Omega u \cdot \nabla\psi \d x 
     = -\int_\Omega \div(u)\, \psi \d x + \int_{\partial\Omega} \psi \, u \cdot n \d\sigma 
@@ -280,7 +280,7 @@ In the following lemma that looks like a reverse trace theorem, we will show the
     \int_\Omega |u|^2 \d x \leq C \Big\{ \|u\|^{}_\partial \|\nabla w \|^{}_\partial + \|u\|_\partial^2\Big\}. \label{eq:u2estimate2}
   \end{align}
   We are left with estimating the first term in \eqref{eq:u2estimate2}.
-  In fact it will suffice to show the following inequality
+  In fact, it will suffice to show the following inequality
   \begin{align}
     \label{eq:w2estimate}
     \int_{\partial\Omega} |\nabla w|^2 \d\sigma \leq C \int_\Omega |u|^2 \d x + C \int_{\partial\Omega} |u|^2 \d \sigma
@@ -373,7 +373,7 @@ The next Theorem states the important fact that in $\Ell^2$ the Dirichlet Stokes
   \label{thm:exAndUniqueSolution}
   Let $\Omega$ be a bounded Lipschitz domain in $\R^d$, $d \geq 2$, with connected boundary and let $\lambda \in \Sigma_\theta$.
   For all $g \in \Ell^2_n(\partial\Omega)$ there exists a unique $u$ and harmonic function $\phi$ which is unique up to constants such that $(u,\phi)$ satisfies \eqref{eq:stokesResolventProblem}, $(u)^* \in \Ell^2(\partial\Omega)$ and $u = g$ on $\partial\Omega$ in the sense of nontangential convergence.
-  Moreover the estimate $ \| (u)^* \|_\partial \leq C \| g\|_\partial$ holds and $u$ may be represented by the double layer potential $\dlp_\lambda(f)$ with $\|f\|_\partial \leq C \|g\|_\partial$, where in both cases $C$ depends only on $d$, $\theta$ and the Lipschitz character of $\Omega$.
+  Moreover, the estimate $ \| (u)^* \|_\partial \leq C \| g\|_\partial$ holds and $u$ may be represented by the double layer potential $\dlp_\lambda(f)$ with $\|f\|_\partial \leq C \|g\|_\partial$, where in both cases $C$ depends only on $d$, $\theta$ and the Lipschitz character of $\Omega$.
 \end{thm}
 
 \begin{proof}
@@ -434,7 +434,7 @@ The next Theorem states the important fact that in $\Ell^2$ the Dirichlet Stokes
   \begin{align*}
     K_{X,Y} \colon X \to Y, \quad x \mapsto T x \,.
   \end{align*}
-  Now for $x \in X$ and $y \in Y$ we have that
+  Now, for $x \in X$ and $y \in Y$ we have that
   \begin{align*}
     \Big\langle x, K_{X,Y}^* y \Big\rangle_X
     & =\Big\langle K_{X,Y}^{} x, y  \Big\rangle_Y
@@ -498,7 +498,7 @@ The next theorem can in some sense be regarded as a reverse trace theorem and wi
 
   Up to now, we do not know whether the right hand side of this inequality equals infinity.
   We only know that $(u,\phi)$ solves the Stokes resolvent problem and that it implicitly solves a Dirichlet problem with boundary data given as $f = \operatorname{Tr} (u) \in \Ell^2(\partial\Omega; \C^d)$.
-  The following part of this proof will now show that $u$ coincides with the solution $w \coloneqq \dlp_\lambda(g)$, $g \in \Ell^2(\partial\Omega; \C^d),$  of the $\Ell^2$ Dirichlet problem with boundary data $f$ as given by Theorem \ref{thm:exAndUniqueSolution}. 
+  The following part of this proof will show that $u$ coincides with the solution $w \coloneqq \dlp_\lambda(g)$, $g \in \Ell^2(\partial\Omega; \C^d),$  of the $\Ell^2$ Dirichlet problem with boundary data $f$ as given by Theorem \ref{thm:exAndUniqueSolution}. 
   If this is the case, then the knowledge about $(w)^*$ that is contained in Theorem \ref{thm:exAndUniqueSolution} will help us to complete estimate \eqref{eq:weizhangestimate}.
 
   In order to show that $u = w$ on $\Omega$, consider the sequence $(\Omega_j)_{j \in \N}$ of smooth domains that approximates $\Omega$ from inside as described by Theorem \ref{thm:smoothApproximation}.

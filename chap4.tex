@@ -345,13 +345,13 @@ To this end, for the third integral we calculate
     \| \nabla u\|_\partial^2 
     &\leq C\, \bigg\{ \|\nabla_{\mathrm{tan}} u\|^{}_\partial 
     \Big\{ \|\nabla u\|^{}_\partial + \|\phi\|^{}_\partial \Big\}   \\
-    &\hspace{2cm} + \Big\| \frac{\partial u}{\partial \nu} \Big\|^{}_\partial \| u\|^{}_\partial
-+ \Big\| \frac{\partial u}{\partial \nu} \Big\|_\partial^{1/2} \|u\|_\partial^{1/2} \|\phi\|^{}_\partial + \Big\| \frac{\partial u}{\partial \nu} \Big\|^{}_\partial \, |\lambda|^{1/2} \big\| u  \big\|^{}_\partial \bigg\}.
+    &\hspace{2cm} + \Big\|\, \frac{\partial u}{\partial \nu} \, \Big\|^{}_\partial \| u\|^{}_\partial
++ \Big\|\, \frac{\partial u}{\partial \nu} \, \Big\|_\partial^{1/2} \|u\|_\partial^{1/2} \|\phi\|^{}_\partial + \Big\|\, \frac{\partial u}{\partial \nu} \,\Big\|^{}_\partial \, |\lambda|^{1/2} \big\| u  \big\|^{}_\partial \bigg\}.
   \end{align*}
   If we now use the Young inequality with an $\varepsilon$, we get
   \begin{align*}
     \|\nabla u\|_\partial^2 
-    &\leq C_\varepsilon\, \Big\{ \, \|\nabla_{\mathrm{tan}} u\|_\partial^2 + |\lambda|^{1/2} \| u\|_\partial^2 \, \Big\}  + \varepsilon\, \bigg\{ \, \|\nabla u\|_\partial^2 + \|\phi\|_\partial^2 + \frac{1}{4}\,\Big\|\frac{\partial u}{\partial \nu} \Big\|_\partial^2 \, \bigg\}.
+    &\leq C_\varepsilon\, \Big\{ \, \|\nabla_{\mathrm{tan}} u\|_\partial^2 + |\lambda|^{1/2} \| u\|_\partial^2 \, \Big\}  + \varepsilon\, \bigg\{ \, \|\nabla u\|_\partial^2 + \|\phi\|_\partial^2 + \frac{1}{4}\,\Big\|\,\frac{\partial u}{\partial \nu} \, \Big\|_\partial^2 \, \bigg\}.
   \end{align*}
   The claim now follows if we use the definition of the conormal derivative and the norm equivalence on finite dimensional vector spaces.
 \end{proof}
@@ -388,13 +388,13 @@ Furthermore, we will work with the following Theorem about the regularity proble
   Then,
   \begin{align}
     \label{eq:phiDashintPhi}
-    \bigg\|\phi - \bigg\{ \frac{1}{{r_0}^{d - 1}}\int_{\partial\Omega} \phi \d\sigma \bigg\} \bigg\|^{}_\partial 
-    \leq C \Big\{ \|\nabla u\|^{}_\partial + |\lambda| \, \|u\cdot n\|_{\HH^{-1}(\partial\Omega)} \Big\}
+    \bigg\|\, \phi - \bigg\{ \frac{1}{{r_0}^{d - 1}}\int_{\partial\Omega} \phi \d\sigma \bigg\} \, \bigg\|^{}_\partial 
+    \leq C\, \Big\{ \|\nabla u\|^{}_\partial + |\lambda| \, \|u\cdot n\|_{\HH^{-1}(\partial\Omega)} \Big\}
   \end{align}
   and
   \begin{align}
     \label{eq:lambdaun}
-    |\lambda|\, \| u\cdot n \|_{\HH^{-1}(\partial\Omega)} \leq C \Big\{ \|\phi\|^{}_\partial + \|\nabla u\|^{}_\partial \Big\},
+    |\lambda|\, \| u\cdot n \|_{\HH^{-1}(\partial\Omega)} \leq C\, \Big\{ \|\phi\|^{}_\partial + \|\nabla u\|^{}_\partial \Big\},
   \end{align}
   where $C$ depends only on $d$ and the Lipschitz character of $\Omega$.
 \end{lem}
