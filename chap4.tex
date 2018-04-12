@@ -1,15 +1,16 @@
 \chapter{Rellich Estimates}
 \label{chap:4}
 
-In this section we will establish Rellich type estimates for the Stokes resolvent problem which will be used to prove the invertibility of the operators $\pm(1/2)I + \K_{\lambda}$ and their adjoints from Theorems  \ref{thm:jumpConditions} and \ref{thm:nontangentialLimitDoubleLayer}.
+In this section, we will establish Rellich-type estimates for the Stokes resolvent problem which will be used in the following chapter to prove the invertibility of the operators $\pm(1/2)I + \K_{\lambda}$ and their adjoints from Theorems  \ref{thm:jumpConditions} and \ref{thm:nontangentialLimitDoubleLayer}.
+
 We will for this entire section always assume that $\Omega$ is a bounded Lipschitz domain in $\R^d$, $d \geq 2$, with connected boundary.
-Furthermore we will use the shorthand notation
+Furthermore, we will use the shorthand notation
 \begin{align*}
-  \| \cdot \|_{\partial} \coloneqq \| \cdot \|_{\Ell^2(\partial\Omega; \C^k)}, \quad k \in \N,
+    \| \cdot \|^{}_{\partial} \coloneqq \| \cdot \|_{\Ell^2(\partial\Omega; \C^k)}, \quad k \in \N,
 \end{align*}
 and we will tacitly use the summation convention whenever it is applicable.
 
-The following Theorem is the central result of this chapter:
+The following Theorem states formulates the aforementioned Rellich estimates and is the central result of this chapter:
 
 \begin{thm}
   \label{thm:rellich}
@@ -21,15 +22,15 @@ The following Theorem is the central result of this chapter:
   \begin{align}
     \label{eq:rellich1}
     \begin{alignedat}{1}
-      &\|\nabla u\|_\partial + \bigg\|\phi - \bigg\{ \frac{1}{{r_0}^{d - 1}}\int_{\partial\Omega} \phi \d\sigma \bigg\} \bigg\|_\partial \\[1em]
-      &\hspace{2cm} \leq C\, \bigg\{ \|\nabla_{\mathrm{tan}} u\|_\partial + |\lambda|^{1/2} \|u\|_\partial + |\lambda| \, \|u \cdot n\|_{\HH^{-1}(\partial\Omega)} \bigg\}
+        &\|\nabla u\|^{}_\partial + \bigg\|\phi - \bigg\{ \frac{1}{{r_0}^{d - 1}}\int_{\partial\Omega} \phi \d\sigma \bigg\} \bigg\|^{}_\partial \\[1em]
+      &\hspace{2cm} \leq C\, \bigg\{ \big\|\nabla_{\mathrm{tan}} u\big\|^{}_\partial + |\lambda|^{1/2} \|u\|^{}_\partial + |\lambda| \, \|u \cdot n\|_{\HH^{-1}(\partial\Omega)} \bigg\}
     \end{alignedat}
   \end{align}
   and
   \begin{align}
     \label{eq:rellich2}
-    \|\nabla u\|_\partial + |\lambda|^{1/2} \|u\|_\partial + |\lambda| \, \|u \cdot n\|_{\HH^{-1}(\partial\Omega)} + \|\phi\|_\partial
-    \leq C \, \Big\|\frac{\partial u}{\partial \nu} \Big\|_\partial,
+    \|\nabla u\|^{}_\partial + |\lambda|^{1/2} \|u\|^{}_\partial + |\lambda| \, \|u \cdot n\|_{\HH^{-1}(\partial\Omega)} + \|\phi\|^{}_\partial
+    \leq C \, \Big\|\frac{\partial u}{\partial \nu} \Big\|^{}_\partial,
   \end{align}
   where $\frac{\partial}{\partial \nu}$ denotes the conormal derivative, and $C$ depends only on $d$, $\tau$, $\theta$ and the Lipschitz character of $\Omega$.
 \end{thm}
@@ -49,7 +50,7 @@ The first lemma deals with so called \emph{Rellich identities} for solutions to 
   Under the same conditions on $(u,\phi)$ as in Theorem \ref{thm:rellich}, we have
   \begin{align}
     \int_{\partial\Omega} h_k n_k |\nabla u|^2 \d\sigma 
-    &= 2 \Ret \int_{\partial\Omega} h_k \frac{\partial \overline u_i}{\partial x_k} \Big( \frac{\partial u}{\partial \nu} \Big)_i \d\sigma + \int_\Omega \div(h) |\nabla u|^2 \d x \nonumber\\[0.5em]
+    &= 2 \Ret \int_{\partial\Omega} h_k \frac{\partial \overline u_i}{\partial x_k} \bigg( \frac{\partial u}{\partial \nu} \bigg)_i \d\sigma + \int_\Omega \div(h)\, |\nabla u|^2 \d x \nonumber\\[0.5em]
     &\quad - 2 \Ret \int_\Omega \frac{\partial h_k}{\partial x_j} \cdot \frac{\partial u_i}{\partial x_k} \cdot \frac{\partial \overline u_i}{\partial x_j} \d x + 2 \Ret \int_\Omega \frac{\partial h_k}{\partial x_i} \cdot \frac{\partial u_i}{\partial x_k} \, \overline \phi \d x \nonumber\\[0.5em]
     &\quad - 2 \Ret \int_\Omega h_k \frac{\partial u_i}{\partial x_k} \cdot \overline {\lambda u_i} \d x \label{eq:rellichIdentity}
   \end{align}
@@ -57,7 +58,7 @@ The first lemma deals with so called \emph{Rellich identities} for solutions to 
   \begin{align}
     \int_{\partial\Omega} h_k n_k |\nabla u|^2 \d\sigma
     &= 2\Ret \int_{\partial\Omega} h_k \frac{\partial \overline u_i}{\partial x_j} \bigg\{ n_k \frac{\partial u_i}{\partial x_j} - n_j \frac{\partial u_i}{\partial x_k} \bigg\} \d\sigma \nonumber\\[0.5em]
-    &\quad + 2 \Ret \int_{\partial\Omega} h_k \, \overline \phi \, \bigg\{ n_i \frac{\partial u_i}{\partial x_k} - n_k \frac{\partial u_i}{\partial x_i} \bigg\} \d\sigma - \int_\Omega \div(h) |\nabla u|^2 \d x \nonumber\\[0.5em]
+    &\quad + 2 \Ret \int_{\partial\Omega} h_k \, \overline \phi \, \bigg\{ n_i \frac{\partial u_i}{\partial x_k} - n_k \frac{\partial u_i}{\partial x_i} \bigg\} \d\sigma - \int_\Omega \div(h)\, |\nabla u|^2 \d x \nonumber\\[0.5em]
     &\quad + 2 \Ret \int_\Omega \frac{\partial h_k}{\partial x_j} \cdot \frac{\partial u_i}{\partial x_k} \cdot \frac{\partial \overline u_i}{\partial x_j} \d x - 2 \Ret \int_\Omega \frac{\partial h_k}{\partial x_i} \cdot \frac{\partial u_i}{\partial x_k} \, \overline \phi \d x \nonumber\\[0.5em]
     &\quad + 2 \Ret \int_\Omega h_k \frac{\partial u_i}{\partial x_k} \cdot \overline{ \lambda u_i} \d x\,, \label{eq:rellichIdentity2}
   \end{align}
@@ -71,21 +72,21 @@ The first lemma deals with so called \emph{Rellich identities} for solutions to 
   Let's expand the first summand in \eqref{eq:rellichIdentity} using the definition of conormal derivatives
   \begin{align*}
     2\Ret \int_{\partial\Omega} h_k \frac{\partial \overline u_i}{\partial x_k} \bigg( \frac{\partial u}{\partial \nu} \bigg)_i \d\sigma
-    &= 2 \Ret \int_{\partial\Omega} h_k \frac{\partial \overline u_i}{\partial x_k} \cdot \frac{\partial u_i}{\partial x_j}  n_j \d\sigma  - 2\Ret \int_{\partial\Omega} h_k \frac{\partial \overline u_i}{\partial x_k} \, \phi n_i \d x \\
+    &= 2 \Ret \int_{\partial\Omega} h_k \frac{\partial \overline u_i}{\partial x_k} \cdot \frac{\partial u_i}{\partial x_j}  n_j \d\sigma  - 2\Ret \int_{\partial\Omega} h_k \frac{\partial \overline u_i}{\partial x_k} \, \phi\, n_i \d x \\
     &\eqqcolon I_1 - I_2.
   \end{align*}
   The divergence theorem is applicable for $I_1$ as $h$ is bounded and defined everywhere and the integrand has nontangential limits that can be dominated by $|(\nabla u)^*|^2 \in \Ell^2(\partial\Omega)$.
   Therefore, we find using the divergence theorem and the product rule:
   \begin{align*}
     I_1
-    &= 2\Ret \int_\Omega \frac{\partial}{\partial x_j} \bigg\{ h_k \frac{\partial \overline u_i}{\partial x_k} \cdot \frac{\partial u_i}{\partial x_j} \bigg\} \d x \\
+    &= 2\Ret \int_\Omega \frac{\partial}{\partial x_j} \bigg\{ h_k \frac{\partial \overline u_i}{\partial x_k} \cdot \frac{\partial u_i}{\partial x_j} \bigg\} \d x \\[0.5em]
     &= 2\Ret \int_\Omega \frac{\partial h_k}{\partial x_j} \cdot \frac{\partial \overline u_i}{\partial x_k} \cdot \frac{\partial u_i}{\partial x_j} \d x 
-    + 2\Ret \int_{\Omega} h_k \frac{\partial^2 \overline u_i}{\partial x_j \partial x_k} \cdot \frac{\partial u_i}{\partial x_j} \d x  \\
+    + 2\Ret \int_{\Omega} h_k \frac{\partial^2 \overline u_i}{\partial x_j \partial x_k} \cdot \frac{\partial u_i}{\partial x_j} \d x  \\[0.5em]
     &\hphantom{= 2\Ret \int_\Omega \frac{\partial h_k}{\partial x_j} \cdot \frac{\partial \overline u_i}{\partial x_k} \cdot \frac{\partial u_i}{\partial x_j} \d x } \;
     + 2 \Ret \int_\Omega h_k \frac{\partial \overline u_i}{\partial x_k} \cdot \frac{\partial^2 u_i}{\partial x_j^2} \d x \\
     &\eqqcolon I_3 + I_4 + I_5.
   \end{align*}
-  For $I_5$ we use the fact that $u$ solves the Stokes resolvent problem which gives
+  For $I_5$, we use the fact that $u$ solves the Stokes resolvent problem which gives
   \begin{align*}
      I_5 
      &= 2 \Ret \int_\Omega h_k \frac{\partial \overline u_i}{\partial x_k}\cdot  \frac{\partial \phi}{\partial x_i} \d x + 2\Ret \int_\Omega h_k \frac{\partial\overline u_i}{\partial x_k} \lambda u_i \d x \\
@@ -96,14 +97,14 @@ The first lemma deals with so called \emph{Rellich identities} for solutions to 
   Thus the divergence theorem is applicable and yields together with the product rule:
   \begin{align*}
     I_2
-    &= 2 \Ret \int_\Omega \frac{\partial}{\partial x_i} \Big\{ h_k \frac{\partial \overline u_i}{\partial x_k} \phi \Big\} \d x \\
+    &= 2 \Ret \int_\Omega \frac{\partial}{\partial x_i} \Big\{ h_k \frac{\partial \overline u_i}{\partial x_k} \phi \Big\} \d x \\[0.5em]
     &= 2 \Ret \int_\Omega \frac{\partial h_k}{\partial x_i} \cdot \frac{\partial \overline u_i}{\partial x_k} \, \phi \d x + 2 \Ret \int_\Omega h_k \frac{\partial^2 \overline u_i}{\partial x_j \partial x_k} \, \phi \d x + 2 \Ret \int_\Omega h_k \frac{\partial \overline u_i}{\partial x_k} \cdot \frac{\partial \phi}{\partial x_i} \d x\\
     &\eqqcolon I_8 + I_9 + I_6.
   \end{align*}
   One term that hasn't come up so far, the second summand of the right hand side in \eqref{eq:rellichIdentity}, will now be expanded:
   \begin{align*}
     \int_\Omega \div(h)\,  |\nabla u|^2 \d x
-    &= \int_\Omega \div( h|\nabla u|^2) \d x - \int_\Omega h_k \frac{\partial}{\partial x_i} \Big\{ |\nabla u|^2 \Big\} \d x \\
+    &= \int_\Omega \div( h\,|\nabla u|^2) \d x - \int_\Omega h_k \frac{\partial}{\partial x_i} \Big\{ |\nabla u|^2 \Big\} \d x \\
     &\eqqcolon I_{10} - I_{11}.
   \end{align*}
   Expanding the Integral $I_{11}$ gives us the identity
@@ -126,8 +127,8 @@ The first lemma deals with so called \emph{Rellich identities} for solutions to 
   In order to prove identity \eqref{eq:rellichIdentity2}, we show that the expression we get from considering (\eqref{eq:rellichIdentity} + \eqref{eq:rellichIdentity2}) holds, i.e. we show the identity
   \begin{align*}
     2 \int_{\partial\Omega} h_k n_k |\nabla u|^2 \d\sigma
-    &= 2 \Ret \int_{\partial\Omega} h_k \frac{\partial \overline u_i}{\partial x_k} \bigg( \frac{\partial u}{\partial \nu} \bigg)_i \d \sigma \\
-    &\quad + 2 \Ret \int_{\partial\Omega} h_k \frac{\partial\overline u_i}{\partial x_j} \bigg\{ n_k \frac{\partial u_i}{\partial x_j} - n_j \frac{\partial u_i}{\partial x_k} \bigg\} \d \sigma \\
+    &= 2 \Ret \int_{\partial\Omega} h_k \frac{\partial \overline u_i}{\partial x_k} \bigg( \frac{\partial u}{\partial \nu} \bigg)_i \d \sigma \\[0.5em]
+    &\quad + 2 \Ret \int_{\partial\Omega} h_k \frac{\partial\overline u_i}{\partial x_j} \bigg\{ n_k \frac{\partial u_i}{\partial x_j} - n_j \frac{\partial u_i}{\partial x_k} \bigg\} \d \sigma \\[0.5em]
     &\quad+ 2 \Ret \int_{\partial\Omega} h_k \, \overline \phi\,  \bigg\{ n_i \frac{\partial u_i}{\partial x_i} - n_k \frac{\partial u_i}{\partial x_i} \bigg\} \d\sigma.
   \end{align*}
   To this end, note that the left side of the identity equals $2 I_{10}$, whereas the right hand side can be written as 
@@ -153,21 +154,22 @@ These operators are called \emph{first-order tangential derivative operators} an
 \eqref{eq:tangentialGradient}, in the following way:
 \begin{align}
   \label{eq:relTanGrad}
-  (\nabla_{\mathrm{tan}} \psi)_j = \frac{\partial \psi}{\partial x_j} - n_k n_j \frac{\partial \psi}{\partial x_k} = n_k \partial_{\tau_{kj}} \psi.
+  \big(\nabla_{\mathrm{tan}} \psi\big)_j = \frac{\partial \psi}{\partial x_j} - n_k n_j \frac{\partial \psi}{\partial x_k} = n_k \, \partial_{\tau_{kj}} \psi.
 \end{align}
 The tangential derivative operators come with a helpful  ``integration by parts'' rule and can be used to define Sobolev spaces on the boundary $\partial\Omega$:
-For $f \in \Ell^1_\loc(\Omega)$, we start by defining functionals on $\CC_0^\infty(\R^d)$ by setting
+For $f \in \Ell^1_\loc(\Omega)$, we start by defining antilinear functionals on $\CC_0^\infty(\R^d)$ by setting
 \begin{align*}
-  \partial_{\tau_{kj}} f \colon \CC_0^\infty(\R^d) \ni \psi \mapsto \int_{\partial\Omega} f ( \partial_{\tau_{jk}} \psi) \d\sigma.
+    \partial_{\tau_{kj}} f \colon \CC_0^\infty(\R^d) \ni \psi \mapsto \int_{\partial\Omega} f \, \overline{ \partial_{\tau_{jk}} \psi} \d\sigma.
 \end{align*}
 Now the weak tangential derivatives of $f$ are given by those functionals which are regular, i.e. elements of $\Ell^1_\loc(\partial\Omega)$.
 In this case, the following integration by parts formula holds:
 \begin{align*}
-  \int_{\partial\Omega} f ( \partial_{\tau_{jk}} \psi) \d\sigma = \int_{\partial\Omega} (\partial_{\tau_{kj}} f) \psi \d\sigma.
+    \int_{\partial\Omega} f\, \overline{( \partial_{\tau_{jk}} \psi)} \d\sigma = \int_{\partial\Omega} (\partial_{\tau_{kj}} f)\, \overline{\psi} \d\sigma.
 \end{align*}
+Note that the minus sign that usually comes with the integration by parts is hidden in the new order of indices.
 For $p \in (1,\infty)$, we define the corresponding Sobolev space via
 \begin{align*}
-  \WW^{1,p}(\partial\Omega) = \Big\{ f \in \Ell^p(\partial\Omega) \colon \partial_{\tau_{jk}} f \in \Ell^p(\partial\Omega), \; j,k = 1,\dots,d \Big\}.
+  \WW^{1,\,p}(\partial\Omega) = \Big\{ f \in \Ell^p(\partial\Omega) \colon \partial_{\tau_{jk}} f \in \Ell^p(\partial\Omega), \; j,k = 1,\dots,d \Big\}.
 \end{align*}
 
 We extend our detour by the following basic lemma on a reverse triangle inequality for elements of the sector $\Sigma_\theta$.
@@ -219,12 +221,12 @@ The next lemma enables us to handle the solid integrals in \eqref{eq:rellichIden
   \end{align}
   Rewriting the first term of equation \eqref{eq:variationalStokes} leads to 
   \begin{align*}
-    -\int_{\Omega} \frac{\partial^2 u_j}{\partial x_i \partial x_i}  \, \overline u_j \d x
+    -\int_{\Omega} \frac{\partial^2 u_j}{\partial x_i \partial x_i}  \; \overline u_j \d x
     = -\int_{\Omega} \frac{\partial }{\partial x_i} \bigg\{ \overline u_j \frac{\partial u_j}{\partial x_i} \bigg\} \d x + \int_\Omega \frac{\partial u_j}{\partial x_i} \cdot \frac{\partial \overline u_j}{\partial x_i} \d x.
     \end{align*}
   Note that since $u$ is solenoidal, we have for the third term of equation \eqref{eq:variationalStokes}
   \begin{align*}
-    - \int_{\Omega} \frac{\partial \phi}{\partial x_i} \, \overline u_i \d x = - \int_{\Omega} \frac{\partial}{\partial x_i} \Big\{ \phi\,  \overline u_i \Big\} \d x.
+    - \int_{\Omega} \frac{\partial \phi}{\partial x_i} \; \overline u_i \d x = - \int_{\Omega} \frac{\partial}{\partial x_i} \Big\{ \phi\,  \overline u_i \Big\} \d x.
   \end{align*}
   Now we want to transform the first and third of the above solid integrals into boundary integrals through Proposition \ref{prop:approximationArgument}.
   By the assumptions formulated in Theorem \ref{thm:rellich}, $\phi$ and $\nabla u$ have a nontangential limit and for both nontangential maximal functions the inclusion $(\phi)^*, (\nabla u)^* \in \Ell^2(\partial\Omega)$ holds. 
@@ -241,11 +243,11 @@ The next lemma enables us to handle the solid integrals in \eqref{eq:rellichIden
   If we now take the real and imaginary part of \eqref{eq:testedStokes} and sum them up with the prefactor $\alpha(\theta) > 0$ from Lemma \ref{lem:lambdaIneq}, we get
   \begin{align*}
     \int_\Omega |\nabla u|^2 \d x + \Big\{ \Re(\lambda) + \alpha\, \big|\Im(\lambda)\,\big|\, \Big\} \int_\Omega |u|^2 \d x
-    \leq (1 + \alpha) \, \bigg| \int_{\partial\Omega} \frac{\partial u}{\partial \nu} \cdot \bar u \d \sigma \bigg|\,.
+    \leq (1 + \alpha) \, \bigg| \int_{\partial\Omega} \frac{\partial u}{\partial \nu} \cdot \bar u \d \sigma \, \bigg|\,.
   \end{align*}
   Lemma \ref{lem:lambdaIneq} now gives
   \begin{align*}
-    \int_\Omega |\nabla u|^2 \d x + |\lambda| \int_\Omega |u|^2 \d x \leq C\,  \bigg| \int_{\partial\Omega} \frac{\partial u}{\partial \nu} \cdot \bar u \d \sigma \bigg|\,,
+    \int_\Omega |\nabla u|^2 \d x + |\lambda| \int_\Omega |u|^2 \d x \leq C\,  \bigg| \int_{\partial\Omega} \frac{\partial u}{\partial \nu} \cdot \bar u \d \sigma\, \bigg|\,,
   \end{align*}
   with $C = (1 + \alpha)$ from which we readily derive estimate \eqref{eq:laxMilgramIneq} after applying the Cauchy-Schwartz inequality.
 \end{proof}
@@ -256,12 +258,12 @@ The next lemma combines Rellich identities \eqref{eq:rellichIdentity} and \eqref
   Under the same assumptions on $(u,\phi)$ and $\lambda$ as in Theorem \ref{thm:rellich}, we have
   \begin{align}
     \label{eq:gradEstimateRellich}
-    \| \nabla u\|_\partial \leq C_\varepsilon \,\Big\| \frac{\partial u}{\partial \nu} \Big\|_\partial + \varepsilon \Big\{ \|\nabla u\|_\partial + \|\phi\|_\partial + \| \, |\lambda|^{1/2} u\|_\partial \Big\}
+    \| \nabla u\|_\partial \leq C_\varepsilon\, \,\Big\| \frac{\partial u}{\partial \nu} \Big\|_\partial + \varepsilon \,\Big\{ \|\nabla u\|_\partial + \|\phi\|_\partial +  |\lambda|^{1/2} \| u\|_\partial \Big\}
   \end{align}
   and
   \begin{align}
     \label{eq:gradEstimateRellich2}
-    \|\nabla u\|_\partial \leq C_\varepsilon \Big\{ \|\nabla_{\mathrm{tan}} u \|_\partial + \|\, |\lambda|^{1/2} u\|_\partial \Big\} + \varepsilon \big\{ \|\nabla u\|_\partial + \|\phi\|_\partial \big\}
+    \|\nabla u\|_\partial \leq C_\varepsilon\, \Big\{ \|\nabla_{\mathrm{tan}} u \|_\partial + |\lambda|^{1/2} \| u\|_\partial \Big\} + \varepsilon\, \Big\{ \|\nabla u\|_\partial + \|\phi\|_\partial \Big\}
   \end{align}
   for all $\varepsilon \in (0,1)$, where $C_\varepsilon$ depends only on $d$, $\theta$, $\tau$, $\varepsilon$ and the Lipschitz character of $\Omega$.
 \end{lem}
@@ -273,7 +275,7 @@ The next lemma combines Rellich identities \eqref{eq:rellichIdentity} and \eqref
   Before we start, note that we have $\Delta \phi = 0$ on the one hand and for the nontangential maximal function $(\phi)^* \in \Ell^2(\partial\Omega)$ on the other hand. According to Shen \cite[p. 410]{Shen2012}, a result from Dahlberg \cite{dahlberg77} gives the estimation
   \begin{align}
     \label{eq:dahlbergEstimate}
-    \int_\Omega |\phi|^2 \d x \leq C \|(\phi)^* \|_\partial^2 \leq C \|\phi\|_\partial^2.
+    \int_\Omega |\phi|^2 \d x \leq C \, \|(\phi)^* \|_\partial^2 \leq C\, \|\phi\|_\partial^2.
   \end{align}
 
   We will now prove the first estimate \eqref{eq:gradEstimateRellich}.
@@ -294,37 +296,37 @@ To this end, for the third integral we calculate
   \begin{align}
     \int_\Omega |\nabla u| |\phi| \d x
     \leq \Big( \int_\Omega |\nabla u|^2 \d x \Big)^{1/2} \Big( \int_\Omega |\phi|^2 \d x \Big)^{1/2}
-    \leq C \, \Big\| \frac{\partial u}{\partial \nu} \Big\|_\partial^{1/2} \|u\|_\partial^{1/2} \, \|\phi\|_\partial\,, \label{eq:nablaPhi}
+    \leq C \, \Big\| \, \frac{\partial u}{\partial \nu}\, \Big\|_\partial^{1/2} \|u\|_\partial^{1/2} \, \|\phi\|_\partial\,, \label{eq:nablaPhi}
   \end{align}
   where the first step is due to the Cauchy-Schwartz inequality and the second step combines estimate \eqref{eq:laxMilgramIneq} with estimate \eqref{eq:dahlbergEstimate}.
 
   The last integral of \eqref{eq:normRellich} can be estimated as follows:
   \begin{align}
+\label{eq:lambdaNablaU}
     |\lambda| \int_\Omega |\nabla u| \, |u| \d x 
-    &\leq  \frac{|\lambda|^{3/2}}{2} \int_\Omega |u|^2 \d x + \frac{|\lambda|^{1/2}}{2 } \int_\Omega |\nabla u|^2 \d x \nonumber\\\label{eq:lambdaNablaU}
-    &\leq C \, \Big\| \frac{\partial u}{\partial \nu} \Big\|_\partial \big\|\, |\lambda|^{1/2} u\,\big\|_\partial, 
+    &\leq  \frac{|\lambda|^{3/2}}{2} \int_\Omega |u|^2 \d x + \frac{|\lambda|^{1/2}}{2 } \int_\Omega |\nabla u|^2 \d x \leq C \, \Big\| \, \frac{\partial u}{\partial \nu} \, \Big\|_\partial \, |\lambda|^{1/2}  \big\| u\,\big\|_\partial, 
   \end{align}
   where in the first step we used the weighted Young inequality and in the second step we applied estimate \eqref{eq:laxMilgramIneq}.
   Putting everything together, we calculate
   \begin{align*}
     \| \nabla u\|_\partial^2 
-    &\leq C \bigg\{ \| \nabla u\|_\partial \, \Big\|\frac{\partial u}{\partial \nu} \Big\|_\partial 
-    + \Big\| \frac{\partial u}{\partial \nu} \Big\|_\partial \|u\|_\partial 
-    + \Big\| \frac{\partial u}{\partial \nu} \Big\|_\partial^{1/2} \|u\|_\partial^{1/2} \|\phi\|_\partial 
-    + \Big\| \frac{\partial u}{\partial \nu} \Big\|_\partial \big\| \, |\lambda|^{1/2} u\, \big\|_\partial\bigg\}
+    &\leq C\, \bigg\{ \| \nabla u\|_\partial \, \Big\|\,\frac{\partial u}{\partial \nu} \, \Big\|_\partial 
+    + \Big\|\,\frac{\partial u}{\partial \nu}\,\Big\|_\partial \|u\|^{}_\partial 
+    + \Big\|\,\frac{\partial u}{\partial \nu}\,\Big\|_\partial^{1/2} \|u\|_\partial^{1/2} \|\phi\|^{}_\partial 
++ \Big\|\,\frac{\partial u}{\partial \nu}\,\Big\|_\partial \, |\lambda|^{1/2} \big\|  u \big\|^{}_\partial\bigg\}
   \end{align*}
   If we now use the assumption $|\lambda| \geq \tau$ which allows us to bound $\|u\|_\partial$ via
   \begin{align*}
-    \|u\|_\partial \leq \frac{|\lambda|^{1/2}}{\tau^{1/2}} \|u\|_\partial = C |\lambda|^{1/2} \|u\|_{\partial},
+      \|u\|^{}_\partial \leq \frac{|\lambda|^{1/2}}{\tau^{1/2}} \|u\|^{}_\partial = C \, |\lambda|^{1/2} \|u\|^{}_{\partial},
   \end{align*}
   the desired estimate \eqref{eq:gradEstimateRellich} now follows applying Young's weighted inequality with an $\varepsilon$ and the norm equivalence on finite dimensional vector spaces. 
   Note that for the product of three norms from inequality \eqref{eq:nablaPhi} we need to apply the Young inequality twice:
   \begin{align*}
-    \Big\| \frac{\partial u}{\partial \nu} \Big\|_\partial^{1/2} \|u\|_\partial^{1/2} \|\phi\|_\partial 
-    &\leq \Big\{\, \frac{1}{4 \varepsilon} \Big\| \frac{\partial u}{\partial \nu} \Big\|_\partial 
-  + \varepsilon \|u\|_\partial \Big\} \, \|\phi\|_\partial  \\[0.5em]
-  &\leq \frac{1}{32\, \varepsilon^3} \Big\| \frac{\partial u}{\partial \nu} \Big\|_\partial^2 + \frac{\varepsilon}{2} \|\phi\|_\partial^2 + \frac{1}{2} \|u\|_\partial^2 + \frac{\varepsilon^2}{2} \|\phi\|_\partial^2 \\[0.5em]
-  &\leq C_\varepsilon \Big\{ \; \Big\|\frac{\partial u}{\partial\nu} \Big\|_\partial^2 + \|u\|_\partial^2 \Big\} + \varepsilon \|\phi\|_\partial^2,
+      \Big\| \, \frac{\partial u}{\partial \nu} \, \Big\|_\partial^{1/2} \|u\|_\partial^{1/2} \|\phi\|^{}_\partial 
+      &\leq \Big\{\, \frac{1}{4 \varepsilon}\, \Big\|\, \frac{\partial u}{\partial \nu}\, \Big\|^{}_\partial 
+  + \varepsilon \|u\|^{}_\partial \Big\} \, \|\phi\|^{}_\partial  \\[0.5em]
+  &\leq \frac{1}{32\, \varepsilon^3} \, \Big\|\, \frac{\partial u}{\partial \nu} \, \Big\|_\partial^2 + \frac{\varepsilon}{2} \|\phi\|_\partial^2 + \frac{1}{2} \|u\|_\partial^2 + \frac{\varepsilon^2}{2} \|\phi\|_\partial^2 \\[0.5em]
+  &\leq C_\varepsilon\, \Big\{ \; \Big\|\, \frac{\partial u}{\partial\nu} \, \Big\|_\partial^2 + \|u\|_\partial^2 \,\Big\} + \varepsilon \|\phi\|_\partial^2,
   \end{align*}
   where for the last inequality we used the fact that $\varepsilon < 1$.
 
@@ -333,42 +335,43 @@ To this end, for the third integral we calculate
     \label{eq:onTheWay}
     \begin{alignedat}{1}
     \| \nabla u\|_\partial^2 
-    &\leq C \bigg\{ \|\nabla_{\mathrm{tan}} u\|_\partial 
-    \Big\{ \|\nabla u\|_\partial + \|\phi\|_\partial \Big\}   \\
+    &\leq C \bigg\{ \|\nabla_{\mathrm{tan}} u\|^{}_\partial 
+    \Big\{ \|\nabla u\|^{}_\partial + \|\phi\|^{}_\partial \Big\}   \\
     &\hspace{2cm} + \int_\Omega |\nabla u|^2 \d x + \int_\Omega |\nabla u| |\phi| \d x + |\lambda| \int_\Omega |\nabla u| |u|\d x \bigg\}.
   \end{alignedat}
   \end{align}
   As before we estimate the three terms on the right side of \eqref{eq:onTheWay} using \eqref{eq:laxMilgramIneq}, \eqref{eq:nablaPhi} and \eqref{eq:lambdaNablaU}, respectively, and obtain the estimate
   \begin{align*}
     \| \nabla u\|_\partial^2 
-    &\leq C \bigg\{ \|\nabla_{\mathrm{tan}} u\|_\partial 
-    \Big\{ \|\nabla u\|_\partial + \|\phi\|_\partial \Big\}   \\
-    &\hspace{2cm} + \Big\| \frac{\partial u}{\partial \nu} \Big\|_\partial \| u\|_\partial
-    + \Big\| \frac{\partial u}{\partial \nu} \Big\|_\partial^{1/2} \|u\|_\partial^{1/2} \|\phi\|_\partial + \Big\| \frac{\partial u}{\partial \nu} \Big\|_\partial \big\|\, |\lambda|^{1/2} u \, \big\|_\partial \bigg\}.
+    &\leq C\, \bigg\{ \|\nabla_{\mathrm{tan}} u\|^{}_\partial 
+    \Big\{ \|\nabla u\|^{}_\partial + \|\phi\|^{}_\partial \Big\}   \\
+    &\hspace{2cm} + \Big\| \frac{\partial u}{\partial \nu} \Big\|^{}_\partial \| u\|^{}_\partial
++ \Big\| \frac{\partial u}{\partial \nu} \Big\|_\partial^{1/2} \|u\|_\partial^{1/2} \|\phi\|^{}_\partial + \Big\| \frac{\partial u}{\partial \nu} \Big\|^{}_\partial \, |\lambda|^{1/2} \big\| u  \big\|^{}_\partial \bigg\}.
   \end{align*}
   If we now use the Young inequality with an $\varepsilon$, we get
   \begin{align*}
     \|\nabla u\|_\partial^2 
-    &\leq C_\varepsilon \big\{ \, \|\nabla_{\mathrm{tan}} u\|_\partial^2 + \| |\lambda|^{1/2} u\|_\partial^2 \, \big\}  + \varepsilon \bigg\{ \, \|\nabla u\|_\partial^2 + \|\phi\|_\partial^2 + \frac{1}{4}\Big\|\frac{\partial u}{\partial \nu} \Big\|_\partial^2 \, \bigg\}.
+    &\leq C_\varepsilon\, \Big\{ \, \|\nabla_{\mathrm{tan}} u\|_\partial^2 + |\lambda|^{1/2} \| u\|_\partial^2 \, \Big\}  + \varepsilon\, \bigg\{ \, \|\nabla u\|_\partial^2 + \|\phi\|_\partial^2 + \frac{1}{4}\,\Big\|\frac{\partial u}{\partial \nu} \Big\|_\partial^2 \, \bigg\}.
   \end{align*}
   The claim now follows if we use the definition of the conormal derivative and the norm equivalence on finite dimensional vector spaces.
 \end{proof}
 
 We prove one last lemma before we tackle the central theorem of this chapter.
-It will not depend on the lemmata which were proven in the preceding part of this chapter, as the approach to derive boundary estimates will be different.
-We will not rely upon the rellich identities from Lemma \ref{lem:rellichIdentity} but directly part from a variational formulation of the Stokes resolvent problem on the boundary. Furthermore, we will rely on the following Theorem about the regularity problem and the Neumann problem for the Laplacian on bounded Lipschitz domains
+The following lemma will not depend on the lemmata which were proven in the preceding part of this chapter, as the approach to derive the desired boundary estimates will be different:
+We will not rely upon the rellich identities from Lemma \ref{lem:rellichIdentity} but directly part from a variational formulation of the Stokes resolvent problem on the boundary. 
+Furthermore, we will work with the following Theorem about the regularity problem and the Neumann problem for the Laplacian on bounded Lipschitz domains
 \begin{thm}
   \label{thm:jerisonKenig}
   Let $\Omega \subset \R^d$, $d \geq 2$, be a bounded Lipschitz domain. Then the following statements hold:
   \begin{enumerate}[a)]
     \item Given $f \in \HH^1(\partial\Omega)$, there exists a unique $\psi \in$ with $(\nabla \psi)^* \in \Ell^2(\partial\Omega)$ such that $\Delta u = 0$ in $\Omega$ and $\psi$ converges nontangentially to $f$ a.e.. Furthermore, the estimate 
       \begin{align*}
-        \|\nabla(\psi)\|_\partial \leq C \|f\|_{\HH^1(\partial\Omega)}
+          \|\nabla\psi\|^{}_\partial \leq C\, \|f\|_{\HH^1(\partial\Omega)}
       \end{align*}
       holds with a constant only depending on the Lipschitz character of $\Omega$.
     \item Given $f \in \Ell^2(\partial\Omega)$ with $\int_{\partial\Omega} f \d\sigma = 0$, there exists a harmonic function $\psi$ on $\Omega$ with $\frac{\partial\psi}{\partial n} = f$ a.e.. Furthermore, the estimate
       \begin{align*}
-        \| \psi\|_{\HH^1(\partial\Omega)} \leq C \|f\|_\partial
+          \| \psi\|_{\HH^1(\partial\Omega)} \leq C\, \|f\|^{}_\partial
       \end{align*}
       holds with C only depending on the Lipschitz character of $\Omega$.
   \end{enumerate}
@@ -382,16 +385,16 @@ We will not rely upon the rellich identities from Lemma \ref{lem:rellichIdentity
 
 \begin{lem}
   Assume that $(u,\phi)$ satisfies the same conditions as in Theorem \ref{thm:rellich}.
-  Then
+  Then,
   \begin{align}
     \label{eq:phiDashintPhi}
-    \bigg\|\phi - \bigg\{ \frac{1}{{r_0}^{d - 1}}\int_{\partial\Omega} \phi \d\sigma \bigg\} \bigg\|_\partial 
-     \leq C \Big\{ \|\nabla u\|_\partial + |\lambda| \, \|u\cdot n\|_{\HH^{-1}(\partial\Omega)} \Big\}
+    \bigg\|\phi - \bigg\{ \frac{1}{{r_0}^{d - 1}}\int_{\partial\Omega} \phi \d\sigma \bigg\} \bigg\|^{}_\partial 
+    \leq C \Big\{ \|\nabla u\|^{}_\partial + |\lambda| \, \|u\cdot n\|_{\HH^{-1}(\partial\Omega)} \Big\}
   \end{align}
   and
   \begin{align}
     \label{eq:lambdaun}
-    |\lambda|\, \| u\cdot n \|_{\HH^{-1}(\partial\Omega)} \leq C \Big\{ \|\phi\|_\partial + \|\nabla u\|_\partial \Big\},
+    |\lambda|\, \| u\cdot n \|_{\HH^{-1}(\partial\Omega)} \leq C \Big\{ \|\phi\|^{}_\partial + \|\nabla u\|^{}_\partial \Big\},
   \end{align}
   where $C$ depends only on $d$ and the Lipschitz character of $\Omega$.
 \end{lem}
@@ -403,7 +406,7 @@ We will not rely upon the rellich identities from Lemma \ref{lem:rellichIdentity
   \ref{eq:phiDashintPhi} holds for all $\Omega_j$, i.e. we have proven the inequality
   \begin{align}
     \label{eq:phiDashintPhij}
-    \bigg\|\phi - \bigg\{ \frac{1}{{r_0}^{d - 1}}\int_{\partial\Omega} \phi \d\sigma \bigg\} \bigg\|_{\Ell^2(\partial\Omega_j; \C^d)}
+    \bigg\|\, \phi - \bigg\{ \frac{1}{{r_0}^{d - 1}}\int_{\partial\Omega} \phi \d\sigma \bigg\} \, \bigg\|_{\Ell^2(\partial\Omega_j; \C^d)}
      \leq C \Big\{ \|\nabla u\|_{\Ell^2(\partial\Omega_j; \C^{d\times d})} + |\lambda| \, \|u\cdot n\|_{\HH^{-1}(\partial\Omega_j)} \Big\}
   \end{align}
   and an inequality analogous to \eqref{eq:lambdaun}.
@@ -418,8 +421,8 @@ We will not rely upon the rellich identities from Lemma \ref{lem:rellichIdentity
     \label{eq:stokesEquationH1}
     \begin{alignedat}{1}
     \|\nabla \phi \cdot n\|_{\HH^{-1}(\partial\Omega)} 
-    &\leq \|\Delta u \cdot n \|_{\HH^{-1}(\partial\Omega)} + |\lambda| \| u\cdot n\|_{\HH^{-1}(\partial\Omega)}, \\
-    |\lambda| \| u\cdot n \|_{\HH^{-1}(\partial\Omega)} 
+    &\leq \|\Delta u \cdot n \|_{\HH^{-1}(\partial\Omega)} + |\lambda|\, \| u\cdot n\|_{\HH^{-1}(\partial\Omega)}, \\
+    |\lambda|\, \| u\cdot n \|_{\HH^{-1}(\partial\Omega)} 
     &\leq \|\Delta u \cdot n \|_{\HH^{-1}(\partial\Omega)} + \|\nabla \phi \cdot n \|_{\HH^{-1}(\partial\Omega)}.
     \end{alignedat}
   \end{align}
@@ -428,15 +431,15 @@ We will not rely upon the rellich identities from Lemma \ref{lem:rellichIdentity
   \begin{align}
     \label{eq:deltaun}
     \|\Delta u \cdot n\|_{\HH^{-1}(\partial\Omega)}
-    \leq C \|\nabla u\|_\partial
+    \leq C\, \|\nabla u\|^{}_\partial
   \end{align}
   and on the other hand the estimate
   \begin{align}
     \label{eq:nablaPhin}
-    c \, \bigg\|\phi - \bigg\{ \frac{1}{{r_0}^{d - 1}}\int_{\partial\Omega} \phi \d\sigma \bigg\} \bigg\|_\partial 
+    c \, \bigg\|\,\phi - \bigg\{ \frac{1}{{r_0}^{d - 1}}\int_{\partial\Omega} \phi \d\sigma \bigg\} \, \bigg\|^{}_\partial 
     %c \| \phi - \dashint_{\partial\Omega} \phi \d\sigma \|_\partial
     \leq \|\nabla \phi \cdot n\|_{\HH^{-1}(\partial\Omega)}
-    \leq C\,  \|\phi\|_\partial
+    \leq C\,  \|\phi\|^{}_\partial
   \end{align}
   holds.
   Using these two estimates applied to the respecive terms of \eqref{eq:stokesEquationH1}, we can directly verify \eqref{eq:phiDashintPhi} and \eqref{eq:lambdaun}.
@@ -449,51 +452,51 @@ We will not rely upon the rellich identities from Lemma \ref{lem:rellichIdentity
   The expression between the brackets is the first-order tangential derivative $\partial_{\tau_{ij}}$, see \eqref{eq:defnTangDerivative}. 
   We can thus see that
   \begin{align*}
-    | \langle \Delta u \cdot n, u \rangle | = | \langle \nabla u, \nabla_{\mathrm{tan}} u \rangle| \leq 2 \|\nabla u\|_\partial^2,
+    \big| \langle \Delta u \cdot n, u \rangle \big| = \big| \langle \nabla u, \nabla_{\mathrm{tan}} u \rangle\big| \leq 2\, \|\nabla u\|_\partial^2\,,
   \end{align*}
   where we compared the tangential gradient with the usual gradient via the triangle inequality and applied the Cauchy-Schwartz estimate.  
   Identifying $\Delta u \cdot n$ with an element of $\HH^{-1}(\partial\Omega)$, the estimate \eqref{eq:deltaun} follows. 
 
-  For the proof of estimate \eqref{eq:nablaPhin} we will use $\Ell^2$-estimates for the Neumann and regularity problems for the Laplace equation in Lipschitz domains.
-  Jerison and Kenig showed that for $g \in \Ell^2(\partial\Omega)$ with mean value zero the \emph{Neumann problem} for Laplace's equation on the Lipschitz domain $\Omega$ has a unique solution $\psi$ with  $(\nabla \psi)^* \in \Ell^2(\partial\Omega)$, $\frac{\partial \psi}{\partial n} = g$ on $\partial \Omega$ nontangentially and the solution fulfills the estimate $\|\psi\|_{\HH^1(\partial\Omega)} \leq C \|g\|_\partial$, see Theorem \ref{thm:jerisonKenig}.
+  For the proof of estimate \eqref{eq:nablaPhin}, we will use $\Ell^2$-estimates for the Neumann and regularity problems for the Laplace equation in Lipschitz domains.
+  Jerison and Kenig showed that for $g \in \Ell^2(\partial\Omega)$ with mean value zero the \emph{Neumann problem} for Laplace's equation on the Lipschitz domain $\Omega$ has a unique solution $\psi$ with  $(\nabla \psi)^* \in \Ell^2(\partial\Omega)$, $\frac{\partial \psi}{\partial n} = g$ on $\partial \Omega$ nontangentially and the solution fulfills the estimate $\|\psi\|_{\HH^1(\partial\Omega)} \leq C \|g\|^{}_\partial$, see Theorem \ref{thm:jerisonKenig}.
   By Proposition \ref{prop:approximationArgument}, we see that
   \begin{align*}
-    \int_{\partial\Omega} \phi \frac{\partial\psi}{\partial x_i} n_i \d\sigma  
+    \int_{\partial\Omega} \phi \, \frac{\partial\psi}{\partial x_i} n_i \d\sigma  
     = \int_\Omega \frac{\partial}{\partial x_i} \bigg\{ \phi \frac{\partial\psi}{\partial x_i} \bigg\} d x 
-    = \int_\Omega \frac{\partial \phi}{\partial x_i} \frac{\partial \psi}{\partial x_i} \d x 
-    = \int_{\partial\Omega} \psi \frac{\partial \phi}{\partial x_i} n_i \d \sigma.
+    = \int_\Omega \frac{\partial \phi}{\partial x_i} \cdot \frac{\partial \psi}{\partial x_i} \d x 
+    = \int_{\partial\Omega} \psi \, \frac{\partial \phi}{\partial x_i} n_i \d \sigma.
   \end{align*}
   We can then use this identity and the estimate of $\psi$ against the data $g$ to derive
   \begin{align}
     \label{eq:dualityPhi}
-    \bigg| \int_{\partial\Omega} \phi g \d \sigma \bigg|
-    &\leq \Big\| \frac{\partial \phi}{\partial n} \Big\|_{\HH^{-1}(\partial\Omega)} \| \psi \|_{\HH^1(\partial\Omega)} 
-    \leq C \Big\| \frac{\partial \phi}{\partial n} \Big\|_{\HH^{-1}(\partial\Omega)} \| g\|_\partial.
+    \bigg| \int_{\partial\Omega} \phi \, g \d \sigma\, \bigg|
+    &\leq \Big\|\, \frac{\partial \phi}{\partial n}\, \Big\|_{\HH^{-1}(\partial\Omega)} \| \psi \|_{\HH^1(\partial\Omega)} 
+    \leq C\, \Big\|\, \frac{\partial \phi}{\partial n} \,\Big\|_{\HH^{-1}(\partial\Omega)} \| g\|^{}_\partial.
   \end{align}
   
-  Now if we set $\overline g = \phi - \tilde \phi$, with $\tilde \phi \coloneqq |\partial \Omega|^{-1} \int_{\partial\Omega} \phi \d \sigma$, we arrive at the following estimate:
+  Now, if we set $\overline g = \phi - \tilde \phi$, with $\tilde \phi \coloneqq |\partial \Omega|^{-1} \int_{\partial\Omega} \phi \d \sigma$, we arrive at the following estimate:
   \begin{align*}
-    \| \phi - \tilde\phi \|_\partial^2
-    = \int_{\partial\Omega} (\phi - \tilde \phi) \overline{(\phi - \tilde\phi)} \d\sigma 
-    = \int_{\partial\Omega} \phi \overline{(\phi - \tilde\phi)} \d\sigma 
-    \leq C \|\frac{\partial\phi}{\partial n} \|_{\HH^{-1}(\partial\Omega)} \|\phi - \tilde \phi\|_\partial,
+      \| \phi - \tilde\phi \|_\partial^2
+    = \int_{\partial\Omega} (\phi - \tilde \phi) \, \overline{(\phi - \tilde\phi)} \d\sigma 
+    = \int_{\partial\Omega} \phi\, \overline{(\phi - \tilde\phi)} \d\sigma 
+    \leq C\, \Big\|\, \frac{\partial\phi}{\partial n}\, \Big\|_{\HH^{-1}(\partial\Omega)} \|\phi - \tilde \phi\|^{}_\partial,
   \end{align*}
   where in the last step we used \eqref{eq:dualityPhi}.
   This together with Lemma \ref{lem:compareBoundaryWithBall} proves the left side of inequality \eqref{eq:nablaPhin}.
 
   For the right side of inequality \eqref{eq:nablaPhin}, we work in a similar way.
-  We will use results for the \emph{regularity problem} of Laplace's equation by Jerison and Kenig, see Theorem \ref{thm:jerisonKenig}.
-  Given $f \in \HH^1(\partial\Omega)$, there exists a harmonic function $\psi$ in $\Omega$ such that $(\nabla\psi)^* \in \Ell^2(\partial\Omega)$ and $\psi = f$ on $\partial\Omega$ nontangentially. Furthermore, the estimate $\|\nabla \psi\|_\partial \leq C \|f\|_{\HH^1(\partial\Omega)}$ holds.
+  We will use results for the \emph{regularity problem} of Laplace's equation by Jerison and Kenig, see Theorem \ref{thm:jerisonKenig}:
+  Given $f \in \HH^1(\partial\Omega)$, there exists a harmonic function $\psi$ in $\Omega$ such that $(\nabla\psi)^* \in \Ell^2(\partial\Omega)$ and $\psi = f$ on $\partial\Omega$ nontangentially. Furthermore, the estimate $\|\nabla \psi\|^{}_\partial \leq C\, \|f\|_{\HH^1(\partial\Omega)}$ holds.
   As for \eqref{eq:dualityPhi}, we calculate
   \begin{align*}
-    \bigg| \int_{\partial\Omega} \frac{\partial\phi}{\partial n} f \d\sigma \bigg|
-    = \bigg| \int_{\partial\Omega} \phi \frac{\partial \psi}{\partial n} \d \sigma \bigg| 
-    \leq \|\phi\|_{\partial} \|\nabla \psi \|_\partial 
-    \leq C \|\phi\|_\partial \|f\|_{\HH^1(\partial\Omega)},
+    \bigg| \int_{\partial\Omega} \frac{\partial\phi}{\partial n} f \d\sigma\, \bigg|
+    = \bigg| \int_{\partial\Omega} \phi\, \frac{\partial \psi}{\partial n} \d \sigma\, \bigg| 
+    \leq \|\phi\|^{}_{\partial} \|\nabla \psi \|^{}_\partial 
+    \leq C\, \|\phi\|^{}_\partial \|f\|_{\HH^1(\partial\Omega)},
   \end{align*}
   Interpreting elements from $\Ell^2(\partial\Omega)$ as functionals on $\HH^1(\partial\Omega)$, we obtain
   \begin{align*}
-    \Big\|\frac{\partial\phi}{\partial n} \Big\|_{\HH^{-1}(\partial\Omega)} \leq C \|\phi\|_\partial. 
+      \Big\|\,\frac{\partial\phi}{\partial n}\, \Big\|_{\HH^{-1}(\partial\Omega)} \leq C\, \|\phi\|^{}_\partial. 
   \end{align*}
   This finishes the proof of inequality \eqref{eq:nablaPhin}.
 \end{proof}
@@ -502,7 +505,7 @@ We will not rely upon the rellich identities from Lemma \ref{lem:rellichIdentity
   \label{rem:harmonicEstimate}
   A careful look at the proof of inequality \eqref{eq:nablaPhin} reveals that the estimate
   \begin{align*}
-    c\, \| \phi \|_\partial \leq \| \nabla \phi \cdot n \|_{\HH^{-1}(\partial\Omega)},
+      c\, \| \phi \|^{}_\partial \leq \| \nabla \phi \cdot n \|_{\HH^{-1}(\partial\Omega)},
   \end{align*}
   holds for \emph{all} harmonic functions $\phi$ with vanishing mean on $\partial\Omega$ and not only those that correspond to the pressure term of the Stokes resolvent problem.
 \end{rem}
@@ -510,53 +513,53 @@ We will not rely upon the rellich identities from Lemma \ref{lem:rellichIdentity
 After all this preparation we have accquainted enough tools and are now able to prove Theorem \ref{thm:rellich}.
 
 \begin{proof}[Proof of Theorem \ref{thm:rellich}]
-  For the proof of estimate \eqref{eq:rellich1}, without loss of generality we can assume that $\int_{\partial\Omega} \phi \d \sigma = 0$.
+  For the proof of estimate \eqref{eq:rellich1}, we can assume without loss of generality that $\int_{\partial\Omega} \phi \d \sigma = 0$.
 
   We start by proving estimate \eqref{eq:rellich1}. 
   Using \eqref{eq:phiDashintPhi} to bound the second summand in \eqref{eq:rellich1} and then \eqref{eq:gradEstimateRellich2} for $\nabla u$, we get
   \begin{align*}
-    \|\nabla u\|_\partial + \|\phi\|_\partial
-    &\leq C \{ \|\nabla u\|_\partial + |\lambda| \|u \cdot n \|_{\HH^1(\partial\Omega)} \} \\
-    &\leq C_\varepsilon \Big\{ \|\nabla_{\mathrm{tan}} u \|_\partial + |\lambda|^{1/2} \|u\|_\partial + |\lambda| \| u\cdot n\|_{\HH^{-1}(\partial\Omega)} \Big\} 
-     + C \varepsilon \{ \|\nabla u\|_\partial + \|\phi\|_\partial \}
+      \|\nabla u\|^{}_\partial + \|\phi\|^{}_\partial
+      &\leq C\, \Big\{ \|\nabla u\|^{}_\partial + |\lambda| \|u \cdot n \|_{\HH^1(\partial\Omega)} \Big\} \\[0.5em]
+      &\leq C_\varepsilon\, \Big\{ \big\|\nabla_{\mathrm{tan}} u \big\|^{}_\partial + |\lambda|^{1/2} \|u\|^{}_\partial + |\lambda| \| u\cdot n\|_{\HH^{-1}(\partial\Omega)} \Big\} 
+      + C \,\varepsilon \,\Big\{ \|\nabla u\|^{}_\partial + \|\phi\|^{}_\partial \Big\}
   \end{align*}
   for all $\varepsilon \in (0,1)$.
-  Chosing $\varepsilon$ such that $C \varepsilon < (1/2)$ we can rearrange the above inequality and obtain estimate \eqref{eq:rellich1}.
+  Chosing $\varepsilon$ such that $C\, \varepsilon < (1/2)$, we can rearrange the above inequality and obtain estimate \eqref{eq:rellich1}.
 
   Estimate \eqref{eq:rellich2} will need more effort to be proven.
-  In order to obtain the desired estimate we will divide the left hand side of inequality \eqref{eq:rellich2} into two groups as the following line suggests and then bound both groups separately.
+  In order to obtain the desired estimate, we will divide the left hand side of inequality \eqref{eq:rellich2} into two groups as the following line suggests and then bound both groups separately.
   \begin{align*}
-    \Big\{ \|\nabla u\|_\partial + |\lambda|\, \|u \cdot n\|_{\HH^{-1}(\partial\Omega)} + \|\phi\|_\partial \Big\} + |\lambda|^{1/2} \|u\|_\partial \eqqcolon G_1 + G_2.
+      \Big\{ \|\nabla u\|^{}_\partial + |\lambda|\, \|u \cdot n\|_{\HH^{-1}(\partial\Omega)} + \|\phi\|^{}_\partial \Big\} + |\lambda|^{1/2} \|u\|^{}_\partial \eqqcolon G_1 + G_2.
   \end{align*}
   We start with inequality \eqref{eq:lambdaun} and derive
   \begin{align*}
     G_1
-    \leq C \big\{ \|\nabla u\|_\partial + \| \phi\|_\partial \big\}
-    \leq C \Big\{ \Big\|\frac{\partial u}{\partial \nu} \Big\|_\partial + \|\nabla u\|_\partial \Big\},
+    \leq C\, \Big\{ \|\nabla u\|^{}_\partial + \| \phi\|^{}_\partial \Big\}
+    \leq C \, \Big\{\, \Big\|\,\frac{\partial u}{\partial \nu}\, \Big\|^{}_\partial + \|\nabla u\|^{}_\partial \Big\},
   \end{align*}
   where in the last step we used the definition of conormal derivatives.
-  If we now apply \eqref{eq:gradEstimateRellich} we get
+  If we now apply \eqref{eq:gradEstimateRellich}, we get
   \begin{align*}
     G_1
-    \leq C_\varepsilon \| \frac{\partial u}{\partial \nu} \|_\partial + \varepsilon \big\{ \|\nabla u\|_\partial + \|\phi\|_\partial + \| |\lambda|^{1/2} u \|_\partial \big\}
+    \leq C_\varepsilon\, \Big\| \, \frac{\partial u}{\partial \nu} \, \Big\|^{}_\partial + \varepsilon \, \Big\{ \|\nabla u\|^{}_\partial + \|\phi\|^{}_\partial + \| |\lambda|^{1/2} u \|^{}_\partial \Big\}
   \end{align*}
   for all $\varepsilon \in (0,1)$.
   Choosing $\varepsilon$ appropriately yields
   \begin{align}
     \label{eq:partOfRellich2}
-    \|\nabla u\|_\partial + \|\phi\|_\partial + |\lambda| \|u \cdot n\|_{\HH^{-1}(\partial\Omega)}
-    \leq C \Big\{ \Big\|\frac{\partial u}{\partial \nu} \Big\|_\partial + |\lambda|^{1/2} \| u\|_\partial \Big\},
+    \|\nabla u\|^{}_\partial + \|\phi\|^{}_\partial + |\lambda| \, \|u \cdot n\|_{\HH^{-1}(\partial\Omega)}
+    \leq C\, \Big\{ \, \Big\|\,\frac{\partial u}{\partial \nu} \, \Big\|^{}_\partial + |\lambda|^{1/2} \| u\|^{}_\partial \Big\},
   \end{align}
   and the first group has been successfully bounded.
 
   Now we need to estimate $G_2$.
-  For this we will work with the next identity which is a consequence of Green's theorem:
+  For this, we will work with the next identity which is a consequence of Green's theorem:
   \begin{align}
     \int_{\partial\Omega} h_k n_k |u|^2 \d \sigma
     %= \int_{\Omega} \frac{\partial}{\partial x_k} \big( h_k |u|^2 ) \d x
-    &= \int_{\Omega} \frac{\partial h_k}{\partial x_k} |u|^2 \d x + \int_{\Omega} h_k \frac{\partial |u|^2}{\partial x_k}  \d x \nonumber\\
+    &= \int_{\Omega} \frac{\partial h_k}{\partial x_k}\, |u|^2 \d x + \int_{\Omega} h_k \frac{\partial |u|^2}{\partial x_k}  \d x \nonumber\\[0.5em]
     \label{eq:hknkgreen}
-    &= \int_\Omega \div(h) |u|^2 \d x + 2 \Re \int_\Omega h_k \frac{\partial \bar u_i}{\partial x_k} u_i \d x,
+    &= \int_\Omega \div(h)\, |u|^2 \d x + 2 \Re \int_\Omega h_k \frac{\partial \bar u_i}{\partial x_k} u_i \d x,
   \end{align}
   where $h \in \CC_0^1(\R^d, \R^d)$.
   This calculation is valid since Remark \ref{rem:shenNontangential} assures the existence of nontangential limits of $u$ and furthermore gives $(u)^* \in \Ell^2(\partial\Omega)$. Thus, $( h_k n_k |u|^2 )$ can be dominated by the integrable function $(\|h\|_\infty |(u)^*|^2)$ and the claim follows from Proposition \ref{prop:approximationArgument}.
@@ -564,49 +567,49 @@ After all this preparation we have accquainted enough tools and are now able to 
   Next, in estimate \eqref{eq:hknkgreen}, we choose $h \in \CC_0^1(\R^d, \R^d)$ with $h_k n_k \geq c > 0$ on $\partial\Omega$, which is possible due to Theorem \ref{thm:smoothApproximation} and leads us to the estimate 
   \begin{align}
     \label{eq:estupartial}
-    \|u\|_\partial^2 \leq C \Big\{ \int_\Omega |u|^2 \d x +  \int_\Omega |u| |\nabla u| \d x \Big\}.
+    \|u\|_\partial^2 \leq C\, \Big\{ \int_\Omega |u|^2 \d x +  \int_\Omega |u| |\nabla u| \d x\, \Big\}.
   \end{align}
   Multiplying  \eqref{eq:estupartial} with $|\lambda|$ and using \eqref{eq:laxMilgramIneq}, we obtain 
   \begin{align*}
-    |\lambda| \|u\|_\partial^2 
-    &\leq C \Big\{ |\lambda| \int_\Omega |u|^2 \d x + |\lambda|^{1/2}  \int_\Omega (|\lambda|^{1/2} |u|) |\nabla u| \d x \Big\} \nonumber\\
+    |\lambda|\, \|u\|_\partial^2 
+    &\leq C\, \Big\{\, |\lambda| \int_\Omega |u|^2 \d x + |\lambda|^{1/2}  \int_\Omega (|\lambda|^{1/2} |u|) |\nabla u| \d x\, \Big\} \nonumber\\[0.5em]
     %&\leq C \| \frac{\partial u}{\partial \nu} \|_\partial \|u\|_\partial + |\lambda|^{1/2} C \int_\Omega (|\lambda|^{1/2} |u|) |\nabla u| \d x \\
-    &\leq C \Big\{ \|\frac{\partial u}{\partial \nu} \|_\partial \|u\|_\partial + |\lambda|^{1/2} \bigg( \int_\Omega |\lambda| |u|^2 \bigg)^{1/2} \bigg( \int_\Omega (|\nabla u|^2 \d x \bigg)^{1/2} \Big\} \\
-    &\leq C \|\frac{\partial u}{\partial \nu} \|_\partial \||\lambda|^{1/2} u\|_\partial.
+    &\leq C\, \Big\{ \, \Big\|\, \frac{\partial u}{\partial \nu} \, \Big\|^{}_\partial \|u\|^{}_\partial + |\lambda|^{1/2} \bigg( \int_\Omega |\lambda| |u|^2 \bigg)^{1/2} \bigg( \int_\Omega (|\nabla u|^2 \d x \bigg)^{1/2} \Big\} \\[0.5em]
+    &\leq C\, \Big\|\,\frac{\partial u}{\partial \nu} \, \Big\|^{}_\partial \, |\lambda|^{1/2}  \|u\|^{}_\partial.
   \end{align*}
-  Note that for the last estimate we also used the fact that $|\lambda| \geq \tau$ helps us to bound $\|u\|_\partial$ by $C |\lambda|^{1/2} \|u\|_\partial$.
+  Note that for the last estimate we also used the fact that $|\lambda| \geq \tau$ helps us to bound $\|u\|^{}_\partial$ by $C |\lambda|^{1/2} \|u\|^{}_\partial$.
   Rearranging terms in the last estimate, we now derive
   \begin{align}
     \label{eq:lambda12u}
-    \| |\lambda|^{1/2} u\|_\partial \leq C \| \frac{\partial u}{\partial \nu} \|_\partial.
+    |\lambda|^{1/2} \|  u\|^{}_\partial \leq C\, \Big\|\, \frac{\partial u}{\partial \nu} \,\Big\|^{}_\partial.
   \end{align}
   Estimate \eqref{eq:rellich2} follows directly from \eqref{eq:partOfRellich2} in combination with \eqref{eq:lambda12u} and this concludes our proof.
 \end{proof}
 
-Shen proved that under reasonable assumptions a theorem similar to \ref{thm:rellich} also holds for exterior domains.
+Shen proved that under reasonable assumptions a theorem similar to Theorem~\ref{thm:rellich} also holds for exterior domains, see \cite[Thm. 4.6]{Shen2012}.
 %It is important to note that in the case $d = 2$ solutions $u$ that are given as a single layer potential do not fulfill the stated requirements on the decay.
 
 \begin{thm}
   \label{thm:rellichExterior}
   Let $\lambda \in \Sigma_\theta$ and $|\lambda| \geq \tau$, where $\tau \in (0,1)$.
-  Let $(u,\phi)$ be a solution of the Stokes resolvent Problem in $\Omega_- = \R^d \setminus \overline\Omega$.
+  Let $(u,\phi)$ be a solution of the Stokes resolvent problem in $\Omega_- = \R^d \setminus \overline\Omega$.
   Suppose additionally that $(\nabla u)^*$, $(\phi)^* \in \Ell^2(\partial\Omega)$ and that $\nabla u$, $\phi$ have nontangential limits almost everywhere on $\partial\Omega$.
-  Furthermore let for $|x| \to \infty$
+  Furthermore, let for $|x| \to \infty$
   \begin{align*}
     |\phi(x)| + |\nabla u(x)| = O(|x|^{1 - d}) \quad\text{and}\quad 
-    u(x) = \begin{cases} O(|x|^{2 - d}) &\quad\text{if } d \geq 3 \\ o(1) &\quad\text{if } d = 2. \end{cases}
+    u(x) = \begin{cases} O(|x|^{2 - d}) &\quad\text{if } d \geq 3, \\ o(1) &\quad\text{if } d = 2. \end{cases}
   \end{align*}
-  Then
+  Then the estimates
   \begin{align}
     \label{eq:rellich1ext}
-    \|\nabla u\|_\partial + \|\phi\|_\partial
-    \leq C \big\{ \|\nabla_{\mathrm{tan}} u\|_\partial + |\lambda|^{1/2} \|u\|_\partial + |\lambda| \|u \cdot n\|_{\HH^{-1}(\partial\Omega)} \big\}
+    \|\nabla u\|^{}_\partial + \|\phi\|^{}_\partial
+    \leq C\, \Big\{ \|\nabla_{\mathrm{tan}} u\|^{}_\partial + |\lambda|^{1/2} \|u\|^{}_\partial + |\lambda|\, \|u \cdot n\|_{\HH^{-1}(\partial\Omega)} \Big\}
   \end{align}
   and
   \begin{align}
     \label{eq:rellich2ext}
-    \|\nabla u\|_\partial + |\lambda|^{1/2} \|u\|_\partial + |\lambda| \|u \cdot n\|_{\HH^{-1}(\partial\Omega)} + \|\phi\|_\partial
-    \leq C \|\frac{\partial u}{\partial \nu} \|_\partial,
+    \|\nabla u\|^{}_\partial + |\lambda|^{1/2} \|u\|^{}_\partial + |\lambda| \, \|u \cdot n\|_{\HH^{-1}(\partial\Omega)} + \|\phi\|^{}_\partial
+    \leq C \, \Big\|\,\frac{\partial u}{\partial \nu} \,\Big\|^{}_\partial
   \end{align}
-  where $C$ depends only on $d$, $\tau$, $\theta$ and the Lipschitz character of $\Omega$.
+  hold, where $C$ depends only on $d$, $\tau$, $\theta$ and the Lipschitz character of $\Omega$.
 \end{thm}

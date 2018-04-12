@@ -219,11 +219,8 @@ In the following lemma that looks like a reverse trace theorem, we will show the
 
 \begin{proof}
   We use the approximation theorem \ref{thm:smoothApproximation} and approximate $\Omega$ by a sequence of smooth domains with uniform Lipschitz characters from inside.
-<<<<<<< HEAD
   It suffices to prove \eqref{eq:OmegaBoundaryEstimate} for elements of this sequence of domains as $(u)^* \in \Ell^2(\partial\Omega)$.
   As a consequence, we will assume for the rest of the proof that $\Omega$ is smooth and that $u$, $\phi$ are smooth in $\overline\Omega$.
-=======
-  As a consequence we may assume that $\Omega$ is smooth and $u$, $\phi$ are smooth in $\overline\Omega$.
   %The fact that $(u)^* \in \Ell^2(\partial\Omega)$ is necessary if we want to take the limit of the approximating sequence of domains, as it enables us to apply the dominated convergence theorem.
   Let $(w,\psi) \in \HH_0^1(\Omega; \C^d) \times \HH^1(\Omega)$ be a solution to the inhomogenous system
   \begin{align}
@@ -294,7 +291,7 @@ In the following lemma that looks like a reverse trace theorem, we will show the
   \end{align*}
   available which after rearranging terms yields \eqref{eq:OmegaBoundaryEstimate}.
 
-  In order to derive estimate \eqref{eq:w2estimate}, we will first prove the Rellich type identity
+  In order to derive estimate \eqref{eq:w2estimate}, we will first prove the Rellich-type identity
   \begin{align}
     \label{eq:rellichIdentity3}
     \begin{alignedat}{1}
@@ -321,7 +318,7 @@ In the following lemma that looks like a reverse trace theorem, we will show the
     &= 2 \Re \int_\Omega h_k \big( \frac{\partial \psi}{\partial x_j} + \lambda w_j - \bar u_j \big) \frac{\partial \bar w_j}{\partial x_k} \d x,
   \end{align*}
   where in addition to integration by parts we used \eqref{eq:inhomogenousStokes} and the fact that $w = 0$ on $\partial\Omega$.
-  Now we can apply the triangle inequality to the Rellich type identity \eqref{eq:rellichIdentity3} to obtain
+  Now we can apply the triangle inequality to the Rellich-type identity \eqref{eq:rellichIdentity3} to obtain
   \begin{align}
     \int_{\partial\Omega} |\nabla w|^2 \d \sigma 
     &\leq C \Big\{ \int_\Omega |\nabla w|^2 \d x + \int_\Omega |\nabla w | |\psi| \d x \nonumber\\

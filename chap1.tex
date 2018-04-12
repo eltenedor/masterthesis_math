@@ -240,31 +240,31 @@ We beginn by defining the relevant function spaces.
 Let $\Omega \subseteq \R^d$ be a bounded Lipschitz domain and $1 < p < \infty$. 
 We define
 \begin{align*}
-  \CC_{c, \sigma}^\infty(\Omega) \coloneqq \{ \varphi \in \CC_c^\infty(\Omega; \C^d) \colon \div(\varphi) = 0 \},
+  \CC_{c,\, \sigma}^\infty(\Omega) \coloneqq \{ \varphi \in \CC_c^\infty(\Omega; \C^d) \colon \div(\varphi) = 0 \},
 \end{align*}
 which can serve as a suitable space of test functions.
-We can now close this space in $\Ell^p(\Omega; \C^d)$ and the Sobolev space $\WW^{1,p}(\Omega; \C^d)$ which gives
+We can now close this space in $\Ell^p(\Omega; \C^d)$ and the Sobolev space $\WW^{1,\,p}(\Omega; \C^d)$ which gives
 \begin{align*}
-  \Ell_\sigma^p(\Omega) \coloneqq \overline{\CC_{c,\sigma}^\infty(\Omega)}^{\Ell^p}
+  \Ell_\sigma^p(\Omega) \coloneqq \overline{\CC_{c,\,\sigma}^\infty(\Omega)}^{\Ell^p}
 \end{align*}
 and
 \begin{align*}
-  \WW_{0,\sigma}^{1,p}(\Omega) \coloneqq \overline{\CC_{c,\sigma}^\infty(\Omega)}^{\WW^{1,p}},
+  \WW_{0,\,\sigma}^{1,\,p}(\Omega) \coloneqq \overline{\CC_{c,\,\sigma}^\infty(\Omega)}^{\WW^{1,\,p}},
 \end{align*}
 respectively.
-If $p = 2$, we will use the symbol $\HH_{0,\sigma}^1(\Omega)$ to denote $\WW_{0,\sigma}^{1,2}(\Omega)$ in order to emphasize that this space is a Hilbert space.
+If $p = 2$, we will use the symbol $\HH_{0,\,\sigma}^1(\Omega)$ to denote $\WW_{0,\,\sigma}^{1,2}(\Omega)$ in order to emphasize that this space is a Hilbert space.
 
 In order to define the Stokes operator, we introduce the following sesquilinear form
 \begin{align*}
-  \aform \colon \HH_{0,\sigma}^1(\Omega) \times \HH_{0,\sigma}^1(\Omega) \to \C, \quad (u,v) \mapsto \int_\Omega \nabla u \cdot \overline{\nabla v} \d x.
+  \aform \colon \HH_{0,\,\sigma}^1(\Omega) \times \HH_{0,\,\sigma}^1(\Omega) \to \C, \quad (u,v) \mapsto \int_\Omega \nabla u \cdot \overline{\nabla v} \d x.
 \end{align*}
-Note that for $u \in \HH_{0,\sigma}^1(\Omega)$ the gradient $\nabla u$ is a matrix and an element of the space $\Ell^2(\Omega; \C^{d \times d})$.
+Note that for $u \in \HH_{0,\,\sigma}^1(\Omega)$ the gradient $\nabla u$ is a matrix and an element of the space $\Ell^2(\Omega; \C^{d \times d})$.
 
 \begin{defn}
   \label{defn:stokes}
   The \emph{Stokes operator} $A_2$ on $\Ell_\sigma^2(\Omega)$ is given via
   \begin{align*}
-    \Dom(A_2) &\coloneqq \Big\{ u \in \HH_{0,\sigma}^1(\Omega) \colon \exists ! f \in \Ell^2_\sigma(\Omega) \text{ s.t. } \forall v \in \HH_{0,\sigma}^1(\Omega) \colon \aform(u,v) = \int_\Omega f \cdot \overline v \d x \Big\} \\
+    \Dom(A_2) &\coloneqq \Big\{ u \in \HH_{0,\,\sigma}^1(\Omega) \colon \exists ! f \in \Ell^2_\sigma(\Omega) \text{ s.t. } \forall v \in \HH_{0,\,\sigma}^1(\Omega) \colon \aform(u,v) = \int_\Omega f \cdot \overline v \d x \Big\} \\
     A_2 u &\coloneqq f,
   \end{align*}
   where $u \in \Dom(A_2)$ and $f$ comes from the definition of the domain.
@@ -277,7 +277,7 @@ Another advantage of this characterization is the immediate link of the Stokes o
   \label{thm:stokesOperatorL2}
   If $\Omega \subseteq \R^d$, $d \geq 2$, is a bounded Lipschitz domain and $A_2$ is the Stokes operator on $\Ell^2_\sigma(\Omega)$ then
   \begin{align*}
-    \Dom(A_2) = \big\{ u \in H^1_{0,\sigma}(\Omega) \colon \exists \pi \in \Ell^2(\Omega) \text{ s.t. } -\Delta u + \nabla \pi \in \Ell^2_\sigma(\Omega) \big\},
+    \Dom(A_2) = \big\{ u \in H^1_{0,\,\sigma}(\Omega) \colon \exists \pi \in \Ell^2(\Omega) \text{ s.t. } -\Delta u + \nabla \pi \in \Ell^2_\sigma(\Omega) \big\},
   \end{align*}
   where the expression $\Delta u + \nabla \pi \in\Ell^2_\sigma(\Omega)$ needs to be understood in the distributional sense.
   For $u \in \Dom(A_2)$ and the corresponding pressure $\pi$ we have
@@ -304,7 +304,7 @@ The following proposition summarizes some facts about the Stokes operator on $\E
 
 With these results at hand we can now give a quick recap of the solution theory to \eqref{eq:stokesResolventSystem}.
 Let $f \in \Ell^2_\sigma(\Omega)$ and $\lambda \in \Sigma_\theta$, $\theta \in (0, \pi/2)$.
-By the previous theorem and proposition we know that there exists a unique $u \in \Dom(A_2) \subseteq \HH^1_{0,\sigma}(\Omega)$ and some $\pi \in \Ell^2(\Omega)$ such that
+By the previous theorem and proposition we know that there exists a unique $u \in \Dom(A_2) \subseteq \HH^1_{0,\,\sigma}(\Omega)$ and some $\pi \in \Ell^2(\Omega)$ such that
 \begin{align*}
   -\Delta u + \nabla \pi + \lambda u = A_2 u + \lambda u = f.
 \end{align*}
@@ -358,7 +358,7 @@ More details about the mechanics of the Helmholtz projection can be found in Tol
   \end{align*}
   the domain of the Stokes operator $A_p$ is characterized as
   \begin{align*}
-    \Dom(A_p) = \big\{ u \in \WW^{2,p}_{0,\sigma}(\Omega) \colon \exists \pi \in \Ell^p(\Omega) \text{ s.t. } -\Delta u + \nabla \pi \in \Ell^p_\sigma(\Omega) \big\},
+    \Dom(A_p) = \big\{ u \in \WW^{2,p}_{0,\,\sigma}(\Omega) \colon \exists \pi \in \Ell^p(\Omega) \text{ s.t. } -\Delta u + \nabla \pi \in \Ell^p_\sigma(\Omega) \big\},
   \end{align*}
   where the expression $\Delta u + \nabla \pi \in\Ell^p_\sigma(\Omega)$ needs to be understood in the distributional sense.
   For $u \in \Dom(A_p)$ and the corresponding pressure $\pi$ we have
