@@ -150,8 +150,9 @@ As of now, our toolbox comprises enough tools to prove that solutions to the Sto
     \begin{align}
       \label{eq:improvedreverseHoelder}
       \Big( \frac{1}{r^d} \int_{\BB(x_0, r) \cap \Omega} |u|^{p + \varepsilon'} \d x \Big)^{2/(p + \varepsilon')}
-      \leq C \Big(\frac{1}{r^d} \int_{\BB(x_0, 2r) \cap \Omega} |u|^2 \d x.  \Big)^{1/2}.
+      \leq C \Big(\frac{1}{r^d} \int_{\BB(x_0, 2r) \cap \Omega} |u|^2 \d x.  \Big)^{1/2}
     \end{align}
+    and we have succeeded in improving our original estimate \eqref{eq:reverseHoelder}.
   \end{rem}
 
   %Consequently it suffices to prove \eqref{eq:reverseHoelder} for $p = p_d = \frac{2d}{d - 1}$.
@@ -160,6 +161,8 @@ As of now, our toolbox comprises enough tools to prove that solutions to the Sto
   %Let $0 < s < r$ and $\tilde \BB{} = \BB(y,s)$ with $\alpha_2 \tilde \BB \subseteq \BB(x_0, \alpha_2 r)$.
 
 The following extrapolation theorem by Shen \cite[Thm. 3.3]{shenExtra} will be necessary in order to derive $\Ell^p$-bounds on the solution of the Stokes resolvent system.
+Essentially this theorem states that if the non locality of an $\Ell^2$ bounded operator  $T$ can be quantified via a reverse Hölder estimate, then this operator extends to an $\Ell^p$ bounded operator for certain values $p$.
+In this sense, this extrapolation theorem can also be considered a p-sensitive version of the famous Calder\'on-Zygmund Lemma.
 Note that a more recent result from Tolksdorf \cite[Thm. 4.1]{tolksdorf2017} generalizes this result to operators which are defined on spaces of Banach space valued functions.
 
 \begin{thm}
