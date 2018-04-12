@@ -9,6 +9,8 @@ For $\lambda \in \C \setminus (-\infty,0)$ and
   g \in \Ell^2_\nu(\partial\Omega) \coloneqq \bigg\{g \in \Ell^2(\partial\Omega; \C^d) \colon \int_{\partial\Omega} g \cdot \nu \d \sigma = 0\bigg\}
 \end{align*}
 we are looking for smooth functions $u$ and $\phi$ that satisfy
+{
+  \label{eq:dirProblem}
 \begin{align*}
   (\mathrm{Dir}_\lambda)
   \left\{
@@ -20,6 +22,7 @@ we are looking for smooth functions $u$ and $\phi$ that satisfy
   \end{alignedat}
     \right.
 \end{align*}
+}
 In this chapter we will thus always assume that $\Omega$ is a bounded Lipschitz domain in $\R^d$ with $d \geq 2$ and $1 < p < \infty$.
 We will also tacitly use the summation convention.
 
@@ -86,7 +89,7 @@ We are now in the position to prove our first lemma on the way to establish the 
     \label{eq:lpBoundednessT}
     \|T_\lambda(f) \|_{\Ell^p(\partial\Omega; \C^{d \times d})}
     \leq \|T_\lambda^*(f) \|_{\Ell^p(\partial\Omega)}
-    \leq C_p \, \|f\|_{\Ell^p(\partial\Omega); \C^d},
+    \leq C_p \, \|f\|_{\Ell^p(\partial\Omega; \C^d)},
   \end{align}
   where $C_p$ depends only on $d$, $\theta$, $p$, and the Lipschitz character of $\Omega$.
 \end{lem}
