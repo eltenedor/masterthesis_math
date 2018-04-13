@@ -47,12 +47,13 @@ We start with a similar result on Lipschitz cylinders.
   and consequently the function $f$ is Lipschitz continous with Lipschitz constant $1$.
   Applying the co-area formula to integrate both sides over the interval $(1,2)$ gives
   \begin{align*}
-    \bigg( \int_{D_\eta(1)} |u|^p \d x \bigg)^{2/p} \leq C \int_{D_\eta(2)} |u|^2 \d x.
+    \bigg( \int_{D_\eta(1)} |u|^p \d x \bigg)^{2/p} \leq C \int_{D_\eta(2)} |u|^2 \d x,
   \end{align*}
+  see Theorem~\ref{thm:coarea}.
   Estimate \eqref{eq:reverseHoelderCylinder} now follows after dividing by $|D_\eta(1)|$.
 \end{proof}
 
-The next step is to extend the result to arbitrary Lipschitz domains. 
+The next step is to extend the previous result to arbitrary Lipschitz domains. 
 The following Lemma, which appeared in Tolksdorf \cite[Lem. 4.2]{tolksdorf2017}, reduces the amount of work that needs to be done to a few special cases.
 
 \begin{lem}
@@ -116,8 +117,8 @@ As of now, our toolbox comprises enough tools to prove that solutions to the Sto
   For (2), note that if $x_0 \in \partial\Omega$, then by Lemma \ref{lem:reverseHoelderCylinder} and Pythagoras' theorem we have
   \begin{align*}
     \bigg( \frac{1}{r^d} \int_{\BB(x_0,\, r) \cap \Omega} |u|^p \bigg)^{1/p}
-    &\leq \bigg( \frac{1}{r^d} \int_{D_{\eta_{x_0}}(r)} |u|^p \bigg)^{1/p} \\
-    &\leq C \, \bigg( \frac{1}{r^d} \int_{D_{\eta_{x_0}}(2 r)} |u|^p \bigg)^{1/p} \\
+    &\leq \bigg( \frac{1}{r^d} \int_{D_{\eta_{x_0}}(r)} |u|^p \bigg)^{1/p} \\[0.5em]
+    &\leq C \, \bigg( \frac{1}{r^d} \int_{D_{\eta_{x_0}}(2 r)} |u|^p \bigg)^{1/p} \\[0.5em]
     &\leq C \, \bigg( \frac{1}{r^d} \int_{\BB(x_0,\, \alpha_1 r) \cap \Omega} |u|^2 \bigg)^{1/2}.
   \end{align*}
   Now, the claim follows readily from an application of Lemma \ref{lem:ballsforballs} with the parameter $\alpha = 2 \in (1, \alpha_2)$.
@@ -148,15 +149,15 @@ As of now, our toolbox comprises enough tools to prove that solutions to the Sto
     Then, for $f = |u|^{2} \chi_{\BB(x_0,\,\alpha_2 r) \cap \Omega}$ which can be considered as a partial extension of $u$ by $0$ to $\R^d$ and $q = p/2$, inequality \eqref{eq:reverseHoelder} reads
     \begin{align*}
       \bigg( \frac{1}{r^d} \int_{\BB(x_0,\, r)} f^q \d x \bigg)^{1/q}
-      &= \bigg( \frac{1}{r^d} \int_{\BB(x_0,\, r) \cap \Omega} |u|^p \d x \bigg)^{2/p} \\
+      &= \bigg( \frac{1}{r^d} \int_{\BB(x_0,\, r) \cap \Omega} |u|^p \d x \bigg)^{2/p} \\[0.5em]
       &\leq C^2 \frac{1}{r^d} \int_{\BB(x_0,\, 2r) \cap \Omega} |u|^2 \d x
       = C^2 \frac{1}{r^d} \int_{\BB(x_0,\, 2r)} f \d x.
     \end{align*}
     Consequently, Proposition \ref{prop:giaquinta} gives us that there exists some $\varepsilon > 0$ which depends only on $d$, $q$ and $C^2$ and a constant $\tilde C$ depending only on $d$, $q$, $\varepsilon$ and $C^2$ such that
     \begin{align*}
       \bigg( \frac{1}{r^d} \int_{\BB(x_0,\, r/2) \cap \Omega} |u|^{p + \varepsilon'}\d x \bigg)^{2/(p + \varepsilon ')} 
-      &= \bigg( \frac{1}{r^d} \int_{\BB(x_0,\, r/2)} f^{q + \varepsilon} \d x \bigg)^{1/(q + \varepsilon)} \\
-      &\leq \tilde C \bigg( \frac{1}{r^d} \int_{\BB(x_0,\, r) \cap \Omega} |u|^p \d x \bigg)^{1/p} \\
+      &= \bigg( \frac{1}{r^d} \int_{\BB(x_0,\, r/2)} f^{q + \varepsilon} \d x \bigg)^{1/(q + \varepsilon)} \\[0.5em]
+      &\leq \tilde C \bigg( \frac{1}{r^d} \int_{\BB(x_0,\, r) \cap \Omega} |u|^p \d x \bigg)^{1/p} \\[0.5em]
       &\leq \tilde C C \bigg( \frac{1}{r^d} \int_{\BB(x_0,\,2r)\cap \Omega } |u|^2 \d x \bigg)^{1/2}.
     \end{align*}
     Another application of Lemma \ref{lem:ballsforballs} gives us that for all $r < ( r_0/4 )$ it holds that
