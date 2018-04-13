@@ -22,7 +22,7 @@ The following Theorem states formulates the aforementioned Rellich estimates and
   \begin{align}
     \label{eq:rellich1}
     \begin{alignedat}{1}
-        &\|\nabla u\|^{}_\partial + \bigg\|\phi - \bigg\{ \frac{1}{{r_0}^{d - 1}}\int_{\partial\Omega} \phi \d\sigma \bigg\} \bigg\|^{}_\partial \\[1em]
+        &\|\nabla u\|^{}_\partial + \bigg\|\,\phi - \bigg\{ \frac{1}{{r_0}^{d - 1}}\int_{\partial\Omega} \phi \d\sigma \bigg\} \, \bigg\|^{}_\partial \\[1em]
       &\hspace{2cm} \leq C\, \bigg\{ \big\|\nabla_{\mathrm{tan}} u\big\|^{}_\partial + |\lambda|^{1/2} \|u\|^{}_\partial + |\lambda| \, \|u \cdot n\|_{\HH^{-1}(\partial\Omega)} \bigg\}
     \end{alignedat}
   \end{align}
@@ -30,7 +30,7 @@ The following Theorem states formulates the aforementioned Rellich estimates and
   \begin{align}
     \label{eq:rellich2}
     \|\nabla u\|^{}_\partial + |\lambda|^{1/2} \|u\|^{}_\partial + |\lambda| \, \|u \cdot n\|_{\HH^{-1}(\partial\Omega)} + \|\phi\|^{}_\partial
-    \leq C \, \Big\|\frac{\partial u}{\partial \nu} \Big\|^{}_\partial,
+    \leq C \, \Big\|\, \frac{\partial u}{\partial \nu} \, \Big\|^{}_\partial,
   \end{align}
   where $\frac{\partial}{\partial \nu}$ denotes the conormal derivative, and $C$ depends only on $d$, $\tau$, $\theta$ and the Lipschitz character of $\Omega$.
 \end{thm}
@@ -189,9 +189,15 @@ A powerful generalization of this Lemma can be found in Tolksdorf \cite[Lem. 5.2
   For the moment being, suppose $|\lambda| = 1$ Then, we have $\Re(\lambda) = \cos(\varphi)$ and $\Im(\lambda) = \sin(\varphi)$ with $|\varphi| \in (0, \pi - \theta)$. 
   Set
   \begin{align*}
-    \alpha = \frac{1 - \cos(\pi - \theta)}{\sin(\pi - \theta)} \geq \frac{1 - \cos(|\varphi|)}{\sin(|\varphi|)}.
+    \alpha = \frac{1 - \cos(\pi - \theta)}{\sin(\pi - \theta)} \geq \frac{1 - \cos(|\varphi|)}{\sin(|\varphi|)},
   \end{align*}
-  If $\varphi = |\varphi|$, this gives the inequality
+  where the estimation is a consequence of the fact that $\tan$ is strictly increasing on $(0, \pi/2)$ and the identity 
+  \begin{align*}
+    \frac{1 - \cos(x)}{\sin(x)} = \tan(x/2)
+  \end{align*}
+  which is readily derived using trigonometric identities for $\sin(2x)$ and $\cos(2x)$.
+
+  If $\varphi = |\varphi|$, we have the inequality
   \begin{align*}
     \Re(\lambda) + \alpha \, |\Im(\lambda)\,| = \cos(\varphi) + \alpha \sin(\varphi) \geq 1.
   \end{align*}
@@ -199,7 +205,7 @@ A powerful generalization of this Lemma can be found in Tolksdorf \cite[Lem. 5.2
   \begin{align*}
     \Re(\lambda) + \alpha\, |\Im(\lambda)\,| = \cos(-\varphi) + \alpha \sin(-\varphi) \geq 1.
   \end{align*}
-  For arbitrary $\lambda$ the claim follows by considering the normalized value $(\lambda / |\lambda|)$.
+  For arbitrary $\lambda$, the claim follows by considering the normalized value $(\lambda / |\lambda|)$.
 \end{proof}
 
 The next lemma enables us to handle the solid integrals in \eqref{eq:rellichIdentity} and \eqref{eq:rellichIdentity2}.
