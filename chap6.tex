@@ -28,9 +28,23 @@ We start with a similar result on Lipschitz cylinders.
   \end{align*}
   where $C$ depends only on $d$, $\theta$ and the Lipschitz character of $\Omega$. In particular, $C$ does not depend on $t$.
   Since $u$ vanishes on $I(2)$, we have that
+%  \begin{align*}
+%    \bigg( \int_{D_\eta(1)} |u|^p \d x \bigg)^{2/p} \leq C \int_{\partial D_\eta(t) \setminus I(2)} |u|^2 \d \sigma.
+%  \end{align*}
   \begin{align*}
-    \bigg( \int_{D_\eta(1)} |u|^p \d x \bigg)^{2/p} \leq C \int_{\partial D_\eta(t) \setminus I(2)} |u|^2 \d \sigma.
+    \bigg( \int_{D_\eta(1)} |u|^p \d x \bigg)^{2/p} 
+    &\leq C\, \int_1^2 \Bigg\{  \int_{\partial D(t)} |u(y)|^2 \chi_{D_\eta(2)}(y) \d\sigma(y) +  \int_{I_\eta(2)} |u(y)|^2 \d \sigma(y) \Bigg\} \d t  \\
+    &= C \hphantom{\Big\{} \int_1^2 \int_{\partial D(y)} |u(y)|^2 \chi_{D_\eta(2)}(y) \d\sigma(y) \d t.
   \end{align*}
+  We define the function
+  \begin{align*}
+    f \colon \R^d \to \R, \quad x \mapsto t \quad\text{iff}\quad x \in \partial D(t).
+  \end{align*}
+  Since $x \in \partial D(t)$ and $y \in \partial D(s)$, $s,t > 0$, we have that
+  \begin{align*}
+    |f(x) - f(y)| = |t - s| \leq \operatorname{dist}(\partial D(t), \partial D(s)) \leq |x- y|
+  \end{align*}
+  and consequently the function $f$ is Lipschitz continous with Lipschitz constant $1$.
   Applying the co-area formula to integrate both sides over the interval $(1,2)$ gives
   \begin{align*}
     \bigg( \int_{D_\eta(1)} |u|^p \d x \bigg)^{2/p} \leq C \int_{D_\eta(2)} |u|^2 \d x.
