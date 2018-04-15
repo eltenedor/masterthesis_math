@@ -3,6 +3,7 @@
 
 This section is all about the application of the method of layer potentials to solve the $\Ell^2$ Dirichlet problem \hyperref[eq:dirProblem]{$(\mathrm{Dir}_\lambda)$} for the Stokes resolvent system.
 The results from Chapter~\ref{chap:3} on the jump relations and the corresponding operators, see Theorem~\ref{thm:jumpConditions} and Theorem~\ref{thm:nontangentialLimitDoubleLayer}, together with the Rellich estimates from Chapter~\ref{chap:4} will be the essential ingredients.
+
 In the first part of this chapter, we will show that the operators $(1/2)I + \K_\lambda$ and their adjoints are isomorphisms on suitable Hilbert spaces.
 Then, in the second part of this chapter, we will build on this information to construct solutions to $(\mathrm{Dir}_\lambda)$ via double layer potentials.
 %Furthermore we will establish a uniform $\Ell^p$ estimate for the nontangential maximal function which will be important for the proof of our central theorem.
@@ -370,25 +371,21 @@ With the following lemma that looks like a reverse trace theorem, we will later 
     &\leq \frac{C}{1 + |\lambda|} \int_\Omega |u|^2 \d x.\label{eq:w2lambdaEstimate}
   \end{align}
   Now it's time to harvest: 
-  Using estimate \eqref{eq:rellichInequality3} together with \eqref{eq:w2lambdaEstimate} gives
+  %Using estimate \eqref{eq:rellichInequality3} together with \eqref{eq:w2lambdaEstimate} gives
+  Using the weighted Young inequality, we see that we can simplify the right hand side of \eqref{eq:rellichInequality3} to
   \begin{align*}
-    &\int_{\partial\Omega} |\nabla w|^2 \d\sigma \\
-    &\qquad\leq C\, \Big\{ \int_\Omega |\nabla w|^2 \d x + \int_\Omega |\nabla w| |\psi| \d x + |\lambda| \int_\Omega |\nabla w| |w| \d x + \int_\Omega |\nabla w| |u| \d x \Big\}.
+    \int_{\partial\Omega} |\nabla w|^2 \d\sigma 
+    &\leq C_\varepsilon\,  (1 + |\lambda|) \int_{\Omega} |\nabla w|^2 \d x + C\,  |\lambda| \int_\Omega |w|^2 \d x \\[0.5em]
+    &\qquad\qquad+ C \int_\Omega |u|^2 \d x + \varepsilon \int_\Omega |\psi|^2 \d x  \\
+    &\leq C_\varepsilon \int_\Omega |u|^2 \d x + \varepsilon \int_\Omega |\psi|^2 \d x,
   \end{align*}
-  Using the weighted Young inequality, we see that we can simplify the right hand side to
-  \begin{align*}
-    C_\varepsilon\,  (1 + |\lambda|) \int_{\Omega} |\nabla w|^2 \d x + C\,  |\lambda| \int_\Omega |w|^2 \d x + C \int_\Omega |u|^2 \d x + \varepsilon \int_\Omega |\psi|^2 \d x 
-  \end{align*}
-    and thanks to \eqref{eq:w2lambdaEstimate}, this expression may be bounded by
-  \begin{align*}
-    C_\varepsilon \int_\Omega |u|^2 \d x + \varepsilon \int_\Omega |\psi|^2 \d x.
-  \end{align*}
-  Using the estimate $\|\psi\|^{}_{\Ell^2(\Omega)} \leq C\, \|\psi\|^{}_\partial$ and inequality \eqref{eq:psiEstimate}, we arrive at the inequality
+  where the second inequality is thanks to estimate \eqref{eq:w2lambdaEstimate}.
+  The first term on the right hand side is already fine for \eqref{eq:w2estimate}.
+  For the second one we use the estimate $\|\psi\|^{}_{\Ell^2(\Omega)} \leq C\, \|\psi\|^{}_\partial$ and inequality \eqref{eq:psiEstimate} and arrive at
   \begin{align*}
     \varepsilon \int_\Omega |\psi|^2 \d x \leq \varepsilon \, C \int_{\partial\Omega} |\nabla w|^2 \d \sigma + C_\varepsilon \int_{\partial\Omega} |u|^2 \d\sigma.
   \end{align*}
-  Choosing $\varepsilon = \frac{1}{2 C}$ and rearranging gives the desired estimate 
-  \eqref{eq:w2estimate}.
+  Choosing $\varepsilon = \frac{1}{2 C}$ and rearranging finally gives the desired estimate \eqref{eq:w2estimate}.
   This concludes our proof.
 \end{proof}
 
