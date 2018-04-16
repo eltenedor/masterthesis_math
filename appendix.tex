@@ -18,8 +18,8 @@ The fundamental solution  for the scalar Helmholtz equation is given via
 \begin{align*}
   G(x; \lambda) = \frac{\ii}{4} H_0^{(1)}(k|x|).
 \end{align*}
-In the following we will always have $z =  k|x|$.  
-Then, applications of chain rule and product rule of differentiation give
+In the following, we will always have $z =  k|x|$.  
+Then, applications of the chain rule and the product rule of differentiation give
 \begin{align*}
   %%
   \partial_\gamma G(x; \lambda) &= \frac{\ii}{4} k\;  \frac{x_\gamma}{|x|} \frac{\d{}}{\d z} H_0^{(1)}(z) \\[0.5em]
@@ -37,6 +37,7 @@ Then, applications of chain rule and product rule of differentiation give
   &\quad + \frac{\ii}{4} k \Big( 3 \frac{x_\alpha x_\beta x_\gamma}{|x|^5} - \frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha\gamma} x_\beta + \delta_{\alpha\beta} x_\gamma}{|x|^3} \Big) \frac{\d{}}{\d z} H_0^{(1)}(z).
 \end{align*}
 
+\newpage
 The series expansions for the Hankel function $H_0^{(1)}(z)$ read according to Lebedev  \cite{lebedev}
 \begin{align*}
   %
@@ -56,18 +57,18 @@ The series expansions for the Hankel function $H_0^{(1)}(z)$ read according to L
   + \mathlarger{\sum}_{l = 0}^\infty \; a_l z^{2l - 1} \\
   &= \mathlarger{\sum}_{l = 1}^\infty \; b_l \, z^{2l - 1} \, C_l 
   + \mathlarger{\sum}_{l = 1}^\infty \; b_l \, z^{2l - 1} \log(z) \; 
-  +  \mathlarger{\sum}_{l = 0}^\infty \; a_l \, z^{2l - 1} \\
+  +  \mathlarger{\sum}_{l = 0}^\infty \; a_l \, z^{2l - 1} \\[0.5em]
   %
   \frac{\pi}{2\ii} \, \frac{\d{}^2}{\d z^2} H_0^{(1)}(z)
   %
   &= \mathlarger{\sum}_{l = 1}^\infty \; b_l \, (2l - 1) \, z^{2l - 2} \, C_l 
   + \mathlarger{\sum}_{l = 1}^\infty \; b_l \, (2l - 1)\, z^{2l - 2} \log(z) 
-  + \mathlarger{\sum}_{l = 1}^\infty \; b_l \, z^{2l - 2} \\
+  + \mathlarger{\sum}_{l = 1}^\infty \; b_l \, z^{2l - 2}\\
   &\quad + \mathlarger{\sum}_{l = 0}^\infty \; a_l \, (2l - 1) \, z^{2l - 2} \\
   &= \mathlarger{\sum}_{l = 1}^\infty \; c_l \, z^{2l - 2} \, C_l 
-  +  \mathlarger{\sum}_{l = 1}^\infty \; c_l \, z^{2l - 2} \log(z) 
-  +  \mathlarger{\sum}_{l = 1}^\infty \; b_l \, z^{2l - 2} \\
-  &\quad +  \mathlarger{\sum}_{l = 0}^\infty \; a_l (2l - 1) \, z^{2l - 2} \\
+  +  \!\mathlarger{\sum}_{l = 1}^\infty \; c_l \, z^{2l - 2} \log(z) 
+  +  \!\mathlarger{\sum}_{l = 1}^\infty \; b_l \, z^{2l - 2} 
+  +  \!\mathlarger{\sum}_{l = 0}^\infty \; a_l (2l - 1) \, z^{2l - 2} \\[0.5em]
   %
   \frac{\pi}{2\ii} \frac{\d{}^3}{\d z^3} H_0^{(1)}(z)
   %
@@ -76,7 +77,7 @@ The series expansions for the Hankel function $H_0^{(1)}(z)$ read according to L
   +  \mathlarger{\sum}_{l = 1}^\infty \; c_l \, z^{2l - 3} \\
  &\quad  
   + \mathlarger{\sum}_{l = 2}^\infty \; b_l (2l - 2) \, z^{2l - 3} 
-  + \frac{2 \ii}{\pi}\; \mathlarger{\sum}_{l = 0}^\infty \; a_l (2l - 1) (2l - 2) \, z^{2l - 3} \\
+  + \mathlarger{\sum}_{l = 0}^\infty \; a_l (2l - 1) (2l - 2) \, z^{2l - 3} \\
   %%
   &= \mathlarger{\sum}_{l = 2}^\infty \; d_l \, z^{2l - 3} \, C_l 
   + \mathlarger{\sum}_{l = 2}^\infty \; d_l \, z^{2l - 3} \log(z) 
@@ -126,14 +127,14 @@ We see that using the fact $|\lambda| |x|^2 \leq (1/2)$ the only problematic ter
   \label{eq:P1}
   \tag{P1}- \frac{1}{2 \pi } k^3 \frac{x_\alpha x_\beta x_\gamma}{|x|^3}  \; \mathlarger{\sum}_{l = 0}^{0} \; a_l (2l - 1) (2l - 2) \, (k|x|)^{2l - 3} 
 \end{align}
-For $A_2$ we calculate
+For $A_2$, we calculate
 \begin{align*}
   A_2 &= - \frac{1}{2\pi} k^2 \bigg(\frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha \gamma} x_\beta + \delta_{\alpha \beta} x_\gamma}{|x|^2} - 3 \frac{x_\alpha x_\beta x_\gamma}{|x|^4} \bigg) \\ 
-  &\quad \cdot 
+  &\qquad \cdot 
   \bigg\{
     \; \mathlarger{\sum}_{l = 1}^\infty \; c_l \, (k|x|)^{2l - 2} \, C_l 
   + \; \mathlarger{\sum}_{l = 1}^\infty \; c_l \, (k|x|)^{2l - 2} \log(k|x|) \\
-  &\qquad+ \; \mathlarger{\sum}_{l = 1}^\infty \; b_l \, (k|x|)^{2l - 2} 
+  &\qquad\qquad+ \; \mathlarger{\sum}_{l = 1}^\infty \; b_l \, (k|x|)^{2l - 2} 
   + \; \mathlarger{\sum}_{l = 0}^\infty \; a_l (2l - 1) \, (k|x|)^{2l - 2} 
   \bigg\}.
 \end{align*}
@@ -194,6 +195,7 @@ and therefore we get the following:
      = &\quad 0 .
 \end{align*}
 
+\newpage
 \section*{A.2\quad Proof of Lemma \ref{thm:differenceFundamentalSolutionStokes}}
 \markboth{APPENDIX}{A.2.\quad PROOF OF LEMMA \ref*{thm:differenceFundamentalSolutionStokes} FOR $d = 2$}
 \addcontentsline{toc}{section}{A.1 Proof of Lemma \ref*{thm:differenceFundamentalSolutionStokes} for $d = 2$}
