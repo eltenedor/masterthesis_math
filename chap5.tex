@@ -480,15 +480,15 @@ The next Theorem states the important fact that in $\Ell^2$ the Dirichlet Stokes
   \end{align*}
   which shows that $K_{Y,X}' = K_{X,Y}^*$ on $Y$.
   With the above definitions at hand, Lemma \ref{lem:inverseEstimate} states that $K_{X,Y}^{}$ is an invertible operator with operator norm of the inverse bounded from above by some $C > 0$ and $C$ depends at most on $d$, $\theta$ and the Lipschitz character of $\Omega$.
-  As $\| K_{X,Y}^* \|_{Y,X} = \|K_{X,Y}\|_{X, Y}$ the same hold for the adjoint operator $K_{X,Y}^*$.
-  In particular, we have that $\|(K_{X,Y}^*)^{-1} \|_{X,Y} = \|K_{X,Y}^{-1}\|_{Y,X}$
+  As $\| K_{X,Y}^* \|_{\Li(Y,X)} = \|K_{X,Y}\|_{\Li(X, Y)}$ the same hold for the adjoint operator $K_{X,Y}^*$.
+  In particular, we have that $\|(K_{X,Y}^*)^{-1} \|_{\Li(X,Y)} = \|K_{X,Y}^{-1}\|_{\Li(Y,X)}$
   Therefore, for all $f \in Y = \Im(T) = \Im \big((1/2)I + \K_{\bar \lambda}\big)$ we have
   \begin{align}
     \label{eq:dualityArgument}
     \begin{alignedat}{1}
     \| f\|_\partial^{}
     &= \Big\| (K_{Y,X}')^{-1} K_{Y,X}' f \Big\|_\partial^{} \\
-    &\leq  \Big\| (K_{X,Y}^*)^{-1} \Big\|_{X,Y}^{}\, \Big\| K_{X,Y}^* f\Big\|_\partial^{} %\nonumber\\
+      &\leq  \Big\| (K_{X,Y}^*)^{-1} \Big\|_{\Li(X,Y)}^{}\, \Big\| K_{X,Y}^* f\Big\|_\partial^{} %\nonumber\\
     \leq C \, \big\|(-(1/2)I + \K_{\bar \lambda}^*)f \big\|_\partial^{}.
     \end{alignedat}
   \end{align}
@@ -513,7 +513,7 @@ The next Theorem states the important fact that in $\Ell^2$ the Dirichlet Stokes
   Consequently, all claims of the Theorem have been proven.
 \end{proof}
 
-The next theorem can in some sense be regarded as a reverse trace theorem and will play an important role for the proof of the needed reverse H\"{o}lder inequality in the forthcoming chapter.
+The next theorem can in some sense be regarded as a reverse trace theorem and will play an important role for the proof of the needed reverse Hölder inequality in the forthcoming chapter.
 
 \begin{thm}
   \label{thm:reverseTrace}

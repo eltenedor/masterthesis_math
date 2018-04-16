@@ -2,50 +2,89 @@
 \markboth{APPENDIX}{}
 \addcontentsline{toc}{chapter}{Appendix}
 \label{chap:app}
+We first collect expressions for the derivatives of the fundamental solutions to the scalar Helmholtz equation and the Laplace equation in $d= 2$.
 
-For $d = 2$ we have that $G(x; \lambda) = \frac{\ii}{4} H_0^{(1)}(k|x|)$.
-Furthermore we set $z =  k|x|$.  
-Then applications of chain rule and product rule of differentiation give
+For the fundamental solution to the Laplace equation $G(x; 0) = -\frac{1}{2\pi} \log(|x|)$, we have the following expressions for the partial derivatives:
 \begin{align*}
-  \partial_\gamma G(x; \lambda) &= \frac{\ii}{4} k\;  \frac{x_\gamma}{|x|} \frac{\d{}}{\d z} H_0^{(1)}(z) \\
+  \partial_\gamma G(x; 0) &= -\frac{1}{2\pi} \frac{x_\gamma}{|x|^2} \\[0.5em]
+  %
+  \partial_\alpha \partial_\gamma G(x; 0) &= -\frac{1}{2\pi} \delta_{\alpha\gamma} \cdot \frac{1}{|x|^2} + \frac{1}{\pi} \cdot \frac{x_\alpha x_\gamma}{|x|^4} \\[0.5em]
+  %
+  \partial_\beta \partial_\alpha \partial_\gamma G(x; 0)
+  &= \frac{1}{\pi} \frac{\delta_{\beta \gamma} x_\alpha + \delta_{\alpha \gamma} x_\beta + \delta_{\alpha\beta} x_\gamma}{|x|^4} - \frac{4}{\pi} \frac{x_\alpha x_\beta x_\gamma}{|x|^6}.
+\end{align*}
+
+The fundamental solution  for the scalar Helmholtz equation is given via 
+\begin{align*}
+  G(x; \lambda) = \frac{\ii}{4} H_0^{(1)}(k|x|).
+\end{align*}
+In the following we will always have $z =  k|x|$.  
+Then, applications of chain rule and product rule of differentiation give
+\begin{align*}
+  %%
+  \partial_\gamma G(x; \lambda) &= \frac{\ii}{4} k\;  \frac{x_\gamma}{|x|} \frac{\d{}}{\d z} H_0^{(1)}(z) \\[0.5em]
+  %%
   \partial_\alpha \partial_\gamma G(x; \lambda) 
-  &= \frac{\ii}{4} k^2 \;  \frac{x_\alpha x_\gamma}{|x|^2} \frac{\d{}^2}{\d z^2} H_0^{(1)}(z) + \frac{\ii}{4} k \Big(\frac{\delta_{\alpha\gamma}}{|x|} - \frac{x_\alpha x_\gamma}{|x|^3} \Big) \frac{\d{}}{\d z} H_0^{(1)}(z) \\
+  %%
+  &= \frac{\ii}{4} k^2 \;  \frac{x_\alpha x_\gamma}{|x|^2} \frac{\d{}^2}{\d z^2} H_0^{(1)}(z) + \frac{\ii}{4} k \Big(\frac{\delta_{\alpha\gamma}}{|x|} - \frac{x_\alpha x_\gamma}{|x|^3} \Big) \frac{\d{}}{\d z} H_0^{(1)}(z) \\[0.5em]
+  %%
   \partial_\beta \partial_\alpha \partial_\gamma G(x; \lambda)
-  &= \frac{\ii}{4} k^3 \; \frac{x_\alpha x_\beta x_\gamma}{|x|^3} \frac{\d{}^3}{\d z^3} H_0^{(1)}(z) \\
-  &\quad + \frac{\ii}{4} k^2 \Big(\frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha \gamma} x_\beta + \delta_{\alpha \beta} x_\gamma}{|x|^2} - 3 \frac{x_\alpha x_\beta x_\gamma}{|x|^4} \Big) \frac{\d{}^2}{\d z^2} H_0^{(1)}(z) \\
+  %%
+  &= \frac{\ii}{4} k^3 \; \frac{x_\alpha x_\beta x_\gamma}{|x|^3} \frac{\d{}^3}{\d z^3} H_0^{(1)}(z) \\[0.5em]
+  %
+  &\quad + \frac{\ii}{4} k^2 \Big(\frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha \gamma} x_\beta + \delta_{\alpha \beta} x_\gamma}{|x|^2} - 3 \frac{x_\alpha x_\beta x_\gamma}{|x|^4} \Big) \frac{\d{}^2}{\d z^2} H_0^{(1)}(z) \\[0.5em]
+  %
   &\quad + \frac{\ii}{4} k \Big( 3 \frac{x_\alpha x_\beta x_\gamma}{|x|^5} - \frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha\gamma} x_\beta + \delta_{\alpha\beta} x_\gamma}{|x|^3} \Big) \frac{\d{}}{\d z} H_0^{(1)}(z).
 \end{align*}
 
 The series expansions for the Hankel function $H_0^{(1)}(z)$ read according to Lebedev  \cite{lebedev}
 \begin{align*}
   %
-  H_0^{(1)}(z)
+  \frac{\pi}{2 \ii} \, H_0^{(1)}(z)
   %
-  &= J_0(z) + \ii Y_0(z) \\
-  &= \frac{2 \ii}{\pi} \; \mathlarger{\sum}_{l = 0}^\infty \; \frac{(-1)^l}{(l!)^2 \; 4^l} \;  z^{2l} \Big( -\frac{\ii \pi}{2} - \log(2) - \psi(l + 1) \Big) + \frac{2 \ii}{\pi} \; \mathlarger{\sum}_{l = 0}^\infty \; \frac{(-1)^l}{(l!)^2 \; 4^l} \;  z^{2l} \log(z) \\
-  &= \frac{2 \ii}{\pi} \; \mathlarger{\sum}_{l = 0}^\infty \; a_l \;  z^{2l} \; C_l + \frac{2 \ii}{\pi} \; \mathlarger{\sum}_{l = 0}^\infty \; a_l z^{2l} \log(z) \\
+  &= \frac{\pi}{2\ii} \, J_0(z) + \frac{\pi}{2}\, Y_0(z) \\
+  &= \mathlarger{\sum}_{l = 0}^\infty \; \frac{(-1)^l}{(l!)^2 \; 4^l} \;  z^{2l} \Big( -\frac{\ii \pi}{2} - \log(2) - \psi(l + 1) \Big) 
+  +  \mathlarger{\sum}_{l = 0}^\infty \; \frac{(-1)^l}{(l!)^2 \; 4^l} \;  z^{2l} \log(z) \\
+  %&= \frac{2 \ii}{\pi} \; \mathlarger{\sum}_{l = 0}^\infty \; \frac{(-1)^l}{(l!)^2 \; 4^l} \;  z^{2l} \Big( -\frac{\ii \pi}{2} - \log(2) - \psi(l + 1) \Big) + \frac{2 \ii}{\pi} \; \mathlarger{\sum}_{l = 0}^\infty \; \frac{(-1)^l}{(l!)^2 \; 4^l} \;  z^{2l} \log(z) \\
+  &= \mathlarger{\sum}_{l = 0}^\infty \; a_l \;  z^{2l} \; C_l 
+  + \mathlarger{\sum}_{l = 0}^\infty \; a_l z^{2l} \log(z) \\[0.5em]
   %
-  \frac{\d{}}{\d z} H_0^{(1)}(z)
+  \frac{\pi}{2\ii} \, \frac{\d{}}{\d z} H_0^{(1)}(z)
   %
-  &= \frac{2 \ii}{\pi} \; \mathlarger{\sum}_{l = 1}^\infty \; a_l \,  (2l) \, z^{2l - 1} \, C_l + \frac{2 \ii}{\pi}  \; \mathlarger{\sum}_{l = 1}^\infty \; a_l \, (2l)  \, z^{2l - 1} \log(z) \; + \frac{2 \ii}{\pi}\; \mathlarger{\sum}_{l = 0}^\infty \; a_l z^{2l - 1} \\
-  &= \frac{2 \ii}{\pi} \; \mathlarger{\sum}_{l = 1}^\infty \; b_l \, z^{2l - 1} \, C_l + \frac{2 \ii}{\pi}  \; \mathlarger{\sum}_{l = 1}^\infty \; b_l \, z^{2l - 1} \log(z) \; + \frac{2 \ii}{\pi}\; \mathlarger{\sum}_{l = 0}^\infty \; a_l \, z^{2l - 1} \\
+  &= \mathlarger{\sum}_{l = 1}^\infty \; a_l \,  (2l) \, z^{2l - 1} \, C_l 
+  + \mathlarger{\sum}_{l = 1}^\infty \; a_l \, (2l)  \, z^{2l - 1} \log(z) \; 
+  + \mathlarger{\sum}_{l = 0}^\infty \; a_l z^{2l - 1} \\
+  &= \mathlarger{\sum}_{l = 1}^\infty \; b_l \, z^{2l - 1} \, C_l 
+  + \mathlarger{\sum}_{l = 1}^\infty \; b_l \, z^{2l - 1} \log(z) \; 
+  +  \mathlarger{\sum}_{l = 0}^\infty \; a_l \, z^{2l - 1} \\
   %
-  \frac{\d{}^2}{\d z^2} H_0^{(1)}(z)
+  \frac{\pi}{2\ii} \, \frac{\d{}^2}{\d z^2} H_0^{(1)}(z)
   %
-  &= \frac{2 \ii}{\pi} \; \mathlarger{\sum}_{l = 1}^\infty \; b_l \, (2l - 1) \, z^{2l - 2} \, C_l + \frac{2 \ii}{\pi}  \; \mathlarger{\sum}_{l = 1}^\infty \; b_l \, (2l - 1)\, z^{2l - 2} \log(z) + \frac{2 \ii}{\pi} \; \mathlarger{\sum}_{l = 1}^\infty \; b_l \, z^{2l - 2} \\
-  &\quad + \frac{2 \ii}{\pi}\; \mathlarger{\sum}_{l = 0}^\infty \; a_l \, (2l - 1) \, z^{2l - 2} \\
-  &= \frac{2 \ii}{\pi} \; \mathlarger{\sum}_{l = 1}^\infty \; c_l \, z^{2l - 2} \, C_l + \frac{2 \ii}{\pi}  \; \mathlarger{\sum}_{l = 1}^\infty \; c_l \, z^{2l - 2} \log(z) + \frac{2 \ii}{\pi} \; \mathlarger{\sum}_{l = 1}^\infty \; b_l \, z^{2l - 2} \\
-  &\quad + \frac{2 \ii}{\pi}\; \mathlarger{\sum}_{l = 0}^\infty \; a_l (2l - 1) \, z^{2l - 2} \\
+  &= \mathlarger{\sum}_{l = 1}^\infty \; b_l \, (2l - 1) \, z^{2l - 2} \, C_l 
+  + \mathlarger{\sum}_{l = 1}^\infty \; b_l \, (2l - 1)\, z^{2l - 2} \log(z) 
+  + \mathlarger{\sum}_{l = 1}^\infty \; b_l \, z^{2l - 2} \\
+  &\quad + \mathlarger{\sum}_{l = 0}^\infty \; a_l \, (2l - 1) \, z^{2l - 2} \\
+  &= \mathlarger{\sum}_{l = 1}^\infty \; c_l \, z^{2l - 2} \, C_l 
+  +  \mathlarger{\sum}_{l = 1}^\infty \; c_l \, z^{2l - 2} \log(z) 
+  +  \mathlarger{\sum}_{l = 1}^\infty \; b_l \, z^{2l - 2} \\
+  &\quad +  \mathlarger{\sum}_{l = 0}^\infty \; a_l (2l - 1) \, z^{2l - 2} \\
   %
-  \frac{\d{}^3}{\d z^3} H_0^{(1)}(z)
+  \frac{\pi}{2\ii} \frac{\d{}^3}{\d z^3} H_0^{(1)}(z)
   %
-  &= \frac{2 \ii}{\pi} \sum_{l = 2}^\infty c_l \, (2l - 2) \, z^{2l - 3} \, C_l + \frac{2 \ii}{\pi} \; \mathlarger{\sum}_{l = 2}^\infty \; c_l \, (2l - 2) \, z^{2l - 3} \log(z) + \frac{2 \ii}{\pi} \; \mathlarger{\sum}_{l = 1}^\infty \; c_l \, z^{2l - 3} \\
- &\quad  + \frac{2 \ii}{\pi} \; \mathlarger{\sum}_{l = 2}^\infty \; b_l (2l - 2) \, z^{2l - 3} + \frac{2 \ii}{\pi}\; \mathlarger{\sum}_{l = 0}^\infty \; a_l (2l - 1) (2l - 2) \, z^{2l - 3} \\
+  &= \sum_{l = 2}^\infty c_l \, (2l - 2) \, z^{2l - 3} \, C_l 
+  +  \mathlarger{\sum}_{l = 2}^\infty \; c_l \, (2l - 2) \, z^{2l - 3} \log(z) 
+  +  \mathlarger{\sum}_{l = 1}^\infty \; c_l \, z^{2l - 3} \\
+ &\quad  
+  + \mathlarger{\sum}_{l = 2}^\infty \; b_l (2l - 2) \, z^{2l - 3} 
+  + \frac{2 \ii}{\pi}\; \mathlarger{\sum}_{l = 0}^\infty \; a_l (2l - 1) (2l - 2) \, z^{2l - 3} \\
   %%
-  &= \frac{2 \ii}{\pi} \; \mathlarger{\sum}_{l = 2}^\infty \; d_l \, z^{2l - 3} \, C_l + \frac{2 \ii}{\pi} \; \mathlarger{\sum}_{l = 2}^\infty \; d_l \, z^{2l - 3} \log(z) + \frac{2 \ii}{\pi} \; \mathlarger{\sum}_{l = 1}^\infty \; c_l \, z^{2l - 3} \\
- &\quad  + \frac{2 \ii}{\pi} \; \mathlarger{\sum}_{l = 2}^\infty \; b_l (2l - 2) \, z^{2l - 3} + \frac{2 \ii}{\pi}\; \mathlarger{\sum}_{l = 0}^\infty \; a_l (2l - 1) (2l - 2) \, z^{2l - 3} ,
+  &= \mathlarger{\sum}_{l = 2}^\infty \; d_l \, z^{2l - 3} \, C_l 
+  + \mathlarger{\sum}_{l = 2}^\infty \; d_l \, z^{2l - 3} \log(z) 
+  + \mathlarger{\sum}_{l = 1}^\infty \; c_l \, z^{2l - 3} \\
+ &\quad  + \mathlarger{\sum}_{l = 2}^\infty \; b_l (2l - 2) \, z^{2l - 3} 
+  + \mathlarger{\sum}_{l = 0}^\infty \; a_l (2l - 1) (2l - 2) \, z^{2l - 3} ,
 \end{align*}
-where
+where, in order to increase readability, we introduced the following coefficients
 \begin{align*}
   C_l &\coloneqq -\frac{\ii \pi}{2} - \log(2) - \psi(l + 1) \\
   a_l &\coloneqq \frac{(-1)^l}{(l!)^2 \; 4^l}, \quad
@@ -54,11 +93,110 @@ where
   d_l \coloneqq c_l \cdot (2l - 2).
 \end{align*}
 
-For $G(x; 0) = -\frac{1}{2\pi} \log(|x|)$, we have
+\section*{A.1\quad Proof of Lemma \ref{lem:HelmholtzLaplaceDifference} for $d = 2$}
+\markboth{APPENDIX}{A.1.\quad PROOF OF LEMMA \ref*{lem:HelmholtzLaplaceDifference} FOR $d = 2$}
+\addcontentsline{toc}{section}{A.1 Proof of Lemma \ref*{lem:HelmholtzLaplaceDifference} for $d = 2$}
+\label{sec:A1}
+
+For $\lambda \in \Sigma_\theta$, $\theta \in (0, \pi/2)$, we need to show that for $|\lambda| |x|^2 \leq (1/2)$
 \begin{align*}
-  \partial_\gamma G(x; 0) &= -\frac{1}{2\pi} \frac{x_\gamma}{|x|^2} \\
-  \partial_\alpha \partial_\gamma G(x; 0) &= -\frac{1}{2\pi} \delta_{\alpha\gamma} \cdot \frac{1}{|x|^2} + \frac{1}{\pi} \cdot \frac{x_\alpha x_\gamma}{|x|^4} \\
-  \partial_\beta \partial_\alpha \partial_\gamma G(x; 0)
-  &= \frac{1}{\pi} \frac{\delta_{\beta \gamma} x_\alpha + \delta_{\alpha \gamma} x_\beta + \delta_{\alpha\beta} x_\gamma}{|x|^4} - \frac{4}{\pi} \frac{x_\alpha x_\beta x_\gamma}{|x|^6}.
+  \Big| \partial_\beta \partial_\alpha \partial_\gamma \big\{ G(x; \lambda) - G(x; 0) \big\} \Big|
+  \leq C\, |\lambda| |x|^{-1}
 \end{align*}
+for a constant $C$ that only depends on $d$ and $\theta$.
+
+In order to make the next calculations better to digest, we decompose the third derivative of $G(\cdot; \lambda)$ as 
+\begin{align*}
+  \partial_\beta \partial_\alpha \partial_\gamma \big\{G(x; \lambda)\big\}
+  = A_1 + A_2 + A_3,
+\end{align*}
+where each $A_i$, $i = 1,\dots,3$, corresponds to the term involving the $i$th derivative of $H_0^{(1)}$.
+\begin{align*}
+  A_1 = - \frac{1}{2 \pi } k^3 \frac{x_\alpha x_\beta x_\gamma}{|x|^3} 
+  %%
+  &\bigg\{
+     \; \mathlarger{\sum}_{l = 2}^\infty \; d_l \, (k|x|)^{2l - 3} \, C_l + \; \mathlarger{\sum}_{l = 2}^\infty \; d_l \, (k|x|)^{2l - 3} \log(k|x|)  \\
+  &\quad  + \; \mathlarger{\sum}_{l = 1}^\infty \; c_l \, (k|x|)^{2l - 3} + \; \mathlarger{\sum}_{l = 2}^\infty \; b_l (2l - 2) \, (k|x|)^{2l - 3} \\
+  &\quad + \; \mathlarger{\sum}_{l = 0}^\infty \; a_l (2l - 1) (2l - 2) \, (k|x|)^{2l - 3} 
+  \bigg\}
+  %%
+\end{align*}
+We see that using the fact $|\lambda| |x|^2 \leq (1/2)$ the only problematic term is
+\begin{align}
+  \label{eq:P1}
+  \tag{P1}- \frac{1}{2 \pi } k^3 \frac{x_\alpha x_\beta x_\gamma}{|x|^3}  \; \mathlarger{\sum}_{l = 0}^{0} \; a_l (2l - 1) (2l - 2) \, (k|x|)^{2l - 3} 
+\end{align}
+For $A_2$ we calculate
+\begin{align*}
+  A_2 &= - \frac{1}{2\pi} k^2 \bigg(\frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha \gamma} x_\beta + \delta_{\alpha \beta} x_\gamma}{|x|^2} - 3 \frac{x_\alpha x_\beta x_\gamma}{|x|^4} \bigg) \\ 
+  &\quad \cdot 
+  \bigg\{
+    \; \mathlarger{\sum}_{l = 1}^\infty \; c_l \, (k|x|)^{2l - 2} \, C_l 
+  + \; \mathlarger{\sum}_{l = 1}^\infty \; c_l \, (k|x|)^{2l - 2} \log(k|x|) \\
+  &\qquad+ \; \mathlarger{\sum}_{l = 1}^\infty \; b_l \, (k|x|)^{2l - 2} 
+  + \; \mathlarger{\sum}_{l = 0}^\infty \; a_l (2l - 1) \, (k|x|)^{2l - 2} 
+  \bigg\}.
+\end{align*}
+As the prefactor already behaves like $|\lambda| |x|^{-1}$, the problematic terms are given by
+\begin{align}
+  \label{eq:P2}
+  \tag{P2}
+  \begin{alignedat}{1}
+  & - \frac{1}{2\pi} k^2 \bigg(\frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha \gamma} x_\beta + \delta_{\alpha \beta} x_\gamma}{|x|^2} - 3 \frac{x_\alpha x_\beta x_\gamma}{|x|^4} \bigg) 
+   \cdot \mathlarger{\sum}_{l = 1}^1 \; c_l \, (k|x|)^{2l - 2} \log(k|x|) \\
+   &- \frac{1}{2\pi} k^2 \bigg(\frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha \gamma} x_\beta + \delta_{\alpha \beta} x_\gamma}{|x|^2} - 3 \frac{x_\alpha x_\beta x_\gamma}{|x|^4} \bigg) 
+  \cdot \mathlarger{\sum}_{l = 0}^0 \; a_l (2l - 1) \, (k|x|)^{2l - 2} .
+  \end{alignedat}
+\end{align}
+For the last component, we have the following identity:
+\begin{align*}
+  A_3 = 
+  & - \frac{1}{2\pi} k \Big( 3 \frac{x_\alpha x_\beta x_\gamma}{|x|^5} - \frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha\gamma} x_\beta + \delta_{\alpha\beta} x_\gamma}{|x|^3} \Big)  \\
+  & \bigg\{ 
+  \: \mathlarger{\sum}_{l = 1}^\infty \; b_l \, (k|x|)^{2l - 1} \, C_l 
+  + \mathlarger{\sum}_{l = 1}^\infty \; b_l \, (k|x|)^{2l - 1} \log(k|x|) \; 
+  + \mathlarger{\sum}_{l = 0}^\infty \; a_l \, (k|x|)^{2l - 1} \bigg\}
+\end{align*}
+In this case, the prefactor behaves like $\sqrt{|\lambda|} |x|^{-2}$.
+Therefore, the problematic terms are only found in the last two sums
+\begin{align}
+  \label{eq:P3}
+  \tag{P3}
+  \begin{alignedat}{1}
+    &- \frac{1}{2\pi} k \bigg( 3 \frac{x_\alpha x_\beta x_\gamma}{|x|^5} - \frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha\gamma} x_\beta + \delta_{\alpha\beta} x_\gamma}{|x|^3} \bigg)
+  \cdot \mathlarger{\sum}_{l = 1}^1 \; b_l \, (k|x|)^{2l - 1} \log(k|x|)  \\
+    &- \frac{1}{2\pi} k \bigg( 3 \frac{x_\alpha x_\beta x_\gamma}{|x|^5} - \frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha\gamma} x_\beta + \delta_{\alpha\beta} x_\gamma}{|x|^3} \bigg)
+  \cdot \mathlarger{\sum}_{l = 0}^0 \; a_l \, (k|x|)^{2l - 1} .
+  \end{alignedat}
+\end{align}
+
+Now we observe the astonishing fact that if we sum up all problematic terms \eqref{eq:P1}-\eqref{eq:P3} and subtract $\partial_\beta \partial_\alpha \partial_\gamma G(x; 0)$ everything adds up to zero.
+Note that we have
+\begin{align*}
+  a_0 = 1, \qquad c_1 = b_1 = - \frac{1}{2}
+\end{align*}
+and therefore we get the following:
+\begin{align*}
+  &\hspace{-2cm}\mathrm{(P1)} + \mathrm{(P2)} + \mathrm{(P3)} - \partial_\beta \partial_\alpha \partial_\gamma G(x; 0) \\[0.5em]
+  = &- \frac{1}{\pi} \frac{x_\alpha x_\beta x_\gamma}{|x|^6} \\[0.5em]
+  %
+    &+ \frac{1}{4\pi} k^2 \bigg(\frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha \gamma} x_\beta + \delta_{\alpha \beta} x_\gamma}{|x|^2} - 3 \frac{x_\alpha x_\beta x_\gamma}{|x|^4} \bigg) \log(k|x|)  \\[0.5em]
+    %
+    &+ \frac{1}{2\pi} \bigg(\frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha \gamma} x_\beta + \delta_{\alpha \beta} x_\gamma}{|x|^4} - 3 \frac{x_\alpha x_\beta x_\gamma}{|x|^6} \bigg) \\[0.5em]
+    %
+    &+ \frac{1}{4\pi} k^2 \bigg( 3 \frac{x_\alpha x_\beta x_\gamma}{|x|^4} - \frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha\gamma} x_\beta + \delta_{\alpha\beta} x_\gamma}{|x|^2} \bigg)
+   \,  \log(k|x|)  \\[0.5em]
+    &- \frac{1}{2\pi} \bigg( 3 \frac{x_\alpha x_\beta x_\gamma}{|x|^6} - \frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha\gamma} x_\beta + \delta_{\alpha\beta} x_\gamma}{|x|^4} \bigg)\\[0.5em]
+    %
+   &- \frac{1}{\pi} \frac{\delta_{\beta \gamma} x_\alpha + \delta_{\alpha \gamma} x_\beta + \delta_{\alpha\beta} x_\gamma}{|x|^4} 
+     + \frac{4}{\pi} \frac{x_\alpha x_\beta x_\gamma}{|x|^6} 
+      \\[1em]
+     = &\quad 0 .
+\end{align*}
+
+\section*{A.2\quad Proof of Lemma \ref{thm:differenceFundamentalSolutionStokes}}
+\markboth{APPENDIX}{A.2.\quad PROOF OF LEMMA \ref*{thm:differenceFundamentalSolutionStokes} FOR $d = 2$}
+\addcontentsline{toc}{section}{A.1 Proof of Lemma \ref*{thm:differenceFundamentalSolutionStokes} for $d = 2$}
+\label{sec:A2}
+
 

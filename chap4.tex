@@ -149,7 +149,7 @@ These operators show up in identity \eqref{eq:rellichIdentity2} as
   \quad\text{and}\quad
   \partial_{\tau_{ik}} u_i =  \Big\{ n_i \frac{\partial u_i}{\partial x_k} - n_k \frac{\partial u_i}{\partial x_i} \Big\}
 \end{align*}
-and have been introduced by Mitrea and Wrigth \cite[p. 16]{mitreaWright}. 
+and have been introduced by Mitrea and Wright \cite[p. 16]{mitreaWright}. 
 These operators are called \emph{first-order tangential derivative operators} and relate to the tangential gradient, which has been introduced in 
 \eqref{eq:tangentialGradient}, in the following way:
 \begin{align}
@@ -223,7 +223,7 @@ The next lemma enables us to handle the solid integrals in \eqref{eq:rellichIden
 \end{lem}
 
 \begin{proof}
-  Inserting the solution $u$ into the the variational problem of the Stokes resolvent problem gives us
+  Inserting the solution $u$ into the variational problem of the Stokes resolvent problem gives us
   \begin{align}
     \label{eq:variationalStokes}
     \int_\Omega -\Delta u \cdot \overline u \d x + \lambda \int_\Omega u \cdot \overline u \d x= - \int_\Omega \nabla \phi \cdot \overline u \d x.
@@ -278,7 +278,7 @@ The next lemma combines Rellich identities \eqref{eq:rellichIdentity} and \eqref
 \end{lem}
 
 \begin{proof}
-  Let $h = (h_1, \dots, h_d) \in \CC_0^1(\R^d, \R^d)$ with $h_k n_k \geq c > 0$ on $\partial \Omega$ as given by Therorem \ref{thm:smoothApproximation} v). 
+  Let $h = (h_1, \dots, h_d) \in \CC_0^1(\R^d, \R^d)$ with $h_k n_k \geq c > 0$ on $\partial \Omega$ as given by Therorem~\ref{thm:smoothApproximation} v). 
   The idea of the proof of the desired estimates \eqref{eq:gradEstimateRellich} and \eqref{eq:gradEstimateRellich2} is to first use the Rellich identities from Lemma \ref{lem:rellichIdentity} with this particular $h$ to estimate $\|\nabla u\|^{}_\partial$ and then to bound the resulting right hand side by providing individual estimates.
 
   Before we start, note that we have $\Delta \phi = 0$ on the one hand and for the nontangential maximal function $(\phi)^* \in \Ell^2(\partial\Omega)$ on the other hand. According to Shen \cite[p. 410]{Shen2012}, a result from Dahlberg \cite{dahlberg77} gives the estimation
@@ -368,7 +368,7 @@ To this end, for the third integral we calculate
 
 We prove one last lemma before we tackle the central theorem of this chapter.
 The following lemma will not depend on the lemmata which were proven in the preceding part of this chapter, as the approach to derive the desired boundary estimates will be different:
-We will not rely upon the rellich identities from Lemma \ref{lem:rellichIdentity} but directly part from a variational formulation of the Stokes resolvent problem on the boundary. 
+We will not rely upon the Rellich identities from Lemma \ref{lem:rellichIdentity} but directly part from a variational formulation of the Stokes resolvent problem on the boundary. 
 Furthermore, we will work with the following Theorem about the regularity problem and the Neumann problem for the Laplacian on bounded Lipschitz domains:
 \begin{thm}
   \label{thm:jerisonKenig}
@@ -453,7 +453,7 @@ Furthermore, we will work with the following Theorem about the regularity proble
     \leq C\,  \|\phi\|^{}_\partial
   \end{align}
   holds for constants $c, C$ that only depend on $d$ and the Lipschitz character of $\Omega$.
-  Using these two estimates applied to the respecive terms of \eqref{eq:stokesEquationH1}, we can directly verify \eqref{eq:phiDashintPhi} and \eqref{eq:lambdaun}.
+  Using these two estimates applied to the respective terms of \eqref{eq:stokesEquationH1}, we can directly verify \eqref{eq:phiDashintPhi} and \eqref{eq:lambdaun}.
 
   In order to prove \eqref{eq:deltaun}, we note the following identity of differential operators
   \begin{align*}
@@ -530,7 +530,7 @@ Furthermore, we will work with the following Theorem about the regularity proble
   holds for \emph{all} harmonic functions $\phi$ with vanishing mean on $\partial\Omega$ and not only those that correspond to the pressure term of the Stokes resolvent problem.
 \end{rem}
 
-After all this preparation we have accquainted enough tools and are now able to prove Theorem \ref{thm:rellich}.
+After all this preparation we have acquainted enough tools and are now able to prove Theorem \ref{thm:rellich}.
 
 \begin{proof}[Proof of Theorem \ref{thm:rellich}]
   For the proof of estimate \eqref{eq:rellich1}, we can assume without loss of generality that $\int_{\partial\Omega} \phi \d \sigma = 0$.
@@ -544,7 +544,7 @@ After all this preparation we have accquainted enough tools and are now able to 
       + C \,\varepsilon \,\Big\{ \|\nabla u\|^{}_\partial + \|\phi\|^{}_\partial \Big\}
   \end{align*}
   for all $\varepsilon \in (0,1)$.
-  Chosing $\varepsilon$ such that $C\, \varepsilon < (1/2)$, we can rearrange the above inequality and obtain estimate \eqref{eq:rellich1}.
+  Choosing $\varepsilon$ such that $C\, \varepsilon < (1/2)$, we can rearrange the above inequality and obtain estimate \eqref{eq:rellich1}.
 
   Estimate \eqref{eq:rellich2} will need more effort to be proven.
   In order to obtain the desired estimate, we will divide the left hand side of inequality \eqref{eq:rellich2} into two groups as the following line suggests and then bound both groups separately.
@@ -606,7 +606,7 @@ After all this preparation we have accquainted enough tools and are now able to 
     = |\lambda|^{1/2} \|  u\|^{}_\partial 
     \leq C\, \Big\|\, \frac{\partial u}{\partial \nu} \,\Big\|^{}_\partial.
   \end{align}
-  This boundes the second group and concludes our proof.
+  This bounds the second group and concludes our proof.
 \end{proof}
 
 Shen proved that under reasonable assumptions a theorem similar to Theorem~\ref{thm:rellich} also holds for exterior domains, see \cite[Thm. 4.6]{Shen2012}.
