@@ -394,6 +394,7 @@ Furthermore, we will work with the following Theorem about the regularity proble
 \end{proof}
 
 \begin{lem}
+  \label{lem:neumannDirichlet}
   Assume that $(u,\phi)$ satisfies the same conditions as in Theorem \ref{thm:rellich}.
   Then,
   \begin{align}
@@ -468,7 +469,7 @@ Furthermore, we will work with the following Theorem about the regularity proble
   Identifying $\Delta u \cdot n$ with an element of $\HH^{-1}(\partial\Omega)$, the estimate \eqref{eq:deltaun} follows. 
 
   For the proof of estimate \eqref{eq:nablaPhin}, we will use $\Ell^2$ estimates for the Neumann and regularity problems for the Laplace equation in Lipschitz domains.
-  Jerison and Kenig showed that for $g \in \Ell^2(\partial\Omega)$ with mean value zero the \emph{Neumann problem} for Laplace's equation on the Lipschitz domain $\Omega$ has a unique solution $\psi$ with  $(\nabla \psi)^* \in \Ell^2(\partial\Omega)$, $\frac{\partial \psi}{\partial n} = g$ a. e. on $\partial \Omega$ and the solution fulfills the estimate $\|\psi\|_{\HH^1(\partial\Omega)} \leq C \|g\|^{}_\partial$, see Theorem \ref{thm:jerisonKenig}.
+  Jerison and Kenig showed that for $g \in \Ell^2(\partial\Omega)$ with mean value zero the \emph{Neumann problem} for Laplace's equation on the Lipschitz domain $\Omega$ has a unique solution $\psi$ with  $(\nabla \psi)^* \in \Ell^2(\partial\Omega)$, $\frac{\partial \psi}{\partial n} = g$ a.e. on $\partial \Omega$ and the solution fulfills the estimate $\|\psi\|_{\HH^1(\partial\Omega)} \leq C \|g\|^{}_\partial$, see Theorem \ref{thm:jerisonKenig}.
   By Green's theorem, which is applicable since $\partial\Omega$ is assumed to be smooth, we see that
   \begin{align*}
     \int_{\partial\Omega} \phi \, \frac{\partial\psi}{\partial x_i} n_i \d\sigma  
@@ -514,7 +515,15 @@ Furthermore, we will work with the following Theorem about the regularity proble
 
 \begin{rem}
   \label{rem:harmonicEstimate}
-  A careful look at the proof of inequality \eqref{eq:nablaPhin} reveals that the estimate
+  Throughout the proof of Lemma \ref{lem:neumannDirichlet}, we derived several estimates that prove to hold under more general conditions if we study them closely.
+  A careful look at the proof of inequality \eqref{eq:deltaun} reveals that the estimate
+  \begin{align*}
+    \|\Delta u \cdot n\|_{\HH^{-1}(\partial\Omega)}
+    \leq C\, \|\nabla u\|^{}_\partial
+  \end{align*}
+  holds for \emph{all} smooth vector fields $u$ that fulfill the condition $\div(u) = 0$ and not only for velocity fields for the Stokes resolvent problem.
+
+  Additionally, examining the proof of inequality \eqref{eq:nablaPhin} shows us that the estimate
   \begin{align*}
       c\, \| \phi \|^{}_\partial \leq \| \nabla \phi \cdot n \|_{\HH^{-1}(\partial\Omega)},
   \end{align*}

@@ -54,8 +54,8 @@ In this first section we will establish the fundamental notions regarding bounde
         | P - \Lambda_k(P) | < (1 + \beta) \operatorname{dist}(\Lambda_k(P), \partial\Omega)
       \end{align*}
       for some constant $\beta$ depending only on $d$ and the Lipschitz character of $\Omega\,$.
-    \item The normals $\nu_k$ of $\partial\Omega_k$ satisfy $\lim_{k \to \infty} \nu_k(\Lambda_k(P)) = \nu(P)$ a. e. for all $P \in \partial\Omega$
-    \item The functions $\vartheta_k$ satisfy $\delta \leq \vartheta_k \leq \delta^{-1}$ for some $\delta > 0$, $\vartheta^k \to 1$ pointwise a. e. and
+    \item The normals $\nu_k$ of $\partial\Omega_k$ satisfy $\lim_{k \to \infty} \nu_k(\Lambda_k(P)) = \nu(P)$ a.e. for all $P \in \partial\Omega$
+    \item The functions $\vartheta_k$ satisfy $\delta \leq \vartheta_k \leq \delta^{-1}$ for some $\delta > 0$, $\vartheta^k \to 1$ pointwise a.e. and
       \begin{align*}
         \int_E \vartheta_k(Q) \d \sigma(Q) = \int_{\Lambda_k(E)} \d \sigma_k(Q),
       \end{align*}
@@ -161,11 +161,11 @@ The idea is to restrict the set of directions from which one can approach $p$ by
   Let furthermore $u$ be a function on $\R^d \setminus \partial\Omega$ and $f$ a function on $\partial\Omega$.
   We say that $u = f$ \emph{in the sense of nontangential convergence from the inside} if 
   \begin{align*}
-    \lim_{\substack{ x \to q \\ x \in \ShenCone(q)}} u(x) = f(q), \quad\text{for a. e. } q \in \partial\Omega
+    \lim_{\substack{ x \to q \\ x \in \ShenCone(q)}} u(x) = f(q), \quad\text{for a.e. } q \in \partial\Omega
   \end{align*}
   and we say that $u = f$ \emph{in the sense of nontangential convergence from the outside} if 
   \begin{align*}
-    \lim_{\substack{ x \to q \\ x \in \ShenCone^{\,\mathrm{ext}}(q)}} u(x) = f(q), \quad\text{for a. e. } q \in \partial\Omega.
+    \lim_{\substack{ x \to q \\ x \in \ShenCone^{\,\mathrm{ext}}(q)}} u(x) = f(q), \quad\text{for a.e. } q \in \partial\Omega.
   \end{align*}
   If both of the above limits exist and coincide we say that $u = f$ \emph{in the sense of nontangential convergence}.
   %We will sometimes denote a cone coming from a nontangential approach region as above by $\ShenCone(q)$.
@@ -202,7 +202,7 @@ To put our new vocabulary to use, we will formulate an prove the divergence theo
   Furthermore, we know that $\lim_{l \to \infty} n_k^{(l)}(\Lambda_l(x)) = n_k(x)$ almost everywhere by Theorem \ref{thm:smoothApproximation} and that $f$ has a nontangential limit almost everywhere.
   This gives us that 
   \begin{align*}
-    \lim_{l \to \infty} \vartheta_l(x) \, f_k(\Lambda_l(x)) \, n_k^{(l)}(\Lambda_l(x)) = f_k(x) n_k(x), \quad\text{a. e. } x \in \partial\Omega.
+    \lim_{l \to \infty} \vartheta_l(x) \, f_k(\Lambda_l(x)) \, n_k^{(l)}(\Lambda_l(x)) = f_k(x) n_k(x), \quad\text{a.e. } x \in \partial\Omega.
   \end{align*}
   As this sequence of integrands is dominated by $\delta (g)^*$ with $(g)^* \in \Ell^1(\partial\Omega)$ by assumption and $\delta$ the uniform bound to $\vartheta_l$ due to Theorem \ref{thm:smoothApproximation} iv), the dominated convergence theorem is applicable and yields
   \begin{align}
