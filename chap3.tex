@@ -75,7 +75,7 @@ Another cornerstone in the theory of the single and double layer potentials is t
   Let $x \in \R^d$, $0 < \varepsilon \leq (r_0/4)$, and $l \in \N_0$ with $l < d - 1$.
   Then there exists a constant $C > 0$ depending only on $d$, $l$ and $M$ such that
   \begin{align*}
-    \int_{\partial\Omega \cap \BB(x, \varepsilon)} \frac{1}{|x - y|^l} \d\sigma(y) \leq C \varepsilon^{d - l - 1}.
+    \int_{\partial\Omega \cap \BB(x,\, \varepsilon)} \frac{1}{|x - y|^l} \d\sigma(y) \leq C \varepsilon^{d - l - 1}.
   \end{align*}
 \end{lem}
 
@@ -114,7 +114,7 @@ The lemma deals with mapping properties of the aforementioned integral operators
     &\sum_{k = 0}^N \int_{2^k t < |q - y| < 2^{k + 1}t}  \frac{1}{|\lambda| |q - y|^{d + 1}} |f(y)| \d \sigma(y) \nonumber\\
     &\qquad\qquad\leq \sum_{k = 0}^N \int_{2^k t < |q - y| < 2^{k + 1}t}  \frac{1}{|\lambda| 2^{k(d + 1)}t^{d + 1}} |f(y)| \d \sigma(y) \nonumber\\
     %&\sum_{k = 0}^N \int_{\BB(P, 2^{k + 1}t) \cap \partial\Omega} \frac{1}{|\lambda| 2^{k(d + 1)} t^{d + 1}} |f(y)| \d \sigma(y) \\
-    &\qquad\qquad\leq \frac{1}{|\lambda|t^2}\; \frac{1}{2^{1 -d}}\sum_{k = 0}^N \frac{1}{2^{2k}} \frac{1}{(2^{k+1} t)^{d - 1}} \int_{\BB(q, 2^{k + 1}t) \cap \partial \Omega}  |f(y)| \d\sigma(y)\label{eq:gtt}.
+    &\qquad\qquad\leq \frac{1}{|\lambda|t^2}\; \frac{1}{2^{1 -d}}\sum_{k = 0}^N \frac{1}{2^{2k}} \frac{1}{(2^{k+1} t)^{d - 1}} \int_{\BB(q,\, 2^{k + 1}t) \cap \partial \Omega}  |f(y)| \d\sigma(y)\label{eq:gtt}.
     %&\qquad\qquad\leq C \sum_{k = 0}^N \frac{1}{2^{2k}} M_{\partial\Omega}(f)(P) \\
     %&\qquad\qquad\leq C  M_{\partial\Omega}(f)(P)
     %&\quad\leq C |\lambda|^{\frac{1}{2}} \frac{2^{N + 1}t - t}{1}  M_{\partial\Omega}(f)(P) \\
@@ -127,7 +127,7 @@ The lemma deals with mapping properties of the aforementioned integral operators
   %^\end{align*}
   \begin{align}
     \label{eq:applLem31}
-    \frac{1}{(2^{k+1} t)^{d - 1}} \int_{\BB(q, 2^{k + 1}t) \cap \partial \Omega}  |f(y)| \d\sigma(y)
+    \frac{1}{(2^{k+1} t)^{d - 1}} \int_{\BB(q,\, 2^{k + 1}t) \cap \partial \Omega}  |f(y)| \d\sigma(y)
     \leq C M_{\partial\Omega}(f)(q), \quad k=0,\dots,N, 
   \end{align}
   with a constant $C$ that depends on $d$ and the Lipschitz character of $\Omega$.
@@ -180,8 +180,8 @@ The lemma deals with mapping properties of the aforementioned integral operators
    Once again we integrate over annuli, use the inner radii to loose the term $|q - y|^{2 - d}$ and use the outer radii to expand the domain of integration to balls with this radius:
    \begin{align*}\int_{t < |q - y| < (2|\lambda|)^{-1/2}} \frac{1}{|q - y|^{d - 2}} \, |f(y)| \d\sigma
      &\leq \sum_{k = 0}^N \int_{2^kt \leq |q - y| < 2^{k + 1} t} \frac{1}{|q - y|^{d - 2}}\, |f(y)| \d\sigma \\
-     &\leq  \sum_{k = 0}^N \frac{1}{(2^{k}t)^{d - 2}}  \int_{\BB(q, 2^{k + 1}t) \cap \partial\Omega} |f(y)| \d\sigma \\
-     &=  2^{d-1} \sum_{k = 0}^N 2^k t \;  \frac{1}{(2^{k + 1}t)^{d - 1}}  \int_{\BB(q, 2^{k + 1}t) \cap \partial\Omega} |f(y)| \d\sigma.
+     &\leq  \sum_{k = 0}^N \frac{1}{(2^{k}t)^{d - 2}}  \int_{\BB(q,\, 2^{k + 1}t) \cap \partial\Omega} |f(y)| \d\sigma \\
+     &=  2^{d-1} \sum_{k = 0}^N 2^k t \;  \frac{1}{(2^{k + 1}t)^{d - 1}}  \int_{\BB(q,\, 2^{k + 1}t) \cap \partial\Omega} |f(y)| \d\sigma.
    \end{align*}
    %\begin{align*}
 %     &\qquad\qquad\leq  |\lambda|^{\frac{1}{2}} t^{2 - d} \sum_{k = 0}^N 2^{k(2 - d)} \int_{\BB(P, 2^{k + 1}t) \cap \partial\Omega} |f(y)| \d\sigma\\
@@ -584,21 +584,21 @@ The next result will be crucial for solving the $\Ell^2$ Dirichlet problem in Ch
   To this end, we define for all $\varepsilon > 0$
   \begin{align*}
     &(\K^{(\varepsilon)}f)(x) 
-    \coloneqq \int_{\partial\Omega \setminus \BB(x,\varepsilon)} \nabla_x \Big\{ \Gamma(x - y; \lambda) - \Gamma(x - y; 0) \Big\} f(y) \d \sigma(y) \, n, \quad x \in \partial\Omega.
+    \coloneqq \int_{\partial\Omega \setminus \BB(x,\,\varepsilon)} \nabla_x \Big\{ \Gamma(x - y; \lambda) - \Gamma(x - y; 0) \Big\} f(y) \d \sigma(y) \, n, \quad x \in \partial\Omega.
   \end{align*}
   We can now estimate by Young's inequality, see Lemma~\ref{lem:young}.
   \begin{align*}
     &\Big\| \,\K f - \K^{(\varepsilon)} f\, \Big\|_{\Ell^2(\partial\Omega; \C^d)} \\
-    &\qquad\leq \sup_{p \in \partial\Omega} \Big\| \nabla_x \Big\{ \Gamma(p - \cdot; \lambda) - \Gamma(p - \cdot; 0) \Big\} 1_{\BB(p,\varepsilon)} \Big\|_{\Ell^1(\partial\Omega; \C^{d \times d})} \|f\|_{\Ell^2(\partial\Omega; \C^d)}.
+    &\qquad\leq \sup_{p \in \partial\Omega} \Big\| \nabla_x \Big\{ \Gamma(p - \cdot; \lambda) - \Gamma(p - \cdot; 0) \Big\} 1_{\BB(p,\,\varepsilon)} \Big\|_{\Ell^1(\partial\Omega; \C^{d \times d})} \|f\|_{\Ell^2(\partial\Omega; \C^d)}.
   \end{align*}
   Our goal is to show that
   \begin{align*}
-    \sup_{p \in \partial\Omega} \Big\| \nabla_x \Big\{ \Gamma(p - \cdot; \lambda) - \Gamma(p - \cdot; 0) \Big\} 1_{\BB(p,\varepsilon)} \Big\|_{\Ell^1(\partial\Omega; \C^{d \times d})} \to 0 \quad \text{as} \quad \varepsilon \to 0.
+    \sup_{p \in \partial\Omega} \Big\| \nabla_x \Big\{ \Gamma(p - \cdot; \lambda) - \Gamma(p - \cdot; 0) \Big\} 1_{\BB(p,\,\varepsilon)} \Big\|_{\Ell^1(\partial\Omega; \C^{d \times d})} \to 0 \quad \text{as} \quad \varepsilon \to 0.
   \end{align*}
   To this end, let $\varepsilon$ be small enough such that we can apply the estimates from Corollary~\ref{cor:differenceFundamentalSolutionStokes} to calculate for some $p \in \partial\Omega$
   \begin{align*}
-    &\Big\| \nabla_x \Big\{ \Gamma(p - \cdot; \lambda) - \Gamma(p - \cdot; 0) \Big\} 1_{\BB(p,\varepsilon)} \Big\|_{\Ell^1(\partial\Omega; \C^{d \times d})}  \\
-     &\qquad\qquad\leq C \int_{\partial\Omega \cap \BB(p, \varepsilon)} \sqrt{|\lambda|} |p - y|^{2 - d} \d\sigma(y) 
+    &\Big\| \nabla_x \Big\{ \Gamma(p - \cdot; \lambda) - \Gamma(p - \cdot; 0) \Big\} 1_{\BB(p,\,\varepsilon)} \Big\|_{\Ell^1(\partial\Omega; \C^{d \times d})}  \\
+     &\qquad\qquad\leq C \int_{\partial\Omega \cap \BB(p,\, \varepsilon)} \sqrt{|\lambda|} |p - y|^{2 - d} \d\sigma(y) 
      \leq C \sqrt{|\lambda|} \varepsilon
   \end{align*}
   where for the last step we applied Lemma~\ref{lem:compareBoundaryWithBall}.

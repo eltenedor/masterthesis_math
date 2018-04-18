@@ -49,7 +49,7 @@ One fundamental solution with pole at the origin is given by
 see McLean \cite[Eq.\@~9.14)]{mclean}, where $H_{\nu}^{(1)}(z)$ is the Hankel function of the first kind which according to Lebedev \cite[Sec.\@~5.11]{lebedev} can be also be written as
 \begin{align}
   \label{eq:integralRepresentationHankel}
-  H_\nu^{(1)}(z) = \frac{2^{\nu + 1} \e^{\ii(z - \nu \pi)} z^\nu}{\ii \sqrt{\pi} \Gamma(\nu + \frac{1}{2})} \int_0^\infty \e^{2 z \ii s} s^{\nu - \frac{1}{2}} (1 + s)^{\nu - \frac{1}{2}} \d s.
+  H_\nu^{(1)}(z) = \frac{2^{\nu + 1} \, \e^{\ii(z - \nu \pi)}\, z^\nu}{\ii\, \sqrt{\pi}\, \Gamma(\nu + \frac{1}{2})} \int_0^\infty \e^{2 z \ii s} s^{\nu - \frac{1}{2}} (1 + s)^{\nu - \frac{1}{2}} \d s.
 \end{align}
 This formula holds for $\nu > -\frac{1}{2}$ and $0 < \arg(z) < \pi$.
 We will usually set 
@@ -67,7 +67,7 @@ In the case $d = 2$, formula~\eqref{eq:definitionFundamentalHelmholtz} simplifie
 In the case $d = 3$, one has an even easier formula, namely
 \begin{align}
   \label{eq:3dDefinitionFundamentalHelmholtz}
-  G(x; \lambda) = \frac{\ii}{4(2\pi)^{1/2}} \cdot \frac{1}{|x|} \cdot (k |x|)^{1/2} H_{1/2}^{(1)}(k|x|) =  \frac{\e^{\ii k |x|}}{4 \pi |x|},
+  G(x; \lambda) = \frac{\ii}{4\, (2\pi)^{1/2}} \cdot \frac{1}{|x|} \cdot (k |x|)^{1/2} H_{1/2}^{(1)}(k|x|) =  \frac{\e^{\ii k |x|}}{4\, \pi\, |x|},
 \end{align}
 which is due to this easy formula for $H_{1/2}^{(1)}(z)$:
 \begin{align}
@@ -85,7 +85,7 @@ The main concern of this lemma is with the asymptotic behavior of $G(\,\cdot\,; 
   Then
   \begin{align}
     \label{eq:estimateHelmholtzDerivatives}
-    |\nabla_x^l G(x; \lambda)| \leq \frac{ C_l \e^{-c \sqrt{|\lambda|} |x|}}{|x|^{d - 2 + l}}
+    |\nabla_x^l G(x; \lambda)| \leq \frac{ C_l \, \e^{-c \sqrt{|\lambda|} |x|}}{|x|^{d - 2 + l}}
   \end{align}
   for any integer $l \geq 0$ if $d \geq 3$ and for $l \geq 1$ if $d = 2$.
   Here, $c > 0$ depends only on $\theta$ and $C_l$ depends only on $d$, $l$ and $\theta$.
@@ -117,12 +117,12 @@ The main concern of this lemma is with the asymptotic behavior of $G(\,\cdot\,; 
   where we also used the substitution rule with $u = t \Im(z)$.
   Now, we multiply \eqref{eq:firstEstimate} by $|z|^{v}$ and reuse the previous estimate to arrive at
   \begin{align*}
-    |z|^\nu |H_\nu^{(1)}(z)| \leq C_d \, C_\nu\, |z|^{2 \nu} \, \Im(z)^{-2\nu} \e^{-\frac{\Im(z)}{2}},
+    |z|^\nu\,  \big|H_\nu^{(1)}(z)\big| \leq C_d \, C_\nu\, |z|^{2 \nu} \, \Im(z)^{-2\nu} \e^{-\frac{\Im(z)}{2}},
   \end{align*}
   which for $z = k|x|$ gives
   \begin{align}
     \label{eq:zHEstimate}
-    |kx|^\nu |H_\nu^{(1)}(k |x|)| \leq C \sin(\theta/2)^{-2\nu} \, \e^{-\frac{1}{2} \sin(\theta/2) \sqrt{|\lambda|} |x|},
+    |kx|^\nu \, \big|H_\nu^{(1)}(k |x|)\big| \leq C \sin(\theta/2)^{-2\nu} \, \e^{-\frac{1}{2} \sin(\theta/2) \sqrt{|\lambda|} |x|},
   \end{align}
   where $C > 0$ depends only on $d$ and we used \eqref{eq:imaginaryPartEstimate} to estimate
   \begin{align*}
@@ -148,7 +148,7 @@ The main concern of this lemma is with the asymptotic behavior of $G(\,\cdot\,; 
   \begin{align}
     \label{eq:derivativeOfG}
     \nabla_x^{} G(x; \lambda)
-    &= C  \cdot \Big\{|x|^{1 - d} \cdot (k|x|)^{\frac{d}{2} - 1} H_{\frac{d}{2} - 1}^{(1)}(k|x|) - |x|^{2 - d} (k|x|)^{\frac{d}{2} - 1} H_{\frac{d}{2}}^{(1)}(k|x|) \cdot k\Big\} \nonumber\\
+    &= C  \cdot \Big\{|x|^{1 - d} \cdot (k|x|)^{\frac{d}{2} - 1} H_{\frac{d}{2} - 1}^{(1)}(k|x|) - |x|^{2 - d} (k|x|)^{\frac{d}{2} - 1} H_{\frac{d}{2}}^{(1)}(k|x|) \cdot k\Big\} \nonumber\\[0.5em]
     &= C \cdot |x|^{1 - d}\Big\{(k|x|)^{\frac{d}{2} - 1} H_{\frac{d}{2} - 1}^{(1)}(k|x|) -  (k|x|)^{\frac{d}{2}} H_{\frac{d}{2}}^{(1)}(k|x|) \Big\},
   \end{align}
   where $C > 0$ is a generic constant that depends on $d$. 
@@ -162,7 +162,7 @@ The main concern of this lemma is with the asymptotic behavior of $G(\,\cdot\,; 
   \begin{align*}
     H_0^{(1)}(z) = \left(\frac{2}{\pi z}\right)^{1/2} \e^{\ii (z - (1/4) \pi)} \big[ 1 + O(|z|^{-1})\big].
   \end{align*}
-  As $\Im(z) > 0$ we see that $|H_0^{(1)}(k |x|)| = O(|x|^{-1/2})$.
+  As $\Im(z) > 0$ we see that $\big|H_0^{(1)}(k |x|)\big| = O(|x|^{-1/2})$.
   Due to the simple structure of $G(x; \lambda)$ for $d = 2$ as shown in equation~\eqref{eq:2dDefinitionFundamentalHelmholtz}, the claim follows easily.
 \end{proof}
 
@@ -173,7 +173,7 @@ In the derivation of the next estimates we will use the following useful interio
   If $w \in \CC^{k}(\BB(x,r)) \cap \CC^0(\overline{\BB(x,r)})$ is a solution to $\Delta w = f$ in $\BB(x,r)$ for $f \in \CC^{k - 1}(\BB(x,r))$, then
   \begin{align}
     \label{eq:interiorEstimatePoisson}
-    |\nabla^l w(x)| \leq C r^{-l} \sup_{\BB(x,r)} |w| + C \max_{0 \leq j \leq l - 1} \sup_{\BB(x,r)} r^{j - l + 2} |\nabla^j f|, \quad l \leq k,
+    \big|\nabla^l w(x)\big| \leq C r^{-l} \sup_{\BB(x,r)} |w| + C \max_{0 \leq j \leq l - 1} \sup_{\BB(x,r)} r^{j - l + 2} \, \big|\nabla^j f\big|, \quad l \leq k,
   \end{align}
   where $C > 0$ only depends on $d$ and $l$.
 \end{lem}
@@ -188,17 +188,17 @@ In the derivation of the next estimates we will use the following useful interio
   we may assume that $\Delta w = f$ in $\BB(0,1)$ and that it suffices to prove
   \begin{align}
     \label{eq:interiorEstimatePoissonSimple}
-    |\nabla^l w(0) | \leq C \sup_{\BB(0,1)} |w| + C \max_{0 \leq j \leq l - 1} \sup_{\BB(0,1)} |\nabla^j f|
+    \big|\nabla^l w(0) \big| \leq C \sup_{\BB(0,\,1)} |w| + C \max_{0 \leq j \leq l - 1} \sup_{\BB(0,\,1)} \big|\nabla^j f\big|
   \end{align}
   for $l > 1$.
   By the Schwarz theorem we have that if $w$ solves Poisson's equation with right-hand side $f$ and $w$ and $f$ are sufficiently regular, then $\nabla^l w$ solves Poisson's equation with right-hand side $\nabla^l f$.
-  We can thus estimate inductively
+  We thus estimate inductively
   \begin{align*}
-    |\nabla^l w(0)|
-    &\leq C_l \sup_{\BB(0,1/2^{l - 1})} |\nabla^{l - 1} w| + C_l \sup_{\BB(0,1/2^{l-1})} |\nabla^{l - 1} f| \\
-    &\leq C_l \sup_{\BB(0,1/2^{l-2})} |\nabla^{l - 2} w| + C_l \bigg\{ \sup_{\BB(0,1)} |\nabla^{l - 2} f| + \sup_{\BB(0,1)} |\nabla^{l - 1} f| \bigg\} \\
+    \big|\nabla^l w(0)\big|
+    &\leq C_l \sup_{\BB(0,\, (1/2)^{l - 1})} \big|\nabla^{l - 1} w\big| + C_l \sup_{\BB(0,\, (1/2)^{l-1})} \big|\nabla^{l - 1} f\big| \\[0.5em]
+    &\leq C_l \sup_{\BB(0,\, (1/2)^{l-2})} \big|\nabla^{l - 2} w\big| + C_l\, \bigg\{ \sup_{\BB(0,\,1)} \big|\nabla^{l - 2} f\big| + \sup_{\BB(0,\,1)} \big|\nabla^{l - 1} f\big| \bigg\} \\[0.5em]
     %&\leq \dots \\
-    &\leq C_l \; \sup_{\BB(0,1)} |w| + C_l \sum_{j = 0}^{l - 1} \sup_{B(0,1)} |\nabla^j f|
+    &\leq C_l  \sup_{\BB(0,\,1)} |w| + C_l \sum_{j = 0}^{l - 1} \sup_{B(0,\,1)} |\nabla^j f|
   \end{align*}
   which readily yields the desired estimate.
 \end{proof}
@@ -206,9 +206,9 @@ In the derivation of the next estimates we will use the following useful interio
 We will need the following asymptotic expansions for the function $z^\nu H_\nu^{(1)}(z)$ in $\C \setminus (-\infty, 0]$.
 The derivation of these asymptotic expansions is based on asymptotic expansions of the \emph{Bessel functions of the first} and \emph{the second kind} and can be found in Tolksdorf \cite[Sec.\@~4.2]{tolksdorf}:
 \begin{alignat}{2}
-  z^{\nu}H_\nu^{(1)}(z) &= \frac{2^\nu \Gamma(\nu)}{\ii \pi} + \frac{\ii}{\pi} z^2 \log(z) + \omega z^2 + O(|z|^4 \big|\log(z)\,\big|) \quad&&\text{if } d = 4, \label{eq:asymptoticd4}\\
-  z^{\nu} H_{\nu}^{(1)}(z) &= \frac{2^\nu \Gamma(\nu)}{\ii\pi} + \frac{2^\nu \Gamma(\nu - 1)}{4 \pi \ii} z^2 + \omega z^3 + O(|z|^4) &&\text{if } d = 5, \label{eq:asymptoticd5}\\
-  z^\nu H_\nu^{(1)}(z) &= \frac{2^\nu \Gamma(\nu)}{\ii \pi} + \frac{2^\nu \Gamma(\nu - 1)}{4\pi \ii}z^2 + O(|z|^4 \big|\log(z)\,\big|) &&\text{if } d = 6,\label{eq:asymptoticd6} \\
+  z^{\nu}H_\nu^{(1)}(z) &= \frac{2^\nu \Gamma(\nu)}{\ii \pi} + \frac{\ii}{\pi} z^2 \log(z) + \omega z^2 + O(|z|^4 \big|\log(z)\,\big|) \quad&&\text{if } d = 4, \label{eq:asymptoticd4}\\[0.5em]
+  z^{\nu} H_{\nu}^{(1)}(z) &= \frac{2^\nu \Gamma(\nu)}{\ii\pi} + \frac{2^\nu \Gamma(\nu - 1)}{4 \pi \ii} z^2 + \omega z^3 + O(|z|^4) &&\text{if } d = 5, \label{eq:asymptoticd5}\\[0.5em]
+  z^\nu H_\nu^{(1)}(z) &= \frac{2^\nu \Gamma(\nu)}{\ii \pi} + \frac{2^\nu \Gamma(\nu - 1)}{4\pi \ii}z^2 + O(|z|^4 \big|\log(z)\,\big|) &&\text{if } d = 6,\label{eq:asymptoticd6} \\[0.5em]
   z^\nu H_\nu^{(1)}(z) &= \frac{2^\nu \Gamma(\nu)}{\ii \pi} + \frac{2^\nu \Gamma(\nu - 1)}{4 \pi \ii} z^2 + O(|z|^4) &&\text{if } d \geq 7,\label{eq:asymptoticd7},
 \end{alignat}
 where $\omega \in \C$ is a constant that needs to be chosen depending on $d$, see \cite[Eq.\@~(4.19)]{tolksdorf} and \cite[Eq.\@~(4.20)]{tolksdorf} for $d = 4$ and $d = 5$, respectively.
@@ -298,8 +298,8 @@ The following lemma will help us to estimate the expression~\eqref{eq:HelmholtzL
     For $f = \lambda G(x; \lambda)$, estimate~\eqref{eq:interiorEstimatePoisson} now gives
     \begin{align*}
       |\nabla^l w(x) |
-      &\leq C r^{-l} \sup_{\BB(x,r)} |w| + C \max_{0 \leq j \leq l - 1} \sup_{\BB(x,r)} r^{j - l + 2} |\nabla^j f| \\
-      &\leq C r^{-l} \sup_{y \in \BB(x,r)} |\lambda| |y|^{4 - d} + C \sum_{j = 0}^{l - 1} \sup_{y \in \BB(x,r)} r^{j - l + 2} |\lambda| |y|^{2 - d - j} \\
+      &\leq C r^{-l} \sup_{\BB(x,r)} |w| + C \max_{0 \leq j \leq l - 1} \sup_{\BB(x,r)} r^{j - l + 2} |\nabla^j f| \\[0.5em]
+      &\leq C r^{-l} \sup_{y \in \BB(x,r)} |\lambda| |y|^{4 - d} + C \sum_{j = 0}^{l - 1} \sup_{y \in \BB(x,r)} r^{j - l + 2} |\lambda| |y|^{2 - d - j} \\[0.5em]
       &= C r^{-l} |\lambda| \, \bigg|x - r \frac{x}{|x|} \bigg|^{4 - d} \! + C \sum_{j = 0}^{l - 1} r^{j - l + 2} |\lambda|\, \bigg|x - r \frac{x}{|x|} \bigg|^{2 - d - j}\! ,
       \intertext{for all $0 < r < |x|$, where we used \eqref{eq:HelmholtzLaplaceDifferenceEstimate} with $l = 0$ for the first summand and \eqref{eq:estimateHelmholtzDerivatives} to estimate the second summand.
     We choose $r = \frac{|x|}{2}$ and receive}
@@ -346,7 +346,7 @@ The following lemma will help us to estimate the expression~\eqref{eq:HelmholtzL
     Using representation~\eqref{eq:HelmholtzLaplaceDifference}, we estimate
     \begin{align}
       |G(x; \lambda) - G(x; 0) |
-      &\leq C |x|^{2 - d} \cdot |k| |x| \max_{\substack{|z| \leq |k| |x| \\ \Im(z) > 0}} \Big| \frac{\d{}}{\d z} \Big\{ z^{\frac{d}{2} - 1} H_{\frac{d}{2} - 1}(z) \Big\} \Big| \nonumber\\
+      &\leq C |x|^{2 - d} \cdot |k| |x| \max_{\substack{|z| \leq |k| |x| \\ \Im(z) > 0}} \Big| \frac{\d{}}{\d z} \Big\{ z^{\frac{d}{2} - 1} H_{\frac{d}{2} - 1}(z) \Big\} \Big| \nonumber\\[0.5em]
       &= C |x|^{2 - d} \cdot |k| |x| \max_{\substack{|z| \leq |k||x| \\ \Im(z) > 0}} \Big|z^{\frac{d}{2} - 1} H_{\frac{d}{2} - 2}^{(1)}(z) \Big| \, , \label{eq:HelmholtzLaplaceDifferenceGt5}
     \end{align}
     where for the last equality we used another useful relation that can be found in the book of Lebedev \cite[Eq.\@~(5.6.3)]{lebedev},
@@ -432,6 +432,7 @@ The following lemma will help us to estimate the expression~\eqref{eq:HelmholtzL
   for $l \in \{1, 2\}$.  
 \end{rem}
 
+\newpage
 \section{The Stokes Resolvent Problem}
 \label{sec:2.2}
 
@@ -491,16 +492,16 @@ in $\R^d$ with $\lambda \in \Sigma_\theta$ with the goal to deduce helpful estim
     Let $|\lambda| |x|^2 > (1/2)$. 
     Then there exist constants $C_a$, $C_b$, $C_c > 0$ such that
     \begin{align*}
-      \e^{-c \sqrt{|\lambda|} |x|} ( 1 + |\lambda| |x|^2) &\leq C_a, \\
-      1 &\leq \frac{C_b |\lambda| |x|^2}{1 + |\lambda| |x|^2}, \\
+      \e^{-c \sqrt{|\lambda|} |x|} ( 1 + |\lambda| |x|^2) &\leq C_a, \\[0.5em]
+      1 &\leq \frac{C_b |\lambda| |x|^2}{1 + |\lambda| |x|^2}, \\[0.5em]
       \e^{-c \sqrt{|\lambda|} |x|} &\leq \frac{ C_c |\lambda| |x|^2}{1 + |\lambda| |x|^2},
     \end{align*}
     where $c$ is the constant from Lemma \ref{lem:estimateHelmholtzDerivatives}.
     Using these estimates and Lemma \ref{lem:estimateHelmholtzDerivatives} gives
     \begin{align*}
       \big|\nabla_x^l \Gamma(x; \lambda) \big|
-      &\leq \big|\nabla_x^l G(x; \lambda)\big| + \frac{1}{|\lambda|} \big|\nabla_x^{l + 2} G(x; \lambda) \big| + \frac{1}{|\lambda|} \big|\nabla_x^{l + 2} G(x; 0)\big| \\
-    &\leq\frac{C_l\, \e^{-c \sqrt{|\lambda|} |x|}}{|x|^{d - 2 + l}} + \frac{1}{|\lambda|} \frac{C_{l + 2}\, \e^{-c \sqrt{|\lambda|} |x|}}{|x|^2 |x|^{d - 2 + l}} + \frac{1}{|\lambda|} \frac{C}{|x|^2 |x|^{d - 2 + l}} \\
+      &\leq \big|\nabla_x^l G(x; \lambda)\big| + \frac{1}{|\lambda|} \big|\nabla_x^{l + 2} G(x; \lambda) \big| + \frac{1}{|\lambda|} \big|\nabla_x^{l + 2} G(x; 0)\big| \\[0.5em]
+      &\leq\frac{C_l\, \e^{-c \sqrt{|\lambda|} |x|}}{|x|^{d - 2 + l}} + \frac{1}{|\lambda|} \frac{C_{l + 2}\, \e^{-c \sqrt{|\lambda|} |x|}}{|x|^2 |x|^{d - 2 + l}} + \frac{1}{|\lambda|} \frac{C}{|x|^2 |x|^{d - 2 + l}} \\[0.5em]
     %&\leq \frac{C}{(1 + |\lambda||x|^2)} \frac{1}{|x|^{d - 2 + l}} + \frac{C_{l + 2} |\lambda||x|^2}{(1 + |\lambda||x|^2)} \frac{1}{|\lambda| |x|^2} \frac{1}{|x|^{d - 2 + l}} + \frac{C}{1 + |\lambda||x|^2} \frac{1}{|x|^{d - 2 + l}}
     &\leq \frac{C}{1 + |\lambda| |x|^2}\; \frac{1}{|x|^{d - 2 + l}}.
     \end{align*}
@@ -683,7 +684,7 @@ If $d \geq 5$, equation~\eqref{eq:HelmholtzLaplaceDifference} gives
 \begin{align}
   \label{eq:secondTerm}
   \begin{alignedat}{1}
-  &G(x; \lambda)- G(x; 0) + \frac{\lambda}{2 \omega_d (d - 4) (d - 2) |x|^{d - 4}} \\
+    &G(x; \lambda)- G(x; 0) + \frac{\lambda}{2 \omega_d (d - 4) (d - 2) |x|^{d - 4}} \\[0.5em]
   &\hspace{4cm}= \frac{\ii}{4 (2\pi)^{\frac{d}{2} - 1}} \frac{1}{|x|^{d - 2}} \Big\{ z^{\frac{d}{2} - 1} H_{\frac{d}{2} - 1}^{(1)}(z) - a_d - b_d z^2\Big\},
   \end{alignedat}
 \end{align}
@@ -696,7 +697,7 @@ where $z = k|x|$, $a_d$ was calculated in~\eqref{eq:Defnad} and $b_d$ is given b
     \begin{align*}
       b_d &= -\frac{2\ii (2\pi)^{\frac{d}{2} - 1} \Gamma(\frac{d}{2})}{2\pi^{\frac{d}{2}} (d - 2)(d - 4)}
  = \frac{2^{\frac{d}{2} - 1} }{\pi \ii (d - 4)} \frac{\Gamma(\frac{d}{2})}{(d - 2)} 
- = \frac{2^{\frac{d}{2} - 1} }{2\pi \ii } \frac{\Gamma(\frac{d}{2} - 1)}{(d - 4)} \\
+      = \frac{2^{\frac{d}{2} - 1} }{2\pi \ii } \frac{\Gamma(\frac{d}{2} - 1)}{(d - 4)} \\[0.5em]
       &= \frac{2^{\frac{d}{2} - 1}}{4 \pi \ii } \frac{\Gamma(\frac{d}{2} - 1)}{(\frac{d}{2} - 1 - 1)}
       = \frac{2^{\frac{d}{2} - 1} \Gamma(\frac{d}{2} - 1 - 1)}{4 \pi \ii } = \frac{2^{\nu_d} \Gamma(\nu_d - 1)}{4 \pi \ii}.
 \end{align*}
@@ -716,11 +717,11 @@ and consider the function $f(x) \coloneqq g(k |x|)$ on $\R^d \setminus \{0\}$.
 The derivatives of $f$ read
 \begin{align*}
   \frac{\partial}{\partial x_\beta} f(x)
-  &= \Big(\frac{\d{}}{\d z} g\Big)(k|x|) \cdot \frac{k x_\beta}{|x|}, \\
+  &= \Big(\frac{\d{}}{\d z} g\Big)(k|x|) \cdot \frac{k x_\beta}{|x|}, \\[0.5em]
   %
   \frac{\partial^2}{\partial x_\alpha \partial x_\beta} f(x)
   &= \Big(\frac{\mathrm{d}^2}{\d z^2} g\Big)(k|x|) \cdot \frac{k^2 x_\alpha x_\beta}{|x|^2} 
-  + \Big(\frac{\d{}}{\d z} g\Big)(k |x|) \cdot k \bigg\{ \frac{\delta_{\alpha\beta}}{|x|} - \frac{x_\beta x_\alpha}{|x|^3} \bigg\}, \\
+  + \Big(\frac{\d{}}{\d z} g\Big)(k |x|) \cdot k \bigg\{ \frac{\delta_{\alpha\beta}}{|x|} - \frac{x_\beta x_\alpha}{|x|^3} \bigg\}, \\[0.5em]
   %
   \frac{\partial^3}{\partial x_\gamma \partial x_\alpha \partial x_\beta} f(x)
   &= \Big(\frac{\mathrm{d}^3}{\d z^3}g\Big)(k |x|) \cdot \frac{k^3 x_\alpha x_\beta x_\gamma}{|x|^3} \\
@@ -742,7 +743,7 @@ If we now look for estimates on the absolute value of the derivatives, we see th
 where $C$ only depends on $l$.
 We finally uncover the desired estimate via
 \begin{align*}
-  &\bigg|\frac{1}{\lambda} \nabla_x^3 \bigg\{ \frac{\ii}{4 (2\pi)^{\frac{d}{2} - 1}} \frac{1}{|x|^{d - 2}} \Big\{ z^{\frac{d}{2} - 1} H_{\frac{d}{2} - 1}^{(1)}(z) - a_d - b_d z^2\Big\} \bigg\} \bigg| \\
+  &\bigg|\frac{1}{\lambda} \nabla_x^3 \bigg\{ \frac{\ii}{4 (2\pi)^{\frac{d}{2} - 1}} \frac{1}{|x|^{d - 2}} \Big\{ z^{\frac{d}{2} - 1} H_{\frac{d}{2} - 1}^{(1)}(z) - a_d - b_d z^2\Big\} \bigg\} \bigg| \\[0.5em]
   &\quad\leq C \frac{1}{|k|^2} \sum_{l = 0}^3 \Big| \nabla^{3 - l}\Big(\frac{1}{|x|^{d - 2}}\Big)\Big|\; \big| \nabla^l f(x) \big| 
   \leq C \sum_{l = 0}^3 |x|^{-d + 2 - 3 + l} |k|^2 |x|^{4 - l} = C |\lambda| |x|^{3 - d},
 \end{align*}
