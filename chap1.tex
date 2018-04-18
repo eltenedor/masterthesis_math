@@ -26,7 +26,7 @@ In this first section we will establish the fundamental notions regarding bounde
   It is common to refer to sets of the form $D_{\eta_x}$ as \emph{Lipschitz cylinders}. If the point $x$ in the definition of Lipschitz cylinders is not of particular importance we will denote the Lipschitz cylinder by $D_{\eta}(r)$.
 
   If $\Omega$ is a bounded Lipschitz domain, $x \in \partial\Omega$ and $0 < r \leq r_0$, then we may define $U_{x,r} \coloneqq \{ x\} + R_x^{-1} D(r)$, where $R_x$ is the rotation corresponding to $x$ from Definition \ref{defn:lipschitzDomain}.
-  This is all we need to define the Lipschitz character of a bounded Lipschitz domain $\Omega$ as suggested by Pipher and Verchota in \cite[Sec. 5]{pipherVerchota}.
+  This is all we need to define the Lipschitz character of a bounded Lipschitz domain $\Omega$ as suggested by Pipher and Verchota in \cite[Sec.\@~5]{pipherVerchota}.
 
   \begin{defn}
     Let $\Omega \subset \R^d$, $d \geq 2$, be a bounded Lipschitz domain and $x_1, \dots,x_n \in \partial\Omega$ be such that $\{U_{x_i,r_0} \}_{i = 1}^n$ covers $\partial\Omega$.  
@@ -36,7 +36,7 @@ In this first section we will establish the fundamental notions regarding bounde
 
   That the Lipschitz character is indeed a fruitful concept will be emphasized by the following theorem.
   This result is a crucial ingredient in the proof of the Rellich estimates in Chapter \ref{chap:4} as it provides a useful approximating property of Lipschitz domains. In short it enables us to approximate a bounded Lipschitz domain $\Omega$ by a sequence $(\Omega_j)$ of $\CC^\infty$ domains in such a way that estimates on $\Omega_j$ with bounding constants that only depend on the Lipschitz characters may be extended to $\Omega$ when taking the limit.
-  The original proof of this Theorem goes back to Ne\v{c}as \cite{necas} and Verchota \cite{verchota} . 
+  The original proof of this Theorem goes back to Ne\v{c}as \cite{necas} and Verchota \cite{verchota}. 
   The presented version of this theorem appeared in Brown \cite{brown}.
 
 \begin{thm}[Ne\v{c}as, Verchota]
@@ -105,7 +105,7 @@ In Verchota cones $\verCone(q)$ we have the properties that for all $\Omega$ the
   |x - q| &\geq C |x - p| \label{eq:verCone1}\\ 
   |x - q| &\geq C |p - q|.\label{eq:verCone2}
 \end{align}
-For a proof see Verchota \cite[p. 9f.]{verchota}
+For a proof see Verchota \cite[p.\@~9f.]{verchota}
 
 \begin{defn}[Nontangential approach region, Shen]
   \label{defn:nontangentialApproachRegion}
@@ -174,7 +174,7 @@ The idea is to restrict the set of directions from which one can approach $p$ by
 Usually the nontangential limits taken from inside and outside the domain will differ.
 For functions $u$ on $\R^d \setminus \partial\Omega$ we will therefore often use the notation $u_+$ to denote the \emph{inner} nontangential limit and $u_-$ for the respective \emph{outer} nontangential limit.
 
-To put our new vocabulary to use, we will formulate an prove the divergence theorem for functions on bounded Lipschitz domains that do not have a trace but nontangential limits and integrable nontangential maximal functions. A similar statement was proven by Shen in \cite[Thm. 7.1.6]{Shen2017}.
+To put our new vocabulary to use, we will formulate an prove the divergence theorem for functions on bounded Lipschitz domains that do not have a trace but nontangential limits and integrable nontangential maximal functions. A similar statement was proven by Shen in \cite[Thm.\@~7.1.6]{Shen2017}.
 
 \begin{prop}
   \label{prop:approximationArgument}
@@ -197,7 +197,7 @@ To put our new vocabulary to use, we will formulate an prove the divergence theo
     \int_{\partial\Omega_l} f_k(s) n_k^{(l)}(s) \d\sigma_l(s)
     = \int_{\partial\Omega} \vartheta_l(x) \, f_k(\Lambda_l(x)) \, n_k^{(l)}(\Lambda_l(x)) \d\sigma(x).
   \end{align}
-  The idea of the proof is based on the approximation argument performed in Brown \cite[Prop. 2.4]{brown}. 
+  The idea of the proof is based on the approximation argument performed in Brown \cite[Prop.\@~2.4]{brown}. 
   Additionally we have $\lim_{l \to \infty} \vartheta_l(x) = 1$ and $\lim_{l \to \infty} \Lambda_l(x) = x$ almost everywhere, where $\Lambda_l(x) \in \Gamma(x)$ for all $l \in \N$ thanks to Theorem \ref{thm:smoothApproximation} ii).
   Furthermore, we know that $\lim_{l \to \infty} n_k^{(l)}(\Lambda_l(x)) = n_k(x)$ almost everywhere by Theorem \ref{thm:smoothApproximation} and that $f$ has a nontangential limit almost everywhere.
   This gives us that 
@@ -212,7 +212,7 @@ To put our new vocabulary to use, we will formulate an prove the divergence theo
     \int_{\partial\Omega} f_k(s) n_k(s) \d \sigma(s).
   \end{align}
   Now consider the left hand side of identity \eqref{eq:transformation}.
-  By Green's formula \cite[p. 711f.]{evans} we know that
+  By Green's formula \cite[p.\@~711f.]{evans} we know that
   \begin{align*}
     \int_{\partial\Omega_l} f_k(s) n_k^{(l)}(s) \d\sigma_l(s)
     = \int_{\Omega_l} \div(f(x)) \d x, \quad\text{for all } l \in \N.
@@ -270,7 +270,7 @@ Note that for $u \in \HH_{0,\,\sigma}^1(\Omega)$ the gradient $\nabla u$ is a ma
   where $u \in \Dom(A_2)$ and $f$ comes from the definition of the domain.
 \end{defn}
 
-The following theorem from Mitrea and Monniaux \cite[Thm 4.7]{mitreaMonniaux} shows that our definition of the Stokes operator and the one used in Shen's paper \cite{Shen2012} coincide. 
+The following theorem from Mitrea and Monniaux \cite[Thm.\@~4]{mitreaMonniaux} shows that our definition of the Stokes operator and the one used in Shen's paper \cite{Shen2012} coincide. 
 Another advantage of this characterization is the immediate link of the Stokes operator to the Stokes system.
 
 \begin{thm}
@@ -286,7 +286,7 @@ Another advantage of this characterization is the immediate link of the Stokes o
   \end{align*}
 \end{thm}
 
-The following proposition summarizes some facts about the Stokes operator on $\Ell^2_\sigma(\Omega)$. A proof can be found in Tolksdorf \cite[Prop. 5.2.5]{tolksdorf}.
+The following proposition summarizes some facts about the Stokes operator on $\Ell^2_\sigma(\Omega)$. A proof can be found in Tolksdorf \cite[Prop.\@~5.2.5]{tolksdorf}.
 
 \begin{prop}
   \label{prop:stokesOperatorL2}
@@ -316,7 +316,7 @@ where $u$ and $\pi$ now correspond to $\PP_2 f \in \Ell^2_\sigma(\Omega)$. On bo
 \begin{align*}
   \Ell^2_\sigma(\Omega)^\perp = \big\{ f \in \Ell^2(\Omega; \C^d) \colon f = \nabla \phi, \text{ for some } \phi \in \Ell^2(\Omega) \big\}.
 \end{align*}
-A proof of this fact can be found in the book of Sohr \cite[Lemma 2.5.3]{sohr}.
+A proof of this fact can be found in the book of Sohr \cite[Lem.\@~2.5.3]{sohr}.
 Using this result we find $g \in \Ell^2(\Omega)$ such that $\nabla g = (I - \PP_2)f$ in the sense of distributions and we see that
 \begin{align*}
   -\Delta u + \nabla( \pi + g ) + \lambda u = f.

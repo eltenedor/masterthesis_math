@@ -21,7 +21,7 @@ We start with a similar result on Lipschitz cylinders.
 \begin{proof}
   Without loss of generality, we rescale and assume that $r = 1$.
   Let $t \in (1,2)$. 
-  We note that thanks to a thorough investigation carried out by Tolksdorf, see \cite[Lemma 1.3.25]{tolksdorf}, a Lipschitz cylinder is itself a Lipschitz domain.
+  We note that thanks to a thorough investigation carried out by Tolksdorf, see \cite[Lem.\@~1.3.25]{tolksdorf}, a Lipschitz cylinder is itself a Lipschitz domain.
   It is therefore admissible to apply Theorem \ref{eq:reverseTrace} to $u$ in $D_\eta(t)$ which yields
   \begin{align*}
     \bigg( \int_{D_\eta(t)} |u|^{p_d} \d x \bigg)^{2/p_d} \leq C \int_{\partial D_\eta(t)} |u|^2 \d \sigma,
@@ -54,7 +54,7 @@ We start with a similar result on Lipschitz cylinders.
 \end{proof}
 
 The next step is to extend the previous result to arbitrary Lipschitz domains. 
-The following Lemma, which appeared in Tolksdorf \cite[Lem. 4.2]{tolksdorf2017}, reduces the amount of work that needs to be done to a few special cases.
+The following Lemma, which appeared in Tolksdorf \cite[Lem.\@~4.2]{tolksdorf2017}, reduces the amount of work that needs to be done to a few special cases.
 
 \begin{lem}
   \label{lem:ballsforballs}
@@ -124,7 +124,7 @@ As of now, our toolbox comprises enough tools to prove that solutions to the Sto
   Now, the claim follows readily from an application of Lemma \ref{lem:ballsforballs} with the parameter $\alpha = 2 \in (1, \alpha_2)$.
 \end{proof}
 
-  We note that estimate \eqref{eq:reverseHoelder} is a weak reverse H\"older inequality and thus possesses a self-improving property, see Giaquinta and Martinazzi \cite[Thm. 6.38]{giaquintaMartinazzi} or Giaquinta and Modica \cite[Prop. 5.1]{giaquintaModica}.
+  We note that estimate \eqref{eq:reverseHoelder} is a weak reverse H\"older inequality and thus possesses a self-improving property, see Giaquinta and Martinazzi \cite[Thm.\@~6.38]{giaquintaMartinazzi} or Giaquinta and Modica \cite[Prop.\@~5.1]{giaquintaModica}.
 
   \begin{prop}[Giaquinta, Modica]
     \label{prop:giaquinta}
@@ -174,10 +174,10 @@ As of now, our toolbox comprises enough tools to prove that solutions to the Sto
   %We want to apply Lemma 4.2 from \cite{tolksdorRsec}.
   %Let $0 < s < r$ and $\tilde \BB{} = \BB(y,\,s)$ with $\alpha_2 \tilde \BB \subseteq \BB(x_0,\, \alpha_2 r)$.
 
-The following extrapolation theorem by Shen \cite[Thm. 3.3]{shenExtra} will be necessary in order to derive $\Ell^p$ bounds on the solution of the Stokes resolvent system.
+The following extrapolation theorem by Shen \cite[Thm.\@~3.3]{shenExtra} will be necessary in order to derive $\Ell^p$ bounds on the solution of the Stokes resolvent system.
 Essentially, this theorem states that if the non locality of an $\Ell^2$ bounded operator  $T$ can be quantified via a reverse Hölder estimate, then this operator extends to an $\Ell^p$ bounded operator for certain values $p$.
 In this sense, this extrapolation theorem can also be considered a p-sensitive version of the famous Calder\'on-Zygmund Lemma.
-Note that a more recent result from Tolksdorf \cite[Thm. 4.1]{tolksdorf2017} generalizes this result to operators which are defined on spaces of Banach space valued functions.
+Note that a more recent result from Tolksdorf \cite[Thm.\@~4.1]{tolksdorf2017} generalizes this result to operators which are defined on spaces of Banach space valued functions.
 
 \begin{thm}
   \label{thm:extrapolation}
@@ -197,7 +197,7 @@ We are now in the position to prove Theorem \ref{thm:main}, the main theorem of 
 For this, the improved weak reverse H\"older inequality derived in Remark \ref{rem:reverseHoelder} will serve as the crucial ingredient, enabling us to apply the extrapolation theorem \ref{thm:extrapolation} to a suitable family of operators.
 As we want to prove resolvent estimates of the Stokes operator on $\Ell^p$, the family of operators under consideration will basically consist of resolvent operators.
 To this end, note that from the last sentence of Theorem~\ref{thm:extrapolation} we get uniform bounds on our operator family on $\Ell^p$ provided that we start with a uniform bound $C_0$ on $\Ell^2$.
-This aspect regarding the uniformity of the estimates and the $p$-sensitivity of the extrapolation theorem are the distinguished properties of this theorem compared to classic results from the Calder\'on-Zygmund theory of convolution operators, see Grafakos \cite[Sec. 5.3]{grafakos2014classical} or Stein \cite[Ch. 2]{stein}
+This aspect regarding the uniformity of the estimates and the $p$-sensitivity of the extrapolation theorem are the distinguished properties of this theorem compared to classic results from the Calder\'on-Zygmund theory of convolution operators, see Grafakos \cite[Sec.\@~5.3]{grafakos2014classical} or Stein \cite[Ch.\@~2]{stein}
 
 %\begin{thm}[Shen]
 %  Let $\Omega$ be a bounded Lipschitz domain in $\R^d$, $d \geq 3$.
@@ -292,7 +292,7 @@ This aspect regarding the uniformity of the estimates and the $p$-sensitivity of
   and thus $A_q$ is sectorial on $\Ell^q_\sigma(\Omega)$.
   If necessary, we take $\varepsilon$ to be the minimum of the parameter $\varepsilon$ used in the first part of this proof and the one from Theorem~\ref{thm:stokesOperatorLp}.
   It was also shown in Chapter~\ref{chap:1} that the spaces $\Ell^q_\sigma(\Omega)$ are reflexive and that $\Ell^q_\sigma(\Omega)^* = \Ell^{q'}_\sigma(\Omega)$ where $q'$ denotes the dual exponent $q' = q (q - 1)^{-1}$, see Lemma~\ref{lem:duality}.
-  By a general result about sectorial operators on reflexive Banach spaces, which can be found in Haase's book \cite[Prop. 2.1.1]{haase}, we get that $A_q$ is indeed densely defined and that $A_q^* =  A_{q'}$.
+  By a general result about sectorial operators on reflexive Banach spaces, which can be found in Haase's book \cite[Prop.\@~2.1.1]{haase}, we get that $A_q$ is indeed densely defined and that $A_q^* =  A_{q'}$.
   Therefore,
   \begin{align*}
     \| (A_q + \lambda)^{-1} \|_{\Li(\Ell^q_\sigma(\Omega))}

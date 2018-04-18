@@ -84,10 +84,10 @@ We will furthermore be concerned about bounds on the inverse of the operator $(1
     \label{eq:nablauminus}
     &= C \, \Big\{ \big\|\nabla_{\mathrm{tan}} u_+ \big\|^{}_\partial + |\lambda|^{1/2} \| u_+ \|^{}_\partial + |\lambda|\, \|n \cdot u_+ \|_{\HH^{-1}(\partial\Omega)} \Big\},
   \end{align}
-  where we used the fact that $u_+ = u_-$ and $\nabla_{\mathrm{tan}} u_+ = \nabla_{\mathrm{tan}} u_-$ on $\partial\Omega$. The former fact is a consequence of the continuity of the single layer potential across $\partial\Omega$, see Mitrea and Wright \cite[Prop. 4.7]{mitreaWright}.
-  Inequality \eqref{eq:rellich2} of Theorem \ref{thm:rellich} now allows us to estimate the right hand side of \eqref{eq:nablauminus} by $C \,\|\big(\frac{\partial u}{\partial \nu} \big)_+ \|^{}_\partial$ and thus the desired estimate \eqref{eq:negNablaPhi} follows.
+  where we used the fact that $u_+ = u_-$ and $\nabla_{\mathrm{tan}} u_+ = \nabla_{\mathrm{tan}} u_-$ on $\partial\Omega$. The former fact is a consequence of the continuity of the single layer potential across $\partial\Omega$, see Mitrea and Wright \cite[Prop.\@~4.7]{mitreaWright}.
+  Inequality \eqref{eq:rellich2} of Theorem \ref{thm:rellich} now allows us to estimate the right-hand side of \eqref{eq:nablauminus} by $C \,\|\big(\frac{\partial u}{\partial \nu} \big)_+ \|^{}_\partial$ and thus the desired estimate \eqref{eq:negNablaPhi} follows.
 
-  Let's now work on the invertibility of $(1/2) I + \K_\lambda$. In the case $\lambda = 0$, Mitrea and Wright showed in \cite[Eq. (5.166)]{mitreaWright} that $(1/2) I + \K_0$ as an operator on $\Ell^2(\partial\Omega; \C^d)$ has a one dimensional null space and as range the space $\Ell_0^2(\partial\Omega; \C^d)$.
+  Let's now work on the invertibility of $(1/2) I + \K_\lambda$. In the case $\lambda = 0$, Mitrea and Wright showed in \cite[Eq.\@~(5.166)]{mitreaWright} that $(1/2) I + \K_0$ as an operator on $\Ell^2(\partial\Omega; \C^d)$ has a one dimensional null space and as range the space $\Ell_0^2(\partial\Omega; \C^d)$.
   In other words, $(1/2) I + \K_0$ has Fredholm index $0$ as the orthogonal complement of $\Ell^2_0(\partial\Omega)$ is the span of the normal vector $n$ which is one dimensional.
   %This remains true if we replace $\Ell^2(\partial\Omega; \R^d)$ by $\Ell^2(\partial\Omega; \C^d)$ as this just corresponds to a complexification of the vector space and the operator. 
   Since the operator $\K_\lambda - \K_0$ is compact on $\Ell^2(\partial\Omega; \C^d)$ by Lemma \ref{lem:compactness}, we deduce that for all $\lambda \in \Sigma_\theta$ the operator
@@ -113,7 +113,7 @@ The next lemma is the counterpart to Lemma~\ref{lem:inverseEstimate1} and proves
 
 \begin{proof}
   Let us assume without loss of generality that $|\partial\Omega| = 1$.
-  In the case $\lambda = 0$, Mitrea and Wright showed in \cite[Eq. (5.166)]{mitreaWright} that the Fredholm index of the operator $-(1/2)I + \K_0$ on $\Ell^2(\partial\Omega; \C^d)$ is zero and estimate \eqref{eq:inverseEstimate2} holds.
+  In the case $\lambda = 0$, Mitrea and Wright showed in \cite[Eq.\@~(5.166)]{mitreaWright} that the Fredholm index of the operator $-(1/2)I + \K_0$ on $\Ell^2(\partial\Omega; \C^d)$ is zero and estimate \eqref{eq:inverseEstimate2} holds.
   %As in the previous proof, this still remains true if we complexify the operator making it a Fredholm operator with index zero on  $\Ell^2(\partial\Omega; \C^d)$.
   Since $\K_\lambda - \K_0$ is compact on $\Ell^2(\partial\Omega; \C^d)$ and the Fredholm index remains unchanged under compact perturbations, we know that the Fredholm index of $-(1/2)I + \K_\lambda$ on $\Ell^2(\partial\Omega; \C^d)$ is zero for all $\lambda \in \Sigma_\theta$.
   This proves the first claim of the lemma.
@@ -186,7 +186,7 @@ The next lemma is the counterpart to Lemma~\ref{lem:inverseEstimate1} and proves
     = n_j \bigg( n_i \frac{\partial u_i}{\partial x_j} - n_j \bigg( \frac{\partial u_i}{\partial x_i} \bigg) \bigg)_+ - \phi_+\, ,
   \end{align*}
   where for the second equality we used that $\div(u) = 0$ in $\Omega$ and thus this also holds for the nontangential limit.
-  Note that the expression on the right hand side involves a first-order tangential derivative operator, see \eqref{eq:defnTangDerivative} and thus we can also write
+  Note that the expression on the right-hand side involves a first-order tangential derivative operator, see \eqref{eq:defnTangDerivative} and thus we can also write
   \begin{align*}
     \bigg( \frac{\partial u}{\partial \nu} \bigg)_+ \cdot n 
     = n_j \big( \partial_{\tau_{ij}}u_i \big)_+ - \phi_+.
@@ -246,9 +246,9 @@ With the following lemma that looks like a reverse trace theorem, we will later 
     &= \int_\Omega u \cdot \big\{ - \Delta w + \lambda w + \nabla \psi \big\} \d x.
     %&= - \int_{\partial\Omega} u \cdot \big\{ \frac{\partial w}{\partial n} - \psi n \big\} \d \sigma
   \end{align}
-  The left hand side of \eqref{eq:testingInhomogenousStokes} gives the starting point for the proof of inequality \eqref{eq:OmegaBoundaryEstimate}.
+  The left-hand side of \eqref{eq:testingInhomogenousStokes} gives the starting point for the proof of inequality \eqref{eq:OmegaBoundaryEstimate}.
   
-  Using one of Green's identities, see \cite[Thm. 3, App. C.2]{evans}, on the first summand and the fact that $u$ is the solution to the Stokes resolvent problem gives that
+  Using one of Green's identities, see \cite[Thm.\@~3, App.\@~C.2]{evans}, on the first summand and the fact that $u$ is the solution to the Stokes resolvent problem gives that
   \begin{align*}
     \int_\Omega -u \cdot \Delta w \d x
     &= \int_\Omega -w \cdot \Delta u \d x - \int_{\partial\Omega} u \cdot \frac{\partial w}{\partial n} \d \sigma, \\[0.5em]
@@ -271,9 +271,9 @@ With the following lemma that looks like a reverse trace theorem, we will later 
     &= \Big| \int_{\partial\Omega} u \cdot \Big\{ - \frac{\partial w}{\partial n} + n\, \psi \Big\} \d\sigma\, \Big|
     \leq \| u\|^{}_\partial \, \Big\{ \|\nabla w\|^{}_\partial + \|\psi\|^{}_\partial \Big\} \label{eq:u2estimate}
   \end{align}
-  by the Cauchy-Schwartz inequality.
+  by the Cauchy-Schwarz inequality.
   As the pressure $\psi$ is only specified modulo additive constants, we may as well assume that $\int_{\partial\Omega} \psi \d\sigma = 0$.
-  Furthermore, by the Schwartz theorem, we see from \eqref{eq:inhomogenousStokes} that $\Delta \psi = \div(\overline u) = 0$ in $\Omega$. 
+  Furthermore, by the Schwarz theorem, we see from \eqref{eq:inhomogenousStokes} that $\Delta \psi = \div(\overline u) = 0$ in $\Omega$. 
   As stated in Remark \ref{rem:harmonicEstimate}, this allows us to use the results from the proof of \eqref{eq:nablaPhin} with $\phi = \psi$ to conclude that
   \begin{align}
       \|\psi\|^{}_\partial 
@@ -287,7 +287,7 @@ With the following lemma that looks like a reverse trace theorem, we will later 
   \begin{align}
     \int_\Omega |u|^2 \d x \leq C \, \Big\{ \|u\|^{}_\partial \|\nabla w \|^{}_\partial + \|u\|_\partial^2\Big\}. \label{eq:u2estimate2}
   \end{align}
-  We are left with estimating the first term on the right hand side of \eqref{eq:u2estimate2}.
+  We are left with estimating the first term on the right-hand side of \eqref{eq:u2estimate2}.
   To this end, it will suffice to show the following inequality
   \begin{align}
     \label{eq:w2estimate}
@@ -323,7 +323,7 @@ With the following lemma that looks like a reverse trace theorem, we will later 
       - 2\Re \int_\Omega h_k \frac{\partial \overline w_i}{\partial x_k} \, \overline u_i \d x.
   \end{align*}
   This term will show up in the proof of Lemma~\ref{lem:rellichIdentity} in the calculation of $I_5$ when one uses the fact that $(w,\psi)$ solves problem \eqref{eq:inhomogenousStokes}.
-  Finally, the first two terms on the right hand side of \eqref{eq:rellichIdentity2} vanish due to the integration by parts rule for tangential derivatives, see \eqref{eq:intByPartsTang}, and the fact that $w$ is equal to $0$ on  $\partial\Omega$.
+  Finally, the first two terms on the right-hand side of \eqref{eq:rellichIdentity2} vanish due to the integration by parts rule for tangential derivatives, see \eqref{eq:intByPartsTang}, and the fact that $w$ is equal to $0$ on  $\partial\Omega$.
 
   Now, let $h \in \CC_0^1(\R^d, \R^d)$ with $h_k n_k \geq c > 0$ on $\partial \Omega$ be the function from Theorem \ref{thm:smoothApproximation}.
 %  Then the divergence theorem gives
@@ -354,9 +354,9 @@ With the following lemma that looks like a reverse trace theorem, we will later 
 \end{alignedat}
   \end{align}
   with a constant $C$ that only depends on $d$ and the Lipschitz character of $\Omega$.
-  The left hand side of this estimation establishes the starting point for the proof of inequality \ref{eq:w2estimate}.
+  The left-hand side of this estimation establishes the starting point for the proof of inequality \ref{eq:w2estimate}.
 
-  The next step consists in deriving estimates which are compatible with the right hand side of \eqref{eq:rellichInequality3}.
+  The next step consists in deriving estimates which are compatible with the right-hand side of \eqref{eq:rellichInequality3}.
   Testing the first equation of \eqref{eq:inhomogenousStokes} with $\overline w$, integration by parts and Lemma~\ref{lem:lambdaIneq} give us as in the proof of Lemma~\ref{lem:laxMilgramIneq} the estimation
   \begin{align*}
     \int_\Omega |\nabla w|^2 \d x + |\lambda| \int_\Omega |w|^2 \d x \leq C \int_\Omega |w| |u| \d x,
@@ -368,7 +368,7 @@ With the following lemma that looks like a reverse trace theorem, we will later 
     &\leq  (1 + C) \int_\Omega |\nabla w|^2 \d x + |\lambda| \int_\Omega |w|^2 \d x \\[0.5em]
     &\leq C \int_\Omega |w| |u| \d x \\[0.5em]
     &\leq C \, \bigg( \int_\Omega |w|^2 \d x \bigg)^{1/2} \bigg( \int_\Omega |u|^2 \d x \bigg)^{1/2}\\[0.5em]
-    \intertext{where for the last step we used the Cauchy-Schwartz inequality. The weighted Young inequality for real numbers allows us to further estimate}
+    \intertext{where for the last step we used the Cauchy-Schwarz inequality. The weighted Young inequality for real numbers allows us to further estimate}
     &\leq \frac{C}{4\varepsilon} \int_\Omega |u|^2 \d x + C \, \varepsilon \int_\Omega |w|^2 \d x \\[0.5em]
     &= \frac{\tilde C}{1 + |\lambda|} \int_\Omega |u|^2 \d x + \frac{1}{2} ( 1 + |\lambda| ) \int_\Omega |w|^2 \d x
   \end{align*}
@@ -382,7 +382,7 @@ With the following lemma that looks like a reverse trace theorem, we will later 
 
   Now it's time to harvest: 
   %Using estimate \eqref{eq:rellichInequality3} together with \eqref{eq:w2lambdaEstimate} gives
-  Using the weighted Young inequality, we see that we can simplify the right hand side of \eqref{eq:rellichInequality3} via the estimation
+  Using the weighted Young inequality, we see that we can simplify the right-hand side of \eqref{eq:rellichInequality3} via the estimation
   \begin{align*}
     \int_{\partial\Omega} |\nabla w|^2 \d\sigma 
     &\leq C_\varepsilon\,  (1 + |\lambda|) \int_{\Omega} |\nabla w|^2 \d x + C\,  |\lambda| \int_\Omega |w|^2 \d x \\[0.5em]
@@ -390,7 +390,7 @@ With the following lemma that looks like a reverse trace theorem, we will later 
     &\leq C_\varepsilon \int_\Omega |u|^2 \d x + \varepsilon \int_\Omega |\psi|^2 \d x,
   \end{align*}
   where the second inequality is thanks to estimate \eqref{eq:w2lambdaEstimate}.
-  The first term on the right hand side is already fine for \eqref{eq:w2estimate}.
+  The first term on the right-hand side is already fine for \eqref{eq:w2estimate}.
   For the second one we use the estimate $\|\psi\|^{}_{\Ell^2(\Omega)} \leq C\, \|\psi\|^{}_\partial$ and inequality \eqref{eq:psiEstimate} and arrive at
   \begin{align*}
     \varepsilon \int_\Omega |\psi|^2 \d x \leq \varepsilon \, C \int_{\partial\Omega} |\nabla w|^2 \d \sigma + C_\varepsilon \int_{\partial\Omega} |u|^2 \d\sigma.
@@ -534,9 +534,9 @@ The next theorem can in some sense be regarded as a reverse trace theorem and wi
     \bigg( \int_\Omega |u|^{p_d} \d x \bigg)^{1/{p_d}} \leq C\, \bigg( \int_{\partial\Omega} |(u)^*|^2 \d \sigma \bigg)^{1/2},
   \end{align}
   where $C$ only depends on $d$ and the Lipschitz constant of $\Omega$.
-  The proof of \eqref{eq:weizhangestimate} was carried out by Wei and Zhang in \cite[Lem. 3.3]{weiZhang} and can also be found in Shen's paper \cite[p. 418f.]{Shen2012}.
+  The proof of \eqref{eq:weizhangestimate} was carried out by Wei and Zhang in \cite[Lem.\@~3.3]{weiZhang} and can also be found in Shen's paper \cite[p.\@~418f.]{Shen2012}.
 
-  Up to now, we do not know whether the right hand side of inequality \eqref{eq:weizhangestimate}  equals infinity.
+  Up to now, we do not know whether the right-hand side of inequality \eqref{eq:weizhangestimate}  equals infinity.
   We only know that $(u,\phi)$ solves the Stokes resolvent problem and that it implicitly solves a Dirichlet problem with boundary data given as $f = \operatorname{Tr}_{\partial\Omega} (u) \in \Ell^2(\partial\Omega; \C^d)$.
   The following part of this proof will show that $u$ coincides with the solution $w \coloneqq \dlp_\lambda(g)$, $g \in \Ell^2(\partial\Omega; \C^d),$  of the $\Ell^2$ Dirichlet problem \hyperref[eq:dirProblem]{$(\mathrm{Dir}_\lambda)$} with boundary data $f$ as given by Theorem \ref{thm:exAndUniqueSolution}. 
   If this is the case, then the knowledge about $(w)^*$ that is contained in Theorem \ref{thm:exAndUniqueSolution} will help us to complete estimate \eqref{eq:weizhangestimate}.
@@ -553,9 +553,9 @@ The next theorem can in some sense be regarded as a reverse trace theorem and wi
     \label{eq:traceLipschitzDomain}
      \|h\|_\partial^2 \leq C\, \|h\|_{\HH^1(\Omega; \C^d)}^2,
   \end{align}
-  where $C$ only depends on $d$ and the Lipschitz character of $\Omega$, see Wei and Zhang \cite[Lem. 2.2]{weiZhang}.
+  where $C$ only depends on $d$ and the Lipschitz character of $\Omega$, see Wei and Zhang \cite[Lem.\@~2.2]{weiZhang}.
   Now let $\varepsilon > 0$ be given. 
-  From the theory of Sobolev spaces it is known that there exists $\varphi_\varepsilon \in \CC^\infty(\overline\Omega; \C^d)$ such that $\big\|\varphi_\varepsilon - u\big\|_{\HH^1(\Omega; \C^d)}^2 \leq {\varepsilon}/({6 \tilde C})$, see Adams and Fournier \cite[Thm. 3.18]{adams}.
+  From the theory of Sobolev spaces it is known that there exists $\varphi_\varepsilon \in \CC^\infty(\overline\Omega; \C^d)$ such that $\big\|\varphi_\varepsilon - u\big\|_{\HH^1(\Omega; \C^d)}^2 \leq {\varepsilon}/({6 \tilde C})$, see Adams and Fournier \cite[Thm.\@~3.18]{adams}.
   Here, $\tilde C$ denotes the fixed constant from \eqref{eq:traceLipschitzDomain} which is uniform for all $\Omega_j$ and $\Omega$.
   Thanks to Theorem \ref{thm:smoothApproximation}, we know that 
   \begin{align*}
@@ -592,10 +592,10 @@ The next theorem can in some sense be regarded as a reverse trace theorem and wi
 
 \begin{rem}
   At this point, the choice $p = {2d}({d - 1})^{-1}$ in Theorem \ref{thm:reverseTrace} may seem arbitrary.
-  Taking a closer look at the proof by Wei and Zhang in \cite[Lem. 3.3]{weiZhang}, one sees that the choice of $p$ is due to 2 facts: (1) For the dual exponent we have $p' = \frac{2d}{d + 1}$. (2) It holds $\frac{1}{p} - \frac{1}{p'} = \frac{1}{d}$ and thus the \emph{Hardy-Littlewood-Sobolev theorem on fractional integration} may be applied to estimate the $p'$-norm of the \emph{Riesz potential} $I_1(f)$ of a function $f \in \Ell^p(\R^d)$ by the $p$-norm of $f$, see Grafakos \cite[Thm 6.1.3]{grafakos2009modern}.
+  Taking a closer look at the proof by Wei and Zhang in \cite[Lem.\@~3.3]{weiZhang}, one sees that the choice of $p$ is due to 2 facts: (1) For the dual exponent we have $p' = \frac{2d}{d + 1}$. (2) It holds $\frac{1}{p} - \frac{1}{p'} = \frac{1}{d}$ and thus the \emph{Hardy-Littlewood-Sobolev theorem on fractional integration} may be applied to estimate the $p'$-norm of the \emph{Riesz potential} $I_1(f)$ of a function $f \in \Ell^p(\R^d)$ by the $p$-norm of $f$, see Grafakos \cite[Thm.\@~6.1.3]{grafakos2009modern}.
 \end{rem}
 
-In the following remark and the forthcoming chapter, we will make use of an integration argument which can be considered an application of the following Theorem on \emph{integration along slices}. A proof of this result can be found in Federer \cite[Thm. 3.2.12]{federer}.
+In the following remark and the forthcoming chapter, we will make use of an integration argument which can be considered an application of the following Theorem on \emph{integration along slices}. A proof of this result can be found in Federer \cite[Thm.\@~3.2.12]{federer}.
 
 \begin{thm}[Co-area formula]
   \label{thm:coarea}
