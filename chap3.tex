@@ -114,7 +114,7 @@ The lemma deals with mapping properties of the aforementioned integral operators
     &\sum_{k = 0}^N \int_{2^k t < |q - y| < 2^{k + 1}t}  \frac{1}{|\lambda| |q - y|^{d + 1}} |f(y)| \d \sigma(y) \nonumber\\
     &\qquad\qquad\leq \sum_{k = 0}^N \int_{2^k t < |q - y| < 2^{k + 1}t}  \frac{1}{|\lambda| 2^{k(d + 1)}t^{d + 1}} |f(y)| \d \sigma(y) \nonumber\\
     %&\sum_{k = 0}^N \int_{\BB(P, 2^{k + 1}t) \cap \partial\Omega} \frac{1}{|\lambda| 2^{k(d + 1)} t^{d + 1}} |f(y)| \d \sigma(y) \\
-    &\qquad\qquad\leq \frac{1}{|\lambda|t^2}\; \frac{1}{2^{1 -d}}\sum_{k = 0}^N \frac{1}{2^{2k}} \frac{1}{(2^{k+1} t)^{d - 1}} \int_{\BB(q,\, 2^{k + 1}t) \cap \partial \Omega}  |f(y)| \d\sigma(y)\label{eq:gtt}.
+    &\qquad\qquad\leq \frac{1}{|\lambda|t^2}\; \frac{1}{2^{1 -d}}\sum_{k = 0}^N \frac{1}{2^{2k}}\, \frac{1}{(2^{k+1} t)^{d - 1}} \int_{\BB(q,\, 2^{k + 1}t) \cap \partial \Omega}  |f(y)| \d\sigma(y)\label{eq:gtt}.
     %&\qquad\qquad\leq C \sum_{k = 0}^N \frac{1}{2^{2k}} M_{\partial\Omega}(f)(P) \\
     %&\qquad\qquad\leq C  M_{\partial\Omega}(f)(P)
     %&\quad\leq C |\lambda|^{\frac{1}{2}} \frac{2^{N + 1}t - t}{1}  M_{\partial\Omega}(f)(P) \\
@@ -178,10 +178,10 @@ The lemma deals with mapping properties of the aforementioned integral operators
    \end{align}
    holds. 
    Once again we integrate over annuli, use the inner radii to loose the term $|q - y|^{2 - d}$ and use the outer radii to expand the domain of integration to balls with this radius:
-   \begin{align*}\int_{t < |q - y| < (2|\lambda|)^{-1/2}} \frac{1}{|q - y|^{d - 2}} \, |f(y)| \d\sigma
-     &\leq \sum_{k = 0}^N \int_{2^kt \leq |q - y| < 2^{k + 1} t} \frac{1}{|q - y|^{d - 2}}\, |f(y)| \d\sigma \\
-     &\leq  \sum_{k = 0}^N \frac{1}{(2^{k}t)^{d - 2}}  \int_{\BB(q,\, 2^{k + 1}t) \cap \partial\Omega} |f(y)| \d\sigma \\
-     &=  2^{d-1} \sum_{k = 0}^N 2^k t \;  \frac{1}{(2^{k + 1}t)^{d - 1}}  \int_{\BB(q,\, 2^{k + 1}t) \cap \partial\Omega} |f(y)| \d\sigma.
+   \begin{align*}&\int_{t < |q - y| < (2|\lambda|)^{-1/2}} \frac{1}{|q - y|^{d - 2}} \, |f(y)| \d\sigma(y) \\
+     &\qquad\qquad\leq \sum_{k = 0}^N \int_{2^kt \leq |q - y| < 2^{k + 1} t} \frac{1}{|q - y|^{d - 2}}\, |f(y)| \d\sigma(y) \\
+     &\qquad\qquad\leq  \sum_{k = 0}^N \frac{1}{(2^{k}t)^{d - 2}}  \int_{\BB(q,\, 2^{k + 1}t) \cap \partial\Omega} |f(y)| \d\sigma(y) \\
+     &\qquad\qquad =  2^{d-1} \sum_{k = 0}^N 2^k t \;  \frac{1}{(2^{k + 1}t)^{d - 1}}  \int_{\BB(q,\, 2^{k + 1}t) \cap \partial\Omega} |f(y)| \d\sigma(y).
    \end{align*}
    %\begin{align*}
 %     &\qquad\qquad\leq  |\lambda|^{\frac{1}{2}} t^{2 - d} \sum_{k = 0}^N 2^{k(2 - d)} \int_{\BB(P, 2^{k + 1}t) \cap \partial\Omega} |f(y)| \d\sigma\\
@@ -201,14 +201,15 @@ The lemma deals with mapping properties of the aforementioned integral operators
    Taking into account the foregoing calculations together with estimate \eqref{eq:estDiff} and \eqref{eq:lambda0case} we derive
    \begin{align}
      \label{eq:finalltt}
-     \bigg| \int_{t < |q - y| < (2|\lambda|)^{-1/2}} \nabla_x\Gamma(q - y; \lambda) f(y)  \d\sigma\, \bigg| \leq C \Big\{ T_0^*(f)(q) + M_{\partial\Omega}(f)(q) \Big\},
+     \bigg| \int_{t < |q - y| < (2|\lambda|)^{-1/2}} \nabla_x\Gamma(q - y; \lambda) f(y)  \d\sigma\, \bigg| 
+     \leq C\, \Big\{ T_0^*(f)(q) + M_{\partial\Omega}(f)(q) \Big\},
    \end{align}
-   with $C$ depending only on $d$, $\theta$ and the Lipschitz character of $\Omega$.
+   with $C > 0$ depending only on $d$, $\theta$ and the Lipschitz character of $\Omega$.
 
    It is now the time to take the supremum over all $t > 0$, and, considering estimates \eqref{eq:finalgtt} and \eqref{eq:finalltt}, we finally see that
    \begin{align*}
      T_\lambda^*(f)(q)
-     &\leq C \Big\{  T_0^*(f)(q)+ M_{\partial\Omega}(f)(q) \Big\},
+     &\leq C\, \Big\{  T_0^*(f)(q)+ M_{\partial\Omega}(f)(q) \Big\},
    \end{align*}
    for all $q \in \partial\Omega$. Once again using the result for $\lambda = 0$ and the $\Ell^p$ boundedness of the Hardy-Littlewood maximal operator, we conclude the first part of the claimed inequality
    \begin{align*}
@@ -240,7 +241,8 @@ The lemma deals with mapping properties of the aforementioned integral operators
    for $\varepsilon \leq \min(2|\lambda|^{-1/2}, r_0/4)$ as the integrand is bounded on $\partial\Omega \setminus \BB(q,\,\varepsilon)$  and the domain of integration $\partial\Omega$ is bounded.
    Now, Corollary~\ref{cor:differenceFundamentalSolutionStokes} and Lemma~\ref{lem:central} give that the integrand can be estimated by
    \begin{align*}
-     C \int_{|q - y| \leq \varepsilon} \sqrt{|\lambda|} |q - y|^{2 - d} \d\sigma(y) \leq C \sqrt{|\lambda|} \varepsilon \leq C,
+     C \int_{|q - y| \leq \varepsilon} \sqrt{|\lambda|} |q - y|^{2 - d} \d\sigma(y) 
+     \leq C\, \sqrt{|\lambda|} \varepsilon \leq C,
    \end{align*}
    where $C$ is a constant depending on $d$, $\theta$ and the Lipschitz character of $\Omega$.
    Based on the preceding calculation we conclude that for all $f \in \CC(\partial\Omega; \C^d)$ the limit $T_\lambda(f)(q)$ exists whenever $T_0(f)(q)$ exists.
@@ -298,11 +300,11 @@ The following lemma shows that these integral kernels fulfill the requirements f
   Let $r_0$ be the radius from the definition of Lipschitz cylinders and $q \in \partial\Omega$.
   Splitting the domain of integration and applying Lemma~\ref{lem:central}, we get
   \begin{align*}
-    &\int_{\partial\Omega} \frac{1}{|q - y|^{d - 2}} \d\sigma(y) \\
+    &\int_{\partial\Omega} \frac{1}{|q - y|^{d - 2}} \d\sigma(y) \\[0.5em]
     &\qquad \leq \int_{\partial\Omega \cap \BB(q,\, r_0/4)} \frac{1}{|q - y|^{d - 2}} \d \sigma(y) 
-    + \int_{\partial\Omega \setminus \BB(q,\, r_0/4)} \frac{1}{|q - y|^{d - 2}} \d\sigma(y) \\
+    + \int_{\partial\Omega \setminus \BB(q,\, r_0/4)} \frac{1}{|q - y|^{d - 2}} \d\sigma(y) \\[0.5em]
     &\qquad\leq C r_0 + r_0^{2 - d} 4^{d - 2} \sigma(\partial\Omega)
-    \leq C ( r_0 + r_0^{2 - d} r_0^{d - 1}),
+    \leq C\, ( r_0 + r_0^{2 - d} r_0^{d - 1}),
   \end{align*}
   where $C > 0$ depends only on $d$ and the Lipschitz character of $\Omega$.
   This proves the claim.
@@ -342,13 +344,13 @@ We can now prove the boundedness of certain nontangential maximal operators.
     &\eqqcolon I_1 + I_2.
   \end{align*}
   We will now estimate $I_1$ and $I_2$ separately.
-  Note that in Verchota cones $\verCone(q)$ it holds that for all $s \in \partial\Omega$ we have $|x - s| \geq C |x - q|$, where $C$ is a constant only depending on $d$ and the Lipschitz character of $\Omega$, see inequality~\eqref{eq:verCone1}.
+  Note that in Verchota cones $\verCone(q)$ it holds that for all $s \in \partial\Omega$ we have $|x - s| \geq C\, |x - q|$, where $C > 0$ is a constant only depending on $d$ and the Lipschitz character of $\Omega$, see inequality~\eqref{eq:verCone1}.
   By Theorem~\ref{thm:fundamentalMatrixEstimate} we know that
   \begin{align*}
     I_2 
     &\leq C \int_{|y - q| \leq t} \frac{1}{|x - y|^{d - 1}} |f(y)| \d \sigma(y) \\
     &\leq \frac{C}{t^{d - 1}} \int_{|y - q| \leq t} |f(y)| \d \sigma(y)
-    \leq C M_{\partial\Omega} (f)(q),
+    \leq C\, M_{\partial\Omega} (f)(q),
   \end{align*}
   where we used also Lemma~\ref{lem:compareBoundaryWithBall} to bring the Hardy-Littlewood maximal operator into play.
   Here, $C > 0$ depends on $d$, $\theta$ and the Lipschitz character of $\Omega$.
@@ -369,18 +371,18 @@ We can now prove the boundedness of certain nontangential maximal operators.
   \begin{align*}
     &\int_{|y - q| > t} \big| \nabla_x\Gamma_{jk}(x - y; \lambda) - \nabla_x\Gamma_{jk}(q - y; \lambda) \big| \, |f(y)| \d\sigma(y) \\ 
     &\qquad\qquad\leq \int_{|y - q| > t} \big|\nabla^2 \Gamma_{jk}(s - y; \lambda)\big| |x - q|\, |f(y) | \d\sigma(y) \\
-    &\qquad\qquad\leq C  \int_{|y - q| > t} \frac{t}{|s - y|^{d}} |f(y)| \d\sigma(y) \\
-    &\qquad\qquad\leq C  \int_{|y - q| > t} \frac{t}{|y - q|^{d}} |f(y)| \d\sigma(y) \\
+    &\qquad\qquad\leq C \int_{|y - q| > t} \frac{t}{|s - y|^{d}} |f(y)| \d\sigma(y) \\
+    &\qquad\qquad\leq C \int_{|y - q| > t} \frac{t}{|y - q|^{d}} |f(y)| \d\sigma(y) \\
     &\qquad\qquad\leq C \int_{\partial\Omega} \frac{t}{(t + |y - q|)^d} |f(y)| \d\sigma(y),
   \end{align*}
-  where $s$ is an element on the line connecting $x$ and $q$ and we used the property of Verchota cones that $|s - y| \geq C |y - q|$, see inequality \eqref{eq:verCone2}.
+  where $s$ is an element on the line connecting $x$ and $q$ and we used the property of Verchota cones that $|s - y| \geq C\, |y - q|$, see inequality \eqref{eq:verCone2}.
   Note that Verchota cones are convex.
   As in Verchota \cite[Lem.\@~1.3]{verchota}, the integral may now be bounded by the Hardy-Littlewood maximal operator due to an application of a suitable result from Grafakos \cite[Thm.\@~2.1.10]{grafakos2014classical} as the kernel ${t}(t + |y - q|)^{-d}$ is uniformly integrable and radially decreasing on $\partial\Omega$.
   Summing up we have shown that
   \begin{align*}
-    |(\nabla u)(x)| \leq C \Big\{ M_{\partial\Omega} f(P) + T_\lambda^*(f)(P) \Big\},
+    |(\nabla u)(x)| \leq C\, \Big\{ M_{\partial\Omega} f(P) + T_\lambda^*(f)(P) \Big\},
   \end{align*}
-  where $C$ only depends on $d$, $\theta$ and the Lipschitz character of $\Omega$.
+  where $C > 0$ only depends on $d$, $\theta$ and the Lipschitz character of $\Omega$.
   We thus may take the supremum over all $x \in \verCone(q)$ and conclude the desired estimate by the well known mapping properties of the Hardy-Littlewood maximal operator and the respective results from Lemma~\ref{lem:lpBoundednessT}.
 %  By exhausting the domain of integration using annuli, we can estimate this integral by $M_{\partial\Omega}f(P)$:
 %  Choose $N$ such that $2^N t \leq \diam(\Omega) < 2^{N + 1}t$.
@@ -399,7 +401,7 @@ We can now prove the boundedness of certain nontangential maximal operators.
   For $q \in \partial\Omega$, estimate \eqref{eq:fundamentalMatrixEstimate} together with the estimate for Shen cones \eqref{eq:shenConeEstimate} gives that for all $x \in \ShenCone(q)$
   \begin{align*}
     |u(x)| 
-    &\leq  C \int_{\partial\Omega} \frac{1}{|x - y|^{d - 2}} |f(y)| \d\sigma(y) 
+    &\leq C \int_{\partial\Omega} \frac{1}{|x - y|^{d - 2}} |f(y)| \d\sigma(y) 
     \leq  C \int_{\partial\Omega} \frac{1}{|q - y|^{d - 2}} |f(y)| \d\sigma(y),
   \end{align*}
   where $C > 0$ only depends on $d$, $\theta$ and the Lipschitz character of $\Omega$.
@@ -480,7 +482,7 @@ We will then finally be able to talk about boundary values since the existence o
     %(\nabla u_j - \nabla v_j)(x_l) 
     &\bigg| \int_{\partial\Omega} \nabla_x \Big\{ \Gamma_{jk}(x_l - y; \lambda) - \Gamma_{jk}(x_l - y; 0)\Big\} f_k(y) \d\sigma(y)\, \bigg| \\
     &\qquad\qquad\leq C \int_{\partial\Omega} \sqrt{|\lambda|} \frac{1}{|x_l - y|^{d - 2}}\, |f(y)| \d\sigma(y) \\
-    &\qquad\qquad\leq {C} \sqrt{|\lambda|} \int_{\partial\Omega} \frac{1}{|x - y|^{d - 2}}\, |f(y)| \d\sigma(y) < \infty,
+    &\qquad\qquad\leq C \,\sqrt{|\lambda|} \int_{\partial\Omega} \frac{1}{|x - y|^{d - 2}}\, |f(y)| \d\sigma(y) < \infty,
   \end{align*}
   where for the last step we applied inequality~\eqref{eq:shenConeEstimate}
   Now dominated convergence gives the claim for $x_l \to x$.
@@ -512,7 +514,7 @@ see Mitrea and Wright \cite[p.\@~17]{mitreaWright}.
   \end{align}
   on $\partial\Omega$, with $\K_\lambda$ a bounded operator on $\Ell^p(\partial\Omega; \C^d)$ satisfying
   \begin{align*}
-    \| \K_\lambda f \|_{\Ell^p(\partial\Omega; \C^d)} \leq C_p \|f\|_{\Ell^p(\partial\Omega, \C^d)},
+    \| \K_\lambda f \|_{\Ell^p(\partial\Omega; \C^d)} \leq C_p\, \|f\|_{\Ell^p(\partial\Omega, \C^d)},
   \end{align*}
   where $C_p > 0$ depends only on $d$, $\theta$, $p$ and the Lipschitz character of $\Omega$.
 \end{thm}
@@ -599,7 +601,7 @@ The next result will be crucial for solving the $\Ell^2$ Dirichlet problem in Ch
   \begin{align*}
     &\Big\| \nabla_x \Big\{ \Gamma(p - \cdot; \lambda) - \Gamma(p - \cdot; 0) \Big\} 1_{\BB(p,\,\varepsilon)} \Big\|_{\Ell^1(\partial\Omega; \C^{d \times d})}  \\
      &\qquad\qquad\leq C \int_{\partial\Omega \cap \BB(p,\, \varepsilon)} \sqrt{|\lambda|} |p - y|^{2 - d} \d\sigma(y) 
-     \leq C \sqrt{|\lambda|} \varepsilon
+     \leq C\, \sqrt{|\lambda|} \varepsilon
   \end{align*}
   where for the last step we applied Lemma~\ref{lem:compareBoundaryWithBall}.
   For $\varepsilon \to 0$ this gives us $\K^{(\varepsilon)} \to \K$ in the operator norm.
@@ -671,14 +673,14 @@ where $\K_{\bar\lambda}^*$ is the adjoint of the operator $\K_{\bar\lambda}$ in 
   \end{align*}
   Therefore, we have for $x \in \ShenCone(q)$, $q \in \partial\Omega$,
   \begin{align*}
-    |u(x)| \leq C \Big\{ |\nabla_x \slp_\lambda(n_i f)(x)| + |\slp_\Phi(\tilde f^j) | \Big\}, 
+    |u(x)| \leq C\, \Big\{ |\nabla_x \slp_\lambda(n_i f)(x)| + |\slp_\Phi(\tilde f^j) | \Big\}, 
   \end{align*}
   with $C > 0$ depending only on $d$.
   Hence, by Lemma~\ref{lem:nontangentialMaximalFunctions}, we derive the followign chain of estimates:
   \begin{align*}
     \| (u)^* \|_{\Ell^p(\partial\Omega)} 
-    \leq C \Big\{ \sum_{i = 1}^d \| n_i f \|_{\Ell^p(\partial\Omega; \C^d)} + \sum_{j = 1}^d \| \slp_\Phi(\tilde f^j) \|_{\Ell^p(\partial\Omega)}\Big\} 
-    \leq C \|f\|_{\Ell^p(\partial\Omega; \C^d)},
+    \leq C\, \Big\{ \sum_{i = 1}^d \| n_i f \|_{\Ell^p(\partial\Omega; \C^d)} + \sum_{j = 1}^d \| \slp_\Phi(\tilde f^j) \|_{\Ell^p(\partial\Omega)}\Big\} 
+    \leq C\, \|f\|_{\Ell^p(\partial\Omega; \C^d)},
   \end{align*}
   where $C > 0$ depends on $d$, $p$, $\theta$ and the Lipschitz character of $\Omega$.
 
