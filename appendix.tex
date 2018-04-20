@@ -107,12 +107,12 @@ For $\lambda \in \Sigma_\theta$, $\theta \in (0, \pi/2)$, we need to show that f
   \Big|\, \partial_\beta \partial_\alpha \partial_\gamma \big\{ G(x; \lambda) - G(x; 0) \big\} \, \Big|
   \leq C\, |\lambda| |x|^{-1}
 \end{align*}
-holds with a constant $C$ that only depends on $d$ and $\theta$.
+holds with a constant $C > 0$ that only depends on $\theta$.
 The strategy will be to first estimate all resulting terms individually and to extract those which cannot be estimated in this way.
 We will call the terms that cannot be estimated individually \emph{problematic}.
-In the second step we will show that all problematic terms, when added together, cancel which shows that the claimed estimate holds.
+In the second step, we will show that all problematic terms, when added together, cancel which shows that the claimed estimate holds.
 
-In order to make the next calculations better to digest, we decompose the third derivative of $G(\,\cdot\, ; \lambda)$ as 
+In order to make the next calculations better to digest, we decompose the third derivative of $G(\,\cdot\, ; \lambda)$ as follows:
 \begin{align*}
   \partial_\beta \partial_\alpha \partial_\gamma \big\{G(x; \lambda)\big\}
   = A_1 + A_2 + A_3,
@@ -127,7 +127,7 @@ We have
      \; \mathlarger{\sum}_{l = 2}^\infty \; d_l \, (k|x|)^{2l - 3} \, C_l +  \mathlarger{\sum}_{l = 2}^\infty \; d_l \, (k|x|)^{2l - 3} \log(k|x|)  \\
   &\quad\,  +  \mathlarger{\sum}_{l = 1}^\infty \; c_l \, (k|x|)^{2l - 3} +  \mathlarger{\sum}_{l = 2}^\infty \; b_l\, (2l - 2) \, (k|x|)^{2l - 3} \\
   &\quad\, +  \mathlarger{\sum}_{l = 0}^\infty \; a_l \, (2l - 1)\, (2l - 2) \, (k|x|)^{2l - 3} \;
-  \bigg\}
+  \bigg\}.
   %%
 \end{align*}
 We see that, using the fact $|\lambda| |x|^2 \leq (1/2)$ to trade one $k$ in the prefactor for a constant times $|x|^{-1}$, the only problematic term in $A_1$ is the first element of the last sum
@@ -164,7 +164,7 @@ For the last component, we have the following identity:
   &\,\cdot\, \bigg\{ 
   \; \mathlarger{\sum}_{l = 1}^\infty \; b_l \, (k|x|)^{2l - 1} \, C_l 
   + \mathlarger{\sum}_{l = 1}^\infty \; b_l \, (k|x|)^{2l - 1} \log(k|x|) 
-  + \mathlarger{\sum}_{l = 0}^\infty \; a_l \, (k|x|)^{2l - 1} 
+  + \mathlarger{\sum}_{l = 0}^\infty \; a_l \, (k|x|)^{2l - 1} .
   \bigg\}
 \end{align*}
 In this case, the prefactor behaves like $\sqrt{|\lambda|} |x|^{-2}$.
@@ -184,7 +184,7 @@ Note that we have
   a_0 = 1, \qquad c_1 = b_1 = - \frac{1}{2}.
 \end{align*}
 Therefore, we can already see that the logarithmic terms in the sum $\eqref{eq:P2} + \eqref{eq:P3}$ cancel.
-Next, we observe that if we add the problematic terms \eqref{eq:P1}, \eqref{eq:P2} and \eqref{eq:P3} up and subtract $\partial_\beta \partial_\alpha \partial_\gamma G(x; 0)$, the result is $0$ which is easily seen by grouping the terms with the same powers of $|x|$:
+Next, we observe that if we take the sum over the problematic terms \eqref{eq:P1}, \eqref{eq:P2} and \eqref{eq:P3} and subtract $\partial_\beta \partial_\alpha \partial_\gamma G(x; 0)$, the result is $0$ which is easily seen by grouping the terms with the same power of $|x|$:
 \begin{align*}
   &\hspace{-2cm}\mathrm{(P1)} + \mathrm{(P2)} + \mathrm{(P3)} - \partial_\beta \partial_\alpha \partial_\gamma G(x; 0) \\[0.5em]
   = &- \frac{1}{\pi}\, \frac{x_\alpha x_\beta x_\gamma}{|x|^6} \\[0.5em]
@@ -205,16 +205,16 @@ Next, we observe that if we add the problematic terms \eqref{eq:P1}, \eqref{eq:P
 %\newpage
 \section*{A.2\quad Proof of Theorem \ref{thm:differenceFundamentalSolutionStokes} for $d = 2$}
 \markboth{APPENDIX}{A.2.\quad PROOF OF THEOREM \ref*{thm:differenceFundamentalSolutionStokes} FOR $d = 2$}
-\addcontentsline{toc}{section}{A.1\quad Proof of Theorem \ref*{thm:differenceFundamentalSolutionStokes} for $d = 2$}
+\addcontentsline{toc}{section}{A.2\quad Proof of Theorem \ref*{thm:differenceFundamentalSolutionStokes} for $d = 2$}
 \label{sec:A2}
 
 In this section, we want to show that for all $\lambda \in \Sigma_\theta$, $\theta \in (0,\pi/2)$ and under the assumption that $|\lambda| |x|^2 \leq (1/2)$, we have
 \begin{align*}
   \Big|\, \nabla_x \big\{ \Gamma(x; \lambda) - \Gamma(x; 0) \big\} \, \Big| \leq C\, |\lambda| |x| \, \big|\log(|\lambda| |x|^2)\,\big|\,,
 \end{align*}
-where $C$ depends only on $\theta$.
-The means an the strategy to prove this estimate are similar to the procedure in Section~\ref{sec:A2}.
-In addition to the derivatives that were calculated at the beginning of this appendix we will additionally need  the first partial derivative for the fundamental solution of the Stokes problem:
+where $C > 0$ depends only on $\theta$.
+The means and the strategy to prove this estimate are similar to the procedure in the previous section.
+In addition to the derivatives that were calculated at the beginning of this appendix, we will furthermore need  the first partial derivative for the fundamental solution of the Stokes problem:
 \begin{align*}
   \partial_\gamma \Gamma_{\alpha\beta} (x; 0) 
   = \frac{1}{4 \pi}\, \bigg(\, \frac{\delta_{\alpha\gamma} x_\beta + \delta_{\gamma\beta} x_\alpha  - \delta_{\alpha\beta} x_\gamma}{|x|^2}  \, \bigg) 
@@ -310,7 +310,7 @@ we see that already within the sum \eqref{eq:Q3} + \eqref{eq:Q4} a lot of terms 
 Now let us consider the expression \eqref{eq:Q1} + \eqref{eq:Q2} + \eqref{eq:Q33} - $B_3$:
 \begin{align*}
   &-\frac{1}{2\pi} \,  \frac{\delta_{\alpha\beta} x_\gamma}{|x|^2} 
-  + \frac{1}{4 \pi } \frac{x_\alpha x_\beta x_\gamma}{|x|^4} 
+  + \frac{1}{4 \pi }\, \frac{x_\alpha x_\beta x_\gamma}{|x|^4} 
   %
   + \frac{1}{4\pi} \, \bigg(\,\frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha \gamma} x_\beta + \delta_{\alpha \beta} x_\gamma}{|x|^2} - 3\, \frac{x_\alpha x_\beta x_\gamma}{|x|^4} \, \bigg) 
    \\[0.5em]
