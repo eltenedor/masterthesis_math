@@ -60,7 +60,11 @@ In this first section we will establish the fundamental notions regarding bounde
         \int_E \vartheta_k(Q) \d \sigma(Q) = \int_{\Lambda_k(E)} \d \sigma_k(Q),
       \end{align*}
       where $E \subset \partial \Omega$ is measurable and $\sigma_k$ denotes the surface measure on $\Omega_k$.
-    \item The vector field $h$ satisfies $h \cdot  n_k \rangle \geq c > 0$ a.e. on each $\partial\Omega_k$ where $\nu_k$ denotes the unit inner normal to $\partial\Omega_k$.
+      Furthermore, if $u \colon \partial\Omega_k \to \C$ is a measurable function on $\partial\Omega_k$, the following ``transformation rule'' holds:
+      \begin{align*}
+         \int_{\partial\Omega} u(\Lambda_k(q)) \vartheta_k(q) \d\sigma(q) = \int_{\partial\Omega_k} u(q) \d \sigma_k(q) .
+      \end{align*}
+    \item The vector field $h$ satisfies $h \cdot  n_k \geq c > 0$ a.e. on each $\partial\Omega_k$ where $\nu_k$ denotes the unit inner normal to $\partial\Omega_k$.
   \end{enumerate}
 \end{thm}
 
@@ -143,7 +147,7 @@ for $q \in \partial\Omega$.
 \end{defn}
 
 Note that Tolksdorf \cite{tolksdorf} and Shen \cite{Shen2017} show that the choice of $\alpha$ for the nontangential maximal function as in \ref{eq:defnNontangMaxFunction} does not affect their $p$-norms in an unpredictable way. In fact their $p$-norms for different $\alpha_1$ and $\alpha_2$ stay comparable with a constant only depending on $d$, $\alpha_1$, $\alpha_2$ and the Lipschitz character.
-We will therefore for a given bounded Lipschitz domain always assume that $\alpha > 1$ has been choosen big enough such that on the one hand condition (ii) from Theorem \ref{thm:smoothApproximation} is fulfilled and that on the other hand $\alpha$ is large enough such that $\{ \Gamma_\alpha(q) \colon q \in \partial\Omega \}$ is a family of nontangential aproach regions.
+We will therefore for a given bounded Lipschitz domain always assume that $\alpha > 1$ has been chosen big enough such that on the one hand condition (ii) from Theorem \ref{thm:smoothApproximation} is fulfilled and that on the other hand $\alpha$ is large enough such that $\{ \Gamma_\alpha(q) \colon q \in \partial\Omega \}$ is a family of nontangential approach regions.
 In the following we will thus ignore the parameter $\alpha$ in cones and nontangential maximal functions and tacitly assume that it was chosen appropriately.
 We further note that the functions $(u)^*$ and $N(u)$ will not be comparable in general, see the discussion in Tolksdorf.
 
@@ -337,7 +341,7 @@ The other side just asks for a resolvent estimate on the Stokes operator, hoping
 \begin{defn}
   \label{defn:stokeslp}
   %Let $\Omega \subseteq \R^d$, $d \geq 2$ be a bounded Lipschitz domain and $1 < p < \infty$.
-  Let $\Omega\subseteq \R^d$, $d \geq 2$ be a bounded Lipschit domain.
+  Let $\Omega\subseteq \R^d$, $d \geq 2$ be a bounded Lipschitz domain.
   If $p > 2$ we define the Stokes operator $A_p$ via its \emph{part of} $A_2$ \emph{in } $\Ell^p_\sigma(\Omega)$.
   \begin{align*}
     \Dom(A_p) &\coloneqq \Big\{ u \in \Dom(A_2) \cap \Ell^p_\sigma(\Omega) \colon A_2 u \in \Ell^p_\sigma(\Omega) \Big\} \\
