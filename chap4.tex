@@ -411,58 +411,60 @@ Furthermore, we will work with the following Theorem about the regularity proble
 \end{lem}
 
 \begin{proof}
-  Our first goal will be to show that without loss of generality we may assume that $\Delta u = \nabla \phi + \lambda u$ on $\partial\Omega$.
-  The central player will once again be Theorem \ref{thm:smoothApproximation}.
-  To this end, let $(\Omega_j)$ be a sequence of approximating $\CC^\infty$ domains as in Theorem \ref{thm:smoothApproximation} and suppose that
-  \ref{eq:phiDashintPhi} holds for all $\Omega_j$, i.e. we have proven the inequality
-  \begin{align}
-    \label{eq:phiDashintPhij}
-    \bigg\|\, \phi - \bigg\{ \frac{1}{{r_0}^{d - 1}}\int_{\partial\Omega} \phi \d\sigma \bigg\} \, \bigg\|_{\Ell^2(\partial\Omega_j; \C^d)}
-     \leq C \Big\{ \|\nabla u\|_{\Ell^2(\partial\Omega_j; \C^{d\times d})} + |\lambda| \, \|u\cdot n\|_{\HH^{-1}(\partial\Omega_j)} \Big\}
-  \end{align}
-  and an inequality analogous to \eqref{eq:lambdaun}.
-  Note that the mean value integral of $\phi$ should remain unchanged.
-  It is now crucial that the constants in these inequalities only depend on the Lipschitz character of $\Omega$ and not on other geometric properties of the domain.
-  Thus $C$ does not depend on $j$ and we may take the limit $j \to \infty$ using dominated convergence for the terms that do not involve the operator norms $\| \cdot \|_{\HH^{-1}(\partial\Omega_j)}$. 
-  For these terms, we deploy another strategy.
-  Let $f \in \HH^1(\partial\Omega_j)$ and, let $\psi$ solve the regularity problem for the Laplacian on $\BB_R \setminus \overline{\Omega_j}$ with data $\tilde f$, where $\BB_R$ is a Ball that contains $\overline\Omega$ and $\tilde f$ is defined via
-  \begin{align*}
-    \tilde f \colon \partial\Omega_j\cup \partial\Omega  \to \C, \quad q \mapsto 
-    \begin{cases}
-      f(q) &\quad\text{if } q \in \partial\Omega_j\,, \\
-      0 &\quad\text{if } q \in \partial\BB_R\,.
-    \end{cases}
-  \end{align*}
-  With this definition at hand, we calculate
-  \begin{align*}
-    \int_{\partial\Omega_j} u \cdot (-n_j) \overline f \d\sigma
-    &= \int_{\partial\Omega_j} u \cdot (-n_j) \, \overline \psi \d \sigma \\
-    &= \int_{\Omega \setminus \Omega_j} \div(u \cdot \overline\psi) \d y - \int_{\partial\Omega} u\cdot n \, \overline \psi \\
-    &\leq C\, \|u\|_{\Ell^2(\Omega \setminus \Omega_j)} \|f\|_{\HH^1(\partial\Omega_j)} + \|u \cdot n\|_{\HH^{-1}(\partial\Omega)} \|\psi\|_{\HH^1(\partial\Omega)},
-  \end{align*}
-  where $C > 0$ depends on $d$.
-  Now we have to bound the norm $\|\psi\|_{\HH^1(\partial\Omega)}$ by $\|f\|_{\HH^1(\partial\Omega_j)}$.
-  To this end, we calculate
-  \begin{align*}
-    \int_{\partial\Omega} |\psi(p)|^2 \d\sigma(p)
-    &\leq \int_{\partial\Omega} |(\psi(\Lambda_j^{-1}(p)))^*|^2 \d\sigma(p) \\
-    &\leq \delta^{-1} \int_{\partial\Omega} | (\psi)^*(\Lambda_j^{-1}(p)|^2 \vartheta_(p) \d\sigma(p) \\
-    &= \delta^{-1} \int_{\partial\Omega_j} |(\psi)^*(p)|^2 \d\sigma(p) 
-  \end{align*}
-  A similar calculation works for the tangential derivatives of $\psi$.
-  This shows that
-  \begin{align*}
-    \limsup_{j \to \infty} \|u \cdot n\|_{\HH^{-1}(\partial\Omega_j)} \leq C \, \|u \cdot n\|_{\HH^{-1}},
-  \end{align*}
-  with a constant $C > 0$ that only depends on $d$ and the Lipschitz character of $\Omega$.
-  In the same fashion one may prove that the estimate
-  \begin{align*}
-    \limsup_{j \to \infty} \|u \cdot n\|_{\HH^{-1}(\partial\Omega_j)} \leq C \, \|u \cdot n\|_{\HH^{-1}}
-  \end{align*}
-  holds.
+  By approximating $\Omega$ by a sequence of smooth domains $\Omega_j$ as in Theorem \ref{thm:smoothApproximation}, we may assume that $\Delta u = \nabla \phi + \lambda u$ on $\partial\Omega$ and that it suffices to prove \eqref{eq:phiDashintPhi} and \eqref{eq:lambdaun} under the assumption that $(u,\phi)$ satisfies the Stokes resolvent problem in a smooth domain $\Omega'$ for some $\overline \Omega \subseteq \Omega'$.
+%  Our first goal will be to show that without loss of generality we may assume that $\Delta u = \nabla \phi + \lambda u$ on $\partial\Omega$.
+%  The central player will once again be Theorem \ref{thm:smoothApproximation}.
+%  To this end, let $(\Omega_j)$ be a sequence of approximating $\CC^\infty$ domains as in Theorem \ref{thm:smoothApproximation} and suppose that
+%  \ref{eq:phiDashintPhi} holds for all $\Omega_j$, i.e. we have proven the inequality
+%  \begin{align}
+%    \label{eq:phiDashintPhij}
+%    \bigg\|\, \phi - \bigg\{ \frac{1}{{r_0}^{d - 1}}\int_{\partial\Omega} \phi \d\sigma \bigg\} \, \bigg\|_{\Ell^2(\partial\Omega_j; \C^d)}
+%     \leq C \Big\{ \|\nabla u\|_{\Ell^2(\partial\Omega_j; \C^{d\times d})} + |\lambda| \, \|u\cdot n\|_{\HH^{-1}(\partial\Omega_j)} \Big\}
+%  \end{align}
+%  and an inequality analogous to \eqref{eq:lambdaun}.
+%  Note that the mean value integral of $\phi$ should remain unchanged.
+%  It is now crucial that the constants in these inequalities only depend on the Lipschitz character of $\Omega$ and not on other geometric properties of the domain.
+  %Thus $C$ does not depend on $j$ and we may take the limit $j \to \infty$ using dominated convergence for the terms that do not involve the operator norms $\| \cdot \|_{\HH^{-1}(\partial\Omega_j)}$. 
+%  For these terms, we deploy another strategy.
+%  Let $f \in \HH^1(\partial\Omega_j)$ and, let $\psi$ solve the regularity problem for the Laplacian on $\BB_R \setminus \overline{\Omega_j}$ with data $\tilde f$, where $\BB_R$ is a Ball that contains $\overline\Omega$ and $\tilde f$ is defined via
+%  \begin{align*}
+%    \tilde f \colon \partial\Omega_j\cup \partial\Omega  \to \C, \quad q \mapsto 
+%    \begin{cases}
+%      f(q) &\quad\text{if } q \in \partial\Omega_j\,, \\
+%      0 &\quad\text{if } q \in \partial\BB_R\,.
+%    \end{cases}
+%  \end{align*}
+%  With this definition at hand, we calculate
+%  \begin{align*}
+%    \int_{\partial\Omega_j} u \cdot (-n_j) \overline f \d\sigma
+%    &= \int_{\partial\Omega_j} u \cdot (-n_j) \, \overline \psi \d \sigma \\
+%    &= \int_{\Omega \setminus \Omega_j} \div(u \cdot \overline\psi) \d y - \int_{\partial\Omega} u\cdot n \, \overline \psi \\
+%    &\leq C\, \|u\|_{\Ell^2(\Omega \setminus \Omega_j)} \|f\|_{\HH^1(\partial\Omega_j)} + \|u \cdot n\|_{\HH^{-1}(\partial\Omega)} \|\psi\|_{\HH^1(\partial\Omega)},
+%  \end{align*}
+%  where $C > 0$ depends on $d$.
+%  Now we have to bound the norm $\|\psi\|_{\HH^1(\partial\Omega)}$ by $\|f\|_{\HH^1(\partial\Omega_j)}$.
+%  To this end, we calculate
+%  \begin{align*}
+%    \int_{\partial\Omega} |\psi(p)|^2 \d\sigma(p)
+%    &\leq \int_{\partial\Omega} |(\psi(\Lambda_j^{-1}(p)))^*|^2 \d\sigma(p) \\
+%    &\leq \delta^{-1} \int_{\partial\Omega} | (\psi)^*(\Lambda_j^{-1}(p)|^2 \vartheta_(p) \d\sigma(p) \\
+%    &= \delta^{-1} \int_{\partial\Omega_j} |(\psi)^*(p)|^2 \d\sigma(p)  \\
+%    &\leq C \int_{\partial\Omega_j} |f(p)|^2 \d\sigma(p)
+%  \end{align*}
+%  this and similar calculation for the tangential derivatives of $\psi$ shows that we may bound $\|\psi\|_{\HH^1{\partial\Omega}}$ by $\|f\|_{\HH^1}$.
+%  This shows that
+%  \begin{align*}
+%    \limsup_{j \to \infty} \|u \cdot n\|_{\HH^{-1}(\partial\Omega_j)} \leq C \, \|u \cdot n\|_{\HH^{-1}(\partial\Omega)},
+%  \end{align*}
+%  with a constant $C > 0$ that only depends on $d$ and the Lipschitz character of $\Omega$.
+%  In the same fashion one may prove that the estimate
+%  \begin{align*}
+%    \limsup_{j \to \infty} \|u \cdot n\|_{\HH^{-1}(\partial\Omega_j)} \leq C \, \|u \cdot n\|_{\HH^{-1}(\partial\Omega)}
+%  \end{align*}
+%  holds.
 
-  For the rest of the proof we will thus assume that $(u,\phi)$ satisfies the Stokes resolvent problem in a domain $\Omega'$ for some $\overline \Omega \subseteq \Omega'$.
-  In particular we have $\Delta u = \nabla \phi + \lambda u$  on $\partial\Omega$.
+  %For the rest of the proof we will thus assume that $(u,\phi)$ satisfies the Stokes resolvent problem in a domain $\Omega'$ for some $\overline \Omega \subseteq \Omega'$.
+  In particular, we have $\Delta u = \nabla \phi + \lambda u$  on $\partial\Omega$.
   Multiplying this identity  on $\partial\Omega$ with the outer normal vector $n$ and using the triangle inequality gives the following set of estimates:
   \begin{align}
     \label{eq:stokesEquationH1}
