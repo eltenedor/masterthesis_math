@@ -54,8 +54,8 @@ In this first section we will establish the fundamental notions regarding bounde
         | P - \Lambda_k(P) | < (1 + \beta) \operatorname{dist}(\Lambda_k(P), \partial\Omega)
       \end{align*}
       for some constant $\beta$ depending only on $d$ and the Lipschitz character of $\Omega\,$.
-    \item The normals $n_k$ of $\partial\Omega_k$ satisfy $\lim_{k \to \infty} n_k(\Lambda_k(P)) = n(P)$ a.e. for all $P \in \partial\Omega$
-    \item The functions $\vartheta_k$ satisfy $\delta \leq \vartheta_k \leq \delta^{-1}$ for some $\delta > 0$, $\vartheta^k \to 1$ pointwise a.e. and
+    \item The normals $n_k$ of $\partial\Omega_k$ satisfy $\lim_{k \to \infty} n_k(\Lambda_k(P)) = n(P)$ a.e.\@ for all $P \in \partial\Omega$
+    \item The functions $\vartheta_k$ satisfy $\delta \leq \vartheta_k \leq \delta^{-1}$ for some $\delta > 0$, $\vartheta^k \to 1$ pointwise a.e.\@ and
       \begin{align*}
         \int_E \vartheta_k(Q) \d \sigma(Q) = \int_{\Lambda_k(E)} \d \sigma_k(Q),
       \end{align*}
@@ -64,7 +64,7 @@ In this first section we will establish the fundamental notions regarding bounde
       \begin{align*}
          \int_{\partial\Omega} u(\Lambda_k(q)) \vartheta_k(q) \d\sigma(q) = \int_{\partial\Omega_k} u(q) \d \sigma_k(q) .
       \end{align*}
-    \item The vector field $h$ satisfies $h \cdot  n_k \geq c > 0$ a.e. on each $\partial\Omega_k$ where $\nu_k$ denotes the unit inner normal to $\partial\Omega_k$.
+    \item The vector field $h$ satisfies $h \cdot  n_k \geq c > 0$ a.e.\@ on each $\partial\Omega_k$ where $\nu_k$ denotes the unit inner normal to $\partial\Omega_k$.
   \end{enumerate}
 \end{thm}
 
@@ -165,11 +165,11 @@ The idea is to restrict the set of directions from which one can approach $p$ by
   Let furthermore $u$ be a function on $\R^d \setminus \partial\Omega$ and $f$ a function on $\partial\Omega$.
   We say that $u = f$ \emph{in the sense of nontangential convergence from the inside} if 
   \begin{align*}
-    \lim_{\substack{ x \to q \\ x \in \ShenCone(q)}} u(x) = f(q), \quad\text{for a.e. } q \in \partial\Omega
+    \lim_{\substack{ x \to q \\ x \in \ShenCone(q)}} u(x) = f(q), \quad\text{for a.e.\@ } q \in \partial\Omega
   \end{align*}
   and we say that $u = f$ \emph{in the sense of nontangential convergence from the outside} if 
   \begin{align*}
-    \lim_{\substack{ x \to q \\ x \in \ShenCone^{\,\mathrm{ext}}(q)}} u(x) = f(q), \quad\text{for a.e. } q \in \partial\Omega.
+    \lim_{\substack{ x \to q \\ x \in \ShenCone^{\,\mathrm{ext}}(q)}} u(x) = f(q), \quad\text{for a.e.\@ } q \in \partial\Omega.
   \end{align*}
   If both of the above limits exist and coincide we say that $u = f$ \emph{in the sense of nontangential convergence}.
   %We will sometimes denote a cone coming from a nontangential approach region as above by $\ShenCone(q)$.
@@ -183,7 +183,7 @@ To put our new vocabulary to use, we will formulate an prove the divergence theo
 \begin{prop}
   \label{prop:approximationArgument}
   Let $\Omega \subset \R^d$, $d \geq 2$, a bounded Lipschitz domain and $f \colon \Omega \to \C^d$ smooth and $g \colon \partial\Omega \to \C$ measurable.
-  Suppose that the nontangential limit $f_+$ exists almost everywhere and that the nontangential maximal function $(g)^*$ is integrable on $\partial\Omega$ and $|f_+| \leq (g)^*$ a.e..
+  Suppose that the nontangential limit $f_+$ exists almost everywhere and that the nontangential maximal function $(g)^*$ is integrable on $\partial\Omega$ and $|f_+| \leq (g)^*$ a.e.
   Then Green's formula
   \begin{align}
     \int_{\partial\Omega} f_k(s) n_k(s) \d\sigma(s) = \int_\Omega \div(f)(x) \d x
@@ -206,7 +206,7 @@ To put our new vocabulary to use, we will formulate an prove the divergence theo
   Furthermore, we know that $\lim_{l \to \infty} n_k^{(l)}(\Lambda_l(x)) = n_k(x)$ almost everywhere by Theorem \ref{thm:smoothApproximation} and that $f$ has a nontangential limit almost everywhere.
   This gives us that 
   \begin{align*}
-    \lim_{l \to \infty} \vartheta_l(x) \, f_k(\Lambda_l(x)) \, n_k^{(l)}(\Lambda_l(x)) = f_k(x) n_k(x), \quad\text{a.e. } x \in \partial\Omega.
+    \lim_{l \to \infty} \vartheta_l(x) \, f_k(\Lambda_l(x)) \, n_k^{(l)}(\Lambda_l(x)) = f_k(x) n_k(x), \quad\text{a.e.\@ } x \in \partial\Omega.
   \end{align*}
   As this sequence of integrands is dominated by $\delta (g)^*$ with $(g)^* \in \Ell^1(\partial\Omega)$ by assumption and $\delta$ the uniform bound to $\vartheta_l$ due to Theorem \ref{thm:smoothApproximation} iv), the dominated convergence theorem is applicable and yields
   \begin{align}
