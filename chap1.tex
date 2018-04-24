@@ -401,7 +401,7 @@ Now we define the Stokes operator for $p < 2$ as announced.
   Then the \emph{Stokes operator on} $\Ell^p_\sigma(\Omega)$ is defined via
   \begin{align*}
     \Dom(A_p) & \coloneqq \big\{ u \in \Ell^p_\sigma(\Omega) \colon \Psi u \in \Dom(A^*_{p'}) \big\} \\
-    A_p = &\coloneqq \Psi^{-1} A^*_{p'} \Psi u,
+    A_p &\coloneqq \Psi^{-1} A^*_{p'} \Psi u,
   \end{align*}
   where $p' = p/(1 - p)$ denotes the Hölder conjugate exponent of $p$ and $A^*_{p'}$ the adjoint operator to $A_{p'}$.
 \end{defn}
@@ -418,10 +418,10 @@ Without investing too much additional work, it is now possible to prove the foll
   the operator $A_p$ is closed with dense domain. Furthermore $0 \in \rho(A_p)$.
 \end{thm}
 
-The natural question arises when comparing Theorem \ref{thm:stokesOperatorLp} with the Hilbert space counterpart Theorem \ref{prop:stokesOperatorL2}: Does the Stokes operator generate a bounded analytic semigroup in $\Ell^p_\sigma$?
-An affirmative answer was given by Shen in 2012 with his seminal paper \cite{Shen2012} by proving the necessary resolvent estimates for $d \geq 3$.
+A natural question arises when comparing Theorem \ref{thm:stokesOperatorLp} with the Hilbert space counterpart Theorem \ref{prop:stokesOperatorL2}: Does the Stokes operator generate a bounded analytic semigroup in $\Ell^p_\sigma$?
+An affirmative answer was given by Shen in 2012 with his seminal paper \cite{Shen2012} in which he derives the necessary resolvent estimates for $d \geq 3$:
 
-\begin{thm}[Shen]
+\begin{thm}[Shen, {\cite[Thm.\@~1.1]{Shen2012}}]
   \label{thm:main}
   Let $\Omega$ be a bounded Lipschitz domain in $\R^d$, $d \geq 3$.
   There exists $\varepsilon > 0$, such that for all
@@ -430,13 +430,14 @@ An affirmative answer was given by Shen in 2012 with his seminal paper \cite{She
   \end{align*}
   there exists a constant $C > 0$ such that for every $f \in \Ell^p_\sigma(\Omega)$ and all $\lambda \in \Sigma_\theta$ the inequality
   \begin{align*}
-    |\lambda| \| (\lambda + A_p)^{-1} \|_{\Ell^p(\Omega; \C^d)} \leq C \|f\|_{\Ell^p(\Omega; \C^d)}
+    |\lambda|\, \big\| \, (\lambda + A_p)^{-1} f\, \big\|_{\Ell^p(\Omega; \C^d)} 
+    \leq C\, \|f\|_{\Ell^p(\Omega; \C^d)}
   \end{align*}
   holds. In particular $-A_p$ is the generator of a bounded analytic semigroup on $\Ell^p_\sigma(\Omega)$.
 \end{thm}
 
 This theorem gave an affirmative answer to Taylor's conjecture in \cite{taylor}. 
-Curiously this positive result is limited to $d \geq 3$ even though Shen states that the approach he developed should also work in the case $d = 2$.
+Curiously, this positive result is limited to the case $d \geq 3$ even though Shen states that the approach he developed should also work for $d = 2$, see \cite[p.\@~399]{Shen2012}.
 This sets the starting point for the present thesis.
 In the subsequent chapters, we will not only present Shen's approach to the problem of the resolvent estimates but we will furthermore extend his results whenever possible to the two dimensional case.
 
