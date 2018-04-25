@@ -290,7 +290,11 @@ This aspect regarding the uniformity of the estimates and the $p$-sensitivity of
   We will later treat the operators $A_{q'}$, where $q'$ the dual exponent to $q$ by a dualization argument.
   If necessary, we chose $\varepsilon$ smaller than the parameter of the same name from Theorem~\ref{thm:stokesOperatorLp} such that we may assume $A^q$ to be a closed operator.
   Now, let $f \in \Ell^q_\sigma(\Omega)$.
-  We already know that $u = (1 + |\lambda|)^{-1} T_\lambda(f) = (A_2 + \lambda)^{-1} \PP_2(f) \in \Ell^q_\sigma(\Omega) \cap \Dom(A_2)$  by the mapping properties of $T_\lambda(f)$.
+  We already know that 
+  \begin{align*}
+    u = (1 + |\lambda|)^{-1} T_\lambda(f) = (A_2 + \lambda)^{-1} \PP_2(f) \in \Ell^q_\sigma(\Omega) \cap \Dom(A_2)
+  \end{align*}
+  by the mapping properties of $T_\lambda(f)$.
   As $\Ell^q_\sigma(\Omega) \subseteq \Ell^2_\sigma(\Omega)$, we have furthermore that
   \begin{align*}
     \lambda u + A_2 u = f \in \Ell^q_\sigma(\Omega)
@@ -302,7 +306,7 @@ This aspect regarding the uniformity of the estimates and the $p$-sensitivity of
     \lambda u + A_q u = f \in \Ell^q_\sigma(\Omega)
   \end{align*}
   By the uniqueness of $u$, which follows from the $\Ell^2$ theory of the Stokes resolvent problem, we have that $u = (\lambda + A_q)^{-1} f$.
-  Hence, estimate~\eqref{eq:tlambdaEstimate} gives
+  Hence, the $\Ell^q$ boundedness of $T_\lambda$ gives
   \begin{align*}
     \|u\|_{\Ell^q(\Omega; \C^d)} 
     = \big\|\,(\lambda + A_q)^{-1}f \,\big\|_{\Ell^q(\Omega; \C^d)}
@@ -311,7 +315,7 @@ This aspect regarding the uniformity of the estimates and the $p$-sensitivity of
   and thus $A_q$ is sectorial on $\Ell^q_\sigma(\Omega)$.
   %If necessary, we take $\varepsilon$ to be the minimum of the parameter $\varepsilon$ used in the first part of this proof and the one from Theorem~\ref{thm:stokesOperatorLp}.
   Now consider the dual exponent $q' \in (p_d' - \varepsilon, 2)$, where $q' = q / (q - 1)$ and $p_d' = 2d / (d + 1)$.
-  As the results in Chapter~\ref{chap:1} show, the spaces $\Ell^q_\sigma(\Omega)$ are reflexive and $\Ell^q_\sigma(\Omega)^*$ is isometrically isomorphic to $\Ell^{q'}_\sigma(\Omega)$.% where $q'$ denotes the dual exponent $q' = q (q - 1)^{-1}$, see Lemma~\ref{lem:duality}.
+  As the results in Chapter~\ref{chap:1} show, the space $\Ell^q_\sigma(\Omega)$ is reflexive and $\Ell^q_\sigma(\Omega)^*$ is isometrically isomorphic to $\Ell^{q'}_\sigma(\Omega)$.% where $q'$ denotes the dual exponent $q' = q (q - 1)^{-1}$, see Lemma~\ref{lem:duality}.
   %By a general result about sectorial operators on reflexive Banach spaces, which can be found in Haase's book \cite[Prop.\@~2.1.1]{haase}, we get that $A_q$ is indeed densely defined and that $A_q^* =  A_{q'}$.
   Therefore results about the dual operator yield that
   \begin{align*}
