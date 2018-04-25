@@ -338,10 +338,10 @@ We can now prove the boundedness of certain nontangential maximal operators.
   Let $q \in \partial\Omega$,  $x \in \verCone(q)$, and set $t = |x - q|$.
   Then,
   \begin{align*}
-    |(\nabla u_j)(x) |
-    &= \bigg| \int_{\partial\Omega} \nabla_x \Gamma_{jk} (x - y; \lambda) f_k(y) \d \sigma(y)\, \bigg| \\
-    &\leq \bigg| \int_{|y - q| > t} \nabla_x\Gamma_{jk}(x - y; \lambda) f_k(y) \d \sigma(y) \, \bigg| + \bigg| \int_{|y - q| \leq t} \nabla_x \Gamma_{jk}(x - y; \lambda) f_k(y) \d \sigma(y)\, \bigg| \\
-    &\eqqcolon I_1 + I_2.
+    &|(\nabla u_j)(x) | \\
+    &\quad= \bigg| \int_{\partial\Omega} \nabla_x \Gamma_{jk} (x - y; \lambda) f_k(y) \d \sigma(y)\, \bigg| \\
+    &\quad\leq \bigg| \int_{|y - q| > t} \nabla_x\Gamma_{jk}(x - y; \lambda) f_k(y) \d \sigma(y) \, \bigg| + \bigg| \int_{|y - q| \leq t} \nabla_x \Gamma_{jk}(x - y; \lambda) f_k(y) \d \sigma(y)\, \bigg| \\
+    &\quad\eqqcolon I_1 + I_2.
   \end{align*}
   We will now estimate $I_1$ and $I_2$ separately.
   Note that in Verchota cones $\verCone(q)$ it holds that for all $s \in \partial\Omega$ we have $|x - s| \geq C\, |x - q|$, where $C > 0$ is a constant only depending on $d$ and the Lipschitz character of $\Omega$, see inequality~\eqref{eq:verCone1}.

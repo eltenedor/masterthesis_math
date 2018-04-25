@@ -93,8 +93,8 @@ As of now, our toolbox comprises enough tools to prove that solutions to the Sto
  % Then for all balls $\BB(x_0,\, r)$ that are either centered on $\partial\Omega$ or satisfy $\alpha_2 \BB(x_0,\, r) \subseteq \Omega$ the estimate
   \begin{align}
     \label{eq:reverseHoelder}
-    \bigg( \frac{1}{r^{d}} \int_{\BB(x_0, r) \cap \Omega} |u|^{p_d} \bigg)^{1/{p_d}} 
-    \leq C \, \bigg( \frac{1}{r^{d}} \int_{\BB(x_0, 2 r) \cap \Omega} |u|^2 \bigg)^{1/2}
+    \bigg( \frac{1}{r^{d}} \int_{\BB(x_0,\, r) \cap \Omega} |u(x)|^{p_d} \d x\bigg)^{1/{p_d}} 
+    \leq C \, \bigg( \frac{1}{r^{d}} \int_{\BB(x_0,\, 2 r) \cap \Omega} |u(x)|^2 \d x \bigg)^{1/2}
   \end{align}
   holds, where $p_d = 2d / (d - 1)$.
   Here, $C > 0$ only depends on $d$, $\theta$ and the Lipschitz character of $\Omega$.
@@ -121,10 +121,10 @@ As of now, our toolbox comprises enough tools to prove that solutions to the Sto
 
   For (2), note that if $x_0 \in \partial\Omega$, then by Lemma~\ref{lem:reverseHoelderCylinder} and Pythagoras' theorem we have
   \begin{align*}
-    \bigg( \frac{1}{r^d} \int_{\BB(x_0,\, r) \cap \Omega} |u|^p \bigg)^{1/p}
-    &\leq \bigg( \frac{1}{r^d} \int_{D_{\eta_{x_0}}(r)} |u|^p \bigg)^{1/p} \\[0.5em]
-    &\leq C \, \bigg( \frac{1}{r^d} \int_{D_{\eta_{x_0}}(2 r)} |u|^p \bigg)^{1/p} \\[0.5em]
-    &\leq C \, \bigg( \frac{1}{r^d} \int_{\BB(x_0,\, \alpha_1 r) \cap \Omega} |u|^2 \bigg)^{1/2},
+    \bigg( \frac{1}{r^d} \int_{\BB(x_0,\, r) \cap \Omega} |u(x)|^p \d x \bigg)^{1/p}
+    &\leq \bigg( \frac{1}{r^d} \int_{D_{\eta_{x_0}}(r)} |u(x)|^p \d x \bigg)^{1/p} \\[0.5em]
+    &\leq C \, \bigg( \frac{1}{r^d} \int_{D_{\eta_{x_0}}(2 r)} |u(x)|^p \d x \bigg)^{1/p} \\[0.5em]
+    &\leq C \, \bigg( \frac{1}{r^d} \int_{\BB(x_0,\, \alpha_1 r) \cap \Omega} |u(x)|^2 \d x \bigg)^{1/2},
   \end{align*}
   with a constant $C > 0$ that only depends on $d$, $M$ and $\theta$.
   Now, the claim follows readily from an application of Lemma~\ref{lem:ballsforballs} with the parameter $\alpha = 2 \in (1, \alpha_2)$.
@@ -150,7 +150,7 @@ As of now, our toolbox comprises enough tools to prove that solutions to the Sto
     \label{rem:reverseHoelder}
     The self-improving property of reverse Hölder estimates can now be used to make the result of Lemma~\ref{lem:reverseHoelder} a little bit better. 
     Let $0 < 2r < r_0$.
-    We are aiming to apply Proposition~\ref{prop:giaquinta} for $x_0 \in \overline\Omega$ on the open set $\BB(x_0, \alpha_2 r)$, with $\alpha_2$ as in Lemma~\ref{lem:reverseHoelder}.
+    We are aiming to apply Proposition~\ref{prop:giaquinta} for $x_0 \in \overline\Omega$ on the open set $\Omega \cap \BB(x_0, \alpha_2 r)$, with $\alpha_2$ as in Lemma~\ref{lem:reverseHoelder}.
     Let also $u$ and $p_d$ be as in Lemma~\ref{lem:reverseHoelder} and set $R_0 = r_0/2$. 
     Then, for $f = |u|^{2} \chi_{\BB(x_0,\,\alpha_2 r) \cap \Omega}$ which can be considered as a partial extension of $u$ by $0$ to $\R^d$ and $q = p/2$, inequality \eqref{eq:reverseHoelder} reads
     \begin{align*}
@@ -163,8 +163,8 @@ As of now, our toolbox comprises enough tools to prove that solutions to the Sto
     \begin{align*}
       \bigg( \frac{1}{r^d} \int_{\BB(x_0,\, r/2) \cap \Omega} |u|^{p + \varepsilon'}\d x \bigg)^{2/(p + \varepsilon ')} 
       &= \bigg( \frac{1}{r^d} \int_{\BB(x_0,\, r/2)} f^{q + \varepsilon} \d x \bigg)^{1/(q + \varepsilon)} \\[0.5em]
-      &\leq \tilde C\, \bigg( \frac{1}{r^d} \int_{\BB(x_0,\, r) \cap \Omega} |u|^p \d x \bigg)^{1/p} \\[0.5em]
-      &\leq \tilde C C\, \bigg( \frac{1}{r^d} \int_{\BB(x_0,\,2r)\cap \Omega } |u|^2 \d x \bigg)^{1/2}.
+      &\leq \tilde C\, \bigg( \frac{1}{r^d} \int_{\BB(x_0,\, r) \cap \Omega} |u|^p \d x \bigg)^{2/p} \\[0.5em]
+      &\leq \tilde C C\, \bigg( \frac{1}{r^d} \int_{\BB(x_0,\,2r)\cap \Omega } |u|^2 \d x \bigg).
     \end{align*}
     Another application of Lemma~\ref{lem:ballsforballs} gives us that for all $r < ( r_0/4 )$ it holds that
     \begin{align}
@@ -182,19 +182,19 @@ As of now, our toolbox comprises enough tools to prove that solutions to the Sto
 
 The following extrapolation theorem by Shen \cite[Thm.\@~3.3]{shenExtra} will be necessary in order to derive $\Ell^p$ bounds on the solution of the Stokes resolvent system.
 Essentially, this theorem states that if the non locality of an $\Ell^2$ bounded operator  $T$ can be quantified via a reverse Hölder estimate, then this operator extends to an $\Ell^p$ bounded operator for certain values $p$.
-In this sense, this extrapolation theorem can also be considered a p-sensitive version of the famous Calder\'on-Zygmund Lemma.
+In this sense, this extrapolation theorem can also be considered a $p$-sensitive version of the famous Calder\'on-Zygmund Lemma.
 Note that a more recent result from Tolksdorf \cite[Thm.\@~4.1]{tolksdorf2017} generalizes this result to operators which are defined on spaces of Banach space valued functions.
 
 \begin{thm}
   \label{thm:extrapolation}
-  Let $T$ be a bounded sublinear operator on $\Ell^2(\Omega; \C^d)$, where $\Omega$ is a bounded Lipschitz domain in $\R^n$ and $\|T\|_{\Li(\Ell^2(\Omega; \C^d))} \leq C_0$.
+  Let $T$ be a bounded sublinear operator on $\Ell^2(\Omega; \C^d)$, where $\Omega$ is a bounded Lipschitz domain in $\R^d$ and $\|T\|_{\Li(\Ell^2(\Omega; \C^d))} \leq C_0$.
   Let $p > 2$.
   Suppose that there exist constants $R_0 > 0$, $N > 1$ and $\alpha_2 > \alpha_1 > 1$ such that for any bounded measurable function $f$ with $\supp(f) \subseteq \Omega \setminus \alpha_2 B$,
   \begin{align*}
     \Big\{ \frac{1}{r^d} \int_{\Omega \cap B} |Tf|^p \d x \Big\}^{1/p}
     \leq N \Big\{ \bigg( \frac{1}{r^d} \int_{\Omega \cap \alpha_1 B} |T f|^2 \d x \bigg)^{1/2} + \sup_{B' \supset B} \bigg( \frac{1}{|B'|} \int_{B'} |f|^p \d x \bigg)^{1/p} \Big\},
   \end{align*}
-  where $B = B(x_0, r)$ is a ball with $0 < r < R_0$ and either $x_0 \in \partial\Omega$ or $B(x_0, \alpha_2 r) \subseteq \Omega$.
+  where $B = \BB(x_0, r)$ is a ball with $0 < r < R_0$ and either $x_0 \in \partial\Omega$ or $B(x_0, \alpha_2 r) \subseteq \Omega$.
   Then, the restriction of $T$ to $\Ell^q(\Omega;\C^d)$ yields a bounded operator on $\Ell^q(\Omega; \C^d)$ for any $2 < q < p$.
   Moreover, the operator norm $\|T\|_{\Li(\Ell^q(\Omega; \C^d))}$ is bounded by a constant depending at most on $d$, $N$, $C_0$, $p$, $q$ and the Lipschitz character of $\Omega$.
 \end{thm}
@@ -227,13 +227,13 @@ This aspect regarding the uniformity of the estimates and the $p$-sensitivity of
 %\end{thm}
 
 \begin{proof}[Proof of Theorem~\ref{thm:main}]
-  Consider a family of scaled solution operators to the Stokes resolvent system \eqref{eq:stokesResolventSystem}, more precisely consider the family
+  Consider a family of scaled solution operators to the Stokes resolvent system \eqref{eq:stokesResolventSystem} with right-hand side $f \in \Ell^2(\Omega, \C^d)$, more precisely consider the family
   \begin{align*}
     T_\lambda \colon \Ell^2(\Omega; \C^d) \to \Ell^2(\Omega; \C^d), \quad f \mapsto (|\lambda| + 1) (A_2 + \lambda)^{-1} \PP_2 f,
   \end{align*}
-  where $\lambda \in \Sigma_\theta$, $\theta \in (0, \pi/2)$.
+  where $\lambda \in \Sigma_\theta$, for fixed $\theta \in (0, \pi/2)$.
   Let us first verify that $u \coloneqq (|\lambda| + 1)^{-1} T_\lambda(f)$ does indeed solve \eqref{eq:stokesResolventSystem}.
-  To this end, note that since $\PP_2 f \in \Ell^2_\sigma(\Omega)$ we know that by the mapping properties of the Stokes resolvent we have $u \in \HH^1_{0,\sigma}(\Omega)$ and
+  To this end, note that since $\PP_2 f \in \Ell^2_\sigma(\Omega)$ we know that by the mapping properties of the Stokes resolvent we have $u \in \HH^1_{0,\,\sigma}(\Omega)$ and
   \begin{align*}
     A_2 u + \lambda u = \PP_2 f.
   \end{align*}
@@ -246,7 +246,14 @@ This aspect regarding the uniformity of the estimates and the $p$-sensitivity of
     -\Delta u + \nabla \pi + \lambda u = f
   \end{align*}
   holds in the sense of distributions.
-  Furthermore, by testing this identity with $u$ and then using the Poincar\'e inequality together with Lemma~\ref{lem:laxMilgramIneq}, we derive the resolvent-type estimate
+  Furthermore, by testing this identity with $\overline u$ as in the proof of Lemma \ref{lem:laxMilgramIneq} we derive the estimate
+  \begin{align}
+    \label{eq:inequalityUnderConsideration}
+    %\int_\Omega |\nabla u|^2 \d x + \lambda \int_\Omega |u|^2 = \int_\Omega f \cdot \overline u \d x
+    \int_\Omega |\nabla u|^2 \d x + \Big\{ \Ret(\lambda) + \alpha \big| \Im(\lambda) \big| \, \Big\} \int_\Omega |u|^2 \d x 
+    \leq (1 + \alpha)\, \bigg| \int_\Omega f \cdot \overline u \d x\, \bigg|.
+  \end{align} 
+  Now, using Lemma~\ref{lem:laxMilgramIneq} to apply the reverse triangle inequality,, we arrive at the estimate
   \begin{align*}
     \| T_\lambda(f) \|_{\Ell^2(\Omega; \C^d)} = (|\lambda| + 1)\, \|u\|_{\Ell^2(\Omega; \C^d)}
     \leq C_0 \, \|f\|_{\Ell^2(\Omega; \C^d)},
@@ -255,31 +262,34 @@ This aspect regarding the uniformity of the estimates and the $p$-sensitivity of
   Accordingly, the family $T_\lambda$ is bounded on $\Ell^2(\Omega; \C^d)$ and $C_0$ is a uniform bound on the operator norms $\|T_\lambda\|_{\Li(\Ell^2(\Omega; \C^d))}$.
 
   We will now show that the operators $T_\lambda$ fulfill the estimate in Theorem~\ref{thm:extrapolation}, in order to deduce their $\Ell^p$ boundedness.
-  To this end, let $x_0 \in \overline \Omega$ and $0 < 4r < r_0$ such that $3 \BB(x_0, r) \subseteq \Omega$ or $\BB(x_0, r)$ is centered on $\partial\Omega$.
-  Furthermore, let $f \in \Ell^\infty(\Omega; \C^d)$ with support in $\Omega \setminus 3 \BB(x_0, r)$.
-  By construction, $(u,\pi)$ does not only solve \eqref{eq:stokesResolventProblem} in $\Omega$, the pair also solves the Dirichlet problem
+  To this end, let $x_0 \in \overline \Omega$ and $0 < 4r < r_0$ such that $\BB(x_0,3 r) \subseteq \Omega$ or $\BB(x_0, r)$ is centered on $\partial\Omega$.
+  Furthermore, let $f \in \Ell^\infty(\Omega; \C^d)$ with support in $\Omega \setminus \BB(x_0, 3 r)$.
+  As shown before the solution $(u,\pi)$ fulfills \eqref{eq:stokesResolventSystem} with right-hand side $f$ in $\Omega$.
+  Furthermore, the pair also solves the Dirichlet problem
   \begin{align*}
     -\Delta u + \nabla \pi + \lambda u &= 0 \\
     \div(u)&= 0
   \end{align*}
   in $\Omega \cap 3 \BB(x_0, r)$ where $u = 0$ on $\partial\Omega \cap 3 \BB(x_0, r)$.
-  Therefore, Remark~\ref{rem:reverseHoelder} and more precisely inequality \eqref{eq:improvedreverseHoelder} give that
+  Therefore, Remark~\ref{rem:reverseHoelder} and more precisely the improved reverse Hölder inequality \eqref{eq:improvedreverseHoelder} give that
   \begin{align*}
     \bigg( \frac{1}{r^d} \int_{\Omega \cap \BB(x_0,\, r)} |u|^p \d x \bigg)^{1/p} 
-    \leq C\, \bigg( \frac{1}{r^d} \int_{\Omega \cap 2 \BB(x_0,\, r)} |u|^2 \d x \bigg)^{1/2},
+    \leq C\, \bigg( \frac{1}{r^d} \int_{\Omega \cap  \BB(x_0,\, 2 r)} |u|^2 \d x \bigg)^{1/2},
   \end{align*}
   where $p = p_d + \varepsilon$.
   Multiplying this inequality on both sides with $(|\lambda| + 1)$ gives
   \begin{align}
     \label{eq:tlambdaEstimate}
     \bigg( \frac{1}{r^d} \int_{\Omega \cap \BB(x_0,\, r)} |T_\lambda(f)|^p \d x \bigg)^{1/p} 
-    \leq C\, \bigg( \frac{1}{r^d} \int_{\Omega \cap 2 \BB(x_0,\, r)} |T_\lambda(f)|^2 \d x \bigg)^{1/2},
+    \leq C\, \bigg( \frac{1}{r^d} \int_{\Omega \cap \BB(x_0,\, 2 r)} |T_\lambda(f)|^2 \d x \bigg)^{1/2},
   \end{align}
   where $C > 0$ depends only on $d$, $\theta$ and the Lipschitz character of $\Omega$.
-  Now, Shen's extrapolation theorem, Theorem~\ref{thm:extrapolation}, gives that $T_\lambda$ is bounded on $\Ell^q(\Omega; \C^d)$ for all $2 < q < p_d + \varepsilon$ and that the operator norms $\|T_\lambda\|_{\Li(\Ell^q(\Omega; \C^d))}$ are uniformly bounded by a constant $C_q > 0$ depending only on $d$, $\theta$, $q$ and the Lipschitz character of $\Omega$.
+  Now, Shen's extrapolation theorem, Theorem~\ref{thm:extrapolation}, gives that, for all $2 < q < p_d + \varepsilon$, the restriction of $T_\lambda$ to $\Ell^q(\Omega; \C^d)$ is bounded on $\Ell^q(\Omega; \C^d)$ and that the operator norms $\|T_\lambda\|_{\Li(\Ell^q(\Omega; \C^d))}$ are uniformly bounded by a constant $C_q > 0$ depending only on $d$, $\theta$, $q$ and the Lipschitz character of $\Omega$.
 
   In the next step of the proof, we study the relationship between the operator $T_\lambda$ and the resolvent of the Stokes operator $A_q$ on $\Ell^q_\sigma(\Omega)$ for $q \in (2, p_d + \varepsilon)$.
-  To this end, let $f \in \Ell^q_\sigma(\Omega)$.
+  We will later treat the operators $A_{q'}$, where $q'$ the dual exponent to $q$ by a dualization argument.
+  If necessary, we chose $\varepsilon$ smaller than the parameter of the same name from Theorem~\ref{thm:stokesOperatorLp} such that we may assume $A^q$ to be a closed operator.
+  Now, let $f \in \Ell^q_\sigma(\Omega)$.
   We already know that $u = (1 + |\lambda|)^{-1} T_\lambda(f) = (A_2 + \lambda)^{-1} \PP_2(f) \in \Ell^q_\sigma(\Omega) \cap \Dom(A_2)$  by the mapping properties of $T_\lambda(f)$.
   As $\Ell^q_\sigma(\Omega) \subseteq \Ell^2_\sigma(\Omega)$, we have furthermore that
   \begin{align*}
@@ -299,15 +309,17 @@ This aspect regarding the uniformity of the estimates and the $p$-sensitivity of
     \leq \frac{C_q}{ 1 + |\lambda|} \|f\|_{\Ell^q(\Omega; \C^d)}
   \end{align*}
   and thus $A_q$ is sectorial on $\Ell^q_\sigma(\Omega)$.
-  If necessary, we take $\varepsilon$ to be the minimum of the parameter $\varepsilon$ used in the first part of this proof and the one from Theorem~\ref{thm:stokesOperatorLp}.
-  As the results in Chapter~\ref{chap:1} show, the spaces $\Ell^q_\sigma(\Omega)$ are reflexive and $\Ell^q_\sigma(\Omega)^*$ is isometrically isomorphic to $\Ell^{q'}_\sigma(\Omega)$ where $q'$ denotes the dual exponent $q' = q (q - 1)^{-1}$, see Lemma~\ref{lem:duality}.
+  %If necessary, we take $\varepsilon$ to be the minimum of the parameter $\varepsilon$ used in the first part of this proof and the one from Theorem~\ref{thm:stokesOperatorLp}.
+  Now consider the dual exponent $q' \in (p_d' - \varepsilon, 2)$, where $q' = q / (q - 1)$ and $p_d' = 2d / (d + 1)$.
+  As the results in Chapter~\ref{chap:1} show, the spaces $\Ell^q_\sigma(\Omega)$ are reflexive and $\Ell^q_\sigma(\Omega)^*$ is isometrically isomorphic to $\Ell^{q'}_\sigma(\Omega)$.% where $q'$ denotes the dual exponent $q' = q (q - 1)^{-1}$, see Lemma~\ref{lem:duality}.
   %By a general result about sectorial operators on reflexive Banach spaces, which can be found in Haase's book \cite[Prop.\@~2.1.1]{haase}, we get that $A_q$ is indeed densely defined and that $A_q^* =  A_{q'}$.
-  Therefore,
+  Therefore results about the dual operator yield that
   \begin{align*}
-    \big\| \, (A_q + \lambda)^{-1} \, \big\|_{\vphantom{\Li(\Ell^{q'}_\sigma(\Omega))} \Li(\Ell^q_\sigma(\Omega))}
-    = \big\|\, \big(A_q + \lambda)^{-1}\big)^* \, \big\|_{\vphantom{\Li(\Ell^{q'}_\sigma(\Omega))}\Li(\Ell^{q}_\sigma(\Omega)^{\stackrel{*}{\phantom{ }}})}
-    = \big\| \, (A_{q'} + \lambda)^{-1} \, \big\|_{\Li(\Ell^{q'}_\sigma(\Omega))}.
+    \big\| \, (A_{q'} + \lambda)^{-1} \, \big\|_{\Li(\Ell^{q'}_\sigma(\Omega))}
+    = \big\|\, \big(( A_q + \lambda)^{-1}\big)^* \, \big\|_{\vphantom{\Li(\Ell^{q'}_\sigma(\Omega))}\Li(\Ell^{q}_\sigma(\Omega)^{\stackrel{*}{\phantom{ }}})}
+    = \big\| \, (A_q + \lambda)^{-1} \, \big\|_{\vphantom{\Li(\Ell^{q'}_\sigma(\Omega))} \Li(\Ell^q_\sigma(\Omega))}
+    \leq \frac{C_q}{1 + |\lambda|}.
   \end{align*}
-  Consequently, also the operators $A_{q'}$ are sectorial.
+  Consequently, also the operators $A_{q'}$ are sectorial as Theorem~\ref{thm:stokesOperatorLp} assures that $A_{q'}$ is closed.
   This completes the proof.
 \end{proof}
