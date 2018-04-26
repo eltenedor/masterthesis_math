@@ -33,11 +33,11 @@ Then, applications of the chain rule and the product rule of differentiation giv
   %%
   \partial_\beta \partial_\alpha \partial_\gamma G(x; \lambda)
   %%
-  &= \frac{\ii}{4} \, k \, \bigg( 3\, \frac{x_\alpha x_\beta x_\gamma}{|x|^5} - \frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha\gamma} x_\beta + \delta_{\alpha\beta} x_\gamma}{|x|^3} \bigg)\, \frac{\d{}}{\d z} H_0^{(1)}(z) \\[0.5em]
+  &= \frac{\ii}{4} \, k^3 \; \frac{x_\alpha x_\beta x_\gamma}{|x|^3} \, \frac{\d{}^3}{\d z^3} H_0^{(1)}(z)\\[0.5em]
   %
   &\quad + \frac{\ii}{4} \, k^2 \,\bigg(\frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha \gamma} x_\beta + \delta_{\alpha \beta} x_\gamma}{|x|^2} - 3\, \frac{x_\alpha x_\beta x_\gamma}{|x|^4} \bigg)\, \frac{\d{}^2}{\d z^2} H_0^{(1)}(z) \\[0.5em]
   %
-  &\quad + \frac{\ii}{4} \, k^3 \; \frac{x_\alpha x_\beta x_\gamma}{|x|^3} \, \frac{\d{}^3}{\d z^3} H_0^{(1)}(z)\,.
+  &\quad+ \frac{\ii}{4} \, k \, \bigg( 3\, \frac{x_\alpha x_\beta x_\gamma}{|x|^5} - \frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha\gamma} x_\beta + \delta_{\alpha\beta} x_\gamma}{|x|^3} \bigg)\, \frac{\d{}}{\d z} H_0^{(1)}(z) \,.
 \end{align*}
 
 We will now consider derivatives of the Hankel function $H_0^{(1)}(z)$ by calculating the complex derivatives of the series expansion of $H_0^{(1)}(z)$ which may be found in Lebedev \cite[Sec.\@~5.6]{lebedev}. 
@@ -53,7 +53,7 @@ The aforementioned expansions read:
   +  \mathlarger{\sum}_{l = 0}^\infty \, \frac{(-1)^l}{(l!)^2 \, 4^l} \,  z^{2l} \log(z) \\
   %&= \frac{2 \ii}{\pi} \, \mathlarger{\sum}_{l = 0}^\infty \, \frac{(-1)^l}{(l!)^2 \, 4^l} \,  z^{2l} \bigg( -\frac{\ii \pi}{2} - \log(2) - \psi(l + 1) \bigg) + \frac{2 \ii}{\pi} \, \mathlarger{\sum}_{l = 0}^\infty \, \frac{(-1)^l}{(l!)^2 \, 4^l} \,  z^{2l} \log(z) \\
   &= \mathlarger{\sum}_{l = 0}^\infty \, a_l \,  z^{2l} \, C_l 
-   + \mathlarger{\sum}_{l = 0}^\infty \, a_l  \,z^{2l} \log(z)\,, \\[0.5em]
+   + \mathlarger{\sum}_{l = 0}^\infty \, a_l  \,z^{2l} \log(z)\,, \\[1.0em]
   %
   \frac{\pi}{2\ii} \, \frac{\d{}}{\d z} H_0^{(1)}(z)
   %
@@ -62,7 +62,7 @@ The aforementioned expansions read:
   + \mathlarger{\sum}_{l = 0}^\infty \, a_l \, z^{2l - 1} \\
   &= \mathlarger{\sum}_{l = 1}^\infty \, b_l \, z^{2l - 1} \, C_l 
   + \mathlarger{\sum}_{l = 1}^\infty \, b_l \, z^{2l - 1} \log(z) \, 
-  +  \mathlarger{\sum}_{l = 0}^\infty \, a_l \, z^{2l - 1}, \\[0.5em]
+  +  \mathlarger{\sum}_{l = 0}^\infty \, a_l \, z^{2l - 1}, \\[1.0em]
   %
   \frac{\pi}{2\ii} \, \frac{\d{}^2}{\d z^2} H_0^{(1)}(z)
   %
@@ -73,7 +73,7 @@ The aforementioned expansions read:
   &=   \mathlarger{\sum}_{l = 1}^\infty c_l \, z^{2l - 2} \, C_l 
   +  \!\mathlarger{\sum}_{l = 1}^\infty c_l \, z^{2l - 2} \log(z) 
   +  \!\mathlarger{\sum}_{l = 1}^\infty b_l \, z^{2l - 2} 
-  +  \!\mathlarger{\sum}_{l = 0}^\infty a_l \, (2l - 1) \, z^{2l - 2}, \\[0.5em]
+  +  \!\mathlarger{\sum}_{l = 0}^\infty a_l \, (2l - 1) \, z^{2l - 2}, \\[1.0em]
   %
   \frac{\pi}{2\ii} \, \frac{\d{}^3}{\d z^3} H_0^{(1)}(z)
   %
@@ -91,13 +91,15 @@ The aforementioned expansions read:
   + \mathlarger{\sum}_{l = 0}^\infty \, a_l \, (2l - 1)\, (2l - 2) \, z^{2l - 3} ,
 \end{align*}
 where, in order to increase readability, we introduced the following coefficients:
-\begin{align*}
+\begin{align}
+  \begin{alignedat}{1}
   C_l &\coloneqq -\frac{\ii \pi}{2} - \log(2) - \psi(l + 1), \\
   a_l &\coloneqq \frac{(-1)^l}{(l!)^2 \, 4^l}, \quad
   b_l \coloneqq a_l \cdot  2l, \quad
   c_l \coloneqq b_l \cdot (2l - 1) \quad\text{and}\quad
   d_l \coloneqq c_l \cdot (2l - 2).
-\end{align*}
+  \end{alignedat}\label{defnConst}\tag{D1}
+\end{align}
 
 \section*{A.1\quad Proof of Lemma \ref{lem:HelmholtzLaplaceDifference} for $d = 2$}
 \markboth{APPENDIX}{A.1.\quad PROOF OF LEMMA \ref*{lem:HelmholtzLaplaceDifference} FOR $d = 2$}
@@ -117,13 +119,13 @@ In the second step, we will show that all problematic terms cancel when added to
 In order to make the next calculations better to digest, we decompose the third derivative of $G(\,\cdot\, ; \lambda)$ as follows:
 \begin{align*}
   \partial_\beta \partial_\alpha \partial_\gamma G(x; \lambda)
-  = A_1 + A_2 + A_3,
+  = A_3 + A_2 + A_1,
 \end{align*}
 where each $A_i$, $i = 1,\dots,3$, corresponds to the term involving the $i$th derivative of $H_0^{(1)}$.
-Let us start with $A_1$. 
+Let us start with $A_3$. 
 We have
 \begin{align*}
-  A_1 = - \frac{1}{2 \pi } k^3 \, \frac{x_\alpha x_\beta x_\gamma}{|x|^3}  \,
+  A_3 = - \frac{1}{2 \pi } k^3 \, \frac{x_\alpha x_\beta x_\gamma}{|x|^3}  \,
   %%
   &\cdot\,\bigg\{
      \; \mathlarger{\sum}_{l = 2}^\infty \; d_l \, (k|x|)^{2l - 3} \, C_l +  \mathlarger{\sum}_{l = 2}^\infty \; d_l \, (k|x|)^{2l - 3} \log(k|x|)  \\
@@ -132,7 +134,13 @@ We have
   \bigg\}.
   %%
 \end{align*}
-Using the fact $|\lambda| |x|^2 \leq (1/2)$ to trade one $|k| = \sqrt{|\lambda|}$ in the prefactor for a constant times $|x|^{-1}$, the only problematic term in $A_1$ is the first element of the last sum
+Using the fact $|\lambda| |x|^2 \leq (1/2)$ to trade one $|k| = \sqrt{|\lambda|}$ in the prefactor for a constant times $|x|^{-1}$, shows that the prefactor behave as
+\begin{align*}
+  \Big|\, k^3 \, \frac{x_\alpha x_\beta x_\gamma}{|x|^3}\, \Big| 
+  \leq C\, |\lambda| |x|^{-1}, 
+\end{align*}
+with a constant $C > 0$ only depending on $d$.
+Therefore, the only problematic term in $A_3$ is the first element of the last sum
 \begin{align}
   \label{eq:P1}
   %\tag{P1}- \frac{1}{2 \pi } k^3\, \frac{x_\alpha x_\beta x_\gamma}{|x|^3}  \; \mathlarger{\sum}_{l = 0}^{0} \; a_l \, (2l - 1)\, (2l - 2) \, (k|x|)^{2l - 3} .
@@ -149,7 +157,7 @@ For $A_2$, we calculate
   + \; \mathlarger{\sum}_{l = 0}^\infty \; a_l\, (2l - 1) \, (k|x|)^{2l - 2} 
   \bigg\}.
 \end{align*}
-As the prefactor already behaves like $|\lambda| |x|^{-1}$, the problematic terms are given by
+As the prefactor already behaves like $|\lambda| |x|^{-1}$, we identify the following to terms as being problematic:
 \begin{align}
   \label{eq:P2}
   \tag{P2}
@@ -160,14 +168,14 @@ As the prefactor already behaves like $|\lambda| |x|^{-1}$, the problematic term
 %  \, \cdot \mathlarger{\sum}_{l = 0}^0 \; a_l\, (2l - 1) \, (k|x|)^{2l - 2} .
     %
   & - \frac{1}{2\pi} k^2\, \bigg(\, \frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha \gamma} x_\beta + \delta_{\alpha \beta} x_\gamma}{|x|^2} - 3\, \frac{x_\alpha x_\beta x_\gamma}{|x|^4} \, \bigg) 
-    \, \cdot\;  c_1 \, (k|x|)^{2 \cdot 1 - 2} \log(k|x|) \quad\text{and}\\[0.5em]
+    \, \cdot\;  c_1 \, (k|x|)^{2 \cdot 1 - 2} \log(k|x|) \;\;\;\text{and}\\[0.5em]
    &- \frac{1}{2\pi} k^2 \,\bigg(\, \frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha \gamma} x_\beta + \delta_{\alpha \beta} x_\gamma}{|x|^2} - 3\, \frac{x_\alpha x_\beta x_\gamma}{|x|^4} \, \bigg) 
   \, \cdot \; a_0\, (2\cdot 0 - 1) \, (k|x|)^{2 \cdot 0 - 2} .
   \end{alignedat}
 \end{align}
 For the last component, we have the following identity:
 \begin{align*}
-  A_3 = 
+  A_1 = 
   & - \frac{1}{2\pi} k\, \bigg( 3\, \frac{x_\alpha x_\beta x_\gamma}{|x|^5} - \frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha\gamma} x_\beta + \delta_{\alpha\beta} x_\gamma}{|x|^3} \bigg)  \\
   &\,\cdot\, \bigg\{ 
   \; \mathlarger{\sum}_{l = 1}^\infty \; b_l \, (k|x|)^{2l - 1} \, C_l 
@@ -192,12 +200,13 @@ Therefore, problematic terms only arise in the last two sums
   \, \cdot \; a_0 \, (k|x|)^{2 \cdot 0 - 1} .
   \end{alignedat}
 \end{align}
-Note that we have
+Note that we get from the definitions on page \pageref{defnConst}
 \begin{align*}
   a_0 = 1, \qquad c_1 = b_1 = - \frac{1}{2}.
 \end{align*}
 Therefore, we can already see that the logarithmic terms in the sum $\eqref{eq:P2} + \eqref{eq:P3}$ cancel.
-Next, we observe that if we take the sum over the problematic terms \eqref{eq:P1}, \eqref{eq:P2} and \eqref{eq:P3} and subtract $\partial_\beta \partial_\alpha \partial_\gamma G(x; 0)$, the result is $0$ which is easily seen by grouping the terms with the same power of $|x|$:
+Next, we observe that if we take the sum over the problematic terms \eqref{eq:P1}, \eqref{eq:P2} and \eqref{eq:P3} and subtract $\partial_\beta \partial_\alpha \partial_\gamma G(x; 0)$, the result is $0$ which is easily seen by grouping the terms having the same power of $|x|$:
+\begin{samepage}
 \begin{align*}
   &\hspace{-2cm}\mathrm{(P1)} + \mathrm{(P2)} + \mathrm{(P3)} - \partial_\beta \partial_\alpha \partial_\gamma G(x; 0) \\[0.5em]
   = &- \frac{1}{\pi}\, \frac{x_\alpha x_\beta x_\gamma}{|x|^6} \\[0.5em]
@@ -213,6 +222,7 @@ Next, we observe that if we take the sum over the problematic terms \eqref{eq:P1
      + \frac{4}{\pi}\, \frac{x_\alpha x_\beta x_\gamma}{|x|^6} 
      \quad=\quad 0 \,.
 \end{align*}
+\end{samepage}
 
 
 %\newpage
@@ -245,7 +255,7 @@ Now consider the difference
   &\qquad\eqqcolon B_1 + B_2 + B_3 \,,
 \end{align*}
 where we introduced the variables $B_i$, $i = 1,\dots,3$, for the sake of readability.
-As in the previous section we will study the terms $B_i$ independently and extract the terms that do not exhibit the desired behavior.
+As in the previous section, we will study the terms $B_i$ independently and extract the terms that do not exhibit the desired behavior.
 For $B_1$, we have
 \begin{align*}
   B_1 = -\frac{1}{2\pi} k\;  \frac{\delta_{\alpha\beta} x_\gamma}{|x|}  \;
@@ -254,7 +264,7 @@ For $B_1$, we have
   &+ \mathlarger{\sum}_{l = 1}^\infty \; b_l \, (k|x|)^{2l - 1} \log(k|x|) \; \\
   &+  \mathlarger{\sum}_{l = 0}^\infty \; a_l \, (k|x|)^{2l - 1} \; \bigg\}.
 \end{align*}
-In this expression, we only detect one problematic term, namely
+In this expression, we only detect one problematic term, namely the term corresponding to $l = 0$ in the last sum
 \begin{align}
   \label{eq:Q1}
   \tag{Q1}
