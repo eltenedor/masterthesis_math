@@ -6,7 +6,7 @@ Throughout this chapter we let $d$ always denote a natural number greater or equ
 
 \section{Lipschitz-Domains}
 
-In this first section we will establish the fundamental notions regarding bounded Lipschitz domains.
+In this first section, we will establish the fundamental notions regarding bounded Lipschitz domains.
 
 \begin{defn}
   \label{defn:lipschitzDomain}
@@ -35,40 +35,40 @@ In this first section we will establish the fundamental notions regarding bounde
   \end{defn}
 
   That the Lipschitz character is indeed a fruitful concept will be emphasized by the following theorem.
-  This result is a crucial ingredient in the proof of the Rellich estimates in Chapter \ref{chap:4} as it provides a useful approximating property of Lipschitz domains. In short it enables us to approximate a bounded Lipschitz domain $\Omega$ by a sequence $(\Omega_j)$ of $\CC^\infty$ domains in such a way that estimates on $\Omega_j$ with bounding constants that only depend on the Lipschitz characters may be extended to $\Omega$ when taking the limit.
-  The original proof of this Theorem goes back to Ne\v{c}as \cite{necas} and Verchota \cite{verchota}. 
+  This result is a crucial ingredient in the proof of the Rellich estimates in Chapter \ref{chap:4} as it provides a useful approximating property of Lipschitz domains. In short, it enables us to approximate a bounded Lipschitz domain $\Omega$ by a sequence $(\Omega_j)$ of $\CC^\infty$ domains in such a way that estimates on $\Omega_j$ with bounding constants that only depend on the Lipschitz characters may be extended to $\Omega$ when taking the limit.
+  The original proof of this theorem goes back to Ne\v{c}as \cite{necas} and Verchota \cite{verchota}. 
   The presented version of this theorem appeared in Brown \cite{brown}.
 
 \begin{thm}[Ne\v{c}as, Verchota]
   \label{thm:smoothApproximation}
   Let $\Omega$ be a Lipschitz domain.
-  Then there exists a sequence of $\CC^\infty$-domains $(\Omega_k)$ with uniform Lipschitz characters, corresponding homeomorphisms $\Lambda_k \colon \partial\Omega \to \partial\Omega_k$, functions $\vartheta_k \colon \partial\Omega \to \R^+$ and a smooth compactly supported vector field $h \colon \R^d \to \R^d$ which satisfy the following properties:
+  Then there exists a sequence of $\CC^\infty$ domains $(\Omega_k)$ with uniform Lipschitz characters, corresponding homeomorphisms $\Lambda_k \colon \partial\Omega \to \partial\Omega_k$, functions $\vartheta_k \colon \partial\Omega \to \R^+$ and a smooth compactly supported vector field $h \colon \R^d \to \R^d$ which satisfy the following properties:
   \begin{enumerate}[i)]
     \item There exists a covering of $\partial\Omega$ by coordinate cylinders which also serve as coordinate cylinders for $\partial\Omega_k$.
     \item The homeomorhpisms $\Lambda_k \colon \partial \Omega \to \partial\Omega_k$ satisfy
       \begin{align*}
-        \sup_{Q \in \partial\Omega} |Q - \Lambda_k(Q)| \to 0\quad\text{as } k \to \infty
+        \sup_{q \in \partial\Omega} |q - \Lambda_k(q)| \to 0\quad\text{as } k \to \infty
       \end{align*}
-      and $\Lambda_k(P)$ approaches $P$ nontangentially meaning that for all $k \in \N$
+      and $\Lambda_k(q)$ approaches $q$ nontangentially meaning that for all $k \in \N$
       \begin{align*}
-        | P - \Lambda_k(P) | < (1 + \beta) \operatorname{dist}(\Lambda_k(P), \partial\Omega)
+        | q - \Lambda_k(q) | < (1 + \beta) \operatorname{dist}(\Lambda_k(q), \partial\Omega)
       \end{align*}
       for some constant $\beta$ depending only on $d$ and the Lipschitz character of $\Omega\,$.
-    \item The normals $n_k$ of $\partial\Omega_k$ satisfy $\lim_{k \to \infty} n_k(\Lambda_k(P)) = n(P)$ a.e.\@ for all $P \in \partial\Omega$
+    \item The normals $n_k$ of $\partial\Omega_k$ satisfy $\lim_{k \to \infty} n_k(\Lambda_k(q)) = n(q)$ a.e.\@ for all $q \in \partial\Omega$
     \item The functions $\vartheta_k$ satisfy $\delta \leq \vartheta_k \leq \delta^{-1}$ for some $\delta > 0$, $\vartheta^k \to 1$ pointwise a.e.\@ and
       \begin{align*}
-        \int_E \vartheta_k(Q) \d \sigma(Q) = \int_{\Lambda_k(E)} \d \sigma_k(Q),
+        \int_E \vartheta_k(q) \d \sigma(q) = \int_{\Lambda_k(E)} \d \sigma_k(q),
       \end{align*}
       where $E \subset \partial \Omega$ is measurable and $\sigma_k$ denotes the surface measure on $\Omega_k$.
       Furthermore, if $u \colon \partial\Omega_k \to \C$ is a measurable function on $\partial\Omega_k$, the following ``transformation rule'' holds:
       \begin{align*}
          \int_{\partial\Omega} u(\Lambda_k(q)) \vartheta_k(q) \d\sigma(q) = \int_{\partial\Omega_k} u(q) \d \sigma_k(q) .
       \end{align*}
-    \item The vector field $h$ satisfies $h \cdot  n_k \geq c > 0$ a.e.\@ on each $\partial\Omega_k$ where $\nu_k$ denotes the unit inner normal to $\partial\Omega_k$.
+    \item The vector field $h$ satisfies $h \cdot  n_k \geq c > 0$ a.e.\@ on each $\partial\Omega_k$ where $n_k$ denotes the unit outer normal to $\partial\Omega_k$.
   \end{enumerate}
 \end{thm}
 
-The next concept we introduce will allow us to talk about boundary values of functions which are defined on $\Omega$ by considering their nontangential behavior.
+The next concept which we introduce will allow us to talk about boundary values of functions which are defined on $\Omega$ by considering their nontangential behavior.
 The first step will be to define nontangential approach regions.
 Unfortunately, in the literature there exist at least two different concepts which will be introduced in the next definitions.
   In the following, by a cone we mean an open, circular, truncated cone with only one convex component.
@@ -104,12 +104,12 @@ Unfortunately, in the literature there exist at least two different concepts whi
 
 For the existence of such families of cones see the Appendix of Verchota \cite{verchota}.
 
-In Verchota cones $\verCone(q)$ we have the properties that for all $\Omega$ there exists a constant $C > 0$ depending only on the Lipschitz character such that for all $q$, $p \in \partial\Omega$ and any $x \in \Gamma_V(p)$ we have that
+In Verchota cones $\verCone(q)$, we have the properties that for all $\Omega$ there exists a constant $C > 0$ depending only on the Lipschitz character such that for all $q$, $p \in \partial\Omega$ and any $x \in \Gamma_V(p)$ we have that
 \begin{align}
   |x - q| &\geq C |x - p| \label{eq:verCone1}\\ 
   |x - q| &\geq C |p - q|.\label{eq:verCone2}
 \end{align}
-For a proof see Verchota \cite[p.\@~9f.]{verchota}
+For a proof, see Verchota's dissertation \cite[p.\@~9f.]{verchota}
 
 \begin{defn}[Nontangential approach region, Shen]
   \label{defn:nontangentialApproachRegion}
@@ -117,7 +117,7 @@ For a proof see Verchota \cite[p.\@~9f.]{verchota}
    \begin{align*}
      \ShenCone_\alpha(q) \coloneqq \big\{ x \in \Omega \setminus \partial\Omega \colon |x - q| < \alpha \operatorname{dist}(x, \partial\Omega) \big\}
    \end{align*}
-   If $\alpha$ is chosen sufficiently large (see Shen \cite{Shen2017}) we call $\{ \ShenCone_\alpha(q) \colon q \in \partial\Omega\}$ a \emph{family of nontangential approach regions}.
+   If $\alpha$ is chosen sufficiently large (see Shen \cite[p.\@174]{Shen2017}), we call $\{ \ShenCone_\alpha(q) \colon q \in \partial\Omega\}$ a \emph{family of nontangential approach regions}.
 \end{defn}
 
   Note that in Shen cones $\ShenCone_\alpha(q)$, we have that for $q, y \in \partial\Omega$ and $x \in \ShenCone_\alpha(q)$
@@ -126,12 +126,12 @@ For a proof see Verchota \cite[p.\@~9f.]{verchota}
   |q - y| 
   &\leq |q - x| + |x - y| 
   \leq \alpha \operatorname{dist}(x, \partial\Omega) + |x - y|  \nonumber\\
-  &\leq (\alpha + 1) |x - y|
+  &\leq (\alpha + 1) |x - y|,
 \end{align}
 where $\alpha$ is the constant from Definition \ref{defn:nontangentialApproachRegion}. 
 %It is reasonable to choose $\alpha$ in a way that also condition (ii) from Theorem \ref{thm:smoothApproximation} holds.
 
-Depending on the type of cones used one may introduce similar concepts of nontangential convergence and nontangential maximal functions.
+Depending on the type of cones used, one may introduce similar concepts of nontangential convergence and nontangential maximal functions.
 
 \begin{defn}
   For a function $u$ in $\Omega$ and a fixed family of nontangential approach regions $\{\Gamma_\alpha\}$, we define the nontangential maximal function $(u)_\alpha^*$ by
@@ -140,19 +140,19 @@ Depending on the type of cones used one may introduce similar concepts of nontan
   (u)_\alpha^*(q) = \sup\big\{ |u(x)| \colon x \in \ShenCone_\alpha(q)\big\}
 \end{align}
 for $q \in \partial\Omega$.
-  For a fixed regular family of cones $\{\verCone(q)\}$ we define the nontangential maximal function $N(u)(q)$ via
+  For a fixed regular family of cones $\{\verCone(q)\}$, we define the nontangential maximal function $N(u)(q)$ via
   \begin{align*}
     N(u)(q) = \sup\big\{ |u(x)| \colon x \in \verCone(q)\big\}.
   \end{align*}
 \end{defn}
 
-Note that Tolksdorf \cite{tolksdorf} and Shen \cite{Shen2017} show that the choice of $\alpha$ for the nontangential maximal function as in \ref{eq:defnNontangMaxFunction} does not affect their $p$-norms in an unpredictable way. In fact their $p$-norms for different $\alpha_1$ and $\alpha_2$ stay comparable with a constant only depending on $d$, $\alpha_1$, $\alpha_2$ and the Lipschitz character.
+Note that Tolksdorf \cite{tolksdorf} and Shen \cite{Shen2017} show that the choice of $\alpha$ for the nontangential maximal function as in \ref{eq:defnNontangMaxFunction} does not affect their $p$-norms in an unpredictable way. In fact, their $p$-norms for different $\alpha_1$ and $\alpha_2$ stay comparable with a constant only depending on $d$, $\alpha_1$, $\alpha_2$ and the Lipschitz character.
 We will therefore for a given bounded Lipschitz domain always assume that $\alpha > 1$ has been chosen big enough such that on the one hand condition (ii) from Theorem \ref{thm:smoothApproximation} is fulfilled and that on the other hand $\alpha$ is large enough such that $\{ \Gamma_\alpha(q) \colon q \in \partial\Omega \}$ is a family of nontangential approach regions.
 In the following we will thus ignore the parameter $\alpha$ in cones and nontangential maximal functions and tacitly assume that it was chosen appropriately.
 We further note that the functions $(u)^*$ and $N(u)$ will not be comparable in general, see the discussion in Tolksdorf.
 
 The above mentioned constructions of cones are not limited to cones that lay in the interior of the domain $\Omega$.
-In fact the same construction can be carried out for the exterior domain $\R^d \setminus \overline{\Omega}$ yielding cones that lay outside of $\Omega$. While Verchota's cones from Definition \ref{defn:regularFamilyOfCones} can be mirrored along the $x_d = 0$ plane in a suitable local coordinate system, Shen's cones from Definition \ref{defn:nontangentialApproachRegion} have to be modified in a natural way to give cones lying inside of $\R^d \setminus \overline \Omega$, namely
+In fact, the same construction can be carried out for the exterior domain $\R^d \setminus \overline{\Omega}$ yielding cones that lay outside of $\Omega$. While Verchota's cones from Definition \ref{defn:regularFamilyOfCones} can be mirrored along the $x_d = 0$ plane in a suitable local coordinate system, Shen's cones from Definition \ref{defn:nontangentialApproachRegion} have to be modified in a natural way to give cones lying inside of $\R^d \setminus \overline \Omega$, namely
 \begin{align*}
   \Gamma_\alpha^{\,\mathrm{ext}}(q) \coloneqq \big\{ x \in \R^d \setminus \overline \Omega \colon |x - q| < \alpha \operatorname{dist}(x, \partial\Omega)\big\}.
 \end{align*}
@@ -175,7 +175,7 @@ The idea is to restrict the set of directions from which one can approach $p$ by
   %We will sometimes denote a cone coming from a nontangential approach region as above by $\ShenCone(q)$.
 \end{defn}
 
-Usually the nontangential limits taken from inside and outside the domain will differ.
+Usually, the nontangential limits taken from inside and outside the domain will differ.
 For functions $u$ on $\R^d \setminus \partial\Omega$ we will therefore often use the notation $u_+$ to denote the \emph{inner} nontangential limit and $u_-$ for the respective \emph{outer} nontangential limit.
 
 To put our new vocabulary to use, we will formulate an prove the divergence theorem for functions on bounded Lipschitz domains that do not have a trace but nontangential limits and integrable nontangential maximal functions. A similar statement was proven by Shen in \cite[Thm.\@~7.1.6]{Shen2017}.
@@ -274,7 +274,7 @@ Note that for $u \in \HH_{0,\,\sigma}^1(\Omega)$ the gradient $\nabla u$ is a ma
   where $u \in \Dom(A_2)$ and $f$ comes from the definition of the domain.
 \end{defn}
 
-The following theorem from Mitrea and Monniaux \cite[Thm.\@~4]{mitreaMonniaux} shows that our definition of the Stokes operator and the one used in Shen's paper \cite{Shen2012} coincide. 
+The following theorem by Mitrea and Monniaux \cite[Thm.\@~4]{mitreaMonniaux} shows that our definition of the Stokes operator and the one used in Shen's paper \cite{Shen2012} coincide. 
 Another advantage of this characterization is the immediate link of the Stokes operator to the Stokes system.
 
 \begin{thm}

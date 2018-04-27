@@ -81,6 +81,10 @@ Another cornerstone in the theory of the single and double layer potentials is t
 
 We are now in the position to prove our first lemma on the way to establish the single layer potential as a benevolent operator for tackling boundary value problems on bounded Lipschitz domains. 
 The lemma deals with mapping properties of the aforementioned integral operators $T_\lambda$ and $T_\lambda^*$.
+The main idea will be to deduce pointwise estimates that bound the operator $T_\lambda^*$ by the \emph{Hardy-Littlewood maximal operator} $M_{\partial\Omega}$ which is defined for function $f \in \Ell^1_{\mathrm{loc}}(\partial\Omega)$ via
+\begin{align*}
+  M_{\partial\Omega}(f)(q) \coloneqq \sup_{\varepsilon > 0} \; \frac{1}{\sigma(\partial\Omega \cap \BB(q, \varepsilon))} \int_{\partial\Omega \cap \BB(q,\,\varepsilon)} |f(y)| \d \sigma(y), \quad q \in \partial\Omega.
+\end{align*}
 
 \begin{lem}
   \label{lem:lpBoundednessT}
@@ -130,7 +134,7 @@ The lemma deals with mapping properties of the aforementioned integral operators
     \frac{1}{(2^{k+1} t)^{d - 1}} \int_{\BB(q,\, 2^{k + 1}t) \cap \partial \Omega}  |f(y)| \d\sigma(y)
     \leq C M_{\partial\Omega}(f)(q), \quad k=0,\dots,N, 
   \end{align}
-  with a constant $C$ that depends on $d$ and the Lipschitz character of $\Omega$.
+  with a constant $C > 0$ that depends on $d$ and the Lipschitz character of $\Omega$.
   Now, we glue together \eqref{eq:gtt} and \eqref{eq:applLem31}, take $N \to \infty$ noting the geometric series and get the estimate
   \begin{align}
     \label{eq:finalgtt}
@@ -138,7 +142,6 @@ The lemma deals with mapping properties of the aforementioned integral operators
     \leq C M_{\partial\Omega}(f)(q).
   \end{align}
 
-  \newpage
   Now let $t^2 |\lambda| \leq ({1}/{2})$.
   We then split the integral as follows:
   \begin{align*}

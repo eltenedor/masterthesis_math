@@ -20,28 +20,28 @@ The fundamental solution for the scalar Helmholtz equation is given via
 \begin{align*}
   G(x; \lambda) = \frac{\ii}{4}\, H_0^{(1)}(k|x|),
 \end{align*}
-see Section \ref{sec:hankel}.
-In the following, we will always have $z =  k|x|$.  
-Then, applications of the chain rule and the product rule of differentiation give
+where $H_0^{(1)}(z)$ is the Hankel function of the first kind, see Section \ref{sec:hankel}.
+Complex derivatives will be denoted by $\frac{\d{}}{\d z}$.
+We calculate using the chain rule and the product rule:
 \begin{align*}
   %%
-  \partial_\gamma G(x; \lambda) &= \frac{\ii}{4}\, k\;  \frac{x_\gamma}{|x|}\, \frac{\d{}}{\d z} H_0^{(1)}(z)\,, \\[0.5em]
+  \partial_\gamma G(x; \lambda) &= \frac{\ii}{4}\, k\;  \frac{x_\gamma}{|x|}\, \frac{\d{}}{\d z} H_0^{(1)}(k |x|)\,, \\[0.5em]
   %%
   \partial_\alpha \partial_\gamma G(x; \lambda) 
   %%
-  &=  \frac{\ii}{4}\,  k \,\bigg(\frac{\delta_{\alpha\gamma}}{|x|} - \frac{x_\alpha x_\gamma}{|x|^3} \bigg)\, \frac{\d{}}{\d z} H_0^{(1)}(z) + \frac{\ii}{4} \, k^2 \;  \frac{x_\alpha x_\gamma}{|x|^2} \, \frac{\d{}^2}{\d z^2} H_0^{(1)}(z)\,, \\[0.5em]
+  &=  \frac{\ii}{4}\,  k \,\bigg(\frac{\delta_{\alpha\gamma}}{|x|} - \frac{x_\alpha x_\gamma}{|x|^3} \bigg)\, \frac{\d{}}{\d z} H_0^{(1)}(k |x|) + \frac{\ii}{4} \, k^2 \;  \frac{x_\alpha x_\gamma}{|x|^2} \, \frac{\d{}^2}{\d z^2} H_0^{(1)}(k |x|)\,, \\[0.5em]
   %%
   \partial_\beta \partial_\alpha \partial_\gamma G(x; \lambda)
   %%
-  &= \frac{\ii}{4} \, k^3 \; \frac{x_\alpha x_\beta x_\gamma}{|x|^3} \, \frac{\d{}^3}{\d z^3} H_0^{(1)}(z)\\[0.5em]
+  &= \frac{\ii}{4} \, k^3 \; \frac{x_\alpha x_\beta x_\gamma}{|x|^3} \, \frac{\d{}^3}{\d z^3} H_0^{(1)}(k |x|)\\[0.5em]
   %
-  &\quad + \frac{\ii}{4} \, k^2 \,\bigg(\frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha \gamma} x_\beta + \delta_{\alpha \beta} x_\gamma}{|x|^2} - 3\, \frac{x_\alpha x_\beta x_\gamma}{|x|^4} \bigg)\, \frac{\d{}^2}{\d z^2} H_0^{(1)}(z) \\[0.5em]
+  &\quad + \frac{\ii}{4} \, k^2 \,\bigg(\frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha \gamma} x_\beta + \delta_{\alpha \beta} x_\gamma}{|x|^2} - 3\, \frac{x_\alpha x_\beta x_\gamma}{|x|^4} \bigg)\, \frac{\d{}^2}{\d z^2} H_0^{(1)}(k |x|) \\[0.5em]
   %
-  &\quad+ \frac{\ii}{4} \, k \, \bigg( 3\, \frac{x_\alpha x_\beta x_\gamma}{|x|^5} - \frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha\gamma} x_\beta + \delta_{\alpha\beta} x_\gamma}{|x|^3} \bigg)\, \frac{\d{}}{\d z} H_0^{(1)}(z) \,.
+  &\quad+ \frac{\ii}{4} \, k \, \bigg( 3\, \frac{x_\alpha x_\beta x_\gamma}{|x|^5} - \frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha\gamma} x_\beta + \delta_{\alpha\beta} x_\gamma}{|x|^3} \bigg)\, \frac{\d{}}{\d z} H_0^{(1)}(k |x|) \,.
 \end{align*}
 
-We will now consider derivatives of the Hankel function $H_0^{(1)}(z)$ by calculating the complex derivatives of the series expansion of $H_0^{(1)}(z)$ which may be found in Lebedev \cite[Sec.\@~5.6]{lebedev}. 
-The presented expansion is a consequence of the series expansions of the Bessel functions of the first and second kind $J_0$ and $Y_0$, respectively.
+We will now present the derivatives of the Hankel function $H_0^{(1)}(z)$ which appeared in the previous calculations by calculating the complex derivatives of the series expansion of $H_0^{(1)}(z)$ which may be found in Lebedev \cite[Sec.\@~5.6]{lebedev}. 
+The expansions below are a consequence of the series expansions of the Bessel functions of the first and second kind $J_0$ and $Y_0$, respectively.
 In the following, $\psi$ will denote the \emph{Digamma function}. 
 The aforementioned expansions read:
 \begin{align*}
