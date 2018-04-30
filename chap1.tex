@@ -2,28 +2,28 @@
 \label{chap:1}
 
 The purpose of this chapter is to collect basic definitions that will be used throughout the subsequent chapters. Furthermore, we want to formulate the main problem regarding the resolvent estimates of the Stokes operator.
-Throughout this chapter we let $d$ always denote a natural number greater or equal to 2.
+Throughout this chapter, we let $d$ always denote a natural number greater or equal to 2.
 
-\section{Lipschitz-Domains}
+\section{Lipschitz Domains}
 
-In this first section we will establish the fundamental notions regarding bounded Lipschitz domains.
+In this first section, we will establish the fundamental notions regarding bounded Lipschitz domains.
 
 \begin{defn}
   \label{defn:lipschitzDomain}
   Let $\Omega \subset \R^d$ be a bounded open connected set.
-  We call $\Omega$ a \emph{bounded Lipschitz domain} if there exist $r_0, M > 0$ such that for all $x \in \partial\Omega$ there exists a function $\eta_x \colon \R^{d - 1} \to \R$ which is Lipschitz continuous and fulfills $\eta_x(0) = 0$ and $\|\nabla \eta_x \|_{\Ell^\infty(\R^{d - 1})} \leq M$, and a rotation $R_x \colon \R^d \to \R^d$ such that for all $0 < r \leq r_0$ 
+  We call $\Omega$ a \emph{bounded Lipschitz domain} if there exist $r_0, M > 0$ such that for all $x \in \partial\Omega$ there exists a function $\eta_x \colon \R^{d - 1} \to \R$ which is Lipschitz continuous and additionally fulfills $\eta_x(0) = 0$ and $\|\nabla \eta_x \|_{\Ell^\infty(\R^{d - 1})} \leq M$, and a rotation $R_x \colon \R^d \to \R^d$ such that for all $0 < r \leq r_0$ 
   \begin{align*}
     R_x[ \Omega - \{x\} ] \cap D(r) &= D_{\eta_x}(r) \\
     R_x[\partial\Omega - \{x\}] \cap D(r) &= I_{\eta_x}(r),
   \end{align*}
   where
   \begin{align*}
-    D(r) &\coloneqq \{ (x', x_d) \colon |x'| < r, |x_d| < 10 d (M + 1) r\} \\
-    D_{\eta_x}(r) &\coloneqq \{ (x', x_d) \colon |x'| < r, \eta_x(x') < x_d < 10 d(M+ 1)r\} \\
-    I_{\eta_x}(r) &\coloneqq \{ (x', x_d) \colon |x'| < r, \eta_x(x') = x_d \} .
+    D(r) &\coloneqq \big\{ (x', x_d) \colon |x'| < r, |x_d| < 10 d\, (M + 1)\, r\big\} \\
+    D_{\eta_x}(r) &\coloneqq \big\{ (x', x_d) \colon |x'| < r, \eta_x(x') < x_d < 10 d\,(M+ 1)\,r\big\} \\
+    I_{\eta_x}(r) &\coloneqq \big\{ (x', x_d) \colon |x'| < r, \eta_x(x') = x_d \big\} .
   \end{align*}
 \end{defn}
-  It is common to refer to sets of the form $D_{\eta_x}$ as \emph{Lipschitz cylinders}. If the point $x$ in the definition of Lipschitz cylinders is not of particular importance we will denote the Lipschitz cylinder by $D_{\eta}(r)$.
+  It is common to refer to sets of the form $D_{\eta_x}$ as \emph{Lipschitz cylinders}. If the point $x$ in the definition of Lipschitz cylinders is not of particular importance, we will denote the Lipschitz cylinder by $D_{\eta}(r)$.
 
   If $\Omega$ is a bounded Lipschitz domain, $x \in \partial\Omega$ and $0 < r \leq r_0$, then we may define $U_{x,r} \coloneqq \{ x\} + R_x^{-1} D(r)$, where $R_x$ is the rotation corresponding to $x$ from Definition \ref{defn:lipschitzDomain}.
   This is all we need to define the Lipschitz character of a bounded Lipschitz domain $\Omega$ as suggested by Pipher and Verchota in \cite[Sec.\@~5]{pipherVerchota}.
@@ -35,14 +35,14 @@ In this first section we will establish the fundamental notions regarding bounde
   \end{defn}
 
   That the Lipschitz character is indeed a fruitful concept will be emphasized by the following theorem.
-  This result is a crucial ingredient in the proof of the Rellich estimates in Chapter \ref{chap:4} as it provides a useful approximating property of Lipschitz domains. In short it enables us to approximate a bounded Lipschitz domain $\Omega$ by a sequence $(\Omega_j)$ of $\CC^\infty$ domains in such a way that estimates on $\Omega_j$ with bounding constants that only depend on the Lipschitz characters may be extended to $\Omega$ when taking the limit.
-  The original proof of this Theorem goes back to Ne\v{c}as \cite{necas} and Verchota \cite{verchota}. 
+  This result is a crucial ingredient in the proof of the Rellich estimates in Chapter \ref{chap:4} as it provides a useful approximating property of Lipschitz domains. In short it enables us to approximate a bounded Lipschitz domain $\Omega$ by a sequence $(\Omega_j)_{j \in \N}$ of $\CC^\infty$ domains in such a way that estimates on $\Omega_j$ with bounding constants that only depend on the Lipschitz characters may be extended to $\Omega$ when taking the limit.
+  The original proof of this theorem goes back to Ne\v{c}as \cite{necas} and Verchota \cite{verchota}. 
   The presented version of this theorem appeared in Brown \cite{brown}.
 
 \begin{thm}[Ne\v{c}as, Verchota]
   \label{thm:smoothApproximation}
   Let $\Omega$ be a Lipschitz domain.
-  Then there exists a sequence of $\CC^\infty$-domains $(\Omega_k)$ with uniform Lipschitz characters, corresponding homeomorphisms $\Lambda_k \colon \partial\Omega \to \partial\Omega_k$, functions $\vartheta_k \colon \partial\Omega \to \R^+$ and a smooth compactly supported vector field $h \colon \R^d \to \R^d$ which satisfy the following properties:
+  Then, there exists a sequence of $\CC^\infty$ domains $(\Omega_k)$ with uniform Lipschitz characters, corresponding homeomorphisms $\Lambda_k \colon \partial\Omega \to \partial\Omega_k$, functions $\vartheta_k \colon \partial\Omega \to \R^+$ and a smooth compactly supported vector field $h \colon \R^d \to \R^d$ which satisfy the following properties:
   \begin{enumerate}[i)]
     \item There exists a covering of $\partial\Omega$ by coordinate cylinders which also serve as coordinate cylinders for $\partial\Omega_k$.
     \item The homeomorhpisms $\Lambda_k \colon \partial \Omega \to \partial\Omega_k$ satisfy
@@ -77,7 +77,7 @@ Unfortunately, in the literature there exist at least two different concepts whi
   \label{defn:regularFamilyOfCones}
   Let $\Omega \subset \R^d$ be a bounded Lipschitz domain.
   If $q \in \partial\Omega$, then $\Gamma(q)$ will denote a cone with vertex $q$ and one component in $\Omega$.
-  Assigning to each $q \in \partial\Omega$ one cone $\Gamma(q)$ the family $\{ \Gamma(q) \colon q \in \partial\Omega \}$ will be called \emph{regular} if there exist $x_1, \dots,x_{n_0} \in \partial\Omega$, $\tilde r > 0$ and rotations $\tilde R_{x_1}, \dots, \tilde R_{x_{n_0}}$ such that
+  Assigning to each $q \in \partial\Omega$ one cone $\Gamma(q)$, the family $\big\{ \Gamma(q) \colon q \in \partial\Omega \big\}$ will be called \emph{regular} if there exist $x_1, \dots,x_{n_0} \in \partial\Omega$, $\tilde r > 0$ and rotations $\tilde R_{x_1}, \dots, \tilde R_{x_{n_0}}$ such that
   \begin{align*}
     \partial\Omega \subset \bigcup_{i = 1}^{n_0} \{ x_i \} + \tilde R_{x_i}^{-1} D(4 \tilde r / 5),
   \end{align*}
@@ -90,7 +90,7 @@ Unfortunately, in the literature there exist at least two different concepts whi
     \tilde R_{x_i}[\Omega - \{x_i\}] \cap D(r) &= D_{\tilde \eta_{x_i}}(r) \\
     \tilde R_{x_i}[\partial\Omega - \{x_i\}] \cap D(r) &= I_{\tilde \eta_{x_i}}(r).
   \end{align*}
-  In addition for all $i$ there exist cones $\alpha_i$, $\beta_i$ and $\gamma_i$ with vertex at the origin and axis along the $x_d$-axis such that
+  In addition, for all $i$ there exist cones $\alpha_i$, $\beta_i$ and $\gamma_i$ with vertex at the origin and axis along the $x_d$-axis such that
   \begin{align*}
     \alpha_i \subset \overline{\beta_i} \setminus\{0\} \subset \gamma_i
   \end{align*}
@@ -102,23 +102,30 @@ Unfortunately, in the literature there exist at least two different concepts whi
   We will sometimes denote a regular cone as above by $\verCone(q)$.
 \end{defn}
 
-For the existence of such families of cones see the Appendix of Verchota \cite{verchota}.
+For the existence of such families of cones, see the Appendix of Verchota \cite{verchota}.
 
-In Verchota cones $\verCone(q)$ we have the properties that for all $\Omega$ there exists a constant $C > 0$ depending only on the Lipschitz character such that for all $q$, $p \in \partial\Omega$ and any $x \in \Gamma_V(p)$ we have that
+In Verchota cones $\verCone(q)$, we have the properties that for all $\Omega$ there exists a constant $C > 0$ depending only on the Lipschitz character of $\Omega$ such that for all $q$, $p \in \partial\Omega$ and any $x \in \Gamma_V(p)$ we have that
 \begin{align}
-  |x - q| &\geq C |x - p| \label{eq:verCone1}\\ 
-  |x - q| &\geq C |p - q|.\label{eq:verCone2}
+  |x - q| &\geq C\, |x - p| \label{eq:verCone1}\\ 
+  |x - q| &\geq C\, |p - q|.\label{eq:verCone2}
 \end{align}
-For a proof see Verchota \cite[p.\@~9f.]{verchota}
+For a proof, see Verchota \cite[p.\@~9f.]{verchota}
+The following Lemma and Definition is used by Shen, see \cite[p.\@174]{Shen2017}
 
-\begin{defn}[Nontangential approach region, Shen]
+\begin{lemDefn}[Nontangential approach region, Shen]
   \label{defn:nontangentialApproachRegion}
-   For $\alpha > 1$ and $q \in \partial\Omega$ we define 
-   \begin{align*}
+  Let $\Omega \subset \R^d$, $d \geq 2$ be a bounded Lipschitz domain.
+  There exists $\alpha > 1$ depending only on $d$ and the Lipschitz character such that
+  \begin{align*}
      \ShenCone_\alpha(q) \coloneqq \big\{ x \in \Omega \setminus \partial\Omega \colon |x - q| < \alpha \operatorname{dist}(x, \partial\Omega) \big\}
-   \end{align*}
-   If $\alpha$ is chosen sufficiently large (see Shen \cite{Shen2017}) we call $\{ \ShenCone_\alpha(q) \colon q \in \partial\Omega\}$ a \emph{family of nontangential approach regions}.
-\end{defn}
+  \end{align*}
+  contains a cone of fixed height and aperture with vertex at $z$.
+%   For $\alpha > 1$ and $q \in \partial\Omega$ we define 
+%   \begin{align*}
+%     \ShenCone_\alpha(q) \coloneqq \big\{ x \in \Omega \setminus \partial\Omega \colon |x - q| < \alpha \operatorname{dist}(x, \partial\Omega) \big\}
+%   \end{align*}
+   In this case, we call $\big\{ \ShenCone_\alpha(q) \colon q \in \partial\Omega\big\}$ a \emph{family of nontangential approach regions}.
+\end{lemDefn}
 
   Note that in Shen cones $\ShenCone_\alpha(q)$, we have that for $q, y \in \partial\Omega$ and $x \in \ShenCone_\alpha(q)$
 \begin{align}
@@ -146,10 +153,10 @@ for $q \in \partial\Omega$.
   \end{align*}
 \end{defn}
 
-Note that Tolksdorf \cite{tolksdorf} and Shen \cite{Shen2017} show that the choice of $\alpha$ for the nontangential maximal function as in \ref{eq:defnNontangMaxFunction} does not affect their $p$-norms in an unpredictable way. In fact their $p$-norms for different $\alpha_1$ and $\alpha_2$ stay comparable with a constant only depending on $d$, $\alpha_1$, $\alpha_2$ and the Lipschitz character.
-We will therefore for a given bounded Lipschitz domain always assume that $\alpha > 1$ has been chosen big enough such that on the one hand condition (ii) from Theorem \ref{thm:smoothApproximation} is fulfilled and that on the other hand $\alpha$ is large enough such that $\{ \Gamma_\alpha(q) \colon q \in \partial\Omega \}$ is a family of nontangential approach regions.
-In the following we will thus ignore the parameter $\alpha$ in cones and nontangential maximal functions and tacitly assume that it was chosen appropriately.
-We further note that the functions $(u)^*$ and $N(u)$ will not be comparable in general, see the discussion in Tolksdorf.
+Note that Tolksdorf \cite[Prop.\@4.1.11]{tolksdorf} and Shen \cite[Prop.\@7.1.2]{Shen2017} show that the choice of $\alpha$ for the nontangential maximal function as in \ref{eq:defnNontangMaxFunction} does not affect their $p$-norms in an unpredictable way. In fact, their $p$-norms for different $\alpha_1$ and $\alpha_2$ stay comparable with a constant only depending on $d$, $\alpha_1$, $\alpha_2$ and the Lipschitz character.
+We will therefore for a given bounded Lipschitz domain always assume that $\alpha > 1$ has been chosen big enough such that on the one hand condition (ii) from Theorem \ref{thm:smoothApproximation} is fulfilled and that on the other hand $\alpha$ is large enough such that $\big\{ \Gamma_\alpha(q) \colon q \in \partial\Omega \big\}$ is a family of nontangential approach regions.
+In the following, we will thus ignore the parameter $\alpha$ in cones and nontangential maximal functions and tacitly assume that it was chosen appropriately.
+We further note that the functions $(u)^*$ and $N(u)$ will not be comparable in general, see the discussion in Tolksdorf \cite[p.\@91]{tolksdorf}.
 
 The above mentioned constructions of cones are not limited to cones that lay in the interior of the domain $\Omega$.
 In fact the same construction can be carried out for the exterior domain $\R^d \setminus \overline{\Omega}$ yielding cones that lay outside of $\Omega$. While Verchota's cones from Definition \ref{defn:regularFamilyOfCones} can be mirrored along the $x_d = 0$ plane in a suitable local coordinate system, Shen's cones from Definition \ref{defn:nontangentialApproachRegion} have to be modified in a natural way to give cones lying inside of $\R^d \setminus \overline \Omega$, namely
@@ -157,11 +164,11 @@ In fact the same construction can be carried out for the exterior domain $\R^d \
   \Gamma_\alpha^{\,\mathrm{ext}}(q) \coloneqq \big\{ x \in \R^d \setminus \overline \Omega \colon |x - q| < \alpha \operatorname{dist}(x, \partial\Omega)\big\}.
 \end{align*}
 
-As the name \emph{nontangential approach region} suggests, for functions $u$ living on $\Omega$ or $\R^d \setminus \overline\Omega$ there will be a notion of convergence of function values $u(x)$ as $x$ goes to a point on $p \in \partial\Omega$.
+As the name \emph{nontangential approach region} suggests, for functions $u$ living on $\Omega$ or $\R^d \setminus \overline\Omega$ there will be a notion of convergence of function values $u(x)$ as $x$ approaches a point on $p \in \partial\Omega$.
 The idea is to restrict the set of directions from which one can approach $p$ by only allowing sequences of points lying in cones $\Gamma(q)$.
 
 \begin{defn}[Nontangential convergence]
-  Let $\Omega$ be a bounded Lipschitz domain and $\{\ShenCone(q) \colon q \in \partial\Omega\}$ be a family of nontangential approach regions with its exterior counterpart $\{\ShenCone^{\,\mathrm{ext}}(q) \colon q \in \partial\Omega\}$.
+  Let $\Omega$ be a bounded Lipschitz domain and $\big\{\ShenCone(q) \colon q \in \partial\Omega\big\}$ be a family of nontangential approach regions with its exterior counterpart $\big\{\ShenCone^{\,\mathrm{ext}}(q) \colon q \in \partial\Omega\big\}$.
   Let furthermore $u$ be a function on $\R^d \setminus \partial\Omega$ and $f$ a function on $\partial\Omega$.
   We say that $u = f$ \emph{in the sense of nontangential convergence from the inside} if 
   \begin{align*}
@@ -175,16 +182,16 @@ The idea is to restrict the set of directions from which one can approach $p$ by
   %We will sometimes denote a cone coming from a nontangential approach region as above by $\ShenCone(q)$.
 \end{defn}
 
-Usually the nontangential limits taken from inside and outside the domain will differ.
+Usually, the nontangential limits taken from inside and outside the domain will differ.
 For functions $u$ on $\R^d \setminus \partial\Omega$ we will therefore often use the notation $u_+$ to denote the \emph{inner} nontangential limit and $u_-$ for the respective \emph{outer} nontangential limit.
 
-To put our new vocabulary to use, we will formulate an prove the divergence theorem for functions on bounded Lipschitz domains that do not have a trace but nontangential limits and integrable nontangential maximal functions. A similar statement was proven by Shen in \cite[Thm.\@~7.1.6]{Shen2017}.
+To put our new vocabulary to use, we will formulate an prove the divergence theorem for functions on bounded Lipschitz domains that do not have a trace but a nontangential limit and integrable nontangential maximal functions. A similar statement was proven by Shen in \cite[Thm.\@~7.1.6]{Shen2017}.
 
 \begin{prop}
   \label{prop:approximationArgument}
   Let $\Omega \subset \R^d$, $d \geq 2$, a bounded Lipschitz domain and $f \colon \Omega \to \C^d$ smooth and $g \colon \partial\Omega \to \C$ measurable.
   Suppose that the nontangential limit $f_+$ exists almost everywhere and that the nontangential maximal function $(g)^*$ is integrable on $\partial\Omega$ and $|f_+| \leq (g)^*$ a.e..
-  Then Green's formula
+  Then, Green's formula
   \begin{align}
     \int_{\partial\Omega} f_k(s) n_k(s) \d\sigma(s) = \int_\Omega \div(f)(x) \d x
   \end{align}
@@ -194,7 +201,7 @@ To put our new vocabulary to use, we will formulate an prove the divergence theo
 \begin{proof}
   The proof rests heavily on the powerful Theorem \ref{thm:smoothApproximation} and uses its full capacity to uncover a very useful approximation argument.
 
-  Let's start by approximating $\Omega$ by a sequence $(\Omega)_l$ of $\CC^\infty$ domains with uniform Lipschitz characters as described in Theorem \ref{thm:smoothApproximation}. 
+  Let's start by approximating $\Omega$ by a sequence $(\Omega_l)_{l \in \N}$ of $\CC^\infty$ domains with uniform Lipschitz characters as described in Theorem \ref{thm:smoothApproximation}. 
   Remember that by Theorem \ref{thm:smoothApproximation} iv), the homeomorphisms $\Lambda_l \colon \partial\Omega \to \partial\Omega_l$ give rise to a tranformation rule of the form 
   \begin{align}
     \label{eq:transformation}
@@ -202,13 +209,14 @@ To put our new vocabulary to use, we will formulate an prove the divergence theo
     = \int_{\partial\Omega} \vartheta_l(x) \, f_k(\Lambda_l(x)) \, n_k^{(l)}(\Lambda_l(x)) \d\sigma(x).
   \end{align}
   The idea of the proof is based on the approximation argument performed in Brown \cite[Prop.\@~2.4]{brown}. 
-  Additionally we have $\lim_{l \to \infty} \vartheta_l(x) = 1$ and $\lim_{l \to \infty} \Lambda_l(x) = x$ almost everywhere, where $\Lambda_l(x) \in \Gamma(x)$ for all $l \in \N$ thanks to Theorem \ref{thm:smoothApproximation} ii).
+  Additionally, we have $\lim_{l \to \infty} \vartheta_l(x) = 1$ and $\lim_{l \to \infty} \Lambda_l(x) = x$ almost everywhere, where $\Lambda_l(x) \in \Gamma(x)$ for all $l \in \N$ thanks to Theorem \ref{thm:smoothApproximation} ii).
   Furthermore, we know that $\lim_{l \to \infty} n_k^{(l)}(\Lambda_l(x)) = n_k(x)$ almost everywhere by Theorem \ref{thm:smoothApproximation} and that $f$ has a nontangential limit almost everywhere.
   This gives us that 
   \begin{align*}
-    \lim_{l \to \infty} \vartheta_l(x) \, f_k(\Lambda_l(x)) \, n_k^{(l)}(\Lambda_l(x)) = f_k(x) n_k(x), \quad\text{a.e. } x \in \partial\Omega.
+    \lim_{l \to \infty} \vartheta_l(x) \, f_k(\Lambda_l(x)) \, n_k^{(l)}(\Lambda_l(x)) = f_k(x) n_k(x)\,, \quad\text{a.e.\@ } x \in \partial\Omega.
   \end{align*}
-  As this sequence of integrands is dominated by $\delta (g)^*$ with $(g)^* \in \Ell^1(\partial\Omega)$ by assumption and $\delta$ the uniform bound to $\vartheta_l$ due to Theorem \ref{thm:smoothApproximation} iv), the dominated convergence theorem is applicable and yields
+  This sequence of integrands is dominated by $\delta (g)^*$, where $(g)^* \in \Ell^1(\partial\Omega)$ holds by assumption and $\delta$ is the uniform bound to $\vartheta_l$ due to Theorem \ref{thm:smoothApproximation} iv).
+  Hence, the dominated convergence theorem is applicable and yields
   \begin{align}
     \label{eq:leftGreen}
     \lim_{l \to \infty} \int_{\partial \Omega} \vartheta_l(s) \, f_k(\Lambda_l(s))\,  n_k^{(l)}(\Lambda_l(s))\d\sigma(s)
@@ -216,12 +224,12 @@ To put our new vocabulary to use, we will formulate an prove the divergence theo
     \int_{\partial\Omega} f_k(s) n_k(s) \d \sigma(s).
   \end{align}
   Now consider the left hand side of identity \eqref{eq:transformation}.
-  By Green's formula \cite[p.\@~711f.]{evans} we know that
+  By Green's formula \cite[p.\@~711f.]{evans}, we know that
   \begin{align*}
     \int_{\partial\Omega_l} f_k(s) n_k^{(l)}(s) \d\sigma_l(s)
     = \int_{\Omega_l} \div(f(x)) \d x, \quad\text{for all } l \in \N.
   \end{align*}
-  As $\Omega_l \subseteq \Omega$ for all $l \in \N$, the monotone convergence Theorem leaves us with
+  As $\Omega_l \subseteq \Omega$ for all $l \in \N$, the monotone convergence theorem leaves us with
   \begin{align}
     \label{eq:rightGreen}
     \lim_{l \to \infty} \int_{\Omega_l} \div(f(x)) \d x = \int_\Omega \div(f(x) \d x.
@@ -234,9 +242,9 @@ To put our new vocabulary to use, we will formulate an prove the divergence theo
 
 In this section, we will introduce the Stokes operator on $\Ell^2(\Omega; \C^d)$ and $\Ell^p(\Omega; \C^d)$ for general $p$ and establish a relation to the \emph{Dirichlet problem for the Stokes resolvent system}
 \begin{align}
-  -\Delta u + \nabla \phi + \lambda u &= f  \quad\text{in } \Omega, \nonumber\\
-  \div u &= 0 \quad\text{in } \Omega, \label{eq:stokesResolventSystem} \\
-  u &= 0 \quad\text{on } \partial\Omega, \nonumber
+  -\Delta u + \nabla \phi + \lambda u &= f  \quad\text{in } \Omega\,, \nonumber\\
+  \div u &= 0                               \,\quad\text{in } \Omega\,, \label{eq:stokesResolventSystem} \\
+  u &= 0 \,\quad\text{on } \partial\Omega\,, \nonumber
 \end{align}
 where $\lambda \in \Sigma_\theta \coloneqq \{ z \in \C \colon \lambda \neq 0 \text{ and } |\arg(z) | < \pi - \theta \}$ and $\theta \in (0, \pi/2)$.
 
@@ -249,16 +257,16 @@ We define
 which can serve as a suitable space of test functions.
 We can now close this space in $\Ell^p(\Omega; \C^d)$ and the Sobolev space $\WW^{1,\,p}(\Omega; \C^d)$ which gives
 \begin{align*}
-  \Ell_\sigma^p(\Omega) \coloneqq \overline{\CC_{c,\,\sigma}^\infty(\Omega)}^{\Ell^p}
+  \Ell_\sigma^p(\Omega) \coloneqq \overline{\CC_{c,\,\sigma}^\infty(\Omega)}^{\Ell^p(\Omega)}
 \end{align*}
 and
 \begin{align*}
-  \WW_{0,\,\sigma}^{1,\,p}(\Omega) \coloneqq \overline{\CC_{c,\,\sigma}^\infty(\Omega)}^{\WW^{1,\,p}},
+  \WW_{0,\,\sigma}^{1,\,p}(\Omega) \coloneqq \overline{\CC_{c,\,\sigma}^\infty(\Omega)}^{\WW^{1,\,p}(\Omega)},
 \end{align*}
 respectively.
 If $p = 2$, we will use the symbol $\HH_{0,\,\sigma}^1(\Omega)$ to denote $\WW_{0,\,\sigma}^{1,2}(\Omega)$ in order to emphasize that this space is a Hilbert space.
 
-In order to define the Stokes operator, we introduce the following sesquilinear form
+In order to define the Stokes operator, we introduce the sesquilinear form
 \begin{align*}
   \aform \colon \HH_{0,\,\sigma}^1(\Omega) \times \HH_{0,\,\sigma}^1(\Omega) \to \C, \quad (u,v) \mapsto \int_\Omega \nabla u \cdot \overline{\nabla v} \d x.
 \end{align*}
@@ -302,13 +310,13 @@ The following proposition summarizes some facts about the Stokes operator on $\E
         \label{eq:resolventEstimateL2}
         \| \lambda(\lambda + A)^{-1} \|_{\Li(\Ell^2_\sigma(\Omega))} \leq C, \quad\text{for all } \lambda \in \C \setminus \overline \Sigma_\theta.
       \end{align}
-      In particular $-A_2$ generates a bounded analytic semigroup on $\Ell^2_\sigma(\Omega)$.
+      In particular, $-A_2$ generates a bounded analytic semigroup on $\Ell^2_\sigma(\Omega)$.
   \end{enumerate}
 \end{prop}
 
 With these results at hand we can now give a quick recap of the solution theory to \eqref{eq:stokesResolventSystem}.
 Let $f \in \Ell^2_\sigma(\Omega)$ and $\lambda \in \Sigma_\theta$, $\theta \in (0, \pi/2)$.
-By the previous theorem and proposition we know that there exists a unique $u \in \Dom(A_2) \subseteq \HH^1_{0,\,\sigma}(\Omega)$ and some $\pi \in \Ell^2(\Omega)$ such that
+By the previous theorem and proposition, we know that there exists a unique $u \in \Dom(A_2) \subseteq \HH^1_{0,\,\sigma}(\Omega)$ and some $\pi \in \Ell^2(\Omega)$ such that
 \begin{align*}
   -\Delta u + \nabla \pi + \lambda u = A_2 u + \lambda u = f.
 \end{align*}
@@ -321,28 +329,30 @@ where $u$ and $\pi$ now correspond to $\PP_2 f \in \Ell^2_\sigma(\Omega)$. On bo
   \Ell^2_\sigma(\Omega)^\perp = \big\{ f \in \Ell^2(\Omega; \C^d) \colon f = \nabla \phi, \text{ for some } \phi \in \Ell^2(\Omega) \big\}.
 \end{align*}
 A proof of this fact can be found in the book of Sohr \cite[Lem.\@~2.5.3]{sohr}.
-Using this result we find $g \in \Ell^2(\Omega)$ such that $\nabla g = (I - \PP_2)f$ in the sense of distributions and we see that
+Using this result, we find $g \in \Ell^2(\Omega)$ such that $\nabla g = (I - \PP_2)f$ in the sense of distributions and we see that
 \begin{align*}
   -\Delta u + \nabla( \pi + g ) + \lambda u = f.
 \end{align*}
 Consequently, we see that solving the resolvent equation for the Stokes operator and solving the Stokes resolvent system \eqref{eq:stokesResolventSystem} are two sides of the saime coin.
 Furthermore, we may deduce from the resolvent estimate \eqref{eq:resolventEstimateL2} that the solution $u$ which apparently is not affected by the additional part $(I-\PP_2)f$ fulfills the inequality
 \begin{align*}
-  |\lambda|^{-1} \| u\|_{\Ell^2(\Omega; \C^d)} = |\lambda|^{-1} \|(A_2 + \lambda)^{-1} \PP_2 f \|_{\Ell^2(\Omega; \C^d)} \leq C \| f \|_{\Ell^2(\Omega; \C^d)},
+  |\lambda|^{-1} \| u\|_{\Ell^2(\Omega; \C^d)} 
+  = |\lambda|^{-1} \|\,(A_2 + \lambda)^{-1} \PP_2 f \,\|_{\Ell^2(\Omega; \C^d)} 
+  \leq C\, \| f \|_{\Ell^2(\Omega; \C^d)},
 \end{align*}
 where $C$ depends only on $\theta$.
 By the calculations above it is understandable why this estimate on $u$ instead of \eqref{eq:resolventEstimateL2} is sometimes called \emph{resolvent estimate}.
 
-In order to develop an $\Ell^p$-theory for system \eqref{eq:stokesResolventSystem}, one way is to study the Stokes operator on subspaces of $\Ell^p(\Omega; \C^d)$.
+In order to develop an $\Ell^p$ theory for system \eqref{eq:stokesResolventSystem}, one way is to study the Stokes operator on subspaces of $\Ell^p(\Omega; \C^d)$.
 More precisely, we are interested in estimating solutions $u \in \HH^1_0(\Omega; \C^d)$, in $\Ell^p(\Omega; \C^d)$ provided that the right hand side of the Stokes resolvent system \eqref{eq:stokesResolventSystem} is an element of the space $\Ell^2(\Omega; \C^d) \cap \Ell^p(\Omega; \C^d)$.
 This is once again just one side of the aforementioned coin. 
-The other side just asks for a resolvent estimate on the Stokes operator, hoping that in analogy to Proposition \ref{prop:stokesOperatorL2} this leads to an analytic semigroup.
+The other side just asks for a resolvent estimate on the Stokes operator, hoping that, in analogy to Proposition \ref{prop:stokesOperatorL2}, this leads to an analytic semigroup.
 
 \begin{defn}
   \label{defn:stokeslp}
   %Let $\Omega \subseteq \R^d$, $d \geq 2$ be a bounded Lipschitz domain and $1 < p < \infty$.
   Let $\Omega\subseteq \R^d$, $d \geq 2$ be a bounded Lipschitz domain.
-  If $p > 2$ we define the Stokes operator $A_p$ via its \emph{part of} $A_2$ \emph{in } $\Ell^p_\sigma(\Omega)$.
+  If $p > 2$, we define the Stokes operator $A_p$ via its \emph{part of} $A_2$ \emph{in } $\Ell^p_\sigma(\Omega)$.
   \begin{align*}
     \Dom(A_p) &\coloneqq \Big\{ u \in \Dom(A_2) \cap \Ell^p_\sigma(\Omega) \colon A_2 u \in \Ell^p_\sigma(\Omega) \Big\} \\
     A_p u &\coloneqq A_2 u, \quad u \in \Dom(A_p).
@@ -350,7 +360,7 @@ The other side just asks for a resolvent estimate on the Stokes operator, hoping
   %If $p < 2$ and $A_2$ is closable in $\Ell^p_\sigma(\Omega)$, then $A_p \coloneqq \overline{A_2}$.
 \end{defn}
 
-For $p > 2$ there exists an analog to Theorem \ref{thm:stokesOperatorL2}. The peculiar range of $p$ for which this theorem holds is due to the fact that the boundedness of the Helmholtz projection on $\Ell^p(\Omega; \C^d)$ is a crucial ingredient to the proof and a fundamental pillar of the $\Ell^p$-theory of the Stokes equations.
+For $p > 2$, there exists an analog to Theorem \ref{thm:stokesOperatorL2}. The peculiar range of $p$ for which this theorem holds is due to the fact that the boundedness of the Helmholtz projection on $\Ell^p(\Omega; \C^d)$ is a crucial ingredient to the proof and a fundamental pillar of the $\Ell^p$ theory of the Stokes equations.
 More details about the mechanics of the Helmholtz projection can be found in Tolksdorf \cite[Sec. 5.1]{tolksdorf}.
 
 \begin{thm}[Thm. 5.2.11, \cite{tolksdorf}]
@@ -362,7 +372,7 @@ More details about the mechanics of the Helmholtz projection can be found in Tol
   \end{align*}
   the domain of the Stokes operator $A_p$ is characterized as
   \begin{align*}
-    \Dom(A_p) = \big\{ u \in \WW^{2,p}_{0,\,\sigma}(\Omega) \colon \exists \pi \in \Ell^p(\Omega) \text{ s.t. } -\Delta u + \nabla \pi \in \Ell^p_\sigma(\Omega) \big\},
+    \Dom(A_p) = \big\{ u \in \WW^{2,\,p}_{0,\,\sigma}(\Omega) \colon \exists \pi \in \Ell^p(\Omega) \text{ s.t. } -\Delta u + \nabla \pi \in \Ell^p_\sigma(\Omega) \big\},
   \end{align*}
   where the expression $\Delta u + \nabla \pi \in\Ell^p_\sigma(\Omega)$ needs to be understood in the distributional sense.
   For $u \in \Dom(A_p)$ and the corresponding pressure $\pi$ we have
@@ -371,14 +381,14 @@ More details about the mechanics of the Helmholtz projection can be found in Tol
   \end{align*}
 \end{thm}
 
-For $p < 2$ there exist various ways to define the Stokes operator.
+For $p < 2$, there exist various ways to define the Stokes operator.
 One adequate way is to dualize the operator $A_{p'}$, where $p' = p / (1 + p)$ is the Hölder conjugate exponent.
-In order to carry out this construction we need the spaces $\Ell^p_\sigma(\Omega)$ to exhibit the same behavior regarding dualization as the spaces $\Ell^p(\Omega; C^d)$.
+In order to carry out this construction, we need the spaces $\Ell^p_\sigma(\Omega)$ to exhibit the same behavior regarding dualization as the spaces $\Ell^p(\Omega; \C^d)$.
 
 \begin{lem}[Lem 5.2.13, \cite{tolksdorf}]
   \label{lem:duality}
   Let $\Omega \subset \R^d$, $d \geq 2$, be a bounded Lipschitz domain.
-  Then there exists $\varepsilon > 0$ such that for all 
+  Then, there exists $\varepsilon > 0$ such that for all 
   \begin{align*}
     \frac{2d}{d + 1} - \varepsilon < p < \frac{2d}{d - 1} + \varepsilon
   \end{align*}
@@ -418,8 +428,8 @@ Without investing too much additional work, it is now possible to prove the foll
   the operator $A_p$ is closed with dense domain. Furthermore $0 \in \rho(A_p)$.
 \end{thm}
 
-The natural question arises when comparing Theorem \ref{thm:stokesOperatorLp} with the Hilbert space counterpart Theorem \ref{prop:stokesOperatorL2}: Does the Stokes operator generate a bounded analytic semigroup in $\Ell^p_\sigma$?
-An affirmative answer was given by Shen in 2012 with his seminal paper \cite{Shen2012} by proving the necessary resolvent estimates for $d \geq 3$.
+The natural question arises when comparing Theorem \ref{thm:stokesOperatorLp} with the Hilbert space counterpart Theorem \ref{prop:stokesOperatorL2}: Does the Stokes operator generate a bounded analytic semigroup in $\Ell^p_\sigma(\Omega)$?
+An affirmative answer was given by Shen in 2012 with his seminal paper \cite{Shen2012} in which he provided the necessary resolvent estimates for $d \geq 3$.
 
 \begin{thm}[Shen]
   \label{thm:main}
@@ -436,7 +446,7 @@ An affirmative answer was given by Shen in 2012 with his seminal paper \cite{She
 \end{thm}
 
 This theorem gave an affirmative answer to Taylor's conjecture in \cite{taylor}. 
-Curiously this positive result is limited to $d \geq 3$ even though Shen states that the approach he developed should also work in the case $d = 2$.
+Curiously, this positive result is limited to $d \geq 3$ even though Shen states that the approach he developed should also work in the case $d = 2$.
 This sets the starting point for the present thesis.
 In the subsequent chapters, we will not only present Shen's approach to the problem of the resolvent estimates but we will furthermore extend his results whenever possible to the two dimensional case.
 
