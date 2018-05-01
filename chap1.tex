@@ -47,28 +47,28 @@ In this first section, we will establish the fundamental notions regarding bound
     \item There exists a covering of $\partial\Omega$ by coordinate cylinders which also serve as coordinate cylinders for $\partial\Omega_k$.
     \item The homeomorhpisms $\Lambda_k \colon \partial \Omega \to \partial\Omega_k$ satisfy
       \begin{align*}
-        \sup_{Q \in \partial\Omega} |Q - \Lambda_k(Q)| \to 0\quad\text{as } k \to \infty
+        \sup_{q \in \partial\Omega} |q - \Lambda_k(q)| \to 0\quad\text{as } k \to \infty
       \end{align*}
-      and $\Lambda_k(P)$ approaches $P$ nontangentially meaning that for all $k \in \N$
+      and $\Lambda_k(q)$ approaches $q$ nontangentially meaning that for all $k \in \N$
       \begin{align*}
-        | P - \Lambda_k(P) | < (1 + \beta) \operatorname{dist}(\Lambda_k(P), \partial\Omega)
+        | q - \Lambda_k(q) | < (1 + \beta) \operatorname{dist}(\Lambda_k(q), \partial\Omega)
       \end{align*}
       for some constant $\beta$ depending only on $d$ and the Lipschitz character of $\Omega\,$.
-    \item The normals $n_k$ of $\partial\Omega_k$ satisfy $\lim_{k \to \infty} n_k(\Lambda_k(P)) = n(P)$ a.e. for all $P \in \partial\Omega$
-    \item The functions $\vartheta_k$ satisfy $\delta \leq \vartheta_k \leq \delta^{-1}$ for some $\delta > 0$, $\vartheta^k \to 1$ pointwise a.e. and
+    \item The normals $n_k$ of $\partial\Omega_k$ satisfy $\lim_{k \to \infty} n_k(\Lambda_k(q)) = n(q)$ a.e.\@ for all $q \in \partial\Omega$
+    \item The functions $\vartheta_k$ satisfy $\delta \leq \vartheta_k \leq \delta^{-1}$ for some $\delta > 0$, $\vartheta^k \to 1$ pointwise a.e.\@ and
       \begin{align*}
-        \int_E \vartheta_k(Q) \d \sigma(Q) = \int_{\Lambda_k(E)} \d \sigma_k(Q),
+        \int_E \vartheta_k(q) \d \sigma(q) = \int_{\Lambda_k(E)} \d \sigma_k(q),
       \end{align*}
       where $E \subset \partial \Omega$ is measurable and $\sigma_k$ denotes the surface measure on $\Omega_k$.
       Furthermore, if $u \colon \partial\Omega_k \to \C$ is a measurable function on $\partial\Omega_k$, the following ``transformation rule'' holds:
       \begin{align*}
          \int_{\partial\Omega} u(\Lambda_k(q)) \vartheta_k(q) \d\sigma(q) = \int_{\partial\Omega_k} u(q) \d \sigma_k(q) .
       \end{align*}
-    \item The vector field $h$ satisfies $h \cdot  n_k \geq c > 0$ a.e. on each $\partial\Omega_k$ where $\nu_k$ denotes the unit inner normal to $\partial\Omega_k$.
+    \item The vector field $h$ satisfies $h \cdot  n_k \geq c > 0$ a.e.\@ on each $\partial\Omega_k$ where $n_k$ denotes the unit outer normal to $\partial\Omega_k$.
   \end{enumerate}
 \end{thm}
 
-The next concept we introduce will allow us to talk about boundary values of functions which are defined on $\Omega$ by considering their nontangential behavior.
+The next concept which we introduce will allow us to talk about boundary values of functions which are defined on $\Omega$ by considering their nontangential behavior.
 The first step will be to define nontangential approach regions.
 Unfortunately, in the literature there exist at least two different concepts which will be introduced in the next definitions.
   In the following, by a cone we mean an open, circular, truncated cone with only one convex component.
@@ -133,12 +133,12 @@ The following Lemma and Definition is used by Shen, see \cite[p.\@174]{Shen2017}
   |q - y| 
   &\leq |q - x| + |x - y| 
   \leq \alpha \operatorname{dist}(x, \partial\Omega) + |x - y|  \nonumber\\
-  &\leq (\alpha + 1) |x - y|
+  &\leq (\alpha + 1) |x - y|,
 \end{align}
 where $\alpha$ is the constant from Definition \ref{defn:nontangentialApproachRegion}. 
 %It is reasonable to choose $\alpha$ in a way that also condition (ii) from Theorem \ref{thm:smoothApproximation} holds.
 
-Depending on the type of cones used one may introduce similar concepts of nontangential convergence and nontangential maximal functions.
+Depending on the type of cones used, one may introduce similar concepts of nontangential convergence and nontangential maximal functions.
 
 \begin{defn}
   For a function $u$ in $\Omega$ and a fixed family of nontangential approach regions $\{\Gamma_\alpha\}$, we define the nontangential maximal function $(u)_\alpha^*$ by
@@ -147,19 +147,20 @@ Depending on the type of cones used one may introduce similar concepts of nontan
   (u)_\alpha^*(q) = \sup\big\{ |u(x)| \colon x \in \ShenCone_\alpha(q)\big\}
 \end{align}
 for $q \in \partial\Omega$.
-  For a fixed regular family of cones $\{\verCone(q)\}$ we define the nontangential maximal function $N(u)(q)$ via
+  For a fixed regular family of cones $\{\verCone(q)\}$, we define the nontangential maximal function $N(u)(q)$ via
   \begin{align*}
     N(u)(q) = \sup\big\{ |u(x)| \colon x \in \verCone(q)\big\}.
   \end{align*}
 \end{defn}
 
+<<<<<<< HEAD
 Note that Tolksdorf \cite[Prop.\@4.1.11]{tolksdorf} and Shen \cite[Prop.\@7.1.2]{Shen2017} show that the choice of $\alpha$ for the nontangential maximal function as in \ref{eq:defnNontangMaxFunction} does not affect their $p$-norms in an unpredictable way. In fact, their $p$-norms for different $\alpha_1$ and $\alpha_2$ stay comparable with a constant only depending on $d$, $\alpha_1$, $\alpha_2$ and the Lipschitz character.
 We will therefore for a given bounded Lipschitz domain always assume that $\alpha > 1$ has been chosen big enough such that on the one hand condition (ii) from Theorem \ref{thm:smoothApproximation} is fulfilled and that on the other hand $\alpha$ is large enough such that $\big\{ \Gamma_\alpha(q) \colon q \in \partial\Omega \big\}$ is a family of nontangential approach regions.
 In the following, we will thus ignore the parameter $\alpha$ in cones and nontangential maximal functions and tacitly assume that it was chosen appropriately.
 We further note that the functions $(u)^*$ and $N(u)$ will not be comparable in general, see the discussion in Tolksdorf \cite[p.\@91]{tolksdorf}.
 
 The above mentioned constructions of cones are not limited to cones that lay in the interior of the domain $\Omega$.
-In fact the same construction can be carried out for the exterior domain $\R^d \setminus \overline{\Omega}$ yielding cones that lay outside of $\Omega$. While Verchota's cones from Definition \ref{defn:regularFamilyOfCones} can be mirrored along the $x_d = 0$ plane in a suitable local coordinate system, Shen's cones from Definition \ref{defn:nontangentialApproachRegion} have to be modified in a natural way to give cones lying inside of $\R^d \setminus \overline \Omega$, namely
+In fact, the same construction can be carried out for the exterior domain $\R^d \setminus \overline{\Omega}$ yielding cones that lay outside of $\Omega$. While Verchota's cones from Definition \ref{defn:regularFamilyOfCones} can be mirrored along the $x_d = 0$ plane in a suitable local coordinate system, Shen's cones from Definition \ref{defn:nontangentialApproachRegion} have to be modified in a natural way to give cones lying inside of $\R^d \setminus \overline \Omega$, namely
 \begin{align*}
   \Gamma_\alpha^{\,\mathrm{ext}}(q) \coloneqq \big\{ x \in \R^d \setminus \overline \Omega \colon |x - q| < \alpha \operatorname{dist}(x, \partial\Omega)\big\}.
 \end{align*}
@@ -172,11 +173,11 @@ The idea is to restrict the set of directions from which one can approach $p$ by
   Let furthermore $u$ be a function on $\R^d \setminus \partial\Omega$ and $f$ a function on $\partial\Omega$.
   We say that $u = f$ \emph{in the sense of nontangential convergence from the inside} if 
   \begin{align*}
-    \lim_{\substack{ x \to q \\ x \in \ShenCone(q)}} u(x) = f(q), \quad\text{for a.e. } q \in \partial\Omega
+    \lim_{\substack{ x \to q \\ x \in \ShenCone(q)}} u(x) = f(q), \quad\text{for a.e.\@ } q \in \partial\Omega
   \end{align*}
   and we say that $u = f$ \emph{in the sense of nontangential convergence from the outside} if 
   \begin{align*}
-    \lim_{\substack{ x \to q \\ x \in \ShenCone^{\,\mathrm{ext}}(q)}} u(x) = f(q), \quad\text{for a.e. } q \in \partial\Omega.
+    \lim_{\substack{ x \to q \\ x \in \ShenCone^{\,\mathrm{ext}}(q)}} u(x) = f(q), \quad\text{for a.e.\@ } q \in \partial\Omega.
   \end{align*}
   If both of the above limits exist and coincide we say that $u = f$ \emph{in the sense of nontangential convergence}.
   %We will sometimes denote a cone coming from a nontangential approach region as above by $\ShenCone(q)$.
@@ -282,7 +283,7 @@ Note that for $u \in \HH_{0,\,\sigma}^1(\Omega)$ the gradient $\nabla u$ is a ma
   where $u \in \Dom(A_2)$ and $f$ comes from the definition of the domain.
 \end{defn}
 
-The following theorem from Mitrea and Monniaux \cite[Thm.\@~4]{mitreaMonniaux} shows that our definition of the Stokes operator and the one used in Shen's paper \cite{Shen2012} coincide. 
+The following theorem by Mitrea and Monniaux \cite[Thm.\@~4]{mitreaMonniaux} shows that our definition of the Stokes operator and the one used in Shen's paper \cite{Shen2012} coincide. 
 Another advantage of this characterization is the immediate link of the Stokes operator to the Stokes system.
 
 \begin{thm}
@@ -411,7 +412,7 @@ Now we define the Stokes operator for $p < 2$ as announced.
   Then the \emph{Stokes operator on} $\Ell^p_\sigma(\Omega)$ is defined via
   \begin{align*}
     \Dom(A_p) & \coloneqq \big\{ u \in \Ell^p_\sigma(\Omega) \colon \Psi u \in \Dom(A^*_{p'}) \big\} \\
-    A_p = &\coloneqq \Psi^{-1} A^*_{p'} \Psi u,
+    A_p &\coloneqq \Psi^{-1} A^*_{p'} \Psi u,
   \end{align*}
   where $p' = p/(1 - p)$ denotes the Hölder conjugate exponent of $p$ and $A^*_{p'}$ the adjoint operator to $A_{p'}$.
 \end{defn}
@@ -431,7 +432,7 @@ Without investing too much additional work, it is now possible to prove the foll
 The natural question arises when comparing Theorem \ref{thm:stokesOperatorLp} with the Hilbert space counterpart Theorem \ref{prop:stokesOperatorL2}: Does the Stokes operator generate a bounded analytic semigroup in $\Ell^p_\sigma(\Omega)$?
 An affirmative answer was given by Shen in 2012 with his seminal paper \cite{Shen2012} in which he provided the necessary resolvent estimates for $d \geq 3$.
 
-\begin{thm}[Shen]
+\begin{thm}[Shen, {\cite[Thm.\@~1.1]{Shen2012}}]
   \label{thm:main}
   Let $\Omega$ be a bounded Lipschitz domain in $\R^d$, $d \geq 3$.
   There exists $\varepsilon > 0$, such that for all
@@ -440,13 +441,14 @@ An affirmative answer was given by Shen in 2012 with his seminal paper \cite{She
   \end{align*}
   there exists a constant $C > 0$ such that for every $f \in \Ell^p_\sigma(\Omega)$ and all $\lambda \in \Sigma_\theta$ the inequality
   \begin{align*}
-    |\lambda| \| (\lambda + A_p)^{-1} \|_{\Ell^p(\Omega; \C^d)} \leq C \|f\|_{\Ell^p(\Omega; \C^d)}
+    |\lambda|\, \big\| \, (\lambda + A_p)^{-1} f\, \big\|_{\Ell^p(\Omega; \C^d)} 
+    \leq C\, \|f\|_{\Ell^p(\Omega; \C^d)}
   \end{align*}
   holds. In particular $-A_p$ is the generator of a bounded analytic semigroup on $\Ell^p_\sigma(\Omega)$.
 \end{thm}
 
 This theorem gave an affirmative answer to Taylor's conjecture in \cite{taylor}. 
-Curiously, this positive result is limited to $d \geq 3$ even though Shen states that the approach he developed should also work in the case $d = 2$.
+Curiously, this positive result is limited to the case $d \geq 3$ even though Shen states that the approach he developed should also work for $d = 2$, see \cite[p.\@~399]{Shen2012}.
 This sets the starting point for the present thesis.
 In the subsequent chapters, we will not only present Shen's approach to the problem of the resolvent estimates but we will furthermore extend his results whenever possible to the two dimensional case.
 

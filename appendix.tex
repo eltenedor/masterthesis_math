@@ -9,9 +9,9 @@ Therefore, we will build on the notations which were already established at the 
 We first collect expressions for the derivatives of the fundamental solutions to the scalar Helmholtz equation and the Laplace equation in $d= 2$.
 For the fundamental solution to the Laplace equation $G(x; 0) = -\frac{1}{2\pi} \log(|x|)$, we have the following expressions for the partial derivatives:
 \begin{align*}
-  \partial_\gamma G(x; 0) &= -\frac{1}{2\pi} \, \frac{x_\gamma}{|x|^2} \\[0.5em]
+  \partial_\gamma G(x; 0) &= -\frac{1}{2\pi} \, \frac{x_\gamma}{|x|^2}, \\[0.5em]
   %
-  \partial_\alpha \partial_\gamma G(x; 0) &= -\frac{1}{2\pi}\, \frac{\delta_{\alpha\gamma}}{|x|^2} + \frac{1}{\pi} \, \frac{x_\alpha x_\gamma}{|x|^4} \\[0.5em]
+  \partial_\alpha \partial_\gamma G(x; 0) &= -\frac{1}{2\pi}\, \frac{\delta_{\alpha\gamma}}{|x|^2} + \frac{1}{\pi} \, \frac{x_\alpha x_\gamma}{|x|^4}, \\[0.5em]
   %
   \partial_\beta \partial_\alpha \partial_\gamma G(x; 0)
   &= \frac{1}{\pi} \, \frac{\delta_{\beta \gamma} x_\alpha + \delta_{\alpha \gamma} x_\beta + \delta_{\alpha\beta} x_\gamma}{|x|^4} - \frac{4}{\pi}\, \frac{x_\alpha x_\beta x_\gamma}{|x|^6}.
@@ -20,28 +20,30 @@ The fundamental solution for the scalar Helmholtz equation is given via
 \begin{align*}
   G(x; \lambda) = \frac{\ii}{4}\, H_0^{(1)}(k|x|),
 \end{align*}
-see Section \ref{sec:hankel}.
-In the following, we will always have $z =  k|x|$.  
-Then, applications of the chain rule and the product rule of differentiation give
+where $H_0^{(1)}(z)$ is the Hankel function of the first kind, see Section \ref{sec:hankel}.
+Complex derivatives will be denoted by $\frac{\d{}}{\d z}$.
+We calculate using the chain rule and the product rule:
 \begin{align*}
   %%
-  \partial_\gamma G(x; \lambda) &= \frac{\ii}{4}\, k\;  \frac{x_\gamma}{|x|}\, \frac{\d{}}{\d z} H_0^{(1)}(z) \\[0.5em]
+  \partial_\gamma G(x; \lambda) &= \frac{\ii}{4}\, k\;  \frac{x_\gamma}{|x|}\, \frac{\d{}}{\d z} H_0^{(1)}(k |x|)\,, \\[0.5em]
   %%
   \partial_\alpha \partial_\gamma G(x; \lambda) 
   %%
-  &= \frac{\ii}{4} \, k^2 \;  \frac{x_\alpha x_\gamma}{|x|^2} \, \frac{\d{}^2}{\d z^2} H_0^{(1)}(z) + \frac{\ii}{4}\,  k \,\bigg(\frac{\delta_{\alpha\gamma}}{|x|} - \frac{x_\alpha x_\gamma}{|x|^3} \bigg)\, \frac{\d{}}{\d z} H_0^{(1)}(z) \\[0.5em]
+  &=  \frac{\ii}{4}\,  k \,\bigg(\frac{\delta_{\alpha\gamma}}{|x|} - \frac{x_\alpha x_\gamma}{|x|^3} \bigg)\, \frac{\d{}}{\d z} H_0^{(1)}(k |x|) + \frac{\ii}{4} \, k^2 \;  \frac{x_\alpha x_\gamma}{|x|^2} \, \frac{\d{}^2}{\d z^2} H_0^{(1)}(k |x|)\,, \\[0.5em]
   %%
   \partial_\beta \partial_\alpha \partial_\gamma G(x; \lambda)
   %%
-  &= \frac{\ii}{4} \, k^3 \; \frac{x_\alpha x_\beta x_\gamma}{|x|^3} \, \frac{\d{}^3}{\d z^3} H_0^{(1)}(z) \\[0.5em]
+  &= \frac{\ii}{4} \, k^3 \; \frac{x_\alpha x_\beta x_\gamma}{|x|^3} \, \frac{\d{}^3}{\d z^3} H_0^{(1)}(k |x|)\\[0.5em]
   %
-  &\quad + \frac{\ii}{4} \, k^2 \,\bigg(\frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha \gamma} x_\beta + \delta_{\alpha \beta} x_\gamma}{|x|^2} - 3\, \frac{x_\alpha x_\beta x_\gamma}{|x|^4} \bigg)\, \frac{\d{}^2}{\d z^2} H_0^{(1)}(z) \\[0.5em]
+  &\quad + \frac{\ii}{4} \, k^2 \,\bigg(\frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha \gamma} x_\beta + \delta_{\alpha \beta} x_\gamma}{|x|^2} - 3\, \frac{x_\alpha x_\beta x_\gamma}{|x|^4} \bigg)\, \frac{\d{}^2}{\d z^2} H_0^{(1)}(k |x|) \\[0.5em]
   %
-  &\quad + \frac{\ii}{4} \, k \, \bigg( 3\, \frac{x_\alpha x_\beta x_\gamma}{|x|^5} - \frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha\gamma} x_\beta + \delta_{\alpha\beta} x_\gamma}{|x|^3} \bigg)\, \frac{\d{}}{\d z} H_0^{(1)}(z).
+  &\quad+ \frac{\ii}{4} \, k \, \bigg( 3\, \frac{x_\alpha x_\beta x_\gamma}{|x|^5} - \frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha\gamma} x_\beta + \delta_{\alpha\beta} x_\gamma}{|x|^3} \bigg)\, \frac{\d{}}{\d z} H_0^{(1)}(k |x|) \,.
 \end{align*}
 
-\newpage
-The series expansions for the Hankel function $H_0^{(1)}(z)$ read according to Lebedev \cite[Sec.\@~5.6]{lebedev} with the Digamma function $\psi$ and the Bessel functions of the first and second kind $J_0$ and $Y_0$, respectively:
+We will now present the derivatives of the Hankel function $H_0^{(1)}(z)$ which appeared in the previous calculations by calculating the complex derivatives of the series expansion of $H_0^{(1)}(z)$ which may be found in Lebedev \cite[Sec.\@~5.6]{lebedev}. 
+The expansions below are a consequence of the series expansions of the Bessel functions of the first and second kind $J_0$ and $Y_0$, respectively.
+In the following, $\psi$ will denote the \emph{Digamma function}. 
+The aforementioned expansions read:
 \begin{align*}
   %
   \frac{\pi}{2 \ii} \, H_0^{(1)}(z)
@@ -51,7 +53,7 @@ The series expansions for the Hankel function $H_0^{(1)}(z)$ read according to L
   +  \mathlarger{\sum}_{l = 0}^\infty \, \frac{(-1)^l}{(l!)^2 \, 4^l} \,  z^{2l} \log(z) \\
   %&= \frac{2 \ii}{\pi} \, \mathlarger{\sum}_{l = 0}^\infty \, \frac{(-1)^l}{(l!)^2 \, 4^l} \,  z^{2l} \bigg( -\frac{\ii \pi}{2} - \log(2) - \psi(l + 1) \bigg) + \frac{2 \ii}{\pi} \, \mathlarger{\sum}_{l = 0}^\infty \, \frac{(-1)^l}{(l!)^2 \, 4^l} \,  z^{2l} \log(z) \\
   &= \mathlarger{\sum}_{l = 0}^\infty \, a_l \,  z^{2l} \, C_l 
-   + \mathlarger{\sum}_{l = 0}^\infty \, a_l  \,z^{2l} \log(z) \\[0.5em]
+   + \mathlarger{\sum}_{l = 0}^\infty \, a_l  \,z^{2l} \log(z)\,, \\[1.0em]
   %
   \frac{\pi}{2\ii} \, \frac{\d{}}{\d z} H_0^{(1)}(z)
   %
@@ -60,7 +62,7 @@ The series expansions for the Hankel function $H_0^{(1)}(z)$ read according to L
   + \mathlarger{\sum}_{l = 0}^\infty \, a_l \, z^{2l - 1} \\
   &= \mathlarger{\sum}_{l = 1}^\infty \, b_l \, z^{2l - 1} \, C_l 
   + \mathlarger{\sum}_{l = 1}^\infty \, b_l \, z^{2l - 1} \log(z) \, 
-  +  \mathlarger{\sum}_{l = 0}^\infty \, a_l \, z^{2l - 1} \\[0.5em]
+  +  \mathlarger{\sum}_{l = 0}^\infty \, a_l \, z^{2l - 1}, \\[1.0em]
   %
   \frac{\pi}{2\ii} \, \frac{\d{}^2}{\d z^2} H_0^{(1)}(z)
   %
@@ -71,7 +73,7 @@ The series expansions for the Hankel function $H_0^{(1)}(z)$ read according to L
   &=   \mathlarger{\sum}_{l = 1}^\infty c_l \, z^{2l - 2} \, C_l 
   +  \!\mathlarger{\sum}_{l = 1}^\infty c_l \, z^{2l - 2} \log(z) 
   +  \!\mathlarger{\sum}_{l = 1}^\infty b_l \, z^{2l - 2} 
-  +  \!\mathlarger{\sum}_{l = 0}^\infty a_l \, (2l - 1) \, z^{2l - 2} \\[0.5em]
+  +  \!\mathlarger{\sum}_{l = 0}^\infty a_l \, (2l - 1) \, z^{2l - 2}, \\[1.0em]
   %
   \frac{\pi}{2\ii} \, \frac{\d{}^3}{\d z^3} H_0^{(1)}(z)
   %
@@ -89,13 +91,15 @@ The series expansions for the Hankel function $H_0^{(1)}(z)$ read according to L
   + \mathlarger{\sum}_{l = 0}^\infty \, a_l \, (2l - 1)\, (2l - 2) \, z^{2l - 3} ,
 \end{align*}
 where, in order to increase readability, we introduced the following coefficients:
-\begin{align*}
+\begin{align}
+  \begin{alignedat}{1}
   C_l &\coloneqq -\frac{\ii \pi}{2} - \log(2) - \psi(l + 1), \\
   a_l &\coloneqq \frac{(-1)^l}{(l!)^2 \, 4^l}, \quad
   b_l \coloneqq a_l \cdot  2l, \quad
-  c_l \coloneqq b_l \cdot (2l - 1), \quad
+  c_l \coloneqq b_l \cdot (2l - 1) \quad\text{and}\quad
   d_l \coloneqq c_l \cdot (2l - 2).
-\end{align*}
+  \end{alignedat}\label{defnConst}\tag{D1}
+\end{align}
 
 \section*{A.1\quad Proof of Lemma \ref{lem:HelmholtzLaplaceDifference} for $d = 2$}
 \markboth{APPENDIX}{A.1.\quad PROOF OF LEMMA \ref*{lem:HelmholtzLaplaceDifference} FOR $d = 2$}
@@ -108,20 +112,20 @@ For $\lambda \in \Sigma_\theta$, $\theta \in (0, \pi/2)$, we need to show that f
   \leq C\, |\lambda| |x|^{-1}
 \end{align*}
 holds with a constant $C > 0$ that only depends on $\theta$.
-The strategy will be to first estimate all resulting terms individually and to extract those which cannot be estimated in this way.
-We will call the terms that cannot be estimated individually \emph{problematic}.
-In the second step, we will show that all problematic terms, when added together, cancel which shows that the claimed estimate holds.
+The strategy will be to first estimate all absolute values of the resulting terms individually and to extract those which cannot be estimated in this way.
+We will call the terms whose absolute value that cannot be bounded individually \emph{problematic}.
+In the second step, we will show that all problematic terms cancel when added together which shows that the claimed estimate holds.
 
 In order to make the next calculations better to digest, we decompose the third derivative of $G(\,\cdot\, ; \lambda)$ as follows:
 \begin{align*}
-  \partial_\beta \partial_\alpha \partial_\gamma \big\{G(x; \lambda)\big\}
-  = A_1 + A_2 + A_3,
+  \partial_\beta \partial_\alpha \partial_\gamma G(x; \lambda)
+  = A_3 + A_2 + A_1,
 \end{align*}
 where each $A_i$, $i = 1,\dots,3$, corresponds to the term involving the $i$th derivative of $H_0^{(1)}$.
-Let us start with $A_1$. 
+Let us start with $A_3$. 
 We have
 \begin{align*}
-  A_1 = - \frac{1}{2 \pi } k^3 \, \frac{x_\alpha x_\beta x_\gamma}{|x|^3}  \,
+  A_3 = - \frac{1}{2 \pi } k^3 \, \frac{x_\alpha x_\beta x_\gamma}{|x|^3}  \,
   %%
   &\cdot\,\bigg\{
      \; \mathlarger{\sum}_{l = 2}^\infty \; d_l \, (k|x|)^{2l - 3} \, C_l +  \mathlarger{\sum}_{l = 2}^\infty \; d_l \, (k|x|)^{2l - 3} \log(k|x|)  \\
@@ -130,10 +134,17 @@ We have
   \bigg\}.
   %%
 \end{align*}
-We see that, using the fact $|\lambda| |x|^2 \leq (1/2)$ to trade one $k$ in the prefactor for a constant times $|x|^{-1}$, the only problematic term in $A_1$ is the first element of the last sum
+Using the fact $|\lambda| |x|^2 \leq (1/2)$ to trade one $|k| = \sqrt{|\lambda|}$ in the prefactor for a constant times $|x|^{-1}$, shows that the prefactor behave as
+\begin{align*}
+  \Big|\, k^3 \, \frac{x_\alpha x_\beta x_\gamma}{|x|^3}\, \Big| 
+  \leq C\, |\lambda| |x|^{-1}, 
+\end{align*}
+with a constant $C > 0$ only depending on $d$.
+Therefore, the only problematic term in $A_3$ is the first element of the last sum
 \begin{align}
   \label{eq:P1}
-  \tag{P1}- \frac{1}{2 \pi } k^3\, \frac{x_\alpha x_\beta x_\gamma}{|x|^3}  \; \mathlarger{\sum}_{l = 0}^{0} \; a_l \, (2l - 1)\, (2l - 2) \, (k|x|)^{2l - 3} .
+  %\tag{P1}- \frac{1}{2 \pi } k^3\, \frac{x_\alpha x_\beta x_\gamma}{|x|^3}  \; \mathlarger{\sum}_{l = 0}^{0} \; a_l \, (2l - 1)\, (2l - 2) \, (k|x|)^{2l - 3} .
+  \tag{P1}- \frac{1}{2 \pi } k^3\, \frac{x_\alpha x_\beta x_\gamma}{|x|^3}   \; a_0 \, (2 \cdot 0 - 1)\, (2 \cdot 0 - 2) \, (k|x|)^{2 \cdot 0 - 3} .
 \end{align}
 For $A_2$, we calculate
 \begin{align*}
@@ -146,26 +157,31 @@ For $A_2$, we calculate
   + \; \mathlarger{\sum}_{l = 0}^\infty \; a_l\, (2l - 1) \, (k|x|)^{2l - 2} 
   \bigg\}.
 \end{align*}
-As the prefactor already behaves like $|\lambda| |x|^{-1}$, the problematic terms are given by
+As the prefactor already behaves like $|\lambda| |x|^{-1}$, we identify the following to terms as being problematic:
 \begin{align}
   \label{eq:P2}
   \tag{P2}
   \begin{alignedat}{1}
+%  & - \frac{1}{2\pi} k^2\, \bigg(\, \frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha \gamma} x_\beta + \delta_{\alpha \beta} x_\gamma}{|x|^2} - 3\, \frac{x_\alpha x_\beta x_\gamma}{|x|^4} \, \bigg) 
+%   \, \cdot \mathlarger{\sum}_{l = 1}^1 \; c_l \, (k|x|)^{2l - 2} \log(k|x|) \\
+%   &- \frac{1}{2\pi} k^2 \,\bigg(\, \frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha \gamma} x_\beta + \delta_{\alpha \beta} x_\gamma}{|x|^2} - 3\, \frac{x_\alpha x_\beta x_\gamma}{|x|^4} \, \bigg) 
+%  \, \cdot \mathlarger{\sum}_{l = 0}^0 \; a_l\, (2l - 1) \, (k|x|)^{2l - 2} .
+    %
   & - \frac{1}{2\pi} k^2\, \bigg(\, \frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha \gamma} x_\beta + \delta_{\alpha \beta} x_\gamma}{|x|^2} - 3\, \frac{x_\alpha x_\beta x_\gamma}{|x|^4} \, \bigg) 
-   \, \cdot \mathlarger{\sum}_{l = 1}^1 \; c_l \, (k|x|)^{2l - 2} \log(k|x|) \\
+    \, \cdot\;  c_1 \, (k|x|)^{2 \cdot 1 - 2} \log(k|x|) \;\;\;\text{and}\\[0.5em]
    &- \frac{1}{2\pi} k^2 \,\bigg(\, \frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha \gamma} x_\beta + \delta_{\alpha \beta} x_\gamma}{|x|^2} - 3\, \frac{x_\alpha x_\beta x_\gamma}{|x|^4} \, \bigg) 
-  \, \cdot \mathlarger{\sum}_{l = 0}^0 \; a_l\, (2l - 1) \, (k|x|)^{2l - 2} .
+  \, \cdot \; a_0\, (2\cdot 0 - 1) \, (k|x|)^{2 \cdot 0 - 2} .
   \end{alignedat}
 \end{align}
 For the last component, we have the following identity:
 \begin{align*}
-  A_3 = 
-  & - \frac{1}{2\pi} k \bigg( 3\, \frac{x_\alpha x_\beta x_\gamma}{|x|^5} - \frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha\gamma} x_\beta + \delta_{\alpha\beta} x_\gamma}{|x|^3} \bigg)  \\
+  A_1 = 
+  & - \frac{1}{2\pi} k\, \bigg( 3\, \frac{x_\alpha x_\beta x_\gamma}{|x|^5} - \frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha\gamma} x_\beta + \delta_{\alpha\beta} x_\gamma}{|x|^3} \bigg)  \\
   &\,\cdot\, \bigg\{ 
   \; \mathlarger{\sum}_{l = 1}^\infty \; b_l \, (k|x|)^{2l - 1} \, C_l 
   + \mathlarger{\sum}_{l = 1}^\infty \; b_l \, (k|x|)^{2l - 1} \log(k|x|) 
-  + \mathlarger{\sum}_{l = 0}^\infty \; a_l \, (k|x|)^{2l - 1} .
-  \bigg\}
+  + \mathlarger{\sum}_{l = 0}^\infty \; a_l \, (k|x|)^{2l - 1} 
+  \bigg\}.
 \end{align*}
 In this case, the prefactor behaves like $\sqrt{|\lambda|} |x|^{-2}$.
 Therefore, problematic terms only arise in the last two sums
@@ -173,18 +189,24 @@ Therefore, problematic terms only arise in the last two sums
   \label{eq:P3}
   \tag{P3}
   \begin{alignedat}{1}
+%    &- \frac{1}{2\pi} k\, \bigg( \, 3\, \frac{x_\alpha x_\beta x_\gamma}{|x|^5} - \frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha\gamma} x_\beta + \delta_{\alpha\beta} x_\gamma}{|x|^3} \, \bigg)
+%  \, \cdot \mathlarger{\sum}_{l = 1}^1 \; b_l \, (k|x|)^{2l - 1} \log(k|x|)  \\
+%    &- \frac{1}{2\pi} k\, \bigg( \, 3\, \frac{x_\alpha x_\beta x_\gamma}{|x|^5} - \frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha\gamma} x_\beta + \delta_{\alpha\beta} x_\gamma}{|x|^3} \, \bigg)
+%  \, \cdot \mathlarger{\sum}_{l = 0}^0 \; a_l \, (k|x|)^{2l - 1} .
+    %
     &- \frac{1}{2\pi} k\, \bigg( \, 3\, \frac{x_\alpha x_\beta x_\gamma}{|x|^5} - \frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha\gamma} x_\beta + \delta_{\alpha\beta} x_\gamma}{|x|^3} \, \bigg)
-  \, \cdot \mathlarger{\sum}_{l = 1}^1 \; b_l \, (k|x|)^{2l - 1} \log(k|x|)  \\
+    \, \cdot \; b_1 \, (k|x|)^{2 \cdot 1 - 1} \log(k|x|)  \quad\text{and}\\[0.5em]
     &- \frac{1}{2\pi} k\, \bigg( \, 3\, \frac{x_\alpha x_\beta x_\gamma}{|x|^5} - \frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha\gamma} x_\beta + \delta_{\alpha\beta} x_\gamma}{|x|^3} \, \bigg)
-  \, \cdot \mathlarger{\sum}_{l = 0}^0 \; a_l \, (k|x|)^{2l - 1} .
+  \, \cdot \; a_0 \, (k|x|)^{2 \cdot 0 - 1} .
   \end{alignedat}
 \end{align}
-Note that we have
+Note that we get from the definitions on page \pageref{defnConst}
 \begin{align*}
   a_0 = 1, \qquad c_1 = b_1 = - \frac{1}{2}.
 \end{align*}
 Therefore, we can already see that the logarithmic terms in the sum $\eqref{eq:P2} + \eqref{eq:P3}$ cancel.
-Next, we observe that if we take the sum over the problematic terms \eqref{eq:P1}, \eqref{eq:P2} and \eqref{eq:P3} and subtract $\partial_\beta \partial_\alpha \partial_\gamma G(x; 0)$, the result is $0$ which is easily seen by grouping the terms with the same power of $|x|$:
+Next, we observe that if we take the sum over the problematic terms \eqref{eq:P1}, \eqref{eq:P2} and \eqref{eq:P3} and subtract $\partial_\beta \partial_\alpha \partial_\gamma G(x; 0)$, the result is $0$ which is easily seen by grouping the terms having the same power of $|x|$:
+\begin{samepage}
 \begin{align*}
   &\hspace{-2cm}\mathrm{(P1)} + \mathrm{(P2)} + \mathrm{(P3)} - \partial_\beta \partial_\alpha \partial_\gamma G(x; 0) \\[0.5em]
   = &- \frac{1}{\pi}\, \frac{x_\alpha x_\beta x_\gamma}{|x|^6} \\[0.5em]
@@ -200,6 +222,7 @@ Next, we observe that if we take the sum over the problematic terms \eqref{eq:P1
      + \frac{4}{\pi}\, \frac{x_\alpha x_\beta x_\gamma}{|x|^6} 
      \quad=\quad 0 \,.
 \end{align*}
+\end{samepage}
 
 
 %\newpage
@@ -208,16 +231,19 @@ Next, we observe that if we take the sum over the problematic terms \eqref{eq:P1
 \addcontentsline{toc}{section}{A.2\quad Proof of Theorem \ref*{thm:differenceFundamentalSolutionStokes} for $d = 2$}
 \label{sec:A2}
 
-In this section, we want to show that for all $\lambda \in \Sigma_\theta$, $\theta \in (0,\pi/2)$ and under the assumption that $|\lambda| |x|^2 \leq (1/2)$, we have
+In this section, we want to show that, for all $\lambda \in \Sigma_\theta$, $\theta \in (0,\pi/2)$ and under the assumption that $|\lambda| |x|^2 \leq (1/2)$, we have
 \begin{align*}
   \Big|\, \nabla_x \big\{ \Gamma(x; \lambda) - \Gamma(x; 0) \big\} \, \Big| \leq C\, |\lambda| |x| \, \big|\log(|\lambda| |x|^2)\,\big|\,,
 \end{align*}
 where $C > 0$ depends only on $\theta$.
 The means and the strategy to prove this estimate are similar to the procedure in the previous section.
-In addition to the derivatives that were calculated at the beginning of this appendix, we will furthermore need  the first partial derivative for the fundamental solution of the Stokes problem:
+In addition to the derivatives that were calculated at the beginning of this appendix, we will furthermore need the first partial derivative for the matrix of fundamental solution of the Stokes problem:
 \begin{align*}
+    \Gamma_{\alpha\beta}(x; 0) 
+    &= \frac{1}{4\pi} \bigg\{ \,- \delta_{\alpha\beta} \log(|x|) + \frac{x_\alpha x_\beta}{|x|^2} \,\bigg\}
+    \\[0.5em]
   \partial_\gamma \Gamma_{\alpha\beta} (x; 0) 
-  = \frac{1}{4 \pi}\, \bigg(\, \frac{\delta_{\alpha\gamma} x_\beta + \delta_{\gamma\beta} x_\alpha  - \delta_{\alpha\beta} x_\gamma}{|x|^2}  \, \bigg) 
+  &= \frac{1}{4 \pi}\, \bigg(\, \frac{\delta_{\alpha\gamma} x_\beta + \delta_{\beta\gamma} x_\alpha  - \delta_{\alpha\beta} x_\gamma}{|x|^2}  \, \bigg) 
   - \frac{1}{2\pi}\, \frac{x_\alpha x_\beta x_\gamma}{|x|^4} .
 \end{align*}
 Now consider the difference
@@ -229,7 +255,7 @@ Now consider the difference
   &\qquad\eqqcolon B_1 + B_2 + B_3 \,,
 \end{align*}
 where we introduced the variables $B_i$, $i = 1,\dots,3$, for the sake of readability.
-As in the previous section we will study the terms $B_i$ independently and extract the terms that do not indicate the desired behavior.
+As in the previous section, we will study the terms $B_i$ independently and extract the terms that do not exhibit the desired behavior.
 For $B_1$, we have
 \begin{align*}
   B_1 = -\frac{1}{2\pi} k\;  \frac{\delta_{\alpha\beta} x_\gamma}{|x|}  \;
@@ -238,45 +264,59 @@ For $B_1$, we have
   &+ \mathlarger{\sum}_{l = 1}^\infty \; b_l \, (k|x|)^{2l - 1} \log(k|x|) \; \\
   &+  \mathlarger{\sum}_{l = 0}^\infty \; a_l \, (k|x|)^{2l - 1} \; \bigg\}.
 \end{align*}
-In this expression, we only detect one problematic term, namely
+In this expression, we only detect one problematic term, namely the term corresponding to $l = 0$ in the last sum
 \begin{align}
   \label{eq:Q1}
   \tag{Q1}
-  -\frac{1}{2\pi} k\;  \frac{\delta_{\alpha\beta} x_\gamma}{|x|}\, \mathlarger{\sum}_{l = 0}^0 \; a_l \, (k|x|)^{2l - 1} .
+  %-\frac{1}{2\pi} k\;  \frac{\delta_{\alpha\beta} x_\gamma}{|x|}\, \mathlarger{\sum}_{l = 0}^0 \; a_l \, (k|x|)^{2l - 1} .
+  -\frac{1}{2\pi} k\;  \frac{\delta_{\alpha\beta} x_\gamma}{|x|}\, \cdot \; a_0 \, (k|x|)^{2 \cdot 0 - 1} .
 \end{align}
-For the expression $B_2$, we have just 
+For the expression $B_2$, we have  
 \begin{align*}
-  B_2 = k^{-2} \, \Big( \, A_1 + A_2 + A_3 - \partial_\gamma\partial_\alpha\partial_\beta \Big\{ G(x; 0)\Big\} \, \Big) \eqqcolon A_1' + A_2' + A_3'\,,
+  B_2 = k^{-2} \, \Big( \, A_1 + A_2 + A_3 - \partial_\beta\partial_\alpha\partial_\gamma G(x; 0)\, \Big) \eqqcolon A_1' + A_2' + A_3'\,,
 \end{align*}
-with the variables $A_i$, $i = 1, \dots, 3$, from the previous section. 
+with the variables $A_i$, $i = 1, \dots, 3$, which were introduced in the previous section. 
 We will now list the problematic terms for $A_i'$ where we will already take into account the cancellations from the previous section.
 This will result on the one hand in additional terms and on the other hand in subsequent terms in the same sums compared to \eqref{eq:P1}, \eqref{eq:P2} and \eqref{eq:P3}.
 
-For $A_1'$, we see that the following terms do not meet the desired behavior:
+For $A_1'$, we see that the following term does not meet the desired behavior:
 \begin{align}
   \label{eq:Q2}
   \tag{Q2}
   \begin{alignedat}{1}
-  &- \frac{1}{2 \pi } k \, \frac{x_\alpha x_\beta x_\gamma}{|x|^3} \; \mathlarger{\sum}_{l = 1}^1 \; c_l \, (k|x|)^{2l - 3}. 
+  %&- \frac{1}{2 \pi } k \, \frac{x_\alpha x_\beta x_\gamma}{|x|^3} \; \mathlarger{\sum}_{l = 1}^1 \; c_l \, (k|x|)^{2l - 3}. 
+  &- \frac{1}{2 \pi } k \, \frac{x_\alpha x_\beta x_\gamma}{|x|^3} \; \cdot \; c_1 \, (k|x|)^{2 \cdot 1 - 3}. 
   %&- \frac{1}{2 \pi } k \frac{x_\alpha x_\beta x_\gamma}{|x|^3}  \; \mathlarger{\sum}_{l = 1}^{1} \; a_l (2l - 1) (2l - 2) \, (k|x|)^{2l - 3} 
   \end{alignedat}
 \end{align}
-For $A_2'$, we see that compared to $A_2$ every summand is problematic which after cancellation leads to:
+For $A_2'$, we see that, compared to $A_2$, every summand is problematic which after cancellation leads to:
 \begin{align}
   \label{eq:Q3}
   \tag{Q3}
   \begin{alignedat}{1}
+%  &- \frac{1}{2\pi} \, \bigg(\,\frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha \gamma} x_\beta + \delta_{\alpha \beta} x_\gamma}{|x|^2} - 3\, \frac{x_\alpha x_\beta x_\gamma}{|x|^4} \, \bigg) 
+%  \,\cdot \mathlarger{\sum}_{l = 1}^1 \; c_l \, (k|x|)^{2l - 2} \, C_l \\
+%  %
+%  %&- \frac{1}{2\pi} \bigg(\frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha \gamma} x_\beta + \delta_{\alpha \beta} x_\gamma}{|x|^2} - 3 \frac{x_\alpha x_\beta x_\gamma}{|x|^4} \bigg) 
+%  %\cdot \mathlarger{\sum}_{l = 1}^1 \; c_l \, (k|x|)^{2l - 2} \log(k|x|) \\
+%  %
+%  &- \frac{1}{2\pi} \, \bigg(\, \frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha \gamma} x_\beta + \delta_{\alpha \beta} x_\gamma}{|x|^2} - 3\, \frac{x_\alpha x_\beta x_\gamma}{|x|^4} \, \bigg) 
+%  \,\cdot \mathlarger{\sum}_{l = 1}^1 \; b_l \, (k|x|)^{2l - 2}  \\
+%  %
+%  &- \frac{1}{2\pi} \, \bigg(\,\frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha \gamma} x_\beta + \delta_{\alpha \beta} x_\gamma}{|x|^2} - 3\, \frac{x_\alpha x_\beta x_\gamma}{|x|^4} \, \bigg) 
+%  \,\cdot \mathlarger{\sum}_{l = 1}^1 \; a_l (2l - 1) \, (k|x|)^{2l - 2} .
+    %
   &- \frac{1}{2\pi} \, \bigg(\,\frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha \gamma} x_\beta + \delta_{\alpha \beta} x_\gamma}{|x|^2} - 3\, \frac{x_\alpha x_\beta x_\gamma}{|x|^4} \, \bigg) 
-  \,\cdot \mathlarger{\sum}_{l = 1}^1 \; c_l \, (k|x|)^{2l - 2} \, C_l \\
+    \,\cdot \; c_1 \, (k|x|)^{2\cdot 1 - 2} \, C_1 \\[1.0em]
   %
   %&- \frac{1}{2\pi} \bigg(\frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha \gamma} x_\beta + \delta_{\alpha \beta} x_\gamma}{|x|^2} - 3 \frac{x_\alpha x_\beta x_\gamma}{|x|^4} \bigg) 
   %\cdot \mathlarger{\sum}_{l = 1}^1 \; c_l \, (k|x|)^{2l - 2} \log(k|x|) \\
   %
   &- \frac{1}{2\pi} \, \bigg(\, \frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha \gamma} x_\beta + \delta_{\alpha \beta} x_\gamma}{|x|^2} - 3\, \frac{x_\alpha x_\beta x_\gamma}{|x|^4} \, \bigg) 
-  \,\cdot \mathlarger{\sum}_{l = 1}^1 \; b_l \, (k|x|)^{2l - 2}  \\
+    \,\cdot \; b_1 \, (k|x|)^{2 \cdot 1 - 2}  \\[1.0em]
   %
   &- \frac{1}{2\pi} \, \bigg(\,\frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha \gamma} x_\beta + \delta_{\alpha \beta} x_\gamma}{|x|^2} - 3\, \frac{x_\alpha x_\beta x_\gamma}{|x|^4} \, \bigg) 
-  \,\cdot \mathlarger{\sum}_{l = 1}^1 \; a_l (2l - 1) \, (k|x|)^{2l - 2} .
+  \,\cdot \; a_1 (2 \cdot 1 - 1) \, (k|x|)^{2 \cdot 1 - 2} .
   \end{alignedat}
 \end{align}
 The same holds for the expression $A_3'$:
@@ -284,21 +324,30 @@ The same holds for the expression $A_3'$:
   \label{eq:Q4}
   \tag{Q4}
   \begin{alignedat}{1}
+%    &- \frac{1}{2\pi} \, \frac{1}{k} \, \bigg(\, 3\, \frac{x_\alpha x_\beta x_\gamma}{|x|^5} - \frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha\gamma} x_\beta + \delta_{\alpha\beta} x_\gamma}{|x|^3} \, \bigg)  
+%   \,\cdot \mathlarger{\sum}_{l = 1}^1 \; b_l \, (k|x|)^{2l - 1} \, C_l  \\
+%    %
+%    %&- \frac{1}{2\pi} \, \frac{1}{k} \Big( 3 \frac{x_\alpha x_\beta x_\gamma}{|x|^5} - \frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha\gamma} x_\beta + \delta_{\alpha\beta} x_\gamma}{|x|^3} \Big)  
+%  %\mathlarger{\sum}_{l = 1}^1 \; b_l \, (k|x|)^{2l - 1} \log(k|x|) \\
+%    %
+%    &- \frac{1}{2\pi} \, \frac{1}{k} \, \bigg( \, 3\, \frac{x_\alpha x_\beta x_\gamma}{|x|^5} - \frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha\gamma} x_\beta + \delta_{\alpha\beta} x_\gamma}{|x|^3} \, \bigg)  
+%  \,\cdot \mathlarger{\sum}_{l = 1}^1 \; a_l \, (k|x|)^{2l - 1} .
+%    %
     &- \frac{1}{2\pi} \, \frac{1}{k} \, \bigg(\, 3\, \frac{x_\alpha x_\beta x_\gamma}{|x|^5} - \frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha\gamma} x_\beta + \delta_{\alpha\beta} x_\gamma}{|x|^3} \, \bigg)  
-   \,\cdot \mathlarger{\sum}_{l = 1}^1 \; b_l \, (k|x|)^{2l - 1} \, C_l  \\
+    \,\cdot \; b_1 \, (k|x|)^{2 \cdot 1 - 1} \, C_1  \\[1.0em]
     %
     %&- \frac{1}{2\pi} \, \frac{1}{k} \Big( 3 \frac{x_\alpha x_\beta x_\gamma}{|x|^5} - \frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha\gamma} x_\beta + \delta_{\alpha\beta} x_\gamma}{|x|^3} \Big)  
   %\mathlarger{\sum}_{l = 1}^1 \; b_l \, (k|x|)^{2l - 1} \log(k|x|) \\
     %
     &- \frac{1}{2\pi} \, \frac{1}{k} \, \bigg( \, 3\, \frac{x_\alpha x_\beta x_\gamma}{|x|^5} - \frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha\gamma} x_\beta + \delta_{\alpha\beta} x_\gamma}{|x|^3} \, \bigg)  
-  \,\cdot \mathlarger{\sum}_{l = 1}^1 \; a_l \, (k|x|)^{2l - 1} .
+  \,\cdot \; a_1 \, (k|x|)^{2 \cdot 1 - 1} .
   \end{alignedat}
 \end{align}
-Now it is time to sum all problematic terms, expand the variables and subtract the term $B_3$. 
+Now it is time to sum all problematic terms, expand the variables and add the term $B_3$. 
 As before, all the terms will cancel which will then prove our initial claim. 
 With
 \begin{align*}
-  a_0 = 1, \quad a_1 = -\frac{1}{4}, \quad c_1 = b_1 =  -\frac{1}{2},
+  a_0 = 1, \quad a_1 = -\frac{1}{4} \quad\text{and}\quad c_1 = b_1 =  -\frac{1}{2},
 \end{align*}
 we see that already within the sum \eqref{eq:Q3} + \eqref{eq:Q4} a lot of terms cancel which leaves us with:
 \begin{align*}
@@ -307,7 +356,7 @@ we see that already within the sum \eqref{eq:Q3} + \eqref{eq:Q4} a lot of terms 
   &- \frac{1}{2\pi} \, \bigg(\, \frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha \gamma} x_\beta + \delta_{\alpha \beta} x_\gamma}{|x|^2} - 3\, \frac{x_\alpha x_\beta x_\gamma}{|x|^4} \, \bigg) 
   \, \cdot \mathlarger{\sum}_{l = 1}^1 \; b_l \, (k|x|)^{2l - 2}.
 \end{align*}
-Now let us consider the expression \eqref{eq:Q1} + \eqref{eq:Q2} + \eqref{eq:Q33} - $B_3$:
+Now let us consider the expression $\eqref{eq:Q1} + \eqref{eq:Q2} + \eqref{eq:Q33} + B_3$:
 \begin{align*}
   &-\frac{1}{2\pi} \,  \frac{\delta_{\alpha\beta} x_\gamma}{|x|^2} 
   + \frac{1}{4 \pi }\, \frac{x_\alpha x_\beta x_\gamma}{|x|^4} 
@@ -318,3 +367,4 @@ Now let us consider the expression \eqref{eq:Q1} + \eqref{eq:Q2} + \eqref{eq:Q33
   + \frac{1}{2\pi}\,  \frac{x_\alpha x_\beta x_\gamma}{|x|^4}
   \quad = \quad 0\, .
 \end{align*}
+As all problematic terms add up to zero we have proven the initial claim.
