@@ -5,7 +5,13 @@ In this final chapter, we will prove that the Stokes semigroup is analytic on $\
 
 The first step will be to establish a \emph{weak reverse Hölder estimate} for local solutions of the Stokes resolvent problem \eqref{eq:stokesResolventProblem}. 
 We start with a similar result on Lipschitz cylinders, see Definition~\ref{defn:lipschitzDomain}.
-Recall also the definition of the constant $M > 0$ related to Lipschitz domains.
+Recall the definition of the constant $M > 0$ related to Lipschitz domains and the sets
+  \begin{align*}
+    D(r) &\coloneqq \big\{ (x', x_d) \colon |x'| < r, |x_d| < 10 d\, (M + 1)\, r\big\}\,, \\
+    D_{\eta}(r) &\coloneqq \big\{ (x', x_d) \colon |x'| < r, \eta_x(x') < x_d < 10 d\,(M+ 1)\,r\big\}\,, \\
+    I_{\eta}(r) &\coloneqq \big\{ (x', x_d) \colon |x'| < r, \eta_x(x') = x_d \big\}\,,
+  \end{align*}
+  where $\eta_x \colon \R^{d - 1} \to \R$ is a Lipschitz continuous function with Lipschitz character bounded by $M$.
 
 \begin{lem}
   \label{lem:reverseHoelderCylinder}
@@ -34,7 +40,7 @@ Recall also the definition of the constant $M > 0$ related to Lipschitz domains.
 %    \bigg( \int_{D_\eta(1)} |u|^p \d x \bigg)^{2/p} \leq C \int_{\partial D_\eta(t) \setminus I(2)} |u|^2 \d \sigma.
 %  \end{align*}
   \begin{align*}
-    \bigg( \int_{D_\eta(1)} |u|^p \d x \bigg)^{2/p} 
+    \bigg( \int_{D_\eta(1)} |u|^{p_d} \d x \bigg)^{2/p} 
     &\leq C\, \int_1^2 \Bigg\{  \int_{\partial D(t)} \! |u(y)|^2 \chi_{D_\eta(2)}(y) \d\sigma(y) +  \int_{I_\eta(2)} |u(y)|^2 \d \sigma(y) \Bigg\} \d t  \\
     &= C \int_1^2 \int_{\partial D(t)} \! |u(y)|^2 \chi_{D_\eta(2)}(y) \d\sigma(y) \d t.
   \end{align*}
@@ -49,9 +55,9 @@ Recall also the definition of the constant $M > 0$ related to Lipschitz domains.
   and, consequently, the function $f$ is Lipschitz continuous with Lipschitz constant $1$.
   Applying the co-area formula from Theorem~\ref{thm:coarea} with function $f$ to integrate both sides over the interval $(1,2)$ gives
   \begin{align*}
-    \bigg( \int_{D_\eta(1)} |u|^p \d x \bigg)^{2/p} \leq C \int_{D_\eta(2)} |u|^2 \d x.
+    \bigg( \int_{D_\eta(1)} |u|^{p_d} \d x \bigg)^{2/{p_d}} \leq C \int_{D_\eta(2)} |u|^2 \d x.
   \end{align*}
-  Estimate \eqref{eq:reverseHoelderCylinder} now follows after dividing by $|D_\eta(1)|$.
+  Estimate \eqref{eq:reverseHoelderCylinder} now follows readily.
 \end{proof}
 
 The next step consists in extending the previous result to arbitrary Lipschitz domains. 
@@ -64,13 +70,13 @@ The following Lemma, which appeared in Tolksdorf \cite[Lem.\@~4.2]{tolksdorf2017
   \begin{align*}
     &\bigg( \frac{1}{s^d} \int_{\Omega \cap \BB(y,\, s)} |f|^p \d x \bigg)^{1/p} \\
     &\qquad\leq C\, \bigg\{\, \bigg( \frac{1}{s^d} \int_{\Omega \cap \BB(y,\, \alpha_1 s)} |f|^2 \d x \bigg)^{1/2} 
-    + \sup_{B' \cap \BB(y,\,s)} \bigg( \frac{1}{|B'|} \int_{\Omega \cap B'} |g|^2 \d x \bigg)^{1/2} \, \bigg\}
+    + \sup_{B' \supset \BB(y,\,s)} \bigg( \frac{1}{|B'|} \int_{\Omega \cap B'} |g|^2 \d x \bigg)^{1/2} \, \bigg\}
   \end{align*}
   holds for all balls $\BB(y,s)$ with $\BB(y,\alpha_2 s) \subseteq \BB(x_0, \alpha_2 r)$ and which are either centered on $\partial\Omega$ or satisfy $\BB(y,\alpha_2 s) \subseteq \Omega$, then for each $\alpha \in (1,\alpha_2)$ there exists a constant $C' > 0$ such that
   \begin{align*}
     &\bigg( \frac{1}{r^d} \int_{\Omega \cap \BB(x_0,\, r)} |f|^p \d x \bigg)^{1/p} 
     \\
-    &\qquad\leq C'\, \bigg\{\, \bigg( \frac{1}{r^d} \int_{\Omega \cap \BB(x_0,\,\alpha  r)} |f|^2 \d x \bigg)^{1/2} + \sup_{B' \cap \BB(x_0,\,r)} \bigg( \frac{1}{|B'|} \int_{\Omega \cap B'} |g|^2 \d x \bigg)^{1/2} \,\bigg\}.
+    &\qquad\leq C'\, \bigg\{\, \bigg( \frac{1}{r^d} \int_{\Omega \cap \BB(x_0,\,\alpha  r)} |f|^2 \d x \bigg)^{1/2} + \sup_{B' \supset \BB(x_0,\,r)} \bigg( \frac{1}{|B'|} \int_{\Omega \cap B'} |g|^2 \d x \bigg)^{1/2} \,\bigg\}.
   \end{align*}
   This constant $C'$ only depends on $d$, $\alpha$, $\alpha_1$, $\alpha_2$, $p$ and $C$.
 \end{lem}
@@ -111,20 +117,20 @@ As of now, our toolbox comprises enough tools to prove that solutions to the Sto
 
   In order to prove (1), let $x_0 \in \Omega$ with $\BB(x_0,\alpha_2 r) \subseteq \Omega$. We deploy the interior estimate \eqref{eq:interiorEstimateDoubleLayer} to derive that for all $x \in \BB(x_0,r)$ the estimate
   \begin{align*}
-    |u(x)|^p \leq C\, \bigg( \frac{1}{r^{d}} \int_{\BB(x,\,r)} |u(y)|^2 \d y \bigg)^{p/2}
+    |u(x)|^{p_d} \leq C\, \bigg( \frac{1}{r^{d}} \int_{\BB(x,\,r)} |u(y)|^2 \d y \bigg)^{{p_d}/2}
   \end{align*}
   holds which after integrating $x$ over $\BB(x_0, r)$ yields
   \begin{align*}
-    \frac{1}{r^{d}}\int_{\BB(x_0,\, r)} |u(x)|^p \d x \leq C\, \bigg(  \frac{1}{r^{d}}\int_{\BB(x_0,\, \alpha_1 r)} |u(z)|^2 \d z \bigg)^{p/2},
+    \frac{1}{r^{d}}\int_{\BB(x_0,\, r)} |u(x)|^{p_d} \d x \leq C\, \bigg(  \frac{1}{r^{d}}\int_{\BB(x_0,\, \alpha_1 r)} |u(z)|^2 \d z \bigg)^{{p_d}/2},
   \end{align*}
   where we used the fact that $\alpha_1 > 2$. 
   Here, $C > 0$ depends only on $d$ and $\theta$.
 
   For (2), note that if $x_0 \in \partial\Omega$, then by Lemma~\ref{lem:reverseHoelderCylinder} and Pythagoras' theorem we have
   \begin{align*}
-    \bigg( \frac{1}{r^d} \int_{\BB(x_0,\, r) \cap \Omega} |u(x)|^p \d x \bigg)^{1/p}
-    &\leq \bigg( \frac{1}{r^d} \int_{D_{\eta_{x_0}}(r)} |u(x)|^p \d x \bigg)^{1/p} \\[0.5em]
-    &\leq C \, \bigg( \frac{1}{r^d} \int_{D_{\eta_{x_0}}(2 r)} |u(x)|^p \d x \bigg)^{1/p} \\[0.5em]
+    \bigg( \frac{1}{r^d} \int_{\BB(x_0,\, r) \cap \Omega} |u(x)|^{p_d} \d x \bigg)^{1/{p_d}}
+    &\leq \bigg( \frac{1}{r^d} \int_{D_{\eta_{x_0}}(r)} |u(x)|^{p_d} \d x \bigg)^{1/{p_d}} \\[0.5em]
+    &\leq C \, \bigg( \frac{1}{r^d} \int_{D_{\eta_{x_0}}(2 r)} |u(x)|^{p_d} \d x \bigg)^{1/{p_d}} \\[0.5em]
     &\leq C \, \bigg( \frac{1}{r^d} \int_{\BB(x_0,\, \alpha_1 r) \cap \Omega} |u(x)|^2 \d x \bigg)^{1/2},
   \end{align*}
   with a constant $C > 0$ that only depends on $d$, $M$ and $\theta$.
@@ -135,12 +141,12 @@ As of now, our toolbox comprises enough tools to prove that solutions to the Sto
 
   \begin{prop}[Giaquinta, Modica]
     \label{prop:giaquinta}
-    Let $\Omega \subseteq \R^d$ be open, $f \in \Ell^1_{\mathrm{loc}}(\Omega)$, $q > 1$, be a non-negative function.
+    Let $\Omega \subseteq \R^d$ be open, $f \in \Ell^1_{\mathrm{loc}}(\Omega)$ a non-negative function and $q > 1$.
     If there exist constants $b > 0, R_0 > 0$ such that
     \begin{align*}
       \bigg( \frac{1}{r^d} \int_{\BB(x_0,\, r)} f^q \d x \bigg)^{1/q} \leq \frac{b}{r^d} \int_{\BB(x_0,\, 2r)} f \d x
     \end{align*}
-    for all $x_0 \in \Omega$ and $0 < r < \min\big\{ R_0, \operatorname{dist}(x_0, \partial\Omega)/2\big\}$, then $f \in \Ell^{q + \varepsilon}_{\mathrm{loc}}(\Omega)$ for some $\varepsilon > 0$, depending only on $d$, $q$, and $b$ and there is a constant $\tilde C > 0$ depending only on $d$, $q$, $\varepsilon$ and $b$ such that
+    for all $x_0 \in \Omega$ and $0 < r < \min\big\{ R_0, \operatorname{dist}(x_0, \partial\Omega)/2\big\}$, then $f \in \Ell^{q + \varepsilon}_{\mathrm{loc}}(\Omega)$ for some $\varepsilon > 0$, depending only on $d$, $q$ and $b$ and there is a constant $\tilde C > 0$ depending only on $d$, $q$, $\varepsilon$ and $b$ such that
     \begin{align*}
       \bigg( \frac{1}{r^d} \int_{\BB(x_0,\, r)} f^{q + \varepsilon} \d x \bigg)^{1/(q + \varepsilon)} \leq \tilde C \,\bigg( \frac{1}{r^d} \int_{\BB(x_0,\, 2r)} f^q \d x \bigg)^{1/q}
     \end{align*}
@@ -150,30 +156,54 @@ As of now, our toolbox comprises enough tools to prove that solutions to the Sto
   \begin{rem}
     \label{rem:reverseHoelder}
     The self-improving property of reverse Hölder estimates can now be used to make the result of Lemma~\ref{lem:reverseHoelder} a little bit better. 
-    Let $0 < 2r < r_0$.
-    We are aiming to apply Proposition~\ref{prop:giaquinta} for $x_0 \in \overline\Omega$ on the open set $\Omega \cap \BB(x_0, \alpha_2 r)$, with $\alpha_2$ as in Lemma~\ref{lem:reverseHoelder}.
-    Let also $u$ and $p_d$ be as in Lemma~\ref{lem:reverseHoelder} and set $R_0 = r_0/2$. 
-    Then, for $f = |u|^{2} \chi_{\BB(x_0,\,\alpha_2 r) \cap \Omega}$ which can be considered as a partial extension of $u$ by $0$ to $\R^d$ and $q = p/2$, inequality \eqref{eq:reverseHoelder} reads
+    Fix $0 < 2r < r_0$ and choose $x_0 \in \overline\Omega$
+    Let $u \in \HH^1(\BB(x_0, \alpha_2 r) \cap \Omega; \C^d)$ be as in Lemma~\ref{lem:reverseHoelder}.
+    We are aiming to apply Proposition~\ref{prop:giaquinta} on the open set $\tilde\Omega \coloneqq \BB(x_0,r)$ for 
+    $f \coloneqq |u|^2 \chi^{}_{\Omega \cap \BB(x_0, \alpha_2 r)}$.
+    To this end, let $y \in \BB(x_0, r)$ and choose 
     \begin{align*}
-      \bigg( \frac{1}{r^d} \int_{\BB(x_0,\, r)} f^q \d x \bigg)^{1/q}
-      &= \bigg( \frac{1}{r^d} \int_{\BB(x_0,\, r) \cap \Omega} |u|^p \d x \bigg)^{2/p} \\[0.5em]
-      &\leq C^2 \frac{1}{r^d} \int_{\BB(x_0,\, 2r) \cap \Omega} |u|^2 \d x
-      = C^2 \frac{1}{r^d} \int_{\BB(x_0,\, 2r)} f \d x.
+      s < \frac{\operatorname{dist}(y, \partial\tilde\Omega)}{2} = \frac{r - |y - x_0|}{r}.
     \end{align*}
-    Consequently, Proposition~\ref{prop:giaquinta} gives us that there exists some $\varepsilon > 0$ which depends only on $d$, $q$ and $C^2$ and a constant $\tilde C >0$ depending only on $d$, $q$, $\varepsilon$ and $C^2$ such that
+    Then, $\BB(y, \alpha_2 s) \subseteq \BB(x_0, \alpha_2 s)$ and $u$ fulfills also the requirements of Lemma~\ref{lem:reverseHoelder} on the subdomain $\BB(y, \alpha_2 s) \cap \Omega$.
+    Therefore, the inequality
     \begin{align*}
-      \bigg( \frac{1}{r^d} \int_{\BB(x_0,\, r/2) \cap \Omega} |u|^{p + \varepsilon'}\d x \bigg)^{2/(p + \varepsilon ')} 
-      &= \bigg( \frac{1}{r^d} \int_{\BB(x_0,\, r/2)} f^{q + \varepsilon} \d x \bigg)^{1/(q + \varepsilon)} \\[0.5em]
-      &\leq \tilde C\, \bigg( \frac{1}{r^d} \int_{\BB(x_0,\, r) \cap \Omega} |u|^p \d x \bigg)^{2/p} \\[0.5em]
-      &\leq \tilde C C\, \bigg( \frac{1}{r^d} \int_{\BB(x_0,\,2r)\cap \Omega } |u|^2 \d x \bigg).
+      \bigg( \frac{1}{s^d} \int_{\BB(y, s)} f^q \d x \bigg)^{1/q} 
+      &= \bigg( \frac{1}{s^d} \int_{\BB(y, s) \cap \Omega} |u|^p \d x \bigg)^{2 / p} \\
+      &\leq C \frac{1}{s^d} \int_{\BB(y, s) \cap \Omega} |u|^2 \d x
+      = C \frac{1}{s^d} \int_{\BB(y, s)} f \d x
     \end{align*}
-    Another application of Lemma~\ref{lem:ballsforballs} gives us that for all $r < ( r_0/4 )$ it holds that
+    Consequently, Proposition~\ref{prop:giaquinta} gives us that there exists some $\varepsilon > 0$ which depends only on $d$, $q$ and $C$ and a constant $\tilde C >0$ depending only on $d$, $q$, $\varepsilon$ and $C$ such that
+    \begin{align*}
+      \bigg( \frac{1}{s^d} \int_{\BB(y, s)} f^{q + \varepsilon/2} \d x \bigg)^{1/(q + \varepsilon/2) }
+      \leq \tilde C\, \bigg( \frac{1}{s^d} \int_{\BB(y, 2 s)} f^q \d x \bigg)^{1/q}. 
+    \end{align*}
+    In particular, this inequality holds for $y = x_0$ and $s = r/2$.
+    In this case, the inequality reads
+    \begin{align*}
+      \bigg( \frac{1}{r^d} \int_{\BB(x_0,\, r/2) \cap \Omega} |u|^{p_d + \varepsilon}\d x \bigg)^{2/(p_d + \varepsilon)} 
+      %&= \bigg( \frac{1}{r^d} \int_{\BB(x_0,\, r/2)} f^{q + \varepsilon} \d x \bigg)^{1/(q + \varepsilon)} \\[0.5em]
+      &\leq \tilde C\, \bigg( \frac{1}{r^d} \int_{\BB(x_0,\, r) \cap \Omega} |u|^p \d x \bigg)^{2/p} %\\[0.5em]
+      %&\leq \tilde C \frac{1}{r^d} \int_{\BB(x_0,\,2r)\cap \Omega } |u|^2 \d x .
+    \end{align*}
+    By Lemma~\ref{lem:reverseHoelder}, this estimate can be further extended in the following way:
+    \begin{align*}
+      \bigg( \frac{1}{r^d} \int_{\BB(x_0,\, r/2) \cap \Omega} |u|^{p_d + \varepsilon}\d x \bigg)^{2/(p_d + \varepsilon)} 
+      &\leq \tilde C\, \frac{1}{r^d} \int_{\BB(x_0,\, 2 r) \cap \Omega} |u|^2 \d x %\\[0.5em]
+    \end{align*}
+    Summing up, we see that for $0 < 4 r' < r_0$ we have that
     \begin{align}
       \label{eq:improvedreverseHoelder}
-      \bigg( \frac{1}{r^d} \int_{\BB(x_0,\, r) \cap \Omega} |u|^{p + \varepsilon'} \d x \bigg)^{2/(p + \varepsilon')}
-      \leq C \, \bigg(\frac{1}{r^d} \int_{\BB(x_0,\, 2r) \cap \Omega} |u|^2 \d x.  \bigg)^{1/2}
+      \bigg( \frac{1}{r^d} \int_{\BB(x_0,\, r') \cap \Omega} |u|^{p_d + \varepsilon}\d x \bigg)^{2/(p_d + \varepsilon)} 
+      &\leq \tilde C\, \frac{1}{r^d} \int_{\BB(x_0,\, 4 r) \cap \Omega} |u|^2 \d x %\\[0.5em]
     \end{align}
-    and we have succeeded in improving our original estimate \eqref{eq:reverseHoelder}.
+      %&\leq \tilde C \frac{1}{r^d} \int_{\BB(x_0,\,2r)\cap \Omega } |u|^2 \d x .
+%    Another application of Lemma~\ref{lem:ballsforballs} gives us that for all $r < ( r_0/4 )$ it holds that
+%    \begin{align}
+%      \label{eq:improvedreverseHoelder}
+%      \bigg( \frac{1}{r^d} \int_{\BB(x_0,\, r) \cap \Omega} |u|^{p + \varepsilon'} \d x \bigg)^{2/(p + \varepsilon')}
+%      \leq C \, \bigg(\frac{1}{r^d} \int_{\BB(x_0,\, 2r) \cap \Omega} |u|^2 \d x.  \bigg)^{1/2}
+%    \end{align}
+%    and we have succeeded in improving our original estimate \eqref{eq:reverseHoelder}.
   \end{rem}
 
   %Consequently it suffices to prove \eqref{eq:reverseHoelder} for $p = p_d = \frac{2d}{d - 1}$.
@@ -193,7 +223,7 @@ Note that a more recent result from Tolksdorf \cite[Thm.\@~4.1]{tolksdorf2017} g
   Suppose that there exist constants $R_0 > 0$, $N > 1$ and $\alpha_2 > \alpha_1 > 1$ such that for any bounded measurable function $f$ with $\supp(f) \subseteq \Omega \setminus \alpha_2 B$,
   \begin{align*}
     \Big\{ \frac{1}{r^d} \int_{\Omega \cap B} |Tf|^p \d x \Big\}^{1/p}
-    \leq N \Big\{ \bigg( \frac{1}{r^d} \int_{\Omega \cap \alpha_1 B} |T f|^2 \d x \bigg)^{1/2} + \sup_{B' \supset B} \bigg( \frac{1}{|B'|} \int_{B'} |f|^p \d x \bigg)^{1/p} \Big\},
+    \leq N \Big\{ \bigg( \frac{1}{r^d} \int_{\Omega \cap \alpha_1 B} |T f|^2 \d x \bigg)^{1/2} + \sup_{B' \supset B} \bigg( \frac{1}{|B'|} \int_{B'} |f|^2 \d x \bigg)^{1/2} \Big\},
   \end{align*}
   where $B = \BB(x_0, r)$ is a ball with $0 < r < R_0$ and either $x_0 \in \partial\Omega$ or $B(x_0, \alpha_2 r) \subseteq \Omega$.
   Then, the restriction of $T$ to $\Ell^q(\Omega;\C^d)$ yields a bounded operator on $\Ell^q(\Omega; \C^d)$ for any $2 < q < p$.
@@ -228,7 +258,7 @@ This aspect regarding the uniformity of the estimates and the $p$-sensitivity of
 %\end{thm}
 
 \begin{proof}[Proof of Theorem~\ref{thm:main}]
-  Consider a family of scaled solution operators to the Stokes resolvent system \eqref{eq:stokesResolventSystem} with right-hand side $f \in \Ell^2(\Omega, \C^d)$, more precisely consider the family
+  Consider a family of scaled solution operators to the Stokes resolvent system \eqref{eq:stokesResolventSystem} with right-hand side $f \in \Ell^2(\Omega; \C^d)$, more precisely consider the family
   \begin{align*}
     T_\lambda \colon \Ell^2(\Omega; \C^d) \to \Ell^2(\Omega; \C^d), \quad f \mapsto (|\lambda| + 1) (A_2 + \lambda)^{-1} \PP_2 f,
   \end{align*}
@@ -238,7 +268,7 @@ This aspect regarding the uniformity of the estimates and the $p$-sensitivity of
   \begin{align*}
     A_2 u + \lambda u = \PP_2 f.
   \end{align*}
-  Therefore, $u$ is a weak solution to 
+  By testing this equation with elements of the space $\HH_{0, \sigma}^1$, we see that $u$ is a weak solution of 
   \begin{align*}
     -\Delta u + \lambda u = \PP_2 f.
   \end{align*}
@@ -254,46 +284,46 @@ This aspect regarding the uniformity of the estimates and the $p$-sensitivity of
     \int_\Omega |\nabla u|^2 \d x + \Big\{ \Ret(\lambda) + \alpha \big| \Im(\lambda) \big| \, \Big\} \int_\Omega |u|^2 \d x 
     \leq (1 + \alpha)\, \bigg| \int_\Omega f \cdot \overline u \d x\, \bigg|.
   \end{align} 
-  Now, using Lemma~\ref{lem:laxMilgramIneq} to apply the reverse triangle inequality,, we arrive at the estimate
+  Now, using Lemma~\ref{lem:laxMilgramIneq} to apply the reverse triangle inequality, we arrive at the estimate
   \begin{align*}
     \| T_\lambda(f) \|_{\Ell^2(\Omega; \C^d)} = (|\lambda| + 1)\, \|u\|_{\Ell^2(\Omega; \C^d)}
     \leq C_0 \, \|f\|_{\Ell^2(\Omega; \C^d)},
   \end{align*}
-  where $C_0 > 0$ only depends on $d$, $\theta$ and the Lipschitz character of $\Omega$.
+  where $C_0 > 0$ only depends on $d$ and $\theta$.
   Accordingly, the family $T_\lambda$ is bounded on $\Ell^2(\Omega; \C^d)$ and $C_0$ is a uniform bound on the operator norms $\|T_\lambda\|_{\Li(\Ell^2(\Omega; \C^d))}$.
 
   We will now show that the operators $T_\lambda$ fulfill the estimate in Theorem~\ref{thm:extrapolation}, in order to deduce their $\Ell^p$ boundedness.
-  To this end, let $x_0 \in \overline \Omega$ and $0 < 4r < r_0$ such that $\BB(x_0,3 r) \subseteq \Omega$ or $\BB(x_0, r)$ is centered on $\partial\Omega$.
-  Furthermore, let $f \in \Ell^\infty(\Omega; \C^d)$ with support in $\Omega \setminus \BB(x_0, 3 r)$.
-  As shown before the solution $(u,\pi)$ fulfills \eqref{eq:stokesResolventSystem} with right-hand side $f$ in $\Omega$.
+  To this end, for $\alpha_2$ as in Lemma~\ref{lem:reverseHoelder} let $x_0 \in \overline \Omega$ and $0 < 4r < r_0$ such that $\BB(x_0,\alpha_2 r) \subseteq \Omega$ or $\BB(x_0, r)$ is centered on $\partial\Omega$.
+  Furthermore, let $f \in \Ell^\infty(\Omega; \C^d)$ with support in $\Omega \setminus \BB(x_0, \alpha_2 r)$.
+  As shown before, the solution $(u,\pi)$ fulfills \eqref{eq:stokesResolventSystem} with right-hand side $f$ in $\Omega$.
   Furthermore, the pair also solves the Dirichlet problem
   \begin{align*}
     -\Delta u + \nabla \pi + \lambda u &= 0 \\
     \div(u)&= 0
   \end{align*}
-  in $\Omega \cap 3 \BB(x_0, r)$ where $u = 0$ on $\partial\Omega \cap 3 \BB(x_0, r)$.
+  in $\Omega \cap \BB(x_0, \alpha_2 r)$ where $u = 0$ on $\partial\Omega \cap \BB(x_0, \alpha_2 r)$.
   Therefore, Remark~\ref{rem:reverseHoelder} and more precisely the improved reverse Hölder inequality \eqref{eq:improvedreverseHoelder} give that
   \begin{align*}
     \bigg( \frac{1}{r^d} \int_{\Omega \cap \BB(x_0,\, r)} |u|^p \d x \bigg)^{1/p} 
-    \leq C\, \bigg( \frac{1}{r^d} \int_{\Omega \cap  \BB(x_0,\, 2 r)} |u|^2 \d x \bigg)^{1/2},
+    \leq C\, \bigg( \frac{1}{r^d} \int_{\Omega \cap  \BB(x_0,\, 4 r)} |u|^2 \d x \bigg)^{1/2},
   \end{align*}
   where $p = p_d + \varepsilon$.
   Multiplying this inequality on both sides with $(|\lambda| + 1)$ gives
   \begin{align}
     \label{eq:tlambdaEstimate}
     \bigg( \frac{1}{r^d} \int_{\Omega \cap \BB(x_0,\, r)} |T_\lambda(f)|^p \d x \bigg)^{1/p} 
-    \leq C\, \bigg( \frac{1}{r^d} \int_{\Omega \cap \BB(x_0,\, 2 r)} |T_\lambda(f)|^2 \d x \bigg)^{1/2},
+    \leq C\, \bigg( \frac{1}{r^d} \int_{\Omega \cap \BB(x_0,\, 4 r)} |T_\lambda(f)|^2 \d x \bigg)^{1/2},
   \end{align}
   where $C > 0$ depends only on $d$, $\theta$ and the Lipschitz character of $\Omega$.
   Now, Shen's extrapolation theorem, Theorem~\ref{thm:extrapolation}, gives that, for all $2 < q < p_d + \varepsilon$, the restriction of $T_\lambda$ to $\Ell^q(\Omega; \C^d)$ is bounded on $\Ell^q(\Omega; \C^d)$ and that the operator norms $\|T_\lambda\|_{\Li(\Ell^q(\Omega; \C^d))}$ are uniformly bounded by a constant $C_q > 0$ depending only on $d$, $\theta$, $q$ and the Lipschitz character of $\Omega$.
 
   In the next step of the proof, we study the relationship between the operator $T_\lambda$ and the resolvent of the Stokes operator $A_q$ on $\Ell^q_\sigma(\Omega)$ for $q \in (2, p_d + \varepsilon)$.
-  We will later treat the operators $A_{q'}$, where $q'$ the dual exponent to $q$ by a dualization argument.
-  If necessary, we chose $\varepsilon$ smaller than the parameter of the same name from Theorem~\ref{thm:stokesOperatorLp} such that we may assume $A^q$ to be a closed operator.
+  We will later treat the operators $A_{q'}$, where $q'$ denotes the dual exponent to $q$, by a dualization argument.
+  If necessary, we chose $\varepsilon$ smaller than the parameter of the same name from Theorem~\ref{thm:stokesOperatorLp} such that we may assume $A_q$ to be a closed operator.
   Now, let $f \in \Ell^q_\sigma(\Omega)$.
   We already know that 
   \begin{align*}
-    u = (1 + |\lambda|)^{-1} T_\lambda(f) = (A_2 + \lambda)^{-1} \PP_2(f) \in \Ell^q_\sigma(\Omega) \cap \Dom(A_2)
+    u = (1 + |\lambda|)^{-1} T_\lambda(f) = (A_2 + \lambda)^{-1} \PP_2 f \in \Ell^q_\sigma(\Omega) \cap \Dom(A_2)
   \end{align*}
   by the mapping properties of $T_\lambda(f)$.
   As $\Ell^q_\sigma(\Omega) \subseteq \Ell^2_\sigma(\Omega)$, we have furthermore that
@@ -304,7 +334,7 @@ This aspect regarding the uniformity of the estimates and the $p$-sensitivity of
   Appealing to Definition~\ref{defn:stokeslp}, we showed that $u \in \Dom(A_q)$ and that $A_2u = A_q u$. 
   Therefore, we have that
   \begin{align*}
-    \lambda u + A_q u = f \in \Ell^q_\sigma(\Omega)
+    \lambda u + A_q u = f \in \Ell^q_\sigma(\Omega).
   \end{align*}
   By the uniqueness of $u$, which follows from the $\Ell^2$ theory of the Stokes resolvent problem, we have that $u = (\lambda + A_q)^{-1} f$.
   Hence, the $\Ell^q$ boundedness of $T_\lambda$ gives
@@ -315,10 +345,10 @@ This aspect regarding the uniformity of the estimates and the $p$-sensitivity of
   \end{align*}
   and thus $A_q$ is sectorial on $\Ell^q_\sigma(\Omega)$.
   %If necessary, we take $\varepsilon$ to be the minimum of the parameter $\varepsilon$ used in the first part of this proof and the one from Theorem~\ref{thm:stokesOperatorLp}.
-  Now consider the dual exponent $q' \in (p_d' - \varepsilon, 2)$, where $q' = q / (q - 1)$ and $p_d' = 2d / (d + 1)$.
+  Now consider the dual exponent $q' \in ((p_d + \varepsilon)', 2)$, where $q' = q / (q - 1)$ and $p_d' = 2d / (d + 1)$.
   As the results in Chapter~\ref{chap:1} show, the space $\Ell^q_\sigma(\Omega)$ is reflexive and $\Ell^q_\sigma(\Omega)^*$ is isometrically isomorphic to $\Ell^{q'}_\sigma(\Omega)$.% where $q'$ denotes the dual exponent $q' = q (q - 1)^{-1}$, see Lemma~\ref{lem:duality}.
   %By a general result about sectorial operators on reflexive Banach spaces, which can be found in Haase's book \cite[Prop.\@~2.1.1]{haase}, we get that $A_q$ is indeed densely defined and that $A_q^* =  A_{q'}$.
-  Therefore results about the dual operator yield that
+  Therefore, standard properties of the dual operator yield that
   \begin{align*}
     \big\| \, (A_{q'} + \lambda)^{-1} \, \big\|_{\Li(\Ell^{q'}_\sigma(\Omega))}
     = \big\|\, \big(( A_q + \lambda)^{-1}\big)^* \, \big\|_{\vphantom{\Li(\Ell^{q'}_\sigma(\Omega))}\Li(\Ell^{q}_\sigma(\Omega)^{\stackrel{*}{\phantom{ }}})}

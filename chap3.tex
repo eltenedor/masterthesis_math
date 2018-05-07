@@ -3,7 +3,7 @@
 
 In this chapter, we will deal with \emph{single} and \emph{double layer potentials}.
 Both will serve as ``representation formulas'' for solutions to the Stokes resolvent problem.
-We will study their properties as they will serve as the crucial ingredient to solving the $\Ell^2$ Dirichlet problem associated to the Stokes resolvent problem on bounded Lipschitz domains $\Omega \subset \R^d$:
+We will study their properties as they will serve as the crucial ingredient to solving the $\Ell^2$ Dirichlet problem associated to the Stokes resolvent problem on bounded Lipschitz domains $\Omega \subseteq \R^d$:
 For $\lambda \in \C \setminus (-\infty,0)$ and
 \begin{align*}
   g \in \Ell^2_n(\partial\Omega) \coloneqq \bigg\{g \in \Ell^2(\partial\Omega; \C^d) \colon \int_{\partial\Omega} g \cdot n \d \sigma = 0\bigg\}
@@ -56,14 +56,17 @@ The following lemma will be a good companion for the forthcoming calculation of 
 \begin{lem}
   \label{lem:compareBoundaryWithBall}
   Let $\Omega \subset \R^d$, $d \geq 2$, be a bounded Lipschitz domain with corresponding numbers $r_0$ and $M$.
-  Then there exists $C > 0$ depending only on $d$ and $M$ such that
+  Then there exist $c, C > 0$ depending only on $d$ and $M$ such that
   \begin{align*}
-    \sigma(\BB(q,r) \cap \partial\Omega) \leq C r^{d -1}
+    c r^{d - 1} 
+    \leq \sigma(\BB(q,r) \cap \partial\Omega) \leq C r^{d -1}
   \end{align*}
   for all $r > 0$ and $q \in \partial\Omega$.
-  Furthermore, there exists a constant $C > 0$, depending only on $d$ and the Lipschitz character of $\Omega$, such that
+  Furthermore, there exist constants $\tilde c, \tilde C > 0$, depending only on $d$ and the Lipschitz character of $\Omega$, such that
   \begin{align*}
-    \sigma(\partial\Omega) \leq C r_0^{d - 1}.
+    \tilde c r_0^{d - 1} 
+    \leq \sigma(\partial\Omega) 
+    \leq C r_0^{d - 1}.
 \end{align*}
 \end{lem}
 
@@ -81,7 +84,7 @@ Another cornerstone in the theory of the single and double layer potentials is t
 
 We are now in the position to prove our first lemma on the way to establish the single layer potential as a benevolent operator for tackling boundary value problems on bounded Lipschitz domains. 
 The lemma deals with mapping properties of the aforementioned integral operators $T_\lambda$ and $T_\lambda^*$.
-The main idea will be to deduce pointwise estimates that bound the operator $T_\lambda^*$ by the \emph{Hardy-Littlewood maximal operator} $M_{\partial\Omega}$ which is defined for function $f \in \Ell^1_{\mathrm{loc}}(\partial\Omega)$ via
+The main idea will be to deduce pointwise estimates that bound the operator $T_\lambda^*$ by the \emph{Hardy-Littlewood maximal operator} $M_{\partial\Omega}$ which is defined for functions $f \in \Ell^1_{\mathrm{loc}}(\partial\Omega)$ via
 \begin{align*}
   M_{\partial\Omega}(f)(q) \coloneqq \sup_{\varepsilon > 0} \; \frac{1}{\sigma(\partial\Omega \cap \BB(q, \varepsilon))} \int_{\partial\Omega \cap \BB(q,\,\varepsilon)} |f(y)| \d \sigma(y), \quad q \in \partial\Omega.
 \end{align*}
@@ -101,7 +104,8 @@ The main idea will be to deduce pointwise estimates that bound the operator $T_\
 
 \begin{proof}
   %If $\lambda = 0$, the lemma is known due to Fabes, Kenig and Verchota \cite{fabesKenigVerchota} as a consequence of the seminal result of Coifman, McIntosh and Meyer \cite{coifman}.
-  If $\lambda = 0$, the lemma is known due to Mitra and Wright \cite{mitreaWright} as a consequence of the seminal result of Coifman, McIntosh and Meyer \cite{coifman}.
+  %If $\lambda = 0$, the lemma is known due to Mitra and Wright \cite{mitreaWright} as a consequence of the seminal result of Coifman, McIntosh and Meyer \cite{coifman}.
+  If $\lambda = 0$, the lemma is a consequence of the seminal result of Coifman, McIntosh and Meyer \cite[Thm.\@9]{coifman}.
   One idea of the proof in the case $\lambda \in \Sigma_\theta$ will thus be to nourish from this result and to consider the difference $\Gamma(x - y; \lambda) - \Gamma(x - y; 0)$.
 
   We start with the second inequality of \eqref{eq:lpBoundednessT}.
@@ -365,7 +369,7 @@ We can now prove the boundedness of certain nontangential maximal operators.
 %  \end{align*}
    For $I_1$, we calculate
    \begin{align*}
-     &\bigg| \int_{| x - q | > t} \nabla_x \Gamma_{j k} (q - y; \lambda) f_k(y) - \nabla_x \Gamma_{jk}(q - y; \lambda) f_k(y) + \nabla_x \Gamma_{jk}(q - y; \lambda) f_k(y) \d \sigma(y) \, \bigg| \\
+     &\bigg| \int_{| x - q | > t} \nabla_x \Gamma_{j k} (x - y; \lambda) f_k(y) - \nabla_x \Gamma_{jk}(q - y; \lambda) f_k(y) + \nabla_x \Gamma_{jk}(q - y; \lambda) f_k(y) \d \sigma(y) \, \bigg| \\
      &\qquad\leq \bigg| \int_{|y - q| > t} \nabla_x \Big\{ \Gamma_{jk}(x - y; \lambda) -  \Gamma_{jk}(q - y; \lambda)\Big\} f_k(y) \d \sigma(y) \, \bigg| \\
      &\qquad\qquad+ \bigg| \int_{|y - q| > t} \nabla_x\Gamma_{jk}(q - y; \lambda) f_k(y) \d\sigma(y) \, \bigg|.
    \end{align*}
@@ -380,7 +384,7 @@ We can now prove the boundedness of certain nontangential maximal operators.
   \end{align*}
   where $s$ is an element on the line connecting $x$ and $q$ and we used the property of Verchota cones that $|s - y| \geq C\, |y - q|$, see inequality \eqref{eq:verCone2}.
   Note that Verchota cones are convex.
-  As in Verchota \cite[Lem.\@~1.3]{verchota}, the integral may now be bounded by the Hardy-Littlewood maximal operator due to an application of a suitable result from Grafakos \cite[Thm.\@~2.1.10]{grafakos2014classical} as the kernel ${t}(t + |y - q|)^{-d}$ is uniformly integrable and radially decreasing on $\partial\Omega$.
+  As in Verchota \cite[Lem.\@~1.3]{verchota}, the integral may now be bounded by the Hardy-Littlewood maximal operator due to an application of a suitable result from Grafakos \cite[Thm.\@~2.1.10]{grafakos2014classical} as the kernel ${t}(t + |y - q|)^{-d}$ is uniformly integrable and radially decreasing.% on $\partial\Omega$.
   Summing up we have shown that
   \begin{align*}
     |(\nabla u)(x)| \leq C\, \Big\{ M_{\partial\Omega} f(P) + T_\lambda^*(f)(P) \Big\},
