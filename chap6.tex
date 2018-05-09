@@ -34,7 +34,8 @@ Recall the definition of the constant $M > 0$ related to Lipschitz domains and t
   \begin{align*}
     \bigg( \int_{D_\eta(t)} |u|^{p_d} \d x \bigg)^{2/p_d} \leq C \int_{\partial D_\eta(t)} |u|^2 \d \sigma,
   \end{align*}
-  where $C > 0$ depends only on $d$, $\theta$ and the Lipschitz character of $\Omega$. In particular, $C$ does not depend on $t$.
+  where $C > 0$ depends only on $d$, $\theta$ and the Lipschitz character of $\Omega$. 
+  In particular, $C$ does not depend on $t$.
   Since $u$ vanishes on $I(2)$, we have that
 %  \begin{align*}
 %    \bigg( \int_{D_\eta(1)} |u|^p \d x \bigg)^{2/p} \leq C \int_{\partial D_\eta(t) \setminus I(2)} |u|^2 \d \sigma.
@@ -156,28 +157,28 @@ As of now, our toolbox comprises enough tools to prove that solutions to the Sto
   \begin{rem}
     \label{rem:reverseHoelder}
     The self-improving property of reverse Hölder estimates can now be used to make the result of Lemma~\ref{lem:reverseHoelder} a little bit better. 
-    Fix $0 < 2r < r_0$ and choose $x_0 \in \overline\Omega$
-    Let $u \in \HH^1(\BB(x_0, \alpha_2 r) \cap \Omega; \C^d)$ be as in Lemma~\ref{lem:reverseHoelder}.
+    Fix $0 < 2r < r_0$ and choose $x_0 \in \overline\Omega$.
+    Let $\alpha_2$ and $u \in \HH^1(\BB(x_0, \alpha_2 r) \cap \Omega; \C^d)$ be as in Lemma~\ref{lem:reverseHoelder}.
     We are aiming to apply Proposition~\ref{prop:giaquinta} on the open set $\tilde\Omega \coloneqq \BB(x_0,r)$ for 
     $f \coloneqq |u|^2 \chi^{}_{\Omega \cap \BB(x_0, \alpha_2 r)}$.
     To this end, let $y \in \BB(x_0, r)$ and choose 
     \begin{align*}
-      s < \frac{\operatorname{dist}(y, \partial\tilde\Omega)}{2} = \frac{r - |y - x_0|}{r}.
+      0 < s < \frac{\operatorname{dist}(y, \partial\tilde\Omega)}{2} = \frac{r - |y - x_0|}{r}.
     \end{align*}
-    Then, $\BB(y, \alpha_2 s) \subseteq \BB(x_0, \alpha_2 s)$ and $u$ fulfills also the requirements of Lemma~\ref{lem:reverseHoelder} on the subdomain $\BB(y, \alpha_2 s) \cap \Omega$.
-    Therefore, the inequality
+    Then, the inclusion $\BB(y, \alpha_2 s) \subseteq \BB(x_0, \alpha_2 s)$ holds and $u$ fulfills also the requirements of Lemma~\ref{lem:reverseHoelder} on the subdomain $\BB(y, \alpha_2 s) \cap \Omega$.
+    Therefore, using Lemma~\ref{lem:reverseHoelder}, we derive the inequality
     \begin{align*}
-      \bigg( \frac{1}{s^d} \int_{\BB(y, s)} f^q \d x \bigg)^{1/q} 
-      &= \bigg( \frac{1}{s^d} \int_{\BB(y, s) \cap \Omega} |u|^p \d x \bigg)^{2 / p} \\
-      &\leq C \frac{1}{s^d} \int_{\BB(y, s) \cap \Omega} |u|^2 \d x
-      = C \frac{1}{s^d} \int_{\BB(y, s)} f \d x
+      \bigg( \frac{1}{s^d} \int_{\BB(y,\, s)} f^q \d x \bigg)^{1/q} 
+      &= \bigg( \frac{1}{s^d} \int_{\BB(y,\, s) \cap \Omega} |u|^p \d x \bigg)^{2 / p} \\
+      &\leq C \frac{1}{s^d} \int_{\BB(y,\, s) \cap \Omega} |u|^2 \d x
+      = C \frac{1}{s^d} \int_{\BB(y,\, s)} f \d x.
     \end{align*}
-    Consequently, Proposition~\ref{prop:giaquinta} gives us that there exists some $\varepsilon > 0$ which depends only on $d$, $q$ and $C$ and a constant $\tilde C >0$ depending only on $d$, $q$, $\varepsilon$ and $C$ such that
+    As $y \in \tilde\Omega$ and $s$ were chosen according to the requirements of Proposition~\ref{prop:giaquinta}, we see that there exists some $\varepsilon > 0$ which depends only on $d$, $q$ and $C$ and a constant $\tilde C >0$ depending only on $d$, $q$, $\varepsilon$ and $C$ such that
     \begin{align*}
-      \bigg( \frac{1}{s^d} \int_{\BB(y, s)} f^{q + \varepsilon/2} \d x \bigg)^{1/(q + \varepsilon/2) }
-      \leq \tilde C\, \bigg( \frac{1}{s^d} \int_{\BB(y, 2 s)} f^q \d x \bigg)^{1/q}. 
+      \bigg( \frac{1}{s^d} \int_{\BB(y,\, s)} f^{q + \varepsilon/2} \d x \bigg)^{1/(q + \varepsilon/2) }
+      \leq \tilde C\, \bigg( \frac{1}{s^d} \int_{\BB(y,\, 2 s)} f^q \d x \bigg)^{1/q}. 
     \end{align*}
-    In particular, this inequality holds for $y = x_0$ and $s = r/2$.
+    In particular, this inequality holds for $y = x_0$ and $s = r/2$ by dominated convergence.
     In this case, the inequality reads
     \begin{align*}
       \bigg( \frac{1}{r^d} \int_{\BB(x_0,\, r/2) \cap \Omega} |u|^{p_d + \varepsilon}\d x \bigg)^{2/(p_d + \varepsilon)} 
@@ -185,12 +186,12 @@ As of now, our toolbox comprises enough tools to prove that solutions to the Sto
       &\leq \tilde C\, \bigg( \frac{1}{r^d} \int_{\BB(x_0,\, r) \cap \Omega} |u|^p \d x \bigg)^{2/p} %\\[0.5em]
       %&\leq \tilde C \frac{1}{r^d} \int_{\BB(x_0,\,2r)\cap \Omega } |u|^2 \d x .
     \end{align*}
-    By Lemma~\ref{lem:reverseHoelder}, this estimate can be further extended in the following way:
+    As $r/2 < r_0$ by assumtion, Lemma~\ref{lem:reverseHoelder} helps us to further extend the estimate above in the following way:
     \begin{align*}
       \bigg( \frac{1}{r^d} \int_{\BB(x_0,\, r/2) \cap \Omega} |u|^{p_d + \varepsilon}\d x \bigg)^{2/(p_d + \varepsilon)} 
       &\leq \tilde C\, \frac{1}{r^d} \int_{\BB(x_0,\, 2 r) \cap \Omega} |u|^2 \d x %\\[0.5em]
     \end{align*}
-    Summing up, we see that for $0 < 4 r' < r_0$ we have that
+    Summing up, we see that for $0 < 4 r' < r_0$ we have that we improved inequality~\eqref{eq:reverseHoelder} in Lemma~\ref{lem:reverseHoelder} to 
     \begin{align}
       \label{eq:improvedreverseHoelder}
       \bigg( \frac{1}{r^d} \int_{\BB(x_0,\, r') \cap \Omega} |u|^{p_d + \varepsilon}\d x \bigg)^{2/(p_d + \varepsilon)} 

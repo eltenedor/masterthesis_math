@@ -341,7 +341,7 @@ For the next lemma and also later parts of this chapter, we state the following 
   We also refer to the work of Dahlberg \cite{dahlberg} on the Dirichlet problem.
 
   The \emph{regularity problem}, $(R)_2$, is solvable for data $f \in \HH^1(\partial\Omega)$, see \cite[Thm.\@~2.1.10]{kenigBook}.
-  The definition of $(R)_2$, see \cite[Defn.\@~1.7.4]{kenigBook} reveals that the claimed statement \ref{item:b}) is a consequence of Theorem~1.8.2 in \cite{kenigBook}. 
+  The definition of $(R)_2$, see \cite[Defn.\@~1.7.4]{kenigBook}, reveals that the claimed statement \ref{item:b}) is a consequence of Theorem~1.8.2 in \cite{kenigBook}. 
   We refer also to the work of Jerison and Kenig on the $\Ell^2$ regularity problem \cite{jerisonKenig2}.
 
   The \emph{Neumann propblem}, $(N)_2$, is solvable for data $f \in \Ell^2(\partial\Omega)$ due to Theorem~2.1.10 in \cite{kenigBook}.
@@ -487,46 +487,53 @@ Furthermore, we will rely on properties of solutions to the regularity problem a
 \end{lem}
 
 \begin{proof}
+  {
   Our first goal will be to show that without loss of generality we may assume that $\Delta u = \nabla \phi + \lambda u$ on $\partial\Omega$.
   The central player will once again be Theorem~\ref{thm:smoothApproximation}.
   To this end, let $(\Omega_j)$ be a sequence of approximating $\CC^\infty$ domains as in Theorem~\ref{thm:smoothApproximation} and suppose that inequality~\eqref{eq:phiDashintPhi} holds for all $\Omega_j$, i.e.\@ we have proven the inequality
-  \begin{align}
-    \label{eq:phiDashintPhij}
+  \begin{align*}
     %\bigg\|\, \phi - \bigg\{ \frac{1}{{r_0}^{d - 1}}\int_{\partial\Omega} \phi \d\sigma \bigg\} \, \bigg\|_{\Ell^2(\partial\Omega_j; \C^d)}
     \bigg\|\, \phi - \fint_{\partial\Omega} \phi \d\sigma  \, \bigg\|_{\Ell^2(\partial\Omega_j; \C^d)}
      \leq C\, \Big\{ \|\nabla u\|_{\Ell^2(\partial\Omega_j; \C^{d\times d})} + |\lambda| \, \|u\cdot n\|_{\HH^{-1}(\partial\Omega_j)} \Big\}.
-  \end{align}
+  \end{align*}
   Analogously, suppose that and an inequality similar to \eqref{eq:lambdaun} holds.
   %Note that the mean value integral of $\phi$ should remain unchanged.
   It is now crucial that the constants in these inequalities only depend on the Lipschitz character of $\Omega$ and not on other geometric properties of the domain.
   Thus, $C$ does not depend on $j$ and we may take the limit $j \to \infty$ using dominated convergence for the terms that do not involve the operator norms $\| \cdot \|_{\HH^{-1}(\partial\Omega_j)}$. 
   For these terms, we deploy another strategy.
-  Let $f \in \HH^1(\partial\Omega_j)$ and let $\psi$ solve the regularity problem for the Laplacian on $\BB_R \setminus \overline{\Omega_j}$ with data $\tilde f$, where $\BB_R$ is a sufficiently large ball that contains $\overline\Omega$ and $\tilde f$ is defined via
+  Let $f \in \HH^1(\partial\Omega_j)$ and let $\psi$ solve the regularity problem for the Laplacian on $\BB_R \setminus \overline{\Omega_j}$ with boundary data $\tilde f$, where $\BB_R \supset \overline\Omega$ is a sufficiently large ball and $\tilde f$ is defined via
   \begin{align*}
-    \tilde f \colon \partial\Omega_j\cup \partial\Omega  \to \C, \quad q \mapsto 
-    \begin{cases}
-      f(q) &\quad\text{if } q \in \partial\Omega_j\,, \\
-      0 &\quad\text{if } q \in \partial\BB_R\,.
-    \end{cases}
+    \tilde f \colon \partial\Omega \cup 
   \end{align*}
-  With this definition at hand, we calculate using the divergence theorem
-  \begin{align*}
+  We calculate using the divergence theorem
+  \begin{align}
     \int_{\partial\Omega_j} u \cdot (-n_j) \overline f \d\sigma
-    &= \int_{\partial\Omega_j} u \cdot (-n_j) \, \overline \psi \d \sigma \\
-    &= \int_{\Omega \setminus \Omega_j} \div(u \cdot \overline\psi) \d y - \int_{\partial\Omega} u\cdot n \, \overline \psi \\
-    &\leq C\, \|u\|_{\Ell^2(\Omega \setminus \Omega_j)} \|f\|_{\HH^1(\partial\Omega_j)} + \|u \cdot n\|_{\HH^{-1}(\partial\Omega)} \|\psi\|_{\HH^1(\partial\Omega)},
-  \end{align*}
+    &= \int_{\partial\Omega_j} u \cdot (-n_j) \, \overline \psi \d \sigma \nonumber\\
+    &= \int_{\Omega \setminus \Omega_j} \div(u \cdot \overline\psi) \d y - \int_{\partial\Omega} u\cdot n \, \overline \psi \nonumber\\
+    &\leq C\, \|u\|_{\Ell^2(\Omega \setminus \Omega_j)} \|f\|_{\HH^1(\partial\Omega_j)} + \|u \cdot n\|_{\HH^{-1}(\partial\Omega)} \|\psi\|_{\HH^1(\partial\Omega)}, \label{eq:operatornormApprox}
+  \end{align}
   where $C > 0$ depends on $d$.
   Now we have to bound the norm $\|\psi\|_{\HH^1(\partial\Omega)}$ by $\|f\|_{\HH^1(\partial\Omega_j)}$.
   To this end, we estimate
   \begin{align*}
     \int_{\partial\Omega} |\psi(p)|^2 \d\sigma(p)
-    &\leq \int_{\partial\Omega} |(\psi(\Lambda_j^{-1}(p)))^*|^2 \d\sigma(p) \\
+    &\leq \int_{\partial\Omega} |(\psi(\Lambda_j(p)))^*|^2 \d\sigma(p) \\
     &\leq \delta^{-1} \int_{\partial\Omega} | (\psi)^*(\Lambda_j^{-1}(p))|^2 \vartheta_(p) \d\sigma(p) \\
     &= \delta^{-1} \int_{\partial\Omega_j} |(\psi)^*(p)|^2 \d\sigma(p) ,
   \end{align*}
   where $\delta > 0$ is the bound from Theorem~\ref{thm:smoothApproximation} iv).
   A similar calculation works for the tangential derivatives of $\psi$.
+  This shows that
+  \begin{align*}
+    \|\psi\|_{\Ell^2(\partial\Omega)}^{} + \|\nabla_{\mathrm{tan}} \psi\|_{\Ell^2(\partial\Omega)}^{} 
+    \leq C \, \Big\{ \|(\psi)^*\|_{\Ell^2(\partial\Omega_j)} + \| (\nabla_{\mathrm{tan}}\psi)^* \|_{\Ell^2(\partial\Omega_j)} \Big\} 
+    \leq C \, \|f\|_{\HH^1(\partial\Omega_j)}^{},
+  \end{align*}
+  where for the last inequality we used results for the regularity problem of the Dirichlet Laplacian.
+  This inequality can now be used to transform inequality~\eqref{eq:operatornormApprox} into the estimate
+  \begin{align*}
+    \| u ?out
+  \end{align*}
   This shows that
   \begin{align*}
     \limsup_{j \to \infty} \|u \cdot n\|_{\HH^{-1}(\partial\Omega_j)} \leq C \, \|u \cdot n\|_{\HH^{-1}},
@@ -537,8 +544,9 @@ Furthermore, we will rely on properties of solutions to the regularity problem a
     \limsup_{j \to \infty} \|u \cdot n\|_{\HH^{-1}(\partial\Omega_j)} \leq C \, \|u \cdot n\|_{\HH^{-1}}
   \end{align*}
   holds.
-
-  For the rest of the proof we will thus assume that $(u,\phi)$ satisfies the Stokes resolvent problem in a domain $\Omega'$ for some $\overline \Omega \subseteq \Omega'$.
+}
+  Approximating $\Omega$ by a sequence of $\CC^\infty$ domains $(\Omega_j)$ as in Theorem~\ref{thm:smoothApproximation} we see that is is sufficient to prove inequalities~\eqref{eq:phiDashintPhi} and  \eqref{eq:lambdaun} for smooth subdomains.  
+  For the rest of the proof we will thus assume that $(u,\phi)$ satisfies the Stokes resolvent problem in a smooth domain $\Omega'$ for some $\overline \Omega \subseteq \Omega'$.
   In particular we have $\Delta u = \nabla \phi + \lambda u$  on $\partial\Omega$.
   Multiplying this identity  on $\partial\Omega$ with the outer normal vector $n$ and using the triangle inequality gives the following set of estimates:
   \begin{align}
