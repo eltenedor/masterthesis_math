@@ -405,7 +405,7 @@ The next theorem states the important fact that, in $\Ell^2$, the Dirichlet Stok
   \label{thm:exAndUniqueSolution}
   Let $\Omega$ be a bounded Lipschitz domain in $\R^d$, $d \geq 2$, with connected boundary and let $\lambda \in \Sigma_\theta$.
   For all $g \in \Ell^2_n(\partial\Omega)$ there exists a unique vectorfield $u$ and harmonic function $\phi$ which is unique up to constants such that $(u,\phi)$ satisfies \eqref{eq:stokesResolventProblem}, $(u)^* \in \Ell^2(\partial\Omega)$ and $u = g$ on $\partial\Omega$ in the sense of nontangential convergence.
-  Moreover, the estimate $ \| (u)^* \|^{}_\partial \leq C \, \| g\|^{}_\partial$ holds and $u$ may be represented by the double layer potential $\dlp_\lambda(f)$ with $\|f\|^{}_\partial \leq C \, \|g\|^{}_\partial$, where in both cases $C > 0$ depends only on $d$, $\theta$ and the Lipschitz character of $\Omega$.
+  Moreover, the estimate $ \| (u)^* \|^{}_\partial \leq C \, \| g\|^{}_\partial$ holds and $u$ may be represented by the double layer potential $\dlp_\lambda(f)$ with $\|f\|^{}_\partial \leq C \, \|g\|^{}_\partial$, where in both cases $C > 0$ depends only on $d$, $\theta$, the Lipschitz character of $\Omega$ and $\operatorname{diam}(\Omega)$.
 \end{thm}
 
 \begin{proof}
@@ -524,7 +524,7 @@ The next theorem can in some sense be regarded as a reverse trace theorem and wi
     \label{eq:reverseTrace}
     \bigg( \int_\Omega |u|^{p_d} \d x \bigg)^{1/{p_d}} \leq C\, \bigg( \int_{\partial\Omega} |u|^2 \d\sigma \bigg)^{1/2},
   \end{align}
-  where $p_d = \frac{2d}{d - 1}$ and $C > 0$ depends only on $d$, $\theta$ and the Lipschitz character of $\Omega$.
+  where $p_d = \frac{2d}{d - 1}$ and $C > 0$ depends only on $d$, $\theta$ the Lipschitz character of $\Omega$ and $\operatorname{diam}(\Omega)$.
 \end{thm}
 
 \begin{proof}
@@ -547,7 +547,7 @@ The next theorem can in some sense be regarded as a reverse trace theorem and wi
     \label{eq:reverseTraceUnique}
     \int_{\Omega_j} |u - w|^2 \d x \leq C \int_{\partial\Omega_j} |u - w|^2 \d \sigma_j,
   \end{align}
-  where $C> 0$ does not depend on $j$ but on the Lipschitz character of $\Omega$.
+  where $C> 0$ does not depend on $j$ but on the Lipschitz character of $\Omega$ and $\diam(\Omega)$.
   Furthermore, the trace theorem on bounded Lipschitz domains gives us for all $h \in \HH^1(\Omega; \C^d)$ that
   \begin{align}
     \label{eq:traceLipschitzDomain}

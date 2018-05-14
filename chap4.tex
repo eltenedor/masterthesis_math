@@ -487,7 +487,7 @@ Furthermore, we will rely on properties of solutions to the regularity problem a
 \end{lem}
 
 \begin{proof}
-  {
+  
   Our first goal will be to show that without loss of generality we may assume that $\Delta u = \nabla \phi + \lambda u$ on $\partial\Omega$.
   The central player will once again be Theorem~\ref{thm:smoothApproximation}.
   To this end, let $(\Omega_j)$ be a sequence of approximating $\CC^\infty$ domains as in Theorem~\ref{thm:smoothApproximation} and suppose that inequality~\eqref{eq:phiDashintPhi} holds for all $\Omega_j$, i.e.\@ we have proven the inequality
@@ -501,15 +501,22 @@ Furthermore, we will rely on properties of solutions to the regularity problem a
   It is now crucial that the constants in these inequalities only depend on the Lipschitz character of $\Omega$ and not on other geometric properties of the domain.
   Thus, $C$ does not depend on $j$ and we may take the limit $j \to \infty$ using dominated convergence for the terms that do not involve the operator norms $\| \cdot \|_{\HH^{-1}(\partial\Omega_j)}$. 
   For these terms, we deploy another strategy.
-  Let $f \in \HH^1(\partial\Omega_j)$ and let $\psi$ solve the regularity problem for the Laplacian on $\BB_R \setminus \overline{\Omega_j}$ with boundary data $\tilde f$, where $\BB_R \supset \overline\Omega$ is a sufficiently large ball and $\tilde f$ is defined via
+  Let $f \in \HH^1(\partial\Omega_j)$ and let $\psi$ solve the regularity problem for the Laplacian on $\tilde \Omega \coloneqq \BB_R \setminus \overline{\Omega_j}$ with boundary data $\tilde f$, where $\BB_R \supseteq \overline\Omega$ is a sufficiently large ball and $\tilde f$ is defined via
   \begin{align*}
-    \tilde f \colon \partial\Omega \cup 
+    \tilde f \colon \partial\BB_R \cup \partial\Omega_j ,
+    \quad x \mapsto \tilde f(x) \coloneqq 
+    \begin{cases}
+      f(x)\,, &\quad\text{if } x \in \partial\Omega_j, \\
+      0\,, &\quad\text{if } x \in \partial\BB_R.
+    \end{cases}
   \end{align*}
+  See Theorem~\ref{thm:jerisonKenig} b) for the results on the regularity problem.
+  Suppose that $j$ is chosen large enough such that every $q \in \partial\Omega$ is part of the outer cone $\Gamma_{\text{ext}}(\Lambda_j(q))$, where the nontangential approach regions are defined with respect to the domain $\tilde\Omega$. 
   We calculate using the divergence theorem
   \begin{align}
-    \int_{\partial\Omega_j} u \cdot (-n_j) \overline f \d\sigma
-    &= \int_{\partial\Omega_j} u \cdot (-n_j) \, \overline \psi \d \sigma \nonumber\\
-    &= \int_{\Omega \setminus \Omega_j} \div(u \cdot \overline\psi) \d y - \int_{\partial\Omega} u\cdot n \, \overline \psi \nonumber\\
+    \Big| \, \int_{\partial\Omega_j} u \cdot (-n_j) \overline f \d\sigma \, \Big|
+    &= \Big| \, \int_{\partial\Omega_j} u \cdot (-n_j) \, \overline \psi \d \sigma \, \Big| \nonumber\\
+    &= \Big| \, \int_{\Omega \setminus \Omega_j} \div(u \cdot \overline\psi) \d y - \int_{\partial\Omega} u\cdot n \, \overline \psi \d \sigma \, \Big|\nonumber\\
     &\leq C\, \|u\|_{\Ell^2(\Omega \setminus \Omega_j)} \|f\|_{\HH^1(\partial\Omega_j)} + \|u \cdot n\|_{\HH^{-1}(\partial\Omega)} \|\psi\|_{\HH^1(\partial\Omega)}, \label{eq:operatornormApprox}
   \end{align}
   where $C > 0$ depends on $d$.
@@ -529,22 +536,24 @@ Furthermore, we will rely on properties of solutions to the regularity problem a
     \leq C \, \Big\{ \|(\psi)^*\|_{\Ell^2(\partial\Omega_j)} + \| (\nabla_{\mathrm{tan}}\psi)^* \|_{\Ell^2(\partial\Omega_j)} \Big\} 
     \leq C \, \|f\|_{\HH^1(\partial\Omega_j)}^{},
   \end{align*}
-  where for the last inequality we used results for the regularity problem of the Dirichlet Laplacian.
+  where for the last inequality we used further results for the regularity problem of the Dirichlet Laplacian, see \cite[Thm.\@~7.5.15]{Shen2017}. 
+  Not that we assumed also that the cited result holds for bounded Lipschitz domains that do not have a connected boundary.
   This inequality can now be used to transform inequality~\eqref{eq:operatornormApprox} into the estimate
   \begin{align*}
-    \| u ?out
+    \| u \cdot n \|_{\HH^{-1}(\partial\Omega_j)}^{} \leq C \Big\{ \|u\|_{\Ell^2{\Omega\setminus \Omega_j}} + \|u \cdot n \|_{\HH^{-1}(\partial\Omega)}^{} \Big\},
   \end{align*}
+  with a constant that only depends on $d$, $\operatorname{diam}(\Omega)$ and the Lipschitz character of $\Omega$.
   This shows that
   \begin{align*}
-    \limsup_{j \to \infty} \|u \cdot n\|_{\HH^{-1}(\partial\Omega_j)} \leq C \, \|u \cdot n\|_{\HH^{-1}},
+    \limsup_{j \to \infty} \|u \cdot n\|_{\HH^{-1}(\partial\Omega_j)} \leq C \, \|u \cdot n\|_{\HH^{-1}(\partial\Omega)}.
   \end{align*}
-  with a constant $C > 0$ that only depends on $d$ and the Lipschitz character of $\Omega$.
-  In the same fashion one may prove that the estimate
+  %with a constant $C > 0$ that only depends on $d$ and the Lipschitz character of $\Omega$.
+  In a similar fashion one may prove that the estimate
   \begin{align*}
-    \limsup_{j \to \infty} \|u \cdot n\|_{\HH^{-1}(\partial\Omega_j)} \leq C \, \|u \cdot n\|_{\HH^{-1}}
+    \|u \cdot n\|_{\HH^{-1}(\partial\Omega)} \leq C \liminf_{j \to \infty} \|u \cdot n\|_{\HH^{-1}(\partial\Omega_j)} 
   \end{align*}
   holds.
-}
+
   Approximating $\Omega$ by a sequence of $\CC^\infty$ domains $(\Omega_j)$ as in Theorem~\ref{thm:smoothApproximation} we see that is is sufficient to prove inequalities~\eqref{eq:phiDashintPhi} and  \eqref{eq:lambdaun} for smooth subdomains.  
   For the rest of the proof we will thus assume that $(u,\phi)$ satisfies the Stokes resolvent problem in a smooth domain $\Omega'$ for some $\overline \Omega \subseteq \Omega'$.
   In particular we have $\Delta u = \nabla \phi + \lambda u$  on $\partial\Omega$.

@@ -7,13 +7,13 @@ In the case of the famous \emph{Navier-Stokes equations} which for a given domai
 \begin{align*}
   \partial_t u - \Delta u + \nabla \pi &= 0 \quad\text{in } \Omega, t > 0\\
   \div(u) &= 0 \quad\text{in } \Omega, t > 0 \\
-  u(0) &= a \quad\text{in } \Omega \\
+  u(0) &= a \quad\text{in } \Omega, \\
   u &= 0 \quad\text{on } \partial\Omega, t > 0,
 \end{align*}
 where $u \colon \R^+ \times \Omega \to \R^d$ stands for the velocity field and $\pi \colon \R^+ \times \Omega \to \R$ represents the pressure of the fluid.
 The so called \emph{Stokes semigroup} $(e^{tA})_{t \geq 0}$ describes the evolution of the velocity $u$ and the \emph{Stokes operator} $A$ corresponds to the term ``$-\Delta u + \nabla \pi$'' in the Stokes equations. 
 
-Having a semigroup makes it possible to look for mild solutions to the Navier-Stokes equations using a variation of constants formula to construct an iteration method.
+Having a semigroup makes it possible to look for \emph{mild solutions} to the Navier-Stokes equations using a variation of constants formula to construct an iteration method.
 This approach was introduced by Fujita and Kato \cite{fujitaKato,katoFujita} and builds mainly on resolvent estimates for the Stokes operator $A$ and the analyticity property of the Stokes semigroup.
 Fujita and Kato applied their methods to find solutions in $\Ell^2$ spaces, given that the initial values $a$ were to be found in domains of fractional powers of the Stokes operator.
 Fractional power domains are in general difficult to describe which is why Fujita and Kato suggested that an $\Ell^p$ theory for the Navier-Stokes equations could overcome this problem, see \cite[p.\@~313]{fujitaKato}.
@@ -25,7 +25,7 @@ This result was then used by Giga and Miyakawa \cite{gigaMiyakawa} to prove the 
 Kato \cite{katoExtend} then extended this theory to the whole space and later Giga \cite{gigaAdjust} adjusted the approach for bounded smooth domains.
 
 A natural assumption in real world applications is that the boundary of the domain $\Omega$ is not smooth but merely Lipschitz continuous. 
-On Lipschitz domains the analysis of partial differential equations is more complicated as classical localization techniques fail due to the lack of smoothness of the boundary.
+On Lipschitz domains, the analysis of partial differential equations is more complicated as classical localization techniques fail due to the lack of smoothness of the boundary.
 %In order to extend the advances of the $\Ell^p$ theory on smooth domains to Lipschitz domains, the first existence and unique results were given by Mitrea and Monniaux.
 In order to overcome these problems, new techniques had to be developed which gave rise to the work of Fabes, Kenig and Verchota \cite{fabesKenigVerchota} which constructed solutions to the $\Ell^p$ Dirichlet problem of the Stokes equation by the method of layer potentials.
 
@@ -44,9 +44,9 @@ Except for the first chapter, in which we will gather the fundamentals and formu
 In Chapter \ref{chap:2}, we will derive the central estimates of the fundamental solutions to the Stokes resolvent problem on $\R^d$ by taking advantage of their explicit representation formula.
 
 Chapter \ref{chap:3} will introduce the method of boundary layer potentials for the solution of the Stokes resolvent problem on bounded Lipschitz domains.
-We will discover the central relation between boundary values that are attained nontangentially and the singular integral operators that provide a representation formula for solutions to the stokes resolvent problem. 
+We will discover the central relation between boundary values that are attained nontangentially and the singular integral operators that provide a representation formula for solutions to the Stokes resolvent problem. 
 
-In Chapter \ref{chap:4}, we take a more general look on solutions to the Stokes resolvent problem and derive Rellich-type estimates on these solutions.
+In Chapter \ref{chap:4}, we take a more general look on solutions to the Stokes resolvent problem and derive Rellich-type estimates for these solutions.
 
 Based on the results of Chapter 3 and 4, in Chapter \ref{chap:5}, we will study the $\Ell^2$ Dirichlet problem of the Stokes resolvent system. In this chapter, we will see that for given boundary values in $\Ell^2(\partial\Omega, \C^d)$, there exists a unique solution to the $\Ell^2$ Dirichlet problem which is given via a double layer potential.
 
