@@ -5,8 +5,8 @@
 In the solution theory for nonlinear partial differential equations, an integral part of the solution process is often to develop a semigroup theory for the linearization of the equation.
 In the case of the famous \emph{Navier-Stokes equations} which for a given domain $\Omega \subseteq \R^d$, $d \geq 2$, describe the behavior of a Newtonian fluid over time, the linearization is given by the \emph{Stokes equation}s
 \begin{align*}
-  \partial_t u - \Delta u + \nabla \pi &= 0 \quad\text{in } \Omega, t > 0\\
-  \div(u) &= 0 \quad\text{in } \Omega, t > 0 \\
+  \partial_t u - \Delta u + \nabla \pi &= 0 \quad\text{in } \Omega, t > 0,\\
+  \div(u) &= 0 \quad\text{in } \Omega, t > 0, \\
   u(0) &= a \quad\text{in } \Omega, \\
   u &= 0 \quad\text{on } \partial\Omega, t > 0,
 \end{align*}
@@ -27,13 +27,13 @@ Kato \cite{katoExtend} then extended this theory to the whole space and later Gi
 A natural assumption in real world applications is that the boundary of the domain $\Omega$ is not smooth but merely Lipschitz continuous. 
 On Lipschitz domains, the analysis of partial differential equations is more complicated as classical localization techniques fail due to the lack of smoothness of the boundary.
 %In order to extend the advances of the $\Ell^p$ theory on smooth domains to Lipschitz domains, the first existence and unique results were given by Mitrea and Monniaux.
-In order to overcome these problems, new techniques had to be developed which gave rise to the work of Fabes, Kenig and Verchota \cite{fabesKenigVerchota} which constructed solutions to the $\Ell^p$ Dirichlet problem of the Stokes equation by the method of layer potentials.
+In order to overcome these problems, new techniques had to be developed which gave rise to the work of Fabes, Kenig and Verchota \cite{fabesKenigVerchota} who constructed solutions to the $\Ell^p$ Dirichlet problem of the Stokes equation by the method of layer potentials.
 
 As on smooth domains, the further expansion of the $\Ell^p$ theory by means of the classical iteration method was reliant on the analyticity of the Stokes semigroup.
 Due to the boundedness properties of the Helmholtz projection, Taylor conjectured in his paper \cite{taylor} from 1999 that the analyticity of the Stokes semigroup would only hold in a neighborhood of $p = 2$, namely for $p \in  (3/2 - \varepsilon, 3 + \varepsilon)$ in the three dimensional case.
 His conjecture was supported by the fact that, not much later, Deuring showed in \cite{deuring} the existence of a three dimensional Lipschitz domain such that the needed resolvent estimates would fail for sufficiently large $p$.
 
-Twelve years passed until a positive result could be given to Taylor's conjecture:  Shen showed in his seminal paper \cite{Shen2012} that in Lipschitz domains $\Omega \subseteq \R^d$ , $d \geq 3$, for all $2d/( d + 1) - \varepsilon < p < 2d/(d - 1) + \varepsilon$ the Stokes operator generates an analytic semigroup on $\Ell^p_\sigma(\Omega)$.
+Twelve years passed until a positive result could be given to Taylor's conjecture:  Shen showed in his seminal paper \cite{Shen2012} that in Lipschitz domains $\Omega \subseteq \R^d$ , $d \geq 3$, for all $p \in (2d/( d + 1) - \varepsilon , 2d/(d - 1) + \varepsilon)$ the Stokes operator generates an analytic semigroup on $\Ell^p_\sigma(\Omega)$.
 Shen's result on the analyticity of the semigroup thus made the Fujita-Kato approach available for the study of the Navier-Stokes equations on Lipschitz domains which, together with other methods, was used by Tolksdorf to prove the existence of mild solutions in $\Ell^3$ to the Navier-Stokes equations \cite{tolksdorf}.
 
 In the present thesis, we will study Shen's approach to the analyticity problem of the Stokes semigroup in $\Ell^p$ for bounded Lipschitz domains in $\R^d$.
@@ -48,9 +48,9 @@ We will discover the central relation between boundary values that are attained 
 
 In Chapter \ref{chap:4}, we take a more general look on solutions to the Stokes resolvent problem and derive Rellich-type estimates for these solutions.
 
-Based on the results of Chapter 3 and 4, in Chapter \ref{chap:5}, we will study the $\Ell^2$ Dirichlet problem of the Stokes resolvent system. In this chapter, we will see that for given boundary values in $\Ell^2(\partial\Omega, \C^d)$, there exists a unique solution to the $\Ell^2$ Dirichlet problem which is given via a double layer potential.
+Based on the results of Chapter 3 and 4, in Chapter \ref{chap:5}, we will study the $\Ell^2$ Dirichlet problem of the Stokes resolvent system. In this chapter, we will see that for given boundary values in $\Ell^2(\partial\Omega; \C^d)$, there exists a unique solution to the $\Ell^2$ Dirichlet problem which is given via a double layer potential.
 
-Finally, in Chapter \ref{chap:6}, we will tackle the problem of analyticity of the Stokes operator. In this chapter, we will derive the necessary resolvent estimates on $\Ell^p$ by making use of Shen's extrapolation theorem which can be considered a refined version of the Calder\'on-Zygmund lemma.
+Finally, in Chapter \ref{chap:6}, we will tackle the problem of analyticity of the Stokes operator. In this chapter, we will derive the necessary resolvent estimates on $\Ell^p$ by making use of Shen's extrapolation theorem which can be considered a refined version of the Calder\'on-Zygmund Lemma.
 
 %This last paragraph is reserved to mention some of the persons that were involved in the course of this thesis.
 %I thank Prof. Dr. Robert Haller-Dintelmann for taking the responsibility of supervising this thesis.

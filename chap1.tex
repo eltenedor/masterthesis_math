@@ -13,13 +13,13 @@ In this first section, we will establish the fundamental notions regarding bound
   Let $\Omega \subset \R^d$ be a bounded open connected set.
   We call $\Omega$ a \emph{bounded Lipschitz domain} if there exist $r_0, M > 0$ such that for all $x \in \partial\Omega$ there exists a function $\eta_x \colon \R^{d - 1} \to \R$ which is Lipschitz continuous and additionally fulfills $\eta_x(0) = 0$ and $\|\nabla \eta_x \|_{\Ell^\infty(\R^{d - 1})} \leq M$, and a rotation $R_x \colon \R^d \to \R^d$ such that for all $0 < r \leq r_0$ 
   \begin{align*}
-    R_x[ \Omega - \{x\} ] \cap D(r) &= D_{\eta_x}(r) \\
+    R_x[ \Omega - \{x\} ] \cap D(r) &= D_{\eta_x}(r) \quad\text{and}\\
     R_x[\partial\Omega - \{x\}] \cap D(r) &= I_{\eta_x}(r),
   \end{align*}
   where
   \begin{align*}
-    D(r) &\coloneqq \big\{ (x', x_d) \colon |x'| < r, |x_d| < 10 d\, (M + 1)\, r\big\} \\
-    D_{\eta_x}(r) &\coloneqq \big\{ (x', x_d) \colon |x'| < r, \eta_x(x') < x_d < 10 d\,(M+ 1)\,r\big\} \\
+    D(r) &\coloneqq \big\{ (x', x_d) \colon |x'| < r, |x_d| < 10 d\, (M + 1)\, r\big\}, \\
+    D_{\eta_x}(r) &\coloneqq \big\{ (x', x_d) \colon |x'| < r, \eta_x(x') < x_d < 10 d\,(M+ 1)\,r\big\}, \\
     I_{\eta_x}(r) &\coloneqq \big\{ (x', x_d) \colon |x'| < r, \eta_x(x') = x_d \big\} .
   \end{align*}
 \end{defn}
@@ -49,15 +49,15 @@ In this first section, we will establish the fundamental notions regarding bound
       \begin{align*}
         \sup_{q \in \partial\Omega} |q - \Lambda_k(q)| \to 0\quad\text{as } k \to \infty
       \end{align*}
-      and $\Lambda_k(q)$ approaches $q$ nontangentially meaning that for all $k \in \N$
+      and $\Lambda_k(q)$ approaches $q$ \emph{nontangentially} meaning that for all $k \in \N$
       \begin{align*}
         | q - \Lambda_k(q) | < (1 + \beta) \operatorname{dist}(\Lambda_k(q), \partial\Omega)
       \end{align*}
       for some constant $\beta$ depending only on $d$ and the Lipschitz character of $\Omega\,$.
-    \item The normals $n_k$ of $\partial\Omega_k$ satisfy $\lim_{k \to \infty} n_k(\Lambda_k(q)) = n(q)$ a.e.\@ for all $q \in \partial\Omega$
+    \item The normals $n_k$ of $\partial\Omega_k$ satisfy $\lim_{k \to \infty} n_k(\Lambda_k(q)) = n(q)$ a.e.\@ for all $q \in \partial\Omega$\,.
     \item The functions $\vartheta_k$ satisfy $\delta \leq \vartheta_k \leq \delta^{-1}$ for some $\delta > 0$, $\vartheta^k \to 1$ pointwise a.e.\@ and
       \begin{align*}
-        \int_E \vartheta_k(q) \d \sigma(q) = \int_{\Lambda_k(E)} \d \sigma_k(q),
+        \int_E \vartheta_k(q) \d \sigma(q) = \int_{\Lambda_k(E)} \d \sigma_k(q)\,,
       \end{align*}
       where $E \subset \partial \Omega$ is measurable and $\sigma_k$ denotes the surface measure on $\Omega_k$.
       Furthermore, if $u \colon \partial\Omega_k \to \C$ is a measurable function on $\partial\Omega_k$, the following ``transformation rule'' holds:
@@ -87,10 +87,10 @@ Unfortunately, in the literature there exist at least two different concepts whi
   \end{align*}
   we have
   \begin{align*}
-    \tilde R_{x_i}[\Omega - \{x_i\}] \cap D(r) &= D_{\tilde \eta_{x_i}}(r) \\
+    \tilde R_{x_i}[\Omega - \{x_i\}] \cap D(r) &= D_{\tilde \eta_{x_i}}(r) \quad\text{and}\\
     \tilde R_{x_i}[\partial\Omega - \{x_i\}] \cap D(r) &= I_{\tilde \eta_{x_i}}(r).
   \end{align*}
-  In addition, for all $i$ there exist cones $\alpha_i$, $\beta_i$ and $\gamma_i$ with vertex at the origin and axis along the $x_d$-axis such that
+  In addition, for all $i = 1,\dots,n_0$ there exist cones $\alpha_i$, $\beta_i$ and $\gamma_i$ with vertex at the origin and axis along the $x_d$-axis such that
   \begin{align*}
     \alpha_i \subset \overline{\beta_i} \setminus\{0\} \subset \gamma_i
   \end{align*}
@@ -102,7 +102,7 @@ Unfortunately, in the literature there exist at least two different concepts whi
   We will sometimes denote a regular cone as above by $\verCone(q)$.
 \end{defn}
 
-For the existence of such families of cones, see the Appendix of Verchota \cite{verchota}.
+For the existence of such families of cones, see the Appendix of Verchota \cite{verchota} and \cite{verchota84}.
 
 In Verchota cones $\verCone(q)$, we have the properties that for all $\Omega$ there exists a constant $C > 0$ depending only on the Lipschitz character of $\Omega$ such that for all $q$, $p \in \partial\Omega$ and any $x \in \Gamma_V(p)$ we have that
 \begin{align}
@@ -355,7 +355,7 @@ The other side just asks for a resolvent estimate on the Stokes operator, hoping
   Let $\Omega\subseteq \R^d$, $d \geq 2$ be a bounded Lipschitz domain.
   If $p > 2$, we define the Stokes operator $A_p$ via its \emph{part of} $A_2$ \emph{in } $\Ell^p_\sigma(\Omega)$.
   \begin{align*}
-    \Dom(A_p) &\coloneqq \Big\{ u \in \Dom(A_2) \cap \Ell^p_\sigma(\Omega) \colon A_2 u \in \Ell^p_\sigma(\Omega) \Big\} \\
+    \Dom(A_p) &\coloneqq \Big\{ u \in \Dom(A_2) \cap \Ell^p_\sigma(\Omega) \colon A_2 u \in \Ell^p_\sigma(\Omega) \Big\}, \\
     A_p u &\coloneqq A_2 u, \quad u \in \Dom(A_p).
   \end{align*}
   %If $p < 2$ and $A_2$ is closable in $\Ell^p_\sigma(\Omega)$, then $A_p \coloneqq \overline{A_2}$.
@@ -367,7 +367,7 @@ More details about the mechanics of the Helmholtz projection can be found in Tol
 \begin{thm}[Thm. 5.2.11, \cite{tolksdorf}]
   \label{thm:domainStokesOperatorLp}
   Let $\Omega \subseteq \R^d$, $d \geq 2$, is a bounded Lipschitz domain.
-  Then there exists $\varepsilon > 0$ such that for all
+  Then, there exists $\varepsilon > 0$ such that for all
   \begin{align*}
     2 < p < \frac{2d}{d - 1} + \varepsilon
   \end{align*}
@@ -409,7 +409,7 @@ Now we define the Stokes operator for $p < 2$ as announced.
     \frac{2d}{d + 1} - \varepsilon < p < 2
   \end{align*}
   and $\Psi$ be the isomorphism from Lemma \ref{lem:duality}.
-  Then the \emph{Stokes operator on} $\Ell^p_\sigma(\Omega)$ is defined via
+  Then, the \emph{Stokes operator on} $\Ell^p_\sigma(\Omega)$ is defined via
   \begin{align*}
     \Dom(A_p) & \coloneqq \big\{ u \in \Ell^p_\sigma(\Omega) \colon \Psi u \in \Dom(A^*_{p'}) \big\} \\
     A_p &\coloneqq \Psi^{-1} A^*_{p'} \Psi u,
@@ -422,7 +422,7 @@ Without investing too much additional work, it is now possible to prove the foll
 \begin{thm}[Thm. 5.2.9 and Thm. 5.2.17, \cite{tolksdorf}]
   \label{thm:stokesOperatorLp}
   Let $\Omega \subset \R^d$, $d \geq 2$, be a bounded Lipschitz domain. 
-  Then there exists $\varepsilon > 0$ such that for all 
+  Then, there exists $\varepsilon > 0$ such that for all 
   \begin{align*}
     \frac{2d}{d + 1} - \varepsilon < p < \frac{2d}{d - 1} + \varepsilon
   \end{align*}

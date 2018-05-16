@@ -269,7 +269,7 @@ This allows us to write for $d \geq 3$
   G(x;\lambda) - G(x; 0) = \frac{\ii}{4\,(2\pi)^{\frac{d}{2} - 1}} \cdot \frac{1}{|x|^{d - 2}} \Big\{ (k|x|)^{\frac{d}{2} - 1} H_{\frac{d}{2} - 1}^{(1)}(k|x|) - a_d \Big\}.
 \end{align}
 
-The following lemma will help us to estimate the expression~\eqref{eq:HelmholtzLaplaceDifference} together with its derivatives and their $2$-dimensional counterparts.
+The following lemma will help us to estimate the expression~\eqref{eq:HelmholtzLaplaceDifference} together with its derivatives and their two dimensional counterparts.
 
 \begin{lem}
   \label{lem:HelmholtzLaplaceDifference}
@@ -433,7 +433,7 @@ The following lemma will help us to estimate the expression~\eqref{eq:HelmholtzL
   for $l \in \{1, 2\}$.  
 \end{rem}
 
-%\newpage
+\newpage
 \section{The Stokes Resolvent Problem}
 \label{sec:2.2}
 
@@ -728,10 +728,10 @@ The derivatives of $f$ read
   + \Big(\frac{\d{}}{\d z} g\Big)(k |x|) \cdot k\, \bigg( \frac{\delta_{\alpha\beta}}{|x|} - \frac{x_\beta x_\alpha}{|x|^3} \bigg)\,, \\[0.5em]
   %
   \frac{\partial^3}{\partial x_\gamma \partial x_\alpha \partial x_\beta} f(x)
-  &= \Big(\frac{\mathrm{d}^3}{\d z^3}g\Big)(k |x|) \cdot k^3 \,\frac{x_\alpha x_\beta x_\gamma}{|x|^3} \\
+  &= \Big(\frac{\mathrm{d}^3}{\d z^3}g\Big)(k |x|) \cdot k^3 \,\frac{x_\alpha x_\beta x_\gamma}{|x|^3} \\[0.5em]
   &\quad + \Big(\frac{\mathrm{d}^2}{\d z^2}g\Big)(k|x|) 
-  \cdot k^2 \bigg( \frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha\gamma} x_\beta + \delta_{\alpha\beta} x_\gamma }{|x|^2} 
-  - \frac{x_\alpha x_\beta x_\gamma}{|x|^4} \bigg) \\
+  \cdot k^2\, \bigg( \frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha\gamma} x_\beta + \delta_{\alpha\beta} x_\gamma }{|x|^2} 
+  - \frac{x_\alpha x_\beta x_\gamma}{|x|^4} \bigg) \\[0.5em]
   &\quad + \Big(\frac{\d{}}{\d z}g\Big)(k|x|) \cdot k\, \bigg(-\frac{ \delta_{\alpha\beta}x_\gamma + \delta_{\beta\gamma}x_\alpha  + \delta_{\alpha\gamma}x_\beta }{|x|^3} + \frac{3 x_\alpha x_\beta x_\gamma}{|x|^5} \bigg)\,.
 \end{align*}
 If we now look for estimates on the absolute value of the derivatives, we see that by \eqref{eq:estimateDerivativesd7}
