@@ -490,13 +490,13 @@ Furthermore, we will rely on properties of solutions to the regularity problem a
   
   Our first goal will be to show that without loss of generality we may assume that $\Delta u = \nabla \phi + \lambda u$ on $\partial\Omega$.
   The central player will once again be Theorem~\ref{thm:smoothApproximation}.
-  To this end, let $(\Omega_j)$ be a sequence of approximating $\CC^\infty$ domains as in Theorem~\ref{thm:smoothApproximation} and suppose that inequality~\eqref{eq:phiDashintPhi} holds for all $\Omega_j$, i.e.\@ we have proven the inequality
+  To this end, let $(\Omega_j)$ be a sequence of approximating $\CC^\infty$ domains as in Theorem~\ref{thm:smoothApproximation} and suppose that inequality~\eqref{eq:phiDashintPhi} holds for all $\Omega_j$, i.e., we have proven the inequality
   \begin{align*}
     %\bigg\|\, \phi - \bigg\{ \frac{1}{{r_0}^{d - 1}}\int_{\partial\Omega} \phi \d\sigma \bigg\} \, \bigg\|_{\Ell^2(\partial\Omega_j; \C^d)}
-    \bigg\|\, \phi - \fint_{\partial\Omega} \phi \d\sigma  \, \bigg\|_{\Ell^2(\partial\Omega_j; \C^d)}
+    \bigg\|\, \phi - \fint_{\partial\Omega} \phi \d\sigma  \, \bigg\|_{\Ell^2(\partial\Omega_j)}
      \leq C\, \Big\{ \|\nabla u\|_{\Ell^2(\partial\Omega_j; \C^{d\times d})} + |\lambda| \, \|u\cdot n\|_{\HH^{-1}(\partial\Omega_j)} \Big\}.
   \end{align*}
-  Analogously, suppose that and an inequality similar to \eqref{eq:lambdaun} holds.
+  Analogously, suppose that an inequality similar to \eqref{eq:lambdaun} holds.
   %Note that the mean value integral of $\phi$ should remain unchanged.
   It is now crucial that the constants in these inequalities only depend on the Lipschitz character of $\Omega$ and not on other geometric properties of the domain.
   Thus, $C$ does not depend on $j$ and we may take the limit $j \to \infty$ using dominated convergence for the terms that do not involve the operator norms $\| \cdot \|_{\HH^{-1}(\partial\Omega_j)}$. 
@@ -515,7 +515,7 @@ Furthermore, we will rely on properties of solutions to the regularity problem a
   We calculate using the divergence theorem
   \begin{align}
     \Big| \, \int_{\partial\Omega_j} u \cdot (-n_j) \overline f \d\sigma \, \Big|
-    &= \Big| \, \int_{\partial\Omega_j} u \cdot (-n_j) \, \overline \psi \d \sigma \, \Big| \nonumber\\
+    %&= \Big| \, \int_{\partial\Omega_j} u \cdot (-n_j) \, \overline \psi \d \sigma \, \Big| \nonumber\\
     &= \Big| \, \int_{\Omega \setminus \Omega_j} \div(u \cdot \overline\psi) \d y - \int_{\partial\Omega} u\cdot n \, \overline \psi \d \sigma \, \Big|\nonumber\\
     &\leq C\, \|u\|_{\Ell^2(\Omega \setminus \Omega_j)} \|f\|_{\HH^1(\partial\Omega_j)} + \|u \cdot n\|_{\HH^{-1}(\partial\Omega)} \|\psi\|_{\HH^1(\partial\Omega)}, \label{eq:operatornormApprox}
   \end{align}
@@ -525,7 +525,7 @@ Furthermore, we will rely on properties of solutions to the regularity problem a
   \begin{align*}
     \int_{\partial\Omega} |\psi(p)|^2 \d\sigma(p)
     &\leq \int_{\partial\Omega} |(\psi(\Lambda_j(p)))^*|^2 \d\sigma(p) \\
-    &\leq \delta^{-1} \int_{\partial\Omega} | (\psi)^*(\Lambda_j^{-1}(p))|^2 \vartheta_(p) \d\sigma(p) \\
+    &\leq \delta^{-1} \int_{\partial\Omega} | (\psi)^*(\Lambda_j(p))|^2 \vartheta(p) \d\sigma(p) \\
     &= \delta^{-1} \int_{\partial\Omega_j} |(\psi)^*(p)|^2 \d\sigma(p) ,
   \end{align*}
   where $\delta > 0$ is the bound from Theorem~\ref{thm:smoothApproximation} iv).
@@ -540,7 +540,7 @@ Furthermore, we will rely on properties of solutions to the regularity problem a
   Not that we assumed also that the cited result holds for bounded Lipschitz domains that do not have a connected boundary.
   This inequality can now be used to transform inequality~\eqref{eq:operatornormApprox} into the estimate
   \begin{align*}
-    \| u \cdot n \|_{\HH^{-1}(\partial\Omega_j)}^{} \leq C \Big\{ \|u\|_{\Ell^2{\Omega\setminus \Omega_j}} + \|u \cdot n \|_{\HH^{-1}(\partial\Omega)}^{} \Big\},
+    \| u \cdot n \|_{\HH^{-1}(\partial\Omega_j)}^{} \leq C \Big\{ \|u\|_{\Ell^2(\Omega\setminus \Omega_j)} + \|u \cdot n \|_{\HH^{-1}(\partial\Omega)}^{} \Big\},
   \end{align*}
   with a constant that only depends on $d$, $\operatorname{diam}(\Omega)$ and the Lipschitz character of $\Omega$.
   This shows that
@@ -554,7 +554,7 @@ Furthermore, we will rely on properties of solutions to the regularity problem a
   \end{align*}
   holds.
 
-  Approximating $\Omega$ by a sequence of $\CC^\infty$ domains $(\Omega_j)$ as in Theorem~\ref{thm:smoothApproximation} we see that is is sufficient to prove inequalities~\eqref{eq:phiDashintPhi} and  \eqref{eq:lambdaun} for smooth subdomains.  
+  By virtue of the previous discussion, we see that it is sufficient to prove inequalities~\eqref{eq:phiDashintPhi} and  \eqref{eq:lambdaun} for smooth subdomains.  
   For the rest of the proof we will thus assume that $(u,\phi)$ satisfies the Stokes resolvent problem in a smooth domain $\Omega'$ for some $\overline \Omega \subseteq \Omega'$.
   In particular we have $\Delta u = \nabla \phi + \lambda u$  on $\partial\Omega$.
   Multiplying this identity  on $\partial\Omega$ with the outer normal vector $n$ and using the triangle inequality gives the following set of estimates:

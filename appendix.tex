@@ -134,12 +134,19 @@ We have
   \bigg\}.
   %%
 \end{align*}
-Using the fact $|\lambda| |x|^2 \leq (1/2)$ to trade one $|k| = \sqrt{|\lambda|}$ in the prefactor for a constant times $|x|^{-1}$, shows that the prefactor behave as
+First, note that
+\begin{align*}
+  \Big| \frac{1}{2\pi} k^3 \frac{x_\alpha x_\beta x_\gamma}{|x|^3} c_1 (k|x|)^{2 \cdot 1 -3} \Big| 
+  \leq C \, |\lambda| |x|^{-1},
+\end{align*}
+with a constant $C > 0$.
+This shows that the first term of the third sum in $A_3$ is not problematic.
+For the rest of $A_3$ we use the fact $|\lambda| |x|^2 \leq (1/2)$ to trade one $|k| = \sqrt{|\lambda|}$ in the prefactor for a constant times $|x|^{-1}$ and show that the prefactor behaves as
 \begin{align*}
   \Big|\, k^3 \, \frac{x_\alpha x_\beta x_\gamma}{|x|^3}\, \Big| 
   \leq C\, |\lambda| |x|^{-1}, 
 \end{align*}
-with a constant $C > 0$ only depending on $d$.
+with a constant $C > 0$.
 Therefore, the only problematic term in $A_3$ is the first element of the last sum
 \begin{align}
   \label{eq:P1}
@@ -200,7 +207,7 @@ Therefore, problematic terms only arise in the last two sums
   \, \cdot \; a_0 \, (k|x|)^{2 \cdot 0 - 1} .
   \end{alignedat}
 \end{align}
-Note that we get from the definitions on page \pageref{defnConst}
+Note that we get from definition \eqref{defnConst}
 \begin{align*}
   a_0 = 1, \qquad c_1 = b_1 = - \frac{1}{2}.
 \end{align*}
@@ -220,8 +227,9 @@ Next, we observe that if we take the sum over the problematic terms \eqref{eq:P1
     %
    &- \frac{1}{\pi}\, \frac{\delta_{\beta \gamma} x_\alpha + \delta_{\alpha \gamma} x_\beta + \delta_{\alpha\beta} x_\gamma}{|x|^4} 
      + \frac{4}{\pi}\, \frac{x_\alpha x_\beta x_\gamma}{|x|^6} 
-     \quad=\quad 0 \,.
+     \quad=\quad 0 \,. 
 \end{align*}
+This completes the proof of Theorem~\ref{lem:HelmholtzLaplaceDifference}. \hfill$\qed$
 \end{samepage}
 
 
@@ -231,13 +239,13 @@ Next, we observe that if we take the sum over the problematic terms \eqref{eq:P1
 \addcontentsline{toc}{section}{A.2\quad Proof of Theorem \ref*{thm:differenceFundamentalSolutionStokes} for $d = 2$}
 \label{sec:A2}
 
-In this section, we want to show that, for all $\lambda \in \Sigma_\theta$, $\theta \in (0,\pi/2)$ and under the assumption that $|\lambda| |x|^2 \leq (1/2)$, we have
+In this section, we show that, for all $\lambda \in \Sigma_\theta$, $\theta \in (0,\pi/2)$ and $x \in \R^2\setminus \{0\}$ satisfying $|\lambda| |x|^2 \leq (1/2)$, we have
 \begin{align*}
   \Big|\, \nabla_x \big\{ \Gamma(x; \lambda) - \Gamma(x; 0) \big\} \, \Big| \leq C\, |\lambda| |x| \, \big|\log(|\lambda| |x|^2)\,\big|\,,
 \end{align*}
 where $C > 0$ depends only on $\theta$.
 The means and the strategy to prove this estimate are similar to the procedure in the previous section.
-In addition to the derivatives that were calculated at the beginning of this appendix, we will furthermore need the first partial derivative for the matrix of fundamental solution of the Stokes problem:
+In addition to the derivatives that were calculated at the beginning of this appendix, we will furthermore need the first partial derivatives for the matrix of fundamental solutions of the Stokes problem:
 \begin{align*}
     \Gamma_{\alpha\beta}(x; 0) 
     &= \frac{1}{4\pi} \bigg\{ \,- \delta_{\alpha\beta} \log(|x|) + \frac{x_\alpha x_\beta}{|x|^2} \,\bigg\}
@@ -354,7 +362,7 @@ we see that already within the sum \eqref{eq:Q3} + \eqref{eq:Q4} a lot of terms 
   \label{eq:Q33}
   \tag{Q3'}
   &- \frac{1}{2\pi} \, \bigg(\, \frac{\delta_{\beta\gamma} x_\alpha + \delta_{\alpha \gamma} x_\beta + \delta_{\alpha \beta} x_\gamma}{|x|^2} - 3\, \frac{x_\alpha x_\beta x_\gamma}{|x|^4} \, \bigg) 
-  \, \cdot \mathlarger{\sum}_{l = 1}^1 \; b_l \, (k|x|)^{2l - 2}.
+  \, \cdot b_1 \, (k|x|)^{2\cdot 1 - 2}.
 \end{align*}
 Now let us consider the expression $\eqref{eq:Q1} + \eqref{eq:Q2} + \eqref{eq:Q33} + B_3$:
 \begin{align*}
@@ -367,4 +375,4 @@ Now let us consider the expression $\eqref{eq:Q1} + \eqref{eq:Q2} + \eqref{eq:Q3
   + \frac{1}{2\pi}\,  \frac{x_\alpha x_\beta x_\gamma}{|x|^4}
   \quad = \quad 0\, .
 \end{align*}
-As all problematic terms add up to zero, we have proven the initial claim.
+As all problematic terms add up to zero, we have proven the initial claim.\hfill$\qed$
