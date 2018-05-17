@@ -11,7 +11,7 @@ In the case of the famous \emph{Navier-Stokes equations} which for a given domai
   u &= 0 \quad\text{on } \partial\Omega, t > 0,
 \end{align*}
 where $u \colon \R^+ \times \Omega \to \R^d$ stands for the velocity field and $\pi \colon \R^+ \times \Omega \to \R$ represents the pressure of the fluid.
-The so called \emph{Stokes semigroup} $(e^{tA})_{t \geq 0}$ describes the evolution of the velocity $u$ and the \emph{Stokes operator} $A$ corresponds to the term ``$-\Delta u + \nabla \pi$'' in the Stokes equations. 
+The so-called \emph{Stokes semigroup} $(\e^{-tA})_{t \geq 0}$ describes the evolution of the velocity $u$ and the \emph{Stokes operator} $A$ corresponds to the term ``$-\Delta u + \nabla \pi$'' in the Stokes equations. 
 
 Having a semigroup makes it possible to look for \emph{mild solutions} to the Navier-Stokes equations using a variation of constants formula to construct an iteration method.
 This approach was introduced by Fujita and Kato \cite{fujitaKato,katoFujita} and builds mainly on resolvent estimates for the Stokes operator $A$ and the analyticity property of the Stokes semigroup.
@@ -20,20 +20,20 @@ Fractional power domains are in general difficult to describe which is why Fujit
 %The interest in an $\Ell^p$ theory of the Stokes equations became emminent as they were looking to find spaces with pertinence conditions that are easier to verify.
 Resolvent estimates in $\Ell^p$ for the Stokes operator and the analyticity of the Stokes semigroup are crucial ingredients of this classical functional analytic approach to the solution theory of the Navier-Stokes equations.
 
-On smooth domains, the first milestone in the direction of an $\Ell^p$ theory was laid by Giga \cite{giga} who proved that on bounded smooth domains the Stokes operator generates an analytic semigroup in $\Ell^p(\Omega)$ for $1 < p < \infty$.
+On smooth domains, the first milestone in the direction of an $\Ell^p$ theory was laid by Giga \cite{giga} and Solonnikov \cite{solonnikov} who proved that on bounded smooth domains the Stokes operator generates a bounded analytic semigroup in $\Ell^p(\Omega)$ for $1 < p < \infty$.
 This result was then used by Giga and Miyakawa \cite{gigaMiyakawa} to prove the existence of mild solutions given $\Ell^3$ initial data.
 Kato \cite{katoExtend} then extended this theory to the whole space and later Giga \cite{gigaAdjust} adjusted the approach for bounded smooth domains.
 
 A natural assumption in real world applications is that the boundary of the domain $\Omega$ is not smooth but merely Lipschitz continuous. 
 On Lipschitz domains, the analysis of partial differential equations is more complicated as classical localization techniques fail due to the lack of smoothness of the boundary.
 %In order to extend the advances of the $\Ell^p$ theory on smooth domains to Lipschitz domains, the first existence and unique results were given by Mitrea and Monniaux.
-In order to overcome these problems, new techniques had to be developed which gave rise to the work of Fabes, Kenig and Verchota \cite{fabesKenigVerchota} who constructed solutions to the $\Ell^p$ Dirichlet problem of the Stokes equation by the method of layer potentials.
+In order to overcome these problems, new techniques had to be developed which gave rise to the work of Fabes, Kenig and Verchota~\cite{fabesKenigVerchota} who constructed solutions to the $\Ell^2$ Dirichlet problem of the Stokes equations by the method of layer potentials.
 
 As on smooth domains, the further expansion of the $\Ell^p$ theory by means of the classical iteration method was reliant on the analyticity of the Stokes semigroup.
-Due to the boundedness properties of the Helmholtz projection, Taylor conjectured in his paper \cite{taylor} from 1999 that the analyticity of the Stokes semigroup would only hold in a neighborhood of $p = 2$, namely for $p \in  (3/2 - \varepsilon, 3 + \varepsilon)$ in the three dimensional case.
+Due to the boundedness properties of the Helmholtz projection, Taylor conjectured in his paper \cite{taylor} from 2000 that the analyticity of the Stokes semigroup would only hold in a neighborhood of $p = 2$, namely for $p \in  (3/2 - \varepsilon, 3 + \varepsilon)$ in the three dimensional case.
 His conjecture was supported by the fact that, not much later, Deuring showed in \cite{deuring} the existence of a three dimensional Lipschitz domain such that the needed resolvent estimates would fail for sufficiently large $p$.
 
-Twelve years passed until a positive result could be given to Taylor's conjecture:  Shen showed in his seminal paper \cite{Shen2012} that in Lipschitz domains $\Omega \subseteq \R^d$ , $d \geq 3$, for all $p \in (2d/( d + 1) - \varepsilon , 2d/(d - 1) + \varepsilon)$ the Stokes operator generates an analytic semigroup on $\Ell^p_\sigma(\Omega)$.
+Twelve years passed until a positive result could be given to Taylor's conjecture:  Shen showed in his seminal paper \cite{Shen2012} that in bounded Lipschitz domains $\Omega \subseteq \R^d$, $d \geq 3$, for all $p \in (2d/( d + 1) - \varepsilon , 2d/(d - 1) + \varepsilon)$ the Stokes operator generates a bounded analytic semigroup on $\Ell^p_\sigma(\Omega)$.
 Shen's result on the analyticity of the semigroup thus made the Fujita-Kato approach available for the study of the Navier-Stokes equations on Lipschitz domains which, together with other methods, was used by Tolksdorf to prove the existence of mild solutions in $\Ell^3$ to the Navier-Stokes equations \cite{tolksdorf}.
 
 In the present thesis, we will study Shen's approach to the analyticity problem of the Stokes semigroup in $\Ell^p$ for bounded Lipschitz domains in $\R^d$.
