@@ -126,7 +126,7 @@ The next lemma is the counterpart to Lemma~\ref{lem:inverseEstimate1} and proves
   In order to prove this inequality, we want to apply Young's inequality from Lemma~\ref{lem:young}. To this end, we start by estimating
   \begin{align*}
       \big\|\,  (\K_\lambda - \K_0) f\, \big\|^{}_\partial 
-    \leq \sup_{\substack {p \in \partial\Omega \\ i,j = 1,\dots,d}} \Big\|\, \nabla_x \Big\{ \Gamma_{ij}(p - \cdot\,; \lambda) - \Gamma_{ij}(p - \cdot\,; 0) \Big\} \, \Big\|_{\Ell^1(\partial\Omega;\C^d)} \| f\|_\partial^{}.
+    \leq \sup_{\substack {p \in \partial\Omega \\ i,j = 1,\dots,d}} \Big\|\, \nabla_x \Big\{ \Gamma_{ij}(p - \cdot\,; \lambda) - \Gamma_{ij}(p - \cdot\,; 0) \Big\} \, \Big\|_{\Ell^1(\partial\Omega;\,\C^d)} \| f\|_\partial^{}.
   \end{align*}
   In the next step, we prove that for $p \in \partial\Omega$ the integral over the gradients of $\Gamma$ can be estimated independently of $p$ and of course $i$ and $j$.
   This is straightforward using Lemma~\ref{lem:central} as Corollary~\ref{cor:differenceFundamentalSolutionStokes} gives us
@@ -570,7 +570,7 @@ The next theorem can in some sense be regarded as a reverse trace theorem and wi
   \begin{align*}
     &\int_{\partial\Omega_j} |u - w|^2 \d\sigma_j  \\
     &\qquad\leq 2 \, \bigg\{ \int_{\partial\Omega_j} |u - \varphi_\varepsilon |^2 \d\sigma_j + \int_{\partial\Omega_j} |\varphi_\varepsilon - w|^2 \d\sigma_j \bigg\}
-    \leq 4 \, \tilde C \, \big\| u - \varphi_\varepsilon \big\|_{\HH^1(\Omega; \C^d)}^2 + \frac{\varepsilon}{3} 
+    \leq 4 \, \tilde C \, \big\| u - \varphi_\varepsilon \big\|_{\HH^1(\Omega;\, \C^d)}^2 + \frac{\varepsilon}{3} 
     \leq \varepsilon.
   \end{align*}
   Gluing together this inequality and \eqref{eq:reverseTraceUnique}, we see that $w = u$ holds a.e.\@ in $\Omega$ once we take the limit $j \to \infty$ and remember that $\varepsilon$ was chosen arbitrarily.

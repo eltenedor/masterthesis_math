@@ -56,7 +56,7 @@ The following lemma will be a good companion for the forthcoming calculation of 
 \begin{lem}
   \label{lem:compareBoundaryWithBall}
   Let $\Omega \subset \R^d$, $d \geq 2$, be a bounded Lipschitz domain with corresponding numbers $r_0$ and $M$.
-  Then there exist $c, C > 0$ depending only on $d$ and $M$ such that
+  Then, there exist $c, C > 0$ depending only on $d$ and $M$ such that
   \begin{align*}
     c r^{d - 1} 
     \leq \sigma(\BB(q,r) \cap \partial\Omega) \leq C r^{d -1}
@@ -296,9 +296,9 @@ The following lemma shows that these integral kernels fulfill the requirements f
 
 \begin{lem}
   \label{lem:youngApp}
-  Let $\Omega \subset \R^d$ be a bounded Lipschitz domain. Then
+  Let $\Omega \subset \R^d$ be a bounded Lipschitz domain. Then,
   \begin{align*}
-    \sup_{q \in \partial\Omega} \int_{\partial\Omega} \frac{1}{|q - y|^{d - 2}} \leq C r_0,
+    \sup_{q \in \partial\Omega} \int_{\partial\Omega} \frac{1}{|q - y|^{d - 2}} \leq C r_0\,,
   \end{align*}
   where $C$ is a constant depending only on $d$ and the Lipschitz character of $\Omega$.
 \end{lem}
@@ -317,19 +317,19 @@ The following lemma shows that these integral kernels fulfill the requirements f
   This proves the claim.
 \end{proof}
 
-We can now prove the boundedness of certain nontangential maximal operators.
+Now we prove the boundedness of certain nontangential maximal operators.
 \begin{lem}
   \label{lem:nontangentialMaximalFunctions}
   Let $1 < p < \infty$ and $(u,\phi)$ be given by \eqref{eq:defSingleLayer} and \eqref{eq:defSingleLayerPressure}.
   Then,
   \begin{align}
-    \| (\nabla u)^* \|_{\Ell^p(\partial\Omega)}  +  \| (\phi)^* \|_{\Ell^p(\partial\Omega)} \leq C_p \|f\|_{\Ell^p(\partial\Omega; \,\C^d)},
+    \| (\nabla u)^* \|_{\Ell^p(\partial\Omega)}  +  \| (\phi)^* \|_{\Ell^p(\partial\Omega)} \leq C_p \|f\|_{\Ell^p(\partial\Omega; \,\C^d)}\,,
   \end{align}
   where $C_p > 0$ depends only on $d$, $\theta$, $p$ and the Lipschitz character of $\Omega$.
   Let furthermore $d \geq 3$. Then,
   \begin{align}
     \label{eq:estimateUstar}
-     \|(u)^*\|_{\Ell^p(\partial\Omega)} \leq C_p \|f\|_{\Ell^p(\partial\Omega;\, \C^d)},
+     \|(u)^*\|_{\Ell^p(\partial\Omega)} \leq C_p \|f\|_{\Ell^p(\partial\Omega;\, \C^d)}\,,
   \end{align}
   where $C_p > 0$ depends only on $d$, $\theta$, $p$ and the Lipschitz character of $\Omega$.
 \end{lem}
@@ -357,7 +357,7 @@ We can now prove the boundedness of certain nontangential maximal operators.
     I_2 
     &\leq C \int_{|y - q| \leq t} \frac{1}{|x - y|^{d - 1}} |f(y)| \d \sigma(y) \\[0.5em]
     &\leq \frac{C}{t^{d - 1}} \int_{|y - q| \leq t} |f(y)| \d \sigma(y)
-    \leq C\, M_{\partial\Omega} (f)(q),
+    \leq C\, M_{\partial\Omega} (f)(q)\,,
   \end{align*}
   where we used also Lemma~\ref{lem:compareBoundaryWithBall} to bring the Hardy-Littlewood maximal operator into play.
   Here, $C > 0$ depends on $d$, $\theta$ and the Lipschitz character of $\Omega$.
@@ -409,7 +409,7 @@ We can now prove the boundedness of certain nontangential maximal operators.
   \begin{align*}
     |u(x)| 
     &\leq C \int_{\partial\Omega} \frac{1}{|x - y|^{d - 2}} |f(y)| \d\sigma(y) 
-    \leq  C \int_{\partial\Omega} \frac{1}{|q - y|^{d - 2}} |f(y)| \d\sigma(y),
+    \leq  C \int_{\partial\Omega} \frac{1}{|q - y|^{d - 2}} |f(y)| \d\sigma(y)\,,
   \end{align*}
   where $C > 0$ only depends on $d$, $\theta$ and the Lipschitz character of $\Omega$.
   Passing to the maximal operator yields the inequality
@@ -421,7 +421,7 @@ We can now prove the boundedness of certain nontangential maximal operators.
 
 \begin{rem}
   We note that in addition to the consideration of $d = 2$, Lemma~\ref{lem:nontangentialMaximalFunctions} differs in the form of estimate \eqref{eq:estimateUstar} from the original statement in Shen's work \cite[Lem.\@~3.2]{Shen2012}.
-  There, the author derives an estimate of the form $|\lambda|^{1/2}\|(u)^*\|_{\Ell^p(\partial\Omega)} \leq C_p \|f\|_{\Ell^p(\partial\Omega; \C^d)}$ which is based on Shen's version of Lemma~\ref{lem:estimateHelmholtzDerivatives}, namely \cite[Lem.\@~2.1]{Shen2012}.
+  There, the author derives an estimate of the form $|\lambda|^{1/2}\|(u)^*\|_{\Ell^p(\partial\Omega)} \leq C_p \|f\|_{\Ell^p(\partial\Omega; \,\C^d)}$ which is based on Shen's version of Lemma~\ref{lem:estimateHelmholtzDerivatives}, namely \cite[Lem.\@~2.1]{Shen2012}.
   As we could not follow the proof in \cite{Shen2012}, we provided a similar estimate and since the estimate won't be needed in the course of this thesis, we will not pursue the verification of Shen's estimate further.
   Another approach to the integrability of $(u)^*$ for the $\Ell^2$ case will be given in Chapter~\ref{chap:4}.
 \end{rem}
@@ -595,9 +595,9 @@ The next result will be crucial for solving the $\Ell^2$ Dirichlet problem in Ch
     &(\K^{(\varepsilon)}f)(x) 
     \coloneqq \int_{\partial\Omega \setminus \BB(x,\,\varepsilon)} \nabla_x \Big\{ \Gamma(x - y; \lambda) - \Gamma(x - y; 0) \Big\} f(y) \d \sigma(y) \, n\,, \quad x \in \partial\Omega.
   \end{align*}
-  We can now estimate by Young's inequality, see Lemma~\ref{lem:young}.
+  Now we estimate using Young's inequality, see Lemma~\ref{lem:young}:
   \begin{align*}
-    &\Big\| \,\K f - \K^{(\varepsilon)} f\, \Big\|_{\Ell^2(\partial\Omega; \,\C^d)} \\
+    &\Big\| \,\K f - \K^{(\varepsilon)} f\, \Big\|_{\Ell^2(\partial\Omega; \,\C^d)} \\[0.5em]
     &\qquad\leq \sup_{p \in \partial\Omega} \Big\| \nabla_x \Big\{ \Gamma(p - \cdot; \lambda) - \Gamma(p - \cdot; 0) \Big\} 1_{\BB(p,\,\varepsilon)} \Big\|_{\Ell^1(\partial\Omega; \,\C^{d \times d})} \|f\|_{\Ell^2(\partial\Omega; \,\C^d)}.
   \end{align*}
   Our goal is to show that
@@ -606,7 +606,7 @@ The next result will be crucial for solving the $\Ell^2$ Dirichlet problem in Ch
   \end{align*}
   To this end, let $\varepsilon$ be small enough such that we can apply the estimates from Corollary~\ref{cor:differenceFundamentalSolutionStokes} to calculate for some $p \in \partial\Omega$
   \begin{align*}
-    &\Big\| \nabla_x \Big\{ \Gamma(p - \cdot; \lambda) - \Gamma(p - \cdot; 0) \Big\} 1_{\BB(p,\,\varepsilon)} \Big\|_{\Ell^1(\partial\Omega; \,\C^{d \times d})}  \\
+    &\Big\| \nabla_x \Big\{ \Gamma(p - \cdot; \lambda) - \Gamma(p - \cdot; 0) \Big\} 1_{\BB(p,\,\varepsilon)} \Big\|_{\Ell^1(\partial\Omega; \,\C^{d \times d})}  \\[0.5em]
      &\qquad\qquad\leq C \int_{\partial\Omega \cap \BB(p,\, \varepsilon)} \sqrt{|\lambda|}\, |p - y|^{2 - d} \d\sigma(y) 
      \leq C\, \sqrt{|\lambda|} \,\varepsilon
   \end{align*}
