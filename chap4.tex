@@ -6,7 +6,7 @@ In this section, we will establish Rellich-type estimates for solutions of the S
 We will for this entire section always assume that $\Omega$ is a bounded Lipschitz domain in $\R^d$, $d \geq 2$, with connected boundary.
 Furthermore, we will use the shorthand notation
 \begin{align*}
-    \| \cdot \|^{}_{\partial} \coloneqq \| \cdot \|_{\Ell^2(\partial\Omega; \C^k)}, \quad k \in \N,
+    \| \cdot \|^{}_{\partial} \coloneqq \| \cdot \|_{\Ell^2(\partial\Omega;\, \C^k)}\,, \quad k \in \N,
 \end{align*}
 and we will tacitly use the summation convention whenever it is applicable.
 
@@ -135,7 +135,7 @@ The first lemma deals with so-called \emph{Rellich identities} for solutions of 
   \end{align*}
   To this end, note that the left side of the identity equals $2\, I_{10}$, whereas the right-hand side can be written as 
   \begin{align*}
-    (I_1 - I_2) + ( 2 \, I_{10} - I_1) + (I_2 - 0),
+    (I_1 - I_2) + ( 2 \, I_{10} - I_1) + (I_2 - 0)\,,
   \end{align*}
   where we also used the fact that $\div u = \partial_i u_i = 0$.
 \end{proof}
@@ -235,7 +235,7 @@ The next lemma enables us to handle the solid integrals in \eqref{eq:rellichIden
   Under the same assumptions on $(u,\phi)$ and $\lambda$ as in Theorem~\ref{thm:rellich}, we have
   \begin{align}
     \label{eq:laxMilgramIneq}
-    \int_\Omega |\nabla u|^2 \d x + |\lambda| \int_\Omega |u|^2 \leq C \,\Big\|\, \frac{\partial u}{\partial \nu} \, \Big\|^{}_\partial  \|u\|^{}_\partial,
+    \int_\Omega |\nabla u|^2 \d x + |\lambda| \int_\Omega |u|^2 \leq C \,\Big\|\, \frac{\partial u}{\partial \nu} \, \Big\|^{}_\partial  \|u\|^{}_\partial\,,
   \end{align}
   where $C > 0$ depends only on $\theta$.
 \end{lem}
@@ -244,7 +244,7 @@ The next lemma enables us to handle the solid integrals in \eqref{eq:rellichIden
   In a first step, we show that by approximating $\Omega$ through a sequence of smooth domains $\Omega_j$, $j \in \N$, with uniformly bounded Lipschitz characters it suffices to prove inequality~\eqref{eq:laxMilgramIneq} for elements of this sequence.
   To this end, suppose that we have shown 
   \begin{align*}
-    \int_{\Omega_j} |\nabla u|^2 \d x + |\lambda| \int_{\Omega_j} |u|^2 \leq C \,\Big\|\, \frac{\partial u}{\partial \nu} \, \Big\|^{}_{\Ell^2{\partial\Omega_j}}  \|u\|^{}_{\Ell^2(\partial\Omega_j)},
+    \int_{\Omega_j} |\nabla u|^2 \d x + |\lambda| \int_{\Omega_j} |u|^2 \leq C \,\Big\|\, \frac{\partial u}{\partial \nu} \, \Big\|^{}_{\Ell^2(\partial\Omega_j)}  \|u\|^{}_{\Ell^2(\partial\Omega_j)}\,,
   \end{align*}
   with a constant $C > 0$ which only depends on the Lipschitz character of $\Omega$.
   By the monotone convergence theorem, it is clear that the left-hand side of the inequality above converges to the left-hand side of \eqref{eq:laxMilgramIneq} for $j \to \infty$.
@@ -376,7 +376,7 @@ Our next lemma combines Rellich identities \eqref{eq:rellichIdentity} and \eqref
     %\| \phi \|_{\Ell^2(\partial\Omega)} \leq C\, \| \phi \|_{\Ell^{2d/(d - 1)}(\Omega)}  \leq C\, \| (\phi)^* \|^{}_\partial,
     \int_\Omega |\phi|^2 \d x 
     \leq C\, \bigg( \int_\Omega |\phi|^{2d/(d - 1)} \d x \bigg)^{(d - 1)/d}
-    \leq C\, \|(\phi)^* \|_\partial^2,
+    \leq C\, \|(\phi)^* \|_\partial^2\,,
   \end{align*}
   where $C > 0$ depends only $d$ and the Lipschitz constant of $\Omega$.
   Then, we use Theorem~\ref{thm:jerisonKenig} on the $\Ell^2$ Dirichlet problem of the Laplacian to bound $\|(\phi)^*\|_\partial$ by $\|\phi\|_\partial$ which gives
@@ -412,7 +412,7 @@ To this end, for the third integral we calculate
   \begin{align}
 \label{eq:lambdaNablaU}
     |\lambda| \int_\Omega |\nabla u| \, |u| \d x 
-    &\leq  \frac{|\lambda|^{3/2}}{2} \int_\Omega |u|^2 \d x + \frac{|\lambda|^{1/2}}{2 } \int_\Omega |\nabla u|^2 \d x \leq C \, \Big\| \, \frac{\partial u}{\partial \nu} \, \Big\|^{}_\partial \, |\lambda|^{1/2}  \| u \|^{}_\partial, 
+    &\leq  \frac{|\lambda|^{3/2}}{2} \int_\Omega |u|^2 \d x + \frac{|\lambda|^{1/2}}{2 } \int_\Omega |\nabla u|^2 \d x \leq C \, \Big\| \, \frac{\partial u}{\partial \nu} \, \Big\|^{}_\partial \, |\lambda|^{1/2}  \| u \|^{}_\partial\,, 
   \end{align}
   where in the first step we used the weighted Young inequality and in the second step we applied estimate \eqref{eq:laxMilgramIneq}.
   Putting everything together, we calculate
@@ -420,7 +420,7 @@ To this end, for the third integral we calculate
     \| \nabla u\|_\partial^2 
     &\leq C\, \bigg\{ \| \nabla u\|^{}_\partial \, \Big\|\,\frac{\partial u}{\partial \nu} \, \Big\|^{}_\partial 
     + \Big\|\,\frac{\partial u}{\partial \nu}\,\Big\|^{}_\partial \|u\|^{}_\partial 
-    + \Big\|\,\frac{\partial u}{\partial \nu}\,\Big\|_\partial^{1/2} \|u\|_\partial^{1/2} \|\phi\|^{}_\partial 
+    \!+ \Big\|\,\frac{\partial u}{\partial \nu}\,\Big\|_\partial^{1/2} \|u\|_\partial^{1/2} \|\phi\|^{}_\partial 
     + \Big\|\,\frac{\partial u}{\partial \nu}\,\Big\|^{}_\partial \, |\lambda|^{1/2} \big\|  u \big\|^{}_\partial\bigg\}.
   \end{align*}
   If we now use the assumption $|\lambda| \geq \tau$ which allows us to bound $\|u\|^{}_\partial$ via
@@ -503,10 +503,10 @@ Furthermore, we will rely on properties of solutions to the regularity problem a
   For these terms, we deploy another strategy.
   Let $f \in \HH^1(\partial\Omega_j)$ and let $\psi$ solve the regularity problem for the Laplacian on $\tilde \Omega \coloneqq \BB_R \setminus \overline{\Omega_j}$ with boundary data $\tilde f$, where $\BB_R \supseteq \overline\Omega$ is a sufficiently large ball and $\tilde f$ is defined via
   \begin{align*}
-    \tilde f \colon \partial\BB_R \cup \partial\Omega_j ,
+    \tilde f \colon \partial\BB_R \cup \partial\Omega_j \,,
     \quad x \mapsto \tilde f(x) \coloneqq 
     \begin{cases}
-      f(x)\,, &\quad\text{if } x \in \partial\Omega_j, \\
+      f(x)\,, &\quad\text{if } x \in \partial\Omega_j\,, \\
       0\,, &\quad\text{if } x \in \partial\BB_R.
     \end{cases}
   \end{align*}
@@ -517,7 +517,7 @@ Furthermore, we will rely on properties of solutions to the regularity problem a
     \Big| \, \int_{\partial\Omega_j} u \cdot (-n_j) \overline f \d\sigma \, \Big|
     %&= \Big| \, \int_{\partial\Omega_j} u \cdot (-n_j) \, \overline \psi \d \sigma \, \Big| \nonumber\\
     &= \Big| \, \int_{\Omega \setminus \Omega_j} \div(u \cdot \overline\psi) \d y - \int_{\partial\Omega} u\cdot n \, \overline \psi \d \sigma \, \Big|\nonumber\\
-    &\leq C\, \|u\|_{\Ell^2(\Omega \setminus \Omega_j)} \|f\|_{\HH^1(\partial\Omega_j)} + \|u \cdot n\|_{\HH^{-1}(\partial\Omega)} \|\psi\|_{\HH^1(\partial\Omega)}, \label{eq:operatornormApprox}
+    &\leq C\, \|u\|_{\Ell^2(\Omega \setminus \Omega_j)} \|f\|_{\HH^1(\partial\Omega_j)} + \|u \cdot n\|_{\HH^{-1}(\partial\Omega)} \|\psi\|_{\HH^1(\partial\Omega)}\,, \label{eq:operatornormApprox}
   \end{align}
   where $C > 0$ depends on $d$.
   Now we have to bound the norm $\|\psi\|_{\HH^1(\partial\Omega)}$ by $\|f\|_{\HH^1(\partial\Omega_j)}$.
@@ -526,7 +526,7 @@ Furthermore, we will rely on properties of solutions to the regularity problem a
     \int_{\partial\Omega} |\psi(p)|^2 \d\sigma(p)
     &\leq \int_{\partial\Omega} |(\psi(\Lambda_j(p)))^*|^2 \d\sigma(p) \\
     &\leq \delta^{-1} \int_{\partial\Omega} | (\psi)^*(\Lambda_j(p))|^2 \vartheta(p) \d\sigma(p) \\
-    &= \delta^{-1} \int_{\partial\Omega_j} |(\psi)^*(p)|^2 \d\sigma(p) ,
+    &= \delta^{-1} \int_{\partial\Omega_j} |(\psi)^*(p)|^2 \d\sigma(p) \,,
   \end{align*}
   where $\delta > 0$ is the bound from Theorem~\ref{thm:smoothApproximation} iv).
   A similar calculation works for the tangential derivatives of $\psi$.
@@ -534,16 +534,16 @@ Furthermore, we will rely on properties of solutions to the regularity problem a
   \begin{align}
     \label{eq:psiH1bound}
     \begin{alignedat}{1}
-    &\|\psi\|_{\Ell^2(\partial\Omega)}^{} + \|\nabla_{\mathrm{tan}} \psi\|_{\Ell^2(\partial\Omega)}^{} \\
+    &\|\psi\|_{\Ell^2(\partial\Omega)} + \|\nabla_{\mathrm{tan}} \psi\|_{\Ell^2(\partial\Omega)} \\
     &\qquad \leq C \, \Big\{ \|(\psi)^*\|_{\Ell^2(\partial\Omega_j)} + \| (\nabla_{\mathrm{tan}}\psi)^* \|_{\Ell^2(\partial\Omega_j)} \Big\} 
-    \leq C \, \|f\|_{\HH^1(\partial\Omega_j)}^{},
+    \leq C \, \|f\|_{\HH^1(\partial\Omega_j)}\,,
   \end{alignedat}
   \end{align}
   where for the last inequality we used further results for the regularity problem of the Dirichlet Laplacian, see Mitrea \cite[Thm.\@~5.1]{mitrea3d} and Mitrea \cite[p.\@~91]{mitrea2d} for the two dimensional case.
   Note that the cited results hold for bounded Lipschitz domains with arbitrary topology.
   Inequality \eqref{eq:psiH1bound} is now used to transform inequality~\eqref{eq:operatornormApprox} into the estimate
   \begin{align*}
-    \| u \cdot n \|_{\HH^{-1}(\partial\Omega_j)}^{} \leq C \Big\{ \|u\|_{\Ell^2(\Omega\setminus \Omega_j)} + \|u \cdot n \|_{\HH^{-1}(\partial\Omega)}^{} \Big\},
+    \| u \cdot n \|_{\HH^{-1}(\partial\Omega_j)} \leq C \Big\{ \|u\|_{\Ell^2(\Omega\setminus \Omega_j)} + \|u \cdot n \|_{\HH^{-1}(\partial\Omega)} \Big\},
   \end{align*}
   with a constant that only depends on $d$, $\operatorname{diam}(\Omega)$ and the Lipschitz character of $\Omega$.
   This shows that
@@ -565,7 +565,7 @@ Furthermore, we will rely on properties of solutions to the regularity problem a
     \label{eq:stokesEquationH1}
     \begin{alignedat}{1}
     \|\nabla \phi \cdot n\|_{\HH^{-1}(\partial\Omega)} 
-    &\leq \|\Delta u \cdot n \|_{\HH^{-1}(\partial\Omega)} + |\lambda|\, \| u\cdot n\|_{\HH^{-1}(\partial\Omega)}, \\
+    &\leq \|\Delta u \cdot n \|_{\HH^{-1}(\partial\Omega)} + |\lambda|\, \| u\cdot n\|_{\HH^{-1}(\partial\Omega)}\,, \\
     |\lambda|\, \| u\cdot n \|_{\HH^{-1}(\partial\Omega)} 
     &\leq \|\Delta u \cdot n \|_{\HH^{-1}(\partial\Omega)} + \|\nabla \phi \cdot n \|_{\HH^{-1}(\partial\Omega)}.
     \end{alignedat}
@@ -590,7 +590,7 @@ Furthermore, we will rely on properties of solutions to the regularity problem a
 
   In order to prove \eqref{eq:deltaun}, we note the following identity of differential operators
   \begin{align*}
-    \Delta u \cdot n = n_i \frac{\partial^2 u_i}{\partial x_j^2} = \Big\{ n_i \frac{\partial}{\partial x_j} - n_j \frac{\partial}{\partial x_i} \Big\} \frac{\partial u_i}{\partial x_j},
+    \Delta u \cdot n = n_i \frac{\partial^2 u_i}{\partial x_j^2} = \Big\{ n_i \frac{\partial}{\partial x_j} - n_j \frac{\partial}{\partial x_i} \Big\} \frac{\partial u_i}{\partial x_j}\,,
   \end{align*}
   where we used the fact that $\div u = 0$ in $\overline \Omega$.
   The expression between the brackets is the first-order tangential derivative $\partial_{\tau_{ij}}$, see \eqref{eq:defnTangDerivative}. 
@@ -640,7 +640,7 @@ Furthermore, we will rely on properties of solutions to the regularity problem a
     \bigg| \int_{\partial\Omega} \frac{\partial\phi}{\partial n} f \d\sigma\, \bigg|
     = \bigg| \int_{\partial\Omega} \phi\, \frac{\partial \psi}{\partial n} \d \sigma\, \bigg| 
     \leq \|\phi\|^{}_{\partial} \|\nabla \psi \|^{}_\partial 
-    \leq C\, \|\phi\|^{}_\partial \|f\|_{\HH^1(\partial\Omega)},
+    \leq C\, \|\phi\|^{}_\partial \|f\|_{\HH^1(\partial\Omega)}\,,
   \end{align*}
   Interpreting the function $\frac{\partial\phi}{\partial n} \in \Ell^2(\partial\Omega)$ as a functional on $\HH^1(\partial\Omega)$, we obtain
   \begin{align*}
@@ -664,7 +664,7 @@ Furthermore, we will rely on properties of solutions to the regularity problem a
 
   Additionally, examining the proof of inequality \eqref{eq:nablaPhin} shows us that the estimate
   \begin{align*}
-      c\, \| \phi \|^{}_\partial \leq \| \nabla \phi \cdot n \|_{\HH^{-1}(\partial\Omega)},
+      c\, \| \phi \|^{}_\partial \leq \| \nabla \phi \cdot n \|_{\HH^{-1}(\partial\Omega)}\,,
   \end{align*}
   holds for \emph{all} harmonic functions $\phi$ that fulfill $(\phi)^* \in\Ell^2(\partial\Omega)$ and have a nontangential limit with vanishing mean on $\partial\Omega$.
 \end{rem}
@@ -759,7 +759,7 @@ Shen proved that, under reasonable assumptions, a theorem similar to Theorem~\re
   Furthermore, let for $|x| \to \infty$
   \begin{align*}
     |\phi(x)| + |\nabla u(x)| = O(|x|^{1 - d}) \quad\text{and}\quad 
-    u(x) = \begin{cases} O(|x|^{2 - d}) &\quad\text{if } d \geq 3, \\ o(1) &\quad\text{if } d = 2. \end{cases}
+    u(x) = \begin{cases} O(|x|^{2 - d}) &\quad\text{if } d \geq 3\,, \\ o(1) &\quad\text{if } d = 2\,. \end{cases}
   \end{align*}
   Then, the estimates
   \begin{align}

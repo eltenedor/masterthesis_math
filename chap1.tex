@@ -14,7 +14,7 @@ In this first section, we will establish the fundamental notions regarding bound
   We call $\Omega$ a \emph{bounded Lipschitz domain} if there exist $r_0, M > 0$ such that for all $x \in \partial\Omega$ there exists a function $\eta_x \colon \R^{d - 1} \to \R$ which is Lipschitz continuous and additionally fulfills $\eta_x(0) = 0$ and $\|\nabla \eta_x \|_{\Ell^\infty(\R^{d - 1})} \leq M$, and a rotation $R_x \colon \R^d \to \R^d$ such that for all $0 < r \leq r_0$ 
   \begin{align*}
     R_x[ \Omega - \{x\} ] \cap D(r) &= D_{\eta_x}(r) \quad\text{and}\\[0.5em]
-    R_x[\partial\Omega - \{x\}] \cap D(r) &= I_{\eta_x}(r),
+    R_x[\partial\Omega - \{x\}] \cap D(r) &= I_{\eta_x}(r)\,,
   \end{align*}
   where
   \begin{align*}
@@ -62,7 +62,7 @@ In this first section, we will establish the fundamental notions regarding bound
       where $E \subset \partial \Omega$ is measurable and $\sigma_k$ denotes the surface measure on $\partial\Omega_k$.
       Furthermore, if $u \colon \partial\Omega_k \to \C$ is an integrable function on $\partial\Omega_k$, the following ``transformation rule'' holds:
       \begin{align*}
-         \int_{\partial\Omega} u(\Lambda_k(q)) \vartheta_k(q) \d\sigma(q) = \int_{\partial\Omega_k} u(q) \d \sigma_k(q) .
+         \int_{\partial\Omega} u(\Lambda_k(q)) \vartheta_k(q) \d\sigma(q) = \int_{\partial\Omega_k} u(q) \d \sigma_k(q) \,.
       \end{align*}
     \item The vector field $h$ satisfies $h \cdot  n_k \geq c > 0$ a.e.\@ on each $\partial\Omega_k$ where $n_k$ denotes the unit outer normal to $\partial\Omega_k$.
   \end{enumerate}
@@ -79,7 +79,7 @@ Unfortunately, in the literature there exist at least two different concepts whi
   If $q \in \partial\Omega$, then $\Gamma(q)$ will denote a cone with vertex $q$ and one component in $\Omega$.
   Assigning to each $q \in \partial\Omega$ one cone $\Gamma(q)$, the family $\big\{ \Gamma(q) \colon q \in \partial\Omega \big\}$ will be called \emph{regular} if there exist $x_1, \dots,x_{n_0} \in \partial\Omega$, $\tilde r > 0$ and rotations $\tilde R_{x_1}, \dots, \tilde R_{x_{n_0}}$ such that
   \begin{align*}
-    \partial\Omega \subset \bigcup_{i = 1}^{n_0} \{ x_i \} + \tilde R_{x_i}^{-1} D(4 \tilde r / 5),
+    \partial\Omega \subset \bigcup_{i = 1}^{n_0} \{ x_i \} + \tilde R_{x_i}^{-1} D(4 \tilde r / 5)\,,
   \end{align*}
   and such that there exist Lipschitz continuous functions $\tilde \eta_{x_i} \colon \R^{d - 1} \to \R$ such that for all $\tilde r \leq r \leq \nu \tilde r$ with 
   \begin{align*}
@@ -88,7 +88,7 @@ Unfortunately, in the literature there exist at least two different concepts whi
   we have
   \begin{align*}
     \tilde R_{x_i}[\Omega - \{x_i\}] \cap D(r) &= D_{\tilde \eta_{x_i}}(r) \quad\text{and}\\[0.5em]
-    \tilde R_{x_i}[\partial\Omega - \{x_i\}] \cap D(r) &= I_{\tilde \eta_{x_i}}(r).
+    \tilde R_{x_i}[\partial\Omega - \{x_i\}] \cap D(r) &= I_{\tilde \eta_{x_i}}(r)\,.
   \end{align*}
   In addition, for all $i = 1,\dots,n_0$ there exist cones $\alpha_i$, $\beta_i$ and $\gamma_i$ with vertex at the origin and axis along the $x_d$-axis such that
   \begin{align*}
@@ -96,8 +96,8 @@ Unfortunately, in the literature there exist at least two different concepts whi
   \end{align*}
   and such that for all $q \in [ \{ x_i\} + \tilde R_{x_i}^{-1} D(4 \tilde r / 5)] \cap \partial\Omega$, we have
   \begin{align*}
-    \tilde R_{x_i}^{-1} \alpha_i + \{ q\} \subset \Gamma(q) &\subset \overline{\Gamma(q)} \setminus \{q\} \subset \tilde R_{x_i}^{-1} \beta_i + \{ q\}, \\[0.5em]
-    \tilde R_{x_i}^{-1} \gamma_i + \{q\} &\subset [\{ x_i\} + \tilde R_{x_i}^{-1} D(\tilde r)] \cap \Omega.
+    \tilde R_{x_i}^{-1} \alpha_i + \{ q\} \subset \Gamma(q) &\subset \overline{\Gamma(q)} \setminus \{q\} \subset \tilde R_{x_i}^{-1} \beta_i + \{ q\}\,, \\[0.5em]
+    \tilde R_{x_i}^{-1} \gamma_i + \{q\} &\subset [\{ x_i\} + \tilde R_{x_i}^{-1} D(\tilde r)] \cap \Omega\,.
   \end{align*}
   We will sometimes denote a regular cone as above by $\verCone(q)$.
 \end{defn}
@@ -341,9 +341,9 @@ Using this result, we find $g \in \Ell^2(\Omega)$ such that $\nabla g = (I - \PP
 Consequently, we see that solving the resolvent equation for the Stokes operator and solving the Stokes resolvent system \eqref{eq:stokesResolventSystem} are two sides of the same coin.
 Furthermore, we may deduce from the resolvent estimate \eqref{eq:resolventEstimateL2} that the solution $u$ which apparently is not affected by the additional part $(I-\PP_2)f$ fulfills the inequality
 \begin{align*}
-  |\lambda| \| u\|_{\Ell^2(\Omega; \C^d)} 
+  |\lambda| \| u\|_{\Ell^2(\Omega; \,\C^d)} 
   = |\lambda| \|\,(A_2 + \lambda)^{-1} \PP_2 f \,\|_{\Ell^2(\Omega; \C^d)} 
-  \leq C\, \| f \|_{\Ell^2(\Omega; \C^d)},
+  \leq C\, \| f \|_{\Ell^2(\Omega;\, \C^d)}\,,
 \end{align*}
 where $C$ depends only on $\theta$.
 By the calculations above it is understandable why this estimate on $u$ instead of \eqref{eq:resolventEstimateL2} is sometimes called \emph{resolvent estimate}.
@@ -416,7 +416,7 @@ Now we define the Stokes operator for $p < 2$ as announced.
   Then, the \emph{Stokes operator on} $\Ell^p_\sigma(\Omega)$ is defined via
   \begin{align*}
     \Dom(A_p) & \coloneqq \big\{ u \in \Ell^p_\sigma(\Omega) \colon \Psi u \in \Dom(A^*_{p'}) \big\} \\
-    A_p &\coloneqq \Psi^{-1} A^*_{p'} \Psi u,
+    A_p &\coloneqq \Psi^{-1} A^*_{p'} \Psi u\,,
   \end{align*}
   where $p' = p/(1 - p)$ denotes the Hölder conjugate exponent of $p$ and $A^*_{p'}$ the adjoint operator to $A_{p'}$.
 \end{defn}
@@ -451,8 +451,8 @@ We will work towards a proof of the following theorem:
   \end{align*}
   there exists a constant $C > 0$ such that for every $f \in \Ell^p_\sigma(\Omega)$ and all $\lambda \in \Sigma_\theta$, $\theta \in (0,\pi/2)$, the inequality
   \begin{align*}
-    |\lambda|\, \big\| \, (\lambda + A_p)^{-1} f\, \big\|_{\Ell^p(\Omega; \C^d)} 
-    \leq C\, \|f\|_{\Ell^p(\Omega; \C^d)}
+    |\lambda|\, \big\| \, (\lambda + A_p)^{-1} f\, \big\|_{\Ell^p(\Omega; \,\C^d)} 
+    \leq C\, \|f\|_{\Ell^p(\Omega;\, \C^d)}
   \end{align*}
   holds. In particular, $-A_p$ is the generator of a bounded analytic semigroup on $\Ell^p_\sigma(\Omega)$.
 \end{thm}

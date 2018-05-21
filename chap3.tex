@@ -34,13 +34,13 @@ The single layer potential $u = \slp_\lambda(f)$ is defined by
 \begin{align}
   \label{eq:defSingleLayer}
   (\slp_\lambda(f))_j(x) 
-  \coloneqq \int_{\partial\Omega} \Gamma_{jk}(x - y; \lambda) f_k(y) \d \sigma(y),
+  \coloneqq \int_{\partial\Omega} \Gamma_{jk}(x - y; \lambda) f_k(y) \d \sigma(y)\,,
 \end{align}
 where $\Gamma_{jk}$ is the fundamental solution to the Stokes resolvent problem given by \eqref{eq:fundamentalMatrixStokes}.
 For the pressure, respectively, we define the single layer potential $\phi = \slp_\Phi(f)$ by
 \begin{align}
   \label{eq:defSingleLayerPressure}
-  \slp_{\Phi}(f)(x) \coloneqq \int_{\partial\Omega} \Phi_k(x - y) f_k(y) \d \sigma(y),
+  \slp_{\Phi}(f)(x) \coloneqq \int_{\partial\Omega} \Phi_k(x - y) f_k(y) \d \sigma(y)\,,
 \end{align}
 where $\Phi_k$ is given by \eqref{eq:fundamentalVectorPressure}.
 The pair $(u,\phi)$ defines a solution to the Stokes resolvent problem \eqref{eq:stokesResolventProblem} in $\R^d \setminus \partial\Omega$ by the properties of the fundamental solution together with the dominated convergence theorem..
@@ -86,7 +86,7 @@ We are now in the position to prove our first lemma on the way to establish the 
 The lemma deals with mapping properties of the aforementioned integral operators $T_\lambda$ and $T_\lambda^*$.
 The main idea will be to deduce pointwise estimates that bound the operator $T_\lambda^*$ by the \emph{Hardy-Littlewood maximal operator} $M_{\partial\Omega}$ which is defined for functions $f \in \Ell^1_{\mathrm{loc}}(\partial\Omega)$ via
 \begin{align*}
-  M_{\partial\Omega}(f)(q) \coloneqq \sup_{\varepsilon > 0} \; \frac{1}{\sigma(\partial\Omega \cap \BB(q, \varepsilon))} \int_{\partial\Omega \cap \BB(q,\,\varepsilon)} |f(y)| \d \sigma(y), \quad q \in \partial\Omega.
+  M_{\partial\Omega}(f)(q) \coloneqq \sup_{\varepsilon > 0} \; \frac{1}{\sigma(\partial\Omega \cap \BB(q, \varepsilon))} \int_{\partial\Omega \cap \BB(q,\,\varepsilon)} |f(y)| \d \sigma(y)\,, \quad q \in \partial\Omega.
 \end{align*}
 
 \begin{lem}
@@ -95,9 +95,9 @@ The main idea will be to deduce pointwise estimates that bound the operator $T_\
   Then $T_\lambda(f)(P)$ exists for almost every $P \in \partial\Omega$ and
   \begin{align}
     \label{eq:lpBoundednessT}
-    \|T_\lambda(f) \|_{\Ell^p(\partial\Omega; \C^{d \times d})}
+    \|T_\lambda(f) \|_{\Ell^p(\partial\Omega; \,\C^{d \times d})}
     \leq \|T_\lambda^*(f) \|_{\Ell^p(\partial\Omega)}
-    \leq C_p \, \|f\|_{\Ell^p(\partial\Omega; \C^d)},
+    \leq C_p \, \|f\|_{\Ell^p(\partial\Omega; \,\C^d)}\,,
   \end{align}
   where $C_p$ depends only on $d$, $\theta$, $p$, and the Lipschitz character of $\Omega$.
 \end{lem}
@@ -113,7 +113,7 @@ The main idea will be to deduce pointwise estimates that bound the operator $T_\
   In this case, Theorem~\ref{thm:fundamentalMatrixEstimate} gives us the estimate
   \begin{align*}
     \bigg| \int_{|y - q| > t} \nabla_x \Gamma(q - y; \lambda) f(y) \d\sigma(y) \bigg|
-    &\leq C \int_{|q - y| > t} \frac{|f(y)|}{|\lambda| |q - y|^{d + 1}} \d \sigma(y) ,
+    &\leq C \int_{|q - y| > t} \frac{|f(y)|}{|\lambda| |q - y|^{d + 1}} \d \sigma(y) \,,
   \end{align*}
   where $C$ depends on $d$ and $\theta$.
   Choose now $N \in \N$ such that $2^N t \leq \diam(\Omega) < 2^{N + 1} t$.
@@ -136,7 +136,7 @@ The main idea will be to deduce pointwise estimates that bound the operator $T_\
   \begin{align}
     \label{eq:applLem31}
     \frac{1}{(2^{k+1} t)^{d - 1}} \int_{\BB(q,\, 2^{k + 1}t) \cap \partial \Omega}  |f(y)| \d\sigma(y)
-    \leq C M_{\partial\Omega}(f)(q), \quad k=0,\dots,N, 
+    \leq C M_{\partial\Omega}(f)(q)\,, \quad k=0,\dots,N, 
   \end{align}
   with a constant $C > 0$ that depends on $d$ and the Lipschitz character of $\Omega$.
   Now, we glue together \eqref{eq:gtt} and \eqref{eq:applLem31}, take $N \to \infty$ noting the geometric series and get the estimate
@@ -150,21 +150,21 @@ The main idea will be to deduce pointwise estimates that bound the operator $T_\
   We then split the integral as follows:
   \begin{align*}
     \bigg| \int_{|q - y| > t} \nabla_x \Gamma(q - y; \lambda) f(y) \d\sigma(y) \, \bigg| 
-     &\leq \bigg| \int_{|q -y | \geq (2|\lambda|)^{-1/2}} \nabla_x\Gamma(q - y; \lambda)f(y) \d\sigma(y)\, \bigg| \\
+    &\leq \bigg| \int_{|q -y | \geq (2|\lambda|)^{-1/2}} \nabla_x\Gamma(q - y; \lambda)f(y) \d\sigma(y)\, \bigg| \\[0.5em]
      &\quad + \bigg| \int_{t < |q - y| < (2|\lambda|)^{-1/2}} \nabla_x\Gamma(q - y; \lambda)f(y) \d\sigma(y)\, \bigg|.
   \end{align*}
   For the first summand, note that estimate \eqref{eq:finalgtt} holds for all $t > 0$ and thus in particular for  $t = (2|\lambda|)^{-1/2}$.
   For the second term, we add a special zero and use the triangle inequality to estimate
   \begin{align*}
-    &\bigg| \int_{t < |q - y| < (2|\lambda|)^{-1/2}} \nabla_x\Gamma(q - y; \lambda)f(y) \d\sigma(y) \,\bigg| \\
-     &\qquad\qquad\leq \int_{t < |q - y| < (2|\lambda|)^{-1/2}} \big|\nabla_x\Gamma(q - y; \lambda) - \nabla_x\Gamma(q - y; 0) \big| \, |f(y)| \d\sigma(y) \\
+    &\bigg| \int_{t < |q - y| < (2|\lambda|)^{-1/2}} \nabla_x\Gamma(q - y; \lambda)f(y) \d\sigma(y) \,\bigg| \\[0.5em]
+    &\qquad\qquad\leq \int_{t < |q - y| < (2|\lambda|)^{-1/2}} \big|\nabla_x\Gamma(q - y; \lambda) - \nabla_x\Gamma(q - y; 0) \big| \, |f(y)| \d\sigma(y) \\[0.5em]
      &\qquad\qquad\quad + \bigg| \int_{t < |q - y| < (2|\lambda|)^{-1/2}} \nabla_x\Gamma(q - y; 0) f(y)  \d\sigma(y)\, \bigg|.
   \end{align*}
   We don't need to worry about the second summand here since the corresponding estimate is already covered by the $\lambda = 0$ case:
   \begin{align}
     \label{eq:lambda0case}
     \begin{alignedat}{1}
-     &\bigg| \int_{t < |q - y| < (2|\lambda|)^{-1/2}} \nabla_x\Gamma(q - y; 0) \, f(y)  \d\sigma\, \bigg| \\
+      &\bigg| \int_{t < |q - y| < (2|\lambda|)^{-1/2}} \nabla_x\Gamma(q - y; 0) \, f(y)  \d\sigma\, \bigg| \\[0.5em]
       &\qquad\qquad \leq \bigg| \int_{|q - y| > t} \nabla_x\Gamma(q - y; 0) \, f(y)  \d\sigma \,\bigg| 
      \leq T_0^*(f)(q).
     \end{alignedat}
@@ -174,7 +174,7 @@ The main idea will be to deduce pointwise estimates that bound the operator $T_\
      \label{eq:estDiff}
      \begin{alignedat}{1}
        &\int_{t < |q - y| < (2|\lambda|)^{-1/2}} \big|\nabla_x\Gamma(q - y; \lambda) - \nabla_x\Gamma(q - y; 0) \big| \, |f(y)| \d\sigma(y) \\
-       &\hspace{4cm}\leq C \int_{t < |q - y| < (2|\lambda|)^{-1/2}} \sqrt{|\lambda|} \, |q - y|^{2 - d}\, |f(y)| \d\sigma(y),
+       &\hspace{4cm}\leq C \int_{t < |q - y| < (2|\lambda|)^{-1/2}} \sqrt{|\lambda|} \, |q - y|^{2 - d}\, |f(y)| \d\sigma(y)\,,
      \end{alignedat}
    \end{align}
    where $C$ depends on $d$ and $\theta$. 
@@ -202,7 +202,7 @@ The main idea will be to deduce pointwise estimates that bound the operator $T_\
    \end{align*}
    which yields the inequality
    \begin{align*}\int_{t < |q - y| < (2|\lambda|)^{-1/2}} \frac{1}{|q - y|^{d - 2}} \, |f(y)| \d\sigma
-     \leq C |\lambda|^{-1/2} M_{\partial\Omega}(f)(q),
+     \leq C |\lambda|^{-1/2} M_{\partial\Omega}(f)(q)\,,
    \end{align*}
    where $C > 0$ depends on $d$ and the Lipschitz character of $\Omega$.
    Taking into account the foregoing calculations together with estimate \eqref{eq:estDiff} and \eqref{eq:lambda0case} we derive
@@ -220,7 +220,7 @@ The main idea will be to deduce pointwise estimates that bound the operator $T_\
    \end{align*}
    for all $q \in \partial\Omega$. Once again using the result for $\lambda = 0$ and the $\Ell^p$ boundedness of the Hardy-Littlewood maximal operator, we conclude the first part of the claimed inequality
    \begin{align*}
-     \|T_\lambda^*(f) \|_{\Ell^p(\partial\Omega)} \leq C\, \|f\|_{\Ell^p(\partial\Omega; \C^d)}.
+     \|T_\lambda^*(f) \|_{\Ell^p(\partial\Omega)} \leq C\, \|f\|_{\Ell^p(\partial\Omega; \,\C^d)}.
    \end{align*}
 
    To conclude the left inequality in \eqref{eq:lpBoundednessT}, we want to use a standard result from argument harmonic analysis.
@@ -283,11 +283,11 @@ A proof can be found in Tolksdorf \cite[Prop.\@~1.1.4]{tolksdorf}.
   Let $\Omega \subset \R^d$, $\mu$ a $\sigma$-finite measure on $\Omega$, and $1 \leq p < \infty$.
   Let $g \colon \R^d \setminus \{ 0\} \to \C$ be a function such that the function $\Omega \times \Omega \ni (x, y) \mapsto g(x-y)$ is measurable with respect to the product measure $\mu \times \mu$ and such that
   \begin{align*}
-    A + B \coloneqq \sup_{x \in \Omega} \| g(x - \cdot) \|_{\Ell^1(\Omega, \mu)} + \sup_{y \in \Omega} \|g(\cdot - y) \|_{\Ell^1(\Omega, \mu)} < \infty.
+    A + B \coloneqq \sup_{x \in \Omega} \| g(x - \cdot\,) \|_{\Ell^1(\Omega, \mu)} + \sup_{y \in \Omega} \|g(\,\cdot - y) \|_{\Ell^1(\Omega, \mu)} < \infty.
   \end{align*}
   If $f \in \Ell^p(\Omega, \mu)$, then $x \mapsto \int_\Omega g(x - y) f(y) \d\mu(y) \in \Ell^p(\Omega, \mu)$ and
   \begin{align*}
-    \bigg\| \int_\Omega g(\cdot - y) f(y) \d\mu(y)\, \bigg\|_{\Ell^p(\Omega, \mu)} \leq A^{1 - 1/p} B^{1/p} \|f\|_{\Ell^p(\Omega, \mu)}.
+    \bigg\| \int_\Omega g(\cdot - y) f(y) \d\mu(y)\, \bigg\|_{\Ell^p(\Omega, \,\mu)} \leq A^{1 - 1/p} B^{1/p} \|f\|_{\Ell^p(\Omega, \,\mu)}.
   \end{align*}
 \end{lem}
 
@@ -311,7 +311,7 @@ The following lemma shows that these integral kernels fulfill the requirements f
     &\qquad \leq \int_{\partial\Omega \cap \BB(q,\, r_0/4)} \frac{1}{|q - y|^{d - 2}} \d \sigma(y) 
     + \int_{\partial\Omega \setminus \BB(q,\, r_0/4)} \frac{1}{|q - y|^{d - 2}} \d\sigma(y) \\[0.5em]
     &\qquad\leq C r_0 + r_0^{2 - d} 4^{d - 2} \sigma(\partial\Omega)
-    \leq C\, ( r_0 + r_0^{2 - d} r_0^{d - 1}),
+    \leq C\, ( r_0 + r_0^{2 - d} r_0^{d - 1})\,,
   \end{align*}
   where $C > 0$ depends only on $d$ and the Lipschitz character of $\Omega$.
   This proves the claim.
@@ -321,21 +321,21 @@ We can now prove the boundedness of certain nontangential maximal operators.
 \begin{lem}
   \label{lem:nontangentialMaximalFunctions}
   Let $1 < p < \infty$ and $(u,\phi)$ be given by \eqref{eq:defSingleLayer} and \eqref{eq:defSingleLayerPressure}.
-  Then 
+  Then,
   \begin{align}
-    \| (\nabla u)^* \|_{\Ell^p(\partial\Omega)}  +  \| (\phi)^* \|_{\Ell^p(\partial\Omega)} \leq C_p \|f\|_{\Ell^p(\partial\Omega; \C^d)},
+    \| (\nabla u)^* \|_{\Ell^p(\partial\Omega)}  +  \| (\phi)^* \|_{\Ell^p(\partial\Omega)} \leq C_p \|f\|_{\Ell^p(\partial\Omega; \,\C^d)},
   \end{align}
   where $C_p > 0$ depends only on $d$, $\theta$, $p$ and the Lipschitz character of $\Omega$.
-  Let furthermore $d \geq 3$. Then
+  Let furthermore $d \geq 3$. Then,
   \begin{align}
     \label{eq:estimateUstar}
-     \|(u)^*\|_{\Ell^p(\partial\Omega)} \leq C_p \|f\|_{\Ell^p(\partial\Omega; \C^d)},
+     \|(u)^*\|_{\Ell^p(\partial\Omega)} \leq C_p \|f\|_{\Ell^p(\partial\Omega;\, \C^d)},
   \end{align}
   where $C_p > 0$ depends only on $d$, $\theta$, $p$ and the Lipschitz character of $\Omega$.
 \end{lem}
 
 \begin{proof}
-  A proof of the estimate $\|(\phi)^*\|_{\Ell^p(\partial\Omega)} \leq C_p \|f\|_{\Ell^p(\partial\Omega; \C^d)}$ can be found in Verchota's dissertation \cite[Lem.\@~1.3]{verchota}.
+  A proof of the estimate $\|(\phi)^*\|_{\Ell^p(\partial\Omega)} \leq C_p \|f\|_{\Ell^p(\partial\Omega; \,\C^d)}$ can be found in Verchota's dissertation \cite[Lem.\@~1.3]{verchota}.
   The proof for $\|(\nabla u)^*\|_{\Ell^p(\partial\Omega)}$ works in the same way. 
   We will provide a proof for the sake of completeness.
   To imitate the proof of Verchota, we will work with the corresponding type of cones.
@@ -345,9 +345,9 @@ We can now prove the boundedness of certain nontangential maximal operators.
   Let $q \in \partial\Omega$,  $x \in \verCone(q)$, and set $t = |x - q|$.
   Then,
   \begin{align*}
-    &|(\nabla u_j)(x) | \\
-    &\quad= \bigg| \int_{\partial\Omega} \nabla_x \Gamma_{jk} (x - y; \lambda) f_k(y) \d \sigma(y)\, \bigg| \\
-    &\quad\leq \bigg| \int_{|y - q| > t} \nabla_x\Gamma_{jk}(x - y; \lambda) f_k(y) \d \sigma(y) \, \bigg| + \bigg| \int_{|y - q| \leq t} \nabla_x \Gamma_{jk}(x - y; \lambda) f_k(y) \d \sigma(y)\, \bigg| \\
+    &|(\nabla u_j)(x) | \\[0.5em]
+    &\quad= \bigg| \int_{\partial\Omega} \nabla_x \Gamma_{jk} (x - y; \lambda) f_k(y) \d \sigma(y)\, \bigg| \\[0.5em]
+    &\quad\leq \bigg| \int_{|y - q| > t} \nabla_x\Gamma_{jk}(x - y; \lambda) f_k(y) \d \sigma(y) \, \bigg| + \bigg| \int_{|y - q| \leq t} \nabla_x \Gamma_{jk}(x - y; \lambda) f_k(y) \d \sigma(y)\, \bigg| \\[0.5em]
     &\quad\eqqcolon I_1 + I_2.
   \end{align*}
   We will now estimate $I_1$ and $I_2$ separately.
@@ -355,7 +355,7 @@ We can now prove the boundedness of certain nontangential maximal operators.
   By Theorem~\ref{thm:fundamentalMatrixEstimate} we know that
   \begin{align*}
     I_2 
-    &\leq C \int_{|y - q| \leq t} \frac{1}{|x - y|^{d - 1}} |f(y)| \d \sigma(y) \\
+    &\leq C \int_{|y - q| \leq t} \frac{1}{|x - y|^{d - 1}} |f(y)| \d \sigma(y) \\[0.5em]
     &\leq \frac{C}{t^{d - 1}} \int_{|y - q| \leq t} |f(y)| \d \sigma(y)
     \leq C\, M_{\partial\Omega} (f)(q),
   \end{align*}
@@ -369,8 +369,8 @@ We can now prove the boundedness of certain nontangential maximal operators.
 %  \end{align*}
    For $I_1$, we calculate
    \begin{align*}
-     &\bigg| \int_{| x - q | > t} \nabla_x \Gamma_{j k} (x - y; \lambda) f_k(y) - \nabla_x \Gamma_{jk}(q - y; \lambda) f_k(y) + \nabla_x \Gamma_{jk}(q - y; \lambda) f_k(y) \d \sigma(y) \, \bigg| \\
-     &\qquad\leq \bigg| \int_{|y - q| > t} \nabla_x \Big\{ \Gamma_{jk}(x - y; \lambda) -  \Gamma_{jk}(q - y; \lambda)\Big\} f_k(y) \d \sigma(y) \, \bigg| \\
+     &\bigg| \int_{| x - q | > t} \nabla_x \Gamma_{j k} (x - y; \lambda) f_k(y) - \nabla_x \Gamma_{jk}(q - y; \lambda) f_k(y) + \nabla_x \Gamma_{jk}(q - y; \lambda) f_k(y) \d \sigma(y) \, \bigg| \\[0.5em]
+     &\qquad\leq \bigg| \int_{|y - q| > t} \nabla_x \Big\{ \Gamma_{jk}(x - y; \lambda) -  \Gamma_{jk}(q - y; \lambda)\Big\} f_k(y) \d \sigma(y) \, \bigg| \\[0.5em]
      &\qquad\qquad+ \bigg| \int_{|y - q| > t} \nabla_x\Gamma_{jk}(q - y; \lambda) f_k(y) \d\sigma(y) \, \bigg|.
    \end{align*}
   The second summand can directly be estimated by $T_\lambda^*(f)(q)$.
@@ -436,7 +436,7 @@ We will then finally be able to talk about boundary values since the existence o
   \begin{align}
     \Big( \frac{\partial u_i}{\partial x_j} \Big)_{\pm}(x) 
     &= \pm \frac{1}{2} \big\{ n_j(x) f_i(x) - n_i(x) n_j(x) n_k(x) f_k(x) \big\} \nonumber\\
-    &\quad+ \pv \int_{\partial\Omega} \frac{\partial}{\partial x_j} \Big\{ \Gamma_{ik} (x - y; \lambda) \Big\} f_k(y) \d\sigma(y), \label{eq:traceFormula} \\[0.5em]
+    &\quad+ \pv \int_{\partial\Omega} \frac{\partial}{\partial x_j} \Big\{ \Gamma_{ik} (x - y; \lambda) \Big\} f_k(y) \d\sigma(y)\,, \label{eq:traceFormula} \\[0.5em]
     \phi_\pm(x) &= \mp \frac{1}{2} n_k(x) f_k(x) + \pv\int_{\partial\Omega} \Phi_k(x - y) f_k(y) \d \sigma(y) \nonumber
   \end{align}
   for almost every $x \in \partial\Omega$.
@@ -449,7 +449,7 @@ We will then finally be able to talk about boundary values since the existence o
   We insert a zero to the nontangential limit such that
   \begin{align*}
     (\nabla u_j)_\pm(x) = 
-    (\nabla v_j)_\pm(x) + (\nabla u_j - \nabla v_j)_\pm(x),
+    (\nabla v_j)_\pm(x) + (\nabla u_j - \nabla v_j)_\pm(x)\,,
   \end{align*}
   where $v_j(x) = \int_{\partial\Omega} \Gamma_{jk}(x - y; 0) f_k(y) \d\sigma(y)$.
   Because of \cite{mitreaWright} we know that the first nontangential limit exists and is given by \eqref{eq:traceFormula} with $\lambda = 0$.
@@ -500,13 +500,13 @@ The previous lemma enables us to talk about boundary values of partial derivativ
 The next theorem will now give a similar result but for \emph{conormal derivatives}, which are defined for solutions $(u,\phi)$ to the Stokes (resolvent) system via 
 \begin{align}
   \label{eq:conormalDerivative}
-  \frac{\partial u}{\partial \nu} \coloneqq \frac{\partial u}{\partial n} - \phi n,
+  \frac{\partial u}{\partial \nu} \coloneqq \frac{\partial u}{\partial n} - \phi n\,,
 \end{align}
 see Mitrea and Wright \cite[Eq.\@~(1.2)]{mitreaWright}, where $n$ denotes the outer unit normal vector.
 We will also be working with the tangential gradient which is defined via
 \begin{align}
   \label{eq:tangentialGradient}
-  \nabla_{\mathrm{tan}} u_j \coloneqq \nabla u_j - \big(\nabla u_j \cdot  n\big) n,
+  \nabla_{\mathrm{tan}} u_j \coloneqq \nabla u_j - \big(\nabla u_j \cdot  n\big) n\,,
 \end{align}
 see Mitrea and Wright \cite[p.\@~17]{mitreaWright}.
 
@@ -521,7 +521,7 @@ see Mitrea and Wright \cite[p.\@~17]{mitreaWright}.
   \end{align}
   on $\partial\Omega$, with $\K_\lambda$ a bounded operator on $\Ell^p(\partial\Omega; \C^d)$ satisfying
   \begin{align*}
-    \| \K_\lambda f \|_{\Ell^p(\partial\Omega; \C^d)} \leq C_p\, \|f\|_{\Ell^p(\partial\Omega, \C^d)},
+    \| \K_\lambda f \|_{\Ell^p(\partial\Omega;\, \C^d)} \leq C_p\, \|f\|_{\Ell^p(\partial\Omega;\, \C^d)}\,,
   \end{align*}
   where $C_p > 0$ depends only on $d$, $\theta$, $p$ and the Lipschitz character of $\Omega$.
 \end{thm}
@@ -540,7 +540,7 @@ see Mitrea and Wright \cite[p.\@~17]{mitreaWright}.
   As the first two summands add up to zero, the entire expression does not depend on the direction of the nontangential limit. 
   This gives
   \begin{align*}
-    (\nabla_{\mathrm{tan}} u)_+ = (\nabla_{\mathrm{tan}} u)_-,
+    (\nabla_{\mathrm{tan}} u)_+ = (\nabla_{\mathrm{tan}} u)_-\,,
   \end{align*}
   for almost every $x \in \partial\Omega$.
   We calculate for the $j$th component of the nontangential limit of the conormal derivative of $u$ on $\partial\Omega$ using the results from Lemma~\ref{lem:traceFormulas}
@@ -573,7 +573,7 @@ Similar to $\K_\lambda$, for $\lambda = 0$, we have
   \begin{alignedat}{1}
   \label{eq:defnK0}
     (\K_0 f)_j(x)&= \pv \int_{\partial\Omega} \frac{\partial}{\partial x_i} \Big\{ \Gamma_{jk}(x - y; 0) \Big\}  f_k(y) \d\sigma(y) \,n_i(x) \\
-    &\qquad - \pv \int_{\partial\Omega} \Phi_k(x - y) f_k(y) \d\sigma(y)\, n_j(x),
+    &\qquad - \pv \int_{\partial\Omega} \Phi_k(x - y) f_k(y) \d\sigma(y)\, n_j(x)\,,
   \end{alignedat}
 \end{align}
 as was shown by Mitrea and Wright \cite[Prop.\@~4.4]{mitreaWright}.
@@ -593,20 +593,20 @@ The next result will be crucial for solving the $\Ell^2$ Dirichlet problem in Ch
   To this end, we define for all $\varepsilon > 0$
   \begin{align*}
     &(\K^{(\varepsilon)}f)(x) 
-    \coloneqq \int_{\partial\Omega \setminus \BB(x,\,\varepsilon)} \nabla_x \Big\{ \Gamma(x - y; \lambda) - \Gamma(x - y; 0) \Big\} f(y) \d \sigma(y) \, n, \quad x \in \partial\Omega.
+    \coloneqq \int_{\partial\Omega \setminus \BB(x,\,\varepsilon)} \nabla_x \Big\{ \Gamma(x - y; \lambda) - \Gamma(x - y; 0) \Big\} f(y) \d \sigma(y) \, n\,, \quad x \in \partial\Omega.
   \end{align*}
   We can now estimate by Young's inequality, see Lemma~\ref{lem:young}.
   \begin{align*}
-    &\Big\| \,\K f - \K^{(\varepsilon)} f\, \Big\|_{\Ell^2(\partial\Omega; \C^d)} \\
-    &\qquad\leq \sup_{p \in \partial\Omega} \Big\| \nabla_x \Big\{ \Gamma(p - \cdot; \lambda) - \Gamma(p - \cdot; 0) \Big\} 1_{\BB(p,\,\varepsilon)} \Big\|_{\Ell^1(\partial\Omega; \C^{d \times d})} \|f\|_{\Ell^2(\partial\Omega; \C^d)}.
+    &\Big\| \,\K f - \K^{(\varepsilon)} f\, \Big\|_{\Ell^2(\partial\Omega; \,\C^d)} \\
+    &\qquad\leq \sup_{p \in \partial\Omega} \Big\| \nabla_x \Big\{ \Gamma(p - \cdot; \lambda) - \Gamma(p - \cdot; 0) \Big\} 1_{\BB(p,\,\varepsilon)} \Big\|_{\Ell^1(\partial\Omega; \,\C^{d \times d})} \|f\|_{\Ell^2(\partial\Omega; \,\C^d)}.
   \end{align*}
   Our goal is to show that
   \begin{align*}
-    \sup_{p \in \partial\Omega} \Big\| \nabla_x \Big\{ \Gamma(p - \cdot; \lambda) - \Gamma(p - \cdot; 0) \Big\} 1_{\BB(p,\,\varepsilon)} \Big\|_{\Ell^1(\partial\Omega; \C^{d \times d})} \to 0 \quad \text{as} \quad \varepsilon \to 0.
+    \sup_{p \in \partial\Omega} \Big\| \nabla_x \Big\{ \Gamma(p - \cdot; \lambda) - \Gamma(p - \cdot; 0) \Big\} 1_{\BB(p,\,\varepsilon)} \Big\|_{\Ell^1(\partial\Omega; \,\C^{d \times d})} \to 0 \quad \text{as} \quad \varepsilon \to 0.
   \end{align*}
   To this end, let $\varepsilon$ be small enough such that we can apply the estimates from Corollary~\ref{cor:differenceFundamentalSolutionStokes} to calculate for some $p \in \partial\Omega$
   \begin{align*}
-    &\Big\| \nabla_x \Big\{ \Gamma(p - \cdot; \lambda) - \Gamma(p - \cdot; 0) \Big\} 1_{\BB(p,\,\varepsilon)} \Big\|_{\Ell^1(\partial\Omega; \C^{d \times d})}  \\
+    &\Big\| \nabla_x \Big\{ \Gamma(p - \cdot; \lambda) - \Gamma(p - \cdot; 0) \Big\} 1_{\BB(p,\,\varepsilon)} \Big\|_{\Ell^1(\partial\Omega; \,\C^{d \times d})}  \\
      &\qquad\qquad\leq C \int_{\partial\Omega \cap \BB(p,\, \varepsilon)} \sqrt{|\lambda|}\, |p - y|^{2 - d} \d\sigma(y) 
      \leq C\, \sqrt{|\lambda|} \,\varepsilon
   \end{align*}
@@ -670,7 +670,7 @@ where $\K_{\bar\lambda}^*$ is the adjoint of the operator $\K_{\bar\lambda}$ in 
     \begin{alignedat}{1}
     &-\int_{\partial\Omega} \Phi_j(y - x) n_k(y) f_k(y) \d\sigma(y) \\
     &\qquad\qquad= \int_{\partial\Omega} \Phi_l(x - y)\, \delta_{lj} n_k(y) f_k(y) \d\sigma(y)
-    = \slp_\Phi(\tilde f^j)(x), 
+    = \slp_\Phi(\tilde f^j)(x)\,, 
     \end{alignedat}
   \end{align}
   where $\tilde f^j_l = \delta_{lj} n_k f_k$.
@@ -685,9 +685,9 @@ where $\K_{\bar\lambda}^*$ is the adjoint of the operator $\K_{\bar\lambda}$ in 
   with $C > 0$ depending only on $d$.
   Hence, by Lemma~\ref{lem:nontangentialMaximalFunctions}, we derive the followign chain of estimates:
   \begin{align*}
-    \| (u)^* \|_{\Ell^p(\partial\Omega)} 
-    \leq C\, \Big\{ \sum_{i = 1}^d \| n_i f \|_{\Ell^p(\partial\Omega; \C^d)} + \sum_{j = 1}^d \| \slp_\Phi(\tilde f^j) \|_{\Ell^p(\partial\Omega)}\Big\} 
-    \leq C\, \|f\|_{\Ell^p(\partial\Omega; \C^d)},
+    \| (u)^* \|^{}_{\Ell^p(\partial\Omega)} 
+    \leq C\, \Big\{ \sum_{i = 1}^d \| n_i f \|^{}_{\Ell^p(\partial\Omega; \,\C^d)} + \sum_{j = 1}^d \| \slp_\Phi(\tilde f^j) \|^{}_{\Ell^p(\partial\Omega)}\Big\} 
+    \leq C\, \|f\|_{\Ell^p(\partial\Omega;\, \C^d)}\,,
   \end{align*}
   where $C > 0$ depends on $d$, $p$, $\theta$ and the Lipschitz character of $\Omega$.
 
@@ -696,15 +696,15 @@ where $\K_{\bar\lambda}^*$ is the adjoint of the operator $\K_{\bar\lambda}$ in 
   \begin{align*}
     (\K_\lambda^{(\varepsilon)} f)_j (x)
     &\coloneqq \int_{\partial\Omega} 1_{\EE(x, \,\varepsilon)}(y) \frac{\partial}{\partial x_i} \Gamma_{jk}(x - y; \lambda)  f_k(y) \d\sigma(y) \, n_i(x) \\[0.5em]
-    &\qquad - \int_{\partial\Omega} 1_{\EE(x, \,\varepsilon)}(y)\, \Phi_k(x - y) f_k(y) \d\sigma(y) \, n_j(x),
+    &\qquad - \int_{\partial\Omega} 1_{\EE(x, \,\varepsilon)}(y)\, \Phi_k(x - y) f_k(y) \d\sigma(y) \, n_j(x)\,,
   \end{align*}
   for $x \in \partial\Omega$ and $\EE(x,\varepsilon) \coloneqq \R^d \setminus \BB(x, \varepsilon)$.
-  Now, for $f \in \Ell^p(\partial\Omega, \C^d)$ and $g \in \Ell^q(\partial\Omega, \C^d)$ with $1/p + 1/q = 1$ we calculate
+  Now, for $f \in \Ell^p(\partial\Omega; \C^d)$ and $g \in \Ell^q(\partial\Omega; \C^d)$ with $1/p + 1/q = 1$ we calculate
   \begin{align*}
     \Big\langle \K_{\bar\lambda}^{(\varepsilon)}f, g \Big\rangle
     &= \int_{\partial\Omega} (\K_{\bar\lambda}^{(\varepsilon)} f)_j(x) \, \overline{g_j(x)} \d\sigma(x) \\[0.5em]
     &= \int_{\partial\Omega} \int_{\partial\Omega} \frac{\partial}{\partial x_i} \Big\{ \Gamma_{jk} (x - y; \overline\lambda) \Big\} f_k(y) 1_{\EE(x, \,\varepsilon)}(y) \d\sigma(y) \, n_i(x) \, \overline{g_j(x)} \d\sigma(x) \\[0.5em]
-    &\quad+ \int_{\partial\Omega} \int_{\partial\Omega} \Phi_k(x -y)f_k(y) 1_{\EE(x,\, \varepsilon)}(y) \d\sigma(y) \, n_j(x) \, \overline{g_j(x)} \d\sigma(x),
+    &\quad+ \int_{\partial\Omega} \int_{\partial\Omega} \Phi_k(x -y)f_k(y) 1_{\EE(x,\, \varepsilon)}(y) \d\sigma(y) \, n_j(x) \, \overline{g_j(x)} \d\sigma(x)\,,
   \end{align*}
   where the dual pairing is denoted by the brackets $\langle \,\cdot\,, \cdot\, \rangle$.
   Note that $1_{\EE(x,\, \varepsilon)}(y) = 1_{\EE(y,\, \varepsilon)}(x)$ for all $x, y \in \partial\Omega$.
@@ -729,8 +729,8 @@ where $\K_{\bar\lambda}^*$ is the adjoint of the operator $\K_{\bar\lambda}$ in 
   For $x \in \partial\Omega$, we estimate
   \begin{align}
     \big|(\K_{\bar\lambda}^{(\varepsilon)}f)_j (x)\big|
-    &= \bigg| \int_{|x - y| > \varepsilon} \frac{\partial}{\partial x_i} \Big\{ \Gamma_{jk}(x - y; \lambda) \Big\} f_k(y) \d\sigma(y) \, n_i(x)  \nonumber\\
-    &\qquad - \int_{|x - y| > \varepsilon} \Phi_k(x - y) f_k(y)\, n_j(x) \d\sigma(y)\, \bigg| \nonumber\\
+    &= \bigg| \int_{|x - y| > \varepsilon} \frac{\partial}{\partial x_i} \Big\{ \Gamma_{jk}(x - y; \lambda) \Big\} f_k(y) \d\sigma(y) \, n_i(x)  \nonumber\\[0.5em]
+    &\qquad - \int_{|x - y| > \varepsilon} \Phi_k(x - y) f_k(y)\, n_j(x) \d\sigma(y)\, \bigg| \nonumber\\[0.5em]
     \label{eq:pIntegrableMajorant}
     &\leq T_{\bar\lambda}^*(f)(x) + A^*(fn_j)(x).
   \end{align}
@@ -744,7 +744,7 @@ where $\K_{\bar\lambda}^*$ is the adjoint of the operator $\K_{\bar\lambda}$ in 
     &=
     \bigg|\, \int_{|x - y| > \varepsilon} \frac{\partial}{\partial x_i} \Big\{ \Gamma_{jk}(x - y; \overline\lambda) \Big\} \, n_i(x) g_j(x) \d \sigma(x)\\[0.5em]
     &\qquad - \int_{|x - y| > \varepsilon} \Phi_k(x - y) n_j(x) g_j(x)   \d\sigma(x) \,\bigg| \\
-    &\leq \sum_{i = 1}^d T_\lambda^*(n_i g)(y)  + \sum_{i = 1}^d A^*(\tilde g^j)(y),
+    &\leq \sum_{i = 1}^d T_\lambda^*(n_i g)(y)  + \sum_{i = 1}^d A^*(\tilde g^j)(y)\,,
   \end{align*}
   where $\tilde g^j_l = \delta_{lj} n_k f_k$ and therefore the dominated convergence theorem yields
   \begin{align*}

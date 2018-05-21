@@ -25,7 +25,7 @@ Therefore, the next lemma shows that solutions to the Stokes resolvent problem \
   Then the following holds for $|x| \to \infty\,$:
   \begin{align*}
     |\phi(x)| + |\nabla u(x)| = O(|x|^{1 - d}) \quad\text{and}\quad 
-    u(x) = \begin{cases} O(|x|^{2 - d}) &\quad\text{if } d \geq 3, \\ o(1) &\quad\text{if } d = 2. \end{cases}
+    u(x) = \begin{cases} O(|x|^{2 - d}) &\quad\text{if } d \geq 3\,, \\ o(1) &\quad\text{if } d = 2\,. \end{cases}
   \end{align*}
 \end{lem}
 
@@ -49,7 +49,7 @@ We will furthermore be concerned about bounds on the inverse of the operator $(1
   Then $(1/2)I + \K_\lambda$ is an isomorphism on $\Ell^2(\partial\Omega; \C^d)$ and
   \begin{align}
     \label{eq:inverseEstimate}
-    \| f\|^{}_\partial \leq C \, \big\|\, \big( (1/2) I + \K_\lambda \big) f\, \, \big\|^{}_\partial \quad\text{for any } f \in \Ell^2(\partial\Omega; \C^d),
+    \| f\|^{}_\partial \leq C \, \big\|\, \big( (1/2) I + \K_\lambda \big) f\, \, \big\|^{}_\partial \quad\text{for any } f \in \Ell^2(\partial\Omega; \C^d)\,,
   \end{align}
   where $C > 0$ depends only on $d$, $\theta$, $\tau$ and the Lipschitz character of $\Omega$.
 \end{lem}
@@ -106,7 +106,7 @@ The next lemma is the counterpart to Lemma~\ref{lem:inverseEstimate1} and proves
   Then $-(1/2)I + \K_\lambda$ is a Fredholm operator on $\Ell^2(\partial\Omega; \C^d)$ with index zero and
   \begin{align}
     \label{eq:inverseEstimate2}
-    \| f\|^{}_\partial \leq C \, \big\| \, \big( - (1/2) I + \K_\lambda \big) f\, \big\|^{}_\partial \quad\text{for all } f \in \Ell^2_n(\partial\Omega),
+    \| f\|^{}_\partial \leq C \, \big\| \, \big( - (1/2) I + \K_\lambda \big) f\, \big\|^{}_\partial \quad\text{for all } f \in \Ell^2_n(\partial\Omega)\,,
   \end{align}
   where $C > 0$ depends only on $d$, $\theta$, the Lipschitz character of $\Omega$ and $\operatorname{diam}(\Omega)$.
 \end{lem}
@@ -134,7 +134,7 @@ The next lemma is the counterpart to Lemma~\ref{lem:inverseEstimate1} and proves
     &\int_{\partial\Omega} \Big| \nabla_x \big\{ \Gamma_{ij}(p - y; \lambda) - \Gamma_{ij}(p - y; 0) \big\} \Big| \d\sigma(y)\\[0.5em]
       &\quad\leq C \, |\lambda|^{1/2} \int_{\partial\Omega} \frac{1}{|p - y|^{d - 2}} \d \sigma(y) \\[0.5em]
       &\quad= C \, |\lambda|^{1/2} \, \int_{\partial\Omega \cap \BB(p,\, r_0/4)} \frac{1}{|p - y|^{d - 2}} \d\sigma(y) + C |\lambda|^{1/2}\, \int_{\partial\Omega \setminus \BB(p,\, r_0/4)} \frac{1}{|p - y|^{d - 2}} \d\sigma(y) \\[0.5em]
-      &\quad\leq C \, |\lambda|^{1/2} \,\big( r_0/4 + 4^{2 - d} r_0^{d - 2} \sigma( \partial\Omega ) \big),
+      &\quad\leq C \, |\lambda|^{1/2} \,\big( r_0/4 + 4^{2 - d} r_0^{d - 2} \sigma( \partial\Omega ) \big)\,,
   \end{align*}
   where $r_0$ is the radius from the definition of Lipschitz domains.
   But as $\sigma( \partial\Omega )  = 1$ and $r_0$ can be related to $|\partial\Omega|$ by Lemma~\ref{lem:compareBoundaryWithBall}, we get
@@ -205,7 +205,7 @@ The next lemma is the counterpart to Lemma~\ref{lem:inverseEstimate1} and proves
   \begin{align*}
       \| f\|^{}_\partial 
       \leq C \, \big\| \, \big( - (1/2) I + \K_\lambda\big) f\, \big\|^{}_\partial + C\, \Big\| \bigg(\frac{\partial u}{\partial \nu} \bigg)_- \Big\|^{}_\partial 
-    \leq C \, \big\| \, \big( - (1/2) I + \K_\lambda\big) f \,\big\|^{}_{\partial},
+    \leq C \, \big\| \, \big( - (1/2) I + \K_\lambda\big) f \,\big\|^{}_{\partial}\,,
   \end{align*}
   where we used the jump relation \eqref{eq:nontangentialConormalDerivative} again.
   This proves estimate \eqref{eq:inverseEstimate2} in the case $|\lambda| \geq \tau$ and thus concludes the proof.
@@ -548,14 +548,14 @@ The next theorem can in some sense be regarded as a reverse trace theorem and wi
     \int_{\Omega_j} |u - w|^2 \d x \leq C \int_{\partial\Omega_j} |u - w|^2 \d \sigma_j,
   \end{align}
   where $C> 0$ does not depend on $j$ but on the Lipschitz character of $\Omega$ and $\diam(\Omega)$.
-  Furthermore, the trace theorem on bounded Lipschitz domains gives us for all $h \in \HH^1(\Omega; \C^d)$ that
+  Furthermore, the trace theorem on bounded Lipschitz domains gives us for all Sobolev functions $h \in \HH^1(\Omega; \C^d)$ that
   \begin{align}
     \label{eq:traceLipschitzDomain}
-     \|h\|_\partial^2 \leq C\, \|h\|_{\HH^1(\Omega; \C^d)}^2,
+     \|h\|_\partial^2 \leq C\, \|h\|_{\HH^1(\Omega; \,\C^d)}^2\,,
   \end{align}
   where $C> 0$ only depends on $d$ and the Lipschitz character of $\Omega$, see Wei and Zhang \cite[Lem.\@~2.2]{weiZhang}.
   Now, let $\varepsilon > 0$ be given. 
-  From the theory of Sobolev spaces it is known that there exists $\varphi_\varepsilon \in \CC^\infty(\overline\Omega; \C^d)$ such that $\big\|\varphi_\varepsilon - u\big\|_{\HH^1(\Omega; \C^d)}^2 \leq {\varepsilon}/({6 \tilde C})$, see Adams and Fournier \cite[Thm.\@~3.18]{adams}.
+  From the theory of Sobolev spaces it is known that there exists $\varphi_\varepsilon \in \CC^\infty(\overline\Omega; \C^d)$ such that $\big\|\varphi_\varepsilon - u\big\|_{\HH^1(\Omega;\, \C^d)}^2 \leq {\varepsilon}/({6 \tilde C})$, see Adams and Fournier \cite[Thm.\@~3.18]{adams}.
   Here, $\tilde C > 0$ denotes the fixed constant from \eqref{eq:traceLipschitzDomain} which is uniform for all $\Omega_j$ and $\Omega$.
   Thanks to Theorem~\ref{thm:smoothApproximation}, we know that 
   \begin{align*}
@@ -628,7 +628,7 @@ When using Theorem~\ref{thm:coarea} in estimations, we will therefore always be 
     &\leq C\, \bigg( \int_{\partial \BB(0,\, t)} \Big\{ \, \big|\nabla_x^{l+1} \Gamma(y; \lambda)\big|  + \big|\nabla_x^l \Phi(y) \big| \, \Big\} \, |f_t(y)| \d\sigma(y)\bigg)^2 \\[0.5em]
     &\leq C\, \bigg( \int_{\partial \BB(0,\,t)} \frac{|f_t(y)|}{t^{d - 1 + l}}  \d\sigma(y)\bigg)^2 \\[0.5em]
     &\leq C\, \int_{\partial \BB(0,\,t)} |f_t(y)|^2  \d\sigma(y) \\[0.5em]
-    &\leq C\, \int_{\partial \BB(0,\,t)} |u(y)|^2 \d\sigma(y), 
+    &\leq C\, \int_{\partial \BB(0,\,t)} |u(y)|^2 \d\sigma(y)\,, 
   \end{align*}
   where in the last step we used the estimate of $f_t$ against the ``data'' from Theorem~\ref{thm:exAndUniqueSolution}.
   Integrating this inequality in $t$ over the interval $(1,2)$ and using the co-area formula \eqref{eq:coarea} with Lipschitz function $|\cdot|$ gives 
