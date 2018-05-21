@@ -248,7 +248,7 @@ The next lemma enables us to handle the solid integrals in \eqref{eq:rellichIden
   \end{align*}
   with a constant $C > 0$ which only depends on the Lipschitz character of $\Omega$.
   By the monotone convergence theorem, it is clear that the left-hand side of the inequality above converges to the left-hand side of \eqref{eq:laxMilgramIneq} for $j \to \infty$.
-  The integrals on the right-hand side converge to their counterparts on $\partial\Omega$ through an application of the dominated convergence theorem: The conormal derivatve may, modulo a constant that depends on the dimension $d$, be dominated by the nontangential maximal function $(\nabla u)^*$ and $(\phi)^*$ which are both square integrable by assumption.
+  The integrals on the right-hand side converge to their counterparts on $\partial\Omega$ through an application of the dominated convergence theorem: The conormal derivative may, modulo a constant that depends on the dimension $d$, be dominated by the nontangential maximal function $(\nabla u)^*$ and $(\phi)^*$ which are both square integrable by assumption.
   Similarly, $u$ may be dominated by its nontangential maximal function which is square integrable thanks to Remark~\ref{rem:shenNontangential}.
 
   Thus, for the reminder of this proof, we assume that $(u,\phi)$ is a smooth solution to the Stokes resolvent problem on $\overline\Omega$ with smooth boundary $\partial\Omega$.
@@ -293,7 +293,7 @@ The next lemma enables us to handle the solid integrals in \eqref{eq:rellichIden
 \end{proof}
 
 One useful tool in this chapter and the next one, will be the following lemma which enables us to control a function on $\Omega$ by its nontangential maximal function. 
-A proof of this Lemma~was carried out by Wei and Zhang \cite[Lem.\@~3.3]{weiZhang} and can also be found in Shen's paper \cite[p.\@~418f.]{Shen2012} although it was not formulated as a seperate result.
+A proof of this Lemma~was carried out by Wei and Zhang \cite[Lem.\@~3.3]{weiZhang} and can also be found in Shen's paper \cite[p.\@~418f.]{Shen2012} although it was not formulated as a separate result.
 Note furthermore that this result, despite the fact that it was originally proven for dimensions $d \geq 3$, holds also in the case $d = 2$.
 
 \begin{lem}
@@ -344,7 +344,7 @@ For the next lemma and also later parts of this chapter, we state the following 
   The definition of $(R)_2$, see \cite[Defn.\@~1.7.4]{kenigBook}, reveals that the claimed statement \ref{item:b}) is a consequence of Theorem~1.8.2 in \cite{kenigBook}. 
   We refer also to the work of Jerison and Kenig on the $\Ell^2$ regularity problem \cite{jerisonKenig2}.
 
-  The \emph{Neumann propblem}, $(N)_2$, is solvable for data $f \in \Ell^2(\partial\Omega)$ due to Theorem~2.1.10 in \cite{kenigBook}.
+  The \emph{Neumann problem}, $(N)_2$, is solvable for data $f \in \Ell^2(\partial\Omega)$ due to Theorem~2.1.10 in \cite{kenigBook}.
   Definition~1.7.9 in \cite{kenigBook} shows that the stated properties in \ref{item:c}) follow from Theorem~1.8.3 in \cite{kenigBook}.
   See also Jerison's and Kenig's work on the Neumann problem \cite{jerisonKenig}.
 \end{proof}
@@ -366,7 +366,7 @@ Our next lemma combines Rellich identities \eqref{eq:rellichIdentity} and \eqref
 \end{lem}
 
 \begin{proof}
-  Let $h = (h_1, \dots, h_d) \in \CC_0^1(\R^d; \R^d)$ with $h_k n_k \geq c > 0$ on $\partial \Omega$ as given by Therorem~\ref{thm:smoothApproximation} v). 
+  Let $h = (h_1, \dots, h_d) \in \CC_0^1(\R^d; \R^d)$ with $h_k n_k \geq c > 0$ on $\partial \Omega$ as given by Theorem~\ref{thm:smoothApproximation} v). 
   The idea of the proof of the desired estimates \eqref{eq:gradEstimateRellich} and \eqref{eq:gradEstimateRellich2} is to first use the Rellich identities from Lemma~\ref{lem:rellichIdentity} with this particular $h$ to estimate $\|\nabla u\|^{}_\partial$ and then to bound the resulting right-hand side by providing individual estimates.
 
   Before we start, note that we have $\Delta \phi = 0$ on the one hand and for the nontangential maximal function $(\phi)^* \in \Ell^2(\partial\Omega)$ on the other hand. 
@@ -531,14 +531,17 @@ Furthermore, we will rely on properties of solutions to the regularity problem a
   where $\delta > 0$ is the bound from Theorem~\ref{thm:smoothApproximation} iv).
   A similar calculation works for the tangential derivatives of $\psi$.
   This shows that
-  \begin{align*}
-    \|\psi\|_{\Ell^2(\partial\Omega)}^{} + \|\nabla_{\mathrm{tan}} \psi\|_{\Ell^2(\partial\Omega)}^{} 
-    \leq C \, \Big\{ \|(\psi)^*\|_{\Ell^2(\partial\Omega_j)} + \| (\nabla_{\mathrm{tan}}\psi)^* \|_{\Ell^2(\partial\Omega_j)} \Big\} 
+  \begin{align}
+    \label{eq:psiH1bound}
+    \begin{alignedat}{1}
+    &\|\psi\|_{\Ell^2(\partial\Omega)}^{} + \|\nabla_{\mathrm{tan}} \psi\|_{\Ell^2(\partial\Omega)}^{} \\
+    &\qquad \leq C \, \Big\{ \|(\psi)^*\|_{\Ell^2(\partial\Omega_j)} + \| (\nabla_{\mathrm{tan}}\psi)^* \|_{\Ell^2(\partial\Omega_j)} \Big\} 
     \leq C \, \|f\|_{\HH^1(\partial\Omega_j)}^{},
-  \end{align*}
-  where for the last inequality we used further results for the regularity problem of the Dirichlet Laplacian, see \cite[Thm.\@~7.5.15]{Shen2017}. 
-  Not that we assumed also that the cited result holds for bounded Lipschitz domains that do not have a connected boundary.
-  This inequality can now be used to transform inequality~\eqref{eq:operatornormApprox} into the estimate
+  \end{alignedat}
+  \end{align}
+  where for the last inequality we used further results for the regularity problem of the Dirichlet Laplacian, see Mitrea \cite[Thm.\@~5.1]{mitrea3d} and Mitrea \cite[p.\@~91]{mitrea2d} for the two dimensional case.
+  Note that the cited results hold for bounded Lipschitz domains with arbitrary topology.
+  Inequality \eqref{eq:psiH1bound} is now used to transform inequality~\eqref{eq:operatornormApprox} into the estimate
   \begin{align*}
     \| u \cdot n \|_{\HH^{-1}(\partial\Omega_j)}^{} \leq C \Big\{ \|u\|_{\Ell^2(\Omega\setminus \Omega_j)} + \|u \cdot n \|_{\HH^{-1}(\partial\Omega)}^{} \Big\},
   \end{align*}
